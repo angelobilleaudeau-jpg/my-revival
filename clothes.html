@@ -1,12 +1,11 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 
 <meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>MTB REVIVALS - Clothes</title>
 
@@ -18,478 +17,314 @@ content="width=device-width, initial-scale=1.0">
 
 body {
     margin: 0;
-
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-    background: #e9e9e9;
-
-    color: #222;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    background: #e8e8e8;
+    color: #333;
 }
-
 
 /* HEADER */
 
 header {
-
-    background: #333;
-
-    color: white;
-
-    padding: 15px;
+    background: linear-gradient(#f7f7f7, #d1d1d1);
+    border-bottom: 1px solid #999;
+    box-shadow: 0 1px 3px #aaa;
 }
 
-.header {
-
-    max-width: 1050px;
-
+.header-inner {
+    max-width: 1000px;
     margin: auto;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    gap: 10px;
+    padding: 8px 10px 0;
 }
 
 .logo {
-
-    font-size: 24px;
-
+    font-size: 25px;
     font-weight: bold;
+    color: #333;
+    padding: 5px 0 10px;
 }
-
-.user {
-
-    background: #222;
-
-    padding: 8px 12px;
-
-    border-radius: 5px;
-}
-
-
-/* NAVIGATION */
 
 nav {
-
-    background: #444;
-
-    overflow-x: auto;
-
-    white-space: nowrap;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 nav a {
-
-    display: inline-block;
-
-    color: white;
-
+    display: block;
+    padding: 9px 13px;
+    color: #444;
     text-decoration: none;
-
-    padding: 13px 15px;
+    border: 1px solid transparent;
+    border-bottom: 0;
 }
 
 nav a:hover {
-
-    background: #222;
+    background: #ddd;
 }
 
+nav a.active {
+    background: white;
+    border: 1px solid #aaa;
+    border-bottom: 1px solid white;
+    color: #1683c5;
+}
 
 /* MAIN */
 
 .container {
-
-    max-width: 1050px;
-
-    margin: auto;
-
-    padding: 20px;
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 0 10px;
 }
 
-h1 {
-
-    margin-top: 0;
+.page-title {
+    background: linear-gradient(#666, #444);
+    color: white;
+    padding: 9px 12px;
+    border: 1px solid #333;
+    font-size: 18px;
+    font-weight: bold;
+    text-shadow: 1px 1px #222;
 }
-
 
 /* SEARCH */
 
-.search {
-
-    width: 100%;
-
-    padding: 13px;
-
+.search-box {
+    background: white;
     border: 1px solid #aaa;
-
-    border-radius: 5px;
-
-    font-size: 16px;
-
-    margin-bottom: 15px;
+    padding: 12px;
+    margin-top: 15px;
 }
 
+.search-row {
+    display: flex;
+    gap: 7px;
+}
+
+.search {
+    flex: 1;
+    height: 34px;
+    border: 1px solid #999;
+    padding: 7px;
+    font-size: 13px;
+}
+
+button {
+    border: 1px solid #555;
+    border-radius: 3px;
+    background: linear-gradient(#65b5e8, #1683c5);
+    color: white;
+    padding: 7px 14px;
+    font-weight: bold;
+    cursor: pointer;
+    text-shadow: 1px 1px #555;
+}
+
+button:hover {
+    background: linear-gradient(#79c5ed, #1683c5);
+}
+
+button.gray {
+    background: linear-gradient(#aaa, #777);
+}
+
+button.gray:hover {
+    background: linear-gradient(#bbb, #888);
+}
 
 /* CATEGORIES */
 
 .categories {
-
-    display: flex;
-
-    gap: 8px;
-
-    overflow-x: auto;
-
-    padding-bottom: 15px;
-}
-
-.categories button {
-
+    margin-top: 12px;
     background: white;
-
     border: 1px solid #aaa;
-
-    border-radius: 5px;
-
-    padding: 10px 15px;
-
-    white-space: nowrap;
-
-    cursor: pointer;
+    padding: 9px;
 }
 
-.categories button.active {
+/* CATALOG */
 
-    background: #333;
-
-    color: white;
+.section {
+    margin-top: 20px;
 }
 
+.section-title {
+    background: linear-gradient(#f5f5f5, #d7d7d7);
+    border: 1px solid #aaa;
+    padding: 9px;
+    font-size: 15px;
+    font-weight: bold;
+}
 
-/* ITEMS */
-
-.items {
-
+.catalog {
     display: grid;
-
-    grid-template-columns:
-        repeat(auto-fit, minmax(190px, 1fr));
-
-    gap: 15px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: 12px;
 }
 
-
-/* CARD */
+/* ITEM */
 
 .item {
-
     background: white;
-
-    border: 1px solid #ccc;
-
-    border-radius: 7px;
-
-    padding: 12px;
-
-    box-shadow:
-        0 2px 5px
-        rgba(0,0,0,.08);
+    border: 1px solid #aaa;
+    padding: 8px;
+    box-shadow: 0 1px 2px #ccc;
 }
 
-
-/* CLOTHING PREVIEW */
-
-.preview {
-
-    height: 180px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #ddd,
-            #f5f5f5
-        );
-
-    border-radius: 5px;
-
+.item-image {
+    height: 150px;
+    border: 1px solid #999;
+    background: #eee;
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
-    margin-bottom: 10px;
-
-    overflow: hidden;
 }
 
-
-/* SHIRT */
+/* SHIRT PREVIEW */
 
 .shirt {
-
-    width: 110px;
-
-    height: 125px;
-
-    background: #1683ff;
-
+    width: 90px;
+    height: 100px;
     position: relative;
-
-    clip-path:
-        polygon(
-            25% 0,
-            75% 0,
-            100% 25%,
-            82% 38%,
-            82% 100%,
-            18% 100%,
-            18% 38%,
-            0 25%
-        );
 }
 
+.shirt-body {
+    position: absolute;
+    width: 55px;
+    height: 65px;
+    left: 18px;
+    top: 20px;
+    border: 2px solid #555;
+}
 
-/* PANTS */
+.sleeve {
+    position: absolute;
+    width: 20px;
+    height: 48px;
+    top: 25px;
+    border: 2px solid #555;
+}
+
+.sleeve.left {
+    left: 0;
+    transform: rotate(15deg);
+}
+
+.sleeve.right {
+    right: 0;
+    transform: rotate(-15deg);
+}
+
+/* PANTS PREVIEW */
 
 .pants {
-
-    width: 105px;
-
-    height: 120px;
-
+    width: 70px;
+    height: 105px;
     position: relative;
-
-    display: flex;
-
-    gap: 5px;
 }
 
-.pants-left,
-.pants-right {
-
-    width: 50px;
-
-    height: 120px;
-
-    background: #315a9b;
-
-    border-radius: 3px;
+.pant {
+    position: absolute;
+    width: 31px;
+    height: 90px;
+    top: 5px;
+    border: 2px solid #555;
 }
 
-
-/* COLORS */
-
-.red {
-
-    background: #d93434;
+.pant.left {
+    left: 3px;
 }
 
-.blue {
-
-    background: #1683ff;
+.pant.right {
+    right: 3px;
 }
 
-.green {
-
-    background: #159447;
+.item h3 {
+    color: #1683c5;
+    font-size: 14px;
+    margin: 9px 0 4px;
 }
 
-.black {
-
-    background: #222;
-}
-
-.white {
-
-    background: #f7f7f7;
-
-    border: 1px solid #aaa;
-}
-
-.yellow {
-
-    background: #f2c94c;
-}
-
-.denim {
-
-    background: #315a9b;
-}
-
-.darkdenim {
-
-    background: #1d3557;
-}
-
-
-/* TEXT */
-
-.type {
-
+.creator {
     color: #777;
-
-    font-size: 13px;
+    margin-bottom: 5px;
 }
 
-.free {
-
-    color: #159447;
-
+.price {
     font-weight: bold;
+    margin: 7px 0;
 }
-
-
-/* BUTTON */
 
 .item button {
-
     width: 100%;
+}
 
+/* MESSAGE */
+
+#message {
+    display: none;
+    background: white;
+    border: 1px solid #aaa;
     padding: 10px;
-
-    margin-top: 7px;
-
-    border: 0;
-
-    border-radius: 5px;
-
-    background: #1683ff;
-
-    color: white;
-
+    margin-top: 12px;
+    color: #1683c5;
     font-weight: bold;
-
-    cursor: pointer;
 }
 
-.item button:hover {
+/* NO RESULTS */
 
-    background: #006bd6;
-}
-
-.favorite {
-
-    background: #eee !important;
-
-    color: #222 !important;
-}
-
-
-/* INVENTORY */
-
-.inventory {
-
-    margin-top: 30px;
-
+#noResults {
+    display: none;
     background: white;
-
-    padding: 15px;
-
-    border: 1px solid #ccc;
-
-    border-radius: 7px;
-}
-
-.inventory-item {
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    padding: 12px;
-
-    border-bottom: 1px solid #ddd;
-}
-
-.inventory-item:last-child {
-
-    border-bottom: none;
-}
-
-.inventory-item button {
-
-    background: #333;
-
-    color: white;
-
-    border: 0;
-
-    padding: 8px 12px;
-
-    border-radius: 5px;
-}
-
-
-/* LOGIN */
-
-.login-box {
-
-    background: white;
-
-    border: 1px solid #ccc;
-
+    border: 1px solid #aaa;
     padding: 25px;
-
-    border-radius: 8px;
-
     text-align: center;
+    color: #777;
 }
 
-.login-box a {
+/* FOOTER */
 
-    display: inline-block;
+footer {
+    max-width: 1000px;
+    margin: 40px auto 0;
+    padding: 15px 10px;
+    border-top: 1px solid #aaa;
+    color: #777;
+    font-size: 12px;
+}
 
-    margin-top: 10px;
-
-    background: #1683ff;
-
-    color: white;
-
+footer a {
+    color: #1683c5;
     text-decoration: none;
-
-    padding: 10px 18px;
-
-    border-radius: 5px;
 }
-
 
 /* MOBILE */
 
-@media(max-width:500px) {
+@media (max-width: 800px) {
 
-    .header {
+    .catalog {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
+}
+
+@media (max-width: 500px) {
+
+    .logo {
+        text-align: center;
+    }
+
+    nav a {
+        padding: 8px 9px;
+        font-size: 12px;
+    }
+
+    .catalog {
+        grid-template-columns: 1fr;
+    }
+
+    .search-row {
         flex-direction: column;
-
-    }
-
-    .items {
-
-        grid-template-columns:
-            repeat(2, 1fr);
-
-        gap: 10px;
-    }
-
-    .item {
-
-        padding: 8px;
-
-    }
-
-    .preview {
-
-        height: 140px;
-
     }
 
 }
@@ -498,7 +333,6 @@ h1 {
 
 </head>
 
-
 <body>
 
 
@@ -506,885 +340,739 @@ h1 {
 
 <header>
 
-<div class="header">
+    <div class="header-inner">
 
-<div class="logo">
+        <div class="logo">
+            MTB REVIVALS
+        </div>
 
-MTB REVIVALS
+        <nav>
 
-</div>
+            <a href="index.html">
+                Home
+            </a>
 
-<div class="user">
+            <a href="login.html">
+                Account
+            </a>
 
-👤
+            <a href="avatar.html">
+                Avatar
+            </a>
 
-<span id="username">
-Guest
-</span>
+            <a href="accessories.html">
+                Accessories
+            </a>
 
-</div>
+            <a href="clothes.html" class="active">
+                Clothes
+            </a>
 
-</div>
+            <a href="inventory.html">
+                Inventory
+            </a>
+
+            <a href="games.html">
+                Games
+            </a>
+
+            <a href="news.html">
+                News
+            </a>
+
+        </nav>
+
+    </div>
 
 </header>
-
-
-<!-- NAVIGATION -->
-
-<nav>
-
-<a href="index.html">
-Home
-</a>
-
-<a href="login.html">
-Account
-</a>
-
-<a href="avatar.html">
-Avatar
-</a>
-
-<a href="accessories.html">
-Accessories
-</a>
-
-<a href="clothes.html">
-Clothes
-</a>
-
-<a href="inventory.html">
-Inventory
-</a>
-
-<a href="games.html">
-Games
-</a>
-
-<a href="news.html">
-News
-</a>
-
-</nav>
 
 
 <div class="container">
 
 
-<!-- LOGIN WARNING -->
+    <div class="page-title">
+        Clothes
+    </div>
 
-<div
-id="loginWarning"
-class="login-box"
-style="display:none;"
->
 
-<h2>
+    <!-- SEARCH -->
 
-🔐 Login Required
+    <div class="search-box">
 
-</h2>
+        <div class="search-row">
 
-<p>
+            <input
+                id="search"
+                class="search"
+                type="text"
+                placeholder="Search clothes..."
+                onkeyup="searchItems()"
+            >
 
-Login or create an account to collect
-clothing.
+            <button onclick="searchItems()">
+                Search
+            </button>
 
-</p>
+        </div>
 
-<a href="login.html">
+    </div>
 
-Login / Sign Up
 
-</a>
+    <!-- CATEGORIES -->
+
+    <div class="categories">
+
+        <strong>Category:</strong>
+
+        <button
+            class="gray"
+            onclick="filterItems('all')">
+
+            All
+
+        </button>
+
+        <button
+            class="gray"
+            onclick="filterItems('shirt')">
+
+            Shirts
+
+        </button>
+
+        <button
+            class="gray"
+            onclick="filterItems('pants')">
+
+            Pants
+
+        </button>
+
+    </div>
+
+
+    <div id="message"></div>
+
+
+    <!-- CATALOG -->
+
+    <div class="section">
+
+        <div class="section-title">
+            Catalog
+        </div>
+
+
+        <div class="catalog" id="catalog">
+
+
+            <!-- BLUE SHIRT -->
+
+            <div
+                class="item"
+                data-type="shirt"
+                data-name="Classic Blue Shirt">
+
+                <div class="item-image">
+
+                    <div class="shirt">
+
+                        <div
+                            class="shirt-body"
+                            style="background:#1683ff;">
+                        </div>
+
+                        <div
+                            class="sleeve left"
+                            style="background:#1683ff;">
+                        </div>
+
+                        <div
+                            class="sleeve right"
+                            style="background:#1683ff;">
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <h3>
+                    Classic Blue Shirt
+                </h3>
+
+                <div class="creator">
+                    By MTB Studios
+                </div>
+
+                <div class="price">
+                    Free
+                </div>
+
+                <button
+                    onclick="addItem('Classic Blue Shirt','Shirt')">
+
+                    Add to Inventory
+
+                </button>
+
+            </div>
+
+
+            <!-- RED SHIRT -->
+
+            <div
+                class="item"
+                data-type="shirt"
+                data-name="Classic Red Shirt">
+
+                <div class="item-image">
+
+                    <div class="shirt">
+
+                        <div
+                            class="shirt-body"
+                            style="background:#e53935;">
+                        </div>
+
+                        <div
+                            class="sleeve left"
+                            style="background:#e53935;">
+                        </div>
+
+                        <div
+                            class="sleeve right"
+                            style="background:#e53935;">
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <h3>
+                    Classic Red Shirt
+                </h3>
+
+                <div class="creator">
+                    By MTB Studios
+                </div>
+
+                <div class="price">
+                    10 Coins
+                </div>
+
+                <button
+                    onclick="addItem('Classic Red Shirt','Shirt')">
+
+                    Add to Inventory
+
+                </button>
+
+            </div>
+
+
+            <!-- GREEN SHIRT -->
+
+            <div
+                class="item"
+                data-type="shirt"
+                data-name="Classic Green Shirt">
+
+                <div class="item-image">
+
+                    <div class="shirt">
+
+                        <div
+                            class="shirt-body"
+                            style="background:#22aa55;">
+                        </div>
+
+                        <div
+                            class="sleeve left"
+                            style="background:#22aa55;">
+                        </div>
+
+                        <div
+                            class="sleeve right"
+                            style="background:#22aa55;">
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <h3>
+                    Classic Green Shirt
+                </h3>
+
+                <div class="creator">
+                    By Builder
+                </div>
+
+                <div class="price">
+                    15 Coins
+                </div>
+
+                <button
+                    onclick="addItem('Classic Green Shirt','Shirt')">
+
+                    Add to Inventory
+
+                </button>
+
+            </div>
+
+
+            <!-- BLACK SHIRT -->
+
+            <div
+                class="item"
+                data-type="shirt"
+                data-name="Classic Black Shirt">
+
+                <div class="item-image">
+
+                    <div class="shirt">
+
+                        <div
+                            class="shirt-body"
+                            style="background:#222;">
+                        </div>
+
+                        <div
+                            class="sleeve left"
+                            style="background:#222;">
+                        </div>
+
+                        <div
+                            class="sleeve right"
+                            style="background:#222;">
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <h3>
+                    Classic Black Shirt
+                </h3>
+
+                <div class="creator">
+                    By Player
+                </div>
+
+                <div class="price">
+                    20 Coins
+                </div>
+
+                <button
+                    onclick="addItem('Classic Black Shirt','Shirt')">
+
+                    Add to Inventory
+
+                </button>
+
+            </div>
+
+
+            <!-- BLACK PANTS -->
+
+            <div
+                class="item"
+                data-type="pants"
+                data-name="Classic Black Pants">
+
+                <div class="item-image">
+
+                    <div class="pants">
+
+                        <div
+                            class="pant left"
+                            style="background:#222;">
+                        </div>
+
+                        <div
+                            class="pant right"
+                            style="background:#222;">
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <h3>
+                    Classic Black Pants
+                </h3>
+
+                <div class="creator">
+                    By MTB Studios
+                </div>
+
+                <div class="price">
+                    Free
+                </div>
+
+                <button
+                    onclick="addItem('Classic Black Pants','Pants')">
+
+                    Add to Inventory
+
+                </button>
+
+            </div>
+
+
+            <!-- BLUE PANTS -->
+
+            <div
+                class="item"
+                data-type="pants"
+                data-name="Classic Blue Pants">
+
+                <div class="item-image">
+
+                    <div class="pants">
+
+                        <div
+                            class="pant left"
+                            style="background:#1683ff;">
+                        </div>
+
+                        <div
+                            class="pant right"
+                            style="background:#1683ff;">
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <h3>
+                    Classic Blue Pants
+                </h3>
+
+                <div class="creator">
+                    By Builder
+                </div>
+
+                <div class="price">
+                    10 Coins
+                </div>
+
+                <button
+                    onclick="addItem('Classic Blue Pants','Pants')">
+
+                    Add to Inventory
+
+                </button>
+
+            </div>
+
+
+            <!-- GRAY PANTS -->
+
+            <div
+                class="item"
+                data-type="pants"
+                data-name="Classic Gray Pants">
+
+                <div class="item-image">
+
+                    <div class="pants">
+
+                        <div
+                            class="pant left"
+                            style="background:#777;">
+                        </div>
+
+                        <div
+                            class="pant right"
+                            style="background:#777;">
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <h3>
+                    Classic Gray Pants
+                </h3>
+
+                <div class="creator">
+                    By Player
+                </div>
+
+                <div class="price">
+                    15 Coins
+                </div>
+
+                <button
+                    onclick="addItem('Classic Gray Pants','Pants')">
+
+                    Add to Inventory
+
+                </button>
+
+            </div>
+
+
+            <!-- BROWN PANTS -->
+
+            <div
+                class="item"
+                data-type="pants"
+                data-name="Classic Brown Pants">
+
+                <div class="item-image">
+
+                    <div class="pants">
+
+                        <div
+                            class="pant left"
+                            style="background:#8b5a2b;">
+                        </div>
+
+                        <div
+                            class="pant right"
+                            style="background:#8b5a2b;">
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <h3>
+                    Classic Brown Pants
+                </h3>
+
+                <div class="creator">
+                    By Builder
+                </div>
+
+                <div class="price">
+                    15 Coins
+                </div>
+
+                <button
+                    onclick="addItem('Classic Brown Pants','Pants')">
+
+                    Add to Inventory
+
+                </button>
+
+            </div>
+
+
+        </div>
+
+
+        <div id="noResults">
+            No clothes found.
+        </div>
+
+    </div>
 
 </div>
 
 
-<!-- CLOTHING PAGE -->
+<footer>
 
-<div
-id="clothesPage"
-style="display:none;"
->
+    MTB REVIVALS © 2026
 
-<h1>
+    &nbsp; | &nbsp;
 
-👕 Classic Clothes
+    <a href="index.html">
+        Home
+    </a>
 
-</h1>
+    &nbsp; | &nbsp;
 
-<p>
+    <a href="inventory.html">
+        Inventory
+    </a>
 
-All MTB REVIVALS clothing is FREE.
-
-</p>
-
-
-<!-- SEARCH -->
-
-<input
-id="search"
-class="search"
-type="text"
-placeholder="🔍 Search clothes..."
->
-
-
-<!-- CATEGORIES -->
-
-<div class="categories">
-
-<button
-class="active"
-onclick="filterItems('All', this)"
->
-
-All
-
-</button>
-
-
-<button
-onclick="filterItems('Shirt', this)"
->
-
-Shirts
-
-</button>
-
-
-<button
-onclick="filterItems('Pants', this)"
->
-
-Pants
-
-</button>
-
-</div>
-
-
-<!-- ITEMS -->
-
-<div
-id="items"
-class="items"
-></div>
-
-
-<!-- INVENTORY -->
-
-<div class="inventory">
-
-<h2>
-
-📦 My Clothes
-
-</h2>
-
-<div id="inventory">
-
-<p>
-
-You don't own any clothing yet.
-
-</p>
-
-</div>
-
-</div>
-
-
-</div>
-
-</div>
+</footer>
 
 
 <script>
 
-/*
-==================================================
-MTB REVIVALS CLOTHING SYSTEM
-==================================================
+/* ADD ITEM */
 
-These are original classic-style clothing
-concepts.
+function addItem(name, type) {
 
-Replace previews with artwork you created or
-have permission to use.
+    let inventory =
+        JSON.parse(
+            localStorage.getItem("mtbInventory")
+        ) || [];
 
-==================================================
-*/
 
+    /* Prevent duplicates */
 
-/* CLOTHING DATABASE */
+    let alreadyOwned =
+        inventory.some(function(item) {
 
-const items = [
-
-{
-    id: 201,
-
-    name: "Classic Red Shirt",
-
-    type: "Shirt",
-
-    color: "red"
-},
-
-{
-    id: 202,
-
-    name: "Classic Blue Shirt",
-
-    type: "Shirt",
-
-    color: "blue"
-},
-
-{
-    id: 203,
-
-    name: "Classic Green Shirt",
-
-    type: "Shirt",
-
-    color: "green"
-},
-
-{
-    id: 204,
-
-    name: "Classic Black Shirt",
-
-    type: "Shirt",
-
-    color: "black"
-},
-
-{
-    id: 205,
-
-    name: "Classic White Shirt",
-
-    type: "Shirt",
-
-    color: "white"
-},
-
-{
-    id: 206,
-
-    name: "Classic Gold Shirt",
-
-    type: "Shirt",
-
-    color: "yellow"
-},
-
-{
-    id: 207,
-
-    name: "Classic Blue Jeans",
-
-    type: "Pants",
-
-    color: "denim"
-},
-
-{
-    id: 208,
-
-    name: "Dark Classic Jeans",
-
-    type: "Pants",
-
-    color: "darkdenim"
-},
-
-{
-    id: 209,
-
-    name: "Classic Black Pants",
-
-    type: "Pants",
-
-    color: "black"
-},
-
-{
-    id: 210,
-
-    name: "Classic White Pants",
-
-    type: "Pants",
-
-    color: "white"
-}
-
-];
-
-
-/* CURRENT USER */
-
-const username =
-localStorage.getItem(
-    "mtbLoggedIn"
-);
-
-
-/* GET ACCOUNTS */
-
-function getAccounts() {
-
-    return JSON.parse(
-        localStorage.getItem(
-            "mtbAccounts"
-        )
-    ) || {};
-
-}
-
-
-/* SAVE ACCOUNTS */
-
-function saveAccounts(accounts) {
-
-    localStorage.setItem(
-        "mtbAccounts",
-
-        JSON.stringify(accounts)
-
-    );
-
-}
-
-
-/* CHECK LOGIN */
-
-if(!username) {
-
-    document.getElementById(
-        "loginWarning"
-    ).style.display = "block";
-
-} else {
-
-    document.getElementById(
-        "clothesPage"
-    ).style.display = "block";
-
-    loadUser();
-
-}
-
-
-/* LOAD USER */
-
-function loadUser() {
-
-    const accounts =
-        getAccounts();
-
-    const account =
-        accounts[username];
-
-
-    if(!account) {
-
-        localStorage.removeItem(
-            "mtbLoggedIn"
-        );
-
-        location.reload();
-
-        return;
-
-    }
-
-
-    document.getElementById(
-        "username"
-    ).textContent =
-        account.username;
-
-
-    if(!account.inventory) {
-
-        account.inventory = [];
-
-    }
-
-
-    saveAccounts(accounts);
-
-
-    displayItems();
-
-    displayInventory();
-
-}
-
-
-/* CATEGORY */
-
-let currentCategory =
-    "All";
-
-
-function filterItems(
-    category,
-    button
-) {
-
-    currentCategory =
-        category;
-
-
-    document
-        .querySelectorAll(
-            ".categories button"
-        )
-        .forEach(
-            btn =>
-                btn.classList.remove(
-                    "active"
-                )
-        );
-
-
-    button.classList.add(
-        "active"
-    );
-
-
-    displayItems();
-
-}
-
-
-/* DISPLAY ITEMS */
-
-function displayItems() {
-
-    const container =
-        document.getElementById(
-            "items"
-        );
-
-
-    const search =
-        document.getElementById(
-            "search"
-        )
-        .value
-        .toLowerCase();
-
-
-    const accounts =
-        getAccounts();
-
-    const account =
-        accounts[username];
-
-
-    container.innerHTML = "";
-
-
-    const filtered =
-        items.filter(item => {
-
-            const categoryMatch =
-                currentCategory === "All" ||
-                item.type === currentCategory;
-
-
-            const searchMatch =
-                item.name
-                    .toLowerCase()
-                    .includes(search);
-
-
-            return (
-                categoryMatch &&
-                searchMatch
-            );
+            return item.name === name;
 
         });
 
 
-    filtered.forEach(item => {
+    if (alreadyOwned) {
 
-        const owned =
-            account.inventory
-                .includes(item.id);
-
-
-        const div =
-            document.createElement(
-                "div"
-            );
-
-
-        div.className =
-            "item";
-
-
-        let preview = "";
-
-
-        /* SHIRT PREVIEW */
-
-        if(item.type === "Shirt") {
-
-            preview = `
-
-                <div
-                    class="shirt
-                    ${item.color}"
-                >
-                </div>
-
-            `;
-
-        }
-
-
-        /* PANTS PREVIEW */
-
-        if(item.type === "Pants") {
-
-            preview = `
-
-                <div class="pants">
-
-                    <div
-                        class="pants-left
-                        ${item.color}"
-                    >
-                    </div>
-
-                    <div
-                        class="pants-right
-                        ${item.color}"
-                    >
-                    </div>
-
-                </div>
-
-            `;
-
-        }
-
-
-        div.innerHTML = `
-
-            <div class="preview">
-
-                ${preview}
-
-            </div>
-
-
-            <h3>
-
-                ${item.name}
-
-            </h3>
-
-
-            <div class="type">
-
-                ${item.type}
-
-            </div>
-
-
-            <p class="free">
-
-                FREE
-
-            </p>
-
-
-            <button
-
-                onclick="
-                    claimItem(
-                        ${item.id}
-                    )
-                "
-
-                ${owned ? "disabled" : ""}
-
-            >
-
-                ${
-                    owned
-                    ? "✓ Owned"
-                    : "🎁 Get Item"
-                }
-
-            </button>
-
-        `;
-
-
-        container.appendChild(
-            div
+        showMessage(
+            name + " is already in your inventory."
         );
+
+        return;
+
+    }
+
+
+    inventory.push({
+
+        name: name,
+        type: type,
+        added: new Date().toISOString()
 
     });
 
-}
 
-
-/* CLAIM ITEM */
-
-function claimItem(id) {
-
-    const accounts =
-        getAccounts();
-
-
-    const account =
-        accounts[username];
-
-
-    if(!account) {
-
-        alert(
-            "Please login first."
-        );
-
-        return;
-
-    }
-
-
-    if(
-        account.inventory
-            .includes(id)
-    ) {
-
-        alert(
-            "You already own this item!"
-        );
-
-        return;
-
-    }
-
-
-    account.inventory.push(
-        id
+    localStorage.setItem(
+        "mtbInventory",
+        JSON.stringify(inventory)
     );
 
 
-    saveAccounts(
-        accounts
-    );
-
-
-    const item =
-        items.find(
-            i => i.id === id
-        );
-
-
-    alert(
-        item.name +
-        " was added to your inventory!"
-    );
-
-
-    displayItems();
-
-    displayInventory();
-
-}
-
-
-/* INVENTORY */
-
-function displayInventory() {
-
-    const container =
-        document.getElementById(
-            "inventory"
-        );
-
-
-    const accounts =
-        getAccounts();
-
-
-    const account =
-        accounts[username];
-
-
-    container.innerHTML = "";
-
-
-    if(
-        !account.inventory ||
-        account.inventory.length === 0
-    ) {
-
-        container.innerHTML =
-
-            "<p>You don't own any clothing yet.</p>";
-
-        return;
-
-    }
-
-
-    account.inventory.forEach(
-        id => {
-
-            const item =
-                items.find(
-                    i => i.id === id
-                );
-
-
-            if(!item) return;
-
-
-            const row =
-                document.createElement(
-                    "div"
-                );
-
-
-            row.className =
-                "inventory-item";
-
-
-            row.innerHTML = `
-
-                <span>
-
-                    ${
-                        item.type === "Shirt"
-                        ? "👕"
-                        : "👖"
-                    }
-
-                    ${item.name}
-
-                </span>
-
-
-                <button
-                    onclick="
-                        equipClothing(
-                            ${item.id}
-                        )
-                    "
-                >
-
-                    Equip
-
-                </button>
-
-            `;
-
-
-            container.appendChild(
-                row
-            );
-
-        }
+    showMessage(
+        name + " was added to your inventory!"
     );
 
 }
 
 
-/* EQUIP CLOTHING */
+/* MESSAGE */
 
-function equipClothing(id) {
+function showMessage(text) {
 
-    const accounts =
-        getAccounts();
+    const message =
+        document.getElementById("message");
 
+    message.textContent = text;
 
-    const account =
-        accounts[username];
-
-
-    if(
-        !account.inventory
-            .includes(id)
-    ) {
-
-        return;
-
-    }
+    message.style.display = "block";
 
 
-    const item =
-        items.find(
-            i => i.id === id
-        );
+    setTimeout(function() {
 
+        message.style.display = "none";
 
-    if(!item) return;
-
-
-    /*
-        Shirts and pants are stored
-        separately so players can wear
-        one shirt and one pair of pants.
-    */
-
-    if(
-        item.type === "Shirt"
-    ) {
-
-        account.equippedShirt =
-            id;
-
-    }
-
-
-    if(
-        item.type === "Pants"
-    ) {
-
-        account.equippedPants =
-            id;
-
-    }
-
-
-    saveAccounts(
-        accounts
-    );
-
-
-    alert(
-        item.name +
-        " equipped!"
-    );
+    }, 3000);
 
 }
 
 
 /* SEARCH */
 
-document
-    .getElementById(
-        "search"
-    )
-    .addEventListener(
-        "input",
-        displayItems
-    );
+function searchItems() {
+
+    const search =
+        document
+        .getElementById("search")
+        .value
+        .toLowerCase()
+        .trim();
+
+
+    const items =
+        document.querySelectorAll(".item");
+
+
+    let found = 0;
+
+
+    items.forEach(function(item) {
+
+        const name =
+            item
+            .getAttribute("data-name")
+            .toLowerCase();
+
+
+        if (name.includes(search)) {
+
+            item.style.display = "";
+
+            found++;
+
+        } else {
+
+            item.style.display = "none";
+
+        }
+
+    });
+
+
+    document
+        .getElementById("noResults")
+        .style.display =
+        found === 0
+        ? "block"
+        : "none";
+
+}
+
+
+/* CATEGORY */
+
+function filterItems(type) {
+
+    const items =
+        document.querySelectorAll(".item");
+
+
+    let found = 0;
+
+
+    items.forEach(function(item) {
+
+        const itemType =
+            item.getAttribute("data-type");
+
+
+        if (
+            type === "all" ||
+            itemType === type
+        ) {
+
+            item.style.display = "";
+
+            found++;
+
+        } else {
+
+            item.style.display = "none";
+
+        }
+
+    });
+
+
+    document
+        .getElementById("noResults")
+        .style.display =
+        found === 0
+        ? "block"
+        : "none";
+
+
+    document
+        .getElementById("search")
+        .value = "";
+
+}
 
 </script>
 
 </body>
 
 </html>
+```
