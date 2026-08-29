@@ -23,7 +23,9 @@ body {
     color: #333;
 }
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 
 header {
     background: linear-gradient(#f7f7f7, #d1d1d1);
@@ -68,8 +70,9 @@ nav a.active {
     color: #1683c5;
 }
 
-
-/* MAIN */
+/* =========================
+   MAIN
+========================= */
 
 .container {
     max-width: 1000px;
@@ -87,8 +90,9 @@ nav a.active {
     text-shadow: 1px 1px #222;
 }
 
-
-/* AVATAR LAYOUT */
+/* =========================
+   AVATAR AREA
+========================= */
 
 .avatar-area {
     display: grid;
@@ -96,9 +100,6 @@ nav a.active {
     gap: 15px;
     margin-top: 15px;
 }
-
-
-/* BOX */
 
 .box {
     background: white;
@@ -118,8 +119,9 @@ nav a.active {
     padding: 15px;
 }
 
-
-/* CHARACTER STAGE */
+/* =========================
+   CHARACTER STAGE
+========================= */
 
 .character-stage {
     height: 430px;
@@ -129,9 +131,6 @@ nav a.active {
     position: relative;
     overflow: hidden;
 }
-
-
-/* FLOOR */
 
 .floor {
     position: absolute;
@@ -143,8 +142,9 @@ nav a.active {
     border: 1px solid #777;
 }
 
-
-/* AVATAR */
+/* =========================
+   AVATAR
+========================= */
 
 .avatar {
     width: 190px;
@@ -155,8 +155,9 @@ nav a.active {
     transform: translateX(-50%);
 }
 
-
-/* HEAD */
+/* =========================
+   HEAD
+========================= */
 
 .head {
     position: absolute;
@@ -168,9 +169,6 @@ nav a.active {
     border: 3px solid #555;
     z-index: 5;
 }
-
-
-/* FACE */
 
 .face-eye {
     position: absolute;
@@ -197,8 +195,9 @@ nav a.active {
     bottom: 18px;
 }
 
-
-/* BODY */
+/* =========================
+   BODY
+========================= */
 
 .body {
     position: absolute;
@@ -211,8 +210,9 @@ nav a.active {
     z-index: 3;
 }
 
-
-/* ARMS */
+/* =========================
+   ARMS
+========================= */
 
 .arm {
     position: absolute;
@@ -232,8 +232,9 @@ nav a.active {
     right: 7px;
 }
 
-
-/* LEGS */
+/* =========================
+   NORMAL LEGS
+========================= */
 
 .leg {
     position: absolute;
@@ -253,8 +254,9 @@ nav a.active {
     right: 51px;
 }
 
-
-/* FEET */
+/* =========================
+   FEET
+========================= */
 
 .foot {
     position: absolute;
@@ -274,8 +276,9 @@ nav a.active {
     right: 43px;
 }
 
-
-/* FROZEN HORNS */
+/* =========================
+   FROZEN HORNS
+========================= */
 
 .frozen-horns {
     position: absolute;
@@ -322,8 +325,9 @@ nav a.active {
     transform: rotate(38deg) scaleX(-1);
 }
 
-
-/* HEADLESS */
+/* =========================
+   HEADLESS
+========================= */
 
 .avatar.headless .head {
     display: none;
@@ -333,27 +337,123 @@ nav a.active {
     top: 15px;
 }
 
+/* =========================
+   KORBLOX-INSPIRED LEG
+========================= */
 
-/* SHADOW LEG */
+/*
+   Original MTB REVIVALS design.
+   Dark fantasy style with a glowing
+   armored lower leg.
+*/
 
-.avatar.shadow-leg .leg.right {
-    background: linear-gradient(
-        #292929,
-        #050505
-    );
+.avatar.korblox .leg.right {
+    width: 42px;
+    height: 125px;
+
+    background:
+        linear-gradient(
+            160deg,
+            #252525 0%,
+            #111 45%,
+            #050505 100%
+        );
+
+    border: 3px solid #171717;
+
+    transform:
+        skew(-7deg);
+
+    box-shadow:
+        inset 5px 0 0 #3b3b3b,
+        inset -5px 0 0 #000;
+}
+
+
+/* ARMOR PLATES */
+
+.avatar.korblox .leg.right::before {
+    content: "";
+
+    position: absolute;
+
+    left: 5px;
+    top: 12px;
+
+    width: 25px;
+    height: 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #555,
+            #151515
+        );
+
+    border: 2px solid #777;
+
+    transform:
+        skew(7deg)
+        rotate(8deg);
+
+    box-shadow:
+        0 0 5px #777;
+}
+
+
+/* DARK CRYSTAL */
+
+.avatar.korblox .leg.right::after {
+    content: "";
+
+    position: absolute;
+
+    left: 8px;
+    bottom: 12px;
+
+    width: 19px;
+    height: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #8d8d8d,
+            #292929,
+            #050505
+        );
+
+    border: 2px solid #aaa;
+
+    clip-path:
+        polygon(
+            50% 0%,
+            100% 35%,
+            75% 100%,
+            25% 100%,
+            0% 35%
+        );
+}
+
+
+/* KORBLOX FOOT */
+
+.avatar.korblox .foot.right {
+    background:
+        linear-gradient(
+            #191919,
+            #030303
+        );
 
     border-color: #111;
 
-    transform: skew(-8deg);
-}
-
-.avatar.shadow-leg .foot.right {
-    background: #050505;
-    border-color: #111;
+    transform:
+        skew(-7deg);
 }
 
 
-/* SHIRT COLORS */
+/* =========================
+   SHIRT COLORS
+========================= */
 
 .avatar.red-shirt .body,
 .avatar.red-shirt .arm {
@@ -370,8 +470,9 @@ nav a.active {
     background: #333;
 }
 
-
-/* PANTS COLORS */
+/* =========================
+   PANTS COLORS
+========================= */
 
 .avatar.blue-pants .leg {
     background: #174f9c;
@@ -385,19 +486,22 @@ nav a.active {
     background: #795548;
 }
 
-
-/* CONTROLS */
+/* =========================
+   CONTROLS
+========================= */
 
 .controls {
-    margin-top: 12px;
+    margin-top: 5px;
 }
 
 .control {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     border-bottom: 1px solid #ddd;
-    padding: 10px 0;
+
+    padding: 12px 0;
 }
 
 .control:last-child {
@@ -406,46 +510,82 @@ nav a.active {
 
 .control-name {
     font-weight: bold;
+    margin-bottom: 3px;
+}
+
+.control small {
+    color: #777;
 }
 
 .control button {
     border: 1px solid #555;
     border-radius: 3px;
-    background: linear-gradient(#65b5e8, #1683c5);
+
+    background:
+        linear-gradient(
+            #65b5e8,
+            #1683c5
+        );
+
     color: white;
-    padding: 7px 12px;
+
+    padding: 8px 12px;
+
     font-weight: bold;
+
     cursor: pointer;
+
+    text-shadow:
+        1px 1px #555;
 }
 
 .control button:hover {
-    background: linear-gradient(#79c5ed, #1683c5);
+    background:
+        linear-gradient(
+            #79c5ed,
+            #1683c5
+        );
 }
 
 .control button.remove {
-    background: linear-gradient(#e57373, #b52b2b);
+    background:
+        linear-gradient(
+            #e57373,
+            #b52b2b
+        );
 }
 
-
-/* STATUS */
+/* =========================
+   STATUS
+========================= */
 
 .status {
     margin-top: 15px;
+
     background: white;
+
     border: 1px solid #aaa;
+
     padding: 10px;
+
     color: #1683c5;
+
     font-weight: bold;
 }
 
-
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 
 footer {
     max-width: 1000px;
+
     margin: 40px auto 0;
+
     padding: 15px 10px;
+
     border-top: 1px solid #aaa;
+
     color: #777;
 }
 
@@ -454,8 +594,9 @@ footer a {
     text-decoration: none;
 }
 
-
-/* MOBILE */
+/* =========================
+   MOBILE
+========================= */
 
 @media (max-width: 700px) {
 
@@ -486,10 +627,13 @@ footer a {
 
 </head>
 
+
 <body>
 
 
-<!-- HEADER -->
+<!-- =========================
+     HEADER
+========================= -->
 
 <header>
 
@@ -540,7 +684,9 @@ footer a {
 </header>
 
 
-<!-- MAIN -->
+<!-- =========================
+     MAIN
+========================= -->
 
 <div class="container">
 
@@ -552,7 +698,9 @@ footer a {
     <div class="avatar-area">
 
 
-        <!-- CHARACTER -->
+        <!-- =====================
+             CHARACTER PREVIEW
+        ====================== -->
 
         <div class="box">
 
@@ -564,12 +712,13 @@ footer a {
 
                 <div class="character-stage">
 
+
                     <div
                         class="avatar"
                         id="avatar">
 
 
-                        <!-- HORNS -->
+                        <!-- FROZEN HORNS -->
 
                         <div
                             class="frozen-horns"
@@ -587,11 +736,17 @@ footer a {
 
                         <div class="head">
 
-                            <div class="face-eye left"></div>
+                            <div
+                                class="face-eye left">
+                            </div>
 
-                            <div class="face-eye right"></div>
+                            <div
+                                class="face-eye right">
+                            </div>
 
-                            <div class="face-mouth"></div>
+                            <div
+                                class="face-mouth">
+                            </div>
 
                         </div>
 
@@ -633,7 +788,9 @@ footer a {
         </div>
 
 
-        <!-- EDITOR -->
+        <!-- =====================
+             CHARACTER EDITOR
+        ====================== -->
 
         <div class="box">
 
@@ -653,7 +810,7 @@ footer a {
                         <div>
 
                             <div class="control-name">
-                                Frozen Horns
+                                Frozen Horns of the Frigid Planes
                             </div>
 
                             <small>
@@ -673,25 +830,25 @@ footer a {
                     </div>
 
 
-                    <!-- SHADOW LEG -->
+                    <!-- KORBLOX STYLE LEG -->
 
                     <div class="control">
 
                         <div>
 
                             <div class="control-name">
-                                Shadow Leg
+                                Korblox Deathspeaker Leg
                             </div>
 
                             <small>
-                                Free leg accessory
+                                Free MTB fantasy leg
                             </small>
 
                         </div>
 
                         <button
-                            id="shadowButton"
-                            onclick="toggleShadowLeg()">
+                            id="korbloxButton"
+                            onclick="toggleKorblox()">
 
                             Equip
 
@@ -737,7 +894,7 @@ footer a {
                                 Shirt
                             </div>
 
-                            <small>
+                            <small id="shirtName">
                                 Classic Blue Shirt
                             </small>
 
@@ -763,7 +920,7 @@ footer a {
                                 Pants
                             </div>
 
-                            <small>
+                            <small id="pantsName">
                                 Classic Black Pants
                             </small>
 
@@ -815,6 +972,8 @@ footer a {
     </div>
 
 
+    <!-- STATUS -->
+
     <div
         class="status"
         id="status">
@@ -826,7 +985,9 @@ footer a {
 </div>
 
 
-<!-- FOOTER -->
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
@@ -850,15 +1011,24 @@ footer a {
 <script>
 
 /*
-    MTB REVIVALS AVATAR SYSTEM
+=================================================
+MTB REVIVALS AVATAR SYSTEM
+=================================================
 
-    Saves avatar settings in:
+Saved in localStorage:
 
-        mtbAvatar
+    mtbAvatar
 
-    This is a browser prototype.
+Everything is currently client-side.
+
+This is a prototype and should not be used
+for storing sensitive account information.
 */
 
+
+/* =========================
+   LOAD AVATAR
+========================= */
 
 let avatarData =
     JSON.parse(
@@ -867,7 +1037,7 @@ let avatarData =
 
         horns: false,
 
-        shadowLeg: false,
+        korblox: false,
 
         headless: false,
 
@@ -878,7 +1048,9 @@ let avatarData =
     };
 
 
-/* SAVE */
+/* =========================
+   SAVE AVATAR
+========================= */
 
 function saveAvatar() {
 
@@ -890,9 +1062,11 @@ function saveAvatar() {
 }
 
 
-/* STATUS */
+/* =========================
+   STATUS MESSAGE
+========================= */
 
-function status(text) {
+function setStatus(text) {
 
     document
         .getElementById("status")
@@ -901,7 +1075,9 @@ function status(text) {
 }
 
 
-/* UPDATE */
+/* =========================
+   UPDATE AVATAR
+========================= */
 
 function updateAvatar() {
 
@@ -910,23 +1086,32 @@ function updateAvatar() {
 
 
     /*
-        Clear old classes
+        Remove old classes
     */
 
     avatar.classList.remove(
+
         "headless",
-        "shadow-leg",
+
+        "korblox",
+
         "red-shirt",
+
         "green-shirt",
+
         "black-shirt",
+
         "blue-pants",
+
         "gray-pants",
+
         "brown-pants"
+
     );
 
 
     /*
-        Headless
+        HEADLESS
     */
 
     if (avatarData.headless) {
@@ -939,20 +1124,20 @@ function updateAvatar() {
 
 
     /*
-        Shadow leg
+        KORBLOX STYLE LEG
     */
 
-    if (avatarData.shadowLeg) {
+    if (avatarData.korblox) {
 
         avatar.classList.add(
-            "shadow-leg"
+            "korblox"
         );
 
     }
 
 
     /*
-        Frozen horns
+        FROZEN HORNS
     */
 
     document
@@ -964,10 +1149,12 @@ function updateAvatar() {
 
 
     /*
-        Shirt
+        SHIRT
     */
 
-    if (avatarData.shirt === "red") {
+    if (
+        avatarData.shirt === "red"
+    ) {
 
         avatar.classList.add(
             "red-shirt"
@@ -975,7 +1162,9 @@ function updateAvatar() {
 
     }
 
-    else if (avatarData.shirt === "green") {
+    else if (
+        avatarData.shirt === "green"
+    ) {
 
         avatar.classList.add(
             "green-shirt"
@@ -983,7 +1172,9 @@ function updateAvatar() {
 
     }
 
-    else if (avatarData.shirt === "black") {
+    else if (
+        avatarData.shirt === "black"
+    ) {
 
         avatar.classList.add(
             "black-shirt"
@@ -993,10 +1184,12 @@ function updateAvatar() {
 
 
     /*
-        Pants
+        PANTS
     */
 
-    if (avatarData.pants === "blue") {
+    if (
+        avatarData.pants === "blue"
+    ) {
 
         avatar.classList.add(
             "blue-pants"
@@ -1004,7 +1197,9 @@ function updateAvatar() {
 
     }
 
-    else if (avatarData.pants === "gray") {
+    else if (
+        avatarData.pants === "gray"
+    ) {
 
         avatar.classList.add(
             "gray-pants"
@@ -1012,7 +1207,9 @@ function updateAvatar() {
 
     }
 
-    else if (avatarData.pants === "brown") {
+    else if (
+        avatarData.pants === "brown"
+    ) {
 
         avatar.classList.add(
             "brown-pants"
@@ -1022,7 +1219,7 @@ function updateAvatar() {
 
 
     /*
-        Update buttons
+        BUTTON TEXT
     */
 
     document
@@ -1034,9 +1231,9 @@ function updateAvatar() {
 
 
     document
-        .getElementById("shadowButton")
+        .getElementById("korbloxButton")
         .textContent =
-        avatarData.shadowLeg
+        avatarData.korblox
         ? "Unequip"
         : "Equip";
 
@@ -1048,81 +1245,177 @@ function updateAvatar() {
         ? "Unequip"
         : "Equip";
 
+
+    /*
+        CLOTHING LABELS
+    */
+
+    const shirtNames = {
+
+        blue:
+            "Classic Blue Shirt",
+
+        red:
+            "Red Classic Shirt",
+
+        green:
+            "Green Classic Shirt",
+
+        black:
+            "Black Classic Shirt"
+
+    };
+
+
+    const pantsNames = {
+
+        black:
+            "Classic Black Pants",
+
+        blue:
+            "Classic Blue Pants",
+
+        gray:
+            "Gray Pants",
+
+        brown:
+            "Brown Pants"
+
+    };
+
+
+    document
+        .getElementById("shirtName")
+        .textContent =
+        shirtNames[avatarData.shirt];
+
+
+    document
+        .getElementById("pantsName")
+        .textContent =
+        pantsNames[avatarData.pants];
+
 }
 
 
-/* HORNS */
+/* =========================
+   FROZEN HORNS
+========================= */
 
 function toggleHorns() {
 
     avatarData.horns =
         !avatarData.horns;
 
-    saveAvatar();
-
-    updateAvatar();
-
-
-    status(
-        avatarData.horns
-        ? "Frozen Horns equipped!"
-        : "Frozen Horns unequipped."
-    );
-
-}
-
-
-/* SHADOW LEG */
-
-function toggleShadowLeg() {
-
-    avatarData.shadowLeg =
-        !avatarData.shadowLeg;
 
     saveAvatar();
 
     updateAvatar();
 
 
-    status(
-        avatarData.shadowLeg
-        ? "Shadow Leg equipped!"
-        : "Shadow Leg unequipped."
-    );
+    if (avatarData.horns) {
+
+        setStatus(
+            "Frozen Horns of the Frigid Planes equipped!"
+        );
+
+    }
+
+    else {
+
+        setStatus(
+            "Frozen Horns of the Frigid Planes unequipped."
+        );
+
+    }
 
 }
 
 
-/* HEADLESS */
+/* =========================
+   KORBLOX STYLE LEG
+========================= */
+
+function toggleKorblox() {
+
+    avatarData.korblox =
+        !avatarData.korblox;
+
+
+    saveAvatar();
+
+    updateAvatar();
+
+
+    if (avatarData.korblox) {
+
+        setStatus(
+            "Korblox Deathspeaker Leg equipped!"
+        );
+
+    }
+
+    else {
+
+        setStatus(
+            "Korblox Deathspeaker Leg unequipped."
+        );
+
+    }
+
+}
+
+
+/* =========================
+   HEADLESS
+========================= */
 
 function toggleHeadless() {
 
     avatarData.headless =
         !avatarData.headless;
 
+
     saveAvatar();
 
     updateAvatar();
 
 
-    status(
-        avatarData.headless
-        ? "Invisible Head equipped!"
-        : "Invisible Head unequipped."
-    );
+    if (avatarData.headless) {
+
+        setStatus(
+            "Invisible Head equipped!"
+        );
+
+    }
+
+    else {
+
+        setStatus(
+            "Invisible Head unequipped."
+        );
+
+    }
 
 }
 
 
-/* SHIRT */
+/* =========================
+   CHANGE SHIRT
+========================= */
 
 function toggleShirt() {
 
     const shirts = [
+
         "blue",
+
         "red",
+
         "green",
+
         "black"
+
     ];
 
 
@@ -1134,7 +1427,10 @@ function toggleShirt() {
 
     index++;
 
-    if (index >= shirts.length) {
+
+    if (
+        index >= shirts.length
+    ) {
 
         index = 0;
 
@@ -1150,24 +1446,29 @@ function toggleShirt() {
     updateAvatar();
 
 
-    status(
-        "Shirt changed to "
-        + avatarData.shirt
-        + "."
+    setStatus(
+        "Shirt changed."
     );
 
 }
 
 
-/* PANTS */
+/* =========================
+   CHANGE PANTS
+========================= */
 
 function togglePants() {
 
     const pants = [
+
         "black",
+
         "blue",
+
         "gray",
+
         "brown"
+
     ];
 
 
@@ -1179,7 +1480,10 @@ function togglePants() {
 
     index++;
 
-    if (index >= pants.length) {
+
+    if (
+        index >= pants.length
+    ) {
 
         index = 0;
 
@@ -1195,16 +1499,16 @@ function togglePants() {
     updateAvatar();
 
 
-    status(
-        "Pants changed to "
-        + avatarData.pants
-        + "."
+    setStatus(
+        "Pants changed."
     );
 
 }
 
 
-/* RESET */
+/* =========================
+   RESET
+========================= */
 
 function resetAvatar() {
 
@@ -1212,7 +1516,7 @@ function resetAvatar() {
 
         horns: false,
 
-        shadowLeg: false,
+        korblox: false,
 
         headless: false,
 
@@ -1228,18 +1532,21 @@ function resetAvatar() {
     updateAvatar();
 
 
-    status(
+    setStatus(
         "Avatar reset."
     );
 
 }
 
 
-/* START */
+/* =========================
+   START
+========================= */
 
 updateAvatar();
 
 </script>
+
 
 </body>
 
