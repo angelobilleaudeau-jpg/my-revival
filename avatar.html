@@ -3,7 +3,6 @@
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -70,6 +69,7 @@ nav a.active {
     color: #1683c5;
 }
 
+
 /* =========================
    MAIN
 ========================= */
@@ -89,6 +89,7 @@ nav a.active {
     font-weight: bold;
     text-shadow: 1px 1px #222;
 }
+
 
 /* =========================
    AVATAR AREA
@@ -119,41 +120,65 @@ nav a.active {
     padding: 15px;
 }
 
+
 /* =========================
    CHARACTER STAGE
 ========================= */
 
 .character-stage {
-    height: 430px;
+    height: 450px;
+
     background:
-        linear-gradient(#dce8ef, #f4f4f4);
+        linear-gradient(
+            #cfdfe8,
+            #f6f6f6
+        );
+
     border: 1px solid #aaa;
+
     position: relative;
+
     overflow: hidden;
 }
 
+
+/* FLOOR */
+
 .floor {
     position: absolute;
+
     bottom: 25px;
     left: 10%;
+
     width: 80%;
     height: 12px;
+
     background: #999;
+
     border: 1px solid #777;
+
+    box-shadow:
+        0 2px 4px #aaa;
 }
+
 
 /* =========================
    AVATAR
 ========================= */
 
 .avatar {
-    width: 190px;
-    height: 350px;
+    width: 210px;
+    height: 370px;
+
     position: absolute;
+
     left: 50%;
     bottom: 38px;
-    transform: translateX(-50%);
+
+    transform:
+        translateX(-50%);
 }
+
 
 /* =========================
    HEAD
@@ -161,20 +186,31 @@ nav a.active {
 
 .head {
     position: absolute;
+
     width: 82px;
     height: 82px;
-    left: 54px;
-    top: 5px;
+
+    left: 64px;
+    top: 35px;
+
     background: #f2c29b;
+
     border: 3px solid #555;
+
     z-index: 5;
 }
 
+
+/* FACE */
+
 .face-eye {
     position: absolute;
+
     width: 8px;
     height: 10px;
+
     background: #333;
+
     top: 29px;
 }
 
@@ -188,12 +224,16 @@ nav a.active {
 
 .face-mouth {
     position: absolute;
+
     width: 28px;
     height: 5px;
+
     background: #333;
+
     left: 24px;
     bottom: 18px;
 }
+
 
 /* =========================
    BODY
@@ -201,14 +241,20 @@ nav a.active {
 
 .body {
     position: absolute;
+
     width: 90px;
     height: 115px;
-    left: 50px;
-    top: 88px;
+
+    left: 60px;
+    top: 118px;
+
     background: #1683ff;
+
     border: 3px solid #555;
+
     z-index: 3;
 }
+
 
 /* =========================
    ARMS
@@ -216,43 +262,55 @@ nav a.active {
 
 .arm {
     position: absolute;
+
     width: 42px;
     height: 105px;
-    top: 92px;
+
+    top: 122px;
+
     background: #f2c29b;
+
     border: 3px solid #555;
+
     z-index: 2;
 }
 
 .arm.left {
-    left: 7px;
+    left: 17px;
 }
 
 .arm.right {
-    right: 7px;
+    right: 17px;
 }
 
+
 /* =========================
-   NORMAL LEGS
+   LEGS
 ========================= */
 
 .leg {
     position: absolute;
+
     width: 42px;
     height: 115px;
-    top: 201px;
+
+    top: 231px;
+
     background: #333;
+
     border: 3px solid #555;
+
     z-index: 2;
 }
 
 .leg.left {
-    left: 51px;
+    left: 61px;
 }
 
 .leg.right {
-    right: 51px;
+    right: 61px;
 }
+
 
 /* =========================
    FEET
@@ -260,70 +318,273 @@ nav a.active {
 
 .foot {
     position: absolute;
+
     width: 50px;
     height: 25px;
-    top: 312px;
+
+    top: 342px;
+
     background: #222;
+
     border: 3px solid #555;
+
     z-index: 2;
 }
 
 .foot.left {
-    left: 43px;
+    left: 53px;
 }
 
 .foot.right {
-    right: 43px;
+    right: 53px;
 }
 
-/* =========================
-   FROZEN HORNS
-========================= */
+
+/* ==================================================
+   FROZEN HORNS OF THE FRIGID PLANES
+================================================== */
 
 .frozen-horns {
+
     position: absolute;
-    width: 130px;
-    height: 105px;
-    left: 30px;
-    top: -27px;
-    z-index: 10;
+
+    width: 180px;
+    height: 155px;
+
+    left: 15px;
+    top: -15px;
+
+    z-index: 20;
+
     pointer-events: none;
+
+    filter:
+        drop-shadow(0 0 5px #8cecff)
+        drop-shadow(0 0 12px #b8f8ff);
 }
+
+
+/* =========================
+   MAIN HORNS
+========================= */
 
 .horn {
+
     position: absolute;
-    width: 31px;
-    height: 82px;
 
-    background: linear-gradient(
-        135deg,
-        #ffffff,
-        #a6f4ff,
-        #4bc9ec,
-        #257bbd
-    );
+    width: 39px;
+    height: 125px;
 
-    border: 3px solid #397a9b;
+    background:
+
+        linear-gradient(
+            115deg,
+
+            #ffffff 0%,
+            #e9fdff 18%,
+            #8deafa 45%,
+            #42bddd 70%,
+            #1e6ea8 100%
+        );
+
+    border: 3px solid #327ea4;
+
+    /*
+       Long curved crystal silhouette
+    */
 
     border-radius:
-        75% 20% 20% 20%;
+        65% 45% 25% 30%;
 
     box-shadow:
-        0 0 8px #66eaff,
-        0 0 18px #9cf5ff;
+
+        inset 7px 0 0
+        rgba(255,255,255,0.65),
+
+        inset -6px 0 0
+        rgba(15,90,130,0.35),
+
+        0 0 7px #72e9ff;
 }
+
+
+/* LEFT CURVE */
 
 .horn.left {
-    left: 13px;
-    top: 14px;
-    transform: rotate(-38deg);
+
+    left: 20px;
+    top: 5px;
+
+    transform:
+        rotate(-27deg)
+        skewY(-8deg);
 }
 
+
+/* RIGHT CURVE */
+
 .horn.right {
-    right: 13px;
-    top: 14px;
-    transform: rotate(38deg) scaleX(-1);
+
+    right: 20px;
+    top: 5px;
+
+    transform:
+        rotate(27deg)
+        scaleX(-1)
+        skewY(-8deg);
 }
+
+
+/* =========================
+   CRYSTAL FACETS
+========================= */
+
+.horn::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 8px;
+    top: 12px;
+
+    width: 15px;
+    height: 94px;
+
+    background:
+
+        linear-gradient(
+            145deg,
+
+            rgba(255,255,255,0.9),
+            rgba(255,255,255,0.15)
+        );
+
+    clip-path:
+
+        polygon(
+            50% 0%,
+            100% 28%,
+            60% 52%,
+            100% 78%,
+            45% 100%,
+            20% 55%
+        );
+}
+
+
+/* =========================
+   ICY SPIKES
+========================= */
+
+.horn::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 23px;
+    height: 38px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #9cf2ff,
+            #3caed2
+        );
+
+    border: 2px solid #438eaa;
+
+    clip-path:
+
+        polygon(
+            50% 0%,
+            100% 75%,
+            55% 62%,
+            0% 100%
+        );
+
+    top: 30px;
+    left: -17px;
+
+    transform: rotate(-15deg);
+}
+
+
+/* EXTRA ICE SPIKES */
+
+.frozen-horns .spike {
+
+    position: absolute;
+
+    width: 20px;
+    height: 34px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #8eeaff,
+            #2786b5
+        );
+
+    border: 2px solid #3b819f;
+
+    clip-path:
+
+        polygon(
+            50% 0%,
+            100% 100%,
+            50% 72%,
+            0% 100%
+        );
+}
+
+
+/* LEFT SPIKES */
+
+.frozen-horns .spike.s1 {
+
+    left: 7px;
+    top: 65px;
+
+    transform:
+        rotate(-35deg);
+}
+
+.frozen-horns .spike.s2 {
+
+    left: 25px;
+    top: 105px;
+
+    transform:
+        rotate(-55deg);
+}
+
+
+/* RIGHT SPIKES */
+
+.frozen-horns .spike.s3 {
+
+    right: 7px;
+    top: 65px;
+
+    transform:
+        rotate(35deg);
+}
+
+.frozen-horns .spike.s4 {
+
+    right: 25px;
+    top: 105px;
+
+    transform:
+        rotate(55deg);
+}
+
 
 /* =========================
    HEADLESS
@@ -333,46 +594,45 @@ nav a.active {
     display: none;
 }
 
-.avatar.headless .frozen-horns {
-    top: 15px;
-}
 
 /* =========================
    KORBLOX-INSPIRED LEG
 ========================= */
 
-/*
-   Original MTB REVIVALS design.
-   Dark fantasy style with a glowing
-   armored lower leg.
-*/
-
 .avatar.korblox .leg.right {
-    width: 42px;
+
+    width: 44px;
     height: 125px;
 
     background:
+
         linear-gradient(
             160deg,
-            #252525 0%,
-            #111 45%,
+            #383838 0%,
+            #171717 35%,
             #050505 100%
         );
 
-    border: 3px solid #171717;
+    border:
+        3px solid #111;
 
     transform:
         skew(-7deg);
 
     box-shadow:
-        inset 5px 0 0 #3b3b3b,
-        inset -5px 0 0 #000;
+
+        inset 5px 0 0 #4a4a4a,
+
+        inset -6px 0 0 #000,
+
+        0 0 5px #222;
 }
 
 
-/* ARMOR PLATES */
+/* ARMOR PLATE */
 
 .avatar.korblox .leg.right::before {
+
     content: "";
 
     position: absolute;
@@ -380,30 +640,34 @@ nav a.active {
     left: 5px;
     top: 12px;
 
-    width: 25px;
-    height: 25px;
+    width: 27px;
+    height: 30px;
 
     background:
+
         linear-gradient(
             135deg,
-            #555,
-            #151515
+            #777,
+            #292929,
+            #080808
         );
 
-    border: 2px solid #777;
+    border:
+        2px solid #888;
 
     transform:
         skew(7deg)
         rotate(8deg);
 
     box-shadow:
-        0 0 5px #777;
+        0 0 5px #555;
 }
 
 
 /* DARK CRYSTAL */
 
 .avatar.korblox .leg.right::after {
+
     content: "";
 
     position: absolute;
@@ -411,20 +675,23 @@ nav a.active {
     left: 8px;
     bottom: 12px;
 
-    width: 19px;
-    height: 30px;
+    width: 20px;
+    height: 34px;
 
     background:
+
         linear-gradient(
             135deg,
-            #8d8d8d,
-            #292929,
-            #050505
+            #aaa,
+            #444,
+            #090909
         );
 
-    border: 2px solid #aaa;
+    border:
+        2px solid #aaa;
 
     clip-path:
+
         polygon(
             50% 0%,
             100% 35%,
@@ -432,19 +699,24 @@ nav a.active {
             25% 100%,
             0% 35%
         );
+
+    box-shadow:
+        0 0 6px #555;
 }
 
 
-/* KORBLOX FOOT */
+/* FOOT */
 
 .avatar.korblox .foot.right {
+
     background:
         linear-gradient(
-            #191919,
+            #222,
             #030303
         );
 
-    border-color: #111;
+    border-color:
+        #111;
 
     transform:
         skew(-7deg);
@@ -470,6 +742,7 @@ nav a.active {
     background: #333;
 }
 
+
 /* =========================
    PANTS COLORS
 ========================= */
@@ -486,6 +759,7 @@ nav a.active {
     background: #795548;
 }
 
+
 /* =========================
    CONTROLS
 ========================= */
@@ -495,13 +769,20 @@ nav a.active {
 }
 
 .control {
+
     display: flex;
-    justify-content: space-between;
-    align-items: center;
 
-    border-bottom: 1px solid #ddd;
+    justify-content:
+        space-between;
 
-    padding: 12px 0;
+    align-items:
+        center;
+
+    border-bottom:
+        1px solid #ddd;
+
+    padding:
+        12px 0;
 }
 
 .control:last-child {
@@ -509,7 +790,9 @@ nav a.active {
 }
 
 .control-name {
+
     font-weight: bold;
+
     margin-bottom: 3px;
 }
 
@@ -518,29 +801,40 @@ nav a.active {
 }
 
 .control button {
-    border: 1px solid #555;
-    border-radius: 3px;
+
+    border:
+        1px solid #555;
+
+    border-radius:
+        3px;
 
     background:
+
         linear-gradient(
             #65b5e8,
             #1683c5
         );
 
-    color: white;
+    color:
+        white;
 
-    padding: 8px 12px;
+    padding:
+        8px 12px;
 
-    font-weight: bold;
+    font-weight:
+        bold;
 
-    cursor: pointer;
+    cursor:
+        pointer;
 
     text-shadow:
         1px 1px #555;
 }
 
 .control button:hover {
+
     background:
+
         linear-gradient(
             #79c5ed,
             #1683c5
@@ -548,51 +842,73 @@ nav a.active {
 }
 
 .control button.remove {
+
     background:
+
         linear-gradient(
             #e57373,
             #b52b2b
         );
 }
 
+
 /* =========================
    STATUS
 ========================= */
 
 .status {
-    margin-top: 15px;
 
-    background: white;
+    margin-top:
+        15px;
 
-    border: 1px solid #aaa;
+    background:
+        white;
 
-    padding: 10px;
+    border:
+        1px solid #aaa;
 
-    color: #1683c5;
+    padding:
+        10px;
 
-    font-weight: bold;
+    color:
+        #1683c5;
+
+    font-weight:
+        bold;
 }
+
 
 /* =========================
    FOOTER
 ========================= */
 
 footer {
-    max-width: 1000px;
 
-    margin: 40px auto 0;
+    max-width:
+        1000px;
 
-    padding: 15px 10px;
+    margin:
+        40px auto 0;
 
-    border-top: 1px solid #aaa;
+    padding:
+        15px 10px;
 
-    color: #777;
+    border-top:
+        1px solid #aaa;
+
+    color:
+        #777;
 }
 
 footer a {
-    color: #1683c5;
-    text-decoration: none;
+
+    color:
+        #1683c5;
+
+    text-decoration:
+        none;
 }
+
 
 /* =========================
    MOBILE
@@ -613,12 +929,16 @@ footer a {
     }
 
     nav a {
-        padding: 8px 9px;
-        font-size: 12px;
+        padding:
+            8px 9px;
+
+        font-size:
+            12px;
     }
 
     .character-stage {
-        height: 390px;
+        height:
+            400px;
     }
 
 }
@@ -631,9 +951,7 @@ footer a {
 <body>
 
 
-<!-- =========================
-     HEADER
-========================= -->
+<!-- HEADER -->
 
 <header>
 
@@ -653,7 +971,8 @@ footer a {
                 Account
             </a>
 
-            <a href="avatar.html" class="active">
+            <a href="avatar.html"
+               class="active">
                 Avatar
             </a>
 
@@ -684,9 +1003,7 @@ footer a {
 </header>
 
 
-<!-- =========================
-     MAIN
-========================= -->
+<!-- MAIN -->
 
 <div class="container">
 
@@ -698,9 +1015,7 @@ footer a {
     <div class="avatar-area">
 
 
-        <!-- =====================
-             CHARACTER PREVIEW
-        ====================== -->
+        <!-- CHARACTER -->
 
         <div class="box">
 
@@ -728,6 +1043,17 @@ footer a {
                             <div class="horn left"></div>
 
                             <div class="horn right"></div>
+
+
+                            <!-- EXTRA SPIKES -->
+
+                            <div class="spike s1"></div>
+
+                            <div class="spike s2"></div>
+
+                            <div class="spike s3"></div>
+
+                            <div class="spike s4"></div>
 
                         </div>
 
@@ -788,9 +1114,7 @@ footer a {
         </div>
 
 
-        <!-- =====================
-             CHARACTER EDITOR
-        ====================== -->
+        <!-- EDITOR -->
 
         <div class="box">
 
@@ -814,7 +1138,7 @@ footer a {
                             </div>
 
                             <small>
-                                Free accessory
+                                FREE
                             </small>
 
                         </div>
@@ -841,7 +1165,7 @@ footer a {
                             </div>
 
                             <small>
-                                Free MTB fantasy leg
+                                FREE
                             </small>
 
                         </div>
@@ -868,7 +1192,7 @@ footer a {
                             </div>
 
                             <small>
-                                Free avatar effect
+                                FREE
                             </small>
 
                         </div>
@@ -947,7 +1271,7 @@ footer a {
                             </div>
 
                             <small>
-                                Remove equipped effects
+                                Remove equipped items
                             </small>
 
                         </div>
@@ -985,9 +1309,7 @@ footer a {
 </div>
 
 
-<!-- =========================
-     FOOTER
-========================= -->
+<!-- FOOTER -->
 
 <footer>
 
@@ -1010,24 +1332,8 @@ footer a {
 
 <script>
 
-/*
-=================================================
-MTB REVIVALS AVATAR SYSTEM
-=================================================
-
-Saved in localStorage:
-
-    mtbAvatar
-
-Everything is currently client-side.
-
-This is a prototype and should not be used
-for storing sensitive account information.
-*/
-
-
 /* =========================
-   LOAD AVATAR
+   LOAD SAVED AVATAR
 ========================= */
 
 let avatarData =
@@ -1049,7 +1355,7 @@ let avatarData =
 
 
 /* =========================
-   SAVE AVATAR
+   SAVE
 ========================= */
 
 function saveAvatar() {
@@ -1063,7 +1369,7 @@ function saveAvatar() {
 
 
 /* =========================
-   STATUS MESSAGE
+   STATUS
 ========================= */
 
 function setStatus(text) {
@@ -1076,7 +1382,7 @@ function setStatus(text) {
 
 
 /* =========================
-   UPDATE AVATAR
+   UPDATE
 ========================= */
 
 function updateAvatar() {
@@ -1084,10 +1390,6 @@ function updateAvatar() {
     const avatar =
         document.getElementById("avatar");
 
-
-    /*
-        Remove old classes
-    */
 
     avatar.classList.remove(
 
@@ -1110,9 +1412,7 @@ function updateAvatar() {
     );
 
 
-    /*
-        HEADLESS
-    */
+    /* HEADLESS */
 
     if (avatarData.headless) {
 
@@ -1123,9 +1423,7 @@ function updateAvatar() {
     }
 
 
-    /*
-        KORBLOX STYLE LEG
-    */
+    /* KORBLOX */
 
     if (avatarData.korblox) {
 
@@ -1136,9 +1434,7 @@ function updateAvatar() {
     }
 
 
-    /*
-        FROZEN HORNS
-    */
+    /* HORNS */
 
     document
         .getElementById("frozenHorns")
@@ -1148,13 +1444,9 @@ function updateAvatar() {
         : "none";
 
 
-    /*
-        SHIRT
-    */
+    /* SHIRT */
 
-    if (
-        avatarData.shirt === "red"
-    ) {
+    if (avatarData.shirt === "red") {
 
         avatar.classList.add(
             "red-shirt"
@@ -1183,9 +1475,7 @@ function updateAvatar() {
     }
 
 
-    /*
-        PANTS
-    */
+    /* PANTS */
 
     if (
         avatarData.pants === "blue"
@@ -1218,9 +1508,7 @@ function updateAvatar() {
     }
 
 
-    /*
-        BUTTON TEXT
-    */
+    /* BUTTONS */
 
     document
         .getElementById("hornButton")
@@ -1246,9 +1534,7 @@ function updateAvatar() {
         : "Equip";
 
 
-    /*
-        CLOTHING LABELS
-    */
+    /* NAMES */
 
     const shirtNames = {
 
@@ -1299,7 +1585,7 @@ function updateAvatar() {
 
 
 /* =========================
-   FROZEN HORNS
+   HORNS
 ========================= */
 
 function toggleHorns() {
@@ -1313,27 +1599,21 @@ function toggleHorns() {
     updateAvatar();
 
 
-    if (avatarData.horns) {
+    setStatus(
 
-        setStatus(
-            "Frozen Horns of the Frigid Planes equipped!"
-        );
+        avatarData.horns
 
-    }
+        ? "Frozen Horns of the Frigid Planes equipped!"
 
-    else {
+        : "Frozen Horns of the Frigid Planes unequipped."
 
-        setStatus(
-            "Frozen Horns of the Frigid Planes unequipped."
-        );
-
-    }
+    );
 
 }
 
 
 /* =========================
-   KORBLOX STYLE LEG
+   KORBLOX LEG
 ========================= */
 
 function toggleKorblox() {
@@ -1347,21 +1627,15 @@ function toggleKorblox() {
     updateAvatar();
 
 
-    if (avatarData.korblox) {
+    setStatus(
 
-        setStatus(
-            "Korblox Deathspeaker Leg equipped!"
-        );
+        avatarData.korblox
 
-    }
+        ? "Korblox Deathspeaker Leg equipped!"
 
-    else {
+        : "Korblox Deathspeaker Leg unequipped."
 
-        setStatus(
-            "Korblox Deathspeaker Leg unequipped."
-        );
-
-    }
+    );
 
 }
 
@@ -1381,27 +1655,21 @@ function toggleHeadless() {
     updateAvatar();
 
 
-    if (avatarData.headless) {
+    setStatus(
 
-        setStatus(
-            "Invisible Head equipped!"
-        );
+        avatarData.headless
 
-    }
+        ? "Invisible Head equipped!"
 
-    else {
+        : "Invisible Head unequipped."
 
-        setStatus(
-            "Invisible Head unequipped."
-        );
-
-    }
+    );
 
 }
 
 
 /* =========================
-   CHANGE SHIRT
+   SHIRT
 ========================= */
 
 function toggleShirt() {
@@ -1409,11 +1677,8 @@ function toggleShirt() {
     const shirts = [
 
         "blue",
-
         "red",
-
         "green",
-
         "black"
 
     ];
@@ -1454,7 +1719,7 @@ function toggleShirt() {
 
 
 /* =========================
-   CHANGE PANTS
+   PANTS
 ========================= */
 
 function togglePants() {
@@ -1462,11 +1727,8 @@ function togglePants() {
     const pants = [
 
         "black",
-
         "blue",
-
         "gray",
-
         "brown"
 
     ];
