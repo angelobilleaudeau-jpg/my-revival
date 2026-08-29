@@ -21,11 +21,14 @@ body {
     color: #333;
 }
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 
 header {
     background: linear-gradient(#f7f7f7, #d0d0d0);
     border-bottom: 1px solid #999;
+    box-shadow: 0 1px 3px #aaa;
 }
 
 .header-inner {
@@ -62,7 +65,9 @@ nav a.active {
 }
 
 
-/* MAIN */
+/* =========================
+   MAIN
+========================= */
 
 .container {
     max-width: 1000px;
@@ -80,22 +85,21 @@ nav a.active {
 }
 
 
-/* AVATAR AREA */
+/* =========================
+   AVATAR
+========================= */
 
 .avatar-box {
     margin-top: 15px;
     background: white;
     border: 1px solid #aaa;
     padding: 20px;
-    min-height: 520px;
+    min-height: 500px;
 
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
-
-/* AVATAR */
 
 .avatar {
     position: relative;
@@ -122,42 +126,6 @@ nav a.active {
     border-radius: 4px;
 
     z-index: 5;
-}
-
-
-/* FACE */
-
-.face-eye {
-    position: absolute;
-
-    width: 10px;
-    height: 14px;
-
-    background: #222;
-
-    top: 42px;
-}
-
-.eye-left {
-    left: 27px;
-}
-
-.eye-right {
-    right: 27px;
-}
-
-.face-smile {
-    position: absolute;
-
-    width: 35px;
-    height: 15px;
-
-    left: 35px;
-    top: 68px;
-
-    border-bottom: 3px solid #222;
-
-    border-radius: 50%;
 }
 
 
@@ -219,8 +187,6 @@ nav a.active {
     background: #333;
 
     border: 3px solid #555;
-
-    z-index: 1;
 }
 
 .leg-left {
@@ -233,7 +199,329 @@ nav a.active {
 
 
 /* =========================
-   FEDORA
+   FACE
+========================= */
+
+.face {
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 10;
+
+    pointer-events: none;
+}
+
+
+/* EYES */
+
+.eye {
+    position: absolute;
+
+    width: 10px;
+    height: 14px;
+
+    background: #222;
+
+    top: 38px;
+
+    border-radius: 2px;
+}
+
+.eye-left {
+    left: 27px;
+}
+
+.eye-right {
+    right: 27px;
+}
+
+
+/* SMILE */
+
+.smile {
+    position: absolute;
+
+    width: 38px;
+    height: 18px;
+
+    left: 33px;
+    top: 65px;
+
+    border-bottom: 4px solid #222;
+
+    border-radius: 50%;
+}
+
+
+/* =========================
+   FACE VARIATIONS
+========================= */
+
+/* HAPPY */
+
+.face-happy .smile {
+    height: 22px;
+    border-bottom: 5px solid #222;
+}
+
+
+/* BIG SMILE */
+
+.face-big-smile .smile {
+    width: 48px;
+    height: 25px;
+    left: 28px;
+    border-bottom: 7px solid #222;
+}
+
+
+/* SAD */
+
+.face-sad .smile {
+    top: 78px;
+    border-bottom: 0;
+    border-top: 4px solid #222;
+    border-radius: 50%;
+}
+
+
+/* NEUTRAL */
+
+.face-neutral .smile {
+    width: 35px;
+    height: 0;
+    top: 76px;
+    border-bottom: 4px solid #222;
+    border-radius: 0;
+}
+
+
+/* SURPRISED */
+
+.face-surprised .smile {
+    width: 18px;
+    height: 22px;
+    left: 46px;
+    top: 70px;
+    border: 4px solid #222;
+    border-radius: 50%;
+}
+
+
+/* ANGRY */
+
+.face-angry .eye-left {
+    transform: rotate(25deg);
+}
+
+.face-angry .eye-right {
+    transform: rotate(-25deg);
+}
+
+.face-angry .smile {
+    top: 78px;
+    border-bottom: 0;
+    border-top: 4px solid #222;
+}
+
+
+/* SLEEPY */
+
+.face-sleepy .eye {
+    height: 3px;
+    top: 44px;
+    border-radius: 5px;
+}
+
+.face-sleepy .smile {
+    top: 70px;
+}
+
+
+/* WINK */
+
+.face-wink .eye-right {
+    height: 3px;
+    top: 44px;
+    border-radius: 5px;
+}
+
+.face-wink .smile {
+    transform: rotate(-5deg);
+}
+
+
+/* SILLY */
+
+.face-silly .eye-left {
+    transform: rotate(15deg);
+}
+
+.face-silly .eye-right {
+    transform: rotate(-15deg);
+}
+
+.face-silly .smile {
+    transform: rotate(4deg);
+}
+
+
+/* EVIL */
+
+.face-evil .eye {
+    background: #9d1111;
+    box-shadow: 0 0 4px #f00;
+}
+
+.face-evil .eye-left {
+    transform: rotate(20deg);
+}
+
+.face-evil .eye-right {
+    transform: rotate(-20deg);
+}
+
+.face-evil .smile {
+    border-bottom: 0;
+    border-top: 4px solid #222;
+}
+
+
+/* COOL */
+
+.face-cool .eye {
+    width: 28px;
+    height: 10px;
+    top: 38px;
+    background: #111;
+    border-radius: 2px;
+}
+
+.face-cool .eye-left {
+    left: 15px;
+}
+
+.face-cool .eye-right {
+    right: 15px;
+}
+
+.face-cool .smile {
+    top: 70px;
+}
+
+
+/* SHOCKED */
+
+.face-shocked .smile {
+    width: 24px;
+    height: 28px;
+    left: 43px;
+    top: 67px;
+    border: 4px solid #222;
+    border-radius: 50%;
+}
+
+
+/* NERD */
+
+.face-nerd .eye {
+    width: 20px;
+    height: 20px;
+    border: 3px solid #222;
+    background: transparent;
+    border-radius: 50%;
+    top: 34px;
+}
+
+.face-nerd .eye-left {
+    left: 18px;
+}
+
+.face-nerd .eye-right {
+    right: 18px;
+}
+
+.face-nerd .smile {
+    top: 70px;
+}
+
+
+/* LAUGH */
+
+.face-laugh .eye {
+    height: 5px;
+    top: 43px;
+    border-radius: 5px;
+}
+
+.face-laugh .smile {
+    width: 48px;
+    height: 25px;
+    left: 28px;
+    border-bottom: 8px solid #222;
+}
+
+
+/* CONFUSED */
+
+.face-confused .eye-left {
+    transform: translateY(-4px);
+}
+
+.face-confused .eye-right {
+    transform: translateY(4px);
+}
+
+.face-confused .smile {
+    transform: rotate(12deg);
+}
+
+
+/* SCARED */
+
+.face-scared .eye {
+    width: 18px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.face-scared .eye-left {
+    left: 20px;
+}
+
+.face-scared .eye-right {
+    right: 20px;
+}
+
+.face-scared .smile {
+    width: 20px;
+    height: 25px;
+    left: 45px;
+    border: 4px solid #222;
+    border-radius: 50%;
+}
+
+
+/* PROUD */
+
+.face-proud .smile {
+    top: 72px;
+    transform: scaleX(1.2);
+}
+
+.face-proud .eye-left,
+.face-proud .eye-right {
+    height: 7px;
+}
+
+
+/* =========================
+   ACCESSORIES
 ========================= */
 
 .fedora {
@@ -245,23 +533,18 @@ nav a.active {
     left: 55px;
     top: 28px;
 
-    border-radius:
-        50% 50% 20% 20%;
+    border-radius: 50% 50% 20% 20%;
 
     border: 3px solid rgba(0,0,0,.35);
 
     z-index: 20;
 
     box-shadow:
-        inset 0 8px 12px
-        rgba(255,255,255,.4),
-
-        0 4px 12px
-        rgba(0,0,0,.35);
+        inset 0 8px 12px rgba(255,255,255,.4),
+        0 4px 12px rgba(0,0,0,.35);
 }
 
 .fedora::before {
-
     content: "";
 
     position: absolute;
@@ -279,136 +562,28 @@ nav a.active {
     border: 3px solid rgba(0,0,0,.35);
 }
 
-.fedora::after {
-
-    content: "";
-
-    position: absolute;
-
-    width: 115px;
-    height: 7px;
-
-    left: 15px;
-    top: 32px;
-
-    background:
-        rgba(255,255,255,.55);
-
-    box-shadow:
-        0 0 10px white;
-}
-
-
-/* FEDORA COLORS */
-
 .classic {
-    background:
-        linear-gradient(
-            135deg,
-            #eee,
-            #999,
-            #fff
-        );
+    background: linear-gradient(135deg,#eee,#999,#fff);
 }
 
 .red {
-    background:
-        linear-gradient(
-            135deg,
-            #ff7777,
-            #b91515,
-            #ffaaaa
-        );
-}
-
-.orange {
-    background:
-        linear-gradient(
-            135deg,
-            #ffd080,
-            #e87800,
-            #fff0b0
-        );
-}
-
-.gold {
-    background:
-        linear-gradient(
-            135deg,
-            #fff3a0,
-            #d7a400,
-            #fff7c7
-        );
-}
-
-.green {
-    background:
-        linear-gradient(
-            135deg,
-            #83ffae,
-            #129448,
-            #b5ffd0
-        );
+    background: linear-gradient(135deg,#ff7777,#b91515,#ffaaaa);
 }
 
 .blue {
-    background:
-        linear-gradient(
-            135deg,
-            #7edcff,
-            #0876c9,
-            #bceeff
-        );
+    background: linear-gradient(135deg,#7edcff,#0876c9,#bceeff);
+}
+
+.gold {
+    background: linear-gradient(135deg,#fff3a0,#d7a400,#fff7c7);
 }
 
 .purple {
-    background:
-        linear-gradient(
-            135deg,
-            #db9cff,
-            #7420b5,
-            #f0c9ff
-        );
+    background: linear-gradient(135deg,#db9cff,#7420b5,#f0c9ff);
 }
 
 .pink {
-    background:
-        linear-gradient(
-            135deg,
-            #ff9edb,
-            #d52c8a,
-            #ffd2ef
-        );
-}
-
-.cyan {
-    background:
-        linear-gradient(
-            135deg,
-            #b7ffff,
-            #009fa8,
-            #d9ffff
-        );
-}
-
-.black {
-    background:
-        linear-gradient(
-            135deg,
-            #777,
-            #090909,
-            #555
-        );
-}
-
-.white {
-    background:
-        linear-gradient(
-            135deg,
-            #fff,
-            #ccc,
-            #fff
-        );
+    background: linear-gradient(135deg,#ff9edb,#d52c8a,#ffd2ef);
 }
 
 .rainbow {
@@ -423,98 +598,10 @@ nav a.active {
             #7c4dff,
             #ff54c8
         );
-
-    animation:
-        rainbow 3s linear infinite;
-}
-
-@keyframes rainbow {
-
-    0% {
-        filter:
-            hue-rotate(0deg)
-            brightness(1);
-    }
-
-    50% {
-        filter:
-            hue-rotate(30deg)
-            brightness(1.3);
-    }
-
-    100% {
-        filter:
-            hue-rotate(0deg)
-            brightness(1);
-    }
 }
 
 
-/* =========================
-   SPARKLES
-========================= */
-
-.sparkle {
-    position: absolute;
-
-    width: 7px;
-    height: 7px;
-
-    background: white;
-
-    transform: rotate(45deg);
-
-    box-shadow:
-        0 0 8px white;
-
-    animation:
-        sparkle 1.3s infinite;
-}
-
-.s1 {
-    left: 20px;
-    top: 15px;
-}
-
-.s2 {
-    left: 70px;
-    top: 48px;
-    animation-delay: .3s;
-}
-
-.s3 {
-    right: 25px;
-    top: 20px;
-    animation-delay: .6s;
-}
-
-.s4 {
-    right: 45px;
-    top: 48px;
-    animation-delay: .9s;
-}
-
-@keyframes sparkle {
-
-    0%,100% {
-        opacity: .2;
-        transform:
-            rotate(45deg)
-            scale(.5);
-    }
-
-    50% {
-        opacity: 1;
-        transform:
-            rotate(45deg)
-            scale(1.5);
-    }
-}
-
-
-/* =========================
-   FROZEN HORNS
-========================= */
+/* HORNS */
 
 .horns {
     position: absolute;
@@ -537,59 +624,26 @@ nav a.active {
     background:
         linear-gradient(
             135deg,
-            #ffffff,
+            #fff,
             #8eeaff,
             #277cae
         );
 
-    border:
-        3px solid #377f9c;
+    border: 3px solid #377f9c;
 
-    box-shadow:
-        0 0 14px #69eaff;
+    box-shadow: 0 0 14px #69eaff;
 
-    border-radius:
-        75% 25% 20% 20%;
+    border-radius: 75% 25% 20% 20%;
 }
 
 .horn.left {
     left: 20px;
-
-    transform:
-        rotate(-28deg);
+    transform: rotate(-28deg);
 }
 
 .horn.right {
     right: 20px;
-
-    transform:
-        rotate(28deg)
-        scaleX(-1);
-}
-
-
-/* HORN SPIKES */
-
-.horn::after {
-
-    content: "";
-
-    position: absolute;
-
-    width: 25px;
-    height: 25px;
-
-    top: 15px;
-    left: 20px;
-
-    background: #dfffff;
-
-    clip-path:
-        polygon(
-            0 100%,
-            50% 0,
-            100% 100%
-        );
+    transform: rotate(28deg) scaleX(-1);
 }
 
 
@@ -607,10 +661,7 @@ nav a.active {
     z-index: 15;
 
     background:
-        linear-gradient(
-            #fff47b,
-            #d39d00
-        );
+        linear-gradient(#fff47b,#d39d00);
 
     clip-path:
         polygon(
@@ -622,8 +673,6 @@ nav a.active {
             90% 20%,
             100% 100%
         );
-
-    border: 3px solid #8c6800;
 }
 
 
@@ -643,7 +692,6 @@ nav a.active {
 
 .wings::before,
 .wings::after {
-
     content: "";
 
     position: absolute;
@@ -659,80 +707,118 @@ nav a.active {
             #559cc5
         );
 
-    border:
-        3px solid #6095ad;
+    border: 3px solid #6095ad;
 
-    border-radius:
-        80% 20% 80% 20%;
+    border-radius: 80% 20% 80% 20%;
 }
 
 .wings::before {
-
     left: 0;
-
-    transform:
-        rotate(-20deg);
+    transform: rotate(-20deg);
 }
 
 .wings::after {
-
     right: 0;
-
-    transform:
-        rotate(20deg)
-        scaleX(-1);
+    transform: rotate(20deg) scaleX(-1);
 }
 
 
-/* CONTROLS */
+/* =========================
+   FACE SELECTOR
+========================= */
 
-.controls {
-
+.face-section {
     margin-top: 15px;
-
     background: white;
+    border: 1px solid #aaa;
+    padding: 15px;
+}
+
+.face-section h2 {
+    margin-top: 0;
+}
+
+.face-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit, minmax(140px, 1fr));
+
+    gap: 10px;
+}
+
+.face-option {
+    padding: 12px;
+
+    background: #f5f5f5;
 
     border: 1px solid #aaa;
 
-    padding: 15px;
-
     text-align: center;
-}
-
-button {
-
-    padding: 9px 18px;
-
-    border:
-        1px solid #555;
-
-    border-radius: 3px;
-
-    background:
-        linear-gradient(
-            #65b5e8,
-            #1683c5
-        );
-
-    color: white;
-
-    font-weight: bold;
 
     cursor: pointer;
 }
 
-button:hover {
-
-    background:
-        linear-gradient(
-            #79c5ed,
-            #1683c5
-        );
+.face-option:hover {
+    background: #ddd;
 }
 
-.status {
+.face-option.selected {
+    border: 2px solid #1683c5;
+    background: #e4f4ff;
+}
 
-    margin-top: 10px;
+.face-icon {
+    width: 55px;
+    height: 55px;
+
+    margin: 0 auto 8px;
+
+    background: #f2c29b;
+
+    border: 2px solid #555;
+
+    border-radius: 4px;
+
+    position: relative;
+}
+
+.face-icon::before,
+.face-icon::after {
+    content: "";
+
+    position: absolute;
+
+    width: 6px;
+    height: 9px;
+
+    top: 17px;
+
+    background: #222;
+}
+
+.face-icon::before {
+    left: 13px;
+}
+
+.face-icon::after {
+    right: 13px;
+}
+
+.face-name {
+    font-weight: bold;
+}
+
+
+/* STATUS */
+
+.status {
+    margin-top: 15px;
+
+    padding: 10px;
+
+    background: white;
+
+    border: 1px solid #aaa;
 
     color: #1683c5;
 
@@ -753,8 +839,8 @@ button:hover {
         font-size: 12px;
     }
 
-    .avatar-box {
-        overflow: hidden;
+    .face-grid {
+        grid-template-columns: repeat(2,1fr);
     }
 
 }
@@ -777,38 +863,14 @@ MTB REVIVALS
 
 <nav>
 
-<a href="index.html">
-Home
-</a>
-
-<a href="login.html">
-Account
-</a>
-
-<a href="avatar.html"
-   class="active">
-Avatar
-</a>
-
-<a href="accessories.html">
-Accessories
-</a>
-
-<a href="clothes.html">
-Clothes
-</a>
-
-<a href="inventory.html">
-Inventory
-</a>
-
-<a href="games.html">
-Games
-</a>
-
-<a href="news.html">
-News
-</a>
+<a href="index.html">Home</a>
+<a href="login.html">Account</a>
+<a href="avatar.html" class="active">Avatar</a>
+<a href="accessories.html">Accessories</a>
+<a href="clothes.html">Clothes</a>
+<a href="inventory.html">Inventory</a>
+<a href="games.html">Games</a>
+<a href="news.html">News</a>
 
 </nav>
 
@@ -819,72 +881,292 @@ News
 
 <div class="container">
 
+
 <div class="title">
 My Avatar
 </div>
 
 
+<!-- AVATAR -->
+
 <div class="avatar-box">
 
-<div class="avatar"
-     id="avatar">
-
-
-<!-- ACCESSORY -->
+<div class="avatar" id="avatar">
 
 <div id="accessory"></div>
 
-
-<!-- WINGS -->
-
-<div id="wings"></div>
-
-
-<!-- HEAD -->
-
 <div class="head">
 
-<div class="face-eye eye-left"></div>
-<div class="face-eye eye-right"></div>
+<div id="face"
+     class="face face-happy">
 
-<div class="face-smile"></div>
+<div class="eye eye-left"></div>
+<div class="eye eye-right"></div>
+
+<div class="smile"></div>
 
 </div>
 
-
-<!-- BODY -->
+</div>
 
 <div class="body"></div>
-
-
-<!-- ARMS -->
 
 <div class="arm arm-left"></div>
 <div class="arm arm-right"></div>
 
-
-<!-- LEGS -->
-
 <div class="leg leg-left"></div>
 <div class="leg leg-right"></div>
 
+</div>
+
+</div>
+
+
+<!-- FACE SELECTOR -->
+
+<div class="face-section">
+
+<h2>
+Classic Faces
+</h2>
+
+<p>
+Choose a face for your MTB REVIVALS avatar.
+</p>
+
+
+<div class="face-grid">
+
+
+<div class="face-option"
+     data-face="happy"
+     onclick="selectFace('happy',this)">
+
+<div class="face-icon"></div>
+
+<div class="face-name">
+Classic Smile
+</div>
+
+</div>
+
+
+<div class="face-option"
+     data-face="big-smile"
+     onclick="selectFace('big-smile',this)">
+
+<div class="face-icon"></div>
+
+<div class="face-name">
+Big Smile
+</div>
+
+</div>
+
+
+<div class="face-option"
+     data-face="neutral"
+     onclick="selectFace('neutral',this)">
+
+<div class="face-icon"></div>
+
+<div class="face-name">
+Neutral
+</div>
+
+</div>
+
+
+<div class="face-option"
+     data-face="sad"
+     onclick="selectFace('sad',this)">
+
+<div class="face-icon"></div>
+
+<div class="face-name">
+Sad
+</div>
+
+</div>
+
+
+<div class="face-option"
+     data-face="surprised"
+     onclick="selectFace('surprised',this)">
+
+<div class="face-icon"></div>
+
+<div class="face-name">
+Surprised
+</div>
+
+</div>
+
+
+<div class="face-option"
+     data-face="angry"
+     onclick="selectFace('angry',this)">
+
+<div class="face-icon"></div>
+
+<div class="face-name">
+Angry
+</div>
+
+</div>
+
+
+<div class="face-option"
+     data-face="sleepy"
+     onclick="selectFace('sleepy',this)">
+
+<div class="face-icon"></div>
+
+<div class="face-name">
+Sleepy
+</div>
+
+</div>
+
+
+<div class="face-option"
+     data-face="wink"
+     onclick="selectFace('wink',this)">
+
+<div class="face-icon"></div>
+
+<div class="face-name">
+Wink
+</div>
+
+</div>
+
+
+<div class="face-option"
+     data-face="silly"
+     onclick="selectFace('silly',this)">
+
+<div class="face-icon"></div>
+
+<div class="face-name">
+Silly
+</div>
+
+</div>
+
+
+<div class="face-option"
+     data-face="evil"
+     onclick="selectFace('evil',this)">
+
+<div class="face-icon"></div>
+
+<div class="face-name">
+Evil
+</div>
+
+</div>
+
+
+<div class="face-option"
+     data-face="cool"
+     onclick="selectFace('cool',this)">
+
+<div class="face-icon"></div>
+
+<div class="face-name">
+Cool
+</div>
+
+</div>
+
+
+<div class="face-option"
+     data-face="shocked"
+     onclick="selectFace('shocked',this)">
+
+<div class="face-icon"></div>
+
+<div class="face-name">
+Shocked
+</div>
+
+</div>
+
+
+<div class="face-option"
+     data-face="nerd"
+     onclick="selectFace('nerd',this)">
+
+<div class="face-icon"></div>
+
+<div class="face-name">
+Nerd
+</div>
+
+</div>
+
+
+<div class="face-option"
+     data-face="laugh"
+     onclick="selectFace('laugh',this)">
+
+<div class="face-icon"></div>
+
+<div class="face-name">
+Laugh
+</div>
+
+</div>
+
+
+<div class="face-option"
+     data-face="confused"
+     onclick="selectFace('confused',this)">
+
+<div class="face-icon"></div>
+
+<div class="face-name">
+Confused
+</div>
+
+</div>
+
+
+<div class="face-option"
+     data-face="scared"
+     onclick="selectFace('scared',this)">
+
+<div class="face-icon"></div>
+
+<div class="face-name">
+Scared
+</div>
+
+</div>
+
+
+<div class="face-option"
+     data-face="proud"
+     onclick="selectFace('proud',this)">
+
+<div class="face-icon"></div>
+
+<div class="face-name">
+Proud
+</div>
+
+</div>
 
 </div>
 
 </div>
 
 
-<div class="controls">
+<div class="status"
+     id="status">
 
-<button onclick="removeAccessory()">
-Remove Accessory
-</button>
-
-<div
-class="status"
-id="status">
 Loading avatar...
-</div>
 
 </div>
 
@@ -902,7 +1184,137 @@ MTB REVIVALS © 2026
 <script>
 
 /* =========================
-   LOAD EQUIPPED ACCESSORY
+   FACE SYSTEM
+========================= */
+
+const faceNames = {
+
+    happy: "Classic Smile",
+    "big-smile": "Big Smile",
+    neutral: "Neutral",
+    sad: "Sad",
+    surprised: "Surprised",
+    angry: "Angry",
+    sleepy: "Sleepy",
+    wink: "Wink",
+    silly: "Silly",
+    evil: "Evil",
+    cool: "Cool",
+    shocked: "Shocked",
+    nerd: "Nerd",
+    laugh: "Laugh",
+    confused: "Confused",
+    scared: "Scared",
+    proud: "Proud"
+
+};
+
+
+/* =========================
+   SELECT FACE
+========================= */
+
+function selectFace(face, button) {
+
+    const faceElement =
+        document.getElementById("face");
+
+
+    /*
+       Remove old face
+    */
+
+    faceElement.className =
+        "face face-" + face;
+
+
+    /*
+       Save face
+    */
+
+    localStorage.setItem(
+        "mtbFace",
+        face
+    );
+
+
+    /*
+       Update selected buttons
+    */
+
+    document
+        .querySelectorAll(".face-option")
+        .forEach(function(option) {
+
+            option.classList.remove(
+                "selected"
+            );
+
+        });
+
+
+    button.classList.add(
+        "selected"
+    );
+
+
+    document
+        .getElementById("status")
+        .textContent =
+        faceNames[face] +
+        " equipped.";
+
+}
+
+
+/* =========================
+   LOAD FACE
+========================= */
+
+function loadFace() {
+
+    const saved =
+        localStorage.getItem(
+            "mtbFace"
+        ) || "happy";
+
+
+    const faceElement =
+        document.getElementById("face");
+
+
+    faceElement.className =
+        "face face-" + saved;
+
+
+    const button =
+        document.querySelector(
+            '[data-face="' +
+            saved +
+            '"]'
+        );
+
+
+    if (button) {
+
+        button.classList.add(
+            "selected"
+        );
+
+    }
+
+
+    document
+        .getElementById("status")
+        .textContent =
+        faceNames[saved] +
+        " equipped.";
+
+}
+
+
+/* =========================
+   LOAD ACCESSORY
 ========================= */
 
 function loadAccessory() {
@@ -919,31 +1331,13 @@ function loadAccessory() {
         );
 
 
-    const wings =
-        document.getElementById(
-            "wings"
-        );
-
-
     accessory.innerHTML = "";
-    wings.innerHTML = "";
 
 
     if (!item) {
-
-        document
-            .getElementById("status")
-            .textContent =
-            "No accessory equipped.";
-
         return;
-
     }
 
-
-    /*
-       FEDORAS
-    */
 
     const fedoraColors = {
 
@@ -986,9 +1380,7 @@ function loadAccessory() {
     };
 
 
-    if (
-        fedoraColors[item]
-    ) {
+    if (fedoraColors[item]) {
 
         const fedora =
             document.createElement(
@@ -999,28 +1391,6 @@ function loadAccessory() {
             "fedora " +
             fedoraColors[item];
 
-
-        for (
-            let i = 1;
-            i <= 4;
-            i++
-        ) {
-
-            const sparkle =
-                document.createElement(
-                    "span"
-                );
-
-            sparkle.className =
-                "sparkle s" + i;
-
-            fedora.appendChild(
-                sparkle
-            );
-
-        }
-
-
         accessory.appendChild(
             fedora
         );
@@ -1028,155 +1398,46 @@ function loadAccessory() {
     }
 
 
-    /*
-       FROZEN HORNS
-    */
-
     else if (
         item ===
         "Frozen Crystal Horns"
     ) {
 
-        const horns =
-            document.createElement(
-                "div"
-            );
+        accessory.innerHTML = `
 
-        horns.className =
-            "horns";
+            <div class="horns">
 
-        horns.innerHTML = `
+                <div class="horn left"></div>
 
-            <div class="horn left"></div>
+                <div class="horn right"></div>
 
-            <div class="horn right"></div>
+            </div>
 
         `;
 
-        accessory.appendChild(
-            horns
-        );
-
     }
 
-
-    /*
-       CROWN
-    */
 
     else if (
         item ===
         "Royal Crown"
     ) {
 
-        const crown =
-            document.createElement(
-                "div"
-            );
-
-        crown.className =
-            "crown";
-
-        accessory.appendChild(
-            crown
-        );
+        accessory.innerHTML =
+            `<div class="crown"></div>`;
 
     }
 
-
-    /*
-       WINGS
-    */
 
     else if (
         item ===
         "Crystal Wings"
     ) {
 
-        const wing =
-            document.createElement(
-                "div"
-            );
-
-        wing.className =
-            "wings";
-
-        wings.appendChild(
-            wing
-        );
+        accessory.innerHTML =
+            `<div class="wings"></div>`;
 
     }
-
-
-    /*
-       TOP HAT
-    */
-
-    else if (
-        item ===
-        "Classic Top Hat"
-    ) {
-
-        const hat =
-            document.createElement(
-                "div"
-            );
-
-        hat.style.position =
-            "absolute";
-
-        hat.style.width =
-            "105px";
-
-        hat.style.height =
-            "100px";
-
-        hat.style.left =
-            "77px";
-
-        hat.style.top =
-            "28px";
-
-        hat.style.background =
-            "linear-gradient(#555,#111)";
-
-        hat.style.border =
-            "3px solid #222";
-
-        hat.style.zIndex =
-            "20";
-
-        hat.style.boxShadow =
-            "0 4px 10px rgba(0,0,0,.4)";
-
-
-        accessory.appendChild(
-            hat
-        );
-
-    }
-
-
-    document
-        .getElementById("status")
-        .textContent =
-        item +
-        " equipped.";
-
-}
-
-
-/* =========================
-   REMOVE
-========================= */
-
-function removeAccessory() {
-
-    localStorage.removeItem(
-        "mtbAccessory"
-    );
-
-    loadAccessory();
 
 }
 
@@ -1185,19 +1446,8 @@ function removeAccessory() {
    START
 ========================= */
 
+loadFace();
 loadAccessory();
-
-
-/*
-   Update automatically if
-   another page changes the
-   accessory.
-*/
-
-window.addEventListener(
-    "storage",
-    loadAccessory
-);
 
 </script>
 
