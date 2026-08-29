@@ -1,250 +1,1884 @@
 ```html
-<!-- FROZEN HORNS -->
+<!DOCTYPE html>
+<html lang="en">
 
-<div class="item">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <div class="preview">
+<title>MTB REVIVALS - Accessories</title>
 
-        <div class="frozen-horns">
+<style>
 
-            <div class="horn left"></div>
-            <div class="horn right"></div>
+* {
+    box-sizing: border-box;
+}
 
-        </div>
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    background: #e8e8e8;
+    color: #333;
+}
 
-    </div>
+/* =========================
+   HEADER
+========================= */
 
-    <h3>Frozen Horns</h3>
+header {
+    background: linear-gradient(#f7f7f7, #d0d0d0);
+    border-bottom: 1px solid #999;
+    box-shadow: 0 1px 3px #aaa;
+}
 
-    <div class="creator">
-        By MTB Studios
-    </div>
+.header-inner {
+    max-width: 1000px;
+    margin: auto;
+    padding: 8px 10px 0;
+}
 
-    <div class="price">
-        FREE
-    </div>
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    padding: 5px 0 10px;
+}
 
-    <button onclick="addItem('Frozen Horns','Accessory')">
-        Get Item
-    </button>
+nav {
+    display: flex;
+    flex-wrap: wrap;
+}
 
-</div>
+nav a {
+    padding: 9px 13px;
+    color: #444;
+    text-decoration: none;
+    border: 1px solid transparent;
+}
 
+nav a:hover {
+    background: #ddd;
+}
 
-<!-- SHADOW LEG -->
+nav a.active {
+    background: white;
+    border: 1px solid #aaa;
+    border-bottom: 1px solid white;
+    color: #1683c5;
+}
 
-<div class="item">
+/* =========================
+   MAIN
+========================= */
 
-    <div class="preview">
+.container {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 0 10px;
+}
 
-        <div class="shadow-leg-preview">
+.page-title {
+    background: linear-gradient(#666, #444);
+    color: white;
+    padding: 10px 12px;
+    border: 1px solid #333;
+    font-size: 18px;
+    font-weight: bold;
+    text-shadow: 1px 1px #222;
+}
 
-            <div class="shadow-body"></div>
-            <div class="shadow-leg"></div>
+/* =========================
+   NOTICE
+========================= */
 
-        </div>
+.notice {
+    background: #fff;
+    border: 1px solid #aaa;
+    padding: 12px;
+    margin-top: 15px;
+}
 
-    </div>
+/* =========================
+   ACCESSORY GRID
+========================= */
 
-    <h3>Shadow Leg</h3>
+.accessory-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit, minmax(210px, 1fr));
 
-    <div class="creator">
-        By MTB Studios
-    </div>
+    gap: 15px;
 
-    <div class="price">
-        FREE
-    </div>
+    margin-top: 15px;
+}
 
-    <button onclick="addItem('Shadow Leg','Accessory')">
-        Get Item
-    </button>
+.item {
+    background: white;
+    border: 1px solid #aaa;
+    box-shadow: 0 1px 3px #ccc;
+}
 
-</div>
+.item-preview {
+    height: 190px;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-<!-- INVISIBLE HEAD -->
-
-<div class="item">
-
-    <div class="preview">
-
-        <div class="headless-preview">
-
-            <div class="headless-body"></div>
-
-        </div>
-
-    </div>
-
-    <h3>Invisible Head</h3>
-
-    <div class="creator">
-        By MTB Studios
-    </div>
-
-    <div class="price">
-        FREE
-    </div>
-
-    <button onclick="addItem('Invisible Head','Accessory')">
-        Get Item
-    </button>
-
-</div>
-```
-
-
-
-```css
-/* FROZEN HORNS */
-
-.frozen-horns {
-    width: 110px;
-    height: 100px;
     position: relative;
-}
 
-.horn {
-    position: absolute;
-    width: 25px;
-    height: 65px;
-    background: linear-gradient(
-        135deg,
-        #ffffff,
-        #8eeaff,
-        #238bd1
-    );
-    border: 3px solid #397a9b;
-    border-radius: 70% 20% 20% 20%;
-    box-shadow:
-        0 0 10px #65dfff;
-}
+    overflow: hidden;
 
-.horn.left {
-    left: 15px;
-    top: 20px;
-    transform: rotate(-35deg);
-}
-
-.horn.right {
-    right: 15px;
-    top: 20px;
-    transform: rotate(35deg) scaleX(-1);
-}
-
-
-/* SHADOW LEG */
-
-.shadow-leg-preview {
-    width: 100px;
-    height: 120px;
-    position: relative;
-}
-
-.shadow-body {
-    position: absolute;
-    left: 20px;
-    top: 10px;
-    width: 60px;
-    height: 45px;
-    background: #444;
-    border: 3px solid #222;
-}
-
-.shadow-leg {
-    position: absolute;
-    left: 32px;
-    top: 50px;
-    width: 35px;
-    height: 65px;
-    background: linear-gradient(
-        #222,
-        #050505
-    );
-    border: 3px solid #111;
-    transform: skew(-8deg);
-}
-
-
-/* INVISIBLE HEAD */
-
-.headless-preview {
-    width: 100px;
-    height: 120px;
-    position: relative;
-}
-
-.headless-body {
-    position: absolute;
-    left: 27px;
-    top: 28px;
-    width: 46px;
-    height: 75px;
-    background: #1683ff;
-    border: 3px solid #555;
-}
-
-.headless-body:before {
-    content: "";
-    position: absolute;
-    left: -18px;
-    top: 0;
-    width: 15px;
-    height: 45px;
-    background: #1683ff;
-    border: 3px solid #555;
-}
-
-.headless-body:after {
-    content: "";
-    position: absolute;
-    right: -18px;
-    top: 0;
-    width: 15px;
-    height: 45px;
-    background: #1683ff;
-    border: 3px solid #555;
-}
-```
-
-Then make sure your existing `addItem()` function is still present:
-
-```javascript
-function addItem(name, type) {
-
-    let inventory =
-        JSON.parse(
-            localStorage.getItem("mtbInventory")
-        ) || [];
-
-    const alreadyOwned =
-        inventory.some(function(item) {
-            return item.name === name;
-        });
-
-    if (alreadyOwned) {
-
-        showMessage(
-            name + " is already in your inventory."
+    background:
+        linear-gradient(
+            #dfe8ed,
+            #f7f7f7
         );
 
-        return;
+    border-bottom: 1px solid #aaa;
+}
+
+/* =========================
+   SIMPLE AVATAR
+========================= */
+
+.mini-avatar {
+    position: relative;
+    width: 90px;
+    height: 145px;
+}
+
+.mini-head {
+    position: absolute;
+
+    width: 48px;
+    height: 48px;
+
+    left: 21px;
+    top: 25px;
+
+    background: #f2c29b;
+
+    border: 2px solid #555;
+}
+
+.mini-body {
+    position: absolute;
+
+    width: 54px;
+    height: 55px;
+
+    left: 18px;
+    top: 72px;
+
+    background: #1683ff;
+
+    border: 2px solid #555;
+}
+
+.mini-leg {
+    position: absolute;
+
+    width: 24px;
+    height: 45px;
+
+    top: 125px;
+
+    background: #333;
+
+    border: 2px solid #555;
+}
+
+.mini-leg.left {
+    left: 20px;
+}
+
+.mini-leg.right {
+    right: 20px;
+}
+
+/* =========================
+   FEDORA
+========================= */
+
+.fedora {
+    position: absolute;
+
+    width: 76px;
+    height: 43px;
+
+    left: 50%;
+    top: 18px;
+
+    transform:
+        translateX(-50%);
+
+    z-index: 5;
+
+    border-radius:
+        50% 50% 20% 20%;
+
+    border: 2px solid rgba(0,0,0,.35);
+
+    box-shadow:
+        inset 0 5px 8px
+        rgba(255,255,255,.35),
+
+        0 3px 7px
+        rgba(0,0,0,.35);
+}
+
+.fedora::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: -13px;
+    bottom: -5px;
+
+    width: 102px;
+    height: 14px;
+
+    border-radius: 50%;
+
+    background: inherit;
+
+    border: 2px solid rgba(0,0,0,.35);
+}
+
+.fedora::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 8px;
+    top: 20px;
+
+    width: 60px;
+    height: 5px;
+
+    background:
+        rgba(255,255,255,.5);
+
+    box-shadow:
+        0 0 6px white;
+}
+
+/* =========================
+   FEDORA COLORS
+========================= */
+
+.fedora-classic {
+    background:
+        linear-gradient(
+            135deg,
+            #e9e9e9,
+            #a7a7a7,
+            #ffffff
+        );
+}
+
+.fedora-red {
+    background:
+        linear-gradient(
+            135deg,
+            #ff7777,
+            #c71919,
+            #ffaaaa
+        );
+}
+
+.fedora-orange {
+    background:
+        linear-gradient(
+            135deg,
+            #ffd080,
+            #e87800,
+            #fff0b0
+        );
+}
+
+.fedora-gold {
+    background:
+        linear-gradient(
+            135deg,
+            #fff3a0,
+            #d7a400,
+            #fff7c7
+        );
+}
+
+.fedora-green {
+    background:
+        linear-gradient(
+            135deg,
+            #83ffae,
+            #129448,
+            #b5ffd0
+        );
+}
+
+.fedora-blue {
+    background:
+        linear-gradient(
+            135deg,
+            #7edcff,
+            #0876c9,
+            #bceeff
+        );
+}
+
+.fedora-purple {
+    background:
+        linear-gradient(
+            135deg,
+            #db9cff,
+            #7420b5,
+            #f0c9ff
+        );
+}
+
+.fedora-pink {
+    background:
+        linear-gradient(
+            135deg,
+            #ff9edb,
+            #d52c8a,
+            #ffd2ef
+        );
+}
+
+.fedora-cyan {
+    background:
+        linear-gradient(
+            135deg,
+            #b7ffff,
+            #009fa8,
+            #d9ffff
+        );
+}
+
+.fedora-black {
+    background:
+        linear-gradient(
+            135deg,
+            #777,
+            #090909,
+            #555
+        );
+}
+
+.fedora-white {
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #cfcfcf,
+            #ffffff
+        );
+}
+
+.fedora-rainbow {
+    background:
+        linear-gradient(
+            120deg,
+            #ff3b3b,
+            #ffb52e,
+            #fff238,
+            #39d86a,
+            #35bfff,
+            #7c4dff,
+            #ff54c8
+        );
+
+    animation:
+        rainbowMove 3s linear infinite;
+}
+
+@keyframes rainbowMove {
+
+    0% {
+        filter:
+            hue-rotate(0deg)
+            brightness(1.05);
     }
 
-    inventory.push({
-        name: name,
-        type: type,
-        added: new Date().toISOString()
-    });
+    50% {
+        filter:
+            hue-rotate(25deg)
+            brightness(1.3);
+    }
+
+    100% {
+        filter:
+            hue-rotate(0deg)
+            brightness(1.05);
+    }
+
+}
+
+/* =========================
+   SPARKLES
+========================= */
+
+.sparkles {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+}
+
+.sparkle {
+    position: absolute;
+
+    width: 5px;
+    height: 5px;
+
+    background: white;
+
+    transform:
+        rotate(45deg);
+
+    box-shadow:
+        0 0 6px white;
+
+    animation:
+        sparkle 1.5s infinite;
+}
+
+.sparkle:nth-child(1) {
+    left: 15%;
+    top: 25%;
+}
+
+.sparkle:nth-child(2) {
+    left: 70%;
+    top: 20%;
+    animation-delay: .3s;
+}
+
+.sparkle:nth-child(3) {
+    left: 45%;
+    top: 65%;
+    animation-delay: .6s;
+}
+
+.sparkle:nth-child(4) {
+    left: 82%;
+    top: 60%;
+    animation-delay: .9s;
+}
+
+@keyframes sparkle {
+
+    0%, 100% {
+        opacity: .2;
+        transform:
+            rotate(45deg)
+            scale(.6);
+    }
+
+    50% {
+        opacity: 1;
+        transform:
+            rotate(45deg)
+            scale(1.5);
+    }
+
+}
+
+/* =========================
+   OTHER ACCESSORIES
+========================= */
+
+.crystal-horns {
+
+    position: absolute;
+
+    width: 90px;
+    height: 75px;
+
+    top: 20px;
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    z-index: 10;
+}
+
+.crystal-horn {
+
+    position: absolute;
+
+    width: 19px;
+    height: 65px;
+
+    background:
+        linear-gradient(
+            135deg,
+            white,
+            #75eaff,
+            #277eb0
+        );
+
+    border:
+        2px solid #327fa0;
+
+    box-shadow:
+        0 0 8px #78eaff;
+
+    border-radius:
+        70% 30% 20% 20%;
+}
+
+.crystal-horn.left {
+    left: 12px;
+    transform: rotate(-28deg);
+}
+
+.crystal-horn.right {
+    right: 12px;
+    transform:
+        rotate(28deg)
+        scaleX(-1);
+}
+
+.crown {
+
+    position: absolute;
+
+    top: 25px;
+
+    width: 65px;
+    height: 48px;
+
+    background:
+        linear-gradient(
+            #fff47b,
+            #d39d00
+        );
+
+    clip-path:
+        polygon(
+            0% 100%,
+            10% 20%,
+            30% 55%,
+            50% 5%,
+            70% 55%,
+            90% 20%,
+            100% 100%
+        );
+
+    border: 2px solid #8c6800;
+
+    z-index: 8;
+}
+
+.tophat {
+
+    position: absolute;
+
+    top: 17px;
+
+    width: 60px;
+    height: 58px;
+
+    background:
+        linear-gradient(
+            #555,
+            #111
+        );
+
+    border:
+        2px solid #222;
+
+    z-index: 8;
+}
+
+.tophat::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 80px;
+    height: 12px;
+
+    left: -12px;
+    bottom: -5px;
+
+    border-radius: 50%;
+
+    background: #111;
+}
+
+.wings {
+
+    position: absolute;
+
+    top: 75px;
+
+    width: 115px;
+    height: 65px;
+
+    z-index: 1;
+}
+
+.wings::before,
+.wings::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 50px;
+    height: 65px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #a8dfff,
+            #559cc5
+        );
+
+    border:
+        2px solid #6095ad;
+
+    border-radius:
+        80% 20% 80% 20%;
+}
+
+.wings::before {
+    left: 0;
+    transform: rotate(-20deg);
+}
+
+.wings::after {
+    right: 0;
+    transform: rotate(20deg) scaleX(-1);
+}
+
+/* =========================
+   ITEM INFORMATION
+========================= */
+
+.item-info {
+    padding: 12px;
+}
+
+.item-name {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.item-description {
+    color: #777;
+    min-height: 32px;
+}
+
+.free {
+    display: inline-block;
+
+    margin-top: 8px;
+
+    padding: 3px 7px;
+
+    background: #35a853;
+
+    color: white;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    border-radius: 2px;
+}
+
+.equip {
+
+    float: right;
+
+    margin-top: 8px;
+
+    padding: 7px 13px;
+
+    border:
+        1px solid #555;
+
+    border-radius:
+        3px;
+
+    background:
+        linear-gradient(
+            #65b5e8,
+            #1683c5
+        );
+
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.equip:hover {
+
+    background:
+        linear-gradient(
+            #79c5ed,
+            #1683c5
+        );
+}
+
+.equip.active {
+
+    background:
+        linear-gradient(
+            #e57373,
+            #b52b2b
+        );
+}
+
+
+/* =========================
+   STATUS
+========================= */
+
+.status {
+
+    margin-top: 18px;
+
+    padding: 10px;
+
+    background: white;
+
+    border: 1px solid #aaa;
+
+    color: #1683c5;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+
+    max-width: 1000px;
+
+    margin: 40px auto 0;
+
+    padding: 15px 10px;
+
+    border-top: 1px solid #aaa;
+
+    color: #777;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 500px) {
+
+    .logo {
+        text-align: center;
+    }
+
+    nav a {
+        padding: 8px 9px;
+        font-size: 12px;
+    }
+
+    .accessory-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 8px;
+    }
+
+    .item-preview {
+        height: 150px;
+    }
+
+    .item-name {
+        font-size: 13px;
+    }
+
+    .item-description {
+        font-size: 11px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- HEADER -->
+
+<header>
+
+<div class="header-inner">
+
+<div class="logo">
+MTB REVIVALS
+</div>
+
+<nav>
+
+<a href="index.html">
+Home
+</a>
+
+<a href="login.html">
+Account
+</a>
+
+<a href="avatar.html">
+Avatar
+</a>
+
+<a href="accessories.html"
+   class="active">
+Accessories
+</a>
+
+<a href="clothes.html">
+Clothes
+</a>
+
+<a href="inventory.html">
+Inventory
+</a>
+
+<a href="games.html">
+Games
+</a>
+
+<a href="news.html">
+News
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<!-- MAIN -->
+
+<div class="container">
+
+<div class="page-title">
+Accessories
+</div>
+
+
+<div class="notice">
+
+<strong>
+MTB REVIVALS Accessories
+</strong>
+
+<br><br>
+
+All accessories below are currently
+available for free in this prototype.
+
+</div>
+
+
+<div class="accessory-grid">
+
+
+<!-- =========================
+     CLASSIC FEDORA
+========================= -->
+
+<div class="item">
+
+<div class="item-preview">
+
+<div class="mini-avatar">
+
+<div class="fedora fedora-classic">
+
+<div class="sparkles">
+
+<span class="sparkle"></span>
+<span class="sparkle"></span>
+<span class="sparkle"></span>
+<span class="sparkle"></span>
+
+</div>
+
+</div>
+
+<div class="mini-head"></div>
+<div class="mini-body"></div>
+<div class="mini-leg left"></div>
+<div class="mini-leg right"></div>
+
+</div>
+
+</div>
+
+<div class="item-info">
+
+<div class="item-name">
+Sparkle Fedora
+</div>
+
+<div class="item-description">
+Classic silver sparkle style.
+</div>
+
+<span class="free">
+FREE
+</span>
+
+<button
+class="equip"
+onclick="equip(this, 'Sparkle Fedora')">
+
+Equip
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- RED -->
+
+<div class="item">
+
+<div class="item-preview">
+
+<div class="mini-avatar">
+
+<div class="fedora fedora-red">
+
+<div class="sparkles">
+<span class="sparkle"></span>
+<span class="sparkle"></span>
+<span class="sparkle"></span>
+<span class="sparkle"></span>
+</div>
+
+</div>
+
+<div class="mini-head"></div>
+<div class="mini-body"></div>
+<div class="mini-leg left"></div>
+<div class="mini-leg right"></div>
+
+</div>
+
+</div>
+
+<div class="item-info">
+
+<div class="item-name">
+Sparkle Fedora - Red
+</div>
+
+<div class="item-description">
+Ruby red sparkle finish.
+</div>
+
+<span class="free">FREE</span>
+
+<button class="equip"
+onclick="equip(this, 'Sparkle Fedora - Red')">
+Equip
+</button>
+
+</div>
+
+</div>
+
+
+<!-- ORANGE -->
+
+<div class="item">
+
+<div class="item-preview">
+
+<div class="mini-avatar">
+
+<div class="fedora fedora-orange">
+
+<div class="sparkles">
+<span class="sparkle"></span>
+<span class="sparkle"></span>
+<span class="sparkle"></span>
+<span class="sparkle"></span>
+</div>
+
+</div>
+
+<div class="mini-head"></div>
+<div class="mini-body"></div>
+<div class="mini-leg left"></div>
+<div class="mini-leg right"></div>
+
+</div>
+
+</div>
+
+<div class="item-info">
+
+<div class="item-name">
+Sparkle Fedora - Orange
+</div>
+
+<div class="item-description">
+Bright orange sparkle finish.
+</div>
+
+<span class="free">FREE</span>
+
+<button class="equip"
+onclick="equip(this, 'Sparkle Fedora - Orange')">
+Equip
+</button>
+
+</div>
+
+</div>
+
+
+<!-- GOLD -->
+
+<div class="item">
+
+<div class="item-preview">
+
+<div class="mini-avatar">
+
+<div class="fedora fedora-gold">
+
+<div class="sparkles">
+<span class="sparkle"></span>
+<span class="sparkle"></span>
+<span class="sparkle"></span>
+<span class="sparkle"></span>
+</div>
+
+</div>
+
+<div class="mini-head"></div>
+<div class="mini-body"></div>
+<div class="mini-leg left"></div>
+<div class="mini-leg right"></div>
+
+</div>
+
+</div>
+
+<div class="item-info">
+
+<div class="item-name">
+Sparkle Fedora - Gold
+</div>
+
+<div class="item-description">
+Golden sparkling finish.
+</div>
+
+<span class="free">FREE</span>
+
+<button class="equip"
+onclick="equip(this, 'Sparkle Fedora - Gold')">
+Equip
+</button>
+
+</div>
+
+</div>
+
+
+<!-- GREEN -->
+
+<div class="item">
+
+<div class="item-preview">
+
+<div class="mini-avatar">
+
+<div class="fedora fedora-green">
+
+<div class="sparkles">
+<span class="sparkle"></span>
+<span class="sparkle"></span>
+<span class="sparkle"></span>
+<span class="sparkle"></span>
+</div>
+
+</div>
+
+<div class="mini-head"></div>
+<div class="mini-body"></div>
+<div class="mini-leg left"></div>
+<div class="mini-leg right"></div>
+
+</div>
+
+</div>
+
+<div class="item-info">
+
+<div class="item-name">
+Sparkle Fedora - Green
+</div>
+
+<div class="item-description">
+Emerald green sparkle finish.
+</div>
+
+<span class="free">FREE</span>
+
+<button class="equip"
+onclick="equip(this, 'Sparkle Fedora - Green')">
+Equip
+</button>
+
+</div>
+
+</div>
+
+
+<!-- BLUE -->
+
+<div class="item">
+
+<div class="item-preview">
+
+<div class="mini-avatar">
+
+<div class="fedora fedora-blue">
+
+<div class="sparkles">
+<span class="sparkle"></span>
+<span class="sparkle"></span>
+<span class="sparkle"></span>
+<span class="sparkle"></span>
+</div>
+
+</div>
+
+<div class="mini-head"></div>
+<div class="mini-body"></div>
+<div class="mini-leg left"></div>
+<div class="mini-leg right"></div>
+
+</div>
+
+</div>
+
+<div class="item-info">
+
+<div class="item-name">
+Sparkle Fedora - Blue
+</div>
+
+<div class="item-description">
+Ice blue sparkle finish.
+</div>
+
+<span class="free">FREE</span>
+
+<button class="equip"
+onclick="equip(this, 'Sparkle Fedora - Blue')">
+Equip
+</button>
+
+</div>
+
+</div>
+
+
+<!-- PURPLE -->
+
+<div class="item">
+
+<div class="item-preview">
+
+<div class="mini-avatar">
+
+<div class="fedora fedora-purple">
+
+<div class="sparkles">
+<span class="sparkle"></span>
+<span class="sparkle"></span>
+<span class="sparkle"></span>
+<span class="sparkle"></span>
+</div>
+
+</div>
+
+<div class="mini-head"></div>
+<div class="mini-body"></div>
+<div class="mini-leg left"></div>
+<div class="mini-leg right"></div>
+
+</div>
+
+</div>
+
+<div class="item-info">
+
+<div class="item-name">
+Sparkle Fedora - Purple
+</div>
+
+<div class="item-description">
+Royal purple sparkle finish.
+</div>
+
+<span class="free">FREE</span>
+
+<button class="equip"
+onclick="equip(this, 'Sparkle Fedora - Purple')">
+Equip
+</button>
+
+</div>
+
+</div>
+
+
+<!-- PINK -->
+
+<div class="item">
+
+<div class="item-preview">
+
+<div class="mini-avatar">
+
+<div class="fedora fedora-pink">
+
+<div class="sparkles">
+<span class="sparkle"></span>
+<span class="sparkle"></span>
+<span class="sparkle"></span>
+<span class="sparkle"></span>
+</div>
+
+</div>
+
+<div class="mini-head"></div>
+<div class="mini-body"></div>
+<div class="mini-leg left"></div>
+<div class="mini-leg right"></div>
+
+</div>
+
+</div>
+
+<div class="item-info">
+
+<div class="item-name">
+Sparkle Fedora - Pink
+</div>
+
+<div class="item-description">
+Pink crystal sparkle finish.
+</div>
+
+<span class="free">FREE</span>
+
+<button class="equip"
+onclick="equip(this, 'Sparkle Fedora - Pink')">
+Equip
+</button>
+
+</div>
+
+</div>
+
+
+<!-- CYAN -->
+
+<div class="item">
+
+<div class="item-preview">
+
+<div class="mini-avatar">
+
+<div class="fedora fedora-cyan">
+
+<div class="sparkles">
+<span class="sparkle"></span>
+<span class="sparkle"></span>
+<span class="sparkle"></span>
+<span class="sparkle"></span>
+</div>
+
+</div>
+
+<div class="mini-head"></div>
+<div class="mini-body"></div>
+<div class="mini-leg left"></div>
+<div class="mini-leg right"></div>
+
+</div>
+
+</div>
+
+<div class="item-info">
+
+<div class="item-name">
+Sparkle Fedora - Cyan
+</div>
+
+<div class="item-description">
+Bright cyan sparkle finish.
+</div>
+
+<span class="free">FREE</span>
+
+<button class="equip"
+onclick="equip(this, 'Sparkle Fedora - Cyan')">
+Equip
+</button>
+
+</div>
+
+</div>
+
+
+<!-- BLACK -->
+
+<div class="item">
+
+<div class="item-preview">
+
+<div class="mini-avatar">
+
+<div class="fedora fedora-black">
+
+<div class="sparkles">
+<span class="sparkle"></span>
+<span class="sparkle"></span>
+<span class="sparkle"></span>
+<span class="sparkle"></span>
+</div>
+
+</div>
+
+<div class="mini-head"></div>
+<div class="mini-body"></div>
+<div class="mini-leg left"></div>
+<div class="mini-leg right"></div>
+
+</div>
+
+</div>
+
+<div class="item-info">
+
+<div class="item-name">
+Sparkle Fedora - Black
+</div>
+
+<div class="item-description">
+Dark black sparkle finish.
+</div>
+
+<span class="free">FREE</span>
+
+<button class="equip"
+onclick="equip(this, 'Sparkle Fedora - Black')">
+Equip
+</button>
+
+</div>
+
+</div>
+
+
+<!-- WHITE -->
+
+<div class="item">
+
+<div class="item-preview">
+
+<div class="mini-avatar">
+
+<div class="fedora fedora-white">
+
+<div class="sparkles">
+<span class="sparkle"></span>
+<span class="sparkle"></span>
+<span class="sparkle"></span>
+<span class="sparkle"></span>
+</div>
+
+</div>
+
+<div class="mini-head"></div>
+<div class="mini-body"></div>
+<div class="mini-leg left"></div>
+<div class="mini-leg right"></div>
+
+</div>
+
+</div>
+
+<div class="item-info">
+
+<div class="item-name">
+Sparkle Fedora - White
+</div>
+
+<div class="item-description">
+Bright white crystal finish.
+</div>
+
+<span class="free">FREE</span>
+
+<button class="equip"
+onclick="equip(this, 'Sparkle Fedora - White')">
+Equip
+</button>
+
+</div>
+
+</div>
+
+
+<!-- RAINBOW -->
+
+<div class="item">
+
+<div class="item-preview">
+
+<div class="mini-avatar">
+
+<div class="fedora fedora-rainbow">
+
+<div class="sparkles">
+<span class="sparkle"></span>
+<span class="sparkle"></span>
+<span class="sparkle"></span>
+<span class="sparkle"></span>
+</div>
+
+</div>
+
+<div class="mini-head"></div>
+<div class="mini-body"></div>
+<div class="mini-leg left"></div>
+<div class="mini-leg right"></div>
+
+</div>
+
+</div>
+
+<div class="item-info">
+
+<div class="item-name">
+Sparkle Fedora - Rainbow
+</div>
+
+<div class="item-description">
+Animated rainbow sparkle finish.
+</div>
+
+<span class="free">FREE</span>
+
+<button class="equip"
+onclick="equip(this, 'Sparkle Fedora - Rainbow')">
+Equip
+</button>
+
+</div>
+
+</div>
+
+
+<!-- =========================
+     FROZEN HORNS
+========================= -->
+
+<div class="item">
+
+<div class="item-preview">
+
+<div class="mini-avatar">
+
+<div class="crystal-horns">
+
+<div class="crystal-horn left"></div>
+<div class="crystal-horn right"></div>
+
+</div>
+
+<div class="mini-head"></div>
+<div class="mini-body"></div>
+<div class="mini-leg left"></div>
+<div class="mini-leg right"></div>
+
+</div>
+
+</div>
+
+<div class="item-info">
+
+<div class="item-name">
+Frozen Crystal Horns
+</div>
+
+<div class="item-description">
+Tall icy crystalline horns.
+</div>
+
+<span class="free">FREE</span>
+
+<button class="equip"
+onclick="equip(this, 'Frozen Crystal Horns')">
+Equip
+</button>
+
+</div>
+
+</div>
+
+
+<!-- =========================
+     CROWN
+========================= -->
+
+<div class="item">
+
+<div class="item-preview">
+
+<div class="mini-avatar">
+
+<div class="crown"></div>
+
+<div class="mini-head"></div>
+<div class="mini-body"></div>
+<div class="mini-leg left"></div>
+<div class="mini-leg right"></div>
+
+</div>
+
+</div>
+
+<div class="item-info">
+
+<div class="item-name">
+Royal Crown
+</div>
+
+<div class="item-description">
+Classic golden crown.
+</div>
+
+<span class="free">FREE</span>
+
+<button class="equip"
+onclick="equip(this, 'Royal Crown')">
+Equip
+</button>
+
+</div>
+
+</div>
+
+
+<!-- =========================
+     TOP HAT
+========================= -->
+
+<div class="item">
+
+<div class="item-preview">
+
+<div class="mini-avatar">
+
+<div class="tophat"></div>
+
+<div class="mini-head"></div>
+<div class="mini-body"></div>
+<div class="mini-leg left"></div>
+<div class="mini-leg right"></div>
+
+</div>
+
+</div>
+
+<div class="item-info">
+
+<div class="item-name">
+Classic Top Hat
+</div>
+
+<div class="item-description">
+Old-school black top hat.
+</div>
+
+<span class="free">FREE</span>
+
+<button class="equip"
+onclick="equip(this, 'Classic Top Hat')">
+Equip
+</button>
+
+</div>
+
+</div>
+
+
+<!-- =========================
+     CRYSTAL WINGS
+========================= -->
+
+<div class="item">
+
+<div class="item-preview">
+
+<div class="mini-avatar">
+
+<div class="wings"></div>
+
+<div class="mini-head"></div>
+<div class="mini-body"></div>
+<div class="mini-leg left"></div>
+<div class="mini-leg right"></div>
+
+</div>
+
+</div>
+
+<div class="item-info">
+
+<div class="item-name">
+Crystal Wings
+</div>
+
+<div class="item-description">
+Glowing blue crystal wings.
+</div>
+
+<span class="free">FREE</span>
+
+<button class="equip"
+onclick="equip(this, 'Crystal Wings')">
+Equip
+</button>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<!-- STATUS -->
+
+<div
+class="status"
+id="status">
+
+Choose an accessory to equip.
+
+</div>
+
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+MTB REVIVALS © 2026
+&nbsp; | &nbsp;
+Accessories
+
+</footer>
+
+
+<script>
+
+/* =========================
+   EQUIP SYSTEM
+========================= */
+
+let equipped =
+    localStorage.getItem(
+        "mtbAccessory"
+    );
+
+
+function equip(button, itemName) {
+
+    const buttons =
+        document.querySelectorAll(
+            ".equip"
+        );
+
+
+    /*
+       Unequip previous item
+    */
+
+    buttons.forEach(
+        function(btn) {
+
+            btn.classList.remove(
+                "active"
+            );
+
+            btn.textContent =
+                "Equip";
+
+        }
+    );
+
+
+    /*
+       If clicking the same item,
+       unequip it.
+    */
+
+    if (
+        equipped === itemName
+    ) {
+
+        equipped = null;
+
+        localStorage.removeItem(
+            "mtbAccessory"
+        );
+
+        button.textContent =
+            "Equip";
+
+        document
+            .getElementById("status")
+            .textContent =
+            "Accessory unequipped.";
+
+        return;
+
+    }
+
+
+    /*
+       Equip new item
+    */
+
+    equipped =
+        itemName;
+
 
     localStorage.setItem(
-        "mtbInventory",
-        JSON.stringify(inventory)
+        "mtbAccessory",
+        itemName
     );
 
-    showMessage(
-        name + " added to your inventory!"
+
+    button.classList.add(
+        "active"
     );
+
+    button.textContent =
+        "Unequip";
+
+
+    document
+        .getElementById("status")
+        .textContent =
+        itemName +
+        " equipped!";
+
 }
+
+
+/* =========================
+   LOAD SAVED ITEM
+========================= */
+
+window.addEventListener(
+    "DOMContentLoaded",
+    function() {
+
+        if (!equipped) {
+            return;
+        }
+
+
+        const buttons =
+            document.querySelectorAll(
+                ".equip"
+            );
+
+
+        buttons.forEach(
+            function(button) {
+
+                const onclick =
+                    button.getAttribute(
+                        "onclick"
+                    );
+
+
+                if (
+                    onclick &&
+                    onclick.includes(
+                        equipped
+                    )
+                ) {
+
+                    button.classList.add(
+                        "active"
+                    );
+
+                    button.textContent =
+                        "Unequip";
+
+                }
+
+            }
+        );
+
+
+        document
+            .getElementById("status")
+            .textContent =
+            equipped +
+            " equipped!";
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>
 ```
