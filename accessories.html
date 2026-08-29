@@ -1,846 +1,216 @@
 ```html
-<!DOCTYPE html>
-<html lang="en">
+<!-- FROZEN HORNS -->
 
-<head>
+<div class="item">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <div class="preview">
 
-<title>MTB REVIVALS - Accessories</title>
+        <div class="frozen-horns">
 
-<style>
-
-* {
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 13px;
-    background: #e8e8e8;
-    color: #333;
-}
-
-/* HEADER */
-
-header {
-    background: linear-gradient(#f7f7f7, #d1d1d1);
-    border-bottom: 1px solid #999;
-    box-shadow: 0 1px 3px #aaa;
-}
-
-.header-inner {
-    max-width: 1000px;
-    margin: auto;
-    padding: 8px 10px 0;
-}
-
-.logo {
-    font-size: 25px;
-    font-weight: bold;
-    color: #333;
-    padding: 5px 0 10px;
-}
-
-/* NAVIGATION */
-
-nav {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-nav a {
-    display: block;
-    padding: 9px 13px;
-    color: #444;
-    text-decoration: none;
-    border: 1px solid transparent;
-    border-bottom: 0;
-}
-
-nav a:hover {
-    background: #ddd;
-}
-
-nav a.active {
-    background: white;
-    border: 1px solid #aaa;
-    border-bottom: 1px solid white;
-    color: #1683c5;
-}
-
-/* MAIN */
-
-.container {
-    max-width: 1000px;
-    margin: 20px auto;
-    padding: 0 10px;
-}
-
-.page-title {
-    background: linear-gradient(#666, #444);
-    color: white;
-    padding: 9px 12px;
-    border: 1px solid #333;
-    font-size: 18px;
-    font-weight: bold;
-    text-shadow: 1px 1px #222;
-}
-
-/* SEARCH */
-
-.search-box {
-    background: white;
-    border: 1px solid #aaa;
-    padding: 12px;
-    margin-top: 15px;
-}
-
-.search-row {
-    display: flex;
-    gap: 7px;
-}
-
-.search {
-    flex: 1;
-    height: 34px;
-    border: 1px solid #999;
-    padding: 7px;
-    font-size: 13px;
-}
-
-button {
-    border: 1px solid #555;
-    border-radius: 3px;
-    background: linear-gradient(#65b5e8, #1683c5);
-    color: white;
-    padding: 7px 14px;
-    font-weight: bold;
-    cursor: pointer;
-    text-shadow: 1px 1px #555;
-}
-
-button:hover {
-    background: linear-gradient(#79c5ed, #1683c5);
-}
-
-button.gray {
-    background: linear-gradient(#aaa, #777);
-}
-
-button.gray:hover {
-    background: linear-gradient(#bbb, #888);
-}
-
-/* CATEGORIES */
-
-.categories {
-    margin-top: 12px;
-    background: white;
-    border: 1px solid #aaa;
-    padding: 9px;
-}
-
-/* CATALOG */
-
-.section {
-    margin-top: 20px;
-}
-
-.section-title {
-    background: linear-gradient(#f5f5f5, #d7d7d7);
-    border: 1px solid #aaa;
-    padding: 9px;
-    font-size: 15px;
-    font-weight: bold;
-}
-
-.catalog {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 12px;
-    margin-top: 12px;
-}
-
-/* ITEM */
-
-.item {
-    background: white;
-    border: 1px solid #aaa;
-    padding: 8px;
-    box-shadow: 0 1px 2px #ccc;
-}
-
-.item-image {
-    height: 150px;
-    border: 1px solid #999;
-    background: #eee;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* ACCESSORY PREVIEWS */
-
-.accessory {
-    width: 105px;
-    height: 115px;
-    position: relative;
-}
-
-/* BLOCK HEAD */
-
-.head {
-    position: absolute;
-    width: 65px;
-    height: 65px;
-    left: 20px;
-    top: 35px;
-    background: #f2c29b;
-    border: 2px solid #555;
-}
-
-/* CAP */
-
-.cap {
-    position: absolute;
-    width: 75px;
-    height: 25px;
-    left: 15px;
-    top: 20px;
-    background: #1683c5;
-    border: 2px solid #555;
-}
-
-.cap-brim {
-    position: absolute;
-    width: 45px;
-    height: 10px;
-    left: 50px;
-    top: 42px;
-    background: #1683c5;
-    border: 2px solid #555;
-}
-
-/* FEDORA */
-
-.fedora {
-    position: absolute;
-    width: 75px;
-    height: 27px;
-    left: 15px;
-    top: 18px;
-    background: #222;
-    border: 2px solid #555;
-}
-
-.fedora-top {
-    position: absolute;
-    width: 55px;
-    height: 28px;
-    left: 25px;
-    top: 0;
-    background: #333;
-    border: 2px solid #555;
-}
-
-/* CROWN */
-
-.crown {
-    position: absolute;
-    left: 17px;
-    top: 10px;
-    width: 72px;
-    height: 40px;
-    background: #e6b800;
-    border: 2px solid #806600;
-    clip-path: polygon(
-        0 100%,
-        10% 10%,
-        35% 55%,
-        50% 0,
-        65% 55%,
-        90% 10%,
-        100% 100%
-    );
-}
-
-/* HEADPHONES */
-
-.headphones {
-    position: absolute;
-    width: 78px;
-    height: 78px;
-    left: 13px;
-    top: 27px;
-    border: 7px solid #222;
-    border-bottom: 0;
-    border-radius: 50px 50px 0 0;
-}
-
-.ear {
-    position: absolute;
-    width: 18px;
-    height: 30px;
-    background: #1683c5;
-    border: 2px solid #555;
-    top: 50px;
-}
-
-.ear.left {
-    left: -8px;
-}
-
-.ear.right {
-    right: -8px;
-}
-
-/* ITEM TEXT */
-
-.item h3 {
-    color: #1683c5;
-    font-size: 14px;
-    margin: 9px 0 4px;
-}
-
-.creator {
-    color: #777;
-    margin-bottom: 5px;
-}
-
-.price {
-    font-weight: bold;
-    margin: 7px 0;
-}
-
-.item button {
-    width: 100%;
-}
-
-/* MESSAGE */
-
-#message {
-    display: none;
-    background: white;
-    border: 1px solid #aaa;
-    padding: 10px;
-    margin-top: 12px;
-    color: #1683c5;
-    font-weight: bold;
-}
-
-/* NO RESULTS */
-
-#noResults {
-    display: none;
-    background: white;
-    border: 1px solid #aaa;
-    padding: 25px;
-    text-align: center;
-    color: #777;
-}
-
-/* FOOTER */
-
-footer {
-    max-width: 1000px;
-    margin: 40px auto 0;
-    padding: 15px 10px;
-    border-top: 1px solid #aaa;
-    color: #777;
-    font-size: 12px;
-}
-
-footer a {
-    color: #1683c5;
-    text-decoration: none;
-}
-
-/* MOBILE */
-
-@media (max-width: 800px) {
-
-    .catalog {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-}
-
-@media (max-width: 500px) {
-
-    .logo {
-        text-align: center;
-    }
-
-    nav a {
-        padding: 8px 9px;
-        font-size: 12px;
-    }
-
-    .catalog {
-        grid-template-columns: 1fr;
-    }
-
-    .search-row {
-        flex-direction: column;
-    }
-
-}
-
-</style>
-
-</head>
-
-<body>
-
-
-<header>
-
-    <div class="header-inner">
-
-        <div class="logo">
-            MTB REVIVALS
-        </div>
-
-        <nav>
-
-            <a href="index.html">
-                Home
-            </a>
-
-            <a href="login.html">
-                Account
-            </a>
-
-            <a href="avatar.html">
-                Avatar
-            </a>
-
-            <a href="accessories.html" class="active">
-                Accessories
-            </a>
-
-            <a href="clothes.html">
-                Clothes
-            </a>
-
-            <a href="inventory.html">
-                Inventory
-            </a>
-
-            <a href="games.html">
-                Games
-            </a>
-
-            <a href="news.html">
-                News
-            </a>
-
-        </nav>
-
-    </div>
-
-</header>
-
-
-<div class="container">
-
-
-    <div class="page-title">
-        Accessories
-    </div>
-
-
-    <!-- SEARCH -->
-
-    <div class="search-box">
-
-        <div class="search-row">
-
-            <input
-                id="search"
-                class="search"
-                type="text"
-                placeholder="Search accessories..."
-                onkeyup="searchItems()"
-            >
-
-            <button onclick="searchItems()">
-                Search
-            </button>
+            <div class="horn left"></div>
+            <div class="horn right"></div>
 
         </div>
 
     </div>
 
+    <h3>Frozen Horns</h3>
 
-    <!-- CATEGORIES -->
-
-    <div class="categories">
-
-        <strong>Category:</strong>
-
-        <button
-            class="gray"
-            onclick="filterItems('all')">
-
-            All
-
-        </button>
-
-        <button
-            class="gray"
-            onclick="filterItems('hat')">
-
-            Hats
-
-        </button>
-
-        <button
-            class="gray"
-            onclick="filterItems('head')">
-
-            Head
-
-        </button>
-
+    <div class="creator">
+        By MTB Studios
     </div>
 
-
-    <div id="message"></div>
-
-
-    <!-- CATALOG -->
-
-    <div class="section">
-
-        <div class="section-title">
-            Catalog
-        </div>
-
-
-        <div
-            class="catalog"
-            id="catalog">
-
-
-            <!-- BLUE CAP -->
-
-            <div
-                class="item"
-                data-type="hat"
-                data-name="Classic Blue Cap">
-
-                <div class="item-image">
-
-                    <div class="accessory">
-
-                        <div class="head"></div>
-
-                        <div
-                            class="cap">
-                        </div>
-
-                        <div
-                            class="cap-brim">
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <h3>
-                    Classic Blue Cap
-                </h3>
-
-                <div class="creator">
-                    By MTB Studios
-                </div>
-
-                <div class="price">
-                    Free
-                </div>
-
-                <button
-                    onclick="addItem('Classic Blue Cap','Accessory')">
-
-                    Add to Inventory
-
-                </button>
-
-            </div>
-
-
-            <!-- BLACK FEDORA -->
-
-            <div
-                class="item"
-                data-type="hat"
-                data-name="Classic Fedora">
-
-                <div class="item-image">
-
-                    <div class="accessory">
-
-                        <div class="head"></div>
-
-                        <div class="fedora"></div>
-
-                        <div class="fedora-top"></div>
-
-                    </div>
-
-                </div>
-
-                <h3>
-                    Classic Fedora
-                </h3>
-
-                <div class="creator">
-                    By Builder
-                </div>
-
-                <div class="price">
-                    25 Coins
-                </div>
-
-                <button
-                    onclick="addItem('Classic Fedora','Accessory')">
-
-                    Add to Inventory
-
-                </button>
-
-            </div>
-
-
-            <!-- GOLD CROWN -->
-
-            <div
-                class="item"
-                data-type="hat"
-                data-name="Golden Crown">
-
-                <div class="item-image">
-
-                    <div class="accessory">
-
-                        <div class="head"></div>
-
-                        <div class="crown"></div>
-
-                    </div>
-
-                </div>
-
-                <h3>
-                    Golden Crown
-                </h3>
-
-                <div class="creator">
-                    By MTB Studios
-                </div>
-
-                <div class="price">
-                    50 Coins
-                </div>
-
-                <button
-                    onclick="addItem('Golden Crown','Accessory')">
-
-                    Add to Inventory
-
-                </button>
-
-            </div>
-
-
-            <!-- HEADPHONES -->
-
-            <div
-                class="item"
-                data-type="head"
-                data-name="Classic Headphones">
-
-                <div class="item-image">
-
-                    <div class="accessory">
-
-                        <div class="head"></div>
-
-                        <div class="headphones"></div>
-
-                        <div class="ear left"></div>
-
-                        <div class="ear right"></div>
-
-                    </div>
-
-                </div>
-
-                <h3>
-                    Classic Headphones
-                </h3>
-
-                <div class="creator">
-                    By Player
-                </div>
-
-                <div class="price">
-                    30 Coins
-                </div>
-
-                <button
-                    onclick="addItem('Classic Headphones','Accessory')">
-
-                    Add to Inventory
-
-                </button>
-
-            </div>
-
-
-            <!-- RED CAP -->
-
-            <div
-                class="item"
-                data-type="hat"
-                data-name="Red Cap">
-
-                <div class="item-image">
-
-                    <div class="accessory">
-
-                        <div class="head"></div>
-
-                        <div
-                            class="cap"
-                            style="background:#d83232;">
-                        </div>
-
-                        <div
-                            class="cap-brim"
-                            style="background:#d83232;">
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <h3>
-                    Red Cap
-                </h3>
-
-                <div class="creator">
-                    By Player
-                </div>
-
-                <div class="price">
-                    10 Coins
-                </div>
-
-                <button
-                    onclick="addItem('Red Cap','Accessory')">
-
-                    Add to Inventory
-
-                </button>
-
-            </div>
-
-
-            <!-- GREEN CAP -->
-
-            <div
-                class="item"
-                data-type="hat"
-                data-name="Green Cap">
-
-                <div class="item-image">
-
-                    <div class="accessory">
-
-                        <div class="head"></div>
-
-                        <div
-                            class="cap"
-                            style="background:#22aa55;">
-                        </div>
-
-                        <div
-                            class="cap-brim"
-                            style="background:#22aa55;">
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <h3>
-                    Green Cap
-                </h3>
-
-                <div class="creator">
-                    By Builder
-                </div>
-
-                <div class="price">
-                    15 Coins
-                </div>
-
-                <button
-                    onclick="addItem('Green Cap','Accessory')">
-
-                    Add to Inventory
-
-                </button>
-
-            </div>
-
-
-        </div>
-
-
-        <div id="noResults">
-            No accessories found.
-        </div>
-
+    <div class="price">
+        FREE
     </div>
+
+    <button onclick="addItem('Frozen Horns','Accessory')">
+        Get Item
+    </button>
 
 </div>
 
 
-<footer>
+<!-- SHADOW LEG -->
 
-    MTB REVIVALS © 2026
+<div class="item">
 
-    &nbsp; | &nbsp;
+    <div class="preview">
 
-    <a href="index.html">
-        Home
-    </a>
+        <div class="shadow-leg-preview">
 
-    &nbsp; | &nbsp;
+            <div class="shadow-body"></div>
+            <div class="shadow-leg"></div>
 
-    <a href="inventory.html">
-        Inventory
-    </a>
+        </div>
 
-    &nbsp; | &nbsp;
+    </div>
 
-    <a href="avatar.html">
-        Avatar
-    </a>
+    <h3>Shadow Leg</h3>
 
-</footer>
+    <div class="creator">
+        By MTB Studios
+    </div>
+
+    <div class="price">
+        FREE
+    </div>
+
+    <button onclick="addItem('Shadow Leg','Accessory')">
+        Get Item
+    </button>
+
+</div>
 
 
-<script>
+<!-- INVISIBLE HEAD -->
 
-/* ADD ACCESSORY */
+<div class="item">
 
+    <div class="preview">
+
+        <div class="headless-preview">
+
+            <div class="headless-body"></div>
+
+        </div>
+
+    </div>
+
+    <h3>Invisible Head</h3>
+
+    <div class="creator">
+        By MTB Studios
+    </div>
+
+    <div class="price">
+        FREE
+    </div>
+
+    <button onclick="addItem('Invisible Head','Accessory')">
+        Get Item
+    </button>
+
+</div>
+```
+
+Add this to the **CSS** in `accessories.html`:
+
+```css
+/* FROZEN HORNS */
+
+.frozen-horns {
+    width: 110px;
+    height: 100px;
+    position: relative;
+}
+
+.horn {
+    position: absolute;
+    width: 25px;
+    height: 65px;
+    background: linear-gradient(
+        135deg,
+        #ffffff,
+        #8eeaff,
+        #238bd1
+    );
+    border: 3px solid #397a9b;
+    border-radius: 70% 20% 20% 20%;
+    box-shadow:
+        0 0 10px #65dfff;
+}
+
+.horn.left {
+    left: 15px;
+    top: 20px;
+    transform: rotate(-35deg);
+}
+
+.horn.right {
+    right: 15px;
+    top: 20px;
+    transform: rotate(35deg) scaleX(-1);
+}
+
+
+/* SHADOW LEG */
+
+.shadow-leg-preview {
+    width: 100px;
+    height: 120px;
+    position: relative;
+}
+
+.shadow-body {
+    position: absolute;
+    left: 20px;
+    top: 10px;
+    width: 60px;
+    height: 45px;
+    background: #444;
+    border: 3px solid #222;
+}
+
+.shadow-leg {
+    position: absolute;
+    left: 32px;
+    top: 50px;
+    width: 35px;
+    height: 65px;
+    background: linear-gradient(
+        #222,
+        #050505
+    );
+    border: 3px solid #111;
+    transform: skew(-8deg);
+}
+
+
+/* INVISIBLE HEAD */
+
+.headless-preview {
+    width: 100px;
+    height: 120px;
+    position: relative;
+}
+
+.headless-body {
+    position: absolute;
+    left: 27px;
+    top: 28px;
+    width: 46px;
+    height: 75px;
+    background: #1683ff;
+    border: 3px solid #555;
+}
+
+.headless-body:before {
+    content: "";
+    position: absolute;
+    left: -18px;
+    top: 0;
+    width: 15px;
+    height: 45px;
+    background: #1683ff;
+    border: 3px solid #555;
+}
+
+.headless-body:after {
+    content: "";
+    position: absolute;
+    right: -18px;
+    top: 0;
+    width: 15px;
+    height: 45px;
+    background: #1683ff;
+    border: 3px solid #555;
+}
+```
+
+Then make sure your existing `addItem()` function is still present:
+
+```javascript
 function addItem(name, type) {
 
     let inventory =
@@ -848,14 +218,10 @@ function addItem(name, type) {
             localStorage.getItem("mtbInventory")
         ) || [];
 
-
-    let alreadyOwned =
+    const alreadyOwned =
         inventory.some(function(item) {
-
             return item.name === name;
-
         });
-
 
     if (alreadyOwned) {
 
@@ -864,155 +230,21 @@ function addItem(name, type) {
         );
 
         return;
-
     }
 
-
     inventory.push({
-
         name: name,
         type: type,
         added: new Date().toISOString()
-
     });
-
 
     localStorage.setItem(
         "mtbInventory",
         JSON.stringify(inventory)
     );
 
-
     showMessage(
-        name + " was added to your inventory!"
+        name + " added to your inventory!"
     );
-
 }
-
-
-/* MESSAGE */
-
-function showMessage(text) {
-
-    const message =
-        document.getElementById("message");
-
-    message.textContent = text;
-
-    message.style.display = "block";
-
-
-    setTimeout(function() {
-
-        message.style.display = "none";
-
-    }, 3000);
-
-}
-
-
-/* SEARCH */
-
-function searchItems() {
-
-    const search =
-        document
-        .getElementById("search")
-        .value
-        .toLowerCase()
-        .trim();
-
-
-    const items =
-        document.querySelectorAll(".item");
-
-
-    let found = 0;
-
-
-    items.forEach(function(item) {
-
-        const name =
-            item
-            .getAttribute("data-name")
-            .toLowerCase();
-
-
-        if (name.includes(search)) {
-
-            item.style.display = "";
-            found++;
-
-        } else {
-
-            item.style.display = "none";
-
-        }
-
-    });
-
-
-    document
-        .getElementById("noResults")
-        .style.display =
-        found === 0
-        ? "block"
-        : "none";
-
-}
-
-
-/* FILTER */
-
-function filterItems(type) {
-
-    const items =
-        document.querySelectorAll(".item");
-
-
-    let found = 0;
-
-
-    items.forEach(function(item) {
-
-        const itemType =
-            item.getAttribute("data-type");
-
-
-        if (
-            type === "all" ||
-            itemType === type
-        ) {
-
-            item.style.display = "";
-            found++;
-
-        } else {
-
-            item.style.display = "none";
-
-        }
-
-    });
-
-
-    document
-        .getElementById("noResults")
-        .style.display =
-        found === 0
-        ? "block"
-        : "none";
-
-
-    document
-        .getElementById("search")
-        .value = "";
-
-}
-
-</script>
-
-</body>
-
-</html>
 ```
