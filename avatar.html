@@ -17,19 +17,15 @@
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 13px;
     background: #e8e8e8;
     color: #333;
 }
 
-/* =========================
-   HEADER
-========================= */
+/* HEADER */
 
 header {
-    background: linear-gradient(#f7f7f7, #d1d1d1);
+    background: linear-gradient(#f7f7f7, #d0d0d0);
     border-bottom: 1px solid #999;
-    box-shadow: 0 1px 3px #aaa;
 }
 
 .header-inner {
@@ -50,12 +46,9 @@ nav {
 }
 
 nav a {
-    display: block;
     padding: 9px 13px;
     color: #444;
     text-decoration: none;
-    border: 1px solid transparent;
-    border-bottom: 0;
 }
 
 nav a:hover {
@@ -65,14 +58,11 @@ nav a:hover {
 nav a.active {
     background: white;
     border: 1px solid #aaa;
-    border-bottom: 1px solid white;
     color: #1683c5;
 }
 
 
-/* =========================
-   MAIN
-========================= */
+/* MAIN */
 
 .container {
     max-width: 1000px;
@@ -80,122 +70,56 @@ nav a.active {
     padding: 0 10px;
 }
 
-.page-title {
+.title {
     background: linear-gradient(#666, #444);
     color: white;
-    padding: 9px 12px;
     border: 1px solid #333;
+    padding: 10px 12px;
     font-size: 18px;
     font-weight: bold;
-    text-shadow: 1px 1px #222;
 }
 
 
-/* =========================
-   AVATAR AREA
-========================= */
+/* AVATAR AREA */
 
-.avatar-area {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
+.avatar-box {
     margin-top: 15px;
-}
-
-.box {
     background: white;
     border: 1px solid #aaa;
-    box-shadow: 0 1px 3px #ccc;
-}
+    padding: 20px;
+    min-height: 520px;
 
-.box-header {
-    background: linear-gradient(#f5f5f5, #d5d5d5);
-    border-bottom: 1px solid #aaa;
-    padding: 10px;
-    font-size: 16px;
-    font-weight: bold;
-}
-
-.box-content {
-    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
-/* =========================
-   CHARACTER STAGE
-========================= */
-
-.character-stage {
-    height: 450px;
-
-    background:
-        linear-gradient(
-            #cfdfe8,
-            #f6f6f6
-        );
-
-    border: 1px solid #aaa;
-
-    position: relative;
-
-    overflow: hidden;
-}
-
-
-/* FLOOR */
-
-.floor {
-    position: absolute;
-
-    bottom: 25px;
-    left: 10%;
-
-    width: 80%;
-    height: 12px;
-
-    background: #999;
-
-    border: 1px solid #777;
-
-    box-shadow:
-        0 2px 4px #aaa;
-}
-
-
-/* =========================
-   AVATAR
-========================= */
+/* AVATAR */
 
 .avatar {
-    width: 210px;
-    height: 370px;
-
-    position: absolute;
-
-    left: 50%;
-    bottom: 38px;
-
-    transform:
-        translateX(-50%);
+    position: relative;
+    width: 260px;
+    height: 440px;
 }
 
 
-/* =========================
-   HEAD
-========================= */
+/* HEAD */
 
 .head {
     position: absolute;
 
-    width: 82px;
-    height: 82px;
+    width: 110px;
+    height: 110px;
 
-    left: 64px;
-    top: 35px;
+    left: 75px;
+    top: 75px;
 
     background: #f2c29b;
 
     border: 3px solid #555;
+
+    border-radius: 4px;
 
     z-index: 5;
 }
@@ -206,276 +130,445 @@ nav a.active {
 .face-eye {
     position: absolute;
 
-    width: 8px;
-    height: 10px;
+    width: 10px;
+    height: 14px;
 
-    background: #333;
+    background: #222;
 
-    top: 29px;
+    top: 42px;
 }
 
-.face-eye.left {
-    left: 21px;
+.eye-left {
+    left: 27px;
 }
 
-.face-eye.right {
-    right: 21px;
+.eye-right {
+    right: 27px;
 }
 
-.face-mouth {
+.face-smile {
     position: absolute;
 
-    width: 28px;
-    height: 5px;
+    width: 35px;
+    height: 15px;
 
-    background: #333;
+    left: 35px;
+    top: 68px;
 
-    left: 24px;
-    bottom: 18px;
+    border-bottom: 3px solid #222;
+
+    border-radius: 50%;
 }
 
 
-/* =========================
-   BODY
-========================= */
+/* BODY */
 
 .body {
     position: absolute;
 
-    width: 90px;
-    height: 115px;
+    width: 125px;
+    height: 135px;
 
-    left: 60px;
-    top: 118px;
+    left: 67px;
+    top: 185px;
 
     background: #1683ff;
 
     border: 3px solid #555;
 
-    z-index: 3;
+    z-index: 2;
 }
 
 
-/* =========================
-   ARMS
-========================= */
+/* ARMS */
 
 .arm {
     position: absolute;
 
-    width: 42px;
-    height: 105px;
+    width: 45px;
+    height: 130px;
 
-    top: 122px;
+    top: 188px;
 
     background: #f2c29b;
 
     border: 3px solid #555;
 
-    z-index: 2;
+    z-index: 1;
 }
 
-.arm.left {
-    left: 17px;
+.arm-left {
+    left: 20px;
 }
 
-.arm.right {
-    right: 17px;
+.arm-right {
+    right: 20px;
 }
 
 
-/* =========================
-   LEGS
-========================= */
+/* LEGS */
 
 .leg {
     position: absolute;
 
-    width: 42px;
-    height: 115px;
+    width: 55px;
+    height: 125px;
 
-    top: 231px;
+    top: 320px;
 
     background: #333;
 
     border: 3px solid #555;
 
-    z-index: 2;
+    z-index: 1;
 }
 
-.leg.left {
-    left: 61px;
+.leg-left {
+    left: 68px;
 }
 
-.leg.right {
-    right: 61px;
+.leg-right {
+    right: 68px;
 }
 
 
 /* =========================
-   FEET
+   FEDORA
 ========================= */
 
-.foot {
+.fedora {
     position: absolute;
 
-    width: 50px;
-    height: 25px;
+    width: 150px;
+    height: 70px;
 
-    top: 342px;
+    left: 55px;
+    top: 28px;
 
-    background: #222;
+    border-radius:
+        50% 50% 20% 20%;
 
-    border: 3px solid #555;
-
-    z-index: 2;
-}
-
-.foot.left {
-    left: 53px;
-}
-
-.foot.right {
-    right: 53px;
-}
-
-
-/* ==================================================
-   FROZEN HORNS OF THE FRIGID PLANES
-================================================== */
-
-.frozen-horns {
-
-    position: absolute;
-
-    width: 180px;
-    height: 155px;
-
-    left: 15px;
-    top: -15px;
+    border: 3px solid rgba(0,0,0,.35);
 
     z-index: 20;
 
-    pointer-events: none;
-
-    filter:
-        drop-shadow(0 0 5px #8cecff)
-        drop-shadow(0 0 12px #b8f8ff);
-}
-
-
-/* =========================
-   MAIN HORNS
-========================= */
-
-.horn {
-
-    position: absolute;
-
-    width: 39px;
-    height: 125px;
-
-    background:
-
-        linear-gradient(
-            115deg,
-
-            #ffffff 0%,
-            #e9fdff 18%,
-            #8deafa 45%,
-            #42bddd 70%,
-            #1e6ea8 100%
-        );
-
-    border: 3px solid #327ea4;
-
-    /*
-       Long curved crystal silhouette
-    */
-
-    border-radius:
-        65% 45% 25% 30%;
-
     box-shadow:
+        inset 0 8px 12px
+        rgba(255,255,255,.4),
 
-        inset 7px 0 0
-        rgba(255,255,255,0.65),
-
-        inset -6px 0 0
-        rgba(15,90,130,0.35),
-
-        0 0 7px #72e9ff;
+        0 4px 12px
+        rgba(0,0,0,.35);
 }
 
-
-/* LEFT CURVE */
-
-.horn.left {
-
-    left: 20px;
-    top: 5px;
-
-    transform:
-        rotate(-27deg)
-        skewY(-8deg);
-}
-
-
-/* RIGHT CURVE */
-
-.horn.right {
-
-    right: 20px;
-    top: 5px;
-
-    transform:
-        rotate(27deg)
-        scaleX(-1)
-        skewY(-8deg);
-}
-
-
-/* =========================
-   CRYSTAL FACETS
-========================= */
-
-.horn::before {
+.fedora::before {
 
     content: "";
 
     position: absolute;
 
-    left: 8px;
-    top: 12px;
+    width: 185px;
+    height: 18px;
 
-    width: 15px;
-    height: 94px;
+    left: -20px;
+    bottom: -7px;
+
+    background: inherit;
+
+    border-radius: 50%;
+
+    border: 3px solid rgba(0,0,0,.35);
+}
+
+.fedora::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 115px;
+    height: 7px;
+
+    left: 15px;
+    top: 32px;
 
     background:
+        rgba(255,255,255,.55);
 
+    box-shadow:
+        0 0 10px white;
+}
+
+
+/* FEDORA COLORS */
+
+.classic {
+    background:
         linear-gradient(
-            145deg,
+            135deg,
+            #eee,
+            #999,
+            #fff
+        );
+}
 
-            rgba(255,255,255,0.9),
-            rgba(255,255,255,0.15)
+.red {
+    background:
+        linear-gradient(
+            135deg,
+            #ff7777,
+            #b91515,
+            #ffaaaa
+        );
+}
+
+.orange {
+    background:
+        linear-gradient(
+            135deg,
+            #ffd080,
+            #e87800,
+            #fff0b0
+        );
+}
+
+.gold {
+    background:
+        linear-gradient(
+            135deg,
+            #fff3a0,
+            #d7a400,
+            #fff7c7
+        );
+}
+
+.green {
+    background:
+        linear-gradient(
+            135deg,
+            #83ffae,
+            #129448,
+            #b5ffd0
+        );
+}
+
+.blue {
+    background:
+        linear-gradient(
+            135deg,
+            #7edcff,
+            #0876c9,
+            #bceeff
+        );
+}
+
+.purple {
+    background:
+        linear-gradient(
+            135deg,
+            #db9cff,
+            #7420b5,
+            #f0c9ff
+        );
+}
+
+.pink {
+    background:
+        linear-gradient(
+            135deg,
+            #ff9edb,
+            #d52c8a,
+            #ffd2ef
+        );
+}
+
+.cyan {
+    background:
+        linear-gradient(
+            135deg,
+            #b7ffff,
+            #009fa8,
+            #d9ffff
+        );
+}
+
+.black {
+    background:
+        linear-gradient(
+            135deg,
+            #777,
+            #090909,
+            #555
+        );
+}
+
+.white {
+    background:
+        linear-gradient(
+            135deg,
+            #fff,
+            #ccc,
+            #fff
+        );
+}
+
+.rainbow {
+    background:
+        linear-gradient(
+            120deg,
+            #ff3b3b,
+            #ffb52e,
+            #fff238,
+            #39d86a,
+            #35bfff,
+            #7c4dff,
+            #ff54c8
         );
 
-    clip-path:
+    animation:
+        rainbow 3s linear infinite;
+}
 
-        polygon(
-            50% 0%,
-            100% 28%,
-            60% 52%,
-            100% 78%,
-            45% 100%,
-            20% 55%
-        );
+@keyframes rainbow {
+
+    0% {
+        filter:
+            hue-rotate(0deg)
+            brightness(1);
+    }
+
+    50% {
+        filter:
+            hue-rotate(30deg)
+            brightness(1.3);
+    }
+
+    100% {
+        filter:
+            hue-rotate(0deg)
+            brightness(1);
+    }
 }
 
 
 /* =========================
-   ICY SPIKES
+   SPARKLES
 ========================= */
+
+.sparkle {
+    position: absolute;
+
+    width: 7px;
+    height: 7px;
+
+    background: white;
+
+    transform: rotate(45deg);
+
+    box-shadow:
+        0 0 8px white;
+
+    animation:
+        sparkle 1.3s infinite;
+}
+
+.s1 {
+    left: 20px;
+    top: 15px;
+}
+
+.s2 {
+    left: 70px;
+    top: 48px;
+    animation-delay: .3s;
+}
+
+.s3 {
+    right: 25px;
+    top: 20px;
+    animation-delay: .6s;
+}
+
+.s4 {
+    right: 45px;
+    top: 48px;
+    animation-delay: .9s;
+}
+
+@keyframes sparkle {
+
+    0%,100% {
+        opacity: .2;
+        transform:
+            rotate(45deg)
+            scale(.5);
+    }
+
+    50% {
+        opacity: 1;
+        transform:
+            rotate(45deg)
+            scale(1.5);
+    }
+}
+
+
+/* =========================
+   FROZEN HORNS
+========================= */
+
+.horns {
+    position: absolute;
+
+    width: 180px;
+    height: 120px;
+
+    left: 40px;
+    top: 5px;
+
+    z-index: 18;
+}
+
+.horn {
+    position: absolute;
+
+    width: 38px;
+    height: 105px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #8eeaff,
+            #277cae
+        );
+
+    border:
+        3px solid #377f9c;
+
+    box-shadow:
+        0 0 14px #69eaff;
+
+    border-radius:
+        75% 25% 20% 20%;
+}
+
+.horn.left {
+    left: 20px;
+
+    transform:
+        rotate(-28deg);
+}
+
+.horn.right {
+    right: 20px;
+
+    transform:
+        rotate(28deg)
+        scaleX(-1);
+}
+
+
+/* HORN SPIKES */
 
 .horn::after {
 
@@ -483,462 +576,185 @@ nav a.active {
 
     position: absolute;
 
-    width: 23px;
-    height: 38px;
+    width: 25px;
+    height: 25px;
 
-    background:
+    top: 15px;
+    left: 20px;
 
-        linear-gradient(
-            135deg,
-            #ffffff,
-            #9cf2ff,
-            #3caed2
-        );
-
-    border: 2px solid #438eaa;
+    background: #dfffff;
 
     clip-path:
-
         polygon(
-            50% 0%,
-            100% 75%,
-            55% 62%,
-            0% 100%
+            0 100%,
+            50% 0,
+            100% 100%
         );
-
-    top: 30px;
-    left: -17px;
-
-    transform: rotate(-15deg);
 }
 
 
-/* EXTRA ICE SPIKES */
+/* CROWN */
 
-.frozen-horns .spike {
-
+.crown {
     position: absolute;
 
-    width: 20px;
-    height: 34px;
+    width: 125px;
+    height: 80px;
+
+    left: 67px;
+    top: 35px;
+
+    z-index: 15;
 
     background:
-
         linear-gradient(
-            135deg,
-            #ffffff,
-            #8eeaff,
-            #2786b5
+            #fff47b,
+            #d39d00
         );
-
-    border: 2px solid #3b819f;
 
     clip-path:
-
         polygon(
-            50% 0%,
-            100% 100%,
-            50% 72%,
-            0% 100%
-        );
-}
-
-
-/* LEFT SPIKES */
-
-.frozen-horns .spike.s1 {
-
-    left: 7px;
-    top: 65px;
-
-    transform:
-        rotate(-35deg);
-}
-
-.frozen-horns .spike.s2 {
-
-    left: 25px;
-    top: 105px;
-
-    transform:
-        rotate(-55deg);
-}
-
-
-/* RIGHT SPIKES */
-
-.frozen-horns .spike.s3 {
-
-    right: 7px;
-    top: 65px;
-
-    transform:
-        rotate(35deg);
-}
-
-.frozen-horns .spike.s4 {
-
-    right: 25px;
-    top: 105px;
-
-    transform:
-        rotate(55deg);
-}
-
-
-/* =========================
-   HEADLESS
-========================= */
-
-.avatar.headless .head {
-    display: none;
-}
-
-
-/* =========================
-   KORBLOX-INSPIRED LEG
-========================= */
-
-.avatar.korblox .leg.right {
-
-    width: 44px;
-    height: 125px;
-
-    background:
-
-        linear-gradient(
-            160deg,
-            #383838 0%,
-            #171717 35%,
-            #050505 100%
+            0 100%,
+            10% 20%,
+            30% 55%,
+            50% 0,
+            70% 55%,
+            90% 20%,
+            100% 100%
         );
 
-    border:
-        3px solid #111;
-
-    transform:
-        skew(-7deg);
-
-    box-shadow:
-
-        inset 5px 0 0 #4a4a4a,
-
-        inset -6px 0 0 #000,
-
-        0 0 5px #222;
+    border: 3px solid #8c6800;
 }
 
 
-/* ARMOR PLATE */
+/* WINGS */
 
-.avatar.korblox .leg.right::before {
+.wings {
+    position: absolute;
+
+    width: 260px;
+    height: 150px;
+
+    left: 0;
+    top: 205px;
+
+    z-index: 0;
+}
+
+.wings::before,
+.wings::after {
 
     content: "";
 
     position: absolute;
 
-    left: 5px;
-    top: 12px;
-
-    width: 27px;
-    height: 30px;
+    width: 105px;
+    height: 140px;
 
     background:
-
         linear-gradient(
             135deg,
-            #777,
-            #292929,
-            #080808
+            white,
+            #a8dfff,
+            #559cc5
         );
 
     border:
-        2px solid #888;
+        3px solid #6095ad;
+
+    border-radius:
+        80% 20% 80% 20%;
+}
+
+.wings::before {
+
+    left: 0;
 
     transform:
-        skew(7deg)
-        rotate(8deg);
-
-    box-shadow:
-        0 0 5px #555;
+        rotate(-20deg);
 }
 
+.wings::after {
 
-/* DARK CRYSTAL */
-
-.avatar.korblox .leg.right::after {
-
-    content: "";
-
-    position: absolute;
-
-    left: 8px;
-    bottom: 12px;
-
-    width: 20px;
-    height: 34px;
-
-    background:
-
-        linear-gradient(
-            135deg,
-            #aaa,
-            #444,
-            #090909
-        );
-
-    border:
-        2px solid #aaa;
-
-    clip-path:
-
-        polygon(
-            50% 0%,
-            100% 35%,
-            75% 100%,
-            25% 100%,
-            0% 35%
-        );
-
-    box-shadow:
-        0 0 6px #555;
-}
-
-
-/* FOOT */
-
-.avatar.korblox .foot.right {
-
-    background:
-        linear-gradient(
-            #222,
-            #030303
-        );
-
-    border-color:
-        #111;
+    right: 0;
 
     transform:
-        skew(-7deg);
+        rotate(20deg)
+        scaleX(-1);
 }
 
 
-/* =========================
-   SHIRT COLORS
-========================= */
-
-.avatar.red-shirt .body,
-.avatar.red-shirt .arm {
-    background: #d83232;
-}
-
-.avatar.green-shirt .body,
-.avatar.green-shirt .arm {
-    background: #25a65a;
-}
-
-.avatar.black-shirt .body,
-.avatar.black-shirt .arm {
-    background: #333;
-}
-
-
-/* =========================
-   PANTS COLORS
-========================= */
-
-.avatar.blue-pants .leg {
-    background: #174f9c;
-}
-
-.avatar.gray-pants .leg {
-    background: #777;
-}
-
-.avatar.brown-pants .leg {
-    background: #795548;
-}
-
-
-/* =========================
-   CONTROLS
-========================= */
+/* CONTROLS */
 
 .controls {
-    margin-top: 5px;
+
+    margin-top: 15px;
+
+    background: white;
+
+    border: 1px solid #aaa;
+
+    padding: 15px;
+
+    text-align: center;
 }
 
-.control {
+button {
 
-    display: flex;
-
-    justify-content:
-        space-between;
-
-    align-items:
-        center;
-
-    border-bottom:
-        1px solid #ddd;
-
-    padding:
-        12px 0;
-}
-
-.control:last-child {
-    border-bottom: 0;
-}
-
-.control-name {
-
-    font-weight: bold;
-
-    margin-bottom: 3px;
-}
-
-.control small {
-    color: #777;
-}
-
-.control button {
+    padding: 9px 18px;
 
     border:
         1px solid #555;
 
-    border-radius:
-        3px;
+    border-radius: 3px;
 
     background:
-
         linear-gradient(
             #65b5e8,
             #1683c5
         );
 
-    color:
-        white;
+    color: white;
 
-    padding:
-        8px 12px;
+    font-weight: bold;
 
-    font-weight:
-        bold;
-
-    cursor:
-        pointer;
-
-    text-shadow:
-        1px 1px #555;
+    cursor: pointer;
 }
 
-.control button:hover {
+button:hover {
 
     background:
-
         linear-gradient(
             #79c5ed,
             #1683c5
         );
 }
 
-.control button.remove {
-
-    background:
-
-        linear-gradient(
-            #e57373,
-            #b52b2b
-        );
-}
-
-
-/* =========================
-   STATUS
-========================= */
-
 .status {
 
-    margin-top:
-        15px;
+    margin-top: 10px;
 
-    background:
-        white;
+    color: #1683c5;
 
-    border:
-        1px solid #aaa;
-
-    padding:
-        10px;
-
-    color:
-        #1683c5;
-
-    font-weight:
-        bold;
+    font-weight: bold;
 }
 
 
-/* =========================
-   FOOTER
-========================= */
+/* MOBILE */
 
-footer {
-
-    max-width:
-        1000px;
-
-    margin:
-        40px auto 0;
-
-    padding:
-        15px 10px;
-
-    border-top:
-        1px solid #aaa;
-
-    color:
-        #777;
-}
-
-footer a {
-
-    color:
-        #1683c5;
-
-    text-decoration:
-        none;
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 700px) {
-
-    .avatar-area {
-        grid-template-columns: 1fr;
-    }
-
-}
-
-@media (max-width: 500px) {
+@media(max-width:600px) {
 
     .logo {
         text-align: center;
     }
 
     nav a {
-        padding:
-            8px 9px;
-
-        font-size:
-            12px;
+        padding: 8px 9px;
+        font-size: 12px;
     }
 
-    .character-stage {
-        height:
-            400px;
+    .avatar-box {
+        overflow: hidden;
     }
 
 }
@@ -951,381 +767,134 @@ footer a {
 <body>
 
 
-<!-- HEADER -->
-
 <header>
 
-    <div class="header-inner">
+<div class="header-inner">
 
-        <div class="logo">
-            MTB REVIVALS
-        </div>
+<div class="logo">
+MTB REVIVALS
+</div>
 
-        <nav>
+<nav>
 
-            <a href="index.html">
-                Home
-            </a>
+<a href="index.html">
+Home
+</a>
 
-            <a href="login.html">
-                Account
-            </a>
+<a href="login.html">
+Account
+</a>
 
-            <a href="avatar.html"
-               class="active">
-                Avatar
-            </a>
+<a href="avatar.html"
+   class="active">
+Avatar
+</a>
 
-            <a href="accessories.html">
-                Accessories
-            </a>
+<a href="accessories.html">
+Accessories
+</a>
 
-            <a href="clothes.html">
-                Clothes
-            </a>
+<a href="clothes.html">
+Clothes
+</a>
 
-            <a href="inventory.html">
-                Inventory
-            </a>
+<a href="inventory.html">
+Inventory
+</a>
 
-            <a href="games.html">
-                Games
-            </a>
+<a href="games.html">
+Games
+</a>
 
-            <a href="news.html">
-                News
-            </a>
+<a href="news.html">
+News
+</a>
 
-        </nav>
+</nav>
 
-    </div>
+</div>
 
 </header>
 
 
-<!-- MAIN -->
-
 <div class="container">
 
-    <div class="page-title">
-        Avatar
-    </div>
+<div class="title">
+My Avatar
+</div>
 
 
-    <div class="avatar-area">
+<div class="avatar-box">
 
+<div class="avatar"
+     id="avatar">
 
-        <!-- CHARACTER -->
 
-        <div class="box">
+<!-- ACCESSORY -->
 
-            <div class="box-header">
-                My Character
-            </div>
+<div id="accessory"></div>
 
-            <div class="box-content">
 
-                <div class="character-stage">
+<!-- WINGS -->
 
+<div id="wings"></div>
 
-                    <div
-                        class="avatar"
-                        id="avatar">
 
+<!-- HEAD -->
 
-                        <!-- FROZEN HORNS -->
+<div class="head">
 
-                        <div
-                            class="frozen-horns"
-                            id="frozenHorns"
-                            style="display:none;">
+<div class="face-eye eye-left"></div>
+<div class="face-eye eye-right"></div>
 
-                            <div class="horn left"></div>
-
-                            <div class="horn right"></div>
-
-
-                            <!-- EXTRA SPIKES -->
-
-                            <div class="spike s1"></div>
-
-                            <div class="spike s2"></div>
-
-                            <div class="spike s3"></div>
-
-                            <div class="spike s4"></div>
-
-                        </div>
-
-
-                        <!-- HEAD -->
-
-                        <div class="head">
-
-                            <div
-                                class="face-eye left">
-                            </div>
-
-                            <div
-                                class="face-eye right">
-                            </div>
-
-                            <div
-                                class="face-mouth">
-                            </div>
-
-                        </div>
-
-
-                        <!-- ARMS -->
-
-                        <div class="arm left"></div>
-
-                        <div class="arm right"></div>
-
-
-                        <!-- BODY -->
-
-                        <div class="body"></div>
-
-
-                        <!-- LEGS -->
-
-                        <div class="leg left"></div>
-
-                        <div class="leg right"></div>
-
-
-                        <!-- FEET -->
-
-                        <div class="foot left"></div>
-
-                        <div class="foot right"></div>
-
-                    </div>
-
-
-                    <div class="floor"></div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- EDITOR -->
-
-        <div class="box">
-
-            <div class="box-header">
-                Character Editor
-            </div>
-
-            <div class="box-content">
-
-                <div class="controls">
-
-
-                    <!-- FROZEN HORNS -->
-
-                    <div class="control">
-
-                        <div>
-
-                            <div class="control-name">
-                                Frozen Horns of the Frigid Planes
-                            </div>
-
-                            <small>
-                                FREE
-                            </small>
-
-                        </div>
-
-                        <button
-                            id="hornButton"
-                            onclick="toggleHorns()">
-
-                            Equip
-
-                        </button>
-
-                    </div>
-
-
-                    <!-- KORBLOX STYLE LEG -->
-
-                    <div class="control">
-
-                        <div>
-
-                            <div class="control-name">
-                                Korblox Deathspeaker Leg
-                            </div>
-
-                            <small>
-                                FREE
-                            </small>
-
-                        </div>
-
-                        <button
-                            id="korbloxButton"
-                            onclick="toggleKorblox()">
-
-                            Equip
-
-                        </button>
-
-                    </div>
-
-
-                    <!-- HEADLESS -->
-
-                    <div class="control">
-
-                        <div>
-
-                            <div class="control-name">
-                                Invisible Head
-                            </div>
-
-                            <small>
-                                FREE
-                            </small>
-
-                        </div>
-
-                        <button
-                            id="headButton"
-                            onclick="toggleHeadless()">
-
-                            Equip
-
-                        </button>
-
-                    </div>
-
-
-                    <!-- SHIRT -->
-
-                    <div class="control">
-
-                        <div>
-
-                            <div class="control-name">
-                                Shirt
-                            </div>
-
-                            <small id="shirtName">
-                                Classic Blue Shirt
-                            </small>
-
-                        </div>
-
-                        <button
-                            onclick="toggleShirt()">
-
-                            Change
-
-                        </button>
-
-                    </div>
-
-
-                    <!-- PANTS -->
-
-                    <div class="control">
-
-                        <div>
-
-                            <div class="control-name">
-                                Pants
-                            </div>
-
-                            <small id="pantsName">
-                                Classic Black Pants
-                            </small>
-
-                        </div>
-
-                        <button
-                            onclick="togglePants()">
-
-                            Change
-
-                        </button>
-
-                    </div>
-
-
-                    <!-- RESET -->
-
-                    <div class="control">
-
-                        <div>
-
-                            <div class="control-name">
-                                Reset Avatar
-                            </div>
-
-                            <small>
-                                Remove equipped items
-                            </small>
-
-                        </div>
-
-                        <button
-                            class="remove"
-                            onclick="resetAvatar()">
-
-                            Reset
-
-                        </button>
-
-                    </div>
-
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- STATUS -->
-
-    <div
-        class="status"
-        id="status">
-
-        Avatar loaded.
-
-    </div>
+<div class="face-smile"></div>
 
 </div>
 
 
-<!-- FOOTER -->
+<!-- BODY -->
+
+<div class="body"></div>
+
+
+<!-- ARMS -->
+
+<div class="arm arm-left"></div>
+<div class="arm arm-right"></div>
+
+
+<!-- LEGS -->
+
+<div class="leg leg-left"></div>
+<div class="leg leg-right"></div>
+
+
+</div>
+
+</div>
+
+
+<div class="controls">
+
+<button onclick="removeAccessory()">
+Remove Accessory
+</button>
+
+<div
+class="status"
+id="status">
+Loading avatar...
+</div>
+
+</div>
+
+
+</div>
+
 
 <footer>
 
-    MTB REVIVALS © 2026
-
-    &nbsp; | &nbsp;
-
-    <a href="index.html">
-        Home
-    </a>
-
-    &nbsp; | &nbsp;
-
-    <a href="inventory.html">
-        Inventory
-    </a>
+MTB REVIVALS © 2026
 
 </footer>
 
@@ -1333,470 +902,281 @@ footer a {
 <script>
 
 /* =========================
-   LOAD SAVED AVATAR
+   LOAD EQUIPPED ACCESSORY
 ========================= */
 
-let avatarData =
-    JSON.parse(
-        localStorage.getItem("mtbAvatar")
-    ) || {
+function loadAccessory() {
 
-        horns: false,
+    const item =
+        localStorage.getItem(
+            "mtbAccessory"
+        );
 
-        korblox: false,
 
-        headless: false,
+    const accessory =
+        document.getElementById(
+            "accessory"
+        );
 
-        shirt: "blue",
 
-        pants: "black"
+    const wings =
+        document.getElementById(
+            "wings"
+        );
+
+
+    accessory.innerHTML = "";
+    wings.innerHTML = "";
+
+
+    if (!item) {
+
+        document
+            .getElementById("status")
+            .textContent =
+            "No accessory equipped.";
+
+        return;
+
+    }
+
+
+    /*
+       FEDORAS
+    */
+
+    const fedoraColors = {
+
+        "Sparkle Fedora":
+            "classic",
+
+        "Sparkle Fedora - Red":
+            "red",
+
+        "Sparkle Fedora - Orange":
+            "orange",
+
+        "Sparkle Fedora - Gold":
+            "gold",
+
+        "Sparkle Fedora - Green":
+            "green",
+
+        "Sparkle Fedora - Blue":
+            "blue",
+
+        "Sparkle Fedora - Purple":
+            "purple",
+
+        "Sparkle Fedora - Pink":
+            "pink",
+
+        "Sparkle Fedora - Cyan":
+            "cyan",
+
+        "Sparkle Fedora - Black":
+            "black",
+
+        "Sparkle Fedora - White":
+            "white",
+
+        "Sparkle Fedora - Rainbow":
+            "rainbow"
 
     };
 
 
-/* =========================
-   SAVE
-========================= */
+    if (
+        fedoraColors[item]
+    ) {
 
-function saveAvatar() {
+        const fedora =
+            document.createElement(
+                "div"
+            );
 
-    localStorage.setItem(
-        "mtbAvatar",
-        JSON.stringify(avatarData)
-    );
-
-}
+        fedora.className =
+            "fedora " +
+            fedoraColors[item];
 
 
-/* =========================
-   STATUS
-========================= */
+        for (
+            let i = 1;
+            i <= 4;
+            i++
+        ) {
 
-function setStatus(text) {
+            const sparkle =
+                document.createElement(
+                    "span"
+                );
+
+            sparkle.className =
+                "sparkle s" + i;
+
+            fedora.appendChild(
+                sparkle
+            );
+
+        }
+
+
+        accessory.appendChild(
+            fedora
+        );
+
+    }
+
+
+    /*
+       FROZEN HORNS
+    */
+
+    else if (
+        item ===
+        "Frozen Crystal Horns"
+    ) {
+
+        const horns =
+            document.createElement(
+                "div"
+            );
+
+        horns.className =
+            "horns";
+
+        horns.innerHTML = `
+
+            <div class="horn left"></div>
+
+            <div class="horn right"></div>
+
+        `;
+
+        accessory.appendChild(
+            horns
+        );
+
+    }
+
+
+    /*
+       CROWN
+    */
+
+    else if (
+        item ===
+        "Royal Crown"
+    ) {
+
+        const crown =
+            document.createElement(
+                "div"
+            );
+
+        crown.className =
+            "crown";
+
+        accessory.appendChild(
+            crown
+        );
+
+    }
+
+
+    /*
+       WINGS
+    */
+
+    else if (
+        item ===
+        "Crystal Wings"
+    ) {
+
+        const wing =
+            document.createElement(
+                "div"
+            );
+
+        wing.className =
+            "wings";
+
+        wings.appendChild(
+            wing
+        );
+
+    }
+
+
+    /*
+       TOP HAT
+    */
+
+    else if (
+        item ===
+        "Classic Top Hat"
+    ) {
+
+        const hat =
+            document.createElement(
+                "div"
+            );
+
+        hat.style.position =
+            "absolute";
+
+        hat.style.width =
+            "105px";
+
+        hat.style.height =
+            "100px";
+
+        hat.style.left =
+            "77px";
+
+        hat.style.top =
+            "28px";
+
+        hat.style.background =
+            "linear-gradient(#555,#111)";
+
+        hat.style.border =
+            "3px solid #222";
+
+        hat.style.zIndex =
+            "20";
+
+        hat.style.boxShadow =
+            "0 4px 10px rgba(0,0,0,.4)";
+
+
+        accessory.appendChild(
+            hat
+        );
+
+    }
+
 
     document
         .getElementById("status")
-        .textContent = text;
-
-}
-
-
-/* =========================
-   UPDATE
-========================= */
-
-function updateAvatar() {
-
-    const avatar =
-        document.getElementById("avatar");
-
-
-    avatar.classList.remove(
-
-        "headless",
-
-        "korblox",
-
-        "red-shirt",
-
-        "green-shirt",
-
-        "black-shirt",
-
-        "blue-pants",
-
-        "gray-pants",
-
-        "brown-pants"
-
-    );
-
-
-    /* HEADLESS */
-
-    if (avatarData.headless) {
-
-        avatar.classList.add(
-            "headless"
-        );
-
-    }
-
-
-    /* KORBLOX */
-
-    if (avatarData.korblox) {
-
-        avatar.classList.add(
-            "korblox"
-        );
-
-    }
-
-
-    /* HORNS */
-
-    document
-        .getElementById("frozenHorns")
-        .style.display =
-        avatarData.horns
-        ? "block"
-        : "none";
-
-
-    /* SHIRT */
-
-    if (avatarData.shirt === "red") {
-
-        avatar.classList.add(
-            "red-shirt"
-        );
-
-    }
-
-    else if (
-        avatarData.shirt === "green"
-    ) {
-
-        avatar.classList.add(
-            "green-shirt"
-        );
-
-    }
-
-    else if (
-        avatarData.shirt === "black"
-    ) {
-
-        avatar.classList.add(
-            "black-shirt"
-        );
-
-    }
-
-
-    /* PANTS */
-
-    if (
-        avatarData.pants === "blue"
-    ) {
-
-        avatar.classList.add(
-            "blue-pants"
-        );
-
-    }
-
-    else if (
-        avatarData.pants === "gray"
-    ) {
-
-        avatar.classList.add(
-            "gray-pants"
-        );
-
-    }
-
-    else if (
-        avatarData.pants === "brown"
-    ) {
-
-        avatar.classList.add(
-            "brown-pants"
-        );
-
-    }
-
-
-    /* BUTTONS */
-
-    document
-        .getElementById("hornButton")
         .textContent =
-        avatarData.horns
-        ? "Unequip"
-        : "Equip";
-
-
-    document
-        .getElementById("korbloxButton")
-        .textContent =
-        avatarData.korblox
-        ? "Unequip"
-        : "Equip";
-
-
-    document
-        .getElementById("headButton")
-        .textContent =
-        avatarData.headless
-        ? "Unequip"
-        : "Equip";
-
-
-    /* NAMES */
-
-    const shirtNames = {
-
-        blue:
-            "Classic Blue Shirt",
-
-        red:
-            "Red Classic Shirt",
-
-        green:
-            "Green Classic Shirt",
-
-        black:
-            "Black Classic Shirt"
-
-    };
-
-
-    const pantsNames = {
-
-        black:
-            "Classic Black Pants",
-
-        blue:
-            "Classic Blue Pants",
-
-        gray:
-            "Gray Pants",
-
-        brown:
-            "Brown Pants"
-
-    };
-
-
-    document
-        .getElementById("shirtName")
-        .textContent =
-        shirtNames[avatarData.shirt];
-
-
-    document
-        .getElementById("pantsName")
-        .textContent =
-        pantsNames[avatarData.pants];
+        item +
+        " equipped.";
 
 }
 
 
 /* =========================
-   HORNS
+   REMOVE
 ========================= */
 
-function toggleHorns() {
+function removeAccessory() {
 
-    avatarData.horns =
-        !avatarData.horns;
-
-
-    saveAvatar();
-
-    updateAvatar();
-
-
-    setStatus(
-
-        avatarData.horns
-
-        ? "Frozen Horns of the Frigid Planes equipped!"
-
-        : "Frozen Horns of the Frigid Planes unequipped."
-
+    localStorage.removeItem(
+        "mtbAccessory"
     );
 
-}
-
-
-/* =========================
-   KORBLOX LEG
-========================= */
-
-function toggleKorblox() {
-
-    avatarData.korblox =
-        !avatarData.korblox;
-
-
-    saveAvatar();
-
-    updateAvatar();
-
-
-    setStatus(
-
-        avatarData.korblox
-
-        ? "Korblox Deathspeaker Leg equipped!"
-
-        : "Korblox Deathspeaker Leg unequipped."
-
-    );
-
-}
-
-
-/* =========================
-   HEADLESS
-========================= */
-
-function toggleHeadless() {
-
-    avatarData.headless =
-        !avatarData.headless;
-
-
-    saveAvatar();
-
-    updateAvatar();
-
-
-    setStatus(
-
-        avatarData.headless
-
-        ? "Invisible Head equipped!"
-
-        : "Invisible Head unequipped."
-
-    );
-
-}
-
-
-/* =========================
-   SHIRT
-========================= */
-
-function toggleShirt() {
-
-    const shirts = [
-
-        "blue",
-        "red",
-        "green",
-        "black"
-
-    ];
-
-
-    let index =
-        shirts.indexOf(
-            avatarData.shirt
-        );
-
-
-    index++;
-
-
-    if (
-        index >= shirts.length
-    ) {
-
-        index = 0;
-
-    }
-
-
-    avatarData.shirt =
-        shirts[index];
-
-
-    saveAvatar();
-
-    updateAvatar();
-
-
-    setStatus(
-        "Shirt changed."
-    );
-
-}
-
-
-/* =========================
-   PANTS
-========================= */
-
-function togglePants() {
-
-    const pants = [
-
-        "black",
-        "blue",
-        "gray",
-        "brown"
-
-    ];
-
-
-    let index =
-        pants.indexOf(
-            avatarData.pants
-        );
-
-
-    index++;
-
-
-    if (
-        index >= pants.length
-    ) {
-
-        index = 0;
-
-    }
-
-
-    avatarData.pants =
-        pants[index];
-
-
-    saveAvatar();
-
-    updateAvatar();
-
-
-    setStatus(
-        "Pants changed."
-    );
-
-}
-
-
-/* =========================
-   RESET
-========================= */
-
-function resetAvatar() {
-
-    avatarData = {
-
-        horns: false,
-
-        korblox: false,
-
-        headless: false,
-
-        shirt: "blue",
-
-        pants: "black"
-
-    };
-
-
-    saveAvatar();
-
-    updateAvatar();
-
-
-    setStatus(
-        "Avatar reset."
-    );
+    loadAccessory();
 
 }
 
@@ -1805,7 +1185,19 @@ function resetAvatar() {
    START
 ========================= */
 
-updateAvatar();
+loadAccessory();
+
+
+/*
+   Update automatically if
+   another page changes the
+   accessory.
+*/
+
+window.addEventListener(
+    "storage",
+    loadAccessory
+);
 
 </script>
 
