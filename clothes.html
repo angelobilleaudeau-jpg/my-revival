@@ -1,0 +1,1390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>MTB REVIVALS - Clothes</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #e9e9e9;
+
+    color: #222;
+}
+
+
+/* HEADER */
+
+header {
+
+    background: #333;
+
+    color: white;
+
+    padding: 15px;
+}
+
+.header {
+
+    max-width: 1050px;
+
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+}
+
+.logo {
+
+    font-size: 24px;
+
+    font-weight: bold;
+}
+
+.user {
+
+    background: #222;
+
+    padding: 8px 12px;
+
+    border-radius: 5px;
+}
+
+
+/* NAVIGATION */
+
+nav {
+
+    background: #444;
+
+    overflow-x: auto;
+
+    white-space: nowrap;
+}
+
+nav a {
+
+    display: inline-block;
+
+    color: white;
+
+    text-decoration: none;
+
+    padding: 13px 15px;
+}
+
+nav a:hover {
+
+    background: #222;
+}
+
+
+/* MAIN */
+
+.container {
+
+    max-width: 1050px;
+
+    margin: auto;
+
+    padding: 20px;
+}
+
+h1 {
+
+    margin-top: 0;
+}
+
+
+/* SEARCH */
+
+.search {
+
+    width: 100%;
+
+    padding: 13px;
+
+    border: 1px solid #aaa;
+
+    border-radius: 5px;
+
+    font-size: 16px;
+
+    margin-bottom: 15px;
+}
+
+
+/* CATEGORIES */
+
+.categories {
+
+    display: flex;
+
+    gap: 8px;
+
+    overflow-x: auto;
+
+    padding-bottom: 15px;
+}
+
+.categories button {
+
+    background: white;
+
+    border: 1px solid #aaa;
+
+    border-radius: 5px;
+
+    padding: 10px 15px;
+
+    white-space: nowrap;
+
+    cursor: pointer;
+}
+
+.categories button.active {
+
+    background: #333;
+
+    color: white;
+}
+
+
+/* ITEMS */
+
+.items {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(190px, 1fr));
+
+    gap: 15px;
+}
+
+
+/* CARD */
+
+.item {
+
+    background: white;
+
+    border: 1px solid #ccc;
+
+    border-radius: 7px;
+
+    padding: 12px;
+
+    box-shadow:
+        0 2px 5px
+        rgba(0,0,0,.08);
+}
+
+
+/* CLOTHING PREVIEW */
+
+.preview {
+
+    height: 180px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ddd,
+            #f5f5f5
+        );
+
+    border-radius: 5px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 10px;
+
+    overflow: hidden;
+}
+
+
+/* SHIRT */
+
+.shirt {
+
+    width: 110px;
+
+    height: 125px;
+
+    background: #1683ff;
+
+    position: relative;
+
+    clip-path:
+        polygon(
+            25% 0,
+            75% 0,
+            100% 25%,
+            82% 38%,
+            82% 100%,
+            18% 100%,
+            18% 38%,
+            0 25%
+        );
+}
+
+
+/* PANTS */
+
+.pants {
+
+    width: 105px;
+
+    height: 120px;
+
+    position: relative;
+
+    display: flex;
+
+    gap: 5px;
+}
+
+.pants-left,
+.pants-right {
+
+    width: 50px;
+
+    height: 120px;
+
+    background: #315a9b;
+
+    border-radius: 3px;
+}
+
+
+/* COLORS */
+
+.red {
+
+    background: #d93434;
+}
+
+.blue {
+
+    background: #1683ff;
+}
+
+.green {
+
+    background: #159447;
+}
+
+.black {
+
+    background: #222;
+}
+
+.white {
+
+    background: #f7f7f7;
+
+    border: 1px solid #aaa;
+}
+
+.yellow {
+
+    background: #f2c94c;
+}
+
+.denim {
+
+    background: #315a9b;
+}
+
+.darkdenim {
+
+    background: #1d3557;
+}
+
+
+/* TEXT */
+
+.type {
+
+    color: #777;
+
+    font-size: 13px;
+}
+
+.free {
+
+    color: #159447;
+
+    font-weight: bold;
+}
+
+
+/* BUTTON */
+
+.item button {
+
+    width: 100%;
+
+    padding: 10px;
+
+    margin-top: 7px;
+
+    border: 0;
+
+    border-radius: 5px;
+
+    background: #1683ff;
+
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.item button:hover {
+
+    background: #006bd6;
+}
+
+.favorite {
+
+    background: #eee !important;
+
+    color: #222 !important;
+}
+
+
+/* INVENTORY */
+
+.inventory {
+
+    margin-top: 30px;
+
+    background: white;
+
+    padding: 15px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 7px;
+}
+
+.inventory-item {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 12px;
+
+    border-bottom: 1px solid #ddd;
+}
+
+.inventory-item:last-child {
+
+    border-bottom: none;
+}
+
+.inventory-item button {
+
+    background: #333;
+
+    color: white;
+
+    border: 0;
+
+    padding: 8px 12px;
+
+    border-radius: 5px;
+}
+
+
+/* LOGIN */
+
+.login-box {
+
+    background: white;
+
+    border: 1px solid #ccc;
+
+    padding: 25px;
+
+    border-radius: 8px;
+
+    text-align: center;
+}
+
+.login-box a {
+
+    display: inline-block;
+
+    margin-top: 10px;
+
+    background: #1683ff;
+
+    color: white;
+
+    text-decoration: none;
+
+    padding: 10px 18px;
+
+    border-radius: 5px;
+}
+
+
+/* MOBILE */
+
+@media(max-width:500px) {
+
+    .header {
+
+        flex-direction: column;
+
+    }
+
+    .items {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 10px;
+    }
+
+    .item {
+
+        padding: 8px;
+
+    }
+
+    .preview {
+
+        height: 140px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- HEADER -->
+
+<header>
+
+<div class="header">
+
+<div class="logo">
+
+MTB REVIVALS
+
+</div>
+
+<div class="user">
+
+👤
+
+<span id="username">
+Guest
+</span>
+
+</div>
+
+</div>
+
+</header>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+<a href="index.html">
+Home
+</a>
+
+<a href="login.html">
+Account
+</a>
+
+<a href="avatar.html">
+Avatar
+</a>
+
+<a href="accessories.html">
+Accessories
+</a>
+
+<a href="clothes.html">
+Clothes
+</a>
+
+<a href="inventory.html">
+Inventory
+</a>
+
+<a href="games.html">
+Games
+</a>
+
+<a href="news.html">
+News
+</a>
+
+</nav>
+
+
+<div class="container">
+
+
+<!-- LOGIN WARNING -->
+
+<div
+id="loginWarning"
+class="login-box"
+style="display:none;"
+>
+
+<h2>
+
+🔐 Login Required
+
+</h2>
+
+<p>
+
+Login or create an account to collect
+clothing.
+
+</p>
+
+<a href="login.html">
+
+Login / Sign Up
+
+</a>
+
+</div>
+
+
+<!-- CLOTHING PAGE -->
+
+<div
+id="clothesPage"
+style="display:none;"
+>
+
+<h1>
+
+👕 Classic Clothes
+
+</h1>
+
+<p>
+
+All MTB REVIVALS clothing is FREE.
+
+</p>
+
+
+<!-- SEARCH -->
+
+<input
+id="search"
+class="search"
+type="text"
+placeholder="🔍 Search clothes..."
+>
+
+
+<!-- CATEGORIES -->
+
+<div class="categories">
+
+<button
+class="active"
+onclick="filterItems('All', this)"
+>
+
+All
+
+</button>
+
+
+<button
+onclick="filterItems('Shirt', this)"
+>
+
+Shirts
+
+</button>
+
+
+<button
+onclick="filterItems('Pants', this)"
+>
+
+Pants
+
+</button>
+
+</div>
+
+
+<!-- ITEMS -->
+
+<div
+id="items"
+class="items"
+></div>
+
+
+<!-- INVENTORY -->
+
+<div class="inventory">
+
+<h2>
+
+📦 My Clothes
+
+</h2>
+
+<div id="inventory">
+
+<p>
+
+You don't own any clothing yet.
+
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<script>
+
+/*
+==================================================
+MTB REVIVALS CLOTHING SYSTEM
+==================================================
+
+These are original classic-style clothing
+concepts.
+
+Replace previews with artwork you created or
+have permission to use.
+
+==================================================
+*/
+
+
+/* CLOTHING DATABASE */
+
+const items = [
+
+{
+    id: 201,
+
+    name: "Classic Red Shirt",
+
+    type: "Shirt",
+
+    color: "red"
+},
+
+{
+    id: 202,
+
+    name: "Classic Blue Shirt",
+
+    type: "Shirt",
+
+    color: "blue"
+},
+
+{
+    id: 203,
+
+    name: "Classic Green Shirt",
+
+    type: "Shirt",
+
+    color: "green"
+},
+
+{
+    id: 204,
+
+    name: "Classic Black Shirt",
+
+    type: "Shirt",
+
+    color: "black"
+},
+
+{
+    id: 205,
+
+    name: "Classic White Shirt",
+
+    type: "Shirt",
+
+    color: "white"
+},
+
+{
+    id: 206,
+
+    name: "Classic Gold Shirt",
+
+    type: "Shirt",
+
+    color: "yellow"
+},
+
+{
+    id: 207,
+
+    name: "Classic Blue Jeans",
+
+    type: "Pants",
+
+    color: "denim"
+},
+
+{
+    id: 208,
+
+    name: "Dark Classic Jeans",
+
+    type: "Pants",
+
+    color: "darkdenim"
+},
+
+{
+    id: 209,
+
+    name: "Classic Black Pants",
+
+    type: "Pants",
+
+    color: "black"
+},
+
+{
+    id: 210,
+
+    name: "Classic White Pants",
+
+    type: "Pants",
+
+    color: "white"
+}
+
+];
+
+
+/* CURRENT USER */
+
+const username =
+localStorage.getItem(
+    "mtbLoggedIn"
+);
+
+
+/* GET ACCOUNTS */
+
+function getAccounts() {
+
+    return JSON.parse(
+        localStorage.getItem(
+            "mtbAccounts"
+        )
+    ) || {};
+
+}
+
+
+/* SAVE ACCOUNTS */
+
+function saveAccounts(accounts) {
+
+    localStorage.setItem(
+        "mtbAccounts",
+
+        JSON.stringify(accounts)
+
+    );
+
+}
+
+
+/* CHECK LOGIN */
+
+if(!username) {
+
+    document.getElementById(
+        "loginWarning"
+    ).style.display = "block";
+
+} else {
+
+    document.getElementById(
+        "clothesPage"
+    ).style.display = "block";
+
+    loadUser();
+
+}
+
+
+/* LOAD USER */
+
+function loadUser() {
+
+    const accounts =
+        getAccounts();
+
+    const account =
+        accounts[username];
+
+
+    if(!account) {
+
+        localStorage.removeItem(
+            "mtbLoggedIn"
+        );
+
+        location.reload();
+
+        return;
+
+    }
+
+
+    document.getElementById(
+        "username"
+    ).textContent =
+        account.username;
+
+
+    if(!account.inventory) {
+
+        account.inventory = [];
+
+    }
+
+
+    saveAccounts(accounts);
+
+
+    displayItems();
+
+    displayInventory();
+
+}
+
+
+/* CATEGORY */
+
+let currentCategory =
+    "All";
+
+
+function filterItems(
+    category,
+    button
+) {
+
+    currentCategory =
+        category;
+
+
+    document
+        .querySelectorAll(
+            ".categories button"
+        )
+        .forEach(
+            btn =>
+                btn.classList.remove(
+                    "active"
+                )
+        );
+
+
+    button.classList.add(
+        "active"
+    );
+
+
+    displayItems();
+
+}
+
+
+/* DISPLAY ITEMS */
+
+function displayItems() {
+
+    const container =
+        document.getElementById(
+            "items"
+        );
+
+
+    const search =
+        document.getElementById(
+            "search"
+        )
+        .value
+        .toLowerCase();
+
+
+    const accounts =
+        getAccounts();
+
+    const account =
+        accounts[username];
+
+
+    container.innerHTML = "";
+
+
+    const filtered =
+        items.filter(item => {
+
+            const categoryMatch =
+                currentCategory === "All" ||
+                item.type === currentCategory;
+
+
+            const searchMatch =
+                item.name
+                    .toLowerCase()
+                    .includes(search);
+
+
+            return (
+                categoryMatch &&
+                searchMatch
+            );
+
+        });
+
+
+    filtered.forEach(item => {
+
+        const owned =
+            account.inventory
+                .includes(item.id);
+
+
+        const div =
+            document.createElement(
+                "div"
+            );
+
+
+        div.className =
+            "item";
+
+
+        let preview = "";
+
+
+        /* SHIRT PREVIEW */
+
+        if(item.type === "Shirt") {
+
+            preview = `
+
+                <div
+                    class="shirt
+                    ${item.color}"
+                >
+                </div>
+
+            `;
+
+        }
+
+
+        /* PANTS PREVIEW */
+
+        if(item.type === "Pants") {
+
+            preview = `
+
+                <div class="pants">
+
+                    <div
+                        class="pants-left
+                        ${item.color}"
+                    >
+                    </div>
+
+                    <div
+                        class="pants-right
+                        ${item.color}"
+                    >
+                    </div>
+
+                </div>
+
+            `;
+
+        }
+
+
+        div.innerHTML = `
+
+            <div class="preview">
+
+                ${preview}
+
+            </div>
+
+
+            <h3>
+
+                ${item.name}
+
+            </h3>
+
+
+            <div class="type">
+
+                ${item.type}
+
+            </div>
+
+
+            <p class="free">
+
+                FREE
+
+            </p>
+
+
+            <button
+
+                onclick="
+                    claimItem(
+                        ${item.id}
+                    )
+                "
+
+                ${owned ? "disabled" : ""}
+
+            >
+
+                ${
+                    owned
+                    ? "✓ Owned"
+                    : "🎁 Get Item"
+                }
+
+            </button>
+
+        `;
+
+
+        container.appendChild(
+            div
+        );
+
+    });
+
+}
+
+
+/* CLAIM ITEM */
+
+function claimItem(id) {
+
+    const accounts =
+        getAccounts();
+
+
+    const account =
+        accounts[username];
+
+
+    if(!account) {
+
+        alert(
+            "Please login first."
+        );
+
+        return;
+
+    }
+
+
+    if(
+        account.inventory
+            .includes(id)
+    ) {
+
+        alert(
+            "You already own this item!"
+        );
+
+        return;
+
+    }
+
+
+    account.inventory.push(
+        id
+    );
+
+
+    saveAccounts(
+        accounts
+    );
+
+
+    const item =
+        items.find(
+            i => i.id === id
+        );
+
+
+    alert(
+        item.name +
+        " was added to your inventory!"
+    );
+
+
+    displayItems();
+
+    displayInventory();
+
+}
+
+
+/* INVENTORY */
+
+function displayInventory() {
+
+    const container =
+        document.getElementById(
+            "inventory"
+        );
+
+
+    const accounts =
+        getAccounts();
+
+
+    const account =
+        accounts[username];
+
+
+    container.innerHTML = "";
+
+
+    if(
+        !account.inventory ||
+        account.inventory.length === 0
+    ) {
+
+        container.innerHTML =
+
+            "<p>You don't own any clothing yet.</p>";
+
+        return;
+
+    }
+
+
+    account.inventory.forEach(
+        id => {
+
+            const item =
+                items.find(
+                    i => i.id === id
+                );
+
+
+            if(!item) return;
+
+
+            const row =
+                document.createElement(
+                    "div"
+                );
+
+
+            row.className =
+                "inventory-item";
+
+
+            row.innerHTML = `
+
+                <span>
+
+                    ${
+                        item.type === "Shirt"
+                        ? "👕"
+                        : "👖"
+                    }
+
+                    ${item.name}
+
+                </span>
+
+
+                <button
+                    onclick="
+                        equipClothing(
+                            ${item.id}
+                        )
+                    "
+                >
+
+                    Equip
+
+                </button>
+
+            `;
+
+
+            container.appendChild(
+                row
+            );
+
+        }
+    );
+
+}
+
+
+/* EQUIP CLOTHING */
+
+function equipClothing(id) {
+
+    const accounts =
+        getAccounts();
+
+
+    const account =
+        accounts[username];
+
+
+    if(
+        !account.inventory
+            .includes(id)
+    ) {
+
+        return;
+
+    }
+
+
+    const item =
+        items.find(
+            i => i.id === id
+        );
+
+
+    if(!item) return;
+
+
+    /*
+        Shirts and pants are stored
+        separately so players can wear
+        one shirt and one pair of pants.
+    */
+
+    if(
+        item.type === "Shirt"
+    ) {
+
+        account.equippedShirt =
+            id;
+
+    }
+
+
+    if(
+        item.type === "Pants"
+    ) {
+
+        account.equippedPants =
+            id;
+
+    }
+
+
+    saveAccounts(
+        accounts
+    );
+
+
+    alert(
+        item.name +
+        " equipped!"
+    );
+
+}
+
+
+/* SEARCH */
+
+document
+    .getElementById(
+        "search"
+    )
+    .addEventListener(
+        "input",
+        displayItems
+    );
+
+</script>
+
+</body>
+
+</html>
