@@ -2,392 +2,643 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Avatar - MTB REVIVALS</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+<title>MTB REVIVALS - Avatar</title>
 
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #e9e9e9;
-            color: #222;
-        }
+<style>
 
-        header {
-            background: #c9c9c9;
-            padding: 15px;
-            border-bottom: 3px solid #999;
-        }
+* {
+    box-sizing: border-box;
+}
 
-        .logo {
-            text-align: center;
-            font-size: 28px;
-            font-weight: bold;
-            margin-bottom: 12px;
-        }
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    background: #e8e8e8;
+    color: #333;
+}
 
-        nav {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 5px;
-        }
+/* TOP BAR */
 
-        nav a {
-            color: #222;
-            text-decoration: none;
-            font-weight: bold;
-            padding: 10px 14px;
-            border-radius: 5px;
-        }
+header {
+    background: linear-gradient(#f7f7f7, #d1d1d1);
+    border-bottom: 1px solid #999;
+    box-shadow: 0 1px 3px #aaa;
+}
 
-        nav a:hover,
-        nav a.active {
-            background: #aaa;
-        }
+.header-inner {
+    max-width: 1000px;
+    margin: auto;
+    padding: 8px 10px 0;
+}
 
-        .container {
-            max-width: 900px;
-            margin: 30px auto;
-            padding: 15px;
-        }
+/* LOGO */
 
-        h1 {
-            text-align: center;
-        }
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: #333;
+    padding: 5px 0 10px;
+}
 
-        .avatar-area {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
+/* NAVIGATION */
 
-        .box {
-            background: white;
-            border: 1px solid #bbb;
-            padding: 25px;
-        }
+nav {
+    display: flex;
+    flex-wrap: wrap;
+}
 
-        /* AVATAR */
+nav a {
+    display: block;
+    padding: 9px 13px;
+    color: #444;
+    text-decoration: none;
+    border: 1px solid transparent;
+    border-bottom: 0;
+}
 
-        .preview {
-            text-align: center;
-        }
+nav a:hover {
+    background: #ddd;
+}
 
-        .avatar {
-            width: 190px;
-            height: 300px;
-            margin: 20px auto;
-            position: relative;
-        }
+nav a.active {
+    background: white;
+    border: 1px solid #aaa;
+    border-bottom: 1px solid white;
+    color: #1683c5;
+}
 
-        .head {
-            width: 90px;
-            height: 90px;
-            background: #f2c29b;
-            border: 3px solid #333;
-            border-radius: 10px;
-            position: absolute;
-            top: 0;
-            left: 50px;
-            z-index: 3;
-        }
+/* MAIN */
 
-        .hair {
-            width: 90px;
-            height: 30px;
-            background: #222;
-            position: absolute;
-            top: 0;
-            left: 0;
-            border-radius: 10px 10px 0 0;
-        }
+.container {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 0 10px;
+}
 
-        .eye {
-            width: 9px;
-            height: 9px;
-            background: #222;
-            border-radius: 50%;
-            position: absolute;
-            top: 42px;
-        }
+/* PAGE TITLE */
 
-        .eye.left {
-            left: 25px;
-        }
+.page-title {
+    background: linear-gradient(#666, #444);
+    color: white;
+    padding: 9px 12px;
+    border: 1px solid #333;
+    font-size: 18px;
+    font-weight: bold;
+    text-shadow: 1px 1px #222;
+}
 
-        .eye.right {
-            right: 25px;
-        }
+/* CONTENT */
 
-        .body {
-            width: 100px;
-            height: 115px;
-            background: #1683ff;
-            border: 3px solid #333;
-            position: absolute;
-            top: 92px;
-            left: 45px;
-        }
+.content {
+    display: grid;
+    grid-template-columns: 430px 1fr;
+    gap: 15px;
+    margin-top: 15px;
+}
 
-        .arm {
-            width: 35px;
-            height: 105px;
-            background: #f2c29b;
-            border: 3px solid #333;
-            position: absolute;
-            top: 97px;
-        }
+/* BOX */
 
-        .arm.left {
-            left: 8px;
-        }
+.box {
+    background: white;
+    border: 1px solid #aaa;
+    box-shadow: 0 1px 2px #ccc;
+}
 
-        .arm.right {
-            right: 8px;
-        }
+.box-title {
+    background: linear-gradient(#f5f5f5, #d7d7d7);
+    border-bottom: 1px solid #aaa;
+    padding: 8px 10px;
+    font-weight: bold;
+    color: #444;
+}
 
-        .leg {
-            width: 43px;
-            height: 95px;
-            background: #333;
-            border: 3px solid #222;
-            position: absolute;
-            top: 205px;
-        }
+/* AVATAR */
 
-        .leg.left {
-            left: 48px;
-        }
+.preview {
+    min-height: 450px;
+    text-align: center;
+    padding: 20px;
+}
 
-        .leg.right {
-            right: 48px;
-        }
+.username {
+    font-size: 16px;
+    font-weight: bold;
+    color: #1683c5;
+    margin-top: 10px;
+}
 
-        /* CONTROLS */
+/* BLOCK AVATAR */
 
-        label {
-            display: block;
-            font-weight: bold;
-            margin-top: 15px;
-            margin-bottom: 6px;
-        }
+.avatar {
+    width: 220px;
+    height: 330px;
+    position: relative;
+    margin: 10px auto 0;
+}
 
-        select {
-            width: 100%;
-            padding: 11px;
-            border: 1px solid #aaa;
-            border-radius: 5px;
-            font-size: 16px;
-        }
+/* HEAD */
 
-        button {
-            width: 100%;
-            background: #1683ff;
-            color: white;
-            border: 0;
-            padding: 12px;
-            border-radius: 5px;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            margin-top: 20px;
-        }
+.head {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    left: 65px;
+    top: 5px;
+    background: #f2c29b;
+    border: 2px solid #555;
+}
 
-        button:hover {
-            background: #006bd6;
-        }
+/* FACE */
 
-        .reset {
-            background: #777;
-        }
+.eye {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: #222;
+    top: 42px;
+}
 
-        .reset:hover {
-            background: #555;
-        }
+.eye.left {
+    left: 25px;
+}
 
-        #message {
-            text-align: center;
-            font-weight: bold;
-            margin-top: 15px;
-        }
+.eye.right {
+    right: 25px;
+}
 
-        .not-logged-in {
-            text-align: center;
-            background: white;
-            border: 1px solid #bbb;
-            padding: 30px;
-        }
+/* HAIR */
 
-        /* MOBILE */
+.hair {
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    width: 90px;
+    height: 25px;
+    background: #222;
+}
 
-        @media (max-width: 650px) {
+/* BODY */
 
-            .logo {
-                font-size: 24px;
-            }
+.body {
+    position: absolute;
+    width: 100px;
+    height: 115px;
+    left: 60px;
+    top: 97px;
+    background: #1683ff;
+    border: 2px solid #555;
+}
 
-            nav {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-            }
+/* ARMS */
 
-            nav a {
-                text-align: center;
-                font-size: 14px;
-                padding: 11px 4px;
-            }
+.arm {
+    position: absolute;
+    width: 35px;
+    height: 110px;
+    top: 100px;
+    background: #f2c29b;
+    border: 2px solid #555;
+}
 
-            .avatar-area {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+.arm.left {
+    left: 22px;
+}
+
+.arm.right {
+    right: 22px;
+}
+
+/* LEGS */
+
+.leg {
+    position: absolute;
+    width: 43px;
+    height: 100px;
+    top: 210px;
+    background: #333;
+    border: 2px solid #444;
+}
+
+.leg.left {
+    left: 61px;
+}
+
+.leg.right {
+    right: 61px;
+}
+
+/* CUSTOMIZATION */
+
+.customize {
+    padding-bottom: 15px;
+}
+
+.option {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+.option label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+select {
+    width: 100%;
+    height: 32px;
+    border: 1px solid #999;
+    background: white;
+    font-size: 13px;
+}
+
+/* BUTTONS */
+
+.buttons {
+    padding: 12px;
+}
+
+button {
+    border: 1px solid #555;
+    border-radius: 3px;
+    background: linear-gradient(#65b5e8, #1683c5);
+    color: white;
+    padding: 7px 16px;
+    font-weight: bold;
+    cursor: pointer;
+    text-shadow: 1px 1px #555;
+    box-shadow: inset 0 1px rgba(255,255,255,.4);
+}
+
+button:hover {
+    background: linear-gradient(#79c5ed, #1683c5);
+}
+
+button.reset {
+    background: linear-gradient(#aaa, #777);
+    margin-left: 5px;
+}
+
+button.reset:hover {
+    background: linear-gradient(#bbb, #888);
+}
+
+/* MESSAGE */
+
+#message {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #1683c5;
+}
+
+/* NOT LOGGED IN */
+
+.login-box {
+    background: white;
+    border: 1px solid #aaa;
+    padding: 30px;
+    text-align: center;
+}
+
+.login-box a {
+    color: #1683c5;
+    font-weight: bold;
+}
+
+/* FOOTER */
+
+footer {
+    max-width: 1000px;
+    margin: 40px auto 0;
+    padding: 15px 10px;
+    border-top: 1px solid #aaa;
+    color: #777;
+    font-size: 12px;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .content {
+        grid-template-columns: 1fr;
+    }
+
+    nav a {
+        padding: 8px 9px;
+        font-size: 12px;
+    }
+
+    .logo {
+        text-align: center;
+    }
+
+}
+
+</style>
+
 </head>
 
 <body>
 
 <header>
 
-    <div class="logo">
-        MTB REVIVALS
-    </div>
+    <div class="header-inner">
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="login.html">Account</a>
-        <a href="avatar.html" class="active">Avatar</a>
-        <a href="accessories.html">Accessories</a>
-        <a href="clothes.html">Clothes</a>
-        <a href="inventory.html">Inventory</a>
-        <a href="games.html">Games</a>
-        <a href="news.html">News</a>
-    </nav>
+        <div class="logo">
+            MTB REVIVALS
+        </div>
+
+        <nav>
+
+            <a href="index.html">Home</a>
+
+            <a href="login.html">Account</a>
+
+            <a href="avatar.html" class="active">
+                Avatar
+            </a>
+
+            <a href="accessories.html">
+                Accessories
+            </a>
+
+            <a href="clothes.html">
+                Clothes
+            </a>
+
+            <a href="inventory.html">
+                Inventory
+            </a>
+
+            <a href="games.html">
+                Games
+            </a>
+
+            <a href="news.html">
+                News
+            </a>
+
+        </nav>
+
+    </div>
 
 </header>
 
+
 <div class="container">
 
-    <h1>Avatar</h1>
+    <div class="page-title">
+        Avatar
+    </div>
 
-    <div id="notLoggedIn" class="not-logged-in" style="display:none;">
 
-        <h2>You are not logged in.</h2>
+    <!-- LOGIN WARNING -->
+
+    <div id="notLoggedIn"
+         class="login-box"
+         style="display:none;">
+
+        <h2>You need to log in.</h2>
 
         <p>
-            Log in to customize your MTB REVIVALS avatar.
+            Please log in to customize your avatar.
         </p>
 
         <a href="login.html">
-            <button>GO TO LOGIN</button>
+            Go to Account
         </a>
 
     </div>
 
 
-    <div id="avatarArea" class="avatar-area">
+    <div id="avatarArea">
 
-        <!-- PREVIEW -->
+        <div class="content">
 
-        <div class="box preview">
+            <!-- AVATAR PREVIEW -->
 
-            <h2>Avatar Preview</h2>
+            <div class="box preview">
 
-            <div class="avatar">
-
-                <div class="head" id="head">
-                    <div class="hair" id="hair"></div>
-
-                    <div class="eye left"></div>
-                    <div class="eye right"></div>
+                <div class="box-title">
+                    Avatar Preview
                 </div>
 
-                <div class="body" id="body"></div>
+                <div class="avatar">
 
-                <div class="arm left"></div>
-                <div class="arm right"></div>
+                    <div
+                        class="head"
+                        id="head">
 
-                <div class="leg left"></div>
-                <div class="leg right"></div>
+                        <div
+                            class="hair"
+                            id="hair">
+                        </div>
+
+                        <div class="eye left"></div>
+                        <div class="eye right"></div>
+
+                    </div>
+
+
+                    <div
+                        class="body"
+                        id="body">
+                    </div>
+
+
+                    <div
+                        class="arm left">
+                    </div>
+
+                    <div
+                        class="arm right">
+                    </div>
+
+
+                    <div
+                        class="leg left">
+                    </div>
+
+                    <div
+                        class="leg right">
+                    </div>
+
+                </div>
+
+                <div
+                    class="username"
+                    id="username">
+                </div>
 
             </div>
 
-            <h3 id="username"></h3>
 
-        </div>
+            <!-- CUSTOMIZATION -->
 
+            <div class="box customize">
 
-        <!-- CUSTOMIZATION -->
-
-        <div class="box">
-
-            <h2>Customize</h2>
-
-            <label>Skin Color</label>
-
-            <select id="skinColor" onchange="updateAvatar()">
-
-                <option value="#f2c29b">Light</option>
-                <option value="#d99a6c">Tan</option>
-                <option value="#a96f45">Brown</option>
-                <option value="#70452b">Dark</option>
-
-            </select>
+                <div class="box-title">
+                    Customize Your Avatar
+                </div>
 
 
-            <label>Shirt Color</label>
+                <div class="option">
 
-            <select id="shirtColor" onchange="updateAvatar()">
+                    <label>
+                        Body Color
+                    </label>
 
-                <option value="#1683ff">Blue</option>
-                <option value="#ff3333">Red</option>
-                <option value="#22aa55">Green</option>
-                <option value="#8b45d6">Purple</option>
-                <option value="#222222">Black</option>
-                <option value="#eeeeee">White</option>
+                    <select
+                        id="skinColor"
+                        onchange="updateAvatar()">
 
-            </select>
+                        <option value="#f2c29b">
+                            Light
+                        </option>
 
+                        <option value="#d99a6c">
+                            Tan
+                        </option>
 
-            <label>Pants Color</label>
+                        <option value="#a96f45">
+                            Brown
+                        </option>
 
-            <select id="pantsColor" onchange="updateAvatar()">
+                        <option value="#70452b">
+                            Dark
+                        </option>
 
-                <option value="#333333">Black</option>
-                <option value="#1683ff">Blue</option>
-                <option value="#777777">Gray</option>
-                <option value="#8b5a2b">Brown</option>
+                    </select>
 
-            </select>
-
-
-            <label>Hair Color</label>
-
-            <select id="hairColor" onchange="updateAvatar()">
-
-                <option value="#222222">Black</option>
-                <option value="#5a3518">Brown</option>
-                <option value="#d9a441">Blonde</option>
-                <option value="#eeeeee">White</option>
-
-            </select>
+                </div>
 
 
-            <button onclick="saveAvatar()">
-                SAVE AVATAR
-            </button>
+                <div class="option">
 
-            <button class="reset" onclick="resetAvatar()">
-                RESET
-            </button>
+                    <label>
+                        Shirt
+                    </label>
 
-            <div id="message"></div>
+                    <select
+                        id="shirtColor"
+                        onchange="updateAvatar()">
+
+                        <option value="#1683ff">
+                            Blue
+                        </option>
+
+                        <option value="#ff3333">
+                            Red
+                        </option>
+
+                        <option value="#22aa55">
+                            Green
+                        </option>
+
+                        <option value="#8b45d6">
+                            Purple
+                        </option>
+
+                        <option value="#222222">
+                            Black
+                        </option>
+
+                        <option value="#eeeeee">
+                            White
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="option">
+
+                    <label>
+                        Pants
+                    </label>
+
+                    <select
+                        id="pantsColor"
+                        onchange="updateAvatar()">
+
+                        <option value="#333333">
+                            Black
+                        </option>
+
+                        <option value="#1683ff">
+                            Blue
+                        </option>
+
+                        <option value="#777777">
+                            Gray
+                        </option>
+
+                        <option value="#8b5a2b">
+                            Brown
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="option">
+
+                    <label>
+                        Hair
+                    </label>
+
+                    <select
+                        id="hairColor"
+                        onchange="updateAvatar()">
+
+                        <option value="#222222">
+                            Black
+                        </option>
+
+                        <option value="#5a3518">
+                            Brown
+                        </option>
+
+                        <option value="#d9a441">
+                            Blonde
+                        </option>
+
+                        <option value="#eeeeee">
+                            White
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="buttons">
+
+                    <button onclick="saveAvatar()">
+                        Save Avatar
+                    </button>
+
+                    <button
+                        class="reset"
+                        onclick="resetAvatar()">
+
+                        Reset
+
+                    </button>
+
+                    <div id="message"></div>
+
+                </div>
+
+            </div>
 
         </div>
 
@@ -395,178 +646,229 @@
 
 </div>
 
+
+<footer>
+
+    MTB REVIVALS © 2026
+
+    &nbsp; | &nbsp;
+
+    <a href="index.html">
+        Home
+    </a>
+
+    &nbsp; | &nbsp;
+
+    <a href="news.html">
+        News
+    </a>
+
+</footer>
+
+
 <script>
 
-    /* CHECK LOGIN */
+/* CHECK ACCOUNT */
 
-    let loggedIn =
-        localStorage.getItem("mtbLoggedIn");
+const loggedIn =
+    localStorage.getItem("mtbLoggedIn");
 
-    let savedAccount =
-        localStorage.getItem("mtbAccount");
-
-
-    if (loggedIn !== "true" || !savedAccount) {
-
-        document.getElementById("avatarArea")
-            .style.display = "none";
-
-        document.getElementById("notLoggedIn")
-            .style.display = "block";
-
-    } else {
-
-        let account =
-            JSON.parse(savedAccount);
-
-        document.getElementById("username")
-            .textContent = account.username;
-
-    }
+const savedAccount =
+    localStorage.getItem("mtbAccount");
 
 
-    /* UPDATE AVATAR */
+if (
+    loggedIn !== "true" ||
+    !savedAccount
+) {
 
-    function updateAvatar() {
+    document
+        .getElementById("avatarArea")
+        .style.display = "none";
 
-        let skin =
-            document.getElementById("skinColor").value;
+    document
+        .getElementById("notLoggedIn")
+        .style.display = "block";
 
-        let shirt =
-            document.getElementById("shirtColor").value;
+} else {
 
-        let pants =
-            document.getElementById("pantsColor").value;
+    const account =
+        JSON.parse(savedAccount);
 
-        let hair =
-            document.getElementById("hairColor").value;
+    document
+        .getElementById("username")
+        .textContent =
+        account.username;
 
-
-        document.getElementById("head")
-            .style.background = skin;
-
-        document.querySelectorAll(".arm")
-            .forEach(function(arm) {
-                arm.style.background = skin;
-            });
-
-        document.getElementById("body")
-            .style.background = shirt;
-
-        document.querySelectorAll(".leg")
-            .forEach(function(leg) {
-                leg.style.background = pants;
-            });
-
-        document.getElementById("hair")
-            .style.background = hair;
-
-    }
+}
 
 
-    /* SAVE */
+/* UPDATE */
 
-    function saveAvatar() {
+function updateAvatar() {
 
-        let avatar = {
+    const skin =
+        document.getElementById("skinColor").value;
 
-            skin:
-                document.getElementById("skinColor").value,
+    const shirt =
+        document.getElementById("shirtColor").value;
 
-            shirt:
-                document.getElementById("shirtColor").value,
+    const pants =
+        document.getElementById("pantsColor").value;
 
-            pants:
-                document.getElementById("pantsColor").value,
-
-            hair:
-                document.getElementById("hairColor").value
-
-        };
+    const hair =
+        document.getElementById("hairColor").value;
 
 
-        localStorage.setItem(
-            "mtbAvatar",
-            JSON.stringify(avatar)
-        );
+    document
+        .getElementById("head")
+        .style.background = skin;
 
 
-        document.getElementById("message")
-            .textContent =
-            "Avatar saved!";
+    document
+        .querySelectorAll(".arm")
+        .forEach(function(arm) {
 
-    }
+            arm.style.background = skin;
 
-
-    /* LOAD */
-
-    function loadAvatar() {
-
-        let saved =
-            localStorage.getItem("mtbAvatar");
+        });
 
 
-        if (!saved) {
-
-            updateAvatar();
-            return;
-
-        }
+    document
+        .getElementById("body")
+        .style.background = shirt;
 
 
-        let avatar =
-            JSON.parse(saved);
+    document
+        .querySelectorAll(".leg")
+        .forEach(function(leg) {
+
+            leg.style.background = pants;
+
+        });
 
 
-        document.getElementById("skinColor")
-            .value = avatar.skin;
+    document
+        .getElementById("hair")
+        .style.background = hair;
 
-        document.getElementById("shirtColor")
-            .value = avatar.shirt;
+}
 
-        document.getElementById("pantsColor")
-            .value = avatar.pants;
 
-        document.getElementById("hairColor")
-            .value = avatar.hair;
+/* SAVE */
 
+function saveAvatar() {
+
+    const avatar = {
+
+        skin:
+            document.getElementById("skinColor").value,
+
+        shirt:
+            document.getElementById("shirtColor").value,
+
+        pants:
+            document.getElementById("pantsColor").value,
+
+        hair:
+            document.getElementById("hairColor").value
+
+    };
+
+
+    localStorage.setItem(
+        "mtbAvatar",
+        JSON.stringify(avatar)
+    );
+
+
+    document
+        .getElementById("message")
+        .textContent =
+        "Avatar saved successfully!";
+
+}
+
+
+/* LOAD */
+
+function loadAvatar() {
+
+    const saved =
+        localStorage.getItem("mtbAvatar");
+
+
+    if (!saved) {
 
         updateAvatar();
 
-    }
-
-
-    /* RESET */
-
-    function resetAvatar() {
-
-        localStorage.removeItem("mtbAvatar");
-
-
-        document.getElementById("skinColor")
-            .value = "#f2c29b";
-
-        document.getElementById("shirtColor")
-            .value = "#1683ff";
-
-        document.getElementById("pantsColor")
-            .value = "#333333";
-
-        document.getElementById("hairColor")
-            .value = "#222222";
-
-
-        updateAvatar();
-
-
-        document.getElementById("message")
-            .textContent =
-            "Avatar reset!";
+        return;
 
     }
 
 
-    loadAvatar();
+    const avatar =
+        JSON.parse(saved);
+
+
+    document
+        .getElementById("skinColor")
+        .value = avatar.skin;
+
+    document
+        .getElementById("shirtColor")
+        .value = avatar.shirt;
+
+    document
+        .getElementById("pantsColor")
+        .value = avatar.pants;
+
+    document
+        .getElementById("hairColor")
+        .value = avatar.hair;
+
+
+    updateAvatar();
+
+}
+
+
+/* RESET */
+
+function resetAvatar() {
+
+    localStorage.removeItem("mtbAvatar");
+
+
+    document
+        .getElementById("skinColor")
+        .value = "#f2c29b";
+
+    document
+        .getElementById("shirtColor")
+        .value = "#1683ff";
+
+    document
+        .getElementById("pantsColor")
+        .value = "#333333";
+
+    document
+        .getElementById("hairColor")
+        .value = "#222222";
+
+
+    updateAvatar();
+
+
+    document
+        .getElementById("message")
+        .textContent =
+        "Avatar reset.";
+
+}
+
+
+loadAvatar();
 
 </script>
 
