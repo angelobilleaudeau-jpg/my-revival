@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Revival - Accessories</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #eeeeee;
+    color: #222;
+}
+
+/* HEADER */
+
+header {
+    background: #333;
+    color: white;
+    padding: 14px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.header {
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.coins {
+    background: #222;
+    padding: 8px 12px;
+    border-radius: 5px;
+}
+
+/* NAV */
+
+nav {
+    background: #444;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+nav a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    padding: 13px 15px;
+}
+
+nav a:hover {
+    background: #222;
+}
+
+/* PAGE */
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+h1 {
+    margin-top: 5px;
+}
+
+/* SEARCH */
+
+.search {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+/* CATEGORIES */
+
+.categories {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 15px;
+}
+
+.categories button {
+    border: 1px solid #aaa;
+    background: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.categories button.active {
+    background: #333;
+    color: white;
+}
+
+/* ITEMS */
+
+.items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+}
+
+.item {
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    padding: 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,.08);
+}
+
+.preview {
+    height: 150px;
+    background: #ddd;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.preview img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.fake-hat {
+    font-size: 60px;
+}
+
+.item h3 {
+    margin: 5px 0;
+}
+
+.type {
+    color: #777;
+    font-size: 13px;
+}
+
+.free {
+    color: #159447;
+    font-weight: bold;
+}
+
+.item button {
+    width: 100%;
+    margin-top: 8px;
+    padding: 10px;
+    border: 0;
+    border-radius: 5px;
+    background: #1683ff;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.item button:hover {
+    background: #006bd6;
+}
+
+.favorite {
+    background: #eee !important;
+    color: #222 !important;
+}
+
+/* INVENTORY */
+
+.inventory {
+    margin-top: 30px;
+    background: white;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+}
+
+.inventory-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.inventory-item:last-child {
+    border-bottom: none;
+}
+
+.equipped {
+    color: #159447;
+    font-weight: bold;
+}
+
+/* MOBILE */
+
+@media (max-width: 500px) {
+
+    .header {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .items {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .preview {
+        height: 120px;
+    }
+
+    .item {
+        padding: 8px;
+    }
+
+    .item h3 {
+        font-size: 15px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="header">
+        <div class="logo">MY REVIVAL</div>
+        <div class="coins">💰 <span id="coins">0</span> Coins</div>
+    </div>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="avatar.html">Avatar</a>
+    <a href="accessories.html">Accessories</a>
+    <a href="clothes.html">Clothes</a>
+    <a href="inventory.html">Inventory</a>
+    <a href="games.html">Games</a>
+    <a href="news.html">News</a>
+</nav>
+
+<div class="container">
+
+<h1>🎩 Accessories</h1>
+
+<p>
+All items in this demo catalog are FREE.
+</p>
+
+<input
+    id="search"
+    class="search"
+    type="text"
+    placeholder="🔍 Search accessories..."
+>
+
+<div class="categories">
+
+    <button class="active" onclick="filterItems('All', this)">
+        All
+    </button>
+
+    <button onclick="filterItems('Hat', this)">
+        Hats
+    </button>
+
+    <button onclick="filterItems('Face', this)">
+        Faces
+    </button>
+
+    <button onclick="filterItems('Back', this)">
+        Back
+    </button>
+
+    <button onclick="filterItems('Special', this)">
+        Special
+    </button>
+
+    <button onclick="filterItems('Clothes', this)">
+        Clothes
+    </button>
+
+</div>
+
+<div id="items" class="items"></div>
+
+<div class="inventory">
+
+    <h2>📦 My Inventory</h2>
+
+    <div id="inventory">
+        <p>No items yet.</p>
+    </div>
+
+</div>
+
+</div>
+
+<script>
+
+/*
+    ORIGINAL REVIVAL ITEMS
+
+    These are placeholder/original items.
+    Replace their preview images with artwork
+    that you created or have permission to use.
+*/
+
+const items = [
+
+    {
+        id: 1,
+        name: "Frozen Horns",
+        type: "Special",
+        icon: "❄️"
+    },
+
+    {
+        id: 2,
+        name: "Shadowless",
+        type: "Special",
+        icon: "💀"
+    },
+
+    {
+        id: 3,
+        name: "Void Walker Leg",
+        type: "Special",
+        icon: "🦵"
+    },
+
+    {
+        id: 4,
+        name: "Classic Crown",
+        type: "Hat",
+        icon: "👑"
+    },
+
+    {
+        id: 5,
+        name: "Classic Fedora",
+        type: "Hat",
+        icon: "🎩"
+    },
+
+    {
+        id: 6,
+        name: "Red Classic Shirt",
+        type: "Clothes",
+        icon: "👕"
+    },
+
+    {
+        id: 7,
+        name: "Blue Classic Shirt",
+        type: "Clothes",
+        icon: "👕"
+    },
+
+    {
+        id: 8,
+        name: "Classic Denim",
+        type: "Clothes",
+        icon: "👖"
+    },
+
+    {
+        id: 9,
+        name: "Golden Wings",
+        type: "Back",
+        icon: "🪽"
+    },
+
+    {
+        id: 10,
+        name: "Classic Smiley",
+        type: "Face",
+        icon: "🙂"
+    }
+
+];
+
+let owned = JSON.parse(
+    localStorage.getItem("revivalInventory")
+) || [];
+
+let favorites = JSON.parse(
+    localStorage.getItem("revivalFavorites")
+) || [];
+
+let currentCategory = "All";
+
+/* DISPLAY ITEMS */
+
+function displayItems() {
+
+    const container = document.getElementById("items");
+
+    const search =
+        document.getElementById("search")
+        .value
+        .toLowerCase();
+
+    container.innerHTML = "";
+
+    const filtered = items.filter(item => {
+
+        const categoryMatch =
+            currentCategory === "All" ||
+            item.type === currentCategory;
+
+        const searchMatch =
+            item.name
+            .toLowerCase()
+            .includes(search);
+
+        return categoryMatch && searchMatch;
+
+    });
+
+    filtered.forEach(item => {
+
+        const isOwned = owned.includes(item.id);
+
+        const isFavorite =
+            favorites.includes(item.id);
+
+        const div = document.createElement("div");
+
+        div.className = "item";
+
+        div.innerHTML = `
+
+            <div class="preview">
+                <div class="fake-hat">
+                    ${item.icon}
+                </div>
+            </div>
+
+            <h3>${item.name}</h3>
+
+            <div class="type">
+                ${item.type}
+            </div>
+
+            <p class="free">
+                FREE
+            </p>
+
+            <button
+                onclick="getItem(${item.id})"
+                ${isOwned ? "disabled" : ""}
+            >
+                ${isOwned ? "✓ Owned" : "GET ITEM"}
+            </button>
+
+            <button
+                class="${isFavorite ? "favorite" : ""}"
+                onclick="toggleFavorite(${item.id})"
+            >
+                ${isFavorite ? "★ Favorited" : "☆ Favorite"}
+            </button>
+
+        `;
+
+        container.appendChild(div);
+
+    });
+
+}
+
+/* GET FREE ITEM */
+
+function getItem(id) {
+
+    if (!owned.includes(id)) {
+
+        owned.push(id);
+
+        localStorage.setItem(
+            "revivalInventory",
+            JSON.stringify(owned)
+        );
+
+        alert(
+            "Item added to your inventory!"
+        );
+
+        displayItems();
+        displayInventory();
+    }
+
+}
+
+/* FAVORITES */
+
+function toggleFavorite(id) {
+
+    if (favorites.includes(id)) {
+
+        favorites =
+            favorites.filter(
+                item => item !== id
+            );
+
+    } else {
+
+        favorites.push(id);
+
+    }
+
+    localStorage.setItem(
+        "revivalFavorites",
+        JSON.stringify(favorites)
+    );
+
+    displayItems();
+}
+
+/* CATEGORY */
+
+function filterItems(category, button) {
+
+    currentCategory = category;
+
+    document
+        .querySelectorAll(".categories button")
+        .forEach(btn =>
+            btn.classList.remove("active")
+        );
+
+    button.classList.add("active");
+
+    displayItems();
+}
+
+/* INVENTORY */
+
+function displayInventory() {
+
+    const inventory =
+        document.getElementById("inventory");
+
+    if (owned.length === 0) {
+
+        inventory.innerHTML =
+            "<p>No items yet.</p>";
+
+        return;
+    }
+
+    inventory.innerHTML = "";
+
+    owned.forEach(id => {
+
+        const item =
+            items.find(i => i.id === id);
+
+        if (!item) return;
+
+        const div =
+            document.createElement("div");
+
+        div.className =
+            "inventory-item";
+
+        div.innerHTML = `
+
+            <span>
+                ${item.icon}
+                ${item.name}
+            </span>
+
+            <span class="equipped">
+                Owned
+            </span>
+
+        `;
+
+        inventory.appendChild(div);
+
+    });
+
+}
+
+/* SEARCH */
+
+document
+    .getElementById("search")
+    .addEventListener(
+        "input",
+        displayItems
+    );
+
+/* START */
+
+displayItems();
+displayInventory();
+
+</script>
+
+</body>
+</html>
