@@ -3,11 +3,10 @@
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>MTB REVIVALS - Games</title>
+<title>MTB REVIVALS - Game Servers</title>
 
 <style>
 
@@ -23,10 +22,12 @@ body {
     color: #333;
 }
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 
 header {
-    background: linear-gradient(#f7f7f7, #d1d1d1);
+    background: linear-gradient(#f7f7f7, #d0d0d0);
     border-bottom: 1px solid #999;
     box-shadow: 0 1px 3px #aaa;
 }
@@ -40,11 +41,8 @@ header {
 .logo {
     font-size: 25px;
     font-weight: bold;
-    color: #333;
     padding: 5px 0 10px;
 }
-
-/* NAVIGATION */
 
 nav {
     display: flex;
@@ -52,12 +50,10 @@ nav {
 }
 
 nav a {
-    display: block;
     padding: 9px 13px;
     color: #444;
     text-decoration: none;
     border: 1px solid transparent;
-    border-bottom: 0;
 }
 
 nav a:hover {
@@ -71,7 +67,10 @@ nav a.active {
     color: #1683c5;
 }
 
-/* MAIN */
+
+/* =========================
+   PAGE
+========================= */
 
 .container {
     max-width: 1000px;
@@ -79,167 +78,238 @@ nav a.active {
     padding: 0 10px;
 }
 
-/* PAGE TITLE */
-
 .page-title {
     background: linear-gradient(#666, #444);
     color: white;
-    padding: 9px 12px;
+    padding: 10px 12px;
     border: 1px solid #333;
     font-size: 18px;
     font-weight: bold;
     text-shadow: 1px 1px #222;
 }
 
-/* SEARCH */
 
-.search-area {
+/* =========================
+   SEARCH
+========================= */
+
+.search-box {
     background: white;
     border: 1px solid #aaa;
     padding: 12px;
     margin-top: 15px;
-}
-
-.search-row {
     display: flex;
     gap: 8px;
 }
 
-.search {
+.search-box input {
     flex: 1;
-    height: 34px;
-    border: 1px solid #999;
-    padding: 7px;
+    padding: 9px;
+    border: 1px solid #aaa;
+    border-radius: 3px;
     font-size: 13px;
 }
 
-.search-button {
-    width: 90px;
-    margin: 0;
-}
-
-/* CATEGORIES */
-
-.categories {
-    margin-top: 15px;
-    background: white;
-    border: 1px solid #aaa;
-    padding: 8px;
-}
-
-.categories button {
-    margin-right: 5px;
-    margin-top: 3px;
-}
-
-/* BUTTONS */
-
-button {
+.search-box button {
+    padding: 9px 18px;
     border: 1px solid #555;
     border-radius: 3px;
     background: linear-gradient(#65b5e8, #1683c5);
     color: white;
-    padding: 7px 14px;
     font-weight: bold;
     cursor: pointer;
-    text-shadow: 1px 1px #555;
 }
 
-button:hover {
-    background: linear-gradient(#79c5ed, #1683c5);
-}
 
-button.gray {
-    background: linear-gradient(#aaa, #777);
-}
+/* =========================
+   GAME SELECTOR
+========================= */
 
-button.gray:hover {
-    background: linear-gradient(#bbb, #888);
-}
-
-/* SECTION */
-
-.section {
-    margin-top: 20px;
-}
-
-.section-title {
-    background: linear-gradient(#f5f5f5, #d7d7d7);
-    border: 1px solid #aaa;
-    padding: 9px;
-    font-size: 15px;
-    font-weight: bold;
-}
-
-/* GAMES */
-
-.games {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 12px;
-    margin-top: 12px;
-}
-
-.game {
+.game-selector {
     background: white;
     border: 1px solid #aaa;
-    padding: 8px;
-    box-shadow: 0 1px 2px #ccc;
+    margin-top: 15px;
+    padding: 12px;
 }
 
-.thumbnail {
-    height: 125px;
-    background: linear-gradient(135deg, #777, #444);
+.game-selector select {
+    width: 100%;
+    padding: 9px;
+    border: 1px solid #aaa;
+}
+
+
+/* =========================
+   GAME INFO
+========================= */
+
+.game-info {
+    background: white;
+    border: 1px solid #aaa;
+    margin-top: 15px;
+    padding: 15px;
+    display: flex;
+    gap: 15px;
+}
+
+.game-thumbnail {
+    width: 150px;
+    height: 90px;
+    background: linear-gradient(135deg, #555, #888);
     border: 1px solid #555;
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    font-size: 17px;
+    font-size: 16px;
     font-weight: bold;
-    text-shadow: 1px 1px #222;
 }
 
-.game h3 {
-    margin: 9px 0 4px;
-    font-size: 15px;
-    color: #1683c5;
+.game-details h2 {
+    margin: 0 0 8px;
 }
 
-.creator {
-    color: #777;
-    margin-bottom: 7px;
+.game-details p {
+    margin: 5px 0;
 }
 
-.stats {
-    border-top: 1px solid #ddd;
-    padding-top: 7px;
-    color: #666;
-    line-height: 20px;
+
+/* =========================
+   SERVER HEADER
+========================= */
+
+.server-header {
+    margin-top: 20px;
+    background: linear-gradient(#666, #444);
+    color: white;
+    border: 1px solid #333;
+    padding: 9px 12px;
+    font-size: 16px;
+    font-weight: bold;
 }
 
-.rating {
-    color: #555;
+
+/* =========================
+   SERVER LIST
+========================= */
+
+.server-list {
+    background: white;
+    border: 1px solid #aaa;
 }
 
-.play {
-    width: 100%;
-    margin-top: 8px;
+.server {
+    display: grid;
+    grid-template-columns:
+        1fr
+        130px
+        120px
+        100px;
+
+    align-items: center;
+
+    padding: 12px;
+
+    border-bottom: 1px solid #ddd;
 }
 
-/* NO RESULTS */
+.server:last-child {
+    border-bottom: 0;
+}
+
+.server-name {
+    font-weight: bold;
+    color: #333;
+}
+
+.server-id {
+    font-size: 11px;
+    color: #888;
+    margin-top: 4px;
+}
+
+.players {
+    font-weight: bold;
+}
+
+.player-bar {
+    width: 80px;
+    height: 8px;
+    background: #ddd;
+    border: 1px solid #aaa;
+    margin-top: 5px;
+}
+
+.player-fill {
+    height: 100%;
+    background: #1683c5;
+}
+
+.status {
+    font-weight: bold;
+}
+
+.status.online {
+    color: #279447;
+}
+
+.status.full {
+    color: #c93636;
+}
+
+.join {
+    text-align: right;
+}
+
+.join button {
+    padding: 8px 15px;
+
+    border: 1px solid #555;
+
+    border-radius: 3px;
+
+    background:
+        linear-gradient(
+            #65b5e8,
+            #1683c5
+        );
+
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.join button:hover {
+    background:
+        linear-gradient(
+            #79c5ed,
+            #1683c5
+        );
+}
+
+.join button:disabled {
+    background: #aaa;
+    cursor: not-allowed;
+}
+
+
+/* =========================
+   NO RESULTS
+========================= */
 
 .no-results {
     display: none;
-    background: white;
-    border: 1px solid #aaa;
     padding: 25px;
     text-align: center;
     color: #777;
 }
 
-/* FOOTER */
+
+/* =========================
+   FOOTER
+========================= */
 
 footer {
     max-width: 1000px;
@@ -247,20 +317,35 @@ footer {
     padding: 15px 10px;
     border-top: 1px solid #aaa;
     color: #777;
-    font-size: 12px;
 }
 
-footer a {
-    color: #1683c5;
-    text-decoration: none;
-}
 
-/* MOBILE */
+/* =========================
+   MOBILE
+========================= */
 
-@media (max-width: 800px) {
+@media (max-width: 700px) {
 
-    .games {
-        grid-template-columns: repeat(2, 1fr);
+    .server {
+        grid-template-columns: 1fr 90px;
+        gap: 10px;
+    }
+
+    .server .status {
+        grid-column: 1;
+    }
+
+    .server .join {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+    }
+
+    .game-info {
+        flex-direction: column;
+    }
+
+    .game-thumbnail {
+        width: 100%;
     }
 
 }
@@ -276,16 +361,8 @@ footer a {
         font-size: 12px;
     }
 
-    .games {
-        grid-template-columns: 1fr;
-    }
-
-    .search-row {
+    .search-box {
         flex-direction: column;
-    }
-
-    .search-button {
-        width: 100%;
     }
 
 }
@@ -294,10 +371,13 @@ footer a {
 
 </head>
 
+
 <body>
 
 
-<!-- HEADER -->
+<!-- =========================
+     HEADER
+========================= -->
 
 <header>
 
@@ -348,436 +428,341 @@ footer a {
 </header>
 
 
-<!-- MAIN -->
+<!-- =========================
+     MAIN
+========================= -->
 
 <div class="container">
 
 
     <div class="page-title">
-        Games
+        Game Servers
     </div>
 
 
     <!-- SEARCH -->
 
-    <div class="search-area">
+    <div class="search-box">
 
-        <div class="search-row">
-
-            <input
-                type="text"
-                id="gameSearch"
-                class="search"
-                placeholder="Search games..."
-                onkeyup="searchGames()"
-            >
-
-            <button
-                class="search-button"
-                onclick="searchGames()">
-
-                Search
-
-            </button>
-
-        </div>
-
-    </div>
-
-
-    <!-- CATEGORIES -->
-
-    <div class="categories">
-
-        <strong>Categories:</strong>
+        <input
+            type="text"
+            id="search"
+            placeholder="Search games or servers..."
+            oninput="searchServers()"
+        >
 
         <button
-            class="gray"
-            onclick="filterGames('all')">
+            onclick="searchServers()">
 
-            All
-
-        </button>
-
-        <button
-            class="gray"
-            onclick="filterGames('obby')">
-
-            Obby
-
-        </button>
-
-        <button
-            class="gray"
-            onclick="filterGames('battle')">
-
-            Battle
-
-        </button>
-
-        <button
-            class="gray"
-            onclick="filterGames('town')">
-
-            Town
-
-        </button>
-
-        <button
-            class="gray"
-            onclick="filterGames('racing')">
-
-            Racing
+            Search
 
         </button>
 
     </div>
 
 
-    <!-- FEATURED -->
+    <!-- GAME SELECTOR -->
 
-    <div class="section">
+    <div class="game-selector">
 
-        <div class="section-title">
-            Featured Games
-        </div>
+        <strong>
+            Select Game
+        </strong>
 
+        <br><br>
 
-        <div class="games" id="gameList">
+        <select
+            id="gameSelect"
+            onchange="changeGame()">
 
+            <option value="obby">
+                Classic Obby
+            </option>
 
-            <!-- GAME 1 -->
+            <option value="brick">
+                Brick Battle
+            </option>
 
-            <div
-                class="game"
-                data-category="obby"
-                data-name="Classic Obby">
+            <option value="town">
+                MTB Town
+            </option>
 
-                <div class="thumbnail">
-                    CLASSIC<br>OBBY
-                </div>
+            <option value="survival">
+                Survival Island
+            </option>
 
-                <h3>
-                    Classic Obby
-                </h3>
+        </select>
 
-                <div class="creator">
-                    By Builder
-                </div>
+    </div>
 
-                <div class="stats">
 
-                    👥 24 playing<br>
+    <!-- GAME INFO -->
 
-                    <span class="rating">
-                        ★★★★★
-                    </span>
+    <div class="game-info">
 
-                </div>
+        <div class="game-thumbnail"
+             id="thumbnail">
 
-                <button
-                    class="play"
-                    onclick="playGame('Classic Obby')">
-
-                    Play
-
-                </button>
-
-            </div>
-
-
-            <!-- GAME 2 -->
-
-            <div
-                class="game"
-                data-category="battle"
-                data-name="Brick Battle">
-
-                <div class="thumbnail">
-                    BRICK<br>BATTLE
-                </div>
-
-                <h3>
-                    Brick Battle
-                </h3>
-
-                <div class="creator">
-                    By Admin
-                </div>
-
-                <div class="stats">
-
-                    👥 18 playing<br>
-
-                    <span class="rating">
-                        ★★★★☆
-                    </span>
-
-                </div>
-
-                <button
-                    class="play"
-                    onclick="playGame('Brick Battle')">
-
-                    Play
-
-                </button>
-
-            </div>
-
-
-            <!-- GAME 3 -->
-
-            <div
-                class="game"
-                data-category="town"
-                data-name="MTB Town">
-
-                <div class="thumbnail">
-                    MTB<br>TOWN
-                </div>
-
-                <h3>
-                    MTB Town
-                </h3>
-
-                <div class="creator">
-                    By Player
-                </div>
-
-                <div class="stats">
-
-                    👥 31 playing<br>
-
-                    <span class="rating">
-                        ★★★★★
-                    </span>
-
-                </div>
-
-                <button
-                    class="play"
-                    onclick="playGame('MTB Town')">
-
-                    Play
-
-                </button>
-
-            </div>
-
-
-            <!-- GAME 4 -->
-
-            <div
-                class="game"
-                data-category="racing"
-                data-name="MTB Racing">
-
-                <div class="thumbnail">
-                    MTB<br>RACING
-                </div>
-
-                <h3>
-                    MTB Racing
-                </h3>
-
-                <div class="creator">
-                    By MTB Studios
-                </div>
-
-                <div class="stats">
-
-                    👥 12 playing<br>
-
-                    <span class="rating">
-                        ★★★★☆
-                    </span>
-
-                </div>
-
-                <button
-                    class="play"
-                    onclick="playGame('MTB Racing')">
-
-                    Play
-
-                </button>
-
-            </div>
-
-
-            <!-- GAME 5 -->
-
-            <div
-                class="game"
-                data-category="obby"
-                data-name="Tower Challenge">
-
-                <div class="thumbnail">
-                    TOWER<br>CHALLENGE
-                </div>
-
-                <h3>
-                    Tower Challenge
-                </h3>
-
-                <div class="creator">
-                    By MTB Player
-                </div>
-
-                <div class="stats">
-
-                    👥 9 playing<br>
-
-                    <span class="rating">
-                        ★★★★☆
-                    </span>
-
-                </div>
-
-                <button
-                    class="play"
-                    onclick="playGame('Tower Challenge')">
-
-                    Play
-
-                </button>
-
-            </div>
-
-
-            <!-- GAME 6 -->
-
-            <div
-                class="game"
-                data-category="battle"
-                data-name="Sword Fight">
-
-                <div class="thumbnail">
-                    SWORD<br>FIGHT
-                </div>
-
-                <h3>
-                    Sword Fight
-                </h3>
-
-                <div class="creator">
-                    By MTB Studios
-                </div>
-
-                <div class="stats">
-
-                    👥 16 playing<br>
-
-                    <span class="rating">
-                        ★★★★★
-                    </span>
-
-                </div>
-
-                <button
-                    class="play"
-                    onclick="playGame('Sword Fight')">
-
-                    Play
-
-                </button>
-
-            </div>
-
-
-            <!-- GAME 7 -->
-
-            <div
-                class="game"
-                data-category="town"
-                data-name="Classic City">
-
-                <div class="thumbnail">
-                    CLASSIC<br>CITY
-                </div>
-
-                <h3>
-                    Classic City
-                </h3>
-
-                <div class="creator">
-                    By Builder
-                </div>
-
-                <div class="stats">
-
-                    👥 7 playing<br>
-
-                    <span class="rating">
-                        ★★★★☆
-                    </span>
-
-                </div>
-
-                <button
-                    class="play"
-                    onclick="playGame('Classic City')">
-
-                    Play
-
-                </button>
-
-            </div>
-
-
-            <!-- GAME 8 -->
-
-            <div
-                class="game"
-                data-category="racing"
-                data-name="Brick Racing">
-
-                <div class="thumbnail">
-                    BRICK<br>RACING
-                </div>
-
-                <h3>
-                    Brick Racing
-                </h3>
-
-                <div class="creator">
-                    By Player
-                </div>
-
-                <div class="stats">
-
-                    👥 5 playing<br>
-
-                    <span class="rating">
-                        ★★★★☆
-                    </span>
-
-                </div>
-
-                <button
-                    class="play"
-                    onclick="playGame('Brick Racing')">
-
-                    Play
-
-                </button>
-
-            </div>
-
+            CLASSIC OBBY
 
         </div>
 
+        <div class="game-details">
 
-        <div
-            id="noResults"
-            class="no-results">
+            <h2 id="gameTitle">
+                Classic Obby
+            </h2>
 
-            No games found.
+            <p id="gameDescription">
+                A classic obstacle course
+                inspired by old-school games.
+            </p>
+
+            <p>
+                <strong>Players:</strong>
+                <span id="totalPlayers">
+                    37
+                </span>
+            </p>
 
         </div>
 
     </div>
+
+
+    <!-- SERVER HEADER -->
+
+    <div class="server-header">
+        Available Servers
+    </div>
+
+
+    <!-- SERVER LIST -->
+
+    <div class="server-list"
+         id="serverList">
+
+
+        <!-- SERVER 1 -->
+
+        <div class="server"
+             data-name="Classic Obby Server 1">
+
+            <div>
+
+                <div class="server-name">
+                    Classic Obby Server 1
+                </div>
+
+                <div class="server-id">
+                    Server ID: MTB-001
+                </div>
+
+            </div>
+
+
+            <div class="players">
+
+                8 / 20
+
+                <div class="player-bar">
+
+                    <div
+                        class="player-fill"
+                        style="width:40%;">
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="status online">
+                Online
+            </div>
+
+
+            <div class="join">
+
+                <button
+                    onclick="joinServer('MTB-001')">
+
+                    Join
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- SERVER 2 -->
+
+        <div class="server"
+             data-name="Classic Obby Server 2">
+
+            <div>
+
+                <div class="server-name">
+                    Classic Obby Server 2
+                </div>
+
+                <div class="server-id">
+                    Server ID: MTB-002
+                </div>
+
+            </div>
+
+
+            <div class="players">
+
+                14 / 20
+
+                <div class="player-bar">
+
+                    <div
+                        class="player-fill"
+                        style="width:70%;">
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="status online">
+                Online
+            </div>
+
+
+            <div class="join">
+
+                <button
+                    onclick="joinServer('MTB-002')">
+
+                    Join
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- SERVER 3 -->
+
+        <div class="server"
+             data-name="Classic Obby Server 3">
+
+            <div>
+
+                <div class="server-name">
+                    Classic Obby Server 3
+                </div>
+
+                <div class="server-id">
+                    Server ID: MTB-003
+                </div>
+
+            </div>
+
+
+            <div class="players">
+
+                20 / 20
+
+                <div class="player-bar">
+
+                    <div
+                        class="player-fill"
+                        style="width:100%;">
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="status full">
+                Full
+            </div>
+
+
+            <div class="join">
+
+                <button disabled>
+                    Full
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- SERVER 4 -->
+
+        <div class="server"
+             data-name="Classic Obby Server 4">
+
+            <div>
+
+                <div class="server-name">
+                    Classic Obby Server 4
+                </div>
+
+                <div class="server-id">
+                    Server ID: MTB-004
+                </div>
+
+            </div>
+
+
+            <div class="players">
+
+                3 / 20
+
+                <div class="player-bar">
+
+                    <div
+                        class="player-fill"
+                        style="width:15%;">
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="status online">
+                Online
+            </div>
+
+
+            <div class="join">
+
+                <button
+                    onclick="joinServer('MTB-004')">
+
+                    Join
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <div
+        class="no-results"
+        id="noResults">
+
+        No servers found.
+
+    </div>
+
 
 </div>
 
@@ -787,23 +772,11 @@ footer a {
 <footer>
 
     MTB REVIVALS © 2026
-
     &nbsp; | &nbsp;
-
+    Game Servers
+    &nbsp; | &nbsp;
     <a href="index.html">
         Home
-    </a>
-
-    &nbsp; | &nbsp;
-
-    <a href="login.html">
-        Account
-    </a>
-
-    &nbsp; | &nbsp;
-
-    <a href="news.html">
-        News
     </a>
 
 </footer>
@@ -811,122 +784,402 @@ footer a {
 
 <script>
 
-/* PLAY GAME */
+/* =========================
+   GAME DATA
+========================= */
 
-function playGame(name) {
+const games = {
 
-    alert(
-        name +
-        " is not connected to a game server yet."
+    obby: {
+
+        title:
+            "Classic Obby",
+
+        description:
+            "A classic obstacle course inspired by old-school games.",
+
+        thumbnail:
+            "CLASSIC OBBY",
+
+        players:
+            37
+
+    },
+
+    brick: {
+
+        title:
+            "Brick Battle",
+
+        description:
+            "Classic brick combat with swords, rockets and old-school maps.",
+
+        thumbnail:
+            "BRICK BATTLE",
+
+        players:
+            24
+
+    },
+
+    town: {
+
+        title:
+            "MTB Town",
+
+        description:
+            "Hang out, explore the town and meet other MTB REVIVALS players.",
+
+        thumbnail:
+            "MTB TOWN",
+
+        players:
+            16
+
+    },
+
+    survival: {
+
+        title:
+            "Survival Island",
+
+        description:
+            "Survive the island, explore the map and build your base.",
+
+        thumbnail:
+            "SURVIVAL",
+
+        players:
+            42
+
+    }
+
+};
+
+
+/* =========================
+   CHANGE GAME
+========================= */
+
+function changeGame() {
+
+    const selected =
+        document.getElementById(
+            "gameSelect"
+        ).value;
+
+
+    const game =
+        games[selected];
+
+
+    document
+        .getElementById("gameTitle")
+        .textContent =
+        game.title;
+
+
+    document
+        .getElementById("gameDescription")
+        .textContent =
+        game.description;
+
+
+    document
+        .getElementById("thumbnail")
+        .textContent =
+        game.thumbnail;
+
+
+    document
+        .getElementById("totalPlayers")
+        .textContent =
+        game.players;
+
+
+    createServers(
+        game.title
     );
 
 }
 
 
-/* SEARCH */
+/* =========================
+   CREATE SERVERS
+========================= */
 
-function searchGames() {
+function createServers(gameName) {
+
+    const serverList =
+        document.getElementById(
+            "serverList"
+        );
+
+
+    serverList.innerHTML = "";
+
+
+    const serverData = [
+
+        {
+            id: "MTB-001",
+            players: 8,
+            max: 20
+        },
+
+        {
+            id: "MTB-002",
+            players: 14,
+            max: 20
+        },
+
+        {
+            id: "MTB-003",
+            players: 20,
+            max: 20
+        },
+
+        {
+            id: "MTB-004",
+            players: 3,
+            max: 20
+        }
+
+    ];
+
+
+    serverData.forEach(
+        function(server) {
+
+            const full =
+                server.players >=
+                server.max;
+
+
+            const percentage =
+                (
+                    server.players /
+                    server.max
+                ) * 100;
+
+
+            const div =
+                document.createElement(
+                    "div"
+                );
+
+
+            div.className =
+                "server";
+
+
+            div.setAttribute(
+                "data-name",
+                gameName +
+                " Server " +
+                server.id
+            );
+
+
+            div.innerHTML = `
+
+                <div>
+
+                    <div class="server-name">
+
+                        ${gameName}
+                        Server ${server.id}
+
+                    </div>
+
+                    <div class="server-id">
+
+                        Server ID:
+                        ${server.id}
+
+                    </div>
+
+                </div>
+
+
+                <div class="players">
+
+                    ${server.players}
+                    /
+                    ${server.max}
+
+                    <div class="player-bar">
+
+                        <div
+                            class="player-fill"
+                            style="width:${percentage}%;">
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="status
+                    ${full ? "full" : "online"}">
+
+                    ${full ? "Full" : "Online"}
+
+                </div>
+
+
+                <div class="join">
+
+                    <button
+                        ${full ? "disabled" : ""}
+                        onclick="joinServer('${server.id}')">
+
+                        ${full ? "Full" : "Join"}
+
+                    </button>
+
+                </div>
+
+            `;
+
+
+            serverList.appendChild(
+                div
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================
+   SEARCH SERVERS
+========================= */
+
+function searchServers() {
 
     const search =
         document
-        .getElementById("gameSearch")
+        .getElementById("search")
         .value
         .toLowerCase()
         .trim();
 
 
-    const games =
-        document
-        .querySelectorAll(".game");
+    const servers =
+        document.querySelectorAll(
+            ".server"
+        );
 
 
-    let found = 0;
+    let found = false;
 
 
-    games.forEach(function(game) {
+    servers.forEach(
+        function(server) {
 
-        const name =
-            game
-            .getAttribute("data-name")
-            .toLowerCase();
+            const name =
+                server
+                .getAttribute(
+                    "data-name"
+                )
+                .toLowerCase();
 
 
-        if (name.includes(search)) {
+            if (
+                name.includes(search)
+            ) {
 
-            game.style.display = "";
-            found++;
+                server.style.display =
+                    "grid";
 
-        } else {
+                found = true;
 
-            game.style.display = "none";
+            }
+
+            else {
+
+                server.style.display =
+                    "none";
+
+            }
 
         }
-
-    });
+    );
 
 
     document
         .getElementById("noResults")
         .style.display =
-        found === 0
-        ? "block"
-        : "none";
+        found
+        ? "none"
+        : "block";
 
 }
 
 
-/* CATEGORY FILTER */
+/* =========================
+   JOIN SERVER
+========================= */
 
-function filterGames(category) {
+function joinServer(serverId) {
 
-    const games =
+    const game =
         document
-        .querySelectorAll(".game");
+        .getElementById("gameSelect")
+        .value;
 
 
-    let found = 0;
+    const gameName =
+        games[game].title;
 
 
-    games.forEach(function(game) {
+    /*
+       Prototype behavior.
+       Replace this later with your
+       actual game-server connection.
+    */
 
-        const gameCategory =
-            game.getAttribute("data-category");
+    localStorage.setItem(
+        "mtbSelectedServer",
+        JSON.stringify({
 
+            game:
+                gameName,
 
-        if (
-            category === "all" ||
-            gameCategory === category
-        ) {
+            server:
+                serverId,
 
-            game.style.display = "";
-            found++;
+            joined:
+                Date.now()
 
-        } else {
-
-            game.style.display = "none";
-
-        }
-
-    });
-
-
-    document
-        .getElementById("noResults")
-        .style.display =
-        found === 0
-        ? "block"
-        : "none";
+        })
+    );
 
 
-    /* Clear search */
+    alert(
 
-    document
-        .getElementById("gameSearch")
-        .value = "";
+        "Joining " +
+        gameName +
+        "...\n\n" +
+        "Server: " +
+        serverId
+
+    );
 
 }
+
+
+/* =========================
+   START
+========================= */
+
+changeGame();
 
 </script>
+
 
 </body>
 
