@@ -40,7 +40,6 @@ header {
 .logo {
     font-size: 25px;
     font-weight: bold;
-    color: #333;
     padding: 5px 0 10px;
 }
 
@@ -87,157 +86,162 @@ nav a.active {
     text-shadow: 1px 1px #222;
 }
 
-/* SEARCH */
+/* INTRO */
 
-.search-box {
+.intro {
     background: white;
     border: 1px solid #aaa;
     padding: 12px;
     margin-top: 15px;
 }
 
-.search-row {
+/* TABS */
+
+.tabs {
+    margin-top: 15px;
     display: flex;
-    gap: 7px;
+    gap: 4px;
 }
 
-.search {
-    flex: 1;
-    height: 34px;
-    border: 1px solid #999;
-    padding: 7px;
-    font-size: 13px;
-}
-
-button {
-    border: 1px solid #555;
-    border-radius: 3px;
-    background: linear-gradient(#65b5e8, #1683c5);
-    color: white;
-    padding: 7px 14px;
-    font-weight: bold;
+.tab {
+    border: 1px solid #777;
+    border-bottom: 0;
+    border-radius: 3px 3px 0 0;
+    background: linear-gradient(#eee, #ccc);
+    color: #333;
+    padding: 9px 18px;
     cursor: pointer;
-    text-shadow: 1px 1px #555;
+    font-weight: bold;
+    text-shadow: none;
 }
 
-button:hover {
-    background: linear-gradient(#79c5ed, #1683c5);
-}
-
-button.gray {
-    background: linear-gradient(#aaa, #777);
-}
-
-button.gray:hover {
-    background: linear-gradient(#bbb, #888);
-}
-
-/* CATEGORIES */
-
-.categories {
-    margin-top: 12px;
+.tab.active {
     background: white;
-    border: 1px solid #aaa;
-    padding: 9px;
+    color: #1683c5;
 }
 
 /* CATALOG */
 
-.section {
-    margin-top: 20px;
-}
-
-.section-title {
-    background: linear-gradient(#f5f5f5, #d7d7d7);
-    border: 1px solid #aaa;
-    padding: 9px;
-    font-size: 15px;
-    font-weight: bold;
-}
-
 .catalog {
+    background: white;
+    border: 1px solid #aaa;
+    padding: 15px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 12px;
-    margin-top: 12px;
 }
 
 /* ITEM */
 
 .item {
-    background: white;
     border: 1px solid #aaa;
+    background: #f9f9f9;
     padding: 8px;
     box-shadow: 0 1px 2px #ccc;
 }
 
-.item-image {
-    height: 150px;
-    border: 1px solid #999;
-    background: #eee;
+.preview {
+    height: 160px;
+    background:
+        linear-gradient(#eee 1px, transparent 1px),
+        linear-gradient(90deg, #eee 1px, transparent 1px);
+    background-size: 20px 20px;
+    border: 1px solid #aaa;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-/* SHIRT PREVIEW */
+/* SHIRT */
 
 .shirt {
-    width: 90px;
-    height: 100px;
+    width: 85px;
+    height: 105px;
     position: relative;
 }
 
 .shirt-body {
     position: absolute;
-    width: 55px;
-    height: 65px;
     left: 18px;
     top: 20px;
-    border: 2px solid #555;
+    width: 50px;
+    height: 75px;
+    background: #1683ff;
+    border: 3px solid #555;
 }
 
-.sleeve {
+.shirt-arm {
     position: absolute;
-    width: 20px;
-    height: 48px;
-    top: 25px;
-    border: 2px solid #555;
+    top: 20px;
+    width: 25px;
+    height: 65px;
+    border: 3px solid #555;
 }
 
-.sleeve.left {
-    left: 0;
-    transform: rotate(15deg);
+.shirt-arm.left {
+    left: -5px;
+    background: #1683ff;
 }
 
-.sleeve.right {
-    right: 0;
-    transform: rotate(-15deg);
+.shirt-arm.right {
+    right: -5px;
+    background: #1683ff;
 }
 
-/* PANTS PREVIEW */
+/* RED SHIRT */
+
+.red-shirt .shirt-body,
+.red-shirt .shirt-arm {
+    background: #d83232;
+}
+
+/* GREEN SHIRT */
+
+.green-shirt .shirt-body,
+.green-shirt .shirt-arm {
+    background: #25a65a;
+}
+
+/* BLACK SHIRT */
+
+.black-shirt .shirt-body,
+.black-shirt .shirt-arm {
+    background: #333;
+}
+
+/* PANTS */
 
 .pants {
-    width: 70px;
-    height: 105px;
-    position: relative;
+    display: flex;
+    gap: 4px;
 }
 
-.pant {
-    position: absolute;
-    width: 31px;
-    height: 90px;
-    top: 5px;
-    border: 2px solid #555;
+.pant-leg {
+    width: 38px;
+    height: 100px;
+    border: 3px solid #555;
+    background: #333;
 }
 
-.pant.left {
-    left: 3px;
+/* LIGHT PANTS */
+
+.light-pants .pant-leg {
+    background: #777;
 }
 
-.pant.right {
-    right: 3px;
+/* BROWN PANTS */
+
+.brown-pants .pant-leg {
+    background: #795548;
 }
+
+/* BLUE PANTS */
+
+.blue-pants .pant-leg {
+    background: #174f9c;
+}
+
+/* TEXT */
 
 .item h3 {
     color: #1683c5;
@@ -247,12 +251,28 @@ button.gray:hover {
 
 .creator {
     color: #777;
-    margin-bottom: 5px;
 }
 
 .price {
     font-weight: bold;
     margin: 7px 0;
+}
+
+/* BUTTON */
+
+button {
+    border: 1px solid #555;
+    border-radius: 3px;
+    background: linear-gradient(#65b5e8, #1683c5);
+    color: white;
+    padding: 8px 13px;
+    font-weight: bold;
+    cursor: pointer;
+    text-shadow: 1px 1px #555;
+}
+
+button:hover {
+    background: linear-gradient(#79c5ed, #1683c5);
 }
 
 .item button {
@@ -271,17 +291,6 @@ button.gray:hover {
     font-weight: bold;
 }
 
-/* NO RESULTS */
-
-#noResults {
-    display: none;
-    background: white;
-    border: 1px solid #aaa;
-    padding: 25px;
-    text-align: center;
-    color: #777;
-}
-
 /* FOOTER */
 
 footer {
@@ -290,7 +299,6 @@ footer {
     padding: 15px 10px;
     border-top: 1px solid #aaa;
     color: #777;
-    font-size: 12px;
 }
 
 footer a {
@@ -323,10 +331,6 @@ footer a {
         grid-template-columns: 1fr;
     }
 
-    .search-row {
-        flex-direction: column;
-    }
-
 }
 
 </style>
@@ -335,8 +339,6 @@ footer a {
 
 <body>
 
-
-<!-- HEADER -->
 
 <header>
 
@@ -348,37 +350,23 @@ footer a {
 
         <nav>
 
-            <a href="index.html">
-                Home
-            </a>
+            <a href="index.html">Home</a>
 
-            <a href="login.html">
-                Account
-            </a>
+            <a href="login.html">Account</a>
 
-            <a href="avatar.html">
-                Avatar
-            </a>
+            <a href="avatar.html">Avatar</a>
 
-            <a href="accessories.html">
-                Accessories
-            </a>
+            <a href="accessories.html">Accessories</a>
 
             <a href="clothes.html" class="active">
                 Clothes
             </a>
 
-            <a href="inventory.html">
-                Inventory
-            </a>
+            <a href="inventory.html">Inventory</a>
 
-            <a href="games.html">
-                Games
-            </a>
+            <a href="games.html">Games</a>
 
-            <a href="news.html">
-                News
-            </a>
+            <a href="news.html">News</a>
 
         </nav>
 
@@ -389,62 +377,49 @@ footer a {
 
 <div class="container">
 
-
     <div class="page-title">
         Clothes
     </div>
 
 
-    <!-- SEARCH -->
+    <div class="intro">
 
-    <div class="search-box">
+        <strong>Classic Clothing</strong>
 
-        <div class="search-row">
-
-            <input
-                id="search"
-                class="search"
-                type="text"
-                placeholder="Search clothes..."
-                onkeyup="searchItems()"
-            >
-
-            <button onclick="searchItems()">
-                Search
-            </button>
-
-        </div>
+        <p>
+            Browse shirts and pants for your MTB REVIVALS avatar.
+            Items you add will appear in your inventory.
+        </p>
 
     </div>
 
 
-    <!-- CATEGORIES -->
-
-    <div class="categories">
-
-        <strong>Category:</strong>
+    <div class="tabs">
 
         <button
-            class="gray"
-            onclick="filterItems('all')">
-
-            All
-
-        </button>
-
-        <button
-            class="gray"
-            onclick="filterItems('shirt')">
+            id="shirtsTab"
+            class="tab active"
+            onclick="showCategory('Shirt')">
 
             Shirts
 
         </button>
 
         <button
-            class="gray"
-            onclick="filterItems('pants')">
+            id="pantsTab"
+            class="tab"
+            onclick="showCategory('Pants')">
 
             Pants
+
+        </button>
+
+        <button
+            id="allTab"
+            class="tab"
+            onclick="showCategory('All')">
+
+            All
 
         </button>
 
@@ -454,420 +429,336 @@ footer a {
     <div id="message"></div>
 
 
-    <!-- CATALOG -->
-
-    <div class="section">
-
-        <div class="section-title">
-            Catalog
-        </div>
+    <div class="catalog" id="catalog">
 
 
-        <div class="catalog" id="catalog">
+        <!-- BLUE SHIRT -->
 
+        <div
+            class="item"
+            data-type="Shirt">
 
-            <!-- BLUE SHIRT -->
+            <div class="preview">
 
-            <div
-                class="item"
-                data-type="shirt"
-                data-name="Classic Blue Shirt">
+                <div class="shirt">
 
-                <div class="item-image">
+                    <div class="shirt-arm left"></div>
 
-                    <div class="shirt">
+                    <div class="shirt-arm right"></div>
 
-                        <div
-                            class="shirt-body"
-                            style="background:#1683ff;">
-                        </div>
-
-                        <div
-                            class="sleeve left"
-                            style="background:#1683ff;">
-                        </div>
-
-                        <div
-                            class="sleeve right"
-                            style="background:#1683ff;">
-                        </div>
-
-                    </div>
+                    <div class="shirt-body"></div>
 
                 </div>
-
-                <h3>
-                    Classic Blue Shirt
-                </h3>
-
-                <div class="creator">
-                    By MTB Studios
-                </div>
-
-                <div class="price">
-                    Free
-                </div>
-
-                <button
-                    onclick="addItem('Classic Blue Shirt','Shirt')">
-
-                    Add to Inventory
-
-                </button>
 
             </div>
 
+            <h3>
+                Classic Blue Shirt
+            </h3>
 
-            <!-- RED SHIRT -->
-
-            <div
-                class="item"
-                data-type="shirt"
-                data-name="Classic Red Shirt">
-
-                <div class="item-image">
-
-                    <div class="shirt">
-
-                        <div
-                            class="shirt-body"
-                            style="background:#e53935;">
-                        </div>
-
-                        <div
-                            class="sleeve left"
-                            style="background:#e53935;">
-                        </div>
-
-                        <div
-                            class="sleeve right"
-                            style="background:#e53935;">
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <h3>
-                    Classic Red Shirt
-                </h3>
-
-                <div class="creator">
-                    By MTB Studios
-                </div>
-
-                <div class="price">
-                    10 Coins
-                </div>
-
-                <button
-                    onclick="addItem('Classic Red Shirt','Shirt')">
-
-                    Add to Inventory
-
-                </button>
-
+            <div class="creator">
+                By MTB Studios
             </div>
 
-
-            <!-- GREEN SHIRT -->
-
-            <div
-                class="item"
-                data-type="shirt"
-                data-name="Classic Green Shirt">
-
-                <div class="item-image">
-
-                    <div class="shirt">
-
-                        <div
-                            class="shirt-body"
-                            style="background:#22aa55;">
-                        </div>
-
-                        <div
-                            class="sleeve left"
-                            style="background:#22aa55;">
-                        </div>
-
-                        <div
-                            class="sleeve right"
-                            style="background:#22aa55;">
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <h3>
-                    Classic Green Shirt
-                </h3>
-
-                <div class="creator">
-                    By Builder
-                </div>
-
-                <div class="price">
-                    15 Coins
-                </div>
-
-                <button
-                    onclick="addItem('Classic Green Shirt','Shirt')">
-
-                    Add to Inventory
-
-                </button>
-
+            <div class="price">
+                Free
             </div>
 
+            <button
+                onclick="addItem('Classic Blue Shirt','Shirt')">
 
-            <!-- BLACK SHIRT -->
+                Add to Inventory
 
-            <div
-                class="item"
-                data-type="shirt"
-                data-name="Classic Black Shirt">
-
-                <div class="item-image">
-
-                    <div class="shirt">
-
-                        <div
-                            class="shirt-body"
-                            style="background:#222;">
-                        </div>
-
-                        <div
-                            class="sleeve left"
-                            style="background:#222;">
-                        </div>
-
-                        <div
-                            class="sleeve right"
-                            style="background:#222;">
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <h3>
-                    Classic Black Shirt
-                </h3>
-
-                <div class="creator">
-                    By Player
-                </div>
-
-                <div class="price">
-                    20 Coins
-                </div>
-
-                <button
-                    onclick="addItem('Classic Black Shirt','Shirt')">
-
-                    Add to Inventory
-
-                </button>
-
-            </div>
-
-
-            <!-- BLACK PANTS -->
-
-            <div
-                class="item"
-                data-type="pants"
-                data-name="Classic Black Pants">
-
-                <div class="item-image">
-
-                    <div class="pants">
-
-                        <div
-                            class="pant left"
-                            style="background:#222;">
-                        </div>
-
-                        <div
-                            class="pant right"
-                            style="background:#222;">
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <h3>
-                    Classic Black Pants
-                </h3>
-
-                <div class="creator">
-                    By MTB Studios
-                </div>
-
-                <div class="price">
-                    Free
-                </div>
-
-                <button
-                    onclick="addItem('Classic Black Pants','Pants')">
-
-                    Add to Inventory
-
-                </button>
-
-            </div>
-
-
-            <!-- BLUE PANTS -->
-
-            <div
-                class="item"
-                data-type="pants"
-                data-name="Classic Blue Pants">
-
-                <div class="item-image">
-
-                    <div class="pants">
-
-                        <div
-                            class="pant left"
-                            style="background:#1683ff;">
-                        </div>
-
-                        <div
-                            class="pant right"
-                            style="background:#1683ff;">
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <h3>
-                    Classic Blue Pants
-                </h3>
-
-                <div class="creator">
-                    By Builder
-                </div>
-
-                <div class="price">
-                    10 Coins
-                </div>
-
-                <button
-                    onclick="addItem('Classic Blue Pants','Pants')">
-
-                    Add to Inventory
-
-                </button>
-
-            </div>
-
-
-            <!-- GRAY PANTS -->
-
-            <div
-                class="item"
-                data-type="pants"
-                data-name="Classic Gray Pants">
-
-                <div class="item-image">
-
-                    <div class="pants">
-
-                        <div
-                            class="pant left"
-                            style="background:#777;">
-                        </div>
-
-                        <div
-                            class="pant right"
-                            style="background:#777;">
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <h3>
-                    Classic Gray Pants
-                </h3>
-
-                <div class="creator">
-                    By Player
-                </div>
-
-                <div class="price">
-                    15 Coins
-                </div>
-
-                <button
-                    onclick="addItem('Classic Gray Pants','Pants')">
-
-                    Add to Inventory
-
-                </button>
-
-            </div>
-
-
-            <!-- BROWN PANTS -->
-
-            <div
-                class="item"
-                data-type="pants"
-                data-name="Classic Brown Pants">
-
-                <div class="item-image">
-
-                    <div class="pants">
-
-                        <div
-                            class="pant left"
-                            style="background:#8b5a2b;">
-                        </div>
-
-                        <div
-                            class="pant right"
-                            style="background:#8b5a2b;">
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <h3>
-                    Classic Brown Pants
-                </h3>
-
-                <div class="creator">
-                    By Builder
-                </div>
-
-                <div class="price">
-                    15 Coins
-                </div>
-
-                <button
-                    onclick="addItem('Classic Brown Pants','Pants')">
-
-                    Add to Inventory
-
-                </button>
-
-            </div>
-
+            </button>
 
         </div>
 
 
-        <div id="noResults">
-            No clothes found.
+        <!-- RED SHIRT -->
+
+        <div
+            class="item"
+            data-type="Shirt">
+
+            <div class="preview">
+
+                <div class="shirt red-shirt">
+
+                    <div class="shirt-arm left"></div>
+
+                    <div class="shirt-arm right"></div>
+
+                    <div class="shirt-body"></div>
+
+                </div>
+
+            </div>
+
+            <h3>
+                Red Classic Shirt
+            </h3>
+
+            <div class="creator">
+                By Builder
+            </div>
+
+            <div class="price">
+                10 Coins
+            </div>
+
+            <button
+                onclick="addItem('Red Classic Shirt','Shirt')">
+
+                Add to Inventory
+
+            </button>
+
         </div>
+
+
+        <!-- GREEN SHIRT -->
+
+        <div
+            class="item"
+            data-type="Shirt">
+
+            <div class="preview">
+
+                <div class="shirt green-shirt">
+
+                    <div class="shirt-arm left"></div>
+
+                    <div class="shirt-arm right"></div>
+
+                    <div class="shirt-body"></div>
+
+                </div>
+
+            </div>
+
+            <h3>
+                Green Classic Shirt
+            </h3>
+
+            <div class="creator">
+                By Player
+            </div>
+
+            <div class="price">
+                15 Coins
+            </div>
+
+            <button
+                onclick="addItem('Green Classic Shirt','Shirt')">
+
+                Add to Inventory
+
+            </button>
+
+        </div>
+
+
+        <!-- BLACK SHIRT -->
+
+        <div
+            class="item"
+            data-type="Shirt">
+
+            <div class="preview">
+
+                <div class="shirt black-shirt">
+
+                    <div class="shirt-arm left"></div>
+
+                    <div class="shirt-arm right"></div>
+
+                    <div class="shirt-body"></div>
+
+                </div>
+
+            </div>
+
+            <h3>
+                Black Classic Shirt
+            </h3>
+
+            <div class="creator">
+                By MTB Studios
+            </div>
+
+            <div class="price">
+                20 Coins
+            </div>
+
+            <button
+                onclick="addItem('Black Classic Shirt','Shirt')">
+
+                Add to Inventory
+
+            </button>
+
+        </div>
+
+
+        <!-- BLACK PANTS -->
+
+        <div
+            class="item"
+            data-type="Pants">
+
+            <div class="preview">
+
+                <div class="pants">
+
+                    <div class="pant-leg"></div>
+
+                    <div class="pant-leg"></div>
+
+                </div>
+
+            </div>
+
+            <h3>
+                Classic Black Pants
+            </h3>
+
+            <div class="creator">
+                By MTB Studios
+            </div>
+
+            <div class="price">
+                Free
+            </div>
+
+            <button
+                onclick="addItem('Classic Black Pants','Pants')">
+
+                Add to Inventory
+
+            </button>
+
+        </div>
+
+
+        <!-- GRAY PANTS -->
+
+        <div
+            class="item"
+            data-type="Pants">
+
+            <div class="preview">
+
+                <div class="pants light-pants">
+
+                    <div class="pant-leg"></div>
+
+                    <div class="pant-leg"></div>
+
+                </div>
+
+            </div>
+
+            <h3>
+                Gray Pants
+            </h3>
+
+            <div class="creator">
+                By Builder
+            </div>
+
+            <div class="price">
+                10 Coins
+            </div>
+
+            <button
+                onclick="addItem('Gray Pants','Pants')">
+
+                Add to Inventory
+
+            </button>
+
+        </div>
+
+
+        <!-- BROWN PANTS -->
+
+        <div
+            class="item"
+            data-type="Pants">
+
+            <div class="preview">
+
+                <div class="pants brown-pants">
+
+                    <div class="pant-leg"></div>
+
+                    <div class="pant-leg"></div>
+
+                </div>
+
+            </div>
+
+            <h3>
+                Brown Pants
+            </h3>
+
+            <div class="creator">
+                By Player
+            </div>
+
+            <div class="price">
+                15 Coins
+            </div>
+
+            <button
+                onclick="addItem('Brown Pants','Pants')">
+
+                Add to Inventory
+
+            </button>
+
+        </div>
+
+
+        <!-- BLUE PANTS -->
+
+        <div
+            class="item"
+            data-type="Pants">
+
+            <div class="preview">
+
+                <div class="pants blue-pants">
+
+                    <div class="pant-leg"></div>
+
+                    <div class="pant-leg"></div>
+
+                </div>
+
+            </div>
+
+            <h3>
+                Classic Blue Pants
+            </h3>
+
+            <div class="creator">
+                By MTB Studios
+            </div>
+
+            <div class="price">
+                20 Coins
+            </div>
+
+            <button
+                onclick="addItem('Classic Blue Pants','Pants')">
+
+                Add to Inventory
+
+            </button>
+
+        </div>
+
 
     </div>
 
@@ -890,10 +781,28 @@ footer a {
         Inventory
     </a>
 
+    &nbsp; | &nbsp;
+
+    <a href="avatar.html">
+        Avatar
+    </a>
+
 </footer>
 
 
 <script>
+
+/*
+    MTB REVIVALS CLOTHING SYSTEM
+
+    Items are saved into:
+
+        mtbInventory
+
+    Inventory.html will automatically
+    recognize Shirt and Pants items.
+*/
+
 
 /* ADD ITEM */
 
@@ -905,9 +814,7 @@ function addItem(name, type) {
         ) || [];
 
 
-    /* Prevent duplicates */
-
-    let alreadyOwned =
+    const alreadyOwned =
         inventory.some(function(item) {
 
             return item.name === name;
@@ -929,8 +836,11 @@ function addItem(name, type) {
     inventory.push({
 
         name: name,
+
         type: type,
-        added: new Date().toISOString()
+
+        added:
+            new Date().toISOString()
 
     });
 
@@ -942,8 +852,82 @@ function addItem(name, type) {
 
 
     showMessage(
-        name + " was added to your inventory!"
+        name + " added to your inventory!"
     );
+
+}
+
+
+/* CATEGORY FILTER */
+
+function showCategory(category) {
+
+    const items =
+        document.querySelectorAll(".item");
+
+
+    items.forEach(function(item) {
+
+        const type =
+            item.getAttribute("data-type");
+
+
+        if (
+            category === "All" ||
+            type === category
+        ) {
+
+            item.style.display = "";
+
+        } else {
+
+            item.style.display = "none";
+
+        }
+
+    });
+
+
+    /*
+        Active tab
+    */
+
+    document
+        .getElementById("shirtsTab")
+        .classList.remove("active");
+
+    document
+        .getElementById("pantsTab")
+        .classList.remove("active");
+
+    document
+        .getElementById("allTab")
+        .classList.remove("active");
+
+
+    if (category === "Shirt") {
+
+        document
+            .getElementById("shirtsTab")
+            .classList.add("active");
+
+    }
+
+    else if (category === "Pants") {
+
+        document
+            .getElementById("pantsTab")
+            .classList.add("active");
+
+    }
+
+    else {
+
+        document
+            .getElementById("allTab")
+            .classList.add("active");
+
+    }
 
 }
 
@@ -955,120 +939,28 @@ function showMessage(text) {
     const message =
         document.getElementById("message");
 
-    message.textContent = text;
 
-    message.style.display = "block";
+    message.textContent =
+        text;
+
+
+    message.style.display =
+        "block";
 
 
     setTimeout(function() {
 
-        message.style.display = "none";
+        message.style.display =
+            "none";
 
-    }, 3000);
-
-}
-
-
-/* SEARCH */
-
-function searchItems() {
-
-    const search =
-        document
-        .getElementById("search")
-        .value
-        .toLowerCase()
-        .trim();
-
-
-    const items =
-        document.querySelectorAll(".item");
-
-
-    let found = 0;
-
-
-    items.forEach(function(item) {
-
-        const name =
-            item
-            .getAttribute("data-name")
-            .toLowerCase();
-
-
-        if (name.includes(search)) {
-
-            item.style.display = "";
-
-            found++;
-
-        } else {
-
-            item.style.display = "none";
-
-        }
-
-    });
-
-
-    document
-        .getElementById("noResults")
-        .style.display =
-        found === 0
-        ? "block"
-        : "none";
+    }, 2500);
 
 }
 
 
-/* CATEGORY */
+/* START */
 
-function filterItems(type) {
-
-    const items =
-        document.querySelectorAll(".item");
-
-
-    let found = 0;
-
-
-    items.forEach(function(item) {
-
-        const itemType =
-            item.getAttribute("data-type");
-
-
-        if (
-            type === "all" ||
-            itemType === type
-        ) {
-
-            item.style.display = "";
-
-            found++;
-
-        } else {
-
-            item.style.display = "none";
-
-        }
-
-    });
-
-
-    document
-        .getElementById("noResults")
-        .style.display =
-        found === 0
-        ? "block"
-        : "none";
-
-
-    document
-        .getElementById("search")
-        .value = "";
-
-}
+showCategory("Shirt");
 
 </script>
 
