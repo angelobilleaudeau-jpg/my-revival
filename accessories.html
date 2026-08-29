@@ -1,12 +1,11 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 
 <meta charset="UTF-8">
-
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>MTB REVIVALS - Accessories</title>
 
@@ -19,318 +18,373 @@
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background: #e9e9e9;
-    color: #222;
+    font-size: 13px;
+    background: #e8e8e8;
+    color: #333;
 }
 
 /* HEADER */
 
 header {
-    background: #333;
-    color: white;
-    padding: 15px;
+    background: linear-gradient(#f7f7f7, #d1d1d1);
+    border-bottom: 1px solid #999;
+    box-shadow: 0 1px 3px #aaa;
 }
 
-.header {
-    max-width: 1050px;
+.header-inner {
+    max-width: 1000px;
     margin: auto;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    gap: 10px;
+    padding: 8px 10px 0;
 }
 
 .logo {
-    font-size: 24px;
+    font-size: 25px;
     font-weight: bold;
-}
-
-.account {
-    background: #222;
-    padding: 8px 12px;
-    border-radius: 5px;
+    color: #333;
+    padding: 5px 0 10px;
 }
 
 /* NAVIGATION */
 
 nav {
-    background: #444;
-    overflow-x: auto;
-    white-space: nowrap;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 nav a {
-    display: inline-block;
-
-    color: white;
+    display: block;
+    padding: 9px 13px;
+    color: #444;
     text-decoration: none;
-
-    padding: 13px 15px;
+    border: 1px solid transparent;
+    border-bottom: 0;
 }
 
 nav a:hover {
-    background: #222;
+    background: #ddd;
 }
 
-/* PAGE */
+nav a.active {
+    background: white;
+    border: 1px solid #aaa;
+    border-bottom: 1px solid white;
+    color: #1683c5;
+}
+
+/* MAIN */
 
 .container {
-    max-width: 1050px;
-    margin: auto;
-    padding: 20px;
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 0 10px;
 }
 
-h1 {
-    margin-top: 0;
+.page-title {
+    background: linear-gradient(#666, #444);
+    color: white;
+    padding: 9px 12px;
+    border: 1px solid #333;
+    font-size: 18px;
+    font-weight: bold;
+    text-shadow: 1px 1px #222;
 }
 
 /* SEARCH */
 
-.search {
-    width: 100%;
-
-    padding: 13px;
-
+.search-box {
+    background: white;
     border: 1px solid #aaa;
-    border-radius: 5px;
+    padding: 12px;
+    margin-top: 15px;
+}
 
-    font-size: 16px;
+.search-row {
+    display: flex;
+    gap: 7px;
+}
 
-    margin-bottom: 15px;
+.search {
+    flex: 1;
+    height: 34px;
+    border: 1px solid #999;
+    padding: 7px;
+    font-size: 13px;
+}
+
+button {
+    border: 1px solid #555;
+    border-radius: 3px;
+    background: linear-gradient(#65b5e8, #1683c5);
+    color: white;
+    padding: 7px 14px;
+    font-weight: bold;
+    cursor: pointer;
+    text-shadow: 1px 1px #555;
+}
+
+button:hover {
+    background: linear-gradient(#79c5ed, #1683c5);
+}
+
+button.gray {
+    background: linear-gradient(#aaa, #777);
+}
+
+button.gray:hover {
+    background: linear-gradient(#bbb, #888);
 }
 
 /* CATEGORIES */
 
 .categories {
-    display: flex;
-
-    gap: 8px;
-
-    overflow-x: auto;
-
-    padding-bottom: 15px;
-}
-
-.categories button {
+    margin-top: 12px;
     background: white;
-
     border: 1px solid #aaa;
-
-    border-radius: 5px;
-
-    padding: 10px 15px;
-
-    white-space: nowrap;
-
-    cursor: pointer;
+    padding: 9px;
 }
 
-.categories button.active {
-    background: #333;
-    color: white;
+/* CATALOG */
+
+.section {
+    margin-top: 20px;
 }
 
-/* ITEM GRID */
+.section-title {
+    background: linear-gradient(#f5f5f5, #d7d7d7);
+    border: 1px solid #aaa;
+    padding: 9px;
+    font-size: 15px;
+    font-weight: bold;
+}
 
-.items {
+.catalog {
     display: grid;
-
-    grid-template-columns:
-        repeat(auto-fit, minmax(190px, 1fr));
-
-    gap: 15px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: 12px;
 }
 
 /* ITEM */
 
 .item {
     background: white;
-
-    border: 1px solid #ccc;
-
-    border-radius: 7px;
-
-    padding: 12px;
-
-    box-shadow:
-        0 2px 5px rgba(0,0,0,.08);
+    border: 1px solid #aaa;
+    padding: 8px;
+    box-shadow: 0 1px 2px #ccc;
 }
 
-/* PREVIEW */
-
-.preview {
-    height: 160px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #ddd,
-            #f5f5f5
-        );
-
-    border-radius: 5px;
-
+.item-image {
+    height: 150px;
+    border: 1px solid #999;
+    background: #eee;
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
-    margin-bottom: 10px;
 }
 
-.icon {
-    font-size: 70px;
+/* ACCESSORY PREVIEWS */
+
+.accessory {
+    width: 105px;
+    height: 115px;
+    position: relative;
 }
+
+/* BLOCK HEAD */
+
+.head {
+    position: absolute;
+    width: 65px;
+    height: 65px;
+    left: 20px;
+    top: 35px;
+    background: #f2c29b;
+    border: 2px solid #555;
+}
+
+/* CAP */
+
+.cap {
+    position: absolute;
+    width: 75px;
+    height: 25px;
+    left: 15px;
+    top: 20px;
+    background: #1683c5;
+    border: 2px solid #555;
+}
+
+.cap-brim {
+    position: absolute;
+    width: 45px;
+    height: 10px;
+    left: 50px;
+    top: 42px;
+    background: #1683c5;
+    border: 2px solid #555;
+}
+
+/* FEDORA */
+
+.fedora {
+    position: absolute;
+    width: 75px;
+    height: 27px;
+    left: 15px;
+    top: 18px;
+    background: #222;
+    border: 2px solid #555;
+}
+
+.fedora-top {
+    position: absolute;
+    width: 55px;
+    height: 28px;
+    left: 25px;
+    top: 0;
+    background: #333;
+    border: 2px solid #555;
+}
+
+/* CROWN */
+
+.crown {
+    position: absolute;
+    left: 17px;
+    top: 10px;
+    width: 72px;
+    height: 40px;
+    background: #e6b800;
+    border: 2px solid #806600;
+    clip-path: polygon(
+        0 100%,
+        10% 10%,
+        35% 55%,
+        50% 0,
+        65% 55%,
+        90% 10%,
+        100% 100%
+    );
+}
+
+/* HEADPHONES */
+
+.headphones {
+    position: absolute;
+    width: 78px;
+    height: 78px;
+    left: 13px;
+    top: 27px;
+    border: 7px solid #222;
+    border-bottom: 0;
+    border-radius: 50px 50px 0 0;
+}
+
+.ear {
+    position: absolute;
+    width: 18px;
+    height: 30px;
+    background: #1683c5;
+    border: 2px solid #555;
+    top: 50px;
+}
+
+.ear.left {
+    left: -8px;
+}
+
+.ear.right {
+    right: -8px;
+}
+
+/* ITEM TEXT */
 
 .item h3 {
-    margin: 5px 0;
+    color: #1683c5;
+    font-size: 14px;
+    margin: 9px 0 4px;
 }
 
-.type {
+.creator {
     color: #777;
-    font-size: 13px;
+    margin-bottom: 5px;
 }
 
-.free {
-    color: #159447;
+.price {
     font-weight: bold;
+    margin: 7px 0;
 }
-
-/* BUTTONS */
 
 .item button {
     width: 100%;
+}
 
+/* MESSAGE */
+
+#message {
+    display: none;
+    background: white;
+    border: 1px solid #aaa;
     padding: 10px;
-
-    margin-top: 7px;
-
-    border: 0;
-
-    border-radius: 5px;
-
-    background: #1683ff;
-
-    color: white;
-
+    margin-top: 12px;
+    color: #1683c5;
     font-weight: bold;
-
-    cursor: pointer;
 }
 
-.item button:hover {
-    background: #006bd6;
-}
+/* NO RESULTS */
 
-.favorite {
-    background: #eee !important;
-    color: #222 !important;
-}
-
-/* INVENTORY */
-
-.inventory {
-    margin-top: 30px;
-
+#noResults {
+    display: none;
     background: white;
-
-    padding: 15px;
-
-    border: 1px solid #ccc;
-
-    border-radius: 7px;
-}
-
-.inventory-item {
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    padding: 10px;
-
-    border-bottom: 1px solid #ddd;
-}
-
-.inventory-item:last-child {
-    border-bottom: none;
-}
-
-.inventory button {
-    background: #333;
-
-    color: white;
-
-    border: 0;
-
-    padding: 7px 12px;
-
-    border-radius: 4px;
-}
-
-/* NOT LOGGED IN */
-
-.login-box {
-    background: white;
-
-    border: 1px solid #ccc;
-
-    padding: 20px;
-
-    border-radius: 7px;
-
+    border: 1px solid #aaa;
+    padding: 25px;
     text-align: center;
+    color: #777;
 }
 
-.login-box a {
-    display: inline-block;
+/* FOOTER */
 
-    margin-top: 10px;
+footer {
+    max-width: 1000px;
+    margin: 40px auto 0;
+    padding: 15px 10px;
+    border-top: 1px solid #aaa;
+    color: #777;
+    font-size: 12px;
+}
 
-    padding: 10px 18px;
-
-    background: #1683ff;
-
-    color: white;
-
+footer a {
+    color: #1683c5;
     text-decoration: none;
-
-    border-radius: 5px;
 }
 
 /* MOBILE */
 
+@media (max-width: 800px) {
+
+    .catalog {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
 @media (max-width: 500px) {
 
-    .header {
+    .logo {
+        text-align: center;
+    }
+
+    nav a {
+        padding: 8px 9px;
+        font-size: 12px;
+    }
+
+    .catalog {
+        grid-template-columns: 1fr;
+    }
+
+    .search-row {
         flex-direction: column;
-    }
-
-    .items {
-        grid-template-columns:
-            repeat(2, 1fr);
-
-        gap: 10px;
-    }
-
-    .item {
-        padding: 8px;
-    }
-
-    .preview {
-        height: 120px;
-    }
-
-    .icon {
-        font-size: 50px;
-    }
-
-    .item h3 {
-        font-size: 15px;
     }
 
 }
@@ -339,831 +393,626 @@ h1 {
 
 </head>
 
-
 <body>
 
 
 <header>
 
-    <div class="header">
+    <div class="header-inner">
 
         <div class="logo">
             MTB REVIVALS
         </div>
 
-        <div class="account">
+        <nav>
 
-            👤
+            <a href="index.html">
+                Home
+            </a>
 
-            <span id="username">
-                Guest
-            </span>
+            <a href="login.html">
+                Account
+            </a>
 
-            |
+            <a href="avatar.html">
+                Avatar
+            </a>
 
-            💰
+            <a href="accessories.html" class="active">
+                Accessories
+            </a>
 
-            <span id="coins">
-                0
-            </span>
+            <a href="clothes.html">
+                Clothes
+            </a>
 
-        </div>
+            <a href="inventory.html">
+                Inventory
+            </a>
+
+            <a href="games.html">
+                Games
+            </a>
+
+            <a href="news.html">
+                News
+            </a>
+
+        </nav>
 
     </div>
 
 </header>
 
 
-<nav>
-
-    <a href="index.html">
-        Home
-    </a>
-
-    <a href="login.html">
-        Account
-    </a>
-
-    <a href="avatar.html">
-        Avatar
-    </a>
-
-    <a href="accessories.html">
-        Accessories
-    </a>
-
-    <a href="clothes.html">
-        Clothes
-    </a>
-
-    <a href="inventory.html">
-        Inventory
-    </a>
-
-    <a href="games.html">
-        Games
-    </a>
-
-    <a href="news.html">
-        News
-    </a>
-
-</nav>
-
-
 <div class="container">
 
 
-<h1>
-    🎩 Accessories
-</h1>
-
-<p>
-    All MTB REVIVALS accessories are FREE!
-</p>
+    <div class="page-title">
+        Accessories
+    </div>
 
 
-<!-- LOGIN WARNING -->
+    <!-- SEARCH -->
 
-<div
-    id="loginWarning"
-    class="login-box"
-    style="display:none;"
->
+    <div class="search-box">
 
-    <h2>
-        🔐 Login Required
-    </h2>
+        <div class="search-row">
 
-    <p>
-        Login or create an account to collect
-        accessories.
-    </p>
+            <input
+                id="search"
+                class="search"
+                type="text"
+                placeholder="Search accessories..."
+                onkeyup="searchItems()"
+            >
 
-    <a href="login.html">
-        Login / Sign Up
-    </a>
+            <button onclick="searchItems()">
+                Search
+            </button>
 
-</div>
+        </div>
 
-
-<!-- CATALOG -->
-
-<div id="catalog">
+    </div>
 
 
-<input
-    id="search"
-    class="search"
-    type="text"
-    placeholder="🔍 Search accessories..."
->
+    <!-- CATEGORIES -->
+
+    <div class="categories">
+
+        <strong>Category:</strong>
+
+        <button
+            class="gray"
+            onclick="filterItems('all')">
+
+            All
+
+        </button>
+
+        <button
+            class="gray"
+            onclick="filterItems('hat')">
+
+            Hats
+
+        </button>
+
+        <button
+            class="gray"
+            onclick="filterItems('head')">
+
+            Head
+
+        </button>
+
+    </div>
 
 
-<div class="categories">
-
-    <button
-        class="active"
-        onclick="filterItems('All', this)"
-    >
-        All
-    </button>
-
-    <button
-        onclick="filterItems('Hat', this)"
-    >
-        Hats
-    </button>
-
-    <button
-        onclick="filterItems('Special', this)"
-    >
-        Special
-    </button>
-
-    <button
-        onclick="filterItems('Back', this)"
-    >
-        Back
-    </button>
-
-    <button
-        onclick="filterItems('Face', this)"
-    >
-        Faces
-    </button>
-
-</div>
+    <div id="message"></div>
 
 
-<div
-    id="items"
-    class="items"
-></div>
+    <!-- CATALOG -->
+
+    <div class="section">
+
+        <div class="section-title">
+            Catalog
+        </div>
 
 
-<!-- INVENTORY -->
+        <div
+            class="catalog"
+            id="catalog">
 
-<div class="inventory">
 
-    <h2>
-        📦 My Accessories
-    </h2>
+            <!-- BLUE CAP -->
 
-    <div id="inventory">
-        <p>
-            You don't own any accessories yet.
-        </p>
+            <div
+                class="item"
+                data-type="hat"
+                data-name="Classic Blue Cap">
+
+                <div class="item-image">
+
+                    <div class="accessory">
+
+                        <div class="head"></div>
+
+                        <div
+                            class="cap">
+                        </div>
+
+                        <div
+                            class="cap-brim">
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <h3>
+                    Classic Blue Cap
+                </h3>
+
+                <div class="creator">
+                    By MTB Studios
+                </div>
+
+                <div class="price">
+                    Free
+                </div>
+
+                <button
+                    onclick="addItem('Classic Blue Cap','Accessory')">
+
+                    Add to Inventory
+
+                </button>
+
+            </div>
+
+
+            <!-- BLACK FEDORA -->
+
+            <div
+                class="item"
+                data-type="hat"
+                data-name="Classic Fedora">
+
+                <div class="item-image">
+
+                    <div class="accessory">
+
+                        <div class="head"></div>
+
+                        <div class="fedora"></div>
+
+                        <div class="fedora-top"></div>
+
+                    </div>
+
+                </div>
+
+                <h3>
+                    Classic Fedora
+                </h3>
+
+                <div class="creator">
+                    By Builder
+                </div>
+
+                <div class="price">
+                    25 Coins
+                </div>
+
+                <button
+                    onclick="addItem('Classic Fedora','Accessory')">
+
+                    Add to Inventory
+
+                </button>
+
+            </div>
+
+
+            <!-- GOLD CROWN -->
+
+            <div
+                class="item"
+                data-type="hat"
+                data-name="Golden Crown">
+
+                <div class="item-image">
+
+                    <div class="accessory">
+
+                        <div class="head"></div>
+
+                        <div class="crown"></div>
+
+                    </div>
+
+                </div>
+
+                <h3>
+                    Golden Crown
+                </h3>
+
+                <div class="creator">
+                    By MTB Studios
+                </div>
+
+                <div class="price">
+                    50 Coins
+                </div>
+
+                <button
+                    onclick="addItem('Golden Crown','Accessory')">
+
+                    Add to Inventory
+
+                </button>
+
+            </div>
+
+
+            <!-- HEADPHONES -->
+
+            <div
+                class="item"
+                data-type="head"
+                data-name="Classic Headphones">
+
+                <div class="item-image">
+
+                    <div class="accessory">
+
+                        <div class="head"></div>
+
+                        <div class="headphones"></div>
+
+                        <div class="ear left"></div>
+
+                        <div class="ear right"></div>
+
+                    </div>
+
+                </div>
+
+                <h3>
+                    Classic Headphones
+                </h3>
+
+                <div class="creator">
+                    By Player
+                </div>
+
+                <div class="price">
+                    30 Coins
+                </div>
+
+                <button
+                    onclick="addItem('Classic Headphones','Accessory')">
+
+                    Add to Inventory
+
+                </button>
+
+            </div>
+
+
+            <!-- RED CAP -->
+
+            <div
+                class="item"
+                data-type="hat"
+                data-name="Red Cap">
+
+                <div class="item-image">
+
+                    <div class="accessory">
+
+                        <div class="head"></div>
+
+                        <div
+                            class="cap"
+                            style="background:#d83232;">
+                        </div>
+
+                        <div
+                            class="cap-brim"
+                            style="background:#d83232;">
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <h3>
+                    Red Cap
+                </h3>
+
+                <div class="creator">
+                    By Player
+                </div>
+
+                <div class="price">
+                    10 Coins
+                </div>
+
+                <button
+                    onclick="addItem('Red Cap','Accessory')">
+
+                    Add to Inventory
+
+                </button>
+
+            </div>
+
+
+            <!-- GREEN CAP -->
+
+            <div
+                class="item"
+                data-type="hat"
+                data-name="Green Cap">
+
+                <div class="item-image">
+
+                    <div class="accessory">
+
+                        <div class="head"></div>
+
+                        <div
+                            class="cap"
+                            style="background:#22aa55;">
+                        </div>
+
+                        <div
+                            class="cap-brim"
+                            style="background:#22aa55;">
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <h3>
+                    Green Cap
+                </h3>
+
+                <div class="creator">
+                    By Builder
+                </div>
+
+                <div class="price">
+                    15 Coins
+                </div>
+
+                <button
+                    onclick="addItem('Green Cap','Accessory')">
+
+                    Add to Inventory
+
+                </button>
+
+            </div>
+
+
+        </div>
+
+
+        <div id="noResults">
+            No accessories found.
+        </div>
+
     </div>
 
 </div>
 
 
-</div>
+<footer>
 
-</div>
+    MTB REVIVALS © 2026
+
+    &nbsp; | &nbsp;
+
+    <a href="index.html">
+        Home
+    </a>
+
+    &nbsp; | &nbsp;
+
+    <a href="inventory.html">
+        Inventory
+    </a>
+
+    &nbsp; | &nbsp;
+
+    <a href="avatar.html">
+        Avatar
+    </a>
+
+</footer>
 
 
 <script>
 
-/*
-==================================================
-MTB REVIVALS ACCESSORY SYSTEM
-==================================================
+/* ADD ACCESSORY */
 
-All items in this demo are ORIGINAL placeholder
-concepts.
+function addItem(name, type) {
 
-Replace the emoji previews with artwork/models
-that you created or have permission to use.
+    let inventory =
+        JSON.parse(
+            localStorage.getItem("mtbInventory")
+        ) || [];
 
-==================================================
-*/
 
+    let alreadyOwned =
+        inventory.some(function(item) {
 
-/* ACCESSORIES */
-
-const items = [
-
-    {
-        id: 101,
-        name: "Frozen Horns",
-        type: "Special",
-        icon: "❄️",
-        description:
-            "Mystical frozen horns."
-    },
-
-    {
-        id: 102,
-        name: "Shadowless Head",
-        type: "Special",
-        icon: "💀",
-        description:
-            "A mysterious headless-style avatar effect."
-    },
-
-    {
-        id: 103,
-        name: "Void Walker Leg",
-        type: "Special",
-        icon: "🦵",
-        description:
-            "A dark legendary leg accessory."
-    },
-
-    {
-        id: 104,
-        name: "Classic Crown",
-        type: "Hat",
-        icon: "👑",
-        description:
-            "A simple classic crown."
-    },
-
-    {
-        id: 105,
-        name: "Classic Fedora",
-        type: "Hat",
-        icon: "🎩",
-        description:
-            "A classic-style fedora."
-    },
-
-    {
-        id: 106,
-        name: "Golden Wings",
-        type: "Back",
-        icon: "🪽",
-        description:
-            "Golden wings for your avatar."
-    },
-
-    {
-        id: 107,
-        name: "Classic Smile",
-        type: "Face",
-        icon: "🙂",
-        description:
-            "A classic happy face."
-    },
-
-    {
-        id: 108,
-        name: "Blue Headphones",
-        type: "Hat",
-        icon: "🎧",
-        description:
-            "Classic blue headphones."
-    },
-
-    {
-        id: 109,
-        name: "Ice Backpack",
-        type: "Back",
-        icon: "🎒",
-        description:
-            "A frozen backpack."
-    }
-
-];
-
-
-/* CURRENT USER */
-
-let username =
-    localStorage.getItem(
-        "mtbLoggedIn"
-    );
-
-
-/* GET ACCOUNTS */
-
-function getAccounts() {
-
-    return JSON.parse(
-        localStorage.getItem(
-            "mtbAccounts"
-        )
-    ) || {};
-
-}
-
-
-/* SAVE ACCOUNTS */
-
-function saveAccounts(accounts) {
-
-    localStorage.setItem(
-        "mtbAccounts",
-        JSON.stringify(accounts)
-    );
-
-}
-
-
-/* CHECK LOGIN */
-
-if (!username) {
-
-    document.getElementById(
-        "catalog"
-    ).style.display = "none";
-
-    document.getElementById(
-        "loginWarning"
-    ).style.display = "block";
-
-} else {
-
-    loadUser();
-
-}
-
-
-/* LOAD USER */
-
-function loadUser() {
-
-    const accounts =
-        getAccounts();
-
-    const account =
-        accounts[username];
-
-
-    if (!account) {
-
-        localStorage.removeItem(
-            "mtbLoggedIn"
-        );
-
-        location.reload();
-
-        return;
-
-    }
-
-
-    /* DISPLAY USERNAME */
-
-    document.getElementById(
-        "username"
-    ).textContent =
-        account.username;
-
-
-    /* DISPLAY COINS */
-
-    document.getElementById(
-        "coins"
-    ).textContent =
-        account.coins;
-
-
-    /* MAKE SURE INVENTORY EXISTS */
-
-    if (!account.inventory) {
-
-        account.inventory = [];
-
-    }
-
-
-    if (!account.favorites) {
-
-        account.favorites = [];
-
-    }
-
-
-    saveAccounts(accounts);
-
-
-    displayItems();
-
-    displayInventory();
-
-}
-
-
-/* CATEGORY */
-
-let currentCategory = "All";
-
-
-function filterItems(
-    category,
-    button
-) {
-
-    currentCategory =
-        category;
-
-
-    document
-        .querySelectorAll(
-            ".categories button"
-        )
-        .forEach(
-            btn =>
-                btn.classList.remove(
-                    "active"
-                )
-        );
-
-
-    button.classList.add(
-        "active"
-    );
-
-
-    displayItems();
-
-}
-
-
-/* DISPLAY */
-
-function displayItems() {
-
-    const container =
-        document.getElementById(
-            "items"
-        );
-
-
-    const search =
-        document.getElementById(
-            "search"
-        )
-        .value
-        .toLowerCase();
-
-
-    const accounts =
-        getAccounts();
-
-
-    const account =
-        accounts[username];
-
-
-    container.innerHTML = "";
-
-
-    const filtered =
-        items.filter(item => {
-
-            const categoryMatch =
-                currentCategory === "All" ||
-                item.type === currentCategory;
-
-
-            const searchMatch =
-                item.name
-                    .toLowerCase()
-                    .includes(search);
-
-
-            return (
-                categoryMatch &&
-                searchMatch
-            );
+            return item.name === name;
 
         });
 
 
-    filtered.forEach(item => {
+    if (alreadyOwned) {
 
-
-        const owned =
-            account.inventory
-                .includes(item.id);
-
-
-        const favorite =
-            account.favorites
-                .includes(item.id);
-
-
-        const div =
-            document.createElement(
-                "div"
-            );
-
-
-        div.className =
-            "item";
-
-
-        div.innerHTML = `
-
-            <div class="preview">
-
-                <div class="icon">
-                    ${item.icon}
-                </div>
-
-            </div>
-
-            <h3>
-                ${item.name}
-            </h3>
-
-            <div class="type">
-                ${item.type}
-            </div>
-
-            <p>
-                ${item.description}
-            </p>
-
-            <p class="free">
-                FREE
-            </p>
-
-            <button
-                onclick="claimItem(${item.id})"
-                ${owned ? "disabled" : ""}
-            >
-
-                ${
-                    owned
-                    ? "✓ Owned"
-                    : "🎁 Get Item"
-                }
-
-            </button>
-
-            <button
-                class="${
-                    favorite
-                    ? "favorite"
-                    : ""
-                }"
-
-                onclick="
-                    toggleFavorite(
-                        ${item.id}
-                    )
-                "
-            >
-
-                ${
-                    favorite
-                    ? "★ Favorited"
-                    : "☆ Favorite"
-                }
-
-            </button>
-
-        `;
-
-
-        container.appendChild(
-            div
+        showMessage(
+            name + " is already in your inventory."
         );
+
+        return;
+
+    }
+
+
+    inventory.push({
+
+        name: name,
+        type: type,
+        added: new Date().toISOString()
 
     });
 
-}
-
-
-/* CLAIM */
-
-function claimItem(id) {
-
-    const accounts =
-        getAccounts();
-
-
-    const account =
-        accounts[username];
-
-
-    if (!account) {
-
-        alert(
-            "Please login first."
-        );
-
-        return;
-
-    }
-
-
-    if (
-        account.inventory
-            .includes(id)
-    ) {
-
-        alert(
-            "You already own this item!"
-        );
-
-        return;
-
-    }
-
-
-    account.inventory.push(
-        id
-    );
-
-
-    saveAccounts(
-        accounts
-    );
-
-
-    const item =
-        items.find(
-            i => i.id === id
-        );
-
-
-    alert(
-        item.name +
-        " was added to your inventory!"
-    );
-
-
-    displayItems();
-
-    displayInventory();
-
-}
-
-
-/* FAVORITE */
-
-function toggleFavorite(id) {
-
-    const accounts =
-        getAccounts();
-
-
-    const account =
-        accounts[username];
-
-
-    if (!account) return;
-
-
-    if (
-        account.favorites
-            .includes(id)
-    ) {
-
-        account.favorites =
-            account.favorites.filter(
-                itemId =>
-                    itemId !== id
-            );
-
-    } else {
-
-        account.favorites.push(
-            id
-        );
-
-    }
-
-
-    saveAccounts(
-        accounts
-    );
-
-
-    displayItems();
-
-}
-
-
-/* INVENTORY */
-
-function displayInventory() {
-
-    const container =
-        document.getElementById(
-            "inventory"
-        );
-
-
-    const accounts =
-        getAccounts();
-
-
-    const account =
-        accounts[username];
-
-
-    container.innerHTML = "";
-
-
-    if (
-        !account ||
-        account.inventory.length === 0
-    ) {
-
-        container.innerHTML =
-            "<p>You don't own any accessories yet.</p>";
-
-        return;
-
-    }
-
-
-    account.inventory.forEach(
-        id => {
-
-            const item =
-                items.find(
-                    i => i.id === id
-                );
-
-
-            if (!item) return;
-
-
-            const row =
-                document.createElement(
-                    "div"
-                );
-
-
-            row.className =
-                "inventory-item";
-
-
-            row.innerHTML = `
-
-                <span>
-                    ${item.icon}
-                    ${item.name}
-                </span>
-
-                <button
-                    onclick="
-                        equipItem(
-                            ${item.id}
-                        )
-                    "
-                >
-                    Equip
-                </button>
-
-            `;
-
-
-            container.appendChild(
-                row
-            );
-
-        }
-    );
-
-}
-
-
-/* EQUIP */
-
-function equipItem(id) {
 
     localStorage.setItem(
-        "mtbEquippedItem",
-        id
+        "mtbInventory",
+        JSON.stringify(inventory)
     );
 
 
-    const item =
-        items.find(
-            i => i.id === id
-        );
-
-
-    alert(
-        item.name +
-        " equipped!"
+    showMessage(
+        name + " was added to your inventory!"
     );
+
+}
+
+
+/* MESSAGE */
+
+function showMessage(text) {
+
+    const message =
+        document.getElementById("message");
+
+    message.textContent = text;
+
+    message.style.display = "block";
+
+
+    setTimeout(function() {
+
+        message.style.display = "none";
+
+    }, 3000);
 
 }
 
 
 /* SEARCH */
 
-document
-    .getElementById(
-        "search"
-    )
-    .addEventListener(
-        "input",
-        displayItems
-    );
+function searchItems() {
+
+    const search =
+        document
+        .getElementById("search")
+        .value
+        .toLowerCase()
+        .trim();
+
+
+    const items =
+        document.querySelectorAll(".item");
+
+
+    let found = 0;
+
+
+    items.forEach(function(item) {
+
+        const name =
+            item
+            .getAttribute("data-name")
+            .toLowerCase();
+
+
+        if (name.includes(search)) {
+
+            item.style.display = "";
+            found++;
+
+        } else {
+
+            item.style.display = "none";
+
+        }
+
+    });
+
+
+    document
+        .getElementById("noResults")
+        .style.display =
+        found === 0
+        ? "block"
+        : "none";
+
+}
+
+
+/* FILTER */
+
+function filterItems(type) {
+
+    const items =
+        document.querySelectorAll(".item");
+
+
+    let found = 0;
+
+
+    items.forEach(function(item) {
+
+        const itemType =
+            item.getAttribute("data-type");
+
+
+        if (
+            type === "all" ||
+            itemType === type
+        ) {
+
+            item.style.display = "";
+            found++;
+
+        } else {
+
+            item.style.display = "none";
+
+        }
+
+    });
+
+
+    document
+        .getElementById("noResults")
+        .style.display =
+        found === 0
+        ? "block"
+        : "none";
+
+
+    document
+        .getElementById("search")
+        .value = "";
+
+}
 
 </script>
 
 </body>
 
 </html>
+```
