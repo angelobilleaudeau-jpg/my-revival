@@ -40,11 +40,8 @@ header {
 .logo {
     font-size: 25px;
     font-weight: bold;
-    color: #333;
     padding: 5px 0 10px;
 }
-
-/* NAVIGATION */
 
 nav {
     display: flex;
@@ -58,7 +55,6 @@ nav a {
     text-decoration: none;
     border: 1px solid transparent;
     border-bottom: 0;
-    text-decoration: none;
 }
 
 nav a:hover {
@@ -71,6 +67,7 @@ nav a.active {
     border-bottom: 1px solid white;
     color: #1683c5;
 }
+
 
 /* MAIN */
 
@@ -90,141 +87,172 @@ nav a.active {
     text-shadow: 1px 1px #222;
 }
 
-/* AVATAR AREA */
 
-.avatar-panel {
-    margin-top: 15px;
-    background: white;
-    border: 1px solid #aaa;
+/* AVATAR LAYOUT */
+
+.avatar-area {
     display: grid;
-    grid-template-columns: 1fr 280px;
-    min-height: 500px;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 15px;
 }
 
-/* PREVIEW */
 
-.preview {
-    min-height: 500px;
+/* BOX */
+
+.box {
+    background: white;
+    border: 1px solid #aaa;
+    box-shadow: 0 1px 3px #ccc;
+}
+
+.box-header {
+    background: linear-gradient(#f5f5f5, #d5d5d5);
+    border-bottom: 1px solid #aaa;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.box-content {
+    padding: 15px;
+}
+
+
+/* CHARACTER STAGE */
+
+.character-stage {
+    height: 430px;
     background:
-        linear-gradient(#f7f7f7 1px, transparent 1px),
-        linear-gradient(90deg, #f7f7f7 1px, transparent 1px);
-    background-size: 25px 25px;
+        linear-gradient(#dce8ef, #f4f4f4);
+    border: 1px solid #aaa;
     position: relative;
     overflow: hidden;
 }
 
-.preview-title {
+
+/* FLOOR */
+
+.floor {
     position: absolute;
-    top: 12px;
-    left: 12px;
-    font-weight: bold;
-    color: #666;
+    bottom: 25px;
+    left: 10%;
+    width: 80%;
+    height: 12px;
+    background: #999;
+    border: 1px solid #777;
 }
+
 
 /* AVATAR */
 
 .avatar {
+    width: 190px;
+    height: 350px;
     position: absolute;
-    width: 220px;
-    height: 390px;
     left: 50%;
-    top: 50%;
-    transform: translate(-50%, -45%);
+    bottom: 38px;
+    transform: translateX(-50%);
 }
+
 
 /* HEAD */
 
 .head {
     position: absolute;
-    width: 78px;
-    height: 78px;
-    left: 71px;
-    top: 10px;
+    width: 82px;
+    height: 82px;
+    left: 54px;
+    top: 5px;
     background: #f2c29b;
     border: 3px solid #555;
     z-index: 5;
 }
 
+
 /* FACE */
 
-.face {
+.face-eye {
     position: absolute;
-    left: 17px;
-    top: 29px;
     width: 8px;
-    height: 8px;
-    background: #222;
-    box-shadow:
-        34px 0 #222;
+    height: 10px;
+    background: #333;
+    top: 29px;
 }
 
-.mouth {
-    position: absolute;
-    left: 27px;
-    top: 49px;
-    width: 23px;
-    height: 5px;
-    background: #555;
+.face-eye.left {
+    left: 21px;
 }
+
+.face-eye.right {
+    right: 21px;
+}
+
+.face-mouth {
+    position: absolute;
+    width: 28px;
+    height: 5px;
+    background: #333;
+    left: 24px;
+    bottom: 18px;
+}
+
 
 /* BODY */
 
 .body {
     position: absolute;
-    width: 105px;
-    height: 120px;
-    left: 57px;
+    width: 90px;
+    height: 115px;
+    left: 50px;
     top: 88px;
     background: #1683ff;
     border: 3px solid #555;
     z-index: 3;
 }
 
-/* LEFT ARM */
+
+/* ARMS */
+
+.arm {
+    position: absolute;
+    width: 42px;
+    height: 105px;
+    top: 92px;
+    background: #f2c29b;
+    border: 3px solid #555;
+    z-index: 2;
+}
 
 .arm.left {
-    position: absolute;
-    width: 45px;
-    height: 120px;
-    left: 9px;
-    top: 88px;
-    background: #f2c29b;
-    border: 3px solid #555;
-    z-index: 2;
+    left: 7px;
 }
-
-/* RIGHT ARM */
 
 .arm.right {
-    position: absolute;
-    width: 45px;
-    height: 120px;
-    right: 9px;
-    top: 88px;
-    background: #f2c29b;
-    border: 3px solid #555;
-    z-index: 2;
+    right: 7px;
 }
+
 
 /* LEGS */
 
 .leg {
     position: absolute;
-    width: 50px;
-    height: 130px;
-    top: 208px;
+    width: 42px;
+    height: 115px;
+    top: 201px;
     background: #333;
     border: 3px solid #555;
     z-index: 2;
 }
 
 .leg.left {
-    left: 57px;
+    left: 51px;
 }
 
 .leg.right {
-    right: 57px;
+    right: 51px;
 }
+
 
 /* FEET */
 
@@ -232,126 +260,184 @@ nav a.active {
     position: absolute;
     width: 50px;
     height: 25px;
-    top: 338px;
+    top: 312px;
     background: #222;
     border: 3px solid #555;
+    z-index: 2;
 }
 
 .foot.left {
-    left: 57px;
+    left: 43px;
 }
 
 .foot.right {
-    right: 57px;
+    right: 43px;
 }
 
-/* HAT */
 
-.hat {
+/* FROZEN HORNS */
+
+.frozen-horns {
     position: absolute;
-    left: 58px;
-    top: -3px;
-    width: 105px;
-    height: 35px;
-    background: #1683c5;
-    border: 3px solid #555;
+    width: 130px;
+    height: 105px;
+    left: 30px;
+    top: -27px;
     z-index: 10;
+    pointer-events: none;
 }
 
-.hat-brim {
+.horn {
     position: absolute;
-    left: 85px;
-    top: 26px;
-    width: 65px;
-    height: 12px;
-    background: #1683c5;
-    border: 3px solid #555;
-    z-index: 11;
+    width: 31px;
+    height: 82px;
+
+    background: linear-gradient(
+        135deg,
+        #ffffff,
+        #a6f4ff,
+        #4bc9ec,
+        #257bbd
+    );
+
+    border: 3px solid #397a9b;
+
+    border-radius:
+        75% 20% 20% 20%;
+
+    box-shadow:
+        0 0 8px #66eaff,
+        0 0 18px #9cf5ff;
 }
+
+.horn.left {
+    left: 13px;
+    top: 14px;
+    transform: rotate(-38deg);
+}
+
+.horn.right {
+    right: 13px;
+    top: 14px;
+    transform: rotate(38deg) scaleX(-1);
+}
+
+
+/* HEADLESS */
+
+.avatar.headless .head {
+    display: none;
+}
+
+.avatar.headless .frozen-horns {
+    top: 15px;
+}
+
+
+/* SHADOW LEG */
+
+.avatar.shadow-leg .leg.right {
+    background: linear-gradient(
+        #292929,
+        #050505
+    );
+
+    border-color: #111;
+
+    transform: skew(-8deg);
+}
+
+.avatar.shadow-leg .foot.right {
+    background: #050505;
+    border-color: #111;
+}
+
+
+/* SHIRT COLORS */
+
+.avatar.red-shirt .body,
+.avatar.red-shirt .arm {
+    background: #d83232;
+}
+
+.avatar.green-shirt .body,
+.avatar.green-shirt .arm {
+    background: #25a65a;
+}
+
+.avatar.black-shirt .body,
+.avatar.black-shirt .arm {
+    background: #333;
+}
+
+
+/* PANTS COLORS */
+
+.avatar.blue-pants .leg {
+    background: #174f9c;
+}
+
+.avatar.gray-pants .leg {
+    background: #777;
+}
+
+.avatar.brown-pants .leg {
+    background: #795548;
+}
+
 
 /* CONTROLS */
 
 .controls {
-    border-left: 1px solid #aaa;
-    padding: 15px;
-    background: #fafafa;
+    margin-top: 12px;
 }
 
-.controls-title {
-    font-size: 17px;
-    font-weight: bold;
-    border-bottom: 1px solid #aaa;
-    padding-bottom: 8px;
-    margin-bottom: 12px;
+.control {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
 }
 
-.equipped-box {
-    border: 1px solid #aaa;
-    background: white;
-    margin-bottom: 10px;
+.control:last-child {
+    border-bottom: 0;
 }
 
-.equipped-header {
-    background: linear-gradient(#eee, #ccc);
-    padding: 7px;
+.control-name {
     font-weight: bold;
 }
 
-.equipped-content {
-    padding: 9px;
-    min-height: 35px;
-}
-
-.empty {
-    color: #888;
-}
-
-.item-name {
-    color: #1683c5;
-    font-weight: bold;
-}
-
-/* BUTTONS */
-
-button {
+.control button {
     border: 1px solid #555;
     border-radius: 3px;
     background: linear-gradient(#65b5e8, #1683c5);
     color: white;
-    padding: 8px 14px;
+    padding: 7px 12px;
     font-weight: bold;
     cursor: pointer;
-    text-shadow: 1px 1px #555;
 }
 
-button:hover {
+.control button:hover {
     background: linear-gradient(#79c5ed, #1683c5);
 }
 
-button.gray {
-    background: linear-gradient(#aaa, #777);
+.control button.remove {
+    background: linear-gradient(#e57373, #b52b2b);
 }
 
-button.gray:hover {
-    background: linear-gradient(#bbb, #888);
-}
 
-.full-button {
-    width: 100%;
-    margin-top: 8px;
-}
+/* STATUS */
 
-/* MESSAGE */
-
-#message {
-    display: none;
-    margin-top: 12px;
+.status {
+    margin-top: 15px;
     background: white;
     border: 1px solid #aaa;
     padding: 10px;
     color: #1683c5;
     font-weight: bold;
 }
+
 
 /* FOOTER */
 
@@ -368,21 +454,13 @@ footer a {
     text-decoration: none;
 }
 
+
 /* MOBILE */
 
 @media (max-width: 700px) {
 
-    .avatar-panel {
+    .avatar-area {
         grid-template-columns: 1fr;
-    }
-
-    .controls {
-        border-left: 0;
-        border-top: 1px solid #aaa;
-    }
-
-    .preview {
-        min-height: 450px;
     }
 
 }
@@ -396,6 +474,10 @@ footer a {
     nav a {
         padding: 8px 9px;
         font-size: 12px;
+    }
+
+    .character-stage {
+        height: 390px;
     }
 
 }
@@ -467,189 +549,277 @@ footer a {
     </div>
 
 
-    <div id="message"></div>
+    <div class="avatar-area">
 
 
-    <div class="avatar-panel">
+        <!-- CHARACTER -->
 
+        <div class="box">
 
-        <!-- AVATAR PREVIEW -->
-
-        <div class="preview">
-
-            <div class="preview-title">
+            <div class="box-header">
                 My Character
             </div>
 
+            <div class="box-content">
 
-            <div class="avatar" id="avatar">
+                <div class="character-stage">
+
+                    <div
+                        class="avatar"
+                        id="avatar">
 
 
-                <!-- HAT -->
+                        <!-- HORNS -->
 
-                <div
-                    id="hat"
-                    style="display:none;">
+                        <div
+                            class="frozen-horns"
+                            id="frozenHorns"
+                            style="display:none;">
 
-                    <div class="hat"></div>
-                    <div class="hat-brim"></div>
+                            <div class="horn left"></div>
+
+                            <div class="horn right"></div>
+
+                        </div>
+
+
+                        <!-- HEAD -->
+
+                        <div class="head">
+
+                            <div class="face-eye left"></div>
+
+                            <div class="face-eye right"></div>
+
+                            <div class="face-mouth"></div>
+
+                        </div>
+
+
+                        <!-- ARMS -->
+
+                        <div class="arm left"></div>
+
+                        <div class="arm right"></div>
+
+
+                        <!-- BODY -->
+
+                        <div class="body"></div>
+
+
+                        <!-- LEGS -->
+
+                        <div class="leg left"></div>
+
+                        <div class="leg right"></div>
+
+
+                        <!-- FEET -->
+
+                        <div class="foot left"></div>
+
+                        <div class="foot right"></div>
+
+                    </div>
+
+
+                    <div class="floor"></div>
 
                 </div>
-
-
-                <!-- HEAD -->
-
-                <div class="head">
-
-                    <div class="face"></div>
-
-                    <div class="mouth"></div>
-
-                </div>
-
-
-                <!-- ARMS -->
-
-                <div class="arm left"></div>
-
-                <div class="arm right"></div>
-
-
-                <!-- BODY -->
-
-                <div
-                    class="body"
-                    id="body">
-                </div>
-
-
-                <!-- LEGS -->
-
-                <div
-                    class="leg left"
-                    id="leftLeg">
-                </div>
-
-                <div
-                    class="leg right"
-                    id="rightLeg">
-                </div>
-
-
-                <!-- FEET -->
-
-                <div class="foot left"></div>
-
-                <div class="foot right"></div>
 
             </div>
 
         </div>
 
 
-        <!-- CONTROLS -->
+        <!-- EDITOR -->
 
-        <div class="controls">
+        <div class="box">
 
-            <div class="controls-title">
-                Equipped Items
+            <div class="box-header">
+                Character Editor
             </div>
 
+            <div class="box-content">
 
-            <!-- SHIRT -->
+                <div class="controls">
 
-            <div class="equipped-box">
 
-                <div class="equipped-header">
-                    Shirt
-                </div>
+                    <!-- FROZEN HORNS -->
 
-                <div
-                    class="equipped-content"
-                    id="shirtName">
+                    <div class="control">
 
-                    <span class="empty">
-                        Nothing equipped
-                    </span>
+                        <div>
+
+                            <div class="control-name">
+                                Frozen Horns
+                            </div>
+
+                            <small>
+                                Free accessory
+                            </small>
+
+                        </div>
+
+                        <button
+                            id="hornButton"
+                            onclick="toggleHorns()">
+
+                            Equip
+
+                        </button>
+
+                    </div>
+
+
+                    <!-- SHADOW LEG -->
+
+                    <div class="control">
+
+                        <div>
+
+                            <div class="control-name">
+                                Shadow Leg
+                            </div>
+
+                            <small>
+                                Free leg accessory
+                            </small>
+
+                        </div>
+
+                        <button
+                            id="shadowButton"
+                            onclick="toggleShadowLeg()">
+
+                            Equip
+
+                        </button>
+
+                    </div>
+
+
+                    <!-- HEADLESS -->
+
+                    <div class="control">
+
+                        <div>
+
+                            <div class="control-name">
+                                Invisible Head
+                            </div>
+
+                            <small>
+                                Free avatar effect
+                            </small>
+
+                        </div>
+
+                        <button
+                            id="headButton"
+                            onclick="toggleHeadless()">
+
+                            Equip
+
+                        </button>
+
+                    </div>
+
+
+                    <!-- SHIRT -->
+
+                    <div class="control">
+
+                        <div>
+
+                            <div class="control-name">
+                                Shirt
+                            </div>
+
+                            <small>
+                                Classic Blue Shirt
+                            </small>
+
+                        </div>
+
+                        <button
+                            onclick="toggleShirt()">
+
+                            Change
+
+                        </button>
+
+                    </div>
+
+
+                    <!-- PANTS -->
+
+                    <div class="control">
+
+                        <div>
+
+                            <div class="control-name">
+                                Pants
+                            </div>
+
+                            <small>
+                                Classic Black Pants
+                            </small>
+
+                        </div>
+
+                        <button
+                            onclick="togglePants()">
+
+                            Change
+
+                        </button>
+
+                    </div>
+
+
+                    <!-- RESET -->
+
+                    <div class="control">
+
+                        <div>
+
+                            <div class="control-name">
+                                Reset Avatar
+                            </div>
+
+                            <small>
+                                Remove equipped effects
+                            </small>
+
+                        </div>
+
+                        <button
+                            class="remove"
+                            onclick="resetAvatar()">
+
+                            Reset
+
+                        </button>
+
+                    </div>
+
 
                 </div>
 
             </div>
-
-
-            <!-- PANTS -->
-
-            <div class="equipped-box">
-
-                <div class="equipped-header">
-                    Pants
-                </div>
-
-                <div
-                    class="equipped-content"
-                    id="pantsName">
-
-                    <span class="empty">
-                        Nothing equipped
-                    </span>
-
-                </div>
-
-            </div>
-
-
-            <!-- ACCESSORY -->
-
-            <div class="equipped-box">
-
-                <div class="equipped-header">
-                    Accessory
-                </div>
-
-                <div
-                    class="equipped-content"
-                    id="accessoryName">
-
-                    <span class="empty">
-                        Nothing equipped
-                    </span>
-
-                </div>
-
-            </div>
-
-
-            <button
-                class="full-button"
-                onclick="refreshAvatar()">
-
-                Refresh Avatar
-
-            </button>
-
-
-            <button
-                class="gray full-button"
-                onclick="unequipAll()">
-
-                Unequip All
-
-            </button>
-
-
-            <a href="inventory.html"
-               style="text-decoration:none;">
-
-                <button
-                    class="gray full-button">
-
-                    Open Inventory
-
-                </button>
-
-            </a>
 
         </div>
+
+    </div>
+
+
+    <div
+        class="status"
+        id="status">
+
+        Avatar loaded.
 
     </div>
 
@@ -682,291 +852,392 @@ footer a {
 /*
     MTB REVIVALS AVATAR SYSTEM
 
-    Reads the equipment saved by inventory.html.
+    Saves avatar settings in:
+
+        mtbAvatar
+
+    This is a browser prototype.
 */
 
 
-function getEquipped() {
-
-    return JSON.parse(
-        localStorage.getItem("mtbEquipped")
+let avatarData =
+    JSON.parse(
+        localStorage.getItem("mtbAvatar")
     ) || {
 
-        Shirt: null,
-        Pants: null,
-        Accessory: null
+        horns: false,
+
+        shadowLeg: false,
+
+        headless: false,
+
+        shirt: "blue",
+
+        pants: "black"
 
     };
 
-}
 
+/* SAVE */
 
-/* LOAD AVATAR */
-
-function refreshAvatar() {
-
-    const equipped =
-        getEquipped();
-
-
-    /*
-        SHIRT
-    */
-
-    const shirtName =
-        document.getElementById("shirtName");
-
-
-    if (equipped.Shirt) {
-
-        shirtName.innerHTML =
-            '<span class="item-name">' +
-            equipped.Shirt +
-            '</span>';
-
-        document
-            .getElementById("body")
-            .style.background = "#1683ff";
-
-        document
-            .querySelector(".arm.left")
-            .style.background = "#1683ff";
-
-        document
-            .querySelector(".arm.right")
-            .style.background = "#1683ff";
-
-    } else {
-
-        shirtName.innerHTML =
-            '<span class="empty">Nothing equipped</span>';
-
-        document
-            .getElementById("body")
-            .style.background = "#1683ff";
-
-        document
-            .querySelector(".arm.left")
-            .style.background = "#f2c29b";
-
-        document
-            .querySelector(".arm.right")
-            .style.background = "#f2c29b";
-
-    }
-
-
-    /*
-        PANTS
-    */
-
-    const pantsName =
-        document.getElementById("pantsName");
-
-
-    if (equipped.Pants) {
-
-        pantsName.innerHTML =
-            '<span class="item-name">' +
-            equipped.Pants +
-            '</span>';
-
-        document
-            .getElementById("leftLeg")
-            .style.background = "#333";
-
-        document
-            .getElementById("rightLeg")
-            .style.background = "#333";
-
-    } else {
-
-        pantsName.innerHTML =
-            '<span class="empty">Nothing equipped</span>';
-
-        document
-            .getElementById("leftLeg")
-            .style.background = "#777";
-
-        document
-            .getElementById("rightLeg")
-            .style.background = "#777";
-
-    }
-
-
-    /*
-        ACCESSORY
-    */
-
-    const accessoryName =
-        document.getElementById("accessoryName");
-
-    const hat =
-        document.getElementById("hat");
-
-
-    if (equipped.Accessory) {
-
-        accessoryName.innerHTML =
-            '<span class="item-name">' +
-            equipped.Accessory +
-            '</span>';
-
-        hat.style.display = "block";
-
-
-        /*
-            Change accessory appearance
-        */
-
-        const hatPart =
-            document.querySelector(".hat");
-
-        const brimPart =
-            document.querySelector(".hat-brim");
-
-
-        if (
-            equipped.Accessory
-            .toLowerCase()
-            .includes("red")
-        ) {
-
-            hatPart.style.background = "#d83232";
-            brimPart.style.background = "#d83232";
-
-        }
-
-        else if (
-            equipped.Accessory
-            .toLowerCase()
-            .includes("green")
-        ) {
-
-            hatPart.style.background = "#22aa55";
-            brimPart.style.background = "#22aa55";
-
-        }
-
-        else if (
-            equipped.Accessory
-            .toLowerCase()
-            .includes("fedora")
-        ) {
-
-            hatPart.style.background = "#222";
-            brimPart.style.background = "#222";
-
-        }
-
-        else if (
-            equipped.Accessory
-            .toLowerCase()
-            .includes("crown")
-        ) {
-
-            hatPart.style.background = "#e6b800";
-            brimPart.style.background = "#e6b800";
-
-        }
-
-        else {
-
-            hatPart.style.background = "#1683c5";
-            brimPart.style.background = "#1683c5";
-
-        }
-
-    } else {
-
-        accessoryName.innerHTML =
-            '<span class="empty">Nothing equipped</span>';
-
-        hat.style.display = "none";
-
-    }
-
-
-    showMessage("Avatar updated!");
-
-}
-
-
-/* UNEQUIP EVERYTHING */
-
-function unequipAll() {
-
-    const emptyEquipment = {
-
-        Shirt: null,
-        Pants: null,
-        Accessory: null
-
-    };
-
+function saveAvatar() {
 
     localStorage.setItem(
-        "mtbEquipped",
-        JSON.stringify(emptyEquipment)
+        "mtbAvatar",
+        JSON.stringify(avatarData)
+    );
+
+}
+
+
+/* STATUS */
+
+function status(text) {
+
+    document
+        .getElementById("status")
+        .textContent = text;
+
+}
+
+
+/* UPDATE */
+
+function updateAvatar() {
+
+    const avatar =
+        document.getElementById("avatar");
+
+
+    /*
+        Clear old classes
+    */
+
+    avatar.classList.remove(
+        "headless",
+        "shadow-leg",
+        "red-shirt",
+        "green-shirt",
+        "black-shirt",
+        "blue-pants",
+        "gray-pants",
+        "brown-pants"
     );
 
 
-    refreshAvatar();
+    /*
+        Headless
+    */
 
-    showMessage("All items unequipped!");
+    if (avatarData.headless) {
+
+        avatar.classList.add(
+            "headless"
+        );
+
+    }
+
+
+    /*
+        Shadow leg
+    */
+
+    if (avatarData.shadowLeg) {
+
+        avatar.classList.add(
+            "shadow-leg"
+        );
+
+    }
+
+
+    /*
+        Frozen horns
+    */
+
+    document
+        .getElementById("frozenHorns")
+        .style.display =
+        avatarData.horns
+        ? "block"
+        : "none";
+
+
+    /*
+        Shirt
+    */
+
+    if (avatarData.shirt === "red") {
+
+        avatar.classList.add(
+            "red-shirt"
+        );
+
+    }
+
+    else if (avatarData.shirt === "green") {
+
+        avatar.classList.add(
+            "green-shirt"
+        );
+
+    }
+
+    else if (avatarData.shirt === "black") {
+
+        avatar.classList.add(
+            "black-shirt"
+        );
+
+    }
+
+
+    /*
+        Pants
+    */
+
+    if (avatarData.pants === "blue") {
+
+        avatar.classList.add(
+            "blue-pants"
+        );
+
+    }
+
+    else if (avatarData.pants === "gray") {
+
+        avatar.classList.add(
+            "gray-pants"
+        );
+
+    }
+
+    else if (avatarData.pants === "brown") {
+
+        avatar.classList.add(
+            "brown-pants"
+        );
+
+    }
+
+
+    /*
+        Update buttons
+    */
+
+    document
+        .getElementById("hornButton")
+        .textContent =
+        avatarData.horns
+        ? "Unequip"
+        : "Equip";
+
+
+    document
+        .getElementById("shadowButton")
+        .textContent =
+        avatarData.shadowLeg
+        ? "Unequip"
+        : "Equip";
+
+
+    document
+        .getElementById("headButton")
+        .textContent =
+        avatarData.headless
+        ? "Unequip"
+        : "Equip";
 
 }
 
 
-/* MESSAGE */
+/* HORNS */
 
-function showMessage(text) {
+function toggleHorns() {
 
-    const message =
-        document.getElementById("message");
+    avatarData.horns =
+        !avatarData.horns;
 
-    message.textContent =
-        text;
+    saveAvatar();
 
-    message.style.display =
-        "block";
+    updateAvatar();
 
 
-    setTimeout(function() {
+    status(
+        avatarData.horns
+        ? "Frozen Horns equipped!"
+        : "Frozen Horns unequipped."
+    );
 
-        message.style.display =
-            "none";
+}
 
-    }, 2000);
+
+/* SHADOW LEG */
+
+function toggleShadowLeg() {
+
+    avatarData.shadowLeg =
+        !avatarData.shadowLeg;
+
+    saveAvatar();
+
+    updateAvatar();
+
+
+    status(
+        avatarData.shadowLeg
+        ? "Shadow Leg equipped!"
+        : "Shadow Leg unequipped."
+    );
+
+}
+
+
+/* HEADLESS */
+
+function toggleHeadless() {
+
+    avatarData.headless =
+        !avatarData.headless;
+
+    saveAvatar();
+
+    updateAvatar();
+
+
+    status(
+        avatarData.headless
+        ? "Invisible Head equipped!"
+        : "Invisible Head unequipped."
+    );
+
+}
+
+
+/* SHIRT */
+
+function toggleShirt() {
+
+    const shirts = [
+        "blue",
+        "red",
+        "green",
+        "black"
+    ];
+
+
+    let index =
+        shirts.indexOf(
+            avatarData.shirt
+        );
+
+
+    index++;
+
+    if (index >= shirts.length) {
+
+        index = 0;
+
+    }
+
+
+    avatarData.shirt =
+        shirts[index];
+
+
+    saveAvatar();
+
+    updateAvatar();
+
+
+    status(
+        "Shirt changed to "
+        + avatarData.shirt
+        + "."
+    );
+
+}
+
+
+/* PANTS */
+
+function togglePants() {
+
+    const pants = [
+        "black",
+        "blue",
+        "gray",
+        "brown"
+    ];
+
+
+    let index =
+        pants.indexOf(
+            avatarData.pants
+        );
+
+
+    index++;
+
+    if (index >= pants.length) {
+
+        index = 0;
+
+    }
+
+
+    avatarData.pants =
+        pants[index];
+
+
+    saveAvatar();
+
+    updateAvatar();
+
+
+    status(
+        "Pants changed to "
+        + avatarData.pants
+        + "."
+    );
+
+}
+
+
+/* RESET */
+
+function resetAvatar() {
+
+    avatarData = {
+
+        horns: false,
+
+        shadowLeg: false,
+
+        headless: false,
+
+        shirt: "blue",
+
+        pants: "black"
+
+    };
+
+
+    saveAvatar();
+
+    updateAvatar();
+
+
+    status(
+        "Avatar reset."
+    );
 
 }
 
 
 /* START */
 
-refreshAvatar();
-
-
-/*
-    Automatically refresh if another
-    page changes localStorage.
-*/
-
-window.addEventListener(
-    "storage",
-    function(event) {
-
-        if (
-            event.key === "mtbEquipped"
-        ) {
-
-            refreshAvatar();
-
-        }
-
-    }
-);
+updateAvatar();
 
 </script>
 
