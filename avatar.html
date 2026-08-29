@@ -1,6 +1,7 @@
 ```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
@@ -22,7 +23,7 @@ body {
     color: #333;
 }
 
-/* TOP BAR */
+/* HEADER */
 
 header {
     background: linear-gradient(#f7f7f7, #d1d1d1);
@@ -35,8 +36,6 @@ header {
     margin: auto;
     padding: 8px 10px 0;
 }
-
-/* LOGO */
 
 .logo {
     font-size: 25px;
@@ -59,6 +58,7 @@ nav a {
     text-decoration: none;
     border: 1px solid transparent;
     border-bottom: 0;
+    text-decoration: none;
 }
 
 nav a:hover {
@@ -80,8 +80,6 @@ nav a.active {
     padding: 0 10px;
 }
 
-/* PAGE TITLE */
-
 .page-title {
     background: linear-gradient(#666, #444);
     color: white;
@@ -92,220 +90,265 @@ nav a.active {
     text-shadow: 1px 1px #222;
 }
 
-/* CONTENT */
+/* AVATAR AREA */
 
-.content {
-    display: grid;
-    grid-template-columns: 430px 1fr;
-    gap: 15px;
+.avatar-panel {
     margin-top: 15px;
-}
-
-/* BOX */
-
-.box {
     background: white;
     border: 1px solid #aaa;
-    box-shadow: 0 1px 2px #ccc;
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    min-height: 500px;
 }
 
-.box-title {
-    background: linear-gradient(#f5f5f5, #d7d7d7);
-    border-bottom: 1px solid #aaa;
-    padding: 8px 10px;
+/* PREVIEW */
+
+.preview {
+    min-height: 500px;
+    background:
+        linear-gradient(#f7f7f7 1px, transparent 1px),
+        linear-gradient(90deg, #f7f7f7 1px, transparent 1px);
+    background-size: 25px 25px;
+    position: relative;
+    overflow: hidden;
+}
+
+.preview-title {
+    position: absolute;
+    top: 12px;
+    left: 12px;
     font-weight: bold;
-    color: #444;
+    color: #666;
 }
 
 /* AVATAR */
 
-.preview {
-    min-height: 450px;
-    text-align: center;
-    padding: 20px;
-}
-
-.username {
-    font-size: 16px;
-    font-weight: bold;
-    color: #1683c5;
-    margin-top: 10px;
-}
-
-/* BLOCK AVATAR */
-
 .avatar {
+    position: absolute;
     width: 220px;
-    height: 330px;
-    position: relative;
-    margin: 10px auto 0;
+    height: 390px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -45%);
 }
 
 /* HEAD */
 
 .head {
     position: absolute;
-    width: 90px;
-    height: 90px;
-    left: 65px;
-    top: 5px;
+    width: 78px;
+    height: 78px;
+    left: 71px;
+    top: 10px;
     background: #f2c29b;
-    border: 2px solid #555;
+    border: 3px solid #555;
+    z-index: 5;
 }
 
 /* FACE */
 
-.eye {
+.face {
     position: absolute;
+    left: 17px;
+    top: 29px;
     width: 8px;
     height: 8px;
     background: #222;
-    top: 42px;
+    box-shadow:
+        34px 0 #222;
 }
 
-.eye.left {
-    left: 25px;
-}
-
-.eye.right {
-    right: 25px;
-}
-
-/* HAIR */
-
-.hair {
+.mouth {
     position: absolute;
-    left: -2px;
-    top: -2px;
-    width: 90px;
-    height: 25px;
-    background: #222;
+    left: 27px;
+    top: 49px;
+    width: 23px;
+    height: 5px;
+    background: #555;
 }
 
 /* BODY */
 
 .body {
     position: absolute;
-    width: 100px;
-    height: 115px;
-    left: 60px;
-    top: 97px;
+    width: 105px;
+    height: 120px;
+    left: 57px;
+    top: 88px;
     background: #1683ff;
-    border: 2px solid #555;
+    border: 3px solid #555;
+    z-index: 3;
 }
 
-/* ARMS */
-
-.arm {
-    position: absolute;
-    width: 35px;
-    height: 110px;
-    top: 100px;
-    background: #f2c29b;
-    border: 2px solid #555;
-}
+/* LEFT ARM */
 
 .arm.left {
-    left: 22px;
+    position: absolute;
+    width: 45px;
+    height: 120px;
+    left: 9px;
+    top: 88px;
+    background: #f2c29b;
+    border: 3px solid #555;
+    z-index: 2;
 }
 
+/* RIGHT ARM */
+
 .arm.right {
-    right: 22px;
+    position: absolute;
+    width: 45px;
+    height: 120px;
+    right: 9px;
+    top: 88px;
+    background: #f2c29b;
+    border: 3px solid #555;
+    z-index: 2;
 }
 
 /* LEGS */
 
 .leg {
     position: absolute;
-    width: 43px;
-    height: 100px;
-    top: 210px;
+    width: 50px;
+    height: 130px;
+    top: 208px;
     background: #333;
-    border: 2px solid #444;
+    border: 3px solid #555;
+    z-index: 2;
 }
 
 .leg.left {
-    left: 61px;
+    left: 57px;
 }
 
 .leg.right {
-    right: 61px;
+    right: 57px;
 }
 
-/* CUSTOMIZATION */
+/* FEET */
 
-.customize {
-    padding-bottom: 15px;
+.foot {
+    position: absolute;
+    width: 50px;
+    height: 25px;
+    top: 338px;
+    background: #222;
+    border: 3px solid #555;
 }
 
-.option {
-    padding: 12px;
-    border-bottom: 1px solid #ddd;
+.foot.left {
+    left: 57px;
 }
 
-.option label {
-    display: block;
+.foot.right {
+    right: 57px;
+}
+
+/* HAT */
+
+.hat {
+    position: absolute;
+    left: 58px;
+    top: -3px;
+    width: 105px;
+    height: 35px;
+    background: #1683c5;
+    border: 3px solid #555;
+    z-index: 10;
+}
+
+.hat-brim {
+    position: absolute;
+    left: 85px;
+    top: 26px;
+    width: 65px;
+    height: 12px;
+    background: #1683c5;
+    border: 3px solid #555;
+    z-index: 11;
+}
+
+/* CONTROLS */
+
+.controls {
+    border-left: 1px solid #aaa;
+    padding: 15px;
+    background: #fafafa;
+}
+
+.controls-title {
+    font-size: 17px;
     font-weight: bold;
-    margin-bottom: 6px;
+    border-bottom: 1px solid #aaa;
+    padding-bottom: 8px;
+    margin-bottom: 12px;
 }
 
-select {
-    width: 100%;
-    height: 32px;
-    border: 1px solid #999;
+.equipped-box {
+    border: 1px solid #aaa;
     background: white;
-    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.equipped-header {
+    background: linear-gradient(#eee, #ccc);
+    padding: 7px;
+    font-weight: bold;
+}
+
+.equipped-content {
+    padding: 9px;
+    min-height: 35px;
+}
+
+.empty {
+    color: #888;
+}
+
+.item-name {
+    color: #1683c5;
+    font-weight: bold;
 }
 
 /* BUTTONS */
-
-.buttons {
-    padding: 12px;
-}
 
 button {
     border: 1px solid #555;
     border-radius: 3px;
     background: linear-gradient(#65b5e8, #1683c5);
     color: white;
-    padding: 7px 16px;
+    padding: 8px 14px;
     font-weight: bold;
     cursor: pointer;
     text-shadow: 1px 1px #555;
-    box-shadow: inset 0 1px rgba(255,255,255,.4);
 }
 
 button:hover {
     background: linear-gradient(#79c5ed, #1683c5);
 }
 
-button.reset {
+button.gray {
     background: linear-gradient(#aaa, #777);
-    margin-left: 5px;
 }
 
-button.reset:hover {
+button.gray:hover {
     background: linear-gradient(#bbb, #888);
+}
+
+.full-button {
+    width: 100%;
+    margin-top: 8px;
 }
 
 /* MESSAGE */
 
 #message {
-    margin-top: 10px;
-    font-weight: bold;
-    color: #1683c5;
-}
-
-/* NOT LOGGED IN */
-
-.login-box {
+    display: none;
+    margin-top: 12px;
     background: white;
     border: 1px solid #aaa;
-    padding: 30px;
-    text-align: center;
-}
-
-.login-box a {
+    padding: 10px;
     color: #1683c5;
     font-weight: bold;
 }
@@ -318,24 +361,41 @@ footer {
     padding: 15px 10px;
     border-top: 1px solid #aaa;
     color: #777;
-    font-size: 12px;
+}
+
+footer a {
+    color: #1683c5;
+    text-decoration: none;
 }
 
 /* MOBILE */
 
 @media (max-width: 700px) {
 
-    .content {
+    .avatar-panel {
         grid-template-columns: 1fr;
+    }
+
+    .controls {
+        border-left: 0;
+        border-top: 1px solid #aaa;
+    }
+
+    .preview {
+        min-height: 450px;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .logo {
+        text-align: center;
     }
 
     nav a {
         padding: 8px 9px;
         font-size: 12px;
-    }
-
-    .logo {
-        text-align: center;
     }
 
 }
@@ -345,6 +405,9 @@ footer {
 </head>
 
 <body>
+
+
+<!-- HEADER -->
 
 <header>
 
@@ -356,9 +419,13 @@ footer {
 
         <nav>
 
-            <a href="index.html">Home</a>
+            <a href="index.html">
+                Home
+            </a>
 
-            <a href="login.html">Account</a>
+            <a href="login.html">
+                Account
+            </a>
 
             <a href="avatar.html" class="active">
                 Avatar
@@ -391,6 +458,8 @@ footer {
 </header>
 
 
+<!-- MAIN -->
+
 <div class="container">
 
     <div class="page-title">
@@ -398,247 +467,187 @@ footer {
     </div>
 
 
-    <!-- LOGIN WARNING -->
-
-    <div id="notLoggedIn"
-         class="login-box"
-         style="display:none;">
-
-        <h2>You need to log in.</h2>
-
-        <p>
-            Please log in to customize your avatar.
-        </p>
-
-        <a href="login.html">
-            Go to Account
-        </a>
-
-    </div>
+    <div id="message"></div>
 
 
-    <div id="avatarArea">
+    <div class="avatar-panel">
 
-        <div class="content">
 
-            <!-- AVATAR PREVIEW -->
+        <!-- AVATAR PREVIEW -->
 
-            <div class="box preview">
+        <div class="preview">
 
-                <div class="box-title">
-                    Avatar Preview
+            <div class="preview-title">
+                My Character
+            </div>
+
+
+            <div class="avatar" id="avatar">
+
+
+                <!-- HAT -->
+
+                <div
+                    id="hat"
+                    style="display:none;">
+
+                    <div class="hat"></div>
+                    <div class="hat-brim"></div>
+
                 </div>
 
-                <div class="avatar">
 
-                    <div
-                        class="head"
-                        id="head">
+                <!-- HEAD -->
 
-                        <div
-                            class="hair"
-                            id="hair">
-                        </div>
+                <div class="head">
 
-                        <div class="eye left"></div>
-                        <div class="eye right"></div>
+                    <div class="face"></div>
 
-                    </div>
+                    <div class="mouth"></div>
+
+                </div>
 
 
-                    <div
-                        class="body"
-                        id="body">
-                    </div>
+                <!-- ARMS -->
+
+                <div class="arm left"></div>
+
+                <div class="arm right"></div>
 
 
-                    <div
-                        class="arm left">
-                    </div>
+                <!-- BODY -->
 
-                    <div
-                        class="arm right">
-                    </div>
+                <div
+                    class="body"
+                    id="body">
+                </div>
 
 
-                    <div
-                        class="leg left">
-                    </div>
+                <!-- LEGS -->
 
-                    <div
-                        class="leg right">
-                    </div>
-
+                <div
+                    class="leg left"
+                    id="leftLeg">
                 </div>
 
                 <div
-                    class="username"
-                    id="username">
+                    class="leg right"
+                    id="rightLeg">
+                </div>
+
+
+                <!-- FEET -->
+
+                <div class="foot left"></div>
+
+                <div class="foot right"></div>
+
+            </div>
+
+        </div>
+
+
+        <!-- CONTROLS -->
+
+        <div class="controls">
+
+            <div class="controls-title">
+                Equipped Items
+            </div>
+
+
+            <!-- SHIRT -->
+
+            <div class="equipped-box">
+
+                <div class="equipped-header">
+                    Shirt
+                </div>
+
+                <div
+                    class="equipped-content"
+                    id="shirtName">
+
+                    <span class="empty">
+                        Nothing equipped
+                    </span>
+
                 </div>
 
             </div>
 
 
-            <!-- CUSTOMIZATION -->
+            <!-- PANTS -->
 
-            <div class="box customize">
+            <div class="equipped-box">
 
-                <div class="box-title">
-                    Customize Your Avatar
+                <div class="equipped-header">
+                    Pants
                 </div>
 
+                <div
+                    class="equipped-content"
+                    id="pantsName">
 
-                <div class="option">
-
-                    <label>
-                        Body Color
-                    </label>
-
-                    <select
-                        id="skinColor"
-                        onchange="updateAvatar()">
-
-                        <option value="#f2c29b">
-                            Light
-                        </option>
-
-                        <option value="#d99a6c">
-                            Tan
-                        </option>
-
-                        <option value="#a96f45">
-                            Brown
-                        </option>
-
-                        <option value="#70452b">
-                            Dark
-                        </option>
-
-                    </select>
-
-                </div>
-
-
-                <div class="option">
-
-                    <label>
-                        Shirt
-                    </label>
-
-                    <select
-                        id="shirtColor"
-                        onchange="updateAvatar()">
-
-                        <option value="#1683ff">
-                            Blue
-                        </option>
-
-                        <option value="#ff3333">
-                            Red
-                        </option>
-
-                        <option value="#22aa55">
-                            Green
-                        </option>
-
-                        <option value="#8b45d6">
-                            Purple
-                        </option>
-
-                        <option value="#222222">
-                            Black
-                        </option>
-
-                        <option value="#eeeeee">
-                            White
-                        </option>
-
-                    </select>
-
-                </div>
-
-
-                <div class="option">
-
-                    <label>
-                        Pants
-                    </label>
-
-                    <select
-                        id="pantsColor"
-                        onchange="updateAvatar()">
-
-                        <option value="#333333">
-                            Black
-                        </option>
-
-                        <option value="#1683ff">
-                            Blue
-                        </option>
-
-                        <option value="#777777">
-                            Gray
-                        </option>
-
-                        <option value="#8b5a2b">
-                            Brown
-                        </option>
-
-                    </select>
-
-                </div>
-
-
-                <div class="option">
-
-                    <label>
-                        Hair
-                    </label>
-
-                    <select
-                        id="hairColor"
-                        onchange="updateAvatar()">
-
-                        <option value="#222222">
-                            Black
-                        </option>
-
-                        <option value="#5a3518">
-                            Brown
-                        </option>
-
-                        <option value="#d9a441">
-                            Blonde
-                        </option>
-
-                        <option value="#eeeeee">
-                            White
-                        </option>
-
-                    </select>
-
-                </div>
-
-
-                <div class="buttons">
-
-                    <button onclick="saveAvatar()">
-                        Save Avatar
-                    </button>
-
-                    <button
-                        class="reset"
-                        onclick="resetAvatar()">
-
-                        Reset
-
-                    </button>
-
-                    <div id="message"></div>
+                    <span class="empty">
+                        Nothing equipped
+                    </span>
 
                 </div>
 
             </div>
+
+
+            <!-- ACCESSORY -->
+
+            <div class="equipped-box">
+
+                <div class="equipped-header">
+                    Accessory
+                </div>
+
+                <div
+                    class="equipped-content"
+                    id="accessoryName">
+
+                    <span class="empty">
+                        Nothing equipped
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="full-button"
+                onclick="refreshAvatar()">
+
+                Refresh Avatar
+
+            </button>
+
+
+            <button
+                class="gray full-button"
+                onclick="unequipAll()">
+
+                Unequip All
+
+            </button>
+
+
+            <a href="inventory.html"
+               style="text-decoration:none;">
+
+                <button
+                    class="gray full-button">
+
+                    Open Inventory
+
+                </button>
+
+            </a>
 
         </div>
 
@@ -646,6 +655,8 @@ footer {
 
 </div>
 
+
+<!-- FOOTER -->
 
 <footer>
 
@@ -659,8 +670,8 @@ footer {
 
     &nbsp; | &nbsp;
 
-    <a href="news.html">
-        News
+    <a href="inventory.html">
+        Inventory
     </a>
 
 </footer>
@@ -668,210 +679,298 @@ footer {
 
 <script>
 
-/* CHECK ACCOUNT */
+/*
+    MTB REVIVALS AVATAR SYSTEM
 
-const loggedIn =
-    localStorage.getItem("mtbLoggedIn");
-
-const savedAccount =
-    localStorage.getItem("mtbAccount");
+    Reads the equipment saved by inventory.html.
+*/
 
 
-if (
-    loggedIn !== "true" ||
-    !savedAccount
-) {
+function getEquipped() {
 
-    document
-        .getElementById("avatarArea")
-        .style.display = "none";
+    return JSON.parse(
+        localStorage.getItem("mtbEquipped")
+    ) || {
 
-    document
-        .getElementById("notLoggedIn")
-        .style.display = "block";
+        Shirt: null,
+        Pants: null,
+        Accessory: null
 
-} else {
-
-    const account =
-        JSON.parse(savedAccount);
-
-    document
-        .getElementById("username")
-        .textContent =
-        account.username;
+    };
 
 }
 
 
-/* UPDATE */
+/* LOAD AVATAR */
 
-function updateAvatar() {
+function refreshAvatar() {
 
-    const skin =
-        document.getElementById("skinColor").value;
-
-    const shirt =
-        document.getElementById("shirtColor").value;
-
-    const pants =
-        document.getElementById("pantsColor").value;
-
-    const hair =
-        document.getElementById("hairColor").value;
+    const equipped =
+        getEquipped();
 
 
-    document
-        .getElementById("head")
-        .style.background = skin;
+    /*
+        SHIRT
+    */
+
+    const shirtName =
+        document.getElementById("shirtName");
 
 
-    document
-        .querySelectorAll(".arm")
-        .forEach(function(arm) {
+    if (equipped.Shirt) {
 
-            arm.style.background = skin;
+        shirtName.innerHTML =
+            '<span class="item-name">' +
+            equipped.Shirt +
+            '</span>';
 
-        });
+        document
+            .getElementById("body")
+            .style.background = "#1683ff";
+
+        document
+            .querySelector(".arm.left")
+            .style.background = "#1683ff";
+
+        document
+            .querySelector(".arm.right")
+            .style.background = "#1683ff";
+
+    } else {
+
+        shirtName.innerHTML =
+            '<span class="empty">Nothing equipped</span>';
+
+        document
+            .getElementById("body")
+            .style.background = "#1683ff";
+
+        document
+            .querySelector(".arm.left")
+            .style.background = "#f2c29b";
+
+        document
+            .querySelector(".arm.right")
+            .style.background = "#f2c29b";
+
+    }
 
 
-    document
-        .getElementById("body")
-        .style.background = shirt;
+    /*
+        PANTS
+    */
+
+    const pantsName =
+        document.getElementById("pantsName");
 
 
-    document
-        .querySelectorAll(".leg")
-        .forEach(function(leg) {
+    if (equipped.Pants) {
 
-            leg.style.background = pants;
+        pantsName.innerHTML =
+            '<span class="item-name">' +
+            equipped.Pants +
+            '</span>';
 
-        });
+        document
+            .getElementById("leftLeg")
+            .style.background = "#333";
+
+        document
+            .getElementById("rightLeg")
+            .style.background = "#333";
+
+    } else {
+
+        pantsName.innerHTML =
+            '<span class="empty">Nothing equipped</span>';
+
+        document
+            .getElementById("leftLeg")
+            .style.background = "#777";
+
+        document
+            .getElementById("rightLeg")
+            .style.background = "#777";
+
+    }
 
 
-    document
-        .getElementById("hair")
-        .style.background = hair;
+    /*
+        ACCESSORY
+    */
+
+    const accessoryName =
+        document.getElementById("accessoryName");
+
+    const hat =
+        document.getElementById("hat");
+
+
+    if (equipped.Accessory) {
+
+        accessoryName.innerHTML =
+            '<span class="item-name">' +
+            equipped.Accessory +
+            '</span>';
+
+        hat.style.display = "block";
+
+
+        /*
+            Change accessory appearance
+        */
+
+        const hatPart =
+            document.querySelector(".hat");
+
+        const brimPart =
+            document.querySelector(".hat-brim");
+
+
+        if (
+            equipped.Accessory
+            .toLowerCase()
+            .includes("red")
+        ) {
+
+            hatPart.style.background = "#d83232";
+            brimPart.style.background = "#d83232";
+
+        }
+
+        else if (
+            equipped.Accessory
+            .toLowerCase()
+            .includes("green")
+        ) {
+
+            hatPart.style.background = "#22aa55";
+            brimPart.style.background = "#22aa55";
+
+        }
+
+        else if (
+            equipped.Accessory
+            .toLowerCase()
+            .includes("fedora")
+        ) {
+
+            hatPart.style.background = "#222";
+            brimPart.style.background = "#222";
+
+        }
+
+        else if (
+            equipped.Accessory
+            .toLowerCase()
+            .includes("crown")
+        ) {
+
+            hatPart.style.background = "#e6b800";
+            brimPart.style.background = "#e6b800";
+
+        }
+
+        else {
+
+            hatPart.style.background = "#1683c5";
+            brimPart.style.background = "#1683c5";
+
+        }
+
+    } else {
+
+        accessoryName.innerHTML =
+            '<span class="empty">Nothing equipped</span>';
+
+        hat.style.display = "none";
+
+    }
+
+
+    showMessage("Avatar updated!");
 
 }
 
 
-/* SAVE */
+/* UNEQUIP EVERYTHING */
 
-function saveAvatar() {
+function unequipAll() {
 
-    const avatar = {
+    const emptyEquipment = {
 
-        skin:
-            document.getElementById("skinColor").value,
-
-        shirt:
-            document.getElementById("shirtColor").value,
-
-        pants:
-            document.getElementById("pantsColor").value,
-
-        hair:
-            document.getElementById("hairColor").value
+        Shirt: null,
+        Pants: null,
+        Accessory: null
 
     };
 
 
     localStorage.setItem(
-        "mtbAvatar",
-        JSON.stringify(avatar)
+        "mtbEquipped",
+        JSON.stringify(emptyEquipment)
     );
 
 
-    document
-        .getElementById("message")
-        .textContent =
-        "Avatar saved successfully!";
+    refreshAvatar();
+
+    showMessage("All items unequipped!");
 
 }
 
 
-/* LOAD */
+/* MESSAGE */
 
-function loadAvatar() {
+function showMessage(text) {
 
-    const saved =
-        localStorage.getItem("mtbAvatar");
+    const message =
+        document.getElementById("message");
+
+    message.textContent =
+        text;
+
+    message.style.display =
+        "block";
 
 
-    if (!saved) {
+    setTimeout(function() {
 
-        updateAvatar();
+        message.style.display =
+            "none";
 
-        return;
+    }, 2000);
+
+}
+
+
+/* START */
+
+refreshAvatar();
+
+
+/*
+    Automatically refresh if another
+    page changes localStorage.
+*/
+
+window.addEventListener(
+    "storage",
+    function(event) {
+
+        if (
+            event.key === "mtbEquipped"
+        ) {
+
+            refreshAvatar();
+
+        }
 
     }
-
-
-    const avatar =
-        JSON.parse(saved);
-
-
-    document
-        .getElementById("skinColor")
-        .value = avatar.skin;
-
-    document
-        .getElementById("shirtColor")
-        .value = avatar.shirt;
-
-    document
-        .getElementById("pantsColor")
-        .value = avatar.pants;
-
-    document
-        .getElementById("hairColor")
-        .value = avatar.hair;
-
-
-    updateAvatar();
-
-}
-
-
-/* RESET */
-
-function resetAvatar() {
-
-    localStorage.removeItem("mtbAvatar");
-
-
-    document
-        .getElementById("skinColor")
-        .value = "#f2c29b";
-
-    document
-        .getElementById("shirtColor")
-        .value = "#1683ff";
-
-    document
-        .getElementById("pantsColor")
-        .value = "#333333";
-
-    document
-        .getElementById("hairColor")
-        .value = "#222222";
-
-
-    updateAvatar();
-
-
-    document
-        .getElementById("message")
-        .textContent =
-        "Avatar reset.";
-
-}
-
-
-loadAvatar();
+);
 
 </script>
 
 </body>
+
 </html>
 ```
