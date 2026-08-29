@@ -40,11 +40,8 @@ header {
 .logo {
     font-size: 25px;
     font-weight: bold;
-    color: #333;
     padding: 5px 0 10px;
 }
-
-/* NAV */
 
 nav {
     display: flex;
@@ -79,8 +76,6 @@ nav a.active {
     padding: 0 10px;
 }
 
-/* TITLE */
-
 .page-title {
     background: linear-gradient(#666, #444);
     color: white;
@@ -94,31 +89,24 @@ nav a.active {
 /* TOOLBAR */
 
 .toolbar {
+    margin-top: 15px;
     background: white;
     border: 1px solid #aaa;
     padding: 10px;
-    margin-top: 15px;
 }
 
-.search-row {
-    display: flex;
-    gap: 7px;
+.toolbar button {
+    margin-right: 5px;
 }
 
-.search {
-    flex: 1;
-    height: 34px;
-    border: 1px solid #999;
-    padding: 7px;
-    font-size: 13px;
-}
+/* BUTTONS */
 
 button {
     border: 1px solid #555;
     border-radius: 3px;
     background: linear-gradient(#65b5e8, #1683c5);
     color: white;
-    padding: 7px 14px;
+    padding: 7px 13px;
     font-weight: bold;
     cursor: pointer;
     text-shadow: 1px 1px #555;
@@ -132,158 +120,124 @@ button.gray {
     background: linear-gradient(#aaa, #777);
 }
 
-button.gray:hover {
-    background: linear-gradient(#bbb, #888);
-}
-
 button.red {
     background: linear-gradient(#e57373, #b52b2b);
 }
 
-button.red:hover {
-    background: linear-gradient(#ef8585, #c33b3b);
-}
-
-/* INVENTORY BOX */
-
-.inventory-box {
-    margin-top: 15px;
-    background: white;
-    border: 1px solid #aaa;
-}
-
-/* BOX TITLE */
-
-.box-title {
-    background: linear-gradient(#f5f5f5, #d7d7d7);
-    border-bottom: 1px solid #aaa;
-    padding: 9px;
-    font-weight: bold;
-    font-size: 15px;
-}
-
-/* ITEMS */
+/* INVENTORY */
 
 .inventory {
+    margin-top: 15px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 12px;
-    padding: 12px;
 }
 
 .item {
-    background: #f8f8f8;
+    background: white;
     border: 1px solid #aaa;
     padding: 8px;
+    box-shadow: 0 1px 2px #ccc;
 }
 
-.item.equipped {
-    border: 2px solid #1683c5;
-}
-
-.item-image {
-    height: 140px;
-    border: 1px solid #999;
+.item-preview {
+    height: 135px;
     background: #eee;
+    border: 1px solid #aaa;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 }
 
-/* SHIRT */
-
-.shirt {
-    width: 90px;
-    height: 105px;
-    position: relative;
-}
-
-.shirt-body {
-    position: absolute;
-    width: 55px;
-    height: 68px;
-    left: 18px;
-    top: 20px;
-    border: 2px solid #555;
-}
-
-.sleeve {
-    position: absolute;
-    width: 20px;
-    height: 50px;
-    top: 25px;
-    border: 2px solid #555;
-}
-
-.sleeve.left {
-    left: 0;
-    transform: rotate(15deg);
-}
-
-.sleeve.right {
-    right: 0;
-    transform: rotate(-15deg);
-}
-
-/* PANTS */
-
-.pants {
-    width: 70px;
-    height: 105px;
-    position: relative;
-}
-
-.pant {
-    position: absolute;
-    width: 31px;
-    height: 90px;
-    top: 5px;
-    border: 2px solid #555;
-}
-
-.pant.left {
-    left: 3px;
-}
-
-.pant.right {
-    right: 3px;
-}
-
-/* ITEM TEXT */
-
-.item h3 {
+.item-name {
     color: #1683c5;
+    font-weight: bold;
+    margin-top: 9px;
     font-size: 14px;
-    margin: 9px 0 4px;
 }
 
 .item-type {
     color: #777;
-    margin-bottom: 7px;
+    margin-top: 4px;
 }
 
-.item button {
+.item-buttons {
+    margin-top: 9px;
+}
+
+.item-buttons button {
     width: 100%;
     margin-top: 5px;
 }
 
-/* EQUIPPED LABEL */
+/* ACCESSORY PREVIEW */
 
-.equipped-label {
-    display: none;
-    color: #1683c5;
-    font-weight: bold;
-    margin-bottom: 5px;
+.mini-avatar {
+    width: 90px;
+    height: 110px;
+    position: relative;
 }
 
-.item.equipped .equipped-label {
-    display: block;
+.mini-head {
+    width: 55px;
+    height: 55px;
+    position: absolute;
+    left: 17px;
+    top: 35px;
+    background: #f2c29b;
+    border: 2px solid #555;
+}
+
+.mini-hat {
+    width: 65px;
+    height: 22px;
+    position: absolute;
+    left: 12px;
+    top: 15px;
+    background: #1683c5;
+    border: 2px solid #555;
+    z-index: 2;
+}
+
+.mini-brim {
+    width: 45px;
+    height: 9px;
+    position: absolute;
+    left: 35px;
+    top: 34px;
+    background: #1683c5;
+    border: 2px solid #555;
+    z-index: 3;
+}
+
+/* CLOTHES PREVIEW */
+
+.shirt-preview {
+    width: 75px;
+    height: 85px;
+    background: #1683ff;
+    border: 3px solid #555;
+}
+
+.pants-preview {
+    display: flex;
+    gap: 3px;
+}
+
+.pants-leg {
+    width: 35px;
+    height: 85px;
+    background: #333;
+    border: 3px solid #555;
 }
 
 /* EMPTY */
 
 .empty {
-    padding: 40px;
+    background: white;
+    border: 1px solid #aaa;
+    padding: 40px 20px;
+    margin-top: 15px;
     text-align: center;
     color: #777;
 }
@@ -292,10 +246,10 @@ button.red:hover {
 
 #message {
     display: none;
+    margin-top: 12px;
     background: white;
     border: 1px solid #aaa;
     padding: 10px;
-    margin-top: 12px;
     color: #1683c5;
     font-weight: bold;
 }
@@ -308,7 +262,6 @@ footer {
     padding: 15px 10px;
     border-top: 1px solid #aaa;
     color: #777;
-    font-size: 12px;
 }
 
 footer a {
@@ -341,10 +294,6 @@ footer a {
         grid-template-columns: 1fr;
     }
 
-    .search-row {
-        flex-direction: column;
-    }
-
 }
 
 </style>
@@ -353,8 +302,6 @@ footer a {
 
 <body>
 
-
-<!-- HEADER -->
 
 <header>
 
@@ -366,37 +313,23 @@ footer a {
 
         <nav>
 
-            <a href="index.html">
-                Home
-            </a>
+            <a href="index.html">Home</a>
 
-            <a href="login.html">
-                Account
-            </a>
+            <a href="login.html">Account</a>
 
-            <a href="avatar.html">
-                Avatar
-            </a>
+            <a href="avatar.html">Avatar</a>
 
-            <a href="accessories.html">
-                Accessories
-            </a>
+            <a href="accessories.html">Accessories</a>
 
-            <a href="clothes.html">
-                Clothes
-            </a>
+            <a href="clothes.html">Clothes</a>
 
             <a href="inventory.html" class="active">
                 Inventory
             </a>
 
-            <a href="games.html">
-                Games
-            </a>
+            <a href="games.html">Games</a>
 
-            <a href="news.html">
-                News
-            </a>
+            <a href="news.html">News</a>
 
         </nav>
 
@@ -405,43 +338,50 @@ footer a {
 </header>
 
 
-<!-- MAIN -->
-
 <div class="container">
-
 
     <div class="page-title">
         My Inventory
     </div>
 
 
-    <!-- TOOLBAR -->
-
     <div class="toolbar">
 
-        <div class="search-row">
+        <button onclick="showItems('all')">
+            All
+        </button>
 
-            <input
-                id="search"
-                class="search"
-                type="text"
-                placeholder="Search your inventory..."
-                onkeyup="searchInventory()"
-            >
+        <button
+            class="gray"
+            onclick="showItems('Accessory')">
 
-            <button onclick="searchInventory()">
-                Search
-            </button>
+            Accessories
 
-            <button
-                class="gray"
-                onclick="showAll()">
+        </button>
 
-                Show All
+        <button
+            class="gray"
+            onclick="showItems('Shirt')">
 
-            </button>
+            Shirts
 
-        </div>
+        </button>
+
+        <button
+            class="gray"
+            onclick="showItems('Pants')">
+
+            Pants
+
+        </button>
+
+        <button
+            class="gray"
+            onclick="clearInventory()">
+
+            Clear Inventory
+
+        </button>
 
     </div>
 
@@ -449,41 +389,34 @@ footer a {
     <div id="message"></div>
 
 
-    <!-- INVENTORY -->
+    <div
+        class="inventory"
+        id="inventory">
+    </div>
 
-    <div class="inventory-box">
 
-        <div class="box-title">
-            Items
-        </div>
+    <div
+        class="empty"
+        id="empty"
+        style="display:none;">
 
-        <div
-            class="inventory"
-            id="inventory">
+        <h3>Your inventory is empty.</h3>
 
-        </div>
+        <p>
+            Visit the catalog to get some items.
+        </p>
 
-        <div
-            id="empty"
-            class="empty"
-            style="display:none;">
+        <button
+            onclick="location.href='accessories.html'">
 
-            Your inventory is empty.
+            Browse Accessories
 
-            <br><br>
-
-            <a href="clothes.html">
-                Browse the catalog
-            </a>
-
-        </div>
+        </button>
 
     </div>
 
 </div>
 
-
-<!-- FOOTER -->
 
 <footer>
 
@@ -491,21 +424,11 @@ footer a {
 
     &nbsp; | &nbsp;
 
-    <a href="index.html">
-        Home
-    </a>
+    <a href="index.html">Home</a>
 
     &nbsp; | &nbsp;
 
-    <a href="clothes.html">
-        Clothes
-    </a>
-
-    &nbsp; | &nbsp;
-
-    <a href="avatar.html">
-        Avatar
-    </a>
+    <a href="avatar.html">Avatar</a>
 
 </footer>
 
@@ -513,22 +436,35 @@ footer a {
 <script>
 
 /*
-    MTB REVIVALS INVENTORY
+    MTB REVIVALS INVENTORY SYSTEM
 
-    Items come from clothes.html.
+    Inventory:
+        mtbInventory
 
-    Inventory is stored in localStorage.
+    Equipped:
+        mtbEquipped
 */
 
 
-let inventory =
-    JSON.parse(
+let currentFilter = "all";
+
+
+/* GET INVENTORY */
+
+function getInventory() {
+
+    return JSON.parse(
         localStorage.getItem("mtbInventory")
     ) || [];
 
+}
 
-let equipped =
-    JSON.parse(
+
+/* GET EQUIPPED */
+
+function getEquipped() {
+
+    return JSON.parse(
         localStorage.getItem("mtbEquipped")
     ) || {
 
@@ -538,10 +474,27 @@ let equipped =
 
     };
 
+}
 
-/* DISPLAY INVENTORY */
 
-function displayInventory(items = inventory) {
+/* SAVE EQUIPPED */
+
+function saveEquipped(equipped) {
+
+    localStorage.setItem(
+        "mtbEquipped",
+        JSON.stringify(equipped)
+    );
+
+}
+
+
+/* LOAD INVENTORY */
+
+function loadInventory() {
+
+    const inventory =
+        getInventory();
 
     const container =
         document.getElementById("inventory");
@@ -553,7 +506,29 @@ function displayInventory(items = inventory) {
     container.innerHTML = "";
 
 
-    if (items.length === 0) {
+    let visibleItems = inventory.filter(
+        function(item) {
+
+            return (
+                currentFilter === "all" ||
+                item.type === currentFilter
+            );
+
+        }
+    );
+
+
+    if (inventory.length === 0) {
+
+        container.style.display = "none";
+        empty.style.display = "block";
+
+        return;
+
+    }
+
+
+    if (visibleItems.length === 0) {
 
         container.style.display = "none";
         empty.style.display = "block";
@@ -567,265 +542,370 @@ function displayInventory(items = inventory) {
     empty.style.display = "none";
 
 
-    items.forEach(function(item, index) {
+    visibleItems.forEach(
+        function(item, index) {
 
-        const card =
+            createItem(
+                item,
+                inventory.indexOf(item)
+            );
+
+        }
+    );
+
+}
+
+
+/* CREATE ITEM */
+
+function createItem(item, index) {
+
+    const container =
+        document.getElementById("inventory");
+
+
+    const card =
+        document.createElement("div");
+
+    card.className = "item";
+
+
+    /* PREVIEW */
+
+    const preview =
+        document.createElement("div");
+
+    preview.className =
+        "item-preview";
+
+
+    if (item.type === "Accessory") {
+
+        const avatar =
             document.createElement("div");
 
-        card.className = "item";
+        avatar.className =
+            "mini-avatar";
 
 
-        /* Check equipped */
+        const head =
+            document.createElement("div");
+
+        head.className =
+            "mini-head";
+
+
+        const hat =
+            document.createElement("div");
+
+        hat.className =
+            "mini-hat";
+
+
+        const brim =
+            document.createElement("div");
+
+        brim.className =
+            "mini-brim";
+
+
+        /*
+            Change accessory color
+        */
 
         if (
-            equipped[item.type] === item.name
+            item.name
+            .toLowerCase()
+            .includes("red")
         ) {
 
-            card.classList.add("equipped");
+            hat.style.background = "#d83232";
+            brim.style.background = "#d83232";
 
         }
 
-
-        /* IMAGE */
-
-        const image =
-            document.createElement("div");
-
-        image.className = "item-image";
-
-
-        if (item.type === "Shirt") {
-
-            image.innerHTML = `
-
-                <div class="shirt">
-
-                    <div
-                        class="shirt-body"
-                        style="background:#1683ff;">
-                    </div>
-
-                    <div
-                        class="sleeve left"
-                        style="background:#1683ff;">
-                    </div>
-
-                    <div
-                        class="sleeve right"
-                        style="background:#1683ff;">
-                    </div>
-
-                </div>
-
-            `;
-
-        }
-
-
-        else if (item.type === "Pants") {
-
-            image.innerHTML = `
-
-                <div class="pants">
-
-                    <div
-                        class="pant left"
-                        style="background:#333;">
-                    </div>
-
-                    <div
-                        class="pant right"
-                        style="background:#333;">
-                    </div>
-
-                </div>
-
-            `;
-
-        }
-
-
-        else {
-
-            image.textContent = "ITEM";
-
-        }
-
-
-        card.appendChild(image);
-
-
-        /* NAME */
-
-        const name =
-            document.createElement("h3");
-
-        name.textContent =
-            item.name;
-
-        card.appendChild(name);
-
-
-        /* TYPE */
-
-        const type =
-            document.createElement("div");
-
-        type.className =
-            "item-type";
-
-        type.textContent =
-            item.type;
-
-        card.appendChild(type);
-
-
-        /* EQUIPPED */
-
-        const label =
-            document.createElement("div");
-
-        label.className =
-            "equipped-label";
-
-        label.textContent =
-            "✓ EQUIPPED";
-
-        card.appendChild(label);
-
-
-        /* EQUIP BUTTON */
-
-        const equipButton =
-            document.createElement("button");
-
-
-        if (
-            equipped[item.type] === item.name
+        else if (
+            item.name
+            .toLowerCase()
+            .includes("green")
         ) {
 
-            equipButton.textContent =
-                "Unequip";
+            hat.style.background = "#22aa55";
+            brim.style.background = "#22aa55";
 
-            equipButton.className =
-                "gray";
+        }
 
-        } else {
+        else if (
+            item.name
+            .toLowerCase()
+            .includes("fedora")
+        ) {
 
-            equipButton.textContent =
-                "Equip";
+            hat.style.background = "#222";
+            brim.style.background = "#222";
+
+        }
+
+        else if (
+            item.name
+            .toLowerCase()
+            .includes("crown")
+        ) {
+
+            hat.style.background = "#e6b800";
+            brim.style.background = "#e6b800";
 
         }
 
 
-        equipButton.onclick =
-            function() {
+        avatar.appendChild(head);
+        avatar.appendChild(hat);
+        avatar.appendChild(brim);
 
-                toggleEquip(
-                    item.name,
-                    item.type
-                );
+        preview.appendChild(avatar);
 
-            };
+    }
 
 
-        card.appendChild(equipButton);
+    else if (item.type === "Shirt") {
+
+        const shirt =
+            document.createElement("div");
+
+        shirt.className =
+            "shirt-preview";
+
+        preview.appendChild(shirt);
+
+    }
 
 
-        /* DELETE BUTTON */
+    else if (item.type === "Pants") {
 
-        const deleteButton =
-            document.createElement("button");
+        const pants =
+            document.createElement("div");
 
-        deleteButton.textContent =
-            "Delete";
-
-        deleteButton.className =
-            "red";
+        pants.className =
+            "pants-preview";
 
 
-        deleteButton.onclick =
-            function() {
+        const left =
+            document.createElement("div");
 
-                deleteItem(index);
-
-            };
-
-
-        card.appendChild(deleteButton);
+        left.className =
+            "pants-leg";
 
 
-        container.appendChild(card);
+        const right =
+            document.createElement("div");
 
-    });
+        right.className =
+            "pants-leg";
+
+
+        pants.appendChild(left);
+        pants.appendChild(right);
+
+        preview.appendChild(pants);
+
+    }
+
+
+    /* NAME */
+
+    const name =
+        document.createElement("div");
+
+    name.className =
+        "item-name";
+
+    name.textContent =
+        item.name;
+
+
+    /* TYPE */
+
+    const type =
+        document.createElement("div");
+
+    type.className =
+        "item-type";
+
+    type.textContent =
+        item.type;
+
+
+    /* BUTTONS */
+
+    const buttons =
+        document.createElement("div");
+
+    buttons.className =
+        "item-buttons";
+
+
+    const equipped =
+        getEquipped();
+
+
+    const isEquipped =
+        equipped[item.type] === item.name;
+
+
+    const equipButton =
+        document.createElement("button");
+
+
+    if (isEquipped) {
+
+        equipButton.textContent =
+            "Unequip";
+
+        equipButton.className =
+            "gray";
+
+    } else {
+
+        equipButton.textContent =
+            "Equip";
+
+    }
+
+
+    equipButton.onclick =
+        function() {
+
+            toggleEquip(
+                item
+            );
+
+        };
+
+
+    const deleteButton =
+        document.createElement("button");
+
+    deleteButton.textContent =
+        "Remove";
+
+    deleteButton.className =
+        "red";
+
+
+    deleteButton.onclick =
+        function() {
+
+            removeItem(index);
+
+        };
+
+
+    buttons.appendChild(
+        equipButton
+    );
+
+    buttons.appendChild(
+        deleteButton
+    );
+
+
+    card.appendChild(preview);
+    card.appendChild(name);
+    card.appendChild(type);
+    card.appendChild(buttons);
+
+
+    container.appendChild(card);
 
 }
 
 
 /* EQUIP / UNEQUIP */
 
-function toggleEquip(name, type) {
+function toggleEquip(item) {
+
+    const equipped =
+        getEquipped();
+
 
     if (
-        equipped[type] === name
+        equipped[item.type]
+        === item.name
     ) {
 
-        equipped[type] = null;
+        equipped[item.type] =
+            null;
 
         showMessage(
-            name + " was unequipped."
+            item.name + " unequipped."
         );
 
     } else {
 
-        equipped[type] = name;
+        equipped[item.type] =
+            item.name;
 
         showMessage(
-            name + " equipped!"
+            item.name + " equipped!"
         );
 
     }
 
 
-    localStorage.setItem(
-        "mtbEquipped",
-        JSON.stringify(equipped)
-    );
+    saveEquipped(equipped);
 
-
-    displayInventory();
+    loadInventory();
 
 }
 
 
-/* DELETE */
+/* REMOVE ITEM */
 
-function deleteItem(index) {
+function removeItem(index) {
+
+    const inventory =
+        getInventory();
+
+
+    if (
+        !inventory[index]
+    ) {
+
+        return;
+
+    }
+
 
     const item =
         inventory[index];
 
 
-    if (!item) {
-        return;
-    }
+    const equipped =
+        getEquipped();
 
+
+    /*
+        Automatically unequip
+        the item if necessary.
+    */
 
     if (
-        equipped[item.type] === item.name
+        equipped[item.type]
+        === item.name
     ) {
 
-        equipped[item.type] = null;
+        equipped[item.type] =
+            null;
 
-        localStorage.setItem(
-            "mtbEquipped",
-            JSON.stringify(equipped)
-        );
+        saveEquipped(equipped);
 
     }
 
 
-    inventory.splice(index, 1);
+    inventory.splice(
+        index,
+        1
+    );
 
 
     localStorage.setItem(
@@ -835,51 +915,57 @@ function deleteItem(index) {
 
 
     showMessage(
-        item.name + " was removed."
+        item.name + " removed."
     );
 
 
-    displayInventory();
+    loadInventory();
 
 }
 
 
-/* SEARCH */
+/* FILTER */
 
-function searchInventory() {
+function showItems(type) {
 
-    const search =
-        document
-        .getElementById("search")
-        .value
-        .toLowerCase()
-        .trim();
+    currentFilter = type;
 
-
-    const filtered =
-        inventory.filter(function(item) {
-
-            return item.name
-                .toLowerCase()
-                .includes(search);
-
-        });
-
-
-    displayInventory(filtered);
+    loadInventory();
 
 }
 
 
-/* SHOW ALL */
+/* CLEAR INVENTORY */
 
-function showAll() {
+function clearInventory() {
 
-    document
-        .getElementById("search")
-        .value = "";
+    const confirmClear =
+        confirm(
+            "Are you sure you want to clear your inventory?"
+        );
 
-    displayInventory();
+
+    if (!confirmClear) {
+        return;
+    }
+
+
+    localStorage.removeItem(
+        "mtbInventory"
+    );
+
+
+    localStorage.removeItem(
+        "mtbEquipped"
+    );
+
+
+    showMessage(
+        "Inventory cleared."
+    );
+
+
+    loadInventory();
 
 }
 
@@ -891,6 +977,7 @@ function showMessage(text) {
     const message =
         document.getElementById("message");
 
+
     message.textContent =
         text;
 
@@ -898,19 +985,44 @@ function showMessage(text) {
         "block";
 
 
-    setTimeout(function() {
+    setTimeout(
+        function() {
 
-        message.style.display =
-            "none";
+            message.style.display =
+                "none";
 
-    }, 2500);
+        },
+        2000
+    );
 
 }
 
 
 /* START */
 
-displayInventory();
+loadInventory();
+
+
+/*
+    Update if another page changes
+    the inventory.
+*/
+
+window.addEventListener(
+    "storage",
+    function(event) {
+
+        if (
+            event.key === "mtbInventory" ||
+            event.key === "mtbEquipped"
+        ) {
+
+            loadInventory();
+
+        }
+
+    }
+);
 
 </script>
 
