@@ -1,0 +1,1370 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MTB REVIVALS - Pants</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #e9e9e9;
+    color: #333;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    background: linear-gradient(#f7f7f7, #cfcfcf);
+    border-bottom: 1px solid #999;
+}
+
+.header-inner {
+    max-width: 1000px;
+    margin: auto;
+    padding: 8px 10px 0;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    padding: 5px 0 10px;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: #444;
+    text-decoration: none;
+    padding: 9px 13px;
+}
+
+nav a:hover {
+    background: #ddd;
+}
+
+nav a.active {
+    background: white;
+    border: 1px solid #aaa;
+    color: #1683c5;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+.container {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 0 10px;
+}
+
+.title {
+    background: linear-gradient(#666,#444);
+    color: white;
+    padding: 11px 13px;
+    border: 1px solid #333;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.description {
+    background: white;
+    border: 1px solid #aaa;
+    margin-top: 12px;
+    padding: 15px;
+}
+
+
+/* =========================
+   CATEGORY BAR
+========================= */
+
+.categories {
+    margin-top: 15px;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 5px;
+}
+
+.category {
+    padding: 9px 14px;
+
+    background:
+        linear-gradient(#fff,#ddd);
+
+    border: 1px solid #999;
+
+    cursor: pointer;
+
+    font-weight: bold;
+}
+
+.category:hover,
+.category.active {
+    background:
+        linear-gradient(#75c6ed,#1683c5);
+
+    color: white;
+}
+
+
+/* =========================
+   GRID
+========================= */
+
+.pants-grid {
+
+    margin-top: 15px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(210px,1fr));
+
+    gap: 15px;
+}
+
+
+/* =========================
+   ITEM
+========================= */
+
+.item {
+
+    background: white;
+
+    border: 1px solid #aaa;
+
+    padding: 12px;
+
+    box-shadow:
+        0 1px 2px rgba(0,0,0,.12);
+}
+
+.item:hover {
+    border-color: #666;
+}
+
+
+/* =========================
+   PREVIEW
+========================= */
+
+.preview {
+
+    height: 210px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eee,
+            #d2d2d2
+        );
+
+    border: 1px solid #aaa;
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   PANTS
+========================= */
+
+.pants {
+
+    position: relative;
+
+    width: 130px;
+    height: 175px;
+
+    display: flex;
+
+    gap: 5px;
+
+    filter:
+        drop-shadow(
+            0 4px 4px rgba(0,0,0,.25)
+        );
+}
+
+
+/* TWO LEGS */
+
+.pants-leg {
+
+    position: relative;
+
+    width: 62px;
+    height: 175px;
+
+    border:
+        3px solid #444;
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   COLORS
+========================= */
+
+.black {
+    background:
+        linear-gradient(
+            90deg,
+            #050505,
+            #292929,
+            #070707
+        );
+}
+
+.grey {
+    background:
+        linear-gradient(
+            90deg,
+            #777,
+            #444,
+            #777
+        );
+}
+
+.red {
+    background:
+        linear-gradient(
+            90deg,
+            #520505,
+            #c51c1c,
+            #500505
+        );
+}
+
+.blue {
+    background:
+        linear-gradient(
+            90deg,
+            #032b50,
+            #087cc8,
+            #032b50
+        );
+}
+
+.white-pants {
+    background:
+        linear-gradient(
+            90deg,
+            #eee,
+            #fff,
+            #ccc
+        );
+}
+
+
+/* =========================
+   MTB LOGO
+========================= */
+
+.logo-pants {
+
+    position: absolute;
+
+    width: 100%;
+
+    top: 58px;
+
+    text-align: center;
+
+    font-weight: 900;
+
+    font-size: 15px;
+
+    letter-spacing: 2px;
+
+    color: white;
+
+    text-shadow:
+        2px 2px 0 #000;
+}
+
+
+/* =========================
+   STAR
+========================= */
+
+.star {
+
+    position: absolute;
+
+    width: 43px;
+    height: 43px;
+
+    left: 10px;
+    top: 40px;
+
+    background:
+        linear-gradient(
+            135deg,
+            white,
+            #888
+        );
+
+    clip-path:
+        polygon(
+            50% 0,
+            61% 35%,
+            100% 35%,
+            69% 58%,
+            81% 100%,
+            50% 74%,
+            19% 100%,
+            31% 58%,
+            0 35%,
+            39% 35%
+        );
+
+    filter:
+        drop-shadow(
+            0 0 5px white
+        );
+}
+
+
+/* =========================
+   FLAME
+========================= */
+
+.flame {
+
+    position: absolute;
+
+    width: 100%;
+
+    top: 50px;
+
+    text-align: center;
+
+    font-size: 38px;
+
+    filter:
+        drop-shadow(
+            0 0 4px #ff4500
+        );
+}
+
+
+/* =========================
+   LIGHTNING
+========================= */
+
+.lightning {
+
+    position: absolute;
+
+    width: 100%;
+
+    top: 42px;
+
+    text-align: center;
+
+    font-size: 48px;
+
+    color: white;
+
+    text-shadow:
+        0 0 7px #55caff;
+}
+
+
+/* =========================
+   SEASONAL PANTS
+========================= */
+
+.seasons {
+
+    animation:
+        seasons 12s infinite;
+}
+
+
+/* SPRING */
+
+@keyframes seasons {
+
+    0%,
+    24% {
+
+        background:
+            linear-gradient(
+                90deg,
+                #72d67e,
+                #f7a7d8,
+                #7ddcff
+            );
+
+    }
+
+
+    /* SUMMER */
+
+    25%,
+    49% {
+
+        background:
+            linear-gradient(
+                90deg,
+                #22b9ed,
+                #ffe45c,
+                #35d86a
+            );
+
+    }
+
+
+    /* FALL */
+
+    50%,
+    74% {
+
+        background:
+            linear-gradient(
+                90deg,
+                #8c3c12,
+                #e47719,
+                #e7b334
+            );
+
+    }
+
+
+    /* WINTER */
+
+    75%,
+    100% {
+
+        background:
+            linear-gradient(
+                90deg,
+                #6bd9ff,
+                #eafaff,
+                #729cff
+            );
+
+    }
+
+}
+
+
+/* SEASON SYMBOL */
+
+.season-symbol {
+
+    position: absolute;
+
+    width: 100%;
+
+    top: 42px;
+
+    text-align: center;
+
+    font-size: 38px;
+
+    z-index: 3;
+}
+
+
+/* =========================
+   TEXT
+========================= */
+
+.item h3 {
+
+    margin:
+        12px 0 5px;
+
+    font-size: 17px;
+}
+
+.item p {
+
+    margin:
+        4px 0;
+
+    color: #666;
+
+    font-size: 13px;
+}
+
+.price {
+
+    margin-top: 8px;
+
+    font-weight: bold;
+
+    color: #1683c5;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+button {
+
+    margin-top: 10px;
+
+    width: 100%;
+
+    padding: 9px;
+
+    border:
+        1px solid #555;
+
+    border-radius: 3px;
+
+    background:
+        linear-gradient(
+            #69b9e9,
+            #1683c5
+        );
+
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+button:hover {
+
+    background:
+        linear-gradient(
+            #82c9ef,
+            #1683c5
+        );
+}
+
+button.equipped {
+
+    background:
+        linear-gradient(
+            #777,
+            #555
+        );
+
+    cursor: default;
+}
+
+
+/* =========================
+   STATUS
+========================= */
+
+.status {
+
+    margin-top: 15px;
+
+    padding: 12px;
+
+    background: white;
+
+    border: 1px solid #aaa;
+
+    color: #1683c5;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px) {
+
+    .logo {
+        text-align: center;
+    }
+
+    nav a {
+        padding: 8px 9px;
+        font-size: 12px;
+    }
+
+    .pants-grid {
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .preview {
+        height: 165px;
+    }
+
+    .pants {
+        transform: scale(.75);
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<div class="header-inner">
+
+<div class="logo">
+MTB REVIVALS
+</div>
+
+
+<nav>
+
+<a href="index.html">
+Home
+</a>
+
+<a href="login.html">
+Account
+</a>
+
+<a href="avatar.html">
+Avatar
+</a>
+
+<a href="accessories.html">
+Accessories
+</a>
+
+<a href="clothes.html">
+Clothes
+</a>
+
+<a href="pants.html"
+   class="active">
+Pants
+</a>
+
+<a href="inventory.html">
+Inventory
+</a>
+
+<a href="games.html">
+Games
+</a>
+
+<a href="news.html">
+News
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<div class="container">
+
+
+<div class="title">
+MTB REVIVALS Pants
+</div>
+
+
+<div class="description">
+
+<b>Classic MTB Pants</b>
+
+<br><br>
+
+Original MTB pants made for the classic avatar style.
+
+</div>
+
+
+<!-- CATEGORIES -->
+
+<div class="categories">
+
+<div class="category active"
+     onclick="filterItems('all',this)">
+All
+</div>
+
+<div class="category"
+     onclick="filterItems('mtb',this)">
+MTB
+</div>
+
+<div class="category"
+     onclick="filterItems('streetwear',this)">
+Streetwear
+</div>
+
+<div class="category"
+     onclick="filterItems('seasonal',this)">
+Seasonal
+</div>
+
+</div>
+
+
+<!-- PANTS -->
+
+<div class="pants-grid">
+
+
+<!-- MTB BLACK -->
+
+<div class="item"
+     data-category="mtb">
+
+<div class="preview">
+
+<div class="pants">
+
+<div class="pants-leg black">
+
+<div class="logo-pants">
+MTB
+</div>
+
+</div>
+
+<div class="pants-leg black">
+
+<div class="logo-pants">
+MTB
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<h3>
+MTB Black Logo Pants
+</h3>
+
+<p>
+Classic black MTB pants.
+</p>
+
+<div class="price">
+FREE
+</div>
+
+<button
+onclick="equipPants(this,'MTB Black Logo Pants')">
+Equip
+</button>
+
+</div>
+
+
+<!-- GREY -->
+
+<div class="item"
+     data-category="mtb">
+
+<div class="preview">
+
+<div class="pants">
+
+<div class="pants-leg grey">
+
+<div class="logo-pants">
+MTB
+</div>
+
+</div>
+
+<div class="pants-leg grey">
+
+<div class="logo-pants">
+MTB
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<h3>
+MTB Grey Classic Pants
+</h3>
+
+<p>
+Simple grey MTB design.
+</p>
+
+<div class="price">
+FREE
+</div>
+
+<button
+onclick="equipPants(this,'MTB Grey Classic Pants')">
+Equip
+</button>
+
+</div>
+
+
+<!-- STAR -->
+
+<div class="item"
+     data-category="streetwear">
+
+<div class="preview">
+
+<div class="pants">
+
+<div class="pants-leg black">
+
+<div class="star"></div>
+
+</div>
+
+<div class="pants-leg black">
+
+<div class="star"></div>
+
+</div>
+
+</div>
+
+</div>
+
+<h3>
+MTB Star Pants
+</h3>
+
+<p>
+Dark star-themed streetwear pants.
+</p>
+
+<div class="price">
+FREE
+</div>
+
+<button
+onclick="equipPants(this,'MTB Star Pants')">
+Equip
+</button>
+
+</div>
+
+
+<!-- FLAME -->
+
+<div class="item"
+     data-category="streetwear">
+
+<div class="preview">
+
+<div class="pants">
+
+<div class="pants-leg red">
+
+<div class="flame">
+🔥
+</div>
+
+</div>
+
+<div class="pants-leg red">
+
+<div class="flame">
+🔥
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<h3>
+MTB Flame Pants
+</h3>
+
+<p>
+Original red MTB flame design.
+</p>
+
+<div class="price">
+FREE
+</div>
+
+<button
+onclick="equipPants(this,'MTB Flame Pants')">
+Equip
+</button>
+
+</div>
+
+
+<!-- LIGHTNING -->
+
+<div class="item"
+     data-category="streetwear">
+
+<div class="preview">
+
+<div class="pants">
+
+<div class="pants-leg blue">
+
+<div class="lightning">
+⚡
+</div>
+
+</div>
+
+<div class="pants-leg blue">
+
+<div class="lightning">
+⚡
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<h3>
+MTB Lightning Pants
+</h3>
+
+<p>
+Electric blue streetwear pants.
+</p>
+
+<div class="price">
+FREE
+</div>
+
+<button
+onclick="equipPants(this,'MTB Lightning Pants')">
+Equip
+</button>
+
+</div>
+
+
+<!-- MIDNIGHT -->
+
+<div class="item"
+     data-category="streetwear">
+
+<div class="preview">
+
+<div class="pants">
+
+<div class="pants-leg black">
+
+<div class="logo-pants">
+MIDNIGHT
+</div>
+
+</div>
+
+<div class="pants-leg black">
+
+<div class="logo-pants">
+MTB
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<h3>
+MTB Midnight Pants
+</h3>
+
+<p>
+Dark classic streetwear pants.
+</p>
+
+<div class="price">
+FREE
+</div>
+
+<button
+onclick="equipPants(this,'MTB Midnight Pants')">
+Equip
+</button>
+
+</div>
+
+
+<!-- JEANS -->
+
+<div class="item"
+     data-category="mtb">
+
+<div class="preview">
+
+<div class="pants">
+
+<div class="pants-leg blue">
+
+<div class="logo-pants">
+MTB
+</div>
+
+</div>
+
+<div class="pants-leg blue">
+
+<div class="logo-pants">
+MTB
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<h3>
+MTB Classic Jeans
+</h3>
+
+<p>
+Classic blue denim-inspired pants.
+</p>
+
+<div class="price">
+FREE
+</div>
+
+<button
+onclick="equipPants(this,'MTB Classic Jeans')">
+Equip
+</button>
+
+</div>
+
+
+<!-- ALL SEASONS -->
+
+<div class="item"
+     data-category="seasonal mtb">
+
+<div class="preview">
+
+<div class="pants">
+
+<div class="pants-leg seasons">
+
+<div class="season-symbol"
+     id="season1">
+🌸
+</div>
+
+</div>
+
+<div class="pants-leg seasons">
+
+<div class="season-symbol"
+     id="season2">
+🌸
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<h3>
+MTB All Seasons Pants
+</h3>
+
+<p>
+Spring, Summer, Fall and Winter in one design.
+</p>
+
+<div class="price">
+FREE
+</div>
+
+<button
+onclick="equipPants(this,'MTB All Seasons Pants')">
+Equip
+</button>
+
+</div>
+
+
+</div>
+
+
+<div class="status"
+     id="status">
+
+No pants equipped.
+
+</div>
+
+
+</div>
+
+
+<footer
+style="
+text-align:center;
+padding:25px;
+color:#777;
+">
+
+MTB REVIVALS © 2026
+
+</footer>
+
+
+<script>
+
+/* =========================
+   EQUIP PANTS
+========================= */
+
+function equipPants(button,name) {
+
+    localStorage.setItem(
+        "mtbPants",
+        name
+    );
+
+
+    document
+        .querySelectorAll("button")
+        .forEach(function(btn) {
+
+            btn.classList.remove(
+                "equipped"
+            );
+
+            btn.textContent =
+                "Equip";
+
+        });
+
+
+    button.classList.add(
+        "equipped"
+    );
+
+    button.textContent =
+        "Equipped";
+
+
+    document
+        .getElementById("status")
+        .textContent =
+        name +
+        " equipped!";
+
+}
+
+
+/* =========================
+   LOAD PANTS
+========================= */
+
+function loadEquipped() {
+
+    const saved =
+        localStorage.getItem(
+            "mtbPants"
+        );
+
+
+    if (!saved) {
+        return;
+    }
+
+
+    document
+        .querySelectorAll(".item")
+        .forEach(function(item) {
+
+            const button =
+                item.querySelector(
+                    "button"
+                );
+
+            if (
+                button &&
+                button
+                    .getAttribute(
+                        "onclick"
+                    )
+                    .includes(
+                        saved
+                    )
+            ) {
+
+                button.classList.add(
+                    "equipped"
+                );
+
+                button.textContent =
+                    "Equipped";
+
+            }
+
+        });
+
+
+    document
+        .getElementById("status")
+        .textContent =
+        saved +
+        " equipped!";
+
+}
+
+
+/* =========================
+   FILTER
+========================= */
+
+function filterItems(
+    category,
+    selected
+) {
+
+    document
+        .querySelectorAll(".category")
+        .forEach(function(btn) {
+
+            btn.classList.remove(
+                "active"
+            );
+
+        });
+
+
+    selected.classList.add(
+        "active"
+    );
+
+
+    document
+        .querySelectorAll(".item")
+        .forEach(function(item) {
+
+            const categories =
+                item.dataset.category
+                    .split(" ");
+
+
+            if (
+                category === "all" ||
+                categories.includes(category)
+            ) {
+
+                item.style.display =
+                    "";
+
+            } else {
+
+                item.style.display =
+                    "none";
+
+            }
+
+        });
+
+}
+
+
+/* =========================
+   SEASON ICONS
+========================= */
+
+const seasonIcons = [
+    "🌸",
+    "☀️",
+    "🍂",
+    "❄️"
+];
+
+let season = 0;
+
+
+function changeSeason() {
+
+    document
+        .querySelectorAll(
+            ".season-symbol"
+        )
+        .forEach(function(symbol) {
+
+            symbol.textContent =
+                seasonIcons[season];
+
+        });
+
+
+    season =
+        (season + 1) % 4;
+
+}
+
+
+setInterval(
+    changeSeason,
+    3000
+);
+
+
+/* START */
+
+loadEquipped();
+changeSeason();
+
+</script>
+
+
+</body>
+
+</html>
+```
