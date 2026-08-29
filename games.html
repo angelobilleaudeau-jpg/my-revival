@@ -1,12 +1,11 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 
 <meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>MTB REVIVALS - Games</title>
 
@@ -19,75 +18,917 @@ content="width=device-width, initial-scale=1.0">
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background: #e9e9e9;
-    color: #222;
+    font-size: 13px;
+    background: #e8e8e8;
+    color: #333;
 }
 
 /* HEADER */
 
 header {
-    background: #333;
-    color: white;
-    padding: 15px;
+    background: linear-gradient(#f7f7f7, #d1d1d1);
+    border-bottom: 1px solid #999;
+    box-shadow: 0 1px 3px #aaa;
 }
 
-.header {
-    max-width: 1100px;
+.header-inner {
+    max-width: 1000px;
     margin: auto;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
+    padding: 8px 10px 0;
 }
 
 .logo {
-    font-size: 24px;
+    font-size: 25px;
     font-weight: bold;
-}
-
-.user {
-    background: #222;
-    padding: 8px 12px;
-    border-radius: 5px;
+    color: #333;
+    padding: 5px 0 10px;
 }
 
 /* NAVIGATION */
 
 nav {
-    background: #444;
-    width: 100%;
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
 }
 
 nav a {
     display: block;
-    color: white;
+    padding: 9px 13px;
+    color: #444;
     text-decoration: none;
-    padding: 13px 15px;
-    text-align: center;
-    flex: 0 0 auto;
+    border: 1px solid transparent;
+    border-bottom: 0;
 }
 
 nav a:hover {
-    background: #222;
+    background: #ddd;
+}
+
+nav a.active {
+    background: white;
+    border: 1px solid #aaa;
+    border-bottom: 1px solid white;
+    color: #1683c5;
+}
+
+/* MAIN */
+
+.container {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 0 10px;
+}
+
+/* PAGE TITLE */
+
+.page-title {
+    background: linear-gradient(#666, #444);
+    color: white;
+    padding: 9px 12px;
+    border: 1px solid #333;
+    font-size: 18px;
+    font-weight: bold;
+    text-shadow: 1px 1px #222;
+}
+
+/* SEARCH */
+
+.search-area {
+    background: white;
+    border: 1px solid #aaa;
+    padding: 12px;
+    margin-top: 15px;
+}
+
+.search-row {
+    display: flex;
+    gap: 8px;
+}
+
+.search {
+    flex: 1;
+    height: 34px;
+    border: 1px solid #999;
+    padding: 7px;
+    font-size: 13px;
+}
+
+.search-button {
+    width: 90px;
+    margin: 0;
+}
+
+/* CATEGORIES */
+
+.categories {
+    margin-top: 15px;
+    background: white;
+    border: 1px solid #aaa;
+    padding: 8px;
+}
+
+.categories button {
+    margin-right: 5px;
+    margin-top: 3px;
+}
+
+/* BUTTONS */
+
+button {
+    border: 1px solid #555;
+    border-radius: 3px;
+    background: linear-gradient(#65b5e8, #1683c5);
+    color: white;
+    padding: 7px 14px;
+    font-weight: bold;
+    cursor: pointer;
+    text-shadow: 1px 1px #555;
+}
+
+button:hover {
+    background: linear-gradient(#79c5ed, #1683c5);
+}
+
+button.gray {
+    background: linear-gradient(#aaa, #777);
+}
+
+button.gray:hover {
+    background: linear-gradient(#bbb, #888);
+}
+
+/* SECTION */
+
+.section {
+    margin-top: 20px;
+}
+
+.section-title {
+    background: linear-gradient(#f5f5f5, #d7d7d7);
+    border: 1px solid #aaa;
+    padding: 9px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+/* GAMES */
+
+.games {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.game {
+    background: white;
+    border: 1px solid #aaa;
+    padding: 8px;
+    box-shadow: 0 1px 2px #ccc;
+}
+
+.thumbnail {
+    height: 125px;
+    background: linear-gradient(135deg, #777, #444);
+    border: 1px solid #555;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 17px;
+    font-weight: bold;
+    text-shadow: 1px 1px #222;
+}
+
+.game h3 {
+    margin: 9px 0 4px;
+    font-size: 15px;
+    color: #1683c5;
+}
+
+.creator {
+    color: #777;
+    margin-bottom: 7px;
+}
+
+.stats {
+    border-top: 1px solid #ddd;
+    padding-top: 7px;
+    color: #666;
+    line-height: 20px;
+}
+
+.rating {
+    color: #555;
+}
+
+.play {
+    width: 100%;
+    margin-top: 8px;
+}
+
+/* NO RESULTS */
+
+.no-results {
+    display: none;
+    background: white;
+    border: 1px solid #aaa;
+    padding: 25px;
+    text-align: center;
+    color: #777;
+}
+
+/* FOOTER */
+
+footer {
+    max-width: 1000px;
+    margin: 40px auto 0;
+    padding: 15px 10px;
+    border-top: 1px solid #aaa;
+    color: #777;
+    font-size: 12px;
+}
+
+footer a {
+    color: #1683c5;
+    text-decoration: none;
 }
 
 /* MOBILE */
 
-@media (max-width: 600px) {
-    nav {
-        display: grid;
+@media (max-width: 800px) {
+
+    .games {
         grid-template-columns: repeat(2, 1fr);
-        width: 100%;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .logo {
+        text-align: center;
     }
 
     nav a {
-        width: 100%;
-        padding: 12px 5px;
-        font-size: 14px;
-        border-bottom: 1px solid #555;
+        padding: 8px 9px;
+        font-size: 12px;
     }
+
+    .games {
+        grid-template-columns: 1fr;
+    }
+
+    .search-row {
+        flex-direction: column;
+    }
+
+    .search-button {
+        width: 100%;
+    }
+
 }
+
+</style>
+
+</head>
+
+<body>
+
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="header-inner">
+
+        <div class="logo">
+            MTB REVIVALS
+        </div>
+
+        <nav>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="login.html">
+                Account
+            </a>
+
+            <a href="avatar.html">
+                Avatar
+            </a>
+
+            <a href="accessories.html">
+                Accessories
+            </a>
+
+            <a href="clothes.html">
+                Clothes
+            </a>
+
+            <a href="inventory.html">
+                Inventory
+            </a>
+
+            <a href="games.html" class="active">
+                Games
+            </a>
+
+            <a href="news.html">
+                News
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<!-- MAIN -->
+
+<div class="container">
+
+
+    <div class="page-title">
+        Games
+    </div>
+
+
+    <!-- SEARCH -->
+
+    <div class="search-area">
+
+        <div class="search-row">
+
+            <input
+                type="text"
+                id="gameSearch"
+                class="search"
+                placeholder="Search games..."
+                onkeyup="searchGames()"
+            >
+
+            <button
+                class="search-button"
+                onclick="searchGames()">
+
+                Search
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- CATEGORIES -->
+
+    <div class="categories">
+
+        <strong>Categories:</strong>
+
+        <button
+            class="gray"
+            onclick="filterGames('all')">
+
+            All
+
+        </button>
+
+        <button
+            class="gray"
+            onclick="filterGames('obby')">
+
+            Obby
+
+        </button>
+
+        <button
+            class="gray"
+            onclick="filterGames('battle')">
+
+            Battle
+
+        </button>
+
+        <button
+            class="gray"
+            onclick="filterGames('town')">
+
+            Town
+
+        </button>
+
+        <button
+            class="gray"
+            onclick="filterGames('racing')">
+
+            Racing
+
+        </button>
+
+    </div>
+
+
+    <!-- FEATURED -->
+
+    <div class="section">
+
+        <div class="section-title">
+            Featured Games
+        </div>
+
+
+        <div class="games" id="gameList">
+
+
+            <!-- GAME 1 -->
+
+            <div
+                class="game"
+                data-category="obby"
+                data-name="Classic Obby">
+
+                <div class="thumbnail">
+                    CLASSIC<br>OBBY
+                </div>
+
+                <h3>
+                    Classic Obby
+                </h3>
+
+                <div class="creator">
+                    By Builder
+                </div>
+
+                <div class="stats">
+
+                    👥 24 playing<br>
+
+                    <span class="rating">
+                        ★★★★★
+                    </span>
+
+                </div>
+
+                <button
+                    class="play"
+                    onclick="playGame('Classic Obby')">
+
+                    Play
+
+                </button>
+
+            </div>
+
+
+            <!-- GAME 2 -->
+
+            <div
+                class="game"
+                data-category="battle"
+                data-name="Brick Battle">
+
+                <div class="thumbnail">
+                    BRICK<br>BATTLE
+                </div>
+
+                <h3>
+                    Brick Battle
+                </h3>
+
+                <div class="creator">
+                    By Admin
+                </div>
+
+                <div class="stats">
+
+                    👥 18 playing<br>
+
+                    <span class="rating">
+                        ★★★★☆
+                    </span>
+
+                </div>
+
+                <button
+                    class="play"
+                    onclick="playGame('Brick Battle')">
+
+                    Play
+
+                </button>
+
+            </div>
+
+
+            <!-- GAME 3 -->
+
+            <div
+                class="game"
+                data-category="town"
+                data-name="MTB Town">
+
+                <div class="thumbnail">
+                    MTB<br>TOWN
+                </div>
+
+                <h3>
+                    MTB Town
+                </h3>
+
+                <div class="creator">
+                    By Player
+                </div>
+
+                <div class="stats">
+
+                    👥 31 playing<br>
+
+                    <span class="rating">
+                        ★★★★★
+                    </span>
+
+                </div>
+
+                <button
+                    class="play"
+                    onclick="playGame('MTB Town')">
+
+                    Play
+
+                </button>
+
+            </div>
+
+
+            <!-- GAME 4 -->
+
+            <div
+                class="game"
+                data-category="racing"
+                data-name="MTB Racing">
+
+                <div class="thumbnail">
+                    MTB<br>RACING
+                </div>
+
+                <h3>
+                    MTB Racing
+                </h3>
+
+                <div class="creator">
+                    By MTB Studios
+                </div>
+
+                <div class="stats">
+
+                    👥 12 playing<br>
+
+                    <span class="rating">
+                        ★★★★☆
+                    </span>
+
+                </div>
+
+                <button
+                    class="play"
+                    onclick="playGame('MTB Racing')">
+
+                    Play
+
+                </button>
+
+            </div>
+
+
+            <!-- GAME 5 -->
+
+            <div
+                class="game"
+                data-category="obby"
+                data-name="Tower Challenge">
+
+                <div class="thumbnail">
+                    TOWER<br>CHALLENGE
+                </div>
+
+                <h3>
+                    Tower Challenge
+                </h3>
+
+                <div class="creator">
+                    By MTB Player
+                </div>
+
+                <div class="stats">
+
+                    👥 9 playing<br>
+
+                    <span class="rating">
+                        ★★★★☆
+                    </span>
+
+                </div>
+
+                <button
+                    class="play"
+                    onclick="playGame('Tower Challenge')">
+
+                    Play
+
+                </button>
+
+            </div>
+
+
+            <!-- GAME 6 -->
+
+            <div
+                class="game"
+                data-category="battle"
+                data-name="Sword Fight">
+
+                <div class="thumbnail">
+                    SWORD<br>FIGHT
+                </div>
+
+                <h3>
+                    Sword Fight
+                </h3>
+
+                <div class="creator">
+                    By MTB Studios
+                </div>
+
+                <div class="stats">
+
+                    👥 16 playing<br>
+
+                    <span class="rating">
+                        ★★★★★
+                    </span>
+
+                </div>
+
+                <button
+                    class="play"
+                    onclick="playGame('Sword Fight')">
+
+                    Play
+
+                </button>
+
+            </div>
+
+
+            <!-- GAME 7 -->
+
+            <div
+                class="game"
+                data-category="town"
+                data-name="Classic City">
+
+                <div class="thumbnail">
+                    CLASSIC<br>CITY
+                </div>
+
+                <h3>
+                    Classic City
+                </h3>
+
+                <div class="creator">
+                    By Builder
+                </div>
+
+                <div class="stats">
+
+                    👥 7 playing<br>
+
+                    <span class="rating">
+                        ★★★★☆
+                    </span>
+
+                </div>
+
+                <button
+                    class="play"
+                    onclick="playGame('Classic City')">
+
+                    Play
+
+                </button>
+
+            </div>
+
+
+            <!-- GAME 8 -->
+
+            <div
+                class="game"
+                data-category="racing"
+                data-name="Brick Racing">
+
+                <div class="thumbnail">
+                    BRICK<br>RACING
+                </div>
+
+                <h3>
+                    Brick Racing
+                </h3>
+
+                <div class="creator">
+                    By Player
+                </div>
+
+                <div class="stats">
+
+                    👥 5 playing<br>
+
+                    <span class="rating">
+                        ★★★★☆
+                    </span>
+
+                </div>
+
+                <button
+                    class="play"
+                    onclick="playGame('Brick Racing')">
+
+                    Play
+
+                </button>
+
+            </div>
+
+
+        </div>
+
+
+        <div
+            id="noResults"
+            class="no-results">
+
+            No games found.
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    MTB REVIVALS © 2026
+
+    &nbsp; | &nbsp;
+
+    <a href="index.html">
+        Home
+    </a>
+
+    &nbsp; | &nbsp;
+
+    <a href="login.html">
+        Account
+    </a>
+
+    &nbsp; | &nbsp;
+
+    <a href="news.html">
+        News
+    </a>
+
+</footer>
+
+
+<script>
+
+/* PLAY GAME */
+
+function playGame(name) {
+
+    alert(
+        name +
+        " is not connected to a game server yet."
+    );
+
+}
+
+
+/* SEARCH */
+
+function searchGames() {
+
+    const search =
+        document
+        .getElementById("gameSearch")
+        .value
+        .toLowerCase()
+        .trim();
+
+
+    const games =
+        document
+        .querySelectorAll(".game");
+
+
+    let found = 0;
+
+
+    games.forEach(function(game) {
+
+        const name =
+            game
+            .getAttribute("data-name")
+            .toLowerCase();
+
+
+        if (name.includes(search)) {
+
+            game.style.display = "";
+            found++;
+
+        } else {
+
+            game.style.display = "none";
+
+        }
+
+    });
+
+
+    document
+        .getElementById("noResults")
+        .style.display =
+        found === 0
+        ? "block"
+        : "none";
+
+}
+
+
+/* CATEGORY FILTER */
+
+function filterGames(category) {
+
+    const games =
+        document
+        .querySelectorAll(".game");
+
+
+    let found = 0;
+
+
+    games.forEach(function(game) {
+
+        const gameCategory =
+            game.getAttribute("data-category");
+
+
+        if (
+            category === "all" ||
+            gameCategory === category
+        ) {
+
+            game.style.display = "";
+            found++;
+
+        } else {
+
+            game.style.display = "none";
+
+        }
+
+    });
+
+
+    document
+        .getElementById("noResults")
+        .style.display =
+        found === 0
+        ? "block"
+        : "none";
+
+
+    /* Clear search */
+
+    document
+        .getElementById("gameSearch")
+        .value = "";
+
+}
+
+</script>
+
+</body>
+
+</html>
+```
