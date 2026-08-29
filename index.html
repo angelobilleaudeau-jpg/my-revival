@@ -1,10 +1,15 @@
+<!```html
 <!DOCTYPE html>
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>My Revival</title>
+    <title>MTB REVIVALS</title>
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
             font-family: Arial, sans-serif;
@@ -21,18 +26,34 @@
         .logo {
             font-size: 28px;
             font-weight: bold;
+            text-align: center;
+            margin-bottom: 12px;
         }
 
+        /* NAVIGATION */
+
         nav {
-            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 5px;
+            width: 100%;
         }
 
         nav a {
-            margin-right: 15px;
             color: #222;
             text-decoration: none;
             font-weight: bold;
+            padding: 10px 14px;
+            border-radius: 5px;
+            white-space: nowrap;
         }
+
+        nav a:hover {
+            background: #aaa;
+        }
+
+        /* HERO */
 
         .hero {
             background: white;
@@ -43,12 +64,15 @@
             border: 1px solid #bbb;
         }
 
+        /* GAMES */
+
         .games {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 15px;
             max-width: 900px;
             margin: auto;
+            padding: 0 15px;
         }
 
         .game {
@@ -73,6 +97,11 @@
             border: 0;
             padding: 10px 18px;
             border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #006bd6;
         }
 
         footer {
@@ -81,24 +110,58 @@
             padding: 20px;
             color: #666;
         }
+
+        /* MOBILE */
+
+        @media (max-width: 600px) {
+
+            .logo {
+                font-size: 24px;
+            }
+
+            nav {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 4px;
+            }
+
+            nav a {
+                text-align: center;
+                width: 100%;
+                padding: 11px 4px;
+                font-size: 14px;
+            }
+
+            .hero {
+                margin: 15px;
+                padding: 20px;
+            }
+        }
     </style>
 </head>
 
 <body>
 
 <header>
-    <div class="logo">MY REVIVAL</div>
+
+    <div class="logo">MTB REVIVALS</div>
 
     <nav>
-        <a href="#">Home</a>
-        <a href="#games">Games</a>
-        <a href="#">Users</a>
-        <a href="#">News</a>
+        <a href="index.html">Home</a>
+        <a href="login.html">Account</a>
+        <a href="avatar.html">Avatar</a>
+        <a href="accessories.html">Accessories</a>
+        <a href="clothes.html">Clothes</a>
+        <a href="inventory.html">Inventory</a>
+        <a href="games.html">Games</a>
+        <a href="news.html">News</a>
     </nav>
+
 </header>
 
 <section class="hero">
-    <h1>Welcome to My Revival!</h1>
+
+    <h1>Welcome to MTB REVIVALS!</h1>
 
     <p>
         A community-made revival inspired by classic online gaming.
@@ -107,9 +170,11 @@
     <button onclick="alert('Game launcher coming soon!')">
         Play
     </button>
+
 </section>
 
 <section id="games">
+
     <h2 style="text-align:center;">Featured Games</h2>
 
     <div class="games">
@@ -136,11 +201,13 @@
         </div>
 
     </div>
+
 </section>
 
 <footer>
-    © 2026 My Revival
+    © 2026 MTB REVIVALS
 </footer>
 
 </body>
 </html>
+```
