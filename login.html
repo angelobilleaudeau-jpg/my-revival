@@ -1,9 +1,693 @@
-👤 Sign Up
-🔐 Login
-🚪 Logout
-👤 Username
-🔑 Password
-💰 Starting coins
-📦 Account inventory
-📱 iPhone-friendly design
-🟥 MTB REVIVALS branding
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MTB REVIVALS - Login</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #e9e9e9;
+    color: #222;
+}
+
+/* HEADER */
+
+header {
+    background: #333;
+    color: white;
+    padding: 18px;
+    text-align: center;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* CONTAINER */
+
+.container {
+    max-width: 420px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+/* BOX */
+
+.box {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-shadow: 0 3px 8px rgba(0,0,0,.12);
+}
+
+h1 {
+    text-align: center;
+    margin-top: 0;
+}
+
+.subtitle {
+    text-align: center;
+    color: #777;
+}
+
+/* INPUTS */
+
+input {
+    width: 100%;
+    padding: 13px;
+    margin-top: 10px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* BUTTON */
+
+button {
+    width: 100%;
+    padding: 13px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 5px;
+    background: #1683ff;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #006bd6;
+}
+
+.secondary {
+    background: #555;
+}
+
+.secondary:hover {
+    background: #333;
+}
+
+/* SWITCH */
+
+.switch {
+    text-align: center;
+    margin-top: 18px;
+}
+
+.switch button {
+    background: transparent;
+    color: #1683ff;
+    padding: 0;
+    margin: 0;
+}
+
+/* MESSAGE */
+
+.message {
+    margin-top: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.success {
+    color: #159447;
+}
+
+.error {
+    color: #d22;
+}
+
+/* ACCOUNT */
+
+#accountPage {
+    display: none;
+}
+
+.account-info {
+    background: #f3f3f3;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        MTB REVIVALS
+    </div>
+
+</header>
+
+<div class="container">
+
+<!-- LOGIN -->
+
+<div class="box" id="loginPage">
+
+    <h1>🔐 Login</h1>
+
+    <p class="subtitle">
+        Welcome back to MTB REVIVALS!
+    </p>
+
+    <input
+        id="loginUsername"
+        type="text"
+        placeholder="Username"
+        autocomplete="username"
+    >
+
+    <input
+        id="loginPassword"
+        type="password"
+        placeholder="Password"
+        autocomplete="current-password"
+    >
+
+    <button onclick="login()">
+        Login
+    </button>
+
+    <div id="loginMessage" class="message"></div>
+
+    <div class="switch">
+
+        Don't have an account?
+
+        <button onclick="showSignup()">
+            Sign Up
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- SIGNUP -->
+
+<div class="box" id="signupPage" style="display:none;">
+
+    <h1>👤 Sign Up</h1>
+
+    <p class="subtitle">
+        Create your MTB REVIVALS account.
+    </p>
+
+    <input
+        id="signupUsername"
+        type="text"
+        placeholder="Choose a username"
+        maxlength="20"
+    >
+
+    <input
+        id="signupPassword"
+        type="password"
+        placeholder="Choose a password"
+        minlength="6"
+    >
+
+    <input
+        id="signupPassword2"
+        type="password"
+        placeholder="Confirm password"
+        minlength="6"
+    >
+
+    <button onclick="signup()">
+        Create Account
+    </button>
+
+    <div id="signupMessage" class="message"></div>
+
+    <div class="switch">
+
+        Already have an account?
+
+        <button onclick="showLogin()">
+            Login
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- ACCOUNT -->
+
+<div class="box" id="accountPage">
+
+    <h1>👤 My Account</h1>
+
+    <p class="subtitle">
+        Welcome to MTB REVIVALS!
+    </p>
+
+    <div class="account-info">
+
+        <p>
+            <strong>Username:</strong>
+            <span id="accountUsername"></span>
+        </p>
+
+        <p>
+            <strong>💰 Coins:</strong>
+            <span id="accountCoins"></span>
+        </p>
+
+        <p>
+            <strong>📦 Items:</strong>
+            <span id="accountItems"></span>
+        </p>
+
+    </div>
+
+    <button onclick="goAccessories()">
+        🎩 Accessories
+    </button>
+
+    <button
+        class="secondary"
+        onclick="logout()"
+    >
+        🚪 Logout
+    </button>
+
+</div>
+
+</div>
+
+
+<script>
+
+/*
+==================================================
+MTB REVIVALS ACCOUNT SYSTEM
+==================================================
+
+This is a browser/localStorage prototype.
+
+Do NOT use real passwords.
+
+For a real public website with secure accounts,
+you will eventually need a backend.
+==================================================
+*/
+
+
+/* GET ACCOUNTS */
+
+function getAccounts() {
+
+    return JSON.parse(
+        localStorage.getItem("mtbAccounts")
+    ) || {};
+
+}
+
+
+/* SAVE ACCOUNTS */
+
+function saveAccounts(accounts) {
+
+    localStorage.setItem(
+        "mtbAccounts",
+        JSON.stringify(accounts)
+    );
+
+}
+
+
+/* SHOW SIGNUP */
+
+function showSignup() {
+
+    document.getElementById("loginPage")
+        .style.display = "none";
+
+    document.getElementById("signupPage")
+        .style.display = "block";
+
+}
+
+
+/* SHOW LOGIN */
+
+function showLogin() {
+
+    document.getElementById("signupPage")
+        .style.display = "none";
+
+    document.getElementById("loginPage")
+        .style.display = "block";
+
+}
+
+
+/* SIGN UP */
+
+function signup() {
+
+    const username =
+        document.getElementById(
+            "signupUsername"
+        ).value.trim();
+
+    const password =
+        document.getElementById(
+            "signupPassword"
+        ).value;
+
+    const password2 =
+        document.getElementById(
+            "signupPassword2"
+        ).value;
+
+    const message =
+        document.getElementById(
+            "signupMessage"
+        );
+
+
+    /* VALIDATION */
+
+    if (username.length < 3) {
+
+        message.className =
+            "message error";
+
+        message.textContent =
+            "Username must be at least 3 characters.";
+
+        return;
+
+    }
+
+
+    if (password.length < 6) {
+
+        message.className =
+            "message error";
+
+        message.textContent =
+            "Password must be at least 6 characters.";
+
+        return;
+
+    }
+
+
+    if (password !== password2) {
+
+        message.className =
+            "message error";
+
+        message.textContent =
+            "Passwords do not match.";
+
+        return;
+
+    }
+
+
+    /* GET ACCOUNTS */
+
+    const accounts = getAccounts();
+
+
+    /* CHECK USERNAME */
+
+    if (accounts[username]) {
+
+        message.className =
+            "message error";
+
+        message.textContent =
+            "That username already exists.";
+
+        return;
+
+    }
+
+
+    /* CREATE ACCOUNT */
+
+    accounts[username] = {
+
+        username: username,
+
+        password: password,
+
+        coins: 1000,
+
+        inventory: [],
+
+        favorites: [],
+
+        created: new Date().toISOString()
+
+    };
+
+
+    /* SAVE */
+
+    saveAccounts(accounts);
+
+
+    /* LOGIN */
+
+    localStorage.setItem(
+        "mtbLoggedIn",
+        username
+    );
+
+
+    message.className =
+        "message success";
+
+    message.textContent =
+        "Account created!";
+
+
+    setTimeout(
+        showAccount,
+        500
+    );
+
+}
+
+
+/* LOGIN */
+
+function login() {
+
+    const username =
+        document.getElementById(
+            "loginUsername"
+        ).value.trim();
+
+    const password =
+        document.getElementById(
+            "loginPassword"
+        ).value;
+
+    const message =
+        document.getElementById(
+            "loginMessage"
+        );
+
+
+    const accounts = getAccounts();
+
+
+    /* CHECK ACCOUNT */
+
+    if (!accounts[username]) {
+
+        message.className =
+            "message error";
+
+        message.textContent =
+            "Account not found.";
+
+        return;
+
+    }
+
+
+    /* CHECK PASSWORD */
+
+    if (
+        accounts[username].password
+        !== password
+    ) {
+
+        message.className =
+            "message error";
+
+        message.textContent =
+            "Incorrect password.";
+
+        return;
+
+    }
+
+
+    /* SAVE LOGIN */
+
+    localStorage.setItem(
+        "mtbLoggedIn",
+        username
+    );
+
+
+    message.className =
+        "message success";
+
+    message.textContent =
+        "Login successful!";
+
+
+    setTimeout(
+        showAccount,
+        500
+    );
+
+}
+
+
+/* SHOW ACCOUNT */
+
+function showAccount() {
+
+    const username =
+        localStorage.getItem(
+            "mtbLoggedIn"
+        );
+
+
+    if (!username) {
+
+        showLogin();
+
+        return;
+
+    }
+
+
+    const accounts =
+        getAccounts();
+
+    const account =
+        accounts[username];
+
+
+    if (!account) {
+
+        showLogin();
+
+        return;
+
+    }
+
+
+    document.getElementById(
+        "loginPage"
+    ).style.display = "none";
+
+    document.getElementById(
+        "signupPage"
+    ).style.display = "none";
+
+    document.getElementById(
+        "accountPage"
+    ).style.display = "block";
+
+
+    document.getElementById(
+        "accountUsername"
+    ).textContent =
+        account.username;
+
+
+    document.getElementById(
+        "accountCoins"
+    ).textContent =
+        account.coins;
+
+
+    document.getElementById(
+        "accountItems"
+    ).textContent =
+        account.inventory.length;
+
+}
+
+
+/* LOGOUT */
+
+function logout() {
+
+    localStorage.removeItem(
+        "mtbLoggedIn"
+    );
+
+    document.getElementById(
+        "accountPage"
+    ).style.display = "none";
+
+    document.getElementById(
+        "loginPage"
+    ).style.display = "block";
+
+}
+
+
+/* ACCESSORIES */
+
+function goAccessories() {
+
+    window.location.href =
+        "accessories.html";
+
+}
+
+
+/* CHECK LOGIN WHEN PAGE LOADS */
+
+window.onload = function() {
+
+    const loggedIn =
+        localStorage.getItem(
+            "mtbLoggedIn"
+        );
+
+    if (loggedIn) {
+
+        showAccount();
+
+    }
+
+};
+
+</script>
+
+</body>
+</html>
