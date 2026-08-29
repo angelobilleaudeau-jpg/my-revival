@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>MTB REVIVALS - Games</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #e9e9e9;
+    color: #222;
+}
+
+/* HEADER */
+
+header {
+    background: #333;
+    color: white;
+    padding: 15px;
+}
+
+.header {
+    max-width: 1100px;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.user {
+    background: #222;
+    padding: 8px 12px;
+    border-radius: 5px;
+}
+
+/* NAVIGATION */
+
+nav {
+    background: #444;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+nav a {
+    display: inline-block;
+
+    color: white;
+    text-decoration: none;
+
+    padding: 13px 15px;
+}
+
+nav a:hover {
+    background: #222;
+}
+
+/* MAIN */
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+}
+
+h1 {
+    margin-top: 0;
+}
+
+/* HERO */
+
+.hero {
+    background:
+        linear-gradient(
+            135deg,
+            #1683ff,
+            #6a35d4
+        );
+
+    color: white;
+
+    padding: 30px;
+
+    border-radius: 10px;
+
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    margin-bottom: 0;
+}
+
+
+/* SEARCH */
+
+.search {
+    width: 100%;
+
+    padding: 13px;
+
+    border: 1px solid #aaa;
+
+    border-radius: 5px;
+
+    font-size: 16px;
+
+    margin-bottom: 20px;
+}
+
+
+/* GAME GRID */
+
+.games {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(230px, 1fr));
+
+    gap: 18px;
+}
+
+
+/* GAME CARD */
+
+.game {
+
+    background: white;
+
+    border: 1px solid #ccc;
+
+    border-radius: 8px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 2px 6px
+        rgba(0,0,0,.1);
+
+    transition:
+        transform .15s;
+}
+
+.game:hover {
+
+    transform: translateY(-3px);
+}
+
+
+/* GAME THUMBNAIL */
+
+.thumbnail {
+
+    height: 150px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 70px;
+
+    color: white;
+}
+
+
+/* THUMBNAIL COLORS */
+
+.blue {
+    background:
+        linear-gradient(
+            135deg,
+            #1683ff,
+            #3c54d9
+        );
+}
+
+.green {
+    background:
+        linear-gradient(
+            135deg,
+            #159447,
+            #65c46f
+        );
+}
+
+.red {
+    background:
+        linear-gradient(
+            135deg,
+            #d93434,
+            #8d2020
+        );
+}
+
+.purple {
+    background:
+        linear-gradient(
+            135deg,
+            #8b42d6,
+            #4e2382
+        );
+}
+
+.orange {
+    background:
+        linear-gradient(
+            135deg,
+            #ff8a24,
+            #d94d00
+        );
+}
+
+
+/* GAME CONTENT */
+
+.game-content {
+
+    padding: 15px;
+}
+
+.game h2 {
+
+    margin: 0 0 7px;
+}
+
+.description {
+
+    color: #666;
+
+    min-height: 45px;
+}
+
+.players {
+
+    color: #777;
+
+    font-size: 13px;
+}
+
+
+/* PLAY BUTTON */
+
+.play {
+
+    display: block;
+
+    width: 100%;
+
+    border: 0;
+
+    background: #1683ff;
+
+    color: white;
+
+    padding: 11px;
+
+    border-radius: 5px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    margin-top: 10px;
+}
+
+.play:hover {
+
+    background: #006bd6;
+}
+
+
+/* STATUS */
+
+.status {
+
+    display: inline-block;
+
+    padding: 4px 8px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+}
+
+.online {
+
+    background: #d7f5df;
+
+    color: #16833d;
+}
+
+.beta {
+
+    background: #fff0c7;
+
+    color: #9a6a00;
+}
+
+
+/* EMPTY */
+
+.empty {
+
+    text-align: center;
+
+    background: white;
+
+    border: 1px solid #ccc;
+
+    border-radius: 8px;
+
+    padding: 30px;
+
+    display: none;
+}
+
+
+/* FOOTER */
+
+footer {
+
+    margin-top: 30px;
+
+    background: #333;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 25px;
+}
+
+
+/* MOBILE */
+
+@media(max-width:600px) {
+
+    .header {
+
+        flex-direction: column;
+
+    }
+
+    .hero h1 {
+
+        font-size: 28px;
+
+    }
+
+    .games {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 10px;
+
+    }
+
+    .thumbnail {
+
+        height: 120px;
+
+        font-size: 50px;
+
+    }
+
+    .game-content {
+
+        padding: 10px;
+
+    }
+
+    .game h2 {
+
+        font-size: 17px;
+
+    }
+
+    .description {
+
+        font-size: 13px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- HEADER -->
+
+<header>
+
+<div class="header">
+
+<div class="logo">
+MTB REVIVALS
+</div>
+
+<div class="user">
+
+👤
+
+<span id="username">
+Guest
+</span>
+
+</div>
+
+</div>
+
+</header>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+<a href="index.html">
+🏠 Home
+</a>
+
+<a href="login.html">
+👤 Account
+</a>
+
+<a href="avatar.html">
+🧑 Avatar
+</a>
+
+<a href="accessories.html">
+🎩 Accessories
+</a>
+
+<a href="clothes.html">
+👕 Clothes
+</a>
+
+<a href="inventory.html">
+📦 Inventory
+</a>
+
+<a href="games.html">
+🎮 Games
+</a>
+
+<a href="news.html">
+📰 News
+</a>
+
+</nav>
+
+
+<div class="container">
+
+
+<!-- HERO -->
+
+<div class="hero">
+
+<h1>
+🎮 MTB REVIVALS Games
+</h1>
+
+<p>
+Explore games made for the MTB REVIVALS community.
+</p>
+
+</div>
+
+
+<!-- SEARCH -->
+
+<input
+id="search"
+class="search"
+type="text"
+placeholder="🔍 Search games..."
+>
+
+
+<!-- GAMES -->
+
+<div
+id="games"
+class="games"
+></div>
+
+
+<!-- EMPTY -->
+
+<div
+id="empty"
+class="empty"
+>
+
+<h2>
+No games found
+</h2>
+
+<p>
+Try another search.
+</p>
+
+</div>
+
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>
+© 2026 MTB REVIVALS
+</p>
+
+<p>
+Fan-made revival project.
+</p>
+
+</footer>
+
+
+<script>
+
+/*
+==================================================
+MTB REVIVALS GAME LIST
+==================================================
+
+These are example game entries.
+
+To add a game, add another object to the
+games array below.
+
+==================================================
+*/
+
+
+const games = [
+
+{
+
+id: 1,
+
+name:
+"MTB Town",
+
+description:
+"Explore a small classic-style town and meet other players.",
+
+players:
+"0 players",
+
+status:
+"Online",
+
+color:
+"blue",
+
+icon:
+"🏙️",
+
+link:
+"#"
+
+},
+
+
+{
+
+id: 2,
+
+name:
+"Classic Obby",
+
+description:
+"Test your skills through a collection of obstacle courses.",
+
+players:
+"0 players",
+
+status:
+"Online",
+
+color:
+"green",
+
+icon:
+"🏃",
+
+link:
+"#"
+
+},
+
+
+{
+
+id: 3,
+
+name:
+"MTB Battle",
+
+description:
+"Compete with friends in a fast-paced arena.",
+
+players:
+"0 players",
+
+status:
+"Beta",
+
+color:
+"red",
+
+icon:
+"⚔️",
+
+link:
+"#"
+
+},
+
+
+{
+
+id: 4,
+
+name:
+"Brick World",
+
+description:
+"Build, explore, and create your own brick creations.",
+
+players:
+"0 players",
+
+status:
+"Online",
+
+color:
+"purple",
+
+icon:
+"🧱",
+
+link:
+"#"
+
+},
+
+
+{
+
+id: 5,
+
+name:
+"MTB Racing",
+
+description:
+"Race around the map and try to beat the fastest time.",
+
+players:
+"0 players",
+
+status:
+"Beta",
+
+color:
+"orange",
+
+icon:
+"🏎️",
+
+link:
+"#"
+
+}
+
+];
+
+
+/* DISPLAY USER */
+
+const username =
+localStorage.getItem(
+"mtbLoggedIn"
+);
+
+
+if(username) {
+
+    const accounts =
+        JSON.parse(
+            localStorage.getItem(
+                "mtbAccounts"
+            )
+        ) || {};
+
+
+    if(accounts[username]) {
+
+        document.getElementById(
+            "username"
+        ).textContent =
+            accounts[username].username;
+
+    }
+
+}
+
+
+/* GAME CONTAINER */
+
+const gameContainer =
+document.getElementById(
+    "games"
+);
+
+
+/* EMPTY */
+
+const empty =
+document.getElementById(
+    "empty"
+);
+
+
+/* DISPLAY GAMES */
+
+function displayGames() {
+
+    const search =
+        document.getElementById(
+            "search"
+        )
+        .value
+        .toLowerCase()
+        .trim();
+
+
+    gameContainer.innerHTML = "";
+
+
+    const filtered =
+        games.filter(
+            game =>
+                game.name
+                    .toLowerCase()
+                    .includes(search) ||
+
+                game.description
+                    .toLowerCase()
+                    .includes(search)
+        );
+
+
+    if(filtered.length === 0) {
+
+        empty.style.display =
+            "block";
+
+        return;
+
+    }
+
+
+    empty.style.display =
+        "none";
+
+
+    filtered.forEach(
+        game => {
+
+
+        const card =
+            document.createElement(
+                "div"
+            );
+
+
+        card.className =
+            "game";
+
+
+        card.innerHTML = `
+
+            <div
+                class="thumbnail
+                ${game.color}"
+            >
+
+                ${game.icon}
+
+            </div>
+
+
+            <div class="game-content">
+
+                <h2>
+                    ${game.name}
+                </h2>
+
+
+                <span
+                    class="
+                    status
+                    ${
+                        game.status === "Online"
+                        ? "online"
+                        : "beta"
+                    }
+                    "
+                >
+
+                    ${game.status}
+
+                </span>
+
+
+                <p class="description">
+
+                    ${game.description}
+
+                </p>
+
+
+                <p class="players">
+
+                    👥 ${game.players}
+
+                </p>
+
+
+                <button
+                    class="play"
+                    onclick="
+                        playGame(
+                            ${game.id}
+                        )
+                    "
+                >
+
+                    ▶ Play
+
+                </button>
+
+            </div>
+
+        `;
+
+
+        gameContainer.appendChild(
+            card
+        );
+
+    });
+
+}
+
+
+/* PLAY */
+
+function playGame(id) {
+
+    const game =
+        games.find(
+            item =>
+                item.id === id
+        );
+
+
+    if(!game) return;
+
+
+    /*
+        Replace game.link with the
+        URL of your actual game when
+        you have one.
+    */
+
+    if(
+        game.link &&
+        game.link !== "#"
+    ) {
+
+        window.location.href =
+            game.link;
+
+        return;
+
+    }
+
+
+    alert(
+
+        game.name +
+        " is coming soon!\n\n" +
+
+        "Add your game's URL to the " +
+        "link property in the games array."
+
+    );
+
+}
+
+
+/* SEARCH */
+
+document
+    .getElementById(
+        "search"
+    )
+    .addEventListener(
+        "input",
+        displayGames
+    );
+
+
+/* INITIAL LOAD */
+
+displayGames();
+
+</script>
+
+</body>
+
+</html>
