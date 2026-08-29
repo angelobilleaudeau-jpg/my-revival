@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>MTB REVIVALS - Inventory</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: #e9e9e9;
+
+    color: #222;
+}
+
+
+/* HEADER */
+
+header {
+    background: #333;
+
+    color: white;
+
+    padding: 15px;
+}
+
+.header {
+    max-width: 1050px;
+
+    margin: auto;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+.logo {
+    font-size: 24px;
+
+    font-weight: bold;
+}
+
+.user {
+    background: #222;
+
+    padding: 8px 12px;
+
+    border-radius: 5px;
+}
+
+
+/* NAV */
+
+nav {
+    background: #444;
+
+    overflow-x: auto;
+
+    white-space: nowrap;
+}
+
+nav a {
+    display: inline-block;
+
+    color: white;
+
+    text-decoration: none;
+
+    padding: 13px 15px;
+}
+
+nav a:hover {
+    background: #222;
+}
+
+
+/* MAIN */
+
+.container {
+    max-width: 1050px;
+
+    margin: auto;
+
+    padding: 20px;
+}
+
+h1 {
+    margin-top: 0;
+}
+
+
+/* TABS */
+
+.tabs {
+    display: flex;
+
+    gap: 8px;
+
+    overflow-x: auto;
+
+    margin-bottom: 15px;
+}
+
+.tabs button {
+    padding: 10px 16px;
+
+    background: white;
+
+    border: 1px solid #aaa;
+
+    border-radius: 5px;
+
+    white-space: nowrap;
+
+    cursor: pointer;
+}
+
+.tabs button.active {
+    background: #333;
+
+    color: white;
+}
+
+
+/* SEARCH */
+
+.search {
+    width: 100%;
+
+    padding: 13px;
+
+    border: 1px solid #aaa;
+
+    border-radius: 5px;
+
+    font-size: 16px;
+
+    margin-bottom: 20px;
+}
+
+
+/* GRID */
+
+.inventory {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(190px, 1fr));
+
+    gap: 15px;
+}
+
+
+/* ITEM */
+
+.item {
+    background: white;
+
+    border: 1px solid #ccc;
+
+    border-radius: 8px;
+
+    padding: 12px;
+
+    box-shadow:
+        0 2px 5px
+        rgba(0,0,0,.08);
+}
+
+.preview {
+    height: 150px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ddd,
+            #f5f5f5
+        );
+
+    border-radius: 6px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 65px;
+
+    margin-bottom: 10px;
+}
+
+.item h3 {
+    margin: 5px 0;
+}
+
+.type {
+    color: #777;
+
+    font-size: 13px;
+}
+
+.item button {
+    width: 100%;
+
+    padding: 10px;
+
+    margin-top: 8px;
+
+    border: 0;
+
+    border-radius: 5px;
+
+    background: #1683ff;
+
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.item button:hover {
+    background: #006bd6;
+}
+
+.item button.remove {
+    background: #d93434;
+}
+
+
+/* EMPTY */
+
+.empty {
+    background: white;
+
+    border: 1px solid #ccc;
+
+    border-radius: 8px;
+
+    padding: 35px;
+
+    text-align: center;
+}
+
+.empty a {
+    display: inline-block;
+
+    margin-top: 10px;
+
+    background: #1683ff;
+
+    color: white;
+
+    padding: 10px 18px;
+
+    border-radius: 5px;
+
+    text-decoration: none;
+}
+
+
+/* LOGIN */
+
+.login {
+    background: white;
+
+    border: 1px solid #ccc;
+
+    padding: 25px;
+
+    border-radius: 8px;
+
+    text-align: center;
+}
+
+.login a {
+    display: inline-block;
+
+    margin-top: 10px;
+
+    background: #1683ff;
+
+    color: white;
+
+    text-decoration: none;
+
+    padding: 10px 18px;
+
+    border-radius: 5px;
+}
+
+
+/* MOBILE */
+
+@media(max-width:500px) {
+
+    .header {
+        flex-direction: column;
+    }
+
+    .inventory {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 10px;
+    }
+
+    .item {
+        padding: 8px;
+    }
+
+    .preview {
+        height: 120px;
+
+        font-size: 50px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- HEADER -->
+
+<header>
+
+<div class="header">
+
+<div class="logo">
+MTB REVIVALS
+</div>
+
+<div class="user">
+
+👤
+
+<span id="username">
+Guest
+</span>
+
+</div>
+
+</div>
+
+</header>
+
+
+<!-- NAV -->
+
+<nav>
+
+<a href="index.html">
+Home
+</a>
+
+<a href="login.html">
+Account
+</a>
+
+<a href="avatar.html">
+Avatar
+</a>
+
+<a href="accessories.html">
+Accessories
+</a>
+
+<a href="clothes.html">
+Clothes
+</a>
+
+<a href="inventory.html">
+Inventory
+</a>
+
+<a href="games.html">
+Games
+</a>
+
+<a href="news.html">
+News
+</a>
+
+</nav>
+
+
+<div class="container">
+
+
+<!-- LOGIN -->
+
+<div
+id="loginBox"
+class="login"
+style="display:none;"
+>
+
+<h2>
+🔐 Login Required
+</h2>
+
+<p>
+Login to view your MTB REVIVALS inventory.
+</p>
+
+<a href="login.html">
+Login / Sign Up
+</a>
+
+</div>
+
+
+<!-- INVENTORY PAGE -->
+
+<div
+id="inventoryPage"
+style="display:none;"
+>
+
+<h1>
+📦 My Inventory
+</h1>
+
+<p>
+Everything you've collected on MTB REVIVALS.
+</p>
+
+
+<!-- TABS -->
+
+<div class="tabs">
+
+<button
+class="active"
+onclick="changeTab('All', this)"
+>
+All
+</button>
+
+<button
+onclick="changeTab('Accessory', this)"
+>
+🎩 Accessories
+</button>
+
+<button
+onclick="changeTab('Shirt', this)"
+>
+👕 Shirts
+</button>
+
+<button
+onclick="changeTab('Pants', this)"
+>
+👖 Pants
+</button>
+
+</div>
+
+
+<!-- SEARCH -->
+
+<input
+id="search"
+class="search"
+type="text"
+placeholder="🔍 Search your inventory..."
+>
+
+
+<!-- ITEMS -->
+
+<div
+id="items"
+class="inventory"
+></div>
+
+
+</div>
+
+</div>
+
+
+<script>
+
+/*
+==================================================
+MTB REVIVALS INVENTORY
+==================================================
+
+Uses the same account data as:
+
+login.html
+accessories.html
+clothes.html
+avatar.html
+
+==================================================
+*/
+
+
+/* ACCESSORIES */
+
+const accessories = [
+
+{
+id: 101,
+name: "Frozen Horns",
+type: "Accessory",
+icon: "❄️"
+},
+
+{
+id: 102,
+name: "Shadowless Head",
+type: "Accessory",
+icon: "💀"
+},
+
+{
+id: 103,
+name: "Void Walker Leg",
+type: "Accessory",
+icon: "🦵"
+},
+
+{
+id: 104,
+name: "Classic Crown",
+type: "Accessory",
+icon: "👑"
+},
+
+{
+id: 105,
+name: "Classic Fedora",
+type: "Accessory",
+icon: "🎩"
+},
+
+{
+id: 106,
+name: "Golden Wings",
+type: "Accessory",
+icon: "🪽"
+},
+
+{
+id: 107,
+name: "Classic Smile",
+type: "Accessory",
+icon: "🙂"
+},
+
+{
+id: 108,
+name: "Blue Headphones",
+type: "Accessory",
+icon: "🎧"
+},
+
+{
+id: 109,
+name: "Ice Backpack",
+type: "Accessory",
+icon: "🎒"
+}
+
+];
+
+
+/* CLOTHES */
+
+const clothes = [
+
+{
+id: 201,
+name: "Classic Red Shirt",
+type: "Shirt",
+icon: "👕"
+},
+
+{
+id: 202,
+name: "Classic Blue Shirt",
+type: "Shirt",
+icon: "👕"
+},
+
+{
+id: 203,
+name: "Classic Green Shirt",
+type: "Shirt",
+icon: "👕"
+},
+
+{
+id: 204,
+name: "Classic Black Shirt",
+type: "Shirt",
+icon: "👕"
+},
+
+{
+id: 205,
+name: "Classic White Shirt",
+type: "Shirt",
+icon: "👕"
+},
+
+{
+id: 206,
+name: "Classic Gold Shirt",
+type: "Shirt",
+icon: "👕"
+},
+
+{
+id: 207,
+name: "Classic Blue Jeans",
+type: "Pants",
+icon: "👖"
+},
+
+{
+id: 208,
+name: "Dark Classic Jeans",
+type: "Pants",
+icon: "👖"
+},
+
+{
+id: 209,
+name: "Classic Black Pants",
+type: "Pants",
+icon: "👖"
+},
+
+{
+id: 210,
+name: "Classic White Pants",
+type: "Pants",
+icon: "👖"
+}
+
+];
+
+
+/* ALL ITEMS */
+
+const allItems =
+[
+    ...accessories,
+    ...clothes
+];
+
+
+/* USER */
+
+const username =
+localStorage.getItem(
+"mtbLoggedIn"
+);
+
+
+/* ACCOUNTS */
+
+function getAccounts() {
+
+return JSON.parse(
+localStorage.getItem(
+"mtbAccounts"
+)
+) || {};
+
+}
+
+
+/* SAVE */
+
+function saveAccounts(accounts) {
+
+localStorage.setItem(
+"mtbAccounts",
+
+JSON.stringify(accounts)
+
+);
+
+}
+
+
+/* LOGIN CHECK */
+
+if(!username) {
+
+document.getElementById(
+"loginBox"
+).style.display =
+"block";
+
+} else {
+
+document.getElementById(
+"inventoryPage"
+).style.display =
+"block";
+
+loadInventory();
+
+}
+
+
+/* CURRENT TAB */
+
+let currentTab = "All";
+
+
+/* LOAD */
+
+function loadInventory() {
+
+const accounts =
+getAccounts();
+
+const account =
+accounts[username];
+
+
+if(!account) {
+
+localStorage.removeItem(
+"mtbLoggedIn"
+);
+
+location.reload();
+
+return;
+
+}
+
+
+document.getElementById(
+"username"
+).textContent =
+account.username;
+
+
+if(!account.inventory) {
+
+account.inventory = [];
+
+saveAccounts(accounts);
+
+}
+
+
+displayInventory();
+
+}
+
+
+/* CHANGE TAB */
+
+function changeTab(
+tab,
+button
+) {
+
+currentTab = tab;
+
+
+document
+.querySelectorAll(
+".tabs button"
+)
+.forEach(
+btn =>
+btn.classList.remove(
+"active"
+)
+);
+
+
+button.classList.add(
+"active"
+);
+
+
+displayInventory();
+
+}
+
+
+/* DISPLAY */
+
+function displayInventory() {
+
+const accounts =
+getAccounts();
+
+const account =
+accounts[username];
+
+
+const container =
+document.getElementById(
+"items"
+);
+
+
+const search =
+document.getElementById(
+"search"
+)
+.value
+.toLowerCase();
+
+
+container.innerHTML = "";
+
+
+/* GET OWNED ITEMS */
+
+const ownedItems =
+allItems.filter(
+item =>
+account.inventory
+.includes(item.id)
+);
+
+
+/* FILTER */
+
+const filtered =
+ownedItems.filter(
+item => {
+
+const tabMatch =
+currentTab === "All" ||
+item.type === currentTab;
+
+
+const searchMatch =
+item.name
+.toLowerCase()
+.includes(search);
+
+
+return (
+tabMatch &&
+searchMatch
+);
+
+});
+
+
+/* EMPTY */
+
+if(
+filtered.length === 0
+) {
+
+container.innerHTML = `
+
+<div class="empty">
+
+<h2>
+📦 Nothing here yet
+</h2>
+
+<p>
+You haven't collected any items
+in this category.
+</p>
+
+<a href="accessories.html">
+Browse Accessories
+</a>
+
+</div>
+
+`;
+
+return;
+
+}
+
+
+/* CREATE CARDS */
+
+filtered.forEach(
+item => {
+
+
+const div =
+document.createElement(
+"div"
+);
+
+
+div.className =
+"item";
+
+
+const equipped =
+isEquipped(item.id);
+
+
+div.innerHTML = `
+
+<div class="preview">
+
+${item.icon}
+
+</div>
+
+
+<h3>
+${item.name}
+</h3>
+
+
+<div class="type">
+${item.type}
+</div>
+
+
+<button
+onclick="equipItem(${item.id})"
+>
+
+${
+equipped
+? "✓ Equipped"
+: "Equip"
+}
+
+</button>
+
+
+${
+equipped
+?
+
+`<button
+class="remove"
+onclick="
+unequipItem(
+${item.id}
+)
+"
+>
+Unequip
+</button>`
+
+:
+
+""
+
+}
+
+`;
+
+
+container.appendChild(
+div
+);
+
+});
+
+}
+
+
+/* CHECK EQUIPPED */
+
+function isEquipped(id) {
+
+const accounts =
+getAccounts();
+
+const account =
+accounts[username];
+
+
+if(
+account.equippedAccessory === id
+) {
+
+return true;
+
+}
+
+
+if(
+account.equippedShirt === id
+) {
+
+return true;
+
+}
+
+
+if(
+account.equippedPants === id
+) {
+
+return true;
+
+}
+
+
+return false;
+
+}
+
+
+/* EQUIP */
+
+function equipItem(id) {
+
+const accounts =
+getAccounts();
+
+const account =
+accounts[username];
+
+
+const item =
+allItems.find(
+i => i.id === id
+);
+
+
+if(!item) return;
+
+
+/* ACCESSORY */
+
+if(
+item.type === "Accessory"
+) {
+
+account.equippedAccessory =
+id;
+
+}
+
+
+/* SHIRT */
+
+if(
+item.type === "Shirt"
+) {
+
+account.equippedShirt =
+id;
+
+}
+
+
+/* PANTS */
+
+if(
+item.type === "Pants"
+) {
+
+account.equippedPants =
+id;
+
+}
+
+
+saveAccounts(accounts);
+
+
+displayInventory();
+
+
+alert(
+item.name +
+" equipped!"
+);
+
+}
+
+
+/* UNEQUIP */
+
+function unequipItem(id) {
+
+const accounts =
+getAccounts();
+
+const account =
+accounts[username];
+
+
+if(
+account.equippedAccessory === id
+) {
+
+account.equippedAccessory =
+null;
+
+}
+
+
+if(
+account.equippedShirt === id
+) {
+
+account.equippedShirt =
+null;
+
+}
+
+
+if(
+account.equippedPants === id
+) {
+
+account.equippedPants =
+null;
+
+}
+
+
+saveAccounts(accounts);
+
+
+displayInventory();
+
+}
+
+
+/* SEARCH */
+
+document
+.getElementById(
+"search"
+)
+.addEventListener(
+"input",
+displayInventory
+);
+
+</script>
+
+</body>
+
+</html>
