@@ -21,9 +21,7 @@ body {
     color: #333;
 }
 
-/* =========================
-   HEADER
-========================= */
+/* HEADER */
 
 header {
     background: linear-gradient(#f7f7f7, #cfcfcf);
@@ -64,9 +62,7 @@ nav a.active {
 }
 
 
-/* =========================
-   MAIN
-========================= */
+/* MAIN */
 
 .container {
     max-width: 1000px;
@@ -91,72 +87,48 @@ nav a.active {
 }
 
 
-/* =========================
-   CATEGORY BAR
-========================= */
+/* CATEGORIES */
 
 .categories {
     margin-top: 15px;
-
     display: flex;
     flex-wrap: wrap;
-
     gap: 5px;
 }
 
 .category {
     padding: 9px 14px;
-
-    background:
-        linear-gradient(#fff,#ddd);
-
+    background: linear-gradient(#fff,#ddd);
     border: 1px solid #999;
-
     cursor: pointer;
-
     font-weight: bold;
 }
 
 .category:hover,
 .category.active {
-    background:
-        linear-gradient(#75c6ed,#1683c5);
-
+    background: linear-gradient(#75c6ed,#1683c5);
     color: white;
 }
 
 
-/* =========================
-   GRID
-========================= */
+/* GRID */
 
 .pants-grid {
-
     margin-top: 15px;
-
     display: grid;
-
     grid-template-columns:
         repeat(auto-fit,minmax(210px,1fr));
-
     gap: 15px;
 }
 
 
-/* =========================
-   ITEM
-========================= */
+/* ITEM */
 
 .item {
-
     background: white;
-
     border: 1px solid #aaa;
-
     padding: 12px;
-
-    box-shadow:
-        0 1px 2px rgba(0,0,0,.12);
+    box-shadow: 0 1px 2px rgba(0,0,0,.12);
 }
 
 .item:hover {
@@ -164,74 +136,40 @@ nav a.active {
 }
 
 
-/* =========================
-   PREVIEW
-========================= */
+/* PREVIEW */
 
 .preview {
-
     height: 210px;
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
-    background:
-        linear-gradient(
-            135deg,
-            #eee,
-            #d2d2d2
-        );
-
+    background: linear-gradient(135deg,#eee,#d2d2d2);
     border: 1px solid #aaa;
-
     overflow: hidden;
 }
 
 
-/* =========================
-   PANTS
-========================= */
+/* PANTS */
 
 .pants {
-
     position: relative;
-
     width: 130px;
     height: 175px;
-
     display: flex;
-
     gap: 5px;
-
-    filter:
-        drop-shadow(
-            0 4px 4px rgba(0,0,0,.25)
-        );
+    filter: drop-shadow(0 4px 4px rgba(0,0,0,.25));
 }
 
-
-/* TWO LEGS */
-
 .pants-leg {
-
     position: relative;
-
     width: 62px;
     height: 175px;
-
-    border:
-        3px solid #444;
-
+    border: 3px solid #444;
     overflow: hidden;
 }
 
 
-/* =========================
-   COLORS
-========================= */
+/* COLORS */
 
 .black {
     background:
@@ -273,64 +211,32 @@ nav a.active {
         );
 }
 
-.white-pants {
-    background:
-        linear-gradient(
-            90deg,
-            #eee,
-            #fff,
-            #ccc
-        );
-}
 
-
-/* =========================
-   MTB LOGO
-========================= */
+/* MTB LOGO */
 
 .logo-pants {
-
     position: absolute;
-
     width: 100%;
-
     top: 58px;
-
     text-align: center;
-
     font-weight: 900;
-
     font-size: 15px;
-
     letter-spacing: 2px;
-
     color: white;
-
-    text-shadow:
-        2px 2px 0 #000;
+    text-shadow: 2px 2px 0 #000;
 }
 
 
-/* =========================
-   STAR
-========================= */
+/* STAR */
 
 .star {
-
     position: absolute;
-
     width: 43px;
     height: 43px;
-
     left: 10px;
     top: 40px;
 
-    background:
-        linear-gradient(
-            135deg,
-            white,
-            #888
-        );
+    background: linear-gradient(135deg,#fff,#888);
 
     clip-path:
         polygon(
@@ -346,77 +252,43 @@ nav a.active {
             39% 35%
         );
 
-    filter:
-        drop-shadow(
-            0 0 5px white
-        );
+    filter: drop-shadow(0 0 5px white);
 }
 
 
-/* =========================
-   FLAME
-========================= */
+/* FLAME */
 
 .flame {
-
     position: absolute;
-
     width: 100%;
-
     top: 50px;
-
     text-align: center;
-
     font-size: 38px;
-
-    filter:
-        drop-shadow(
-            0 0 4px #ff4500
-        );
 }
 
 
-/* =========================
-   LIGHTNING
-========================= */
+/* LIGHTNING */
 
 .lightning {
-
     position: absolute;
-
     width: 100%;
-
     top: 42px;
-
     text-align: center;
-
     font-size: 48px;
-
     color: white;
-
-    text-shadow:
-        0 0 7px #55caff;
+    text-shadow: 0 0 7px #55caff;
 }
 
 
-/* =========================
-   SEASONAL PANTS
-========================= */
+/* ALL SEASONS */
 
 .seasons {
-
-    animation:
-        seasons 12s infinite;
+    animation: seasons 12s infinite;
 }
-
-
-/* SPRING */
 
 @keyframes seasons {
 
-    0%,
-    24% {
-
+    0%,24% {
         background:
             linear-gradient(
                 90deg,
@@ -424,15 +296,9 @@ nav a.active {
                 #f7a7d8,
                 #7ddcff
             );
-
     }
 
-
-    /* SUMMER */
-
-    25%,
-    49% {
-
+    25%,49% {
         background:
             linear-gradient(
                 90deg,
@@ -440,15 +306,9 @@ nav a.active {
                 #ffe45c,
                 #35d86a
             );
-
     }
 
-
-    /* FALL */
-
-    50%,
-    74% {
-
+    50%,74% {
         background:
             linear-gradient(
                 90deg,
@@ -456,15 +316,9 @@ nav a.active {
                 #e47719,
                 #e7b334
             );
-
     }
 
-
-    /* WINTER */
-
-    75%,
-    100% {
-
+    75%,100% {
         background:
             linear-gradient(
                 90deg,
@@ -472,77 +326,46 @@ nav a.active {
                 #eafaff,
                 #729cff
             );
-
     }
-
 }
 
-
-/* SEASON SYMBOL */
-
 .season-symbol {
-
     position: absolute;
-
     width: 100%;
-
     top: 42px;
-
     text-align: center;
-
     font-size: 38px;
-
     z-index: 3;
 }
 
 
-/* =========================
-   TEXT
-========================= */
+/* TEXT */
 
 .item h3 {
-
-    margin:
-        12px 0 5px;
-
+    margin: 12px 0 5px;
     font-size: 17px;
 }
 
 .item p {
-
-    margin:
-        4px 0;
-
+    margin: 4px 0;
     color: #666;
-
     font-size: 13px;
 }
 
 .price {
-
     margin-top: 8px;
-
     font-weight: bold;
-
     color: #1683c5;
 }
 
 
-/* =========================
-   BUTTON
-========================= */
+/* EQUIP BUTTON */
 
 button {
-
     margin-top: 10px;
-
     width: 100%;
-
     padding: 9px;
-
-    border:
-        1px solid #555;
-
+    border: 1px solid #555;
     border-radius: 3px;
 
     background:
@@ -552,14 +375,11 @@ button {
         );
 
     color: white;
-
     font-weight: bold;
-
     cursor: pointer;
 }
 
 button:hover {
-
     background:
         linear-gradient(
             #82c9ef,
@@ -568,7 +388,6 @@ button:hover {
 }
 
 button.equipped {
-
     background:
         linear-gradient(
             #777,
@@ -579,29 +398,19 @@ button.equipped {
 }
 
 
-/* =========================
-   STATUS
-========================= */
+/* STATUS */
 
 .status {
-
     margin-top: 15px;
-
     padding: 12px;
-
     background: white;
-
     border: 1px solid #aaa;
-
     color: #1683c5;
-
     font-weight: bold;
 }
 
 
-/* =========================
-   MOBILE
-========================= */
+/* MOBILE */
 
 @media(max-width:600px) {
 
@@ -626,11 +435,9 @@ button.equipped {
     .pants {
         transform: scale(.75);
     }
-
 }
 
 </style>
-
 </head>
 
 
@@ -708,6 +515,8 @@ MTB REVIVALS Pants
 
 Original MTB pants made for the classic avatar style.
 
+All pants are completely free.
+
 </div>
 
 
@@ -716,37 +525,37 @@ Original MTB pants made for the classic avatar style.
 <div class="categories">
 
 <div class="category active"
-     onclick="filterItems('all',this)">
+onclick="filterItems('all',this)">
 All
 </div>
 
 <div class="category"
-     onclick="filterItems('mtb',this)">
+onclick="filterItems('mtb',this)">
 MTB
 </div>
 
 <div class="category"
-     onclick="filterItems('streetwear',this)">
+onclick="filterItems('streetwear',this)">
 Streetwear
 </div>
 
 <div class="category"
-     onclick="filterItems('seasonal',this)">
+onclick="filterItems('seasonal',this)">
 Seasonal
 </div>
 
 </div>
 
 
-<!-- PANTS -->
+<!-- PANTS GRID -->
 
 <div class="pants-grid">
 
 
-<!-- MTB BLACK -->
+<!-- BLACK -->
 
 <div class="item"
-     data-category="mtb">
+data-category="mtb">
 
 <div class="preview">
 
@@ -785,7 +594,10 @@ FREE
 </div>
 
 <button
-onclick="equipPants(this,'MTB Black Logo Pants')">
+onclick="equipPants(
+this,
+'MTB Black Logo Pants'
+)">
 Equip
 </button>
 
@@ -795,7 +607,7 @@ Equip
 <!-- GREY -->
 
 <div class="item"
-     data-category="mtb">
+data-category="mtb">
 
 <div class="preview">
 
@@ -834,7 +646,10 @@ FREE
 </div>
 
 <button
-onclick="equipPants(this,'MTB Grey Classic Pants')">
+onclick="equipPants(
+this,
+'MTB Grey Classic Pants'
+)">
 Equip
 </button>
 
@@ -844,7 +659,7 @@ Equip
 <!-- STAR -->
 
 <div class="item"
-     data-category="streetwear">
+data-category="streetwear">
 
 <div class="preview">
 
@@ -879,7 +694,10 @@ FREE
 </div>
 
 <button
-onclick="equipPants(this,'MTB Star Pants')">
+onclick="equipPants(
+this,
+'MTB Star Pants'
+)">
 Equip
 </button>
 
@@ -889,7 +707,7 @@ Equip
 <!-- FLAME -->
 
 <div class="item"
-     data-category="streetwear">
+data-category="streetwear">
 
 <div class="preview">
 
@@ -920,7 +738,7 @@ MTB Flame Pants
 </h3>
 
 <p>
-Original red MTB flame design.
+Original MTB flame design.
 </p>
 
 <div class="price">
@@ -928,7 +746,10 @@ FREE
 </div>
 
 <button
-onclick="equipPants(this,'MTB Flame Pants')">
+onclick="equipPants(
+this,
+'MTB Flame Pants'
+)">
 Equip
 </button>
 
@@ -938,7 +759,7 @@ Equip
 <!-- LIGHTNING -->
 
 <div class="item"
-     data-category="streetwear">
+data-category="streetwear">
 
 <div class="preview">
 
@@ -977,7 +798,10 @@ FREE
 </div>
 
 <button
-onclick="equipPants(this,'MTB Lightning Pants')">
+onclick="equipPants(
+this,
+'MTB Lightning Pants'
+)">
 Equip
 </button>
 
@@ -987,7 +811,7 @@ Equip
 <!-- MIDNIGHT -->
 
 <div class="item"
-     data-category="streetwear">
+data-category="streetwear">
 
 <div class="preview">
 
@@ -1026,7 +850,10 @@ FREE
 </div>
 
 <button
-onclick="equipPants(this,'MTB Midnight Pants')">
+onclick="equipPants(
+this,
+'MTB Midnight Pants'
+)">
 Equip
 </button>
 
@@ -1036,7 +863,7 @@ Equip
 <!-- JEANS -->
 
 <div class="item"
-     data-category="mtb">
+data-category="mtb">
 
 <div class="preview">
 
@@ -1075,7 +902,10 @@ FREE
 </div>
 
 <button
-onclick="equipPants(this,'MTB Classic Jeans')">
+onclick="equipPants(
+this,
+'MTB Classic Jeans'
+)">
 Equip
 </button>
 
@@ -1085,7 +915,7 @@ Equip
 <!-- ALL SEASONS -->
 
 <div class="item"
-     data-category="seasonal mtb">
+data-category="seasonal mtb">
 
 <div class="preview">
 
@@ -1093,8 +923,9 @@ Equip
 
 <div class="pants-leg seasons">
 
-<div class="season-symbol"
-     id="season1">
+<div
+class="season-symbol"
+id="season1">
 🌸
 </div>
 
@@ -1102,8 +933,9 @@ Equip
 
 <div class="pants-leg seasons">
 
-<div class="season-symbol"
-     id="season2">
+<div
+class="season-symbol"
+id="season2">
 🌸
 </div>
 
@@ -1118,7 +950,7 @@ MTB All Seasons Pants
 </h3>
 
 <p>
-Spring, Summer, Fall and Winter in one design.
+Spring • Summer • Fall • Winter
 </p>
 
 <div class="price">
@@ -1126,7 +958,10 @@ FREE
 </div>
 
 <button
-onclick="equipPants(this,'MTB All Seasons Pants')">
+onclick="equipPants(
+this,
+'MTB All Seasons Pants'
+)">
 Equip
 </button>
 
@@ -1137,7 +972,7 @@ Equip
 
 
 <div class="status"
-     id="status">
+id="status">
 
 No pants equipped.
 
@@ -1147,8 +982,7 @@ No pants equipped.
 </div>
 
 
-<footer
-style="
+<footer style="
 text-align:center;
 padding:25px;
 color:#777;
@@ -1162,7 +996,7 @@ MTB REVIVALS © 2026
 <script>
 
 /* =========================
-   EQUIP PANTS
+   EQUIP
 ========================= */
 
 function equipPants(button,name) {
@@ -1174,17 +1008,17 @@ function equipPants(button,name) {
 
 
     document
-        .querySelectorAll("button")
-        .forEach(function(btn) {
+    .querySelectorAll(".item button")
+    .forEach(function(btn) {
 
-            btn.classList.remove(
-                "equipped"
-            );
+        btn.classList.remove(
+            "equipped"
+        );
 
-            btn.textContent =
-                "Equip";
+        btn.textContent =
+            "Equip";
 
-        });
+    });
 
 
     button.classList.add(
@@ -1196,8 +1030,8 @@ function equipPants(button,name) {
 
 
     document
-        .getElementById("status")
-        .textContent =
+    .getElementById("status")
+    .textContent =
         name +
         " equipped!";
 
@@ -1205,7 +1039,7 @@ function equipPants(button,name) {
 
 
 /* =========================
-   LOAD PANTS
+   LOAD EQUIPPED
 ========================= */
 
 function loadEquipped() {
@@ -1222,40 +1056,43 @@ function loadEquipped() {
 
 
     document
-        .querySelectorAll(".item")
-        .forEach(function(item) {
+    .querySelectorAll(".item")
+    .forEach(function(item) {
 
-            const button =
-                item.querySelector(
-                    "button"
-                );
+        const button =
+            item.querySelector("button");
 
-            if (
-                button &&
-                button
-                    .getAttribute(
-                        "onclick"
-                    )
-                    .includes(
-                        saved
-                    )
-            ) {
+        if (!button) {
+            return;
+        }
 
-                button.classList.add(
-                    "equipped"
-                );
 
-                button.textContent =
-                    "Equipped";
+        const buttonCode =
+            button.getAttribute(
+                "onclick"
+            );
 
-            }
 
-        });
+        if (
+            buttonCode &&
+            buttonCode.includes(saved)
+        ) {
+
+            button.classList.add(
+                "equipped"
+            );
+
+            button.textContent =
+                "Equipped";
+
+        }
+
+    });
 
 
     document
-        .getElementById("status")
-        .textContent =
+    .getElementById("status")
+    .textContent =
         saved +
         " equipped!";
 
@@ -1272,14 +1109,14 @@ function filterItems(
 ) {
 
     document
-        .querySelectorAll(".category")
-        .forEach(function(btn) {
+    .querySelectorAll(".category")
+    .forEach(function(btn) {
 
-            btn.classList.remove(
-                "active"
-            );
+        btn.classList.remove(
+            "active"
+        );
 
-        });
+    });
 
 
     selected.classList.add(
@@ -1288,36 +1125,36 @@ function filterItems(
 
 
     document
-        .querySelectorAll(".item")
-        .forEach(function(item) {
+    .querySelectorAll(".item")
+    .forEach(function(item) {
 
-            const categories =
-                item.dataset.category
-                    .split(" ");
+        const categories =
+            item.dataset.category
+            .split(" ");
 
 
-            if (
-                category === "all" ||
-                categories.includes(category)
-            ) {
+        if (
+            category === "all" ||
+            categories.includes(category)
+        ) {
 
-                item.style.display =
-                    "";
+            item.style.display =
+                "";
 
-            } else {
+        } else {
 
-                item.style.display =
-                    "none";
+            item.style.display =
+                "none";
 
-            }
+        }
 
-        });
+    });
 
 }
 
 
 /* =========================
-   SEASON ICONS
+   SEASONS
 ========================= */
 
 const seasonIcons = [
@@ -1333,15 +1170,15 @@ let season = 0;
 function changeSeason() {
 
     document
-        .querySelectorAll(
-            ".season-symbol"
-        )
-        .forEach(function(symbol) {
+    .querySelectorAll(
+        ".season-symbol"
+    )
+    .forEach(function(symbol) {
 
-            symbol.textContent =
-                seasonIcons[season];
+        symbol.textContent =
+            seasonIcons[season];
 
-        });
+    });
 
 
     season =
