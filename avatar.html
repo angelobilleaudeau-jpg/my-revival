@@ -1,7 +1,6 @@
 ```html
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,7 +22,7 @@ body {
 /* HEADER */
 
 header {
-    background: linear-gradient(#f7f7f7,#cfcfcf);
+    background: linear-gradient(#f7f7f7, #cfcfcf);
     border-bottom: 1px solid #999;
 }
 
@@ -69,7 +68,7 @@ nav a.active {
 }
 
 .title {
-    background: linear-gradient(#666,#444);
+    background: linear-gradient(#666, #444);
     color: white;
     border: 1px solid #333;
     padding: 11px 13px;
@@ -77,7 +76,7 @@ nav a.active {
     font-weight: bold;
 }
 
-/* AVATAR */
+/* AVATAR AREA */
 
 .avatar-section {
     background: white;
@@ -91,7 +90,7 @@ nav a.active {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg,#eee,#d4d4d4);
+    background: linear-gradient(135deg, #eee, #d4d4d4);
     border: 1px solid #aaa;
     overflow: hidden;
 }
@@ -220,11 +219,6 @@ nav a.active {
     box-shadow: 0 0 5px red;
 }
 
-.face-evil .smile {
-    border: 0;
-    border-top: 4px solid #222;
-}
-
 .face-cool .eye {
     width: 28px;
     height: 10px;
@@ -284,8 +278,6 @@ nav a.active {
     z-index: 2;
 }
 
-/* SHIRTS */
-
 .shirt-logo {
     position: absolute;
     width: 100%;
@@ -333,7 +325,6 @@ nav a.active {
     top: 30px;
     text-align: center;
     font-size: 55px;
-    color: white;
 }
 
 /* ARMS */
@@ -375,8 +366,6 @@ nav a.active {
 .leg-right {
     right: 78px;
 }
-
-/* PANTS */
 
 .pants-logo {
     position: absolute;
@@ -423,7 +412,6 @@ nav a.active {
     top: 25px;
     text-align: center;
     font-size: 35px;
-    color: white;
 }
 
 .season-pants {
@@ -431,26 +419,24 @@ nav a.active {
 }
 
 @keyframes seasons {
-    0%,24% {
-        background: linear-gradient(90deg,#67d477,#f2a5d4);
+    0%, 24% {
+        background: linear-gradient(90deg, #67d477, #f2a5d4);
     }
 
-    25%,49% {
-        background: linear-gradient(90deg,#18bde9,#f4df54);
+    25%, 49% {
+        background: linear-gradient(90deg, #18bde9, #f4df54);
     }
 
-    50%,74% {
-        background: linear-gradient(90deg,#8a4218,#df7a1d);
+    50%, 74% {
+        background: linear-gradient(90deg, #8a4218, #df7a1d);
     }
 
-    75%,100% {
-        background: linear-gradient(90deg,#69d8ff,#eafaff);
+    75%, 100% {
+        background: linear-gradient(90deg, #69d8ff, #eafaff);
     }
 }
 
-/* =========================
-   ACCESSORIES
-========================= */
+/* ACCESSORIES */
 
 .accessory {
     position: absolute;
@@ -458,7 +444,7 @@ nav a.active {
     pointer-events: none;
 }
 
-/* FEDORAS */
+/* FEDORA */
 
 .fedora {
     position: absolute;
@@ -620,9 +606,154 @@ nav a.active {
     transform: rotate(20deg) scaleX(-1);
 }
 
-/* =========================
-   ACCESSORY COUNTER
-========================= */
+/* VALKYRIE */
+
+.valkyrie {
+    position: absolute;
+    width: 165px;
+    height: 125px;
+    left: 57px;
+    top: 8px;
+    z-index: 21;
+    filter: drop-shadow(0 3px 5px rgba(0,0,0,.35));
+}
+
+.valkyrie .hood {
+    position: absolute;
+    width: 130px;
+    height: 67px;
+    left: 18px;
+    top: 24px;
+    border-radius: 65px 65px 18px 18px;
+    border: 3px solid #555;
+}
+
+.valkyrie .horn {
+    position: absolute;
+    width: 48px;
+    height: 100px;
+    top: 0;
+    border: 3px solid #555;
+    border-radius: 80% 20% 20% 20%;
+}
+
+.valkyrie .horn.left {
+    left: 0;
+    transform: rotate(-27deg);
+}
+
+.valkyrie .horn.right {
+    right: 0;
+    transform: rotate(27deg) scaleX(-1);
+}
+
+.valkyrie.sparkle .hood,
+.valkyrie.sparkle .horn {
+    background: linear-gradient(
+        135deg,
+        #fff,
+        #f4d7ff,
+        #ffe36e,
+        #fff,
+        #8deaff
+    );
+}
+
+.valkyrie.red .hood,
+.valkyrie.red .horn {
+    background: linear-gradient(
+        135deg,
+        #ff7777,
+        #b30000,
+        #ffb0b0
+    );
+}
+
+.valkyrie.blue .hood,
+.valkyrie.blue .horn {
+    background: linear-gradient(
+        135deg,
+        #a9efff,
+        #1683c5,
+        #d8fbff
+    );
+}
+
+.valkyrie.purple .hood,
+.valkyrie.purple .horn {
+    background: linear-gradient(
+        135deg,
+        #e2b0ff,
+        #7020a8,
+        #f3d7ff
+    );
+}
+
+.valkyrie.green .hood,
+.valkyrie.green .horn {
+    background: linear-gradient(
+        135deg,
+        #aaffbd,
+        #159447,
+        #d8ffe2
+    );
+}
+
+.valkyrie.pink .hood,
+.valkyrie.pink .horn {
+    background: linear-gradient(
+        135deg,
+        #ffd0ee,
+        #db268c,
+        #ffeff9
+    );
+}
+
+.valkyrie.white .hood,
+.valkyrie.white .horn {
+    background: linear-gradient(
+        135deg,
+        #fff,
+        #c9c9c9,
+        #fff
+    );
+}
+
+.valkyrie.black .hood,
+.valkyrie.black .horn {
+    background: linear-gradient(
+        135deg,
+        #555,
+        #111,
+        #777
+    );
+}
+
+.valkyrie.gold .hood,
+.valkyrie.gold .horn {
+    background: linear-gradient(
+        135deg,
+        #fff3a0,
+        #c99000,
+        #fff8c7
+    );
+}
+
+.valkyrie.rainbow .hood,
+.valkyrie.rainbow .horn {
+    background: linear-gradient(
+        120deg,
+        #ff3333,
+        #ffb52e,
+        #fff32e,
+        #36d66a,
+        #38bfff,
+        #774cff,
+        #ff4bc8
+    );
+}
+
+/* ACCESSORY COUNTER */
 
 .accessory-count {
     margin-top: 12px;
@@ -756,7 +887,6 @@ footer {
 </style>
 </head>
 
-
 <body>
 
 <header>
@@ -768,7 +898,6 @@ MTB REVIVALS
 </div>
 
 <nav>
-
 <a href="index.html">Home</a>
 <a href="login.html">Account</a>
 <a href="avatar.html" class="active">Avatar</a>
@@ -778,7 +907,6 @@ MTB REVIVALS
 <a href="inventory.html">Inventory</a>
 <a href="games.html">Games</a>
 <a href="news.html">News</a>
-
 </nav>
 
 </div>
@@ -799,14 +927,10 @@ MTB REVIVALS - Avatar
 
 <div class="avatar">
 
-<!-- ACCESSORIES APPEAR HERE -->
-
 <div id="accessory"
 class="accessory">
 </div>
 
-
-<!-- HEAD -->
 
 <div class="head">
 
@@ -822,12 +946,8 @@ class="face face-happy">
 </div>
 
 
-<!-- BODY -->
-
 <div class="body">
-
 <div id="shirtGraphic"></div>
-
 </div>
 
 
@@ -843,48 +963,33 @@ class="face face-happy">
 
 
 <div class="accessory-count">
-
 Accessories equipped:
 <span id="accessoryCount">0 / 3</span>
-
 </div>
 
 
-<div class="status"
-id="status">
+<div class="status" id="status">
 Loading avatar...
 </div>
 
 
-<button
-class="clear"
-onclick="clearAvatar()">
-
+<button class="clear" onclick="clearAvatar()">
 Clear Equipped Items
-
 </button>
 
 </div>
 
 
-<!-- =========================
-     CATALOG
-========================= -->
-
 <div class="catalog">
 
-<h2>
-Avatar Items
-</h2>
+<h2>Avatar Items</h2>
 
 
 <!-- FACES -->
 
 <div class="category">
 
-<h3>
-Classic Faces
-</h3>
+<h3>Classic Faces</h3>
 
 <div class="items">
 
@@ -926,7 +1031,7 @@ Classic Faces
 <div class="item">
 <div class="item-preview">😡</div>
 <h4>Angry</h4>
-<p>Angry classic face.</p>
+<p>Angry face.</p>
 <button onclick="equipFace(this,'angry')">Equip</button>
 </div>
 
@@ -947,35 +1052,35 @@ Classic Faces
 <div class="item">
 <div class="item-preview">😜</div>
 <h4>Silly</h4>
-<p>Silly classic face.</p>
+<p>Silly face.</p>
 <button onclick="equipFace(this,'silly')">Equip</button>
 </div>
 
 <div class="item">
 <div class="item-preview">😈</div>
 <h4>Evil</h4>
-<p>Dark classic face.</p>
+<p>Dark face.</p>
 <button onclick="equipFace(this,'evil')">Equip</button>
 </div>
 
 <div class="item">
 <div class="item-preview">😎</div>
 <h4>Cool</h4>
-<p>Cool shades face.</p>
+<p>Cool face.</p>
 <button onclick="equipFace(this,'cool')">Equip</button>
 </div>
 
 <div class="item">
 <div class="item-preview">🤓</div>
 <h4>Nerd</h4>
-<p>Classic nerd face.</p>
+<p>Nerd face.</p>
 <button onclick="equipFace(this,'nerd')">Equip</button>
 </div>
 
 <div class="item">
 <div class="item-preview">😱</div>
 <h4>Shocked</h4>
-<p>Shocked expression.</p>
+<p>Shocked face.</p>
 <button onclick="equipFace(this,'shocked')">Equip</button>
 </div>
 
@@ -987,9 +1092,7 @@ Classic Faces
 
 <div class="category">
 
-<h3>
-MTB Shirts
-</h3>
+<h3>MTB Shirts</h3>
 
 <div class="items">
 
@@ -1017,21 +1120,21 @@ MTB Shirts
 <div class="item">
 <div class="item-preview">⚡</div>
 <h4>MTB Lightning</h4>
-<p>Electric design.</p>
+<p>Lightning design.</p>
 <button onclick="equipShirt(this,'MTB Lightning')">Equip</button>
 </div>
 
 <div class="item">
 <div class="item-preview">MTB</div>
 <h4>MTB Grey Essential</h4>
-<p>Grey classic shirt.</p>
+<p>Grey MTB shirt.</p>
 <button onclick="equipShirt(this,'MTB Grey Essential')">Equip</button>
 </div>
 
 <div class="item">
 <div class="item-preview">MTB</div>
 <h4>MTB Gothic</h4>
-<p>Dark MTB style.</p>
+<p>Dark MTB shirt.</p>
 <button onclick="equipShirt(this,'MTB Gothic')">Equip</button>
 </div>
 
@@ -1050,9 +1153,7 @@ MTB Shirts
 
 <div class="category">
 
-<h3>
-MTB Pants
-</h3>
+<h3>MTB Pants</h3>
 
 <div class="items">
 
@@ -1113,9 +1214,7 @@ MTB Pants
 
 <div class="category">
 
-<h3>
-Accessories — Wear Up To 3
-</h3>
+<h3>Accessories — Maximum 3</h3>
 
 <div class="items">
 
@@ -1178,7 +1277,7 @@ Accessories — Wear Up To 3
 <div class="item">
 <div class="item-preview">👑 CROWN</div>
 <h4>Royal Crown</h4>
-<p>Classic golden crown.</p>
+<p>Golden crown.</p>
 <button onclick="toggleAccessory(this,'Royal Crown')">Equip</button>
 </div>
 
@@ -1189,11 +1288,82 @@ Accessories — Wear Up To 3
 <button onclick="toggleAccessory(this,'Crystal Wings')">Equip</button>
 </div>
 
+<!-- VALKYRIES -->
+
+<div class="item">
+<div class="item-preview">✨👑</div>
+<h4>Sparkle Time Valkyrie</h4>
+<p>Sparkle Valkyrie style.</p>
+<button onclick="toggleAccessory(this,'Sparkle Time Valkyrie')">Equip</button>
+</div>
+
+<div class="item">
+<div class="item-preview">🔴👑</div>
+<h4>Red Valkyrie</h4>
+<p>Red Valkyrie style.</p>
+<button onclick="toggleAccessory(this,'Red Valkyrie')">Equip</button>
+</div>
+
+<div class="item">
+<div class="item-preview">🔵👑</div>
+<h4>Blue Valkyrie</h4>
+<p>Blue Valkyrie style.</p>
+<button onclick="toggleAccessory(this,'Blue Valkyrie')">Equip</button>
+</div>
+
+<div class="item">
+<div class="item-preview">🟣👑</div>
+<h4>Purple Valkyrie</h4>
+<p>Purple Valkyrie style.</p>
+<button onclick="toggleAccessory(this,'Purple Valkyrie')">Equip</button>
+</div>
+
+<div class="item">
+<div class="item-preview">🟢👑</div>
+<h4>Green Valkyrie</h4>
+<p>Green Valkyrie style.</p>
+<button onclick="toggleAccessory(this,'Green Valkyrie')">Equip</button>
+</div>
+
+<div class="item">
+<div class="item-preview">🩷👑</div>
+<h4>Pink Valkyrie</h4>
+<p>Pink Valkyrie style.</p>
+<button onclick="toggleAccessory(this,'Pink Valkyrie')">Equip</button>
+</div>
+
+<div class="item">
+<div class="item-preview">⚪👑</div>
+<h4>White Valkyrie</h4>
+<p>White Valkyrie style.</p>
+<button onclick="toggleAccessory(this,'White Valkyrie')">Equip</button>
+</div>
+
+<div class="item">
+<div class="item-preview">⚫👑</div>
+<h4>Black Valkyrie</h4>
+<p>Black Valkyrie style.</p>
+<button onclick="toggleAccessory(this,'Black Valkyrie')">Equip</button>
+</div>
+
+<div class="item">
+<div class="item-preview">🟡👑</div>
+<h4>Gold Valkyrie</h4>
+<p>Gold Valkyrie style.</p>
+<button onclick="toggleAccessory(this,'Gold Valkyrie')">Equip</button>
+</div>
+
+<div class="item">
+<div class="item-preview">🌈👑</div>
+<h4>Rainbow Valkyrie</h4>
+<p>Rainbow Valkyrie style.</p>
+<button onclick="toggleAccessory(this,'Rainbow Valkyrie')">Equip</button>
+</div>
+
 </div>
 </div>
 
 </div>
-
 
 <footer>
 MTB REVIVALS © 2026
@@ -1202,17 +1372,16 @@ MTB REVIVALS © 2026
 
 <script>
 
-/* =====================================================
-   FACE
-===================================================== */
+/* =========================
+   FACES
+========================= */
 
 function equipFace(button, face) {
 
     localStorage.setItem("mtbFace", face);
 
-    document
-        .getElementById("face")
-        .className = "face face-" + face;
+    document.getElementById("face").className =
+        "face face-" + face;
 
     document
         .querySelectorAll('button[onclick*="equipFace"]')
@@ -1230,15 +1399,13 @@ function equipFace(button, face) {
 }
 
 
-/* =====================================================
-   SHIRT
-===================================================== */
+/* =========================
+   SHIRTS
+========================= */
 
 function equipShirt(button, shirt) {
 
     localStorage.setItem("mtbShirt", shirt);
-
-    loadShirt();
 
     document
         .querySelectorAll('button[onclick*="equipShirt"]')
@@ -1252,19 +1419,18 @@ function equipShirt(button, shirt) {
     button.classList.add("equipped");
     button.textContent = "Equipped";
 
+    loadShirt();
     updateStatus();
 }
 
 
-/* =====================================================
+/* =========================
    PANTS
-===================================================== */
+========================= */
 
 function equipPants(button, pants) {
 
     localStorage.setItem("mtbPants", pants);
-
-    loadPants();
 
     document
         .querySelectorAll('button[onclick*="equipPants"]')
@@ -1278,13 +1444,14 @@ function equipPants(button, pants) {
     button.classList.add("equipped");
     button.textContent = "Equipped";
 
+    loadPants();
     updateStatus();
 }
 
 
-/* =====================================================
-   ACCESSORIES — MAX 3
-===================================================== */
+/* =========================
+   ACCESSORIES
+========================= */
 
 function getAccessories() {
 
@@ -1311,24 +1478,21 @@ function saveAccessories(accessories) {
 }
 
 
-function toggleAccessory(button, accessoryName) {
+function toggleAccessory(button, name) {
 
     let accessories = getAccessories();
 
-    const existing =
-        accessories.indexOf(accessoryName);
+    let index =
+        accessories.indexOf(name);
 
 
-    /* REMOVE IF ALREADY EQUIPPED */
+    /* REMOVE */
 
-    if (existing !== -1) {
+    if (index !== -1) {
 
-        accessories.splice(existing,1);
+        accessories.splice(index, 1);
 
         saveAccessories(accessories);
-
-        button.classList.remove("equipped");
-        button.textContent = "Equip";
 
         loadAccessories();
         updateStatus();
@@ -1337,7 +1501,7 @@ function toggleAccessory(button, accessoryName) {
     }
 
 
-    /* MAX 3 CHECK */
+    /* MAXIMUM 3 */
 
     if (accessories.length >= 3) {
 
@@ -1349,28 +1513,24 @@ function toggleAccessory(button, accessoryName) {
     }
 
 
-    /* ADD */
+    /* EQUIP */
 
-    accessories.push(accessoryName);
+    accessories.push(name);
 
     saveAccessories(accessories);
-
-    button.classList.add("equipped");
-    button.textContent = "Equipped";
 
     loadAccessories();
     updateStatus();
 }
 
 
-/* =====================================================
+/* =========================
    LOAD ACCESSORIES
-===================================================== */
+========================= */
 
 function loadAccessories() {
 
-    const accessories =
-        getAccessories();
+    const accessories = getAccessories();
 
     const container =
         document.getElementById("accessory");
@@ -1379,6 +1539,9 @@ function loadAccessories() {
 
 
     accessories.forEach(function(item) {
+
+
+        /* FEDORAS */
 
         const fedoraColors = {
 
@@ -1393,8 +1556,6 @@ function loadAccessories() {
         };
 
 
-        /* FEDORA */
-
         if (fedoraColors[item]) {
 
             const fedora =
@@ -1406,12 +1567,13 @@ function loadAccessories() {
 
             container.appendChild(fedora);
 
+            return;
         }
 
 
         /* FROZEN HORNS */
 
-        else if (
+        if (
             item === "Frozen Crystal Horns"
         ) {
 
@@ -1427,14 +1589,13 @@ function loadAccessories() {
 
             container.appendChild(horns);
 
+            return;
         }
 
 
         /* CROWN */
 
-        else if (
-            item === "Royal Crown"
-        ) {
+        if (item === "Royal Crown") {
 
             const crown =
                 document.createElement("div");
@@ -1443,14 +1604,13 @@ function loadAccessories() {
 
             container.appendChild(crown);
 
+            return;
         }
 
 
         /* WINGS */
 
-        else if (
-            item === "Crystal Wings"
-        ) {
+        if (item === "Crystal Wings") {
 
             const wings =
                 document.createElement("div");
@@ -1458,6 +1618,45 @@ function loadAccessories() {
             wings.className = "wings";
 
             container.appendChild(wings);
+
+            return;
+        }
+
+
+        /* VALKYRIES */
+
+        const valkyrieColors = {
+
+            "Sparkle Time Valkyrie": "sparkle",
+            "Red Valkyrie": "red",
+            "Blue Valkyrie": "blue",
+            "Purple Valkyrie": "purple",
+            "Green Valkyrie": "green",
+            "Pink Valkyrie": "pink",
+            "White Valkyrie": "white",
+            "Black Valkyrie": "black",
+            "Gold Valkyrie": "gold",
+            "Rainbow Valkyrie": "rainbow"
+
+        };
+
+
+        if (valkyrieColors[item]) {
+
+            const valkyrie =
+                document.createElement("div");
+
+            valkyrie.className =
+                "valkyrie " +
+                valkyrieColors[item];
+
+            valkyrie.innerHTML = `
+                <div class="horn left"></div>
+                <div class="horn right"></div>
+                <div class="hood"></div>
+            `;
+
+            container.appendChild(valkyrie);
 
         }
 
@@ -1468,9 +1667,9 @@ function loadAccessories() {
 }
 
 
-/* =====================================================
-   UPDATE ACCESSORY BUTTONS
-===================================================== */
+/* =========================
+   ACCESSORY BUTTONS
+========================= */
 
 function updateAccessoryButtons() {
 
@@ -1495,43 +1694,31 @@ function updateAccessoryButtons() {
 
             const name = match[1];
 
-            if (
-                equipped.includes(name)
-            ) {
+            if (equipped.includes(name)) {
 
-                button.classList.add(
-                    "equipped"
-                );
-
-                button.textContent =
-                    "Equipped";
+                button.classList.add("equipped");
+                button.textContent = "Equipped";
 
             } else {
 
-                button.classList.remove(
-                    "equipped"
-                );
-
-                button.textContent =
-                    "Equip";
+                button.classList.remove("equipped");
+                button.textContent = "Equip";
 
             }
 
         });
 
 
-    document
-        .getElementById(
-            "accessoryCount"
-        )
-        .textContent =
-            equipped.length + " / 3";
+    document.getElementById(
+        "accessoryCount"
+    ).textContent =
+        equipped.length + " / 3";
 }
 
 
-/* =====================================================
+/* =========================
    SHIRT DISPLAY
-===================================================== */
+========================= */
 
 function loadShirt() {
 
@@ -1539,17 +1726,14 @@ function loadShirt() {
         localStorage.getItem("mtbShirt");
 
     const graphic =
-        document.getElementById(
-            "shirtGraphic"
-        );
+        document.getElementById("shirtGraphic");
 
     const body =
         document.querySelector(".body");
 
     graphic.innerHTML = "";
 
-    body.style.background =
-        "#1683ff";
+    body.style.background = "#1683ff";
 
 
     if (!shirt) return;
@@ -1557,8 +1741,7 @@ function loadShirt() {
 
     if (shirt === "MTB Classic Logo") {
 
-        body.style.background =
-            "#1683ff";
+        body.style.background = "#1683ff";
 
         graphic.innerHTML =
             `<div class="shirt-logo">MTB</div>`;
@@ -1569,8 +1752,7 @@ function loadShirt() {
         shirt === "MTB Star Streetwear"
     ) {
 
-        body.style.background =
-            "#111";
+        body.style.background = "#111";
 
         graphic.innerHTML = `
             <div class="shirt-star"></div>
@@ -1586,8 +1768,7 @@ function loadShirt() {
         shirt === "MTB Flame"
     ) {
 
-        body.style.background =
-            "#8b1111";
+        body.style.background = "#8b1111";
 
         graphic.innerHTML =
             `<div class="shirt-flame">🔥</div>`;
@@ -1598,8 +1779,7 @@ function loadShirt() {
         shirt === "MTB Lightning"
     ) {
 
-        body.style.background =
-            "#07558c";
+        body.style.background = "#07558c";
 
         graphic.innerHTML =
             `<div class="shirt-lightning">⚡</div>`;
@@ -1610,8 +1790,7 @@ function loadShirt() {
         shirt === "MTB Grey Essential"
     ) {
 
-        body.style.background =
-            "#555";
+        body.style.background = "#555";
 
         graphic.innerHTML =
             `<div class="shirt-logo">MTB</div>`;
@@ -1622,8 +1801,7 @@ function loadShirt() {
         shirt === "MTB Gothic"
     ) {
 
-        body.style.background =
-            "#151515";
+        body.style.background = "#151515";
 
         graphic.innerHTML =
             `<div class="shirt-logo">MTB</div>`;
@@ -1634,8 +1812,7 @@ function loadShirt() {
         shirt === "MTB White Classic"
     ) {
 
-        body.style.background =
-            "#eee";
+        body.style.background = "#eee";
 
         graphic.innerHTML = `
             <div class="shirt-logo"
@@ -1650,9 +1827,9 @@ function loadShirt() {
 }
 
 
-/* =====================================================
+/* =========================
    PANTS DISPLAY
-===================================================== */
+========================= */
 
 function loadPants() {
 
@@ -1666,11 +1843,8 @@ function loadPants() {
         document.querySelector(".leg-right");
 
 
-    left.className =
-        "leg leg-left";
-
-    right.className =
-        "leg leg-right";
+    left.className = "leg leg-left";
+    right.className = "leg leg-right";
 
     left.innerHTML = "";
     right.innerHTML = "";
@@ -1695,11 +1869,8 @@ function loadPants() {
         pants === "MTB Grey Classic Pants"
     ) {
 
-        left.style.background =
-            "#555";
-
-        right.style.background =
-            "#555";
+        left.style.background = "#555";
+        right.style.background = "#555";
 
         left.innerHTML =
             `<div class="pants-logo">MTB</div>`;
@@ -1713,11 +1884,8 @@ function loadPants() {
         pants === "MTB Star Pants"
     ) {
 
-        left.style.background =
-            "#111";
-
-        right.style.background =
-            "#111";
+        left.style.background = "#111";
+        right.style.background = "#111";
 
         left.innerHTML =
             `<div class="pants-star"></div>`;
@@ -1731,11 +1899,8 @@ function loadPants() {
         pants === "MTB Flame Pants"
     ) {
 
-        left.style.background =
-            "#8b1111";
-
-        right.style.background =
-            "#8b1111";
+        left.style.background = "#8b1111";
+        right.style.background = "#8b1111";
 
         left.innerHTML =
             `<div class="pants-flame">🔥</div>`;
@@ -1749,11 +1914,8 @@ function loadPants() {
         pants === "MTB Lightning Pants"
     ) {
 
-        left.style.background =
-            "#07558c";
-
-        right.style.background =
-            "#07558c";
+        left.style.background = "#07558c";
+        right.style.background = "#07558c";
 
         left.innerHTML =
             `<div class="pants-lightning">⚡</div>`;
@@ -1767,11 +1929,8 @@ function loadPants() {
         pants === "MTB Classic Jeans"
     ) {
 
-        left.style.background =
-            "#2166a5";
-
-        right.style.background =
-            "#2166a5";
+        left.style.background = "#2166a5";
+        right.style.background = "#2166a5";
 
         left.innerHTML =
             `<div class="pants-logo">MTB</div>`;
@@ -1785,61 +1944,52 @@ function loadPants() {
         pants === "MTB All Seasons Pants"
     ) {
 
-        left.classList.add(
-            "season-pants"
-        );
-
-        right.classList.add(
-            "season-pants"
-        );
+        left.classList.add("season-pants");
+        right.classList.add("season-pants");
 
     }
 }
 
 
-/* =====================================================
+/* =========================
    STATUS
-===================================================== */
+========================= */
 
 function updateStatus() {
 
     const face =
-        localStorage.getItem(
-            "mtbFace"
-        ) || "happy";
+        localStorage.getItem("mtbFace")
+        || "happy";
 
     const shirt =
-        localStorage.getItem(
-            "mtbShirt"
-        ) || "None";
+        localStorage.getItem("mtbShirt")
+        || "None";
 
     const pants =
-        localStorage.getItem(
-            "mtbPants"
-        ) || "None";
+        localStorage.getItem("mtbPants")
+        || "None";
 
     const accessories =
         getAccessories();
 
 
-    document
-        .getElementById("status")
+    document.getElementById("status")
         .textContent =
-            "Face: " + face +
-            " | Shirt: " + shirt +
-            " | Pants: " + pants +
-            " | Accessories: " +
-            (
-                accessories.length
-                    ? accessories.join(", ")
-                    : "None"
-            );
+        "Face: " + face +
+        " | Shirt: " + shirt +
+        " | Pants: " + pants +
+        " | Accessories: " +
+        (
+            accessories.length
+                ? accessories.join(", ")
+                : "None"
+        );
 }
 
 
-/* =====================================================
-   CLEAR EVERYTHING
-===================================================== */
+/* =========================
+   CLEAR
+========================= */
 
 function clearAvatar() {
 
@@ -1848,23 +1998,14 @@ function clearAvatar() {
     localStorage.removeItem("mtbPants");
     localStorage.removeItem("mtbAccessories");
 
+    document.getElementById("face").className =
+        "face face-happy";
 
-    document
-        .getElementById("face")
-        .className =
-            "face face-happy";
-
-
-    document
-        .getElementById("shirtGraphic")
+    document.getElementById("shirtGraphic")
         .innerHTML = "";
 
-
-    const body =
-        document.querySelector(".body");
-
-    body.style.background =
-        "#1683ff";
+    document.querySelector(".body")
+        .style.background = "#1683ff";
 
 
     const left =
@@ -1873,19 +2014,14 @@ function clearAvatar() {
     const right =
         document.querySelector(".leg-right");
 
-
-    left.className =
-        "leg leg-left";
-
-    right.className =
-        "leg leg-right";
+    left.className = "leg leg-left";
+    right.className = "leg leg-right";
 
     left.innerHTML = "";
     right.innerHTML = "";
 
 
-    document
-        .getElementById("accessory")
+    document.getElementById("accessory")
         .innerHTML = "";
 
 
@@ -1893,12 +2029,8 @@ function clearAvatar() {
         .querySelectorAll(".item button")
         .forEach(function(button) {
 
-            button.classList.remove(
-                "equipped"
-            );
-
-            button.textContent =
-                "Equip";
+            button.classList.remove("equipped");
+            button.textContent = "Equip";
 
         });
 
@@ -1908,22 +2040,19 @@ function clearAvatar() {
 }
 
 
-/* =====================================================
+/* =========================
    LOAD SAVED AVATAR
-===================================================== */
+========================= */
 
 function loadAvatar() {
 
     const face =
-        localStorage.getItem(
-            "mtbFace"
-        ) || "happy";
+        localStorage.getItem("mtbFace")
+        || "happy";
 
-
-    document
-        .getElementById("face")
+    document.getElementById("face")
         .className =
-            "face face-" + face;
+        "face face-" + face;
 
 
     loadShirt();
@@ -1931,42 +2060,28 @@ function loadAvatar() {
     loadAccessories();
 
 
-    /* FACE BUTTON */
-
     document
         .querySelectorAll(
             'button[onclick*="equipFace"]'
         )
         .forEach(function(button) {
 
-            const code =
-                button.getAttribute(
-                    "onclick"
-                );
-
             if (
-                code.includes(
-                    "'" + face + "'"
-                )
+                button
+                    .getAttribute("onclick")
+                    .includes("'" + face + "'")
             ) {
 
-                button.classList.add(
-                    "equipped"
-                );
+                button.classList.add("equipped");
+                button.textContent = "Equipped";
 
-                button.textContent =
-                    "Equipped";
             }
 
         });
 
 
-    /* SHIRT BUTTON */
-
     const shirt =
-        localStorage.getItem(
-            "mtbShirt"
-        );
+        localStorage.getItem("mtbShirt");
 
     document
         .querySelectorAll(
@@ -1978,28 +2093,19 @@ function loadAvatar() {
                 shirt &&
                 button
                     .getAttribute("onclick")
-                    .includes(
-                        "'" + shirt + "'"
-                    )
+                    .includes("'" + shirt + "'")
             ) {
 
-                button.classList.add(
-                    "equipped"
-                );
+                button.classList.add("equipped");
+                button.textContent = "Equipped";
 
-                button.textContent =
-                    "Equipped";
             }
 
         });
 
 
-    /* PANTS BUTTON */
-
     const pants =
-        localStorage.getItem(
-            "mtbPants"
-        );
+        localStorage.getItem("mtbPants");
 
     document
         .querySelectorAll(
@@ -2011,17 +2117,12 @@ function loadAvatar() {
                 pants &&
                 button
                     .getAttribute("onclick")
-                    .includes(
-                        "'" + pants + "'"
-                    )
+                    .includes("'" + pants + "'")
             ) {
 
-                button.classList.add(
-                    "equipped"
-                );
+                button.classList.add("equipped");
+                button.textContent = "Equipped";
 
-                button.textContent =
-                    "Equipped";
             }
 
         });
@@ -2034,6 +2135,11 @@ function loadAvatar() {
 
 loadAvatar();
 
+</script>
+
+</body>
+</html>
+```
 </script>
 
 </body>
