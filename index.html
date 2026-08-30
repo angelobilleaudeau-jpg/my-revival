@@ -15,8 +15,12 @@ html,body{
     margin:0;
     padding:0;
     font-family:Arial,Helvetica,sans-serif;
-    background:#f2f2f2;
-    color:#222;
+    background:#fff;
+    color:#333;
+}
+
+body{
+    min-height:100vh;
 }
 
 /* =========================
@@ -24,64 +28,65 @@ html,body{
 ========================= */
 
 .header{
-    height:145px;
+    height:130px;
     background:#4382dc;
     color:white;
     position:relative;
+    z-index:5000;
     border-bottom:4px solid #ef8a2c;
-    z-index:1000;
 }
 
 .logo{
     position:absolute;
-    left:28px;
-    top:42px;
-    font-size:50px;
+    left:25px;
+    top:34px;
+    font-size:48px;
     font-weight:bold;
     letter-spacing:1px;
 }
 
 .currency{
     position:absolute;
-    right:165px;
-    top:25px;
+    right:150px;
+    top:40px;
     display:flex;
     gap:10px;
 }
 
-.money{
-    background:rgba(0,0,0,.18);
-    border:1px solid rgba(255,255,255,.3);
-    padding:10px 14px;
-    border-radius:4px;
+.currencyBox{
+    background:rgba(0,0,0,.15);
+    border:2px solid rgba(255,255,255,.3);
+    border-radius:5px;
+    padding:10px 15px;
+    font-size:17px;
     font-weight:bold;
 }
 
-.robuxIcon{
-    color:#58c878;
+.robux{
+    color:#fff;
 }
 
-.tixIcon{
-    color:#f4c84c;
+.tix{
+    color:#ffd84d;
 }
 
 .menuButton{
     position:absolute;
-    right:25px;
-    top:45px;
-    width:82px;
-    height:65px;
+    right:20px;
+    top:25px;
+    width:100px;
+    height:80px;
     border:2px solid rgba(255,255,255,.35);
-    background:rgba(255,255,255,.08);
+    background:rgba(255,255,255,.05);
     cursor:pointer;
 }
 
 .menuButton span{
     display:block;
-    width:40px;
+    width:45px;
     height:4px;
-    background:#173e78;
-    margin:8px auto;
+    background:#163e78;
+    margin:9px auto;
     border-radius:3px;
 }
 
@@ -91,37 +96,30 @@ html,body{
 
 .menu{
     position:absolute;
-    right:25px;
-    top:110px;
+    right:20px;
+    top:105px;
     width:250px;
     background:white;
-    border:1px solid #bbb;
-    box-shadow:0 5px 20px rgba(0,0,0,.3);
+    border:1px solid #ccc;
+    box-shadow:0 5px 20px rgba(0,0,0,.25);
     display:none;
-    z-index:5000;
+    z-index:9000;
 }
 
 .menu.open{
     display:block;
 }
 
-.menu a,
-.menu button{
+.menu a{
     display:block;
-    width:100%;
     padding:16px;
     color:#333;
     text-decoration:none;
-    border:0;
     border-bottom:1px solid #ddd;
-    background:white;
-    text-align:left;
     font-size:17px;
-    cursor:pointer;
 }
 
-.menu a:hover,
-.menu button:hover{
+.menu a:hover{
     background:#eee;
 }
 
@@ -133,7 +131,8 @@ html,body{
     background:#f58b2c;
     color:white;
     text-align:center;
-    font-size:22px;
+    font-size:23px;
+    line-height:1.5;
     padding:10px;
 }
 
@@ -142,44 +141,32 @@ html,body{
 ========================= */
 
 .page{
-    max-width:1200px;
-    margin:auto;
-    padding:30px 35px 130px;
+    max-width:1160px;
+    margin:0 auto;
+    padding:30px 35px 150px;
+    min-height:100vh;
 }
 
 .pageTitle{
-    font-size:42px;
+    font-size:40px;
     margin:5px 0 25px;
 }
 
 /* =========================
-   ACCOUNT
+   PANELS
 ========================= */
 
-.accountBar{
+.panel{
+    border:2px solid #ddd;
     background:white;
-    border:1px solid #ccc;
-    padding:18px;
+    padding:25px;
     margin-bottom:25px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:15px;
 }
 
-.accountName{
-    font-size:23px;
+.panelTitle{
+    font-size:28px;
     font-weight:bold;
-}
-
-.firstBadge{
-    display:inline-block;
-    background:#e8b927;
-    color:white;
-    padding:7px 12px;
-    border-radius:4px;
-    font-weight:bold;
-    margin-left:10px;
+    margin-bottom:20px;
 }
 
 /* =========================
@@ -189,24 +176,45 @@ html,body{
 .searchBox{
     display:flex;
     width:100%;
-    height:60px;
-    margin-bottom:35px;
+    height:62px;
+    margin-bottom:30px;
 }
 
 .searchBox input{
     flex:1;
     border:2px solid #ccc;
     padding:0 20px;
-    font-size:21px;
+    font-size:20px;
     outline:none;
 }
 
 .searchBox button{
-    width:70px;
+    width:75px;
     border:0;
     background:#3478bd;
-    color:white;
     cursor:pointer;
+    position:relative;
+}
+
+.searchIcon{
+    width:25px;
+    height:25px;
+    border:3px solid white;
+    border-radius:50%;
+    position:absolute;
+    left:22px;
+    top:15px;
+}
+
+.searchIcon:after{
+    content:"";
+    position:absolute;
+    width:13px;
+    height:3px;
+    background:white;
+    transform:rotate(45deg);
+    right:-10px;
+    bottom:-5px;
 }
 
 /* =========================
@@ -214,7 +222,6 @@ html,body{
 ========================= */
 
 .categories{
-    background:white;
     border:2px solid #ddd;
     padding:25px;
     margin-bottom:30px;
@@ -223,8 +230,9 @@ html,body{
 .categoryTitle{
     font-size:28px;
     font-weight:bold;
-    padding-bottom:18px;
+    padding-bottom:20px;
     border-bottom:2px solid #ccc;
+    margin-bottom:20px;
 }
 
 /* =========================
@@ -238,62 +246,92 @@ html,body{
 }
 
 .item{
-    background:white;
     border:2px solid #ddd;
-    border-radius:5px;
+    border-radius:6px;
     padding:14px;
+    background:#fff;
 }
 
 .itemImage{
-    height:220px;
+    height:190px;
     border:2px solid #ddd;
+    border-radius:6px;
     display:flex;
-    justify-content:center;
     align-items:center;
-    background:#fafafa;
+    justify-content:center;
+    background:#f8f8f8;
     overflow:hidden;
 }
 
 .fakeItem{
-    width:125px;
-    height:125px;
+    width:115px;
+    height:115px;
+    position:relative;
 }
 
 .blueValk{
     background:linear-gradient(135deg,#2748bd,#7f9dff);
     clip-path:polygon(
-        50% 0,63% 30%,90% 12%,78% 48%,
-        100% 65%,66% 63%,50% 100%,
-        34% 63%,0 65%,22% 48%,10% 12%,37% 30%
+        50% 0,
+        63% 30%,
+        90% 12%,
+        78% 48%,
+        100% 65%,
+        66% 63%,
+        50% 100%,
+        34% 63%,
+        0 65%,
+        22% 48%,
+        10% 12%,
+        37% 30%
     );
 }
 
 .redValk{
     background:linear-gradient(135deg,#a61e1e,#ff5555);
     clip-path:polygon(
-        50% 0,63% 30%,90% 12%,78% 48%,
-        100% 65%,66% 63%,50% 100%,
-        34% 63%,0 65%,22% 48%,10% 12%,37% 30%
+        50% 0,
+        63% 30%,
+        90% 12%,
+        78% 48%,
+        100% 65%,
+        66% 63%,
+        50% 100%,
+        34% 63%,
+        0 65%,
+        22% 48%,
+        10% 12%,
+        37% 30%
     );
 }
 
 .hornsBlue{
-    background:#a9edff;
+    background:linear-gradient(135deg,#bff8ff,#489cff);
     clip-path:polygon(
-        50% 0,65% 25%,100% 10%,78% 45%,
-        100% 70%,65% 65%,50% 100%,
-        35% 65%,0 70%,22% 45%,0 10%,35% 25%
+        50% 0,
+        64% 35%,
+        92% 12%,
+        78% 52%,
+        100% 72%,
+        62% 66%,
+        50% 100%,
+        38% 66%,
+        0 72%,
+        22% 52%,
+        8% 12%,
+        36% 35%
     );
 }
 
 .ninja{
     background:#222;
-    border:12px solid #111;
+    border:10px solid #111;
+    border-radius:50%;
 }
 
 .pencil{
-    width:30px;
-    height:155px;
+    width:30px!important;
+    height:145px!important;
     background:linear-gradient(
         90deg,
         #d99a20,
@@ -301,12 +339,13 @@ html,body{
         #d18a0e
     );
     transform:rotate(-25deg);
+    border:3px solid #8c6511;
 }
 
 .fedora{
-    width:145px;
-    height:85px;
-    border-radius:50% 50% 20% 20%;
+    width:125px!important;
+    height:75px!important;
+    border-radius:50% 50% 15px 15px;
     background:linear-gradient(
         135deg,
         #e33131,
@@ -318,37 +357,54 @@ html,body{
 }
 
 .shirtPreview{
-    width:120px;
-    height:145px;
+    width:110px;
+    height:130px;
     background:#111;
     display:flex;
-    justify-content:center;
     align-items:center;
+    justify-content:center;
     color:white;
-    font-size:24px;
+    font-size:25px;
+    font-weight:bold;
+}
+
+.longShirt{
+    width:90px;
+    height:155px;
+    background:#222;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    font-size:20px;
     font-weight:bold;
 }
 
 .itemName{
-    font-size:21px;
+    font-size:20px;
     font-weight:bold;
     margin-top:15px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
 }
 
 .itemPrice{
     margin-top:10px;
+    font-size:18px;
     font-weight:bold;
 }
 
 .free{
-    color:#d0bd29;
+    color:#51c96d;
 }
 
 .itemButton{
-    width:100%;
     margin-top:12px;
+    width:100%;
     padding:12px;
     border:0;
+    border-radius:4px;
     background:#4382dc;
     color:white;
     font-weight:bold;
@@ -360,134 +416,156 @@ html,body{
 }
 
 /* =========================
-   AVATAR EDITOR
+   OLD ROBLOX AVATAR
 ========================= */
 
 .avatarPanel{
-    margin-top:40px;
-    background:white;
-    border:2px solid #ccc;
+    border:2px solid #ddd;
     padding:25px;
-}
-
-.avatarEditor{
-    display:grid;
-    grid-template-columns:1fr 300px;
-    gap:25px;
+    margin-top:35px;
 }
 
 .avatarStage{
-    height:560px;
+    height:520px;
     position:relative;
     overflow:hidden;
-    border:2px solid #aaa;
-    background:#02030b;
+    border:2px solid #222;
+    background-color:#02030b;
 
     background-image:
         radial-gradient(circle,#fff 1px,transparent 2px),
         radial-gradient(circle,#8fbfff 1px,transparent 2px),
-        radial-gradient(circle,#fff 1px,transparent 2px);
+        radial-gradient(circle,#fff 1px,transparent 2px),
+        radial-gradient(circle,#5d7cff 1px,transparent 2px);
 
     background-size:
         90px 90px,
         150px 150px,
-        210px 210px;
+        210px 210px,
+        270px 270px;
+
+    background-position:
+        10px 20px,
+        40px 60px,
+        100px 30px,
+        20px 120px;
 }
 
 .avatar{
     position:absolute;
     left:50%;
-    bottom:35px;
+    bottom:25px;
     transform:translateX(-50%);
     width:250px;
-    height:450px;
+    height:420px;
 }
 
-/* Head */
+/* classic blocky head */
 
 .avatarHead{
     position:absolute;
-    width:105px;
-    height:105px;
-    left:72px;
+    width:100px;
+    height:100px;
+    left:75px;
     top:0;
-    background:#f0bd76;
+    background:#efbd76;
     border:4px solid #222;
+    border-radius:3px;
 }
 
-/* Face */
+/* classic face eyes */
 
-.avatarHead:before{
-    content:"";
-    position:absolute;
-    left:27px;
-    top:42px;
-    width:10px;
-    height:14px;
-    background:#111;
-}
-
+.avatarHead:before,
 .avatarHead:after{
     content:"";
     position:absolute;
-    right:27px;
-    top:42px;
-    width:10px;
+    top:39px;
+    width:9px;
     height:14px;
     background:#111;
 }
 
-/* Body */
+.avatarHead:before{
+    left:27px;
+}
+
+.avatarHead:after{
+    right:27px;
+}
+
+/* classic smile */
+
+.faceSmile{
+    position:absolute;
+    left:35px;
+    top:61px;
+    width:30px;
+    height:12px;
+    border-bottom:3px solid #111;
+    border-radius:0 0 50% 50%;
+}
+
+/* classic torso */
 
 .avatarBody{
     position:absolute;
     left:55px;
-    top:108px;
+    top:105px;
     width:140px;
-    height:140px;
+    height:135px;
     background:#111;
     border:4px solid #222;
+}
+
+/* shirt text */
+
+.avatarBody:after{
+    content:"MTB";
+    position:absolute;
+    inset:0;
     display:flex;
     justify-content:center;
     align-items:center;
     color:white;
-    font-size:30px;
+    font-size:28px;
     font-weight:bold;
 }
 
-/* Arms */
+/* classic arms */
 
 .avatarArm{
     position:absolute;
-    top:112px;
-    width:48px;
+    width:45px;
     height:130px;
-    background:#f0bd76;
+    top:108px;
+    background:#efbd76;
     border:4px solid #222;
-    transition:.3s;
+    border-radius:2px;
+    transition:.25s;
 }
 
 .leftArm{
-    left:7px;
+    left:10px;
 }
 
 .rightArm{
-    right:7px;
+    right:10px;
 }
 
 .holding .rightArm{
     transform:rotate(-60deg);
     transform-origin:top center;
+    right:-4px;
 }
 
-/* Legs */
+/* classic legs */
 
 .avatarLeg{
     position:absolute;
-    top:248px;
-    width:60px;
-    height:145px;
-    background:#111;
+    width:62px;
+    height:135px;
+    top:240px;
+    background:#222;
     border:4px solid #222;
 }
 
@@ -497,15 +575,6 @@ html,body{
 
 .rightLeg{
     right:55px;
-}
-
-/* Korblox */
-
-.korblox .rightLeg{
-    width:28px;
-    height:145px;
-    right:71px;
-    background:#4382dc;
 }
 
 /* =========================
@@ -524,175 +593,156 @@ html,body{
 
 .gearPencil{
     right:-25px;
-    top:170px;
+    top:165px;
     width:27px;
     height:155px;
+    transform:rotate(-25deg);
     background:linear-gradient(
         90deg,
         #d08a12,
         #ffe24d,
         #d08a12
     );
-    transform:rotate(-25deg);
+    border:3px solid #7c5b0e;
 }
 
 .gearSword{
     right:-25px;
     top:160px;
     width:28px;
-    height:155px;
+    height:150px;
+    transform:rotate(-25deg);
     background:linear-gradient(
         90deg,
         #555,
         #fff,
         #777
     );
-    transform:rotate(-25deg);
 }
 
 /* =========================
-   AVATAR CONTROLS
+   EQUIPPED
 ========================= */
-
-.avatarControls{
-    border:1px solid #ccc;
-    padding:20px;
-}
-
-.avatarControls h2{
-    margin-top:0;
-}
-
-.controlButton{
-    width:100%;
-    padding:12px;
-    margin-top:8px;
-    border:0;
-    background:#4382dc;
-    color:white;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-.controlButton:hover{
-    background:#2868c0;
-}
 
 .equipped{
     margin-top:20px;
-    border-top:1px solid #ccc;
-    padding-top:15px;
-}
-
-.slot{
-    border:2px dashed #aaa;
-    padding:10px;
-    margin-top:8px;
+    padding:20px;
+    border:2px solid #ddd;
     background:#fafafa;
 }
 
+.accessorySlots{
+    display:flex;
+    gap:10px;
+    margin-top:15px;
+}
+
+.slot{
+    width:100px;
+    height:75px;
+    border:2px dashed #aaa;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:#777;
+    font-size:13px;
+}
+
 /* =========================
-   PLAY / EARN
+   PROFILE
 ========================= */
 
-.playSection{
-    margin-top:40px;
-    background:white;
-    border:2px solid #ccc;
+.profileCard{
+    border:2px solid #ddd;
     padding:25px;
+    background:#fff;
 }
 
-.gameGrid{
+.profileTop{
+    display:flex;
+    align-items:center;
+    gap:25px;
+}
+
+.profileAvatar{
+    width:110px;
+    height:110px;
+    background:#efbd76;
+    border:4px solid #222;
+    position:relative;
+}
+
+.profileAvatar:before,
+.profileAvatar:after{
+    content:"";
+    position:absolute;
+    width:9px;
+    height:14px;
+    background:#111;
+    top:38px;
+}
+
+.profileAvatar:before{
+    left:27px;
+}
+
+.profileAvatar:after{
+    right:27px;
+}
+
+.badge{
+    display:inline-block;
+    background:#f1b900;
+    color:#222;
+    padding:8px 12px;
+    margin-top:8px;
+    border-radius:4px;
+    font-weight:bold;
+    border:2px solid #9d7900;
+}
+
+.statGrid{
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    gap:20px;
+    gap:15px;
+    margin-top:25px;
 }
 
-.game{
+.stat{
     border:2px solid #ddd;
-    padding:20px;
+    padding:18px;
     text-align:center;
 }
 
-.gameImage{
-    height:140px;
-    background:#4382dc;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    color:white;
-    font-size:35px;
+.statNumber{
+    font-size:28px;
     font-weight:bold;
-}
-
-.playButton{
-    width:100%;
-    margin-top:12px;
-    padding:12px;
-    border:0;
-    background:#4caf50;
-    color:white;
-    font-weight:bold;
-    cursor:pointer;
+    color:#4382dc;
 }
 
 /* =========================
-   INVENTORY
+   AUTH
 ========================= */
 
-.inventory{
-    margin-top:40px;
-    background:white;
-    border:2px solid #ccc;
-    padding:25px;
-}
-
-.inventoryItem{
-    padding:13px;
-    border-bottom:1px solid #ddd;
-}
-
-/* =========================
-   SIGNUP / LOGIN
-========================= */
-
-.authModal{
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.65);
-    display:none;
-    align-items:center;
-    justify-content:center;
-    z-index:10000;
-}
-
-.authModal.show{
-    display:flex;
-}
-
-.authBox{
-    width:92%;
-    max-width:430px;
-    background:white;
+.authPanel{
+    max-width:500px;
+    margin:40px auto;
+    border:2px solid #ddd;
     padding:30px;
-    border-radius:6px;
 }
 
-.authBox h1{
-    margin-top:0;
-}
-
-.authBox input{
+.authPanel input{
     width:100%;
-    padding:14px;
-    margin-top:10px;
+    height:50px;
+    margin-bottom:12px;
+    padding:10px;
     border:2px solid #ccc;
     font-size:17px;
 }
 
-.authBox button{
+.authButton{
     width:100%;
-    margin-top:12px;
     padding:14px;
     border:0;
     background:#4382dc;
@@ -701,13 +751,74 @@ html,body{
     cursor:pointer;
 }
 
-.closeAuth{
-    background:#ddd!important;
-    color:#222!important;
+.authSwitch{
+    margin-top:15px;
+    text-align:center;
+    color:#4382dc;
+    cursor:pointer;
+}
+
+.logoutButton{
+    padding:12px 20px;
+    border:0;
+    background:#d33;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
 }
 
 /* =========================
-   CONFIRM
+   USERS
+========================= */
+
+.userSearch{
+    margin-top:35px;
+    border:2px solid #ddd;
+    padding:25px;
+}
+
+.userSearch input{
+    width:100%;
+    height:50px;
+    padding:10px;
+    border:2px solid #ccc;
+    font-size:18px;
+}
+
+.userSearch button{
+    margin-top:10px;
+    padding:12px 25px;
+    background:#4382dc;
+    color:white;
+    border:0;
+    font-weight:bold;
+}
+
+/* =========================
+   CHAT
+========================= */
+
+.chat{
+    position:fixed;
+    left:25px;
+    right:25px;
+    bottom:0;
+    height:65px;
+    background:#4382dc;
+    color:white;
+    border-radius:12px 12px 0 0;
+    z-index:6000;
+    box-shadow:0 -3px 15px rgba(0,0,0,.15);
+}
+
+.chatTitle{
+    font-size:23px;
+    font-weight:bold;
+    padding:19px 25px;
+}
+
+/* =========================
+   MODAL
 ========================= */
 
 .modal{
@@ -715,9 +826,9 @@ html,body{
     position:fixed;
     inset:0;
     background:rgba(0,0,0,.55);
-    z-index:11000;
-    align-items:center;
+    z-index:10000;
     justify-content:center;
+    align-items:center;
 }
 
 .modal.show{
@@ -725,16 +836,17 @@ html,body{
 }
 
 .modalBox{
+    background:white;
     width:90%;
     max-width:430px;
-    background:white;
     padding:28px;
-    border-radius:7px;
+    border-radius:8px;
 }
 
 .modalButtons{
     display:flex;
     gap:10px;
+    margin-top:20px;
 }
 
 .modalButtons button{
@@ -755,54 +867,33 @@ html,body{
 }
 
 /* =========================
-   CHAT
+   HIDDEN
 ========================= */
 
-.chat{
-    position:fixed;
-    left:25px;
-    right:25px;
-    bottom:0;
-    height:62px;
-    background:#4382dc;
-    color:white;
-    border-radius:12px 12px 0 0;
-    z-index:9000;
-}
-
-.chatTitle{
-    padding:17px 22px;
-    font-size:22px;
-    font-weight:bold;
+.hidden{
+    display:none!important;
 }
 
 /* =========================
-   MOBILE
+   RESPONSIVE
 ========================= */
 
 @media(max-width:800px){
 
     .logo{
         font-size:34px;
-        top:52px;
+        top:40px;
     }
 
     .currency{
-        right:100px;
-        top:10px;
-        transform:scale(.8);
-        transform-origin:right top;
-    }
-
-    .avatarEditor{
-        grid-template-columns:1fr;
+        display:none;
     }
 
     .itemGrid{
         grid-template-columns:repeat(2,1fr);
     }
 
-    .gameGrid{
+    .statGrid{
         grid-template-columns:1fr;
     }
 }
@@ -810,30 +901,34 @@ html,body{
 @media(max-width:500px){
 
     .header{
-        height:145px;
+        height:115px;
     }
 
     .logo{
+        font-size:25px;
+        top:43px;
         left:15px;
-        font-size:27px;
-        top:60px;
-    }
-
-    .currency{
-        right:75px;
     }
 
     .menuButton{
         right:10px;
-        width:58px;
+        top:18px;
+        width:80px;
+        height:70px;
     }
 
     .menuButton span{
-        width:30px;
+        width:35px;
+    }
+
+    .menu{
+        top:95px;
+        right:10px;
+        width:220px;
     }
 
     .page{
-        padding:20px 15px 110px;
+        padding:22px 15px 120px;
     }
 
     .itemGrid{
@@ -842,19 +937,25 @@ html,body{
     }
 
     .item{
-        padding:8px;
+        padding:10px;
     }
 
     .itemImage{
-        height:140px;
+        height:135px;
     }
 
     .itemName{
         font-size:16px;
     }
 
-    .avatarStage{
-        height:500px;
+    .profileTop{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .chat{
+        left:10px;
+        right:10px;
     }
 }
 </style>
@@ -870,14 +971,12 @@ html,body{
 
     <div class="currency">
 
-        <div class="money">
-            <span class="robuxIcon">●</span>
-            <span id="robux">0</span> R$
+        <div class="currencyBox robux">
+            R$ <span id="robuxDisplay">0</span>
         </div>
 
-        <div class="money">
-            <span class="tixIcon">◆</span>
-            <span id="tix">0</span> Tix
+        <div class="currencyBox tix">
+            TIX <span id="tixDisplay">0</span>
         </div>
 
     </div>
@@ -890,18 +989,14 @@ html,body{
 
     <div id="menu" class="menu">
 
-        <a href="#catalog">Catalog</a>
-        <a href="#avatar">Avatar</a>
-        <a href="#games">Games</a>
-        <a href="#inventory">Inventory</a>
-
-        <button onclick="openAuth()">
-            Sign Up / Login
-        </button>
-
-        <button onclick="logout()">
-            Logout
-        </button>
+        <a href="#" onclick="showPage('home')">Home</a>
+        <a href="#" onclick="showPage('profile')">My Profile</a>
+        <a href="#" onclick="showPage('avatar')">Avatar</a>
+        <a href="#" onclick="showPage('inventory')">Inventory</a>
+        <a href="#" onclick="showPage('games')">Games</a>
+        <a href="#" onclick="showPage('accessories')">Accessories</a>
+        <a href="#" onclick="showPage('clothes')">Clothes</a>
+        <a href="#" onclick="showPage('news')">News</a>
 
     </div>
 
@@ -910,64 +1005,56 @@ html,body{
 <div class="announcement">
     Welcome to MTB REVIVALS!
     <br>
-    Play games and earn Robux + Tix!
+    Play games to earn Robux and Tix!
 </div>
+
 
 <main class="page">
 
-    <div class="accountBar">
+<!-- ================= HOME ================= -->
 
-        <div>
-            <span class="accountName" id="accountName">
-                Guest
-            </span>
+<section id="homePage">
 
-            <span id="badgeArea"></span>
-        </div>
+    <h1 class="pageTitle">
+        Catalog
+    </h1>
 
-        <div>
-            <strong id="playerStatus">
-                Not signed in
-            </strong>
-        </div>
+    <div class="searchBox">
+
+        <input
+            id="assetSearch"
+            type="text"
+            placeholder="Search assets..."
+            oninput="searchAssets()"
+        >
+
+        <button onclick="searchAssets()">
+            <span class="searchIcon"></span>
+        </button>
 
     </div>
 
-    <!-- ================= CATALOG ================= -->
+    <section class="categories">
 
-    <section id="catalog">
-
-        <h1 class="pageTitle">
-            Catalog
-        </h1>
-
-        <div class="searchBox">
-
-            <input
-                id="assetSearch"
-                placeholder="Search assets..."
-                oninput="searchAssets()"
-            >
-
-            <button onclick="searchAssets()">
-                🔍
-            </button>
-
+        <div class="categoryTitle">
+            Categories
         </div>
 
-        <section class="categories">
+        <h2 style="color:#4382dc;">
+            Featured
+        </h2>
 
-            <div class="categoryTitle">
-                Featured
-            </div>
+        <p style="font-size:20px;color:#666;">
+            Featured MTB REVIVALS items
+        </p>
 
-            <p>
-                Classic MTB REVIVALS items
-            </p>
+    </section>
 
-        </section>
+    <section>
 
-        <div class="itemGrid" id="itemGrid">
+        <div id="itemGrid" class="itemGrid">
+
+            <!-- VALKYRIE -->
 
             <div class="item" data-name="Sparkle Time Valkyrie">
 
@@ -984,11 +1071,18 @@ html,body{
                 </div>
 
                 <button class="itemButton"
-                    onclick="buyItem('valk-gold','Sparkle Time Valkyrie','accessory')">
+                    onclick="buyItem(
+                        'valk-gold',
+                        'Sparkle Time Valkyrie',
+                        'accessory'
+                    )">
                     CLAIM
                 </button>
 
             </div>
+
+
+            <!-- RED VALK -->
 
             <div class="item" data-name="Red Valkyrie">
 
@@ -1005,11 +1099,18 @@ html,body{
                 </div>
 
                 <button class="itemButton"
-                    onclick="buyItem('valk-red','Red Valkyrie','accessory')">
+                    onclick="buyItem(
+                        'valk-red',
+                        'Red Valkyrie',
+                        'accessory'
+                    )">
                     CLAIM
                 </button>
 
             </div>
+
+
+            <!-- HORNS -->
 
             <div class="item" data-name="Blue Frozen Horns">
 
@@ -1026,11 +1127,18 @@ html,body{
                 </div>
 
                 <button class="itemButton"
-                    onclick="buyItem('horns-blue','Blue Frozen Horns','accessory')">
+                    onclick="buyItem(
+                        'horns-blue',
+                        'Blue Frozen Horns',
+                        'accessory'
+                    )">
                     CLAIM
                 </button>
 
             </div>
+
+
+            <!-- NINJA -->
 
             <div class="item" data-name="Ninja Master">
 
@@ -1047,11 +1155,18 @@ html,body{
                 </div>
 
                 <button class="itemButton"
-                    onclick="buyItem('ninja','Ninja Master','accessory')">
+                    onclick="buyItem(
+                        'ninja',
+                        'Ninja Master',
+                        'accessory'
+                    )">
                     CLAIM
                 </button>
 
             </div>
+
+
+            <!-- PENCIL -->
 
             <div class="item" data-name="Big Pencil">
 
@@ -1068,11 +1183,18 @@ html,body{
                 </div>
 
                 <button class="itemButton"
-                    onclick="buyItem('big-pencil','BIG Pencil','gear')">
+                    onclick="buyItem(
+                        'big-pencil',
+                        'BIG Pencil',
+                        'gear'
+                    )">
                     CLAIM
                 </button>
 
             </div>
+
+
+            <!-- FEDORA -->
 
             <div class="item" data-name="Sparkle Time Fedora">
 
@@ -1089,41 +1211,27 @@ html,body{
                 </div>
 
                 <button class="itemButton"
-                    onclick="buyItem('fedora','Sparkle Time Fedora','accessory')">
+                    onclick="buyItem(
+                        'fedora-rainbow',
+                        'Sparkle Time Fedora',
+                        'accessory'
+                    )">
                     CLAIM
                 </button>
 
             </div>
 
-            <div class="item" data-name="Korblox Leg">
 
-                <div class="itemImage">
-                    <div class="fakeItem"
-                         style="width:55px;height:125px;background:#4382dc;border:5px solid #222;">
-                    </div>
-                </div>
-
-                <div class="itemName">
-                    Korblox Leg
-                </div>
-
-                <div class="itemPrice free">
-                    FREE
-                </div>
-
-                <button class="itemButton"
-                    onclick="buyItem('korblox','Korblox Leg','accessory')">
-                    CLAIM
-                </button>
-
-            </div>
+            <!-- SHIRT -->
 
             <div class="item" data-name="MTB Shirt">
 
                 <div class="itemImage">
+
                     <div class="shirtPreview">
                         MTB
                     </div>
+
                 </div>
 
                 <div class="itemName">
@@ -1135,23 +1243,31 @@ html,body{
                 </div>
 
                 <button class="itemButton"
-                    onclick="buyItem('mtb-shirt','MTB Shirt','shirt')">
+                    onclick="buyItem(
+                        'mtb-shirt',
+                        'MTB Shirt',
+                        'shirt'
+                    )">
                     CLAIM
                 </button>
 
             </div>
 
-            <div class="item" data-name="MTB Long Shirt">
+
+            <!-- LONG SHIRT -->
+
+            <div class="item" data-name="MTB Very Long Shirt">
 
                 <div class="itemImage">
-                    <div class="shirtPreview"
-                         style="height:175px;">
+
+                    <div class="longShirt">
                         MTB
                     </div>
+
                 </div>
 
                 <div class="itemName">
-                    MTB Long Shirt
+                    MTB VERY Long Shirt
                 </div>
 
                 <div class="itemPrice free">
@@ -1159,7 +1275,11 @@ html,body{
                 </div>
 
                 <button class="itemButton"
-                    onclick="buyItem('mtb-long','MTB Long Shirt','shirt')">
+                    onclick="buyItem(
+                        'mtb-long',
+                        'MTB VERY Long Shirt',
+                        'shirt'
+                    )">
                     CLAIM
                 </button>
 
@@ -1169,204 +1289,36 @@ html,body{
 
     </section>
 
-    <!-- ================= AVATAR ================= -->
+</section>
 
-    <section class="avatarPanel" id="avatar">
 
-        <h1>
-            Avatar
-        </h1>
+<!-- ================= PROFILE ================= -->
 
-        <div class="avatarEditor">
+<section id="profilePage" class="hidden">
 
-            <div class="avatarStage">
+    <h1 class="pageTitle">
+        My Profile
+    </h1>
 
-                <div id="avatarCharacter" class="avatar">
+    <div id="profileContent"></div>
 
-                    <div class="avatarHead"></div>
+</section>
 
-                    <div class="avatarBody">
-                        MTB
-                    </div>
-
-                    <div class="avatarArm leftArm"></div>
-
-                    <div class="avatarArm rightArm"></div>
-
-                    <div class="avatarLeg leftLeg"></div>
-
-                    <div class="avatarLeg rightLeg"></div>
-
-                    <div id="gear" class="gear"></div>
-
-                </div>
-
-            </div>
-
-            <div class="avatarControls">
-
-                <h2>
-                    Avatar Editor
-                </h2>
-
-                <button
-                    class="controlButton"
-                    onclick="toggleAccessory('korblox','Korblox Leg')">
-                    Toggle Korblox Leg
-                </button>
-
-                <button
-                    class="controlButton"
-                    onclick="toggleGear('big-pencil','BIG Pencil')">
-                    Hold BIG Pencil
-                </button>
-
-                <button
-                    class="controlButton"
-                    onclick="removeGear()">
-                    Remove Gear
-                </button>
-
-                <div class="equipped">
-
-                    <strong>
-                        Equipped
-                    </strong>
-
-                    <div id="equippedText">
-                        Nothing equipped.
-                    </div>
-
-                    <div id="slots"></div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- ================= GAMES ================= -->
-
-    <section class="playSection" id="games">
-
-        <h1>
-            Games
-        </h1>
-
-        <p>
-            Play games to earn Robux and Tix!
-        </p>
-
-        <div class="gameGrid">
-
-            <div class="game">
-
-                <div class="gameImage">
-                    MTB OBBY
-                </div>
-
-                <h2>
-                    MTB Obby
-                </h2>
-
-                <p>
-                    Complete the obby.
-                </p>
-
-                <button class="playButton"
-                    onclick="playGame('MTB Obby',10,25)">
-                    PLAY
-                </button>
-
-            </div>
-
-            <div class="game">
-
-                <div class="gameImage">
-                    SWORD
-                </div>
-
-                <h2>
-                    Sword Fight
-                </h2>
-
-                <p>
-                    Win a sword battle.
-                </p>
-
-                <button class="playButton"
-                    onclick="playGame('Sword Fight',15,35)">
-                    PLAY
-                </button>
-
-            </div>
-
-            <div class="game">
-
-                <div class="gameImage">
-                    TIX
-                </div>
-
-                <h2>
-                    Tix Hunt
-                </h2>
-
-                <p>
-                    Find hidden Tix.
-                </p>
-
-                <button class="playButton"
-                    onclick="playGame('Tix Hunt',5,50)">
-                    PLAY
-                </button>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- ================= INVENTORY ================= -->
-
-    <section class="inventory" id="inventory">
-
-        <h1>
-            Inventory
-        </h1>
-
-        <div id="inventoryList">
-            No items yet.
-        </div>
-
-    </section>
-
-</main>
-
-<div class="chat">
-    <div class="chatTitle">
-        Chat (0)
-    </div>
-</div>
 
 <!-- ================= AUTH ================= -->
 
-<div id="authModal" class="authModal">
+<section id="authPage" class="hidden">
 
-    <div class="authBox">
+    <div class="authPanel">
 
-        <h1>
-            MTB REVIVALS
+        <h1 id="authTitle">
+            Sign Up
         </h1>
-
-        <p>
-            Create an account or login.
-        </p>
 
         <input
             id="authUsername"
             placeholder="Username"
+            maxlength="20"
         >
 
         <input
@@ -1375,33 +1327,325 @@ html,body{
             placeholder="Password"
         >
 
-        <button onclick="signup()">
+        <button
+            class="authButton"
+            onclick="submitAuth()"
+        >
             SIGN UP
         </button>
 
-        <button onclick="login()">
-            LOGIN
-        </button>
+        <div
+            class="authSwitch"
+            onclick="switchAuth()"
+        >
+            Already have an account? Log In
+        </div>
 
-        <button class="closeAuth"
-            onclick="closeAuth()">
-            CANCEL
-        </button>
+        <p
+            id="authMessage"
+            style="text-align:center;"
+        ></p>
 
-        <p id="authMessage"></p>
+    </div>
 
+</section>
+
+
+<!-- ================= AVATAR ================= -->
+
+<section id="avatarPage" class="hidden">
+
+    <div class="avatarPanel">
+
+        <h1>
+            Avatar
+        </h1>
+
+        <div class="avatarStage">
+
+            <div id="avatar" class="avatar">
+
+                <div class="avatarHead">
+                    <div class="faceSmile"></div>
+                </div>
+
+                <div class="avatarBody"></div>
+
+                <div class="avatarArm leftArm"></div>
+
+                <div class="avatarArm rightArm"></div>
+
+                <div class="avatarLeg leftLeg"></div>
+
+                <div class="avatarLeg rightLeg"></div>
+
+                <div id="gear" class="gear"></div>
+
+            </div>
+
+        </div>
+
+        <div class="equipped">
+
+            <strong>
+                Equipped Items
+            </strong>
+
+            <div id="equippedText">
+                Nothing equipped.
+            </div>
+
+            <div class="accessorySlots">
+
+                <div class="slot" id="slot1">
+                    Accessory 1
+                </div>
+
+                <div class="slot" id="slot2">
+                    Accessory 2
+                </div>
+
+                <div class="slot" id="slot3">
+                    Accessory 3
+                </div>
+
+            </div>
+
+            <p>
+                Maximum 3 accessories equipped at once.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= INVENTORY ================= -->
+
+<section id="inventoryPage" class="hidden">
+
+    <h1 class="pageTitle">
+        Inventory
+    </h1>
+
+    <div class="panel">
+
+        <div id="inventoryList">
+            Your inventory is empty.
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= GAMES ================= -->
+
+<section id="gamesPage" class="hidden">
+
+    <h1 class="pageTitle">
+        Games
+    </h1>
+
+    <div class="panel">
+
+        <div class="panelTitle">
+            MTB REVIVALS Games
+        </div>
+
+        <div class="item">
+
+            <h2>
+                MTB Classic
+            </h2>
+
+            <p>
+                Play the game and earn Robux + Tix!
+            </p>
+
+            <button
+                class="itemButton"
+                onclick="playGame()"
+            >
+                PLAY
+            </button>
+
+        </div>
+
+        <br>
+
+        <div class="item">
+
+            <h2>
+                MTB Obby
+            </h2>
+
+            <p>
+                Complete the obby to earn rewards.
+            </p>
+
+            <button
+                class="itemButton"
+                onclick="playGame()"
+            >
+                PLAY
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ACCESSORIES ================= -->
+
+<section id="accessoriesPage" class="hidden">
+
+    <h1 class="pageTitle">
+        Accessories
+    </h1>
+
+    <div class="itemGrid" id="accessoryGrid"></div>
+
+</section>
+
+
+<!-- ================= CLOTHES ================= -->
+
+<section id="clothesPage" class="hidden">
+
+    <h1 class="pageTitle">
+        Clothes
+    </h1>
+
+    <div class="itemGrid">
+
+        <div class="item">
+
+            <div class="itemImage">
+                <div class="shirtPreview">
+                    MTB
+                </div>
+            </div>
+
+            <div class="itemName">
+                MTB Shirt
+            </div>
+
+            <button class="itemButton"
+                onclick="buyItem(
+                    'mtb-shirt',
+                    'MTB Shirt',
+                    'shirt'
+                )">
+                CLAIM
+            </button>
+
+        </div>
+
+        <div class="item">
+
+            <div class="itemImage">
+                <div class="longShirt">
+                    MTB
+                </div>
+            </div>
+
+            <div class="itemName">
+                MTB VERY Long Shirt
+            </div>
+
+            <button class="itemButton"
+                onclick="buyItem(
+                    'mtb-long',
+                    'MTB VERY Long Shirt',
+                    'shirt'
+                )">
+                CLAIM
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= NEWS ================= -->
+
+<section id="newsPage" class="hidden">
+
+    <h1 class="pageTitle">
+        News
+    </h1>
+
+    <div class="panel">
+
+        <h2>
+            MTB REVIVALS
+        </h2>
+
+        <p>
+            Welcome to the new MTB REVIVALS!
+        </p>
+
+        <p>
+            Robux and Tix can be earned by playing games.
+        </p>
+
+        <p>
+            More classic items and games are coming soon.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= USER SEARCH ================= -->
+
+<section class="userSearch">
+
+    <h2>
+        Search Users
+    </h2>
+
+    <input
+        id="usernameSearch"
+        placeholder="Search username..."
+    >
+
+    <button onclick="searchUser()">
+        SEARCH
+    </button>
+
+    <div id="userResult"></div>
+
+</section>
+
+</main>
+
+
+<div class="chat">
+
+    <div class="chatTitle">
+        Chat (0)
     </div>
 
 </div>
 
-<!-- ================= CONFIRM ================= -->
+
+<!-- ================= MODAL ================= -->
 
 <div id="modal" class="modal">
 
     <div class="modalBox">
 
         <h2>
-            Confirm Claim
+            Confirm Order
         </h2>
 
         <p id="modalText">
@@ -1410,13 +1654,17 @@ html,body{
 
         <div class="modalButtons">
 
-            <button class="cancel"
-                onclick="closeModal()">
+            <button
+                class="cancel"
+                onclick="closeModal()"
+            >
                 CANCEL
             </button>
 
-            <button class="confirm"
-                onclick="confirmPurchase()">
+            <button
+                class="confirm"
+                onclick="confirmPurchase()"
+            >
                 CONFIRM
             </button>
 
@@ -1426,37 +1674,69 @@ html,body{
 
 </div>
 
+
 <script>
 
 /* =====================================================
-   MTB REVIVALS
+   MTB REVIVALS DATABASE
 ===================================================== */
 
-const ACCOUNT_KEY =
-    "MTB_REVIVALS_ACCOUNTS";
+const ACCOUNTS_KEY =
+    "MTB_REVIVALS_ACCOUNTS_V2";
 
 const CURRENT_KEY =
-    "MTB_REVIVALS_CURRENT";
+    "MTB_REVIVALS_CURRENT_USER_V2";
 
 const FIRST10_KEY =
-    "MTB_REVIVALS_FIRST_10";
+    "MTB_REVIVALS_FIRST10_V2";
 
 let accounts =
     JSON.parse(
-        localStorage.getItem(ACCOUNT_KEY)
+        localStorage.getItem(ACCOUNTS_KEY)
     ) || {};
 
-let first10 =
-    JSON.parse(
-        localStorage.getItem(FIRST10_KEY)
-    ) || [];
-
-let currentUser =
+let currentUsername =
     localStorage.getItem(CURRENT_KEY);
 
-let player = null;
+let authMode = "signup";
 
 let pendingItem = null;
+
+
+/* =====================================================
+   DEFAULT PLAYER
+===================================================== */
+
+function createPlayer(username){
+
+    return {
+
+        username:username,
+
+        joinDate:new Date().toLocaleDateString(),
+
+        robux:100,
+
+        tix:50,
+
+        owned:[],
+
+        equipped:{
+
+            shirt:null,
+
+            pants:null,
+
+            accessories:[],
+
+            gear:null
+        },
+
+        gamesPlayed:0,
+
+        first10:false
+    };
+}
 
 
 /* =====================================================
@@ -1466,37 +1746,23 @@ let pendingItem = null;
 function saveAccounts(){
 
     localStorage.setItem(
-        ACCOUNT_KEY,
+        ACCOUNTS_KEY,
         JSON.stringify(accounts)
-    );
-
-    localStorage.setItem(
-        FIRST10_KEY,
-        JSON.stringify(first10)
     );
 }
 
 
 /* =====================================================
-   GET PLAYER
+   CURRENT PLAYER
 ===================================================== */
 
-function loadPlayer(){
+function getPlayer(){
 
-    if(
-        currentUser &&
-        accounts[currentUser]
-    ){
-
-        player =
-            accounts[currentUser];
-
-    }else{
-
-        player = null;
+    if(!currentUsername){
+        return null;
     }
 
-    updateUI();
+    return accounts[currentUsername] || null;
 }
 
 
@@ -1504,71 +1770,104 @@ function loadPlayer(){
    SAVE PLAYER
 ===================================================== */
 
-function savePlayer(){
+function savePlayer(player){
 
-    if(!player){
-        return;
-    }
-
-    accounts[player.username] =
-        player;
+    accounts[player.username] = player;
 
     saveAccounts();
 
-    updateUI();
+    updateCurrency();
 }
 
 
 /* =====================================================
-   MENU
+   FIRST 10
 ===================================================== */
 
-function toggleMenu(){
+function giveFirst10Badge(player){
 
-    document
-        .getElementById("menu")
-        .classList.toggle("open");
+    let first10 =
+        JSON.parse(
+            localStorage.getItem(FIRST10_KEY)
+        ) || [];
+
+    if(first10.length < 10){
+
+        if(!first10.includes(player.username)){
+
+            first10.push(player.username);
+
+            player.first10 = true;
+
+            localStorage.setItem(
+                FIRST10_KEY,
+                JSON.stringify(first10)
+            );
+        }
+
+    }
+
 }
 
 
 /* =====================================================
-   AUTH
+   AUTH SWITCH
 ===================================================== */
 
-function openAuth(){
+function switchAuth(){
 
-    document
-        .getElementById("authModal")
-        .classList.add("show");
+    authMode =
+        authMode==="signup"
+        ? "login"
+        : "signup";
 
-    document
-        .getElementById("menu")
-        .classList.remove("open");
+    document.getElementById(
+        "authTitle"
+    ).textContent =
+        authMode==="signup"
+        ? "Sign Up"
+        : "Log In";
+
+    document.querySelector(
+        ".authButton"
+    ).textContent =
+        authMode==="signup"
+        ? "SIGN UP"
+        : "LOG IN";
+
+    document.querySelector(
+        ".authSwitch"
+    ).textContent =
+        authMode==="signup"
+        ? "Already have an account? Log In"
+        : "Need an account? Sign Up";
+
+    document.getElementById(
+        "authMessage"
+    ).textContent="";
 }
 
-function closeAuth(){
 
-    document
-        .getElementById("authModal")
-        .classList.remove("show");
-}
+/* =====================================================
+   SUBMIT AUTH
+===================================================== */
 
-function signup(){
+function submitAuth(){
 
     const username =
-        document
-        .getElementById("authUsername")
-        .value
-        .trim();
+        document.getElementById(
+            "authUsername"
+        ).value.trim();
 
     const password =
-        document
-        .getElementById("authPassword")
-        .value;
+        document.getElementById(
+            "authPassword"
+        ).value;
 
     const message =
-        document
-        .getElementById("authMessage");
+        document.getElementById(
+            "authMessage"
+        );
 
     if(username.length < 3){
 
@@ -1586,212 +1885,184 @@ function signup(){
         return;
     }
 
-    if(accounts[username]){
 
-        message.textContent =
-            "That username already exists.";
+    if(authMode==="signup"){
+
+        if(accounts[username]){
+
+            message.textContent =
+                "That username already exists.";
+
+            return;
+        }
+
+        const player =
+            createPlayer(username);
+
+        giveFirst10Badge(player);
+
+        /*
+         * Demo authentication:
+         * password is stored locally.
+         * For a real public website,
+         * this must be replaced with
+         * secure server authentication.
+         */
+
+        player.password=password;
+
+        accounts[username]=player;
+
+        saveAccounts();
+
+        currentUsername=username;
+
+        localStorage.setItem(
+            CURRENT_KEY,
+            username
+        );
+
+        alert(
+            player.first10
+            ? "Welcome! You received the FIRST 10 badge!"
+            : "Account created!"
+        );
+
+        showPage("profile");
 
         return;
     }
 
-    const isFirst10 =
-        first10.length < 10;
 
-    player = {
+    if(authMode==="login"){
 
-        username:username,
+        if(
+            !accounts[username] ||
+            accounts[username].password!==password
+        ){
 
-        password:password,
+            message.textContent =
+                "Incorrect username or password.";
 
-        robux:100,
+            return;
+        }
 
-        tix:1000,
+        currentUsername=username;
 
-        owned:[],
+        localStorage.setItem(
+            CURRENT_KEY,
+            username
+        );
 
-        equipped:{
-            shirt:null,
-            pants:null,
-            accessories:[],
-            gear:null
-        },
-
-        first10:isFirst10,
-
-        gamesPlayed:0
-
-    };
-
-    accounts[username] =
-        player;
-
-    if(isFirst10){
-
-        first10.push(username);
+        showPage("profile");
     }
 
-    saveAccounts();
-
-    currentUser =
-        username;
-
-    localStorage.setItem(
-        CURRENT_KEY,
-        currentUser
-    );
-
-    closeAuth();
-
-    updateUI();
-
-    alert(
-        isFirst10
-        ? "Welcome! You are one of the FIRST 10 players! You received the First 10 badge!"
-        : "Account created!"
-    );
 }
 
 
 /* =====================================================
-   LOGIN
+   MENU
 ===================================================== */
 
-function login(){
+function toggleMenu(){
 
-    const username =
-        document
-        .getElementById("authUsername")
-        .value
-        .trim();
+    document
+        .getElementById("menu")
+        .classList.toggle("open");
+}
 
-    const password =
-        document
-        .getElementById("authPassword")
-        .value;
 
-    const message =
-        document
-        .getElementById("authMessage");
+/* =====================================================
+   PAGE NAVIGATION
+===================================================== */
 
-    if(
-        !accounts[username] ||
-        accounts[username].password !== password
-    ){
+function showPage(page){
 
-        message.textContent =
-            "Incorrect username or password.";
+    const pages=[
+
+        "home",
+        "profile",
+        "auth",
+        "avatar",
+        "inventory",
+        "games",
+        "accessories",
+        "clothes",
+        "news"
+    ];
+
+    pages.forEach(name=>{
+
+        const element =
+            document.getElementById(
+                name+"Page"
+            );
+
+        if(element){
+            element.classList.add("hidden");
+        }
+
+    });
+
+
+    if(page==="profile" && !getPlayer()){
+
+        authMode="signup";
+
+        document.getElementById(
+            "authPage"
+        ).classList.remove("hidden");
 
         return;
     }
 
-    player =
-        accounts[username];
 
-    currentUser =
-        username;
+    if(page==="profile"){
+        renderProfile();
+    }
 
-    localStorage.setItem(
-        CURRENT_KEY,
-        currentUser
-    );
-
-    closeAuth();
-
-    updateUI();
-}
-
-
-/* =====================================================
-   LOGOUT
-===================================================== */
-
-function logout(){
-
-    player = null;
-
-    currentUser = null;
-
-    localStorage.removeItem(
-        CURRENT_KEY
-    );
-
-    updateUI();
-}
-
-
-/* =====================================================
-   UPDATE UI
-===================================================== */
-
-function updateUI(){
-
-    const name =
-        document.getElementById(
-            "accountName"
-        );
-
-    const status =
-        document.getElementById(
-            "playerStatus"
-        );
-
-    const badge =
-        document.getElementById(
-            "badgeArea"
-        );
-
-    if(!player){
-
-        name.textContent =
-            "Guest";
-
-        status.textContent =
-            "Not signed in";
-
-        badge.innerHTML = "";
-
-        document.getElementById(
-            "robux"
-        ).textContent = "0";
-
-        document.getElementById(
-            "tix"
-        ).textContent = "0";
-
+    if(page==="inventory"){
         renderInventory();
-
-        return;
     }
 
-    name.textContent =
-        player.username;
-
-    status.textContent =
-        "Signed in";
-
-    if(player.first10){
-
-        badge.innerHTML =
-            '<span class="firstBadge">🏆 FIRST 10</span>';
-
-    }else{
-
-        badge.innerHTML = "";
+    if(page==="accessories"){
+        renderAccessories();
     }
 
-    document.getElementById(
-        "robux"
-    ).textContent =
-        player.robux;
+
+    const selected =
+        document.getElementById(
+            page+"Page"
+        );
+
+    if(selected){
+        selected.classList.remove("hidden");
+    }
+
+
+    document
+        .getElementById("menu")
+        .classList.remove("open");
+}
+
+
+/* =====================================================
+   CURRENCY
+===================================================== */
+
+function updateCurrency(){
+
+    const player=getPlayer();
 
     document.getElementById(
-        "tix"
+        "robuxDisplay"
     ).textContent =
-        player.tix;
+        player ? player.robux : 0;
 
-    renderInventory();
-
-    loadAvatar();
+    document.getElementById(
+        "tixDisplay"
+    ).textContent =
+        player ? player.tix : 0;
 }
 
 
@@ -1801,20 +2072,19 @@ function updateUI(){
 
 function buyItem(id,name,type){
 
+    const player=getPlayer();
+
     if(!player){
 
-        alert(
-            "Please sign up or login first."
-        );
-
-        openAuth();
+        showPage("auth");
 
         return;
     }
 
+
     if(
         player.owned.some(
-            item => item.id === id
+            item=>item.id===id
         )
     ){
 
@@ -1827,11 +2097,13 @@ function buyItem(id,name,type){
         return;
     }
 
-    pendingItem = {
+
+    pendingItem={
         id:id,
         name:name,
         type:type
     };
+
 
     document.getElementById(
         "modalText"
@@ -1842,9 +2114,10 @@ function buyItem(id,name,type){
         "<br><br>"+
         "Do you want to claim this item?";
 
-    document
-        .getElementById("modal")
-        .classList.add("show");
+
+    document.getElementById(
+        "modal"
+    ).classList.add("show");
 }
 
 
@@ -1854,9 +2127,12 @@ function buyItem(id,name,type){
 
 function confirmPurchase(){
 
+    const player=getPlayer();
+
     if(!player || !pendingItem){
         return;
     }
+
 
     player.owned.push({
 
@@ -1867,23 +2143,22 @@ function confirmPurchase(){
         type:pendingItem.type,
 
         price:0
-
     });
 
-    const item =
-        pendingItem;
 
-    pendingItem = null;
+    savePlayer(player);
 
-    savePlayer();
+
+    equipItem(
+        pendingItem.id,
+        pendingItem.name,
+        pendingItem.type
+    );
+
 
     closeModal();
 
-    equipItem(
-        item.id,
-        item.name,
-        item.type
-    );
+    renderInventory();
 }
 
 
@@ -1893,7 +2168,7 @@ function confirmPurchase(){
 
 function closeModal(){
 
-    pendingItem = null;
+    pendingItem=null;
 
     document
         .getElementById("modal")
@@ -1902,201 +2177,91 @@ function closeModal(){
 
 
 /* =====================================================
-   EQUIP ITEM
+   EQUIP
 ===================================================== */
 
 function equipItem(id,name,type){
 
-    if(!player){
-        return;
-    }
-
-    if(type === "accessory"){
-
-        toggleAccessory(
-            id,
-            name
-        );
-
-        return;
-    }
-
-    if(type === "shirt"){
-
-        player.equipped.shirt =
-            id;
-
-        savePlayer();
-
-        loadAvatar();
-
-        return;
-    }
-
-    if(type === "gear"){
-
-        toggleGear(
-            id,
-            name
-        );
-
-        return;
-    }
-}
-
-
-/* =====================================================
-   ACCESSORIES
-===================================================== */
-
-function toggleAccessory(id,name){
+    const player=getPlayer();
 
     if(!player){
         return;
     }
 
-    const list =
-        player.equipped.accessories;
 
-    const index =
-        list.indexOf(id);
+    if(type==="accessory"){
 
-    if(index !== -1){
+        const index =
+            player.equipped
+                .accessories
+                .indexOf(id);
 
-        list.splice(index,1);
 
-    }else{
+        if(index!==-1){
 
-        if(list.length >= 3){
+            player.equipped
+                .accessories
+                .splice(index,1);
 
-            alert(
-                "You can only wear 3 accessories at once."
+        }else{
+
+            if(
+                player.equipped
+                    .accessories
+                    .length>=3
+            ){
+
+                alert(
+                    "You can only wear 3 accessories at once."
+                );
+
+                return;
+            }
+
+            player.equipped
+                .accessories
+                .push(id);
+        }
+    }
+
+
+    if(type==="shirt"){
+
+        player.equipped.shirt=id;
+
+        const body =
+            document.querySelector(
+                ".avatarBody"
             );
 
-            return;
+        if(body){
+
+            body.style.background =
+                id==="mtb-long"
+                ? "#333"
+                : "#111";
         }
-
-        list.push(id);
     }
 
-    savePlayer();
 
-    loadAvatar();
-}
+    if(type==="gear"){
 
+        player.equipped.gear=id;
 
-/* =====================================================
-   GEAR
-===================================================== */
+        const avatar =
+            document.getElementById(
+                "avatar"
+            );
 
-function toggleGear(id,name){
+        const gear =
+            document.getElementById(
+                "gear"
+            );
 
-    if(!player){
-        return;
-    }
-
-    if(
-        player.equipped.gear === id
-    ){
-
-        player.equipped.gear = null;
-
-    }else{
-
-        player.equipped.gear = id;
-    }
-
-    savePlayer();
-
-    loadAvatar();
-}
-
-function removeGear(){
-
-    if(!player){
-        return;
-    }
-
-    player.equipped.gear =
-        null;
-
-    savePlayer();
-
-    loadAvatar();
-}
+        avatar.classList.add("holding");
 
 
-/* =====================================================
-   LOAD AVATAR
-===================================================== */
-
-function loadAvatar(){
-
-    if(!player){
-        return;
-    }
-
-    const avatar =
-        document.getElementById(
-            "avatarCharacter"
-        );
-
-    avatar.classList.remove(
-        "holding"
-    );
-
-    avatar.classList.remove(
-        "korblox"
-    );
-
-    const body =
-        document.querySelector(
-            ".avatarBody"
-        );
-
-    body.style.background =
-        "#111";
-
-    if(
-        player.equipped.shirt ===
-        "mtb-long"
-    ){
-
-        body.style.background =
-            "#333";
-
-    }
-
-    if(
-        player.equipped.accessories
-        .includes("korblox")
-    ){
-
-        avatar.classList.add(
-            "korblox"
-        );
-    }
-
-    const gear =
-        document.getElementById(
-            "gear"
-        );
-
-    gear.className =
-        "gear";
-
-    if(
-        player.equipped.gear
-    ){
-
-        avatar.classList.add(
-            "holding"
-        );
-
-        if(
-            player.equipped.gear ===
-            "big-pencil"
-        ){
+        if(id==="big-pencil"){
 
             gear.className =
                 "gear gearPencil";
@@ -2108,72 +2273,249 @@ function loadAvatar(){
         }
     }
 
+
+    savePlayer(player);
+
     updateEquipped();
 }
 
 
 /* =====================================================
-   EQUIPPED DISPLAY
+   UPDATE EQUIPPED
 ===================================================== */
 
 function updateEquipped(){
+
+    const player=getPlayer();
 
     if(!player){
         return;
     }
 
-    let text =
-        "Shirt: " +
-        (
-            player.equipped.shirt ||
-            "None"
-        );
+
+    let text="";
 
     text +=
-        "<br>Accessories: " +
+        "Shirt: "+
+        (
+            player.equipped.shirt
+            ||"None"
+        )+
+        "<br>";
+
+
+    text +=
+        "Accessories: "+
         player.equipped
-        .accessories
-        .length +
-        "/3";
+            .accessories
+            .length+
+        "/3"+
+        "<br>";
+
 
     text +=
-        "<br>Gear: " +
+        "Gear: "+
         (
-            player.equipped.gear ||
-            "None"
+            player.equipped.gear
+            ||"None"
         );
+
 
     document.getElementById(
         "equippedText"
-    ).innerHTML = text;
+    ).innerHTML=text;
 
-    const slots =
-        document.getElementById(
-            "slots"
-        );
 
-    slots.innerHTML = "";
+    const slots=[
 
-    player.equipped
-        .accessories
-        .forEach((id,index)=>{
+        document.getElementById("slot1"),
 
-            const div =
-                document.createElement(
-                    "div"
+        document.getElementById("slot2"),
+
+        document.getElementById("slot3")
+    ];
+
+
+    slots.forEach(
+        (slot,index)=>{
+
+            const id =
+                player.equipped
+                    .accessories[index];
+
+            const item =
+                player.owned.find(
+                    x=>x.id===id
                 );
 
-            div.className =
-                "slot";
+            slot.textContent =
+                item
+                ? item.name
+                : "Empty";
+        }
+    );
+}
 
-            div.textContent =
-                "Accessory " +
-                (index+1) +
-                ": " +
-                id;
 
-            slots.appendChild(div);
-        });
+/* =====================================================
+   PROFILE
+===================================================== */
+
+function renderProfile(){
+
+    const player=getPlayer();
+
+    const content =
+        document.getElementById(
+            "profileContent"
+        );
+
+
+    if(!player){
+
+        content.innerHTML = `
+
+            <div class="panel">
+
+                <h2>
+                    You aren't signed in.
+                </h2>
+
+                <button
+                    class="itemButton"
+                    onclick="showPage('auth')"
+                >
+                    SIGN UP / LOG IN
+                </button>
+
+            </div>
+
+        `;
+
+        return;
+    }
+
+
+    content.innerHTML = `
+
+        <div class="profileCard">
+
+            <div class="profileTop">
+
+                <div class="profileAvatar"></div>
+
+                <div>
+
+                    <h1>
+                        ${escapeHTML(player.username)}
+                    </h1>
+
+                    <p>
+                        Joined:
+                        ${escapeHTML(player.joinDate)}
+                    </p>
+
+                    ${
+                        player.first10
+                        ? `
+                        <div class="badge">
+                            🏆 FIRST 10
+                        </div>
+                        `
+                        : ""
+                    }
+
+                </div>
+
+            </div>
+
+
+            <div class="statGrid">
+
+                <div class="stat">
+
+                    <div>
+                        ROBUX
+                    </div>
+
+                    <div class="statNumber">
+                        R$ ${player.robux}
+                    </div>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <div>
+                        TIX
+                    </div>
+
+                    <div class="statNumber">
+                        ${player.tix}
+                    </div>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <div>
+                        GAMES PLAYED
+                    </div>
+
+                    <div class="statNumber">
+                        ${player.gamesPlayed}
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="panel">
+
+                <h2>
+                    Items Owned
+                </h2>
+
+                <p>
+                    ${player.owned.length}
+                    item(s)
+                </p>
+
+            </div>
+
+
+            <button
+                class="logoutButton"
+                onclick="logout()"
+            >
+                LOG OUT
+            </button>
+
+        </div>
+
+    `;
+}
+
+
+/* =====================================================
+   LOGOUT
+===================================================== */
+
+function logout(){
+
+    currentUsername=null;
+
+    localStorage.removeItem(
+        CURRENT_KEY
+    );
+
+    updateCurrency();
+
+    showPage("home");
+
 }
 
 
@@ -2183,24 +2525,24 @@ function updateEquipped(){
 
 function renderInventory(){
 
+    const player=getPlayer();
+
     const list =
         document.getElementById(
             "inventoryList"
         );
 
-    list.innerHTML = "";
 
     if(!player){
 
         list.innerHTML =
-            "Login to view your inventory.";
+            "Please sign up or log in.";
 
         return;
     }
 
-    if(
-        player.owned.length === 0
-    ){
+
+    if(player.owned.length===0){
 
         list.innerHTML =
             "Your inventory is empty.";
@@ -2208,30 +2550,181 @@ function renderInventory(){
         return;
     }
 
-    player.owned.forEach(item=>{
 
-        const div =
-            document.createElement(
-                "div"
-            );
+    list.innerHTML =
+        player.owned
+        .map(item=>`
 
-        div.className =
-            "inventoryItem";
+            <div
+                style="
+                border:2px solid #ddd;
+                padding:15px;
+                margin-bottom:10px;
+                "
+            >
 
-        div.innerHTML =
-            "<strong>" +
-            escapeHTML(item.name) +
-            "</strong>" +
-            " — " +
-            escapeHTML(item.type);
+                <strong>
+                    ${escapeHTML(item.name)}
+                </strong>
 
-        list.appendChild(div);
-    });
+                <br>
+
+                <small>
+                    ${escapeHTML(item.type)}
+                </small>
+
+            </div>
+
+        `)
+        .join("");
 }
 
 
 /* =====================================================
-   SEARCH
+   ACCESSORIES
+===================================================== */
+
+function renderAccessories(){
+
+    const grid =
+        document.getElementById(
+            "accessoryGrid"
+        );
+
+
+    grid.innerHTML = `
+
+        <div class="item">
+
+            <div class="itemImage">
+                <div class="fakeItem blueValk"></div>
+            </div>
+
+            <div class="itemName">
+                Sparkle Time Valkyrie
+            </div>
+
+            <button
+                class="itemButton"
+                onclick="buyItem(
+                    'valk-gold',
+                    'Sparkle Time Valkyrie',
+                    'accessory'
+                )"
+            >
+                CLAIM
+            </button>
+
+        </div>
+
+
+        <div class="item">
+
+            <div class="itemImage">
+                <div class="fakeItem hornsBlue"></div>
+            </div>
+
+            <div class="itemName">
+                Blue Frozen Horns
+            </div>
+
+            <button
+                class="itemButton"
+                onclick="buyItem(
+                    'horns-blue',
+                    'Blue Frozen Horns',
+                    'accessory'
+                )"
+            >
+                CLAIM
+            </button>
+
+        </div>
+
+
+        <div class="item">
+
+            <div class="itemImage">
+                <div class="fakeItem redValk"></div>
+            </div>
+
+            <div class="itemName">
+                Red Valkyrie
+            </div>
+
+            <button
+                class="itemButton"
+                onclick="buyItem(
+                    'valk-red',
+                    'Red Valkyrie',
+                    'accessory'
+                )"
+            >
+                CLAIM
+            </button>
+
+        </div>
+
+    `;
+}
+
+
+/* =====================================================
+   PLAY GAME
+===================================================== */
+
+function playGame(){
+
+    const player=getPlayer();
+
+    if(!player){
+
+        showPage("auth");
+
+        return;
+    }
+
+
+    /*
+     * Demo reward system.
+     * Later this can be connected to
+     * your actual MTB game server.
+     */
+
+    player.gamesPlayed++;
+
+    const robuxReward =
+        Math.floor(
+            Math.random()*10
+        )+1;
+
+    const tixReward =
+        Math.floor(
+            Math.random()*25
+        )+5;
+
+
+    player.robux += robuxReward;
+
+    player.tix += tixReward;
+
+
+    savePlayer(player);
+
+
+    alert(
+        "Game complete!\n\n"+
+        "+ R$ "+robuxReward+
+        "\n+ "+tixReward+" Tix"
+    );
+
+
+    renderProfile();
+}
+
+
+/* =====================================================
+   ASSET SEARCH
 ===================================================== */
 
 function searchAssets(){
@@ -2244,8 +2737,11 @@ function searchAssets(){
         .value
         .toLowerCase();
 
+
     document
-        .querySelectorAll(".item")
+        .querySelectorAll(
+            "#itemGrid .item"
+        )
         .forEach(item=>{
 
             const name =
@@ -2261,59 +2757,124 @@ function searchAssets(){
 
 
 /* =====================================================
-   PLAY GAMES / EARN
+   ROBLOX USER SEARCH
 ===================================================== */
 
-function playGame(game,robuxReward,tixReward){
+async function searchUser(){
 
-    if(!player){
+    const username =
+        document
+        .getElementById(
+            "usernameSearch"
+        )
+        .value
+        .trim();
 
-        alert(
-            "Create an account first so your rewards can be saved."
+
+    const result =
+        document.getElementById(
+            "userResult"
         );
 
-        openAuth();
+
+    if(!username){
+
+        result.innerHTML =
+            "<p>Enter a username.</p>";
 
         return;
     }
 
-    const button =
-        event.target;
 
-    button.disabled = true;
+    result.innerHTML =
+        "<p>Searching...</p>";
 
-    button.textContent =
-        "PLAYING...";
 
-    setTimeout(()=>{
+    try{
 
-        player.robux +=
-            robuxReward;
+        const response =
+            await fetch(
+                "https://users.roblox.com/v1/usernames/users",
+                {
+                    method:"POST",
 
-        player.tix +=
-            tixReward;
+                    headers:{
+                        "Content-Type":
+                        "application/json"
+                    },
 
-        player.gamesPlayed++;
+                    body:JSON.stringify({
 
-        savePlayer();
+                        usernames:[username],
 
-        button.disabled = false;
+                        excludeBannedUsers:false
 
-        button.textContent =
-            "PLAY";
+                    })
+                }
+            );
 
-        alert(
-            "You completed " +
-            game +
-            "!\n\n" +
-            "+" +
-            robuxReward +
-            " Robux\n+" +
-            tixReward +
-            " Tix"
-        );
 
-    },1500);
+        const data =
+            await response.json();
+
+
+        if(
+            !data.data ||
+            data.data.length===0
+        ){
+
+            result.innerHTML =
+                "<p>User not found.</p>";
+
+            return;
+        }
+
+
+        const user =
+            data.data[0];
+
+
+        result.innerHTML = `
+
+            <div
+                style="
+                margin-top:20px;
+                border:2px solid #ddd;
+                padding:20px;
+                "
+            >
+
+                <h2>
+                    ${escapeHTML(user.name)}
+                </h2>
+
+                <p>
+                    @${escapeHTML(user.displayName)}
+                </p>
+
+                <a
+                    href="https://www.roblox.com/users/${user.id}/profile"
+                    target="_blank"
+                    style="
+                    display:inline-block;
+                    padding:12px 20px;
+                    background:#4382dc;
+                    color:white;
+                    text-decoration:none;
+                    "
+                >
+                    VIEW ROBLOX PROFILE
+                </a>
+
+            </div>
+
+        `;
+
+    }catch(error){
+
+        result.innerHTML =
+            "<p>Could not connect to Roblox.</p>";
+    }
 }
 
 
@@ -2324,11 +2885,88 @@ function playGame(game,robuxReward,tixReward){
 function escapeHTML(text){
 
     return String(text)
+
         .replace(/&/g,"&amp;")
+
         .replace(/</g,"&lt;")
+
         .replace(/>/g,"&gt;")
+
         .replace(/"/g,"&quot;")
+
         .replace(/'/g,"&#039;");
+}
+
+
+/* =====================================================
+   LOAD AVATAR
+===================================================== */
+
+function loadAvatar(){
+
+    const player=getPlayer();
+
+    if(!player){
+        return;
+    }
+
+
+    if(player.equipped.gear){
+
+        const avatar =
+            document.getElementById(
+                "avatar"
+            );
+
+        const gear =
+            document.getElementById(
+                "gear"
+            );
+
+
+        avatar.classList.add(
+            "holding"
+        );
+
+
+        if(
+            player.equipped.gear
+            ==="big-pencil"
+        ){
+
+            gear.className =
+                "gear gearPencil";
+
+        }else{
+
+            gear.className =
+                "gear gearSword";
+        }
+
+    }
+
+
+    if(player.equipped.shirt){
+
+        const body =
+            document.querySelector(
+                ".avatarBody"
+            );
+
+
+        if(body){
+
+            body.style.background =
+                player.equipped.shirt
+                ==="mtb-long"
+                ? "#333"
+                : "#111";
+        }
+
+    }
+
+
+    updateEquipped();
 }
 
 
@@ -2336,7 +2974,28 @@ function escapeHTML(text){
    START
 ===================================================== */
 
-loadPlayer();
+updateCurrency();
+
+loadAvatar();
+
+if(currentUsername){
+
+    if(accounts[currentUsername]){
+
+        showPage("home");
+
+    }else{
+
+        currentUsername=null;
+
+        localStorage.removeItem(
+            CURRENT_KEY
+        );
+
+        updateCurrency();
+    }
+
+}
 
 </script>
 
