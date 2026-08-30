@@ -17,19 +17,21 @@
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background: #e8e8e8;
+    background: #e9e9e9;
     color: #333;
 }
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 
 header {
-    background: linear-gradient(#f7f7f7, #d0d0d0);
+    background: linear-gradient(#f7f7f7,#cfcfcf);
     border-bottom: 1px solid #999;
 }
 
 .header-inner {
-    max-width: 1000px;
+    max-width: 1100px;
     margin: auto;
     padding: 8px 10px 0;
 }
@@ -46,9 +48,9 @@ nav {
 }
 
 nav a {
-    padding: 9px 13px;
     color: #444;
     text-decoration: none;
+    padding: 9px 13px;
 }
 
 nav a:hover {
@@ -61,81 +63,90 @@ nav a.active {
     color: #1683c5;
 }
 
-
-/* MAIN */
+/* =========================
+   MAIN
+========================= */
 
 .container {
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 20px auto;
     padding: 0 10px;
 }
 
 .title {
-    background: linear-gradient(#666, #444);
+    background: linear-gradient(#666,#444);
     color: white;
     border: 1px solid #333;
-    padding: 10px 12px;
+    padding: 11px 13px;
     font-size: 18px;
     font-weight: bold;
 }
 
+/* =========================
+   AVATAR
+========================= */
 
-/* AVATAR AREA */
-
-.avatar-box {
-    margin-top: 15px;
+.avatar-section {
     background: white;
     border: 1px solid #aaa;
+    margin-top: 15px;
     padding: 20px;
-    min-height: 520px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
-
-/* AVATAR */
+.avatar-area {
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:
+        linear-gradient(
+            135deg,
+            #eee,
+            #d4d4d4
+        );
+    border: 1px solid #aaa;
+    overflow: hidden;
+}
 
 .avatar {
     position: relative;
-    width: 260px;
-    height: 440px;
+    width: 280px;
+    height: 460px;
 }
 
-
-/* HEAD */
+/* =========================
+   HEAD
+========================= */
 
 .head {
     position: absolute;
-
     width: 110px;
     height: 110px;
-
-    left: 75px;
+    left: 85px;
     top: 75px;
-
     background: #f2c29b;
-
     border: 3px solid #555;
-
     border-radius: 4px;
-
     z-index: 5;
 }
 
+/* =========================
+   FACE
+========================= */
 
-/* FACE */
-
-.face-eye {
+.face {
     position: absolute;
+    inset: 0;
+    z-index: 10;
+}
 
+.eye {
+    position: absolute;
     width: 10px;
     height: 14px;
-
+    top: 38px;
     background: #222;
-
-    top: 42px;
+    border-radius: 2px;
 }
 
 .eye-left {
@@ -146,272 +157,418 @@ nav a.active {
     right: 27px;
 }
 
-.face-smile {
+.smile {
     position: absolute;
-
-    width: 35px;
-    height: 15px;
-
-    left: 35px;
-    top: 68px;
-
-    border-bottom: 3px solid #222;
-
+    width: 38px;
+    height: 18px;
+    left: 33px;
+    top: 65px;
+    border-bottom: 4px solid #222;
     border-radius: 50%;
 }
 
+/* Faces */
 
-/* BODY */
+.face-big-smile .smile {
+    width: 48px;
+    height: 25px;
+    left: 28px;
+    border-bottom-width: 7px;
+}
+
+.face-neutral .smile {
+    width: 35px;
+    height: 0;
+    top: 76px;
+    border-radius: 0;
+}
+
+.face-sad .smile {
+    top: 78px;
+    border: 0;
+    border-top: 4px solid #222;
+}
+
+.face-surprised .smile,
+.face-shocked .smile {
+    width: 20px;
+    height: 25px;
+    left: 45px;
+    top: 68px;
+    border: 4px solid #222;
+    border-radius: 50%;
+}
+
+.face-angry .eye-left {
+    transform: rotate(25deg);
+}
+
+.face-angry .eye-right {
+    transform: rotate(-25deg);
+}
+
+.face-angry .smile {
+    top: 78px;
+    border: 0;
+    border-top: 4px solid #222;
+}
+
+.face-sleepy .eye {
+    height: 3px;
+    top: 44px;
+    border-radius: 5px;
+}
+
+.face-wink .eye-right {
+    height: 3px;
+    top: 44px;
+    border-radius: 5px;
+}
+
+.face-silly .eye-left {
+    transform: rotate(15deg);
+}
+
+.face-silly .eye-right {
+    transform: rotate(-15deg);
+}
+
+.face-evil .eye {
+    background: #a00000;
+    box-shadow: 0 0 5px red;
+}
+
+.face-evil .smile {
+    border: 0;
+    border-top: 4px solid #222;
+}
+
+.face-cool .eye {
+    width: 28px;
+    height: 10px;
+    top: 38px;
+    background: #111;
+}
+
+.face-cool .eye-left {
+    left: 15px;
+}
+
+.face-cool .eye-right {
+    right: 15px;
+}
+
+.face-nerd .eye {
+    width: 20px;
+    height: 20px;
+    top: 34px;
+    background: transparent;
+    border: 3px solid #222;
+    border-radius: 50%;
+}
+
+.face-nerd .eye-left {
+    left: 18px;
+}
+
+.face-nerd .eye-right {
+    right: 18px;
+}
+
+.face-scared .eye {
+    width: 18px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.face-scared .eye-left {
+    left: 20px;
+}
+
+.face-scared .eye-right {
+    right: 20px;
+}
+
+.face-proud .eye {
+    height: 7px;
+}
+
+/* =========================
+   BODY
+========================= */
 
 .body {
     position: absolute;
-
     width: 125px;
     height: 135px;
-
-    left: 67px;
+    left: 77px;
     top: 185px;
-
     background: #1683ff;
-
     border: 3px solid #555;
-
     z-index: 2;
 }
 
+/* =========================
+   SHIRT GRAPHICS
+========================= */
 
-/* ARMS */
+.shirt-logo {
+    position: absolute;
+    width: 100%;
+    top: 48px;
+    text-align: center;
+    color: white;
+    font-size: 27px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px #111;
+}
+
+.shirt-star {
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    left: 32px;
+    top: 35px;
+    background: white;
+    clip-path:
+        polygon(
+            50% 0,
+            61% 35%,
+            100% 35%,
+            69% 58%,
+            81% 100%,
+            50% 74%,
+            19% 100%,
+            31% 58%,
+            0 35%,
+            39% 35%
+        );
+}
+
+.shirt-flame {
+    position: absolute;
+    width: 100%;
+    top: 38px;
+    text-align: center;
+    font-size: 45px;
+}
+
+.shirt-lightning {
+    position: absolute;
+    width: 100%;
+    top: 30px;
+    text-align: center;
+    font-size: 55px;
+    color: white;
+    text-shadow: 0 0 8px #6bd8ff;
+}
+
+/* =========================
+   ARMS
+========================= */
 
 .arm {
     position: absolute;
-
     width: 45px;
     height: 130px;
-
     top: 188px;
-
     background: #f2c29b;
-
     border: 3px solid #555;
-
     z-index: 1;
 }
 
 .arm-left {
-    left: 20px;
+    left: 30px;
 }
 
 .arm-right {
-    right: 20px;
+    right: 30px;
 }
 
-
-/* LEGS */
+/* =========================
+   LEGS
+========================= */
 
 .leg {
     position: absolute;
-
     width: 55px;
     height: 125px;
-
     top: 320px;
-
     background: #333;
-
     border: 3px solid #555;
-
     z-index: 1;
 }
 
 .leg-left {
-    left: 68px;
+    left: 78px;
 }
 
 .leg-right {
-    right: 68px;
+    right: 78px;
 }
 
+/* =========================
+   PANTS
+========================= */
+
+.pants-logo {
+    position: absolute;
+    width: 100%;
+    top: 45px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 900;
+    color: white;
+    text-shadow: 1px 1px #111;
+}
+
+.pants-star {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    left: 7px;
+    top: 35px;
+    background: white;
+    clip-path:
+        polygon(
+            50% 0,
+            61% 35%,
+            100% 35%,
+            69% 58%,
+            81% 100%,
+            50% 74%,
+            19% 100%,
+            31% 58%,
+            0 35%,
+            39% 35%
+        );
+}
+
+.pants-flame {
+    position: absolute;
+    width: 100%;
+    top: 35px;
+    text-align: center;
+    font-size: 28px;
+}
+
+.pants-lightning {
+    position: absolute;
+    width: 100%;
+    top: 25px;
+    text-align: center;
+    font-size: 35px;
+    color: white;
+    text-shadow: 0 0 5px #6bd8ff;
+}
+
+.season-pants {
+    animation: seasons 12s infinite;
+}
+
+@keyframes seasons {
+
+    0%,24% {
+        background:
+            linear-gradient(
+                90deg,
+                #67d477,
+                #f2a5d4
+            );
+    }
+
+    25%,49% {
+        background:
+            linear-gradient(
+                90deg,
+                #18bde9,
+                #f4df54
+            );
+    }
+
+    50%,74% {
+        background:
+            linear-gradient(
+                90deg,
+                #8a4218,
+                #df7a1d
+            );
+    }
+
+    75%,100% {
+        background:
+            linear-gradient(
+                90deg,
+                #69d8ff,
+                #eafaff
+            );
+    }
+}
 
 /* =========================
-   FEDORA
+   ACCESSORIES
 ========================= */
+
+.accessory {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+/* Fedora */
 
 .fedora {
     position: absolute;
-
     width: 150px;
     height: 70px;
-
-    left: 55px;
+    left: 65px;
     top: 28px;
-
-    border-radius:
-        50% 50% 20% 20%;
-
+    border-radius: 50% 50% 20% 20%;
     border: 3px solid rgba(0,0,0,.35);
-
     z-index: 20;
-
     box-shadow:
-        inset 0 8px 12px
-        rgba(255,255,255,.4),
-
-        0 4px 12px
-        rgba(0,0,0,.35);
+        inset 0 8px 12px rgba(255,255,255,.4),
+        0 4px 12px rgba(0,0,0,.35);
 }
 
 .fedora::before {
-
     content: "";
-
     position: absolute;
-
     width: 185px;
     height: 18px;
-
     left: -20px;
     bottom: -7px;
-
     background: inherit;
-
     border-radius: 50%;
-
     border: 3px solid rgba(0,0,0,.35);
 }
 
-.fedora::after {
-
-    content: "";
-
-    position: absolute;
-
-    width: 115px;
-    height: 7px;
-
-    left: 15px;
-    top: 32px;
-
-    background:
-        rgba(255,255,255,.55);
-
-    box-shadow:
-        0 0 10px white;
+.fedora.classic {
+    background: linear-gradient(135deg,#eee,#999,#fff);
 }
 
-
-/* FEDORA COLORS */
-
-.classic {
-    background:
-        linear-gradient(
-            135deg,
-            #eee,
-            #999,
-            #fff
-        );
+.fedora.red {
+    background: linear-gradient(135deg,#ff7777,#b91515,#ffaaaa);
 }
 
-.red {
-    background:
-        linear-gradient(
-            135deg,
-            #ff7777,
-            #b91515,
-            #ffaaaa
-        );
+.fedora.blue {
+    background: linear-gradient(135deg,#7edcff,#0876c9,#bceeff);
 }
 
-.orange {
-    background:
-        linear-gradient(
-            135deg,
-            #ffd080,
-            #e87800,
-            #fff0b0
-        );
+.fedora.gold {
+    background: linear-gradient(135deg,#fff3a0,#d7a400,#fff7c7);
 }
 
-.gold {
-    background:
-        linear-gradient(
-            135deg,
-            #fff3a0,
-            #d7a400,
-            #fff7c7
-        );
+.fedora.purple {
+    background: linear-gradient(135deg,#db9cff,#7420b5,#f0c9ff);
 }
 
-.green {
-    background:
-        linear-gradient(
-            135deg,
-            #83ffae,
-            #129448,
-            #b5ffd0
-        );
+.fedora.pink {
+    background: linear-gradient(135deg,#ff9edb,#d52c8a,#ffd2ef);
 }
 
-.blue {
-    background:
-        linear-gradient(
-            135deg,
-            #7edcff,
-            #0876c9,
-            #bceeff
-        );
-}
-
-.purple {
-    background:
-        linear-gradient(
-            135deg,
-            #db9cff,
-            #7420b5,
-            #f0c9ff
-        );
-}
-
-.pink {
-    background:
-        linear-gradient(
-            135deg,
-            #ff9edb,
-            #d52c8a,
-            #ffd2ef
-        );
-}
-
-.cyan {
-    background:
-        linear-gradient(
-            135deg,
-            #b7ffff,
-            #009fa8,
-            #d9ffff
-        );
-}
-
-.black {
-    background:
-        linear-gradient(
-            135deg,
-            #777,
-            #090909,
-            #555
-        );
-}
-
-.white {
-    background:
-        linear-gradient(
-            135deg,
-            #fff,
-            #ccc,
-            #fff
-        );
-}
-
-.rainbow {
+.fedora.rainbow {
     background:
         linear-gradient(
             120deg,
@@ -423,195 +580,70 @@ nav a.active {
             #7c4dff,
             #ff54c8
         );
-
-    animation:
-        rainbow 3s linear infinite;
 }
 
-@keyframes rainbow {
-
-    0% {
-        filter:
-            hue-rotate(0deg)
-            brightness(1);
-    }
-
-    50% {
-        filter:
-            hue-rotate(30deg)
-            brightness(1.3);
-    }
-
-    100% {
-        filter:
-            hue-rotate(0deg)
-            brightness(1);
-    }
-}
-
-
-/* =========================
-   SPARKLES
-========================= */
-
-.sparkle {
-    position: absolute;
-
-    width: 7px;
-    height: 7px;
-
-    background: white;
-
-    transform: rotate(45deg);
-
-    box-shadow:
-        0 0 8px white;
-
-    animation:
-        sparkle 1.3s infinite;
-}
-
-.s1 {
-    left: 20px;
-    top: 15px;
-}
-
-.s2 {
-    left: 70px;
-    top: 48px;
-    animation-delay: .3s;
-}
-
-.s3 {
-    right: 25px;
-    top: 20px;
-    animation-delay: .6s;
-}
-
-.s4 {
-    right: 45px;
-    top: 48px;
-    animation-delay: .9s;
-}
-
-@keyframes sparkle {
-
-    0%,100% {
-        opacity: .2;
-        transform:
-            rotate(45deg)
-            scale(.5);
-    }
-
-    50% {
-        opacity: 1;
-        transform:
-            rotate(45deg)
-            scale(1.5);
-    }
-}
-
-
-/* =========================
-   FROZEN HORNS
-========================= */
+/* Frozen-style crystal horns */
 
 .horns {
     position: absolute;
-
-    width: 180px;
-    height: 120px;
-
-    left: 40px;
-    top: 5px;
-
+    width: 190px;
+    height: 145px;
+    left: 45px;
+    top: 0;
     z-index: 18;
 }
 
 .horn {
     position: absolute;
-
-    width: 38px;
-    height: 105px;
-
+    width: 42px;
+    height: 120px;
     background:
         linear-gradient(
             135deg,
             #ffffff,
-            #8eeaff,
-            #277cae
+            #a6f2ff,
+            #54b6dc,
+            #dfffff
         );
-
-    border:
-        3px solid #377f9c;
-
+    border: 3px solid #377f9c;
     box-shadow:
-        0 0 14px #69eaff;
+        0 0 8px #69eaff,
+        inset 5px 0 8px rgba(255,255,255,.8);
+    border-radius: 80% 25% 20% 20%;
+}
 
-    border-radius:
-        75% 25% 20% 20%;
+.horn::after {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 85px;
+    left: 8px;
+    top: 8px;
+    background: rgba(255,255,255,.75);
+    transform: rotate(-10deg);
 }
 
 .horn.left {
-    left: 20px;
-
-    transform:
-        rotate(-28deg);
+    left: 17px;
+    transform: rotate(-30deg);
 }
 
 .horn.right {
-    right: 20px;
-
-    transform:
-        rotate(28deg)
-        scaleX(-1);
+    right: 17px;
+    transform: rotate(30deg) scaleX(-1);
 }
 
-
-/* HORN SPIKES */
-
-.horn::after {
-
-    content: "";
-
-    position: absolute;
-
-    width: 25px;
-    height: 25px;
-
-    top: 15px;
-    left: 20px;
-
-    background: #dfffff;
-
-    clip-path:
-        polygon(
-            0 100%,
-            50% 0,
-            100% 100%
-        );
-}
-
-
-/* CROWN */
+/* Crown */
 
 .crown {
     position: absolute;
-
     width: 125px;
     height: 80px;
-
-    left: 67px;
+    left: 77px;
     top: 35px;
-
     z-index: 15;
-
     background:
-        linear-gradient(
-            #fff47b,
-            #d39d00
-        );
-
+        linear-gradient(#fff47b,#d39d00);
     clip-path:
         polygon(
             0 100%,
@@ -622,35 +654,25 @@ nav a.active {
             90% 20%,
             100% 100%
         );
-
-    border: 3px solid #8c6800;
 }
 
-
-/* WINGS */
+/* Wings */
 
 .wings {
     position: absolute;
-
-    width: 260px;
+    width: 280px;
     height: 150px;
-
     left: 0;
     top: 205px;
-
     z-index: 0;
 }
 
 .wings::before,
 .wings::after {
-
     content: "";
-
     position: absolute;
-
     width: 105px;
     height: 140px;
-
     background:
         linear-gradient(
             135deg,
@@ -658,89 +680,131 @@ nav a.active {
             #a8dfff,
             #559cc5
         );
-
-    border:
-        3px solid #6095ad;
-
-    border-radius:
-        80% 20% 80% 20%;
+    border: 3px solid #6095ad;
+    border-radius: 80% 20% 80% 20%;
 }
 
 .wings::before {
-
     left: 0;
-
-    transform:
-        rotate(-20deg);
+    transform: rotate(-20deg);
 }
 
 .wings::after {
-
     right: 0;
-
-    transform:
-        rotate(20deg)
-        scaleX(-1);
+    transform: rotate(20deg) scaleX(-1);
 }
 
+/* =========================
+   EQUIPPED INFO
+========================= */
 
-/* CONTROLS */
-
-.controls {
-
+.status {
     margin-top: 15px;
-
+    padding: 12px;
     background: white;
-
     border: 1px solid #aaa;
+    color: #1683c5;
+    font-weight: bold;
+}
 
+/* =========================
+   CATALOG
+========================= */
+
+.catalog {
+    margin-top: 15px;
+    background: white;
+    border: 1px solid #aaa;
     padding: 15px;
+}
 
+.catalog h2 {
+    margin-top: 0;
+    font-size: 20px;
+}
+
+.category {
+    margin-top: 20px;
+}
+
+.category h3 {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 7px;
+}
+
+.items {
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit,minmax(170px,1fr));
+    gap: 10px;
+}
+
+.item {
+    background: #f5f5f5;
+    border: 1px solid #aaa;
+    padding: 10px;
+}
+
+.item-preview {
+    height: 120px;
+    background:
+        linear-gradient(
+            135deg,
+            #ddd,
+            #eee
+        );
+    border: 1px solid #bbb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
     text-align: center;
 }
 
+.item h4 {
+    margin: 9px 0 4px;
+}
+
+.item p {
+    margin: 0;
+    font-size: 12px;
+    color: #666;
+}
+
 button {
-
-    padding: 9px 18px;
-
-    border:
-        1px solid #555;
-
+    width: 100%;
+    margin-top: 8px;
+    padding: 9px;
+    border: 1px solid #555;
     border-radius: 3px;
-
     background:
-        linear-gradient(
-            #65b5e8,
-            #1683c5
-        );
-
+        linear-gradient(#69b9e9,#1683c5);
     color: white;
-
     font-weight: bold;
-
     cursor: pointer;
 }
 
 button:hover {
-
     background:
-        linear-gradient(
-            #79c5ed,
-            #1683c5
-        );
+        linear-gradient(#82c9ef,#1683c5);
 }
 
-.status {
+button.equipped {
+    background:
+        linear-gradient(#777,#555);
+}
 
+.clear {
     margin-top: 10px;
-
-    color: #1683c5;
-
-    font-weight: bold;
+    background:
+        linear-gradient(#777,#555);
 }
 
-
-/* MOBILE */
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #777;
+}
 
 @media(max-width:600px) {
 
@@ -753,14 +817,17 @@ button:hover {
         font-size: 12px;
     }
 
-    .avatar-box {
-        overflow: hidden;
+    .avatar {
+        transform: scale(.8);
+    }
+
+    .items {
+        grid-template-columns: repeat(2,1fr);
     }
 
 }
 
 </style>
-
 </head>
 
 
@@ -777,38 +844,15 @@ MTB REVIVALS
 
 <nav>
 
-<a href="index.html">
-Home
-</a>
-
-<a href="login.html">
-Account
-</a>
-
-<a href="avatar.html"
-   class="active">
-Avatar
-</a>
-
-<a href="accessories.html">
-Accessories
-</a>
-
-<a href="clothes.html">
-Clothes
-</a>
-
-<a href="inventory.html">
-Inventory
-</a>
-
-<a href="games.html">
-Games
-</a>
-
-<a href="news.html">
-News
-</a>
+<a href="index.html">Home</a>
+<a href="login.html">Account</a>
+<a href="avatar.html" class="active">Avatar</a>
+<a href="accessories.html">Accessories</a>
+<a href="clothes.html">Clothes</a>
+<a href="pants.html">Pants</a>
+<a href="inventory.html">Inventory</a>
+<a href="games.html">Games</a>
+<a href="news.html">News</a>
 
 </nav>
 
@@ -819,71 +863,638 @@ News
 
 <div class="container">
 
+
 <div class="title">
-My Avatar
+MTB REVIVALS - Avatar
 </div>
 
 
-<div class="avatar-box">
+<!-- AVATAR -->
 
-<div class="avatar"
-     id="avatar">
+<div class="avatar-section">
 
+<div class="avatar-area">
 
-<!-- ACCESSORY -->
+<div class="avatar" id="avatar">
 
-<div id="accessory"></div>
+<div id="accessory"
+class="accessory">
+</div>
 
-
-<!-- WINGS -->
-
-<div id="wings"></div>
-
-
-<!-- HEAD -->
 
 <div class="head">
 
-<div class="face-eye eye-left"></div>
-<div class="face-eye eye-right"></div>
+<div id="face"
+class="face face-happy">
 
-<div class="face-smile"></div>
+<div class="eye eye-left"></div>
+<div class="eye eye-right"></div>
+
+<div class="smile"></div>
+
+</div>
 
 </div>
 
 
-<!-- BODY -->
+<div class="body">
 
-<div class="body"></div>
+<div id="shirtGraphic"></div>
 
+</div>
 
-<!-- ARMS -->
 
 <div class="arm arm-left"></div>
 <div class="arm arm-right"></div>
 
 
-<!-- LEGS -->
-
 <div class="leg leg-left"></div>
 <div class="leg leg-right"></div>
 
-
 </div>
 
 </div>
 
 
-<div class="controls">
+<div class="status"
+id="status">
 
-<button onclick="removeAccessory()">
-Remove Accessory
+Loading avatar...
+
+</div>
+
+
+<button
+class="clear"
+onclick="clearAvatar()">
+
+Clear Equipped Items
+
 </button>
 
-<div
-class="status"
-id="status">
-Loading avatar...
+</div>
+
+
+<!-- CATALOG -->
+
+<div class="catalog">
+
+<h2>
+Avatar Items
+</h2>
+
+
+<!-- FACES -->
+
+<div class="category">
+
+<h3>
+Classic Faces
+</h3>
+
+<div class="items">
+
+
+<div class="item">
+<div class="item-preview">
+🙂
+</div>
+<h4>Classic Smile</h4>
+<p>Classic happy face.</p>
+<button onclick="equipFace(this,'happy')">
+Equip
+</button>
+</div>
+
+
+<div class="item">
+<div class="item-preview">
+😄
+</div>
+<h4>Big Smile</h4>
+<p>Big classic smile.</p>
+<button onclick="equipFace(this,'big-smile')">
+Equip
+</button>
+</div>
+
+
+<div class="item">
+<div class="item-preview">
+😐
+</div>
+<h4>Neutral</h4>
+<p>Simple classic face.</p>
+<button onclick="equipFace(this,'neutral')">
+Equip
+</button>
+</div>
+
+
+<div class="item">
+<div class="item-preview">
+😢
+</div>
+<h4>Sad</h4>
+<p>Sad classic face.</p>
+<button onclick="equipFace(this,'sad')">
+Equip
+</button>
+</div>
+
+
+<div class="item">
+<div class="item-preview">
+😮
+</div>
+<h4>Surprised</h4>
+<p>Surprised face.</p>
+<button onclick="equipFace(this,'surprised')">
+Equip
+</button>
+</div>
+
+
+<div class="item">
+<div class="item-preview">
+😡
+</div>
+<h4>Angry</h4>
+<p>Angry classic face.</p>
+<button onclick="equipFace(this,'angry')">
+Equip
+</button>
+</div>
+
+
+<div class="item">
+<div class="item-preview">
+😴
+</div>
+<h4>Sleepy</h4>
+<p>Sleepy face.</p>
+<button onclick="equipFace(this,'sleepy')">
+Equip
+</button>
+</div>
+
+
+<div class="item">
+<div class="item-preview">
+😉
+</div>
+<h4>Wink</h4>
+<p>Classic wink.</p>
+<button onclick="equipFace(this,'wink')">
+Equip
+</button>
+</div>
+
+
+<div class="item">
+<div class="item-preview">
+😜
+</div>
+<h4>Silly</h4>
+<p>Silly classic face.</p>
+<button onclick="equipFace(this,'silly')">
+Equip
+</button>
+</div>
+
+
+<div class="item">
+<div class="item-preview">
+😈
+</div>
+<h4>Evil</h4>
+<p>Dark classic face.</p>
+<button onclick="equipFace(this,'evil')">
+Equip
+</button>
+</div>
+
+
+<div class="item">
+<div class="item-preview">
+😎
+</div>
+<h4>Cool</h4>
+<p>Cool shades face.</p>
+<button onclick="equipFace(this,'cool')">
+Equip
+</button>
+</div>
+
+
+<div class="item">
+<div class="item-preview">
+😱
+</div>
+<h4>Shocked</h4>
+<p>Shocked expression.</p>
+<button onclick="equipFace(this,'shocked')">
+Equip
+</button>
+</div>
+
+
+<div class="item">
+<div class="item-preview">
+🤓
+</div>
+<h4>Nerd</h4>
+<p>Classic nerd face.</p>
+<button onclick="equipFace(this,'nerd')">
+Equip
+</button>
+</div>
+
+
+<div class="item">
+<div class="item-preview">
+😨
+</div>
+<h4>Scared</h4>
+<p>Scared expression.</p>
+<button onclick="equipFace(this,'scared')">
+Equip
+</button>
+</div>
+
+
+<div class="item">
+<div class="item-preview">
+😏
+</div>
+<h4>Proud</h4>
+<p>Confident expression.</p>
+<button onclick="equipFace(this,'proud')">
+Equip
+</button>
+</div>
+
+
+</div>
+
+</div>
+
+
+<!-- SHIRTS -->
+
+<div class="category">
+
+<h3>
+MTB Shirts
+</h3>
+
+<div class="items">
+
+
+<div class="item">
+<div class="item-preview">
+MTB
+</div>
+<h4>MTB Classic Logo</h4>
+<p>Classic MTB shirt.</p>
+<button onclick="equipShirt(this,'MTB Classic Logo')">
+Equip
+</button>
+</div>
+
+
+<div class="item">
+<div class="item-preview">
+★ MTB
+</div>
+<h4>MTB Star Streetwear</h4>
+<p>MTB star design.</p>
+<button onclick="equipShirt(this,'MTB Star Streetwear')">
+Equip
+</button>
+</div>
+
+
+<div class="item">
+<div class="item-preview">
+🔥
+</div>
+<h4>MTB Flame</h4>
+<p>Original flame design.</p>
+<button onclick="equipShirt(this,'MTB Flame')">
+Equip
+</button>
+</div>
+
+
+<div class="item">
+<div class="item-preview">
+⚡
+</div>
+<h4>MTB Lightning</h4>
+<p>Electric MTB design.</p>
+<button onclick="equipShirt(this,'MTB Lightning')">
+Equip
+</button>
+</div>
+
+
+<div class="item">
+<div class="item-preview">
+MTB
+</div>
+<h4>MTB Grey Essential</h4>
+<p>Grey classic shirt.</p>
+<button onclick="equipShirt(this,'MTB Grey Essential')">
+Equip
+</button>
+</div>
+
+
+<div class="item">
+<div class="item-preview">
+MTB
+</div>
+<h4>MTB Gothic</h4>
+<p>Dark MTB style.</p>
+<button onclick="equipShirt(this,'MTB Gothic')">
+Equip
+</button>
+</div>
+
+
+<div class="item">
+<div class="item-preview">
+MTB
+</div>
+<h4>MTB White Classic</h4>
+<p>White MTB shirt.</p>
+<button onclick="equipShirt(this,'MTB White Classic')">
+Equip
+</button>
+</div>
+
+
+<div class="item">
+<div class="item-preview">
+✚
+</div>
+<h4>Midnight Cross</h4>
+<p>Dark cross design.</p>
+<button onclick="equipShirt(this,'Midnight Cross')">
+Equip
+</button>
+</div>
+
+
+</div>
+
+</div>
+
+
+<!-- PANTS -->
+
+<div class="category">
+
+<h3>
+MTB Pants
+</h3>
+
+<div class="items">
+
+
+<div class="item">
+<div class="item-preview">
+MTB
+</div>
+<h4>MTB Black Logo Pants</h4>
+<p>Classic black pants.</p>
+<button onclick="equipPants(this,'MTB Black Logo Pants')">
+Equip
+</button>
+</div>
+
+
+<div class="item">
+<div class="item-preview">
+MTB
+</div>
+<h4>MTB Grey Classic Pants</h4>
+<p>Classic grey pants.</p>
+<button onclick="equipPants(this,'MTB Grey Classic Pants')">
+Equip
+</button>
+</div>
+
+
+<div class="item">
+<div class="item-preview">
+★
+</div>
+<h4>MTB Star Pants</h4>
+<p>Star streetwear pants.</p>
+<button onclick="equipPants(this,'MTB Star Pants')">
+Equip
+</button>
+</div>
+
+
+<div class="item">
+<div class="item-preview">
+🔥
+</div>
+<h4>MTB Flame Pants</h4>
+<p>Flame pants.</p>
+<button onclick="equipPants(this,'MTB Flame Pants')">
+Equip
+</button>
+</div>
+
+
+<div class="item">
+<div class="item-preview">
+⚡
+</div>
+<h4>MTB Lightning Pants</h4>
+<p>Lightning pants.</p>
+<button onclick="equipPants(this,'MTB Lightning Pants')">
+Equip
+</button>
+</div>
+
+
+<div class="item">
+<div class="item-preview">
+MIDNIGHT
+</div>
+<h4>MTB Midnight Pants</h4>
+<p>Dark streetwear pants.</p>
+<button onclick="equipPants(this,'MTB Midnight Pants')">
+Equip
+</button>
+</div>
+
+
+<div class="item">
+<div class="item-preview">
+MTB JEANS
+</div>
+<h4>MTB Classic Jeans</h4>
+<p>Blue denim style.</p>
+<button onclick="equipPants(this,'MTB Classic Jeans')">
+Equip
+</button>
+</div>
+
+
+<div class="item">
+<div class="item-preview">
+🌸 ☀️ 🍂 ❄️
+</div>
+<h4>MTB All Seasons Pants</h4>
+<p>Spring, Summer, Fall & Winter.</p>
+<button onclick="equipPants(this,'MTB All Seasons Pants')">
+Equip
+</button>
+</div>
+
+
+</div>
+
+</div>
+
+
+<!-- ACCESSORIES -->
+
+<div class="category">
+
+<h3>
+Accessories
+</h3>
+
+<div class="items">
+
+
+<div class="item">
+<div class="item-preview">
+✨ Fedora
+</div>
+<h4>Sparkle Fedora</h4>
+<p>Classic sparkle style.</p>
+<button onclick="equipAccessory(this,'Sparkle Fedora')">
+Equip
+</button>
+</div>
+
+
+<div class="item">
+<div class="item-preview">
+🔴 Fedora
+</div>
+<h4>Sparkle Fedora - Red</h4>
+<p>Red sparkle variant.</p>
+<button onclick="equipAccessory(this,'Sparkle Fedora - Red')">
+Equip
+</button>
+</div>
+
+
+<div class="item">
+<div class="item-preview">
+🔵 Fedora
+</div>
+<h4>Sparkle Fedora - Blue</h4>
+<p>Blue sparkle variant.</p>
+<button onclick="equipAccessory(this,'Sparkle Fedora - Blue')">
+Equip
+</button>
+</div>
+
+
+<div class="item">
+<div class="item-preview">
+🟡 Fedora
+</div>
+<h4>Sparkle Fedora - Gold</h4>
+<p>Gold sparkle variant.</p>
+<button onclick="equipAccessory(this,'Sparkle Fedora - Gold')">
+Equip
+</button>
+</div>
+
+
+<div class="item">
+<div class="item-preview">
+🟣 Fedora
+</div>
+<h4>Sparkle Fedora - Purple</h4>
+<p>Purple sparkle variant.</p>
+<button onclick="equipAccessory(this,'Sparkle Fedora - Purple')">
+Equip
+</button>
+</div>
+
+
+<div class="item">
+<div class="item-preview">
+🩷 Fedora
+</div>
+<h4>Sparkle Fedora - Pink</h4>
+<p>Pink sparkle variant.</p>
+<button onclick="equipAccessory(this,'Sparkle Fedora - Pink')">
+Equip
+</button>
+</div>
+
+
+<div class="item">
+<div class="item-preview">
+🌈 Fedora
+</div>
+<h4>Sparkle Fedora - Rainbow</h4>
+<p>Rainbow sparkle variant.</p>
+<button onclick="equipAccessory(this,'Sparkle Fedora - Rainbow')">
+Equip
+</button>
+</div>
+
+
+<div class="item">
+<div class="item-preview">
+❄️ Horns
+</div>
+<h4>Frozen Crystal Horns</h4>
+<p>Tall icy crystal horns.</p>
+<button onclick="equipAccessory(this,'Frozen Crystal Horns')">
+Equip
+</button>
+</div>
+
+
+<div class="item">
+<div class="item-preview">
+👑 Crown
+</div>
+<h4>Royal Crown</h4>
+<p>Classic golden crown.</p>
+<button onclick="equipAccessory(this,'Royal Crown')">
+Equip
+</button>
+</div>
+
+
+<div class="item">
+<div class="item-preview">
+🪽 Wings
+</div>
+<h4>Crystal Wings</h4>
+<p>Blue crystal wings.</p>
+<button onclick="equipAccessory(this,'Crystal Wings')">
+Equip
+</button>
+</div>
+
+
 </div>
 
 </div>
@@ -893,16 +1504,563 @@ Loading avatar...
 
 
 <footer>
-
 MTB REVIVALS © 2026
-
 </footer>
 
 
 <script>
 
 /* =========================
-   LOAD EQUIPPED ACCESSORY
+   EQUIP FACE
+========================= */
+
+function equipFace(button, face) {
+
+    localStorage.setItem(
+        "mtbFace",
+        face
+    );
+
+    loadFace();
+
+    updateButtons(
+        "mtbFace",
+        face,
+        button
+    );
+
+    updateStatus();
+}
+
+
+/* =========================
+   EQUIP SHIRT
+========================= */
+
+function equipShirt(button, shirt) {
+
+    localStorage.setItem(
+        "mtbShirt",
+        shirt
+    );
+
+    loadShirt();
+
+    updateButtons(
+        "mtbShirt",
+        shirt,
+        button
+    );
+
+    updateStatus();
+}
+
+
+/* =========================
+   EQUIP PANTS
+========================= */
+
+function equipPants(button, pants) {
+
+    localStorage.setItem(
+        "mtbPants",
+        pants
+    );
+
+    loadPants();
+
+    updateButtons(
+        "mtbPants",
+        pants,
+        button
+    );
+
+    updateStatus();
+}
+
+
+/* =========================
+   EQUIP ACCESSORY
+========================= */
+
+function equipAccessory(button, accessory) {
+
+    localStorage.setItem(
+        "mtbAccessory",
+        accessory
+    );
+
+    loadAccessory();
+
+    updateButtons(
+        "mtbAccessory",
+        accessory,
+        button
+    );
+
+    updateStatus();
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+function updateButtons(
+    storageKey,
+    value,
+    selectedButton
+) {
+
+    document
+    .querySelectorAll("button")
+    .forEach(function(button) {
+
+        const code =
+            button.getAttribute(
+                "onclick"
+            );
+
+        if (!code) {
+            return;
+        }
+
+        if (
+            code.includes(
+                "equipFace"
+            ) &&
+            storageKey === "mtbFace"
+        ) {
+
+            button.classList.remove(
+                "equipped"
+            );
+
+            button.textContent =
+                "Equip";
+
+        }
+
+        if (
+            code.includes(
+                "equipShirt"
+            ) &&
+            storageKey === "mtbShirt"
+        ) {
+
+            button.classList.remove(
+                "equipped"
+            );
+
+            button.textContent =
+                "Equip";
+
+        }
+
+        if (
+            code.includes(
+                "equipPants"
+            ) &&
+            storageKey === "mtbPants"
+        ) {
+
+            button.classList.remove(
+                "equipped"
+            );
+
+            button.textContent =
+                "Equip";
+
+        }
+
+        if (
+            code.includes(
+                "equipAccessory"
+            ) &&
+            storageKey === "mtbAccessory"
+        ) {
+
+            button.classList.remove(
+                "equipped"
+            );
+
+            button.textContent =
+                "Equip";
+
+        }
+
+    });
+
+
+    selectedButton.classList.add(
+        "equipped"
+    );
+
+    selectedButton.textContent =
+        "Equipped";
+}
+
+
+/* =========================
+   FACE DISPLAY
+========================= */
+
+function loadFace() {
+
+    const saved =
+        localStorage.getItem(
+            "mtbFace"
+        ) || "happy";
+
+    document
+    .getElementById("face")
+    .className =
+        "face face-" + saved;
+}
+
+
+/* =========================
+   SHIRT DISPLAY
+========================= */
+
+function loadShirt() {
+
+    const shirt =
+        localStorage.getItem(
+            "mtbShirt"
+        );
+
+    const graphic =
+        document.getElementById(
+            "shirtGraphic"
+        );
+
+    const body =
+        document.querySelector(
+            ".body"
+        );
+
+    graphic.innerHTML = "";
+
+    body.style.background =
+        "#1683ff";
+
+
+    if (!shirt) {
+        return;
+    }
+
+
+    if (
+        shirt ===
+        "MTB Classic Logo"
+    ) {
+
+        body.style.background =
+            "#1683ff";
+
+        graphic.innerHTML =
+            `<div class="shirt-logo">MTB</div>`;
+
+    }
+
+    else if (
+        shirt ===
+        "MTB Star Streetwear"
+    ) {
+
+        body.style.background =
+            "#111";
+
+        graphic.innerHTML = `
+            <div class="shirt-star"></div>
+            <div class="shirt-logo"
+                 style="font-size:18px;top:103px;">
+                MTB
+            </div>
+        `;
+
+    }
+
+    else if (
+        shirt ===
+        "MTB Flame"
+    ) {
+
+        body.style.background =
+            "#8b1111";
+
+        graphic.innerHTML =
+            `<div class="shirt-flame">🔥</div>`;
+
+    }
+
+    else if (
+        shirt ===
+        "MTB Lightning"
+    ) {
+
+        body.style.background =
+            "#07558c";
+
+        graphic.innerHTML =
+            `<div class="shirt-lightning">⚡</div>`;
+
+    }
+
+    else if (
+        shirt ===
+        "MTB Grey Essential"
+    ) {
+
+        body.style.background =
+            "#555";
+
+        graphic.innerHTML =
+            `<div class="shirt-logo">MTB</div>`;
+
+    }
+
+    else if (
+        shirt ===
+        "MTB Gothic"
+    ) {
+
+        body.style.background =
+            "#151515";
+
+        graphic.innerHTML = `
+            <div class="shirt-logo"
+                 style="font-size:22px;">
+                MTB
+            </div>
+        `;
+
+    }
+
+    else if (
+        shirt ===
+        "MTB White Classic"
+    ) {
+
+        body.style.background =
+            "#eee";
+
+        graphic.innerHTML = `
+            <div class="shirt-logo"
+                 style="
+                 color:#111;
+                 text-shadow:1px 1px #aaa;">
+                MTB
+            </div>
+        `;
+
+    }
+
+    else if (
+        shirt ===
+        "Midnight Cross"
+    ) {
+
+        body.style.background =
+            "#080808";
+
+        graphic.innerHTML = `
+            <div class="shirt-logo"
+                 style="font-size:48px;">
+                ✚
+            </div>
+        `;
+
+    }
+
+}
+
+
+/* =========================
+   PANTS DISPLAY
+========================= */
+
+function loadPants() {
+
+    const pants =
+        localStorage.getItem(
+            "mtbPants"
+        );
+
+    const left =
+        document.querySelector(
+            ".leg-left"
+        );
+
+    const right =
+        document.querySelector(
+            ".leg-right"
+        );
+
+
+    left.className =
+        "leg leg-left";
+
+    right.className =
+        "leg leg-right";
+
+    left.innerHTML = "";
+    right.innerHTML = "";
+
+
+    if (!pants) {
+        return;
+    }
+
+
+    if (
+        pants ===
+        "MTB Black Logo Pants"
+    ) {
+
+        left.innerHTML =
+            `<div class="pants-logo">MTB</div>`;
+
+        right.innerHTML =
+            `<div class="pants-logo">MTB</div>`;
+
+    }
+
+    else if (
+        pants ===
+        "MTB Grey Classic Pants"
+    ) {
+
+        left.style.background =
+            "#555";
+
+        right.style.background =
+            "#555";
+
+        left.innerHTML =
+            `<div class="pants-logo">MTB</div>`;
+
+        right.innerHTML =
+            `<div class="pants-logo">MTB</div>`;
+
+    }
+
+    else if (
+        pants ===
+        "MTB Star Pants"
+    ) {
+
+        left.style.background =
+            "#111";
+
+        right.style.background =
+            "#111";
+
+        left.innerHTML =
+            `<div class="pants-star"></div>`;
+
+        right.innerHTML =
+            `<div class="pants-star"></div>`;
+
+    }
+
+    else if (
+        pants ===
+        "MTB Flame Pants"
+    ) {
+
+        left.style.background =
+            "#8b1111";
+
+        right.style.background =
+            "#8b1111";
+
+        left.innerHTML =
+            `<div class="pants-flame">🔥</div>`;
+
+        right.innerHTML =
+            `<div class="pants-flame">🔥</div>`;
+
+    }
+
+    else if (
+        pants ===
+        "MTB Lightning Pants"
+    ) {
+
+        left.style.background =
+            "#07558c";
+
+        right.style.background =
+            "#07558c";
+
+        left.innerHTML =
+            `<div class="pants-lightning">⚡</div>`;
+
+        right.innerHTML =
+            `<div class="pants-lightning">⚡</div>`;
+
+    }
+
+    else if (
+        pants ===
+        "MTB Midnight Pants"
+    ) {
+
+        left.style.background =
+            "#111";
+
+        right.style.background =
+            "#111";
+
+        left.innerHTML =
+            `<div class="pants-logo">MIDNIGHT</div>`;
+
+        right.innerHTML =
+            `<div class="pants-logo">MTB</div>`;
+
+    }
+
+    else if (
+        pants ===
+        "MTB Classic Jeans"
+    ) {
+
+        left.style.background =
+            "#2166a5";
+
+        right.style.background =
+            "#2166a5";
+
+        left.innerHTML =
+            `<div class="pants-logo">MTB</div>`;
+
+        right.innerHTML =
+            `<div class="pants-logo">MTB</div>`;
+
+    }
+
+    else if (
+        pants ===
+        "MTB All Seasons Pants"
+    ) {
+
+        left.classList.add(
+            "season-pants"
+        );
+
+        right.classList.add(
+            "season-pants"
+        );
+
+    }
+
+}
+
+
+/* =========================
+   ACCESSORY DISPLAY
 ========================= */
 
 function loadAccessory() {
@@ -912,38 +2070,18 @@ function loadAccessory() {
             "mtbAccessory"
         );
 
-
     const accessory =
         document.getElementById(
             "accessory"
         );
 
-
-    const wings =
-        document.getElementById(
-            "wings"
-        );
-
-
     accessory.innerHTML = "";
-    wings.innerHTML = "";
 
 
     if (!item) {
-
-        document
-            .getElementById("status")
-            .textContent =
-            "No accessory equipped.";
-
         return;
-
     }
 
-
-    /*
-       FEDORAS
-    */
 
     const fedoraColors = {
 
@@ -953,32 +2091,17 @@ function loadAccessory() {
         "Sparkle Fedora - Red":
             "red",
 
-        "Sparkle Fedora - Orange":
-            "orange",
+        "Sparkle Fedora - Blue":
+            "blue",
 
         "Sparkle Fedora - Gold":
             "gold",
-
-        "Sparkle Fedora - Green":
-            "green",
-
-        "Sparkle Fedora - Blue":
-            "blue",
 
         "Sparkle Fedora - Purple":
             "purple",
 
         "Sparkle Fedora - Pink":
             "pink",
-
-        "Sparkle Fedora - Cyan":
-            "cyan",
-
-        "Sparkle Fedora - Black":
-            "black",
-
-        "Sparkle Fedora - White":
-            "white",
 
         "Sparkle Fedora - Rainbow":
             "rainbow"
@@ -990,193 +2113,155 @@ function loadAccessory() {
         fedoraColors[item]
     ) {
 
-        const fedora =
-            document.createElement(
-                "div"
-            );
-
-        fedora.className =
-            "fedora " +
-            fedoraColors[item];
-
-
-        for (
-            let i = 1;
-            i <= 4;
-            i++
-        ) {
-
-            const sparkle =
-                document.createElement(
-                    "span"
-                );
-
-            sparkle.className =
-                "sparkle s" + i;
-
-            fedora.appendChild(
-                sparkle
-            );
-
-        }
-
-
-        accessory.appendChild(
-            fedora
-        );
+        accessory.innerHTML =
+            `<div class="fedora ${
+                fedoraColors[item]
+            }"></div>`;
 
     }
-
-
-    /*
-       FROZEN HORNS
-    */
 
     else if (
         item ===
         "Frozen Crystal Horns"
     ) {
 
-        const horns =
-            document.createElement(
-                "div"
-            );
+        accessory.innerHTML = `
+            <div class="horns">
 
-        horns.className =
-            "horns";
+                <div class="horn left">
+                </div>
 
-        horns.innerHTML = `
+                <div class="horn right">
+                </div>
 
-            <div class="horn left"></div>
-
-            <div class="horn right"></div>
-
+            </div>
         `;
 
-        accessory.appendChild(
-            horns
-        );
-
     }
-
-
-    /*
-       CROWN
-    */
 
     else if (
         item ===
         "Royal Crown"
     ) {
 
-        const crown =
-            document.createElement(
-                "div"
-            );
-
-        crown.className =
-            "crown";
-
-        accessory.appendChild(
-            crown
-        );
+        accessory.innerHTML =
+            `<div class="crown"></div>`;
 
     }
-
-
-    /*
-       WINGS
-    */
 
     else if (
         item ===
         "Crystal Wings"
     ) {
 
-        const wing =
-            document.createElement(
-                "div"
-            );
-
-        wing.className =
-            "wings";
-
-        wings.appendChild(
-            wing
-        );
+        accessory.innerHTML =
+            `<div class="wings"></div>`;
 
     }
-
-
-    /*
-       TOP HAT
-    */
-
-    else if (
-        item ===
-        "Classic Top Hat"
-    ) {
-
-        const hat =
-            document.createElement(
-                "div"
-            );
-
-        hat.style.position =
-            "absolute";
-
-        hat.style.width =
-            "105px";
-
-        hat.style.height =
-            "100px";
-
-        hat.style.left =
-            "77px";
-
-        hat.style.top =
-            "28px";
-
-        hat.style.background =
-            "linear-gradient(#555,#111)";
-
-        hat.style.border =
-            "3px solid #222";
-
-        hat.style.zIndex =
-            "20";
-
-        hat.style.boxShadow =
-            "0 4px 10px rgba(0,0,0,.4)";
-
-
-        accessory.appendChild(
-            hat
-        );
-
-    }
-
-
-    document
-        .getElementById("status")
-        .textContent =
-        item +
-        " equipped.";
 
 }
 
 
 /* =========================
-   REMOVE
+   STATUS
 ========================= */
 
-function removeAccessory() {
+function updateStatus() {
+
+    const face =
+        localStorage.getItem(
+            "mtbFace"
+        ) || "happy";
+
+    const shirt =
+        localStorage.getItem(
+            "mtbShirt"
+        );
+
+    const pants =
+        localStorage.getItem(
+            "mtbPants"
+        );
+
+    const accessory =
+        localStorage.getItem(
+            "mtbAccessory"
+        );
+
+
+    let text =
+        "Face: " +
+        face;
+
+
+    text +=
+        " | Shirt: " +
+        (shirt || "None");
+
+
+    text +=
+        " | Pants: " +
+        (pants || "None");
+
+
+    text +=
+        " | Accessory: " +
+        (accessory || "None");
+
+
+    document
+    .getElementById("status")
+    .textContent =
+        text;
+
+}
+
+
+/* =========================
+   CLEAR
+========================= */
+
+function clearAvatar() {
+
+    localStorage.removeItem(
+        "mtbFace"
+    );
+
+    localStorage.removeItem(
+        "mtbShirt"
+    );
+
+    localStorage.removeItem(
+        "mtbPants"
+    );
 
     localStorage.removeItem(
         "mtbAccessory"
     );
 
+
+    loadFace();
+    loadShirt();
+    loadPants();
     loadAccessory();
+
+    document
+    .querySelectorAll(
+        ".item button"
+    )
+    .forEach(function(button) {
+
+        button.classList.remove(
+            "equipped"
+        );
+
+        button.textContent =
+            "Equip";
+
+    });
+
+
+    updateStatus();
 
 }
 
@@ -1185,24 +2270,130 @@ function removeAccessory() {
    START
 ========================= */
 
-loadAccessory();
+function startAvatar() {
+
+    loadFace();
+    loadShirt();
+    loadPants();
+    loadAccessory();
+
+    updateStatus();
 
 
-/*
-   Update automatically if
-   another page changes the
-   accessory.
-*/
+    /*
+       Mark saved items as equipped.
+    */
 
-window.addEventListener(
-    "storage",
-    loadAccessory
-);
+    const face =
+        localStorage.getItem(
+            "mtbFace"
+        );
+
+    const shirt =
+        localStorage.getItem(
+            "mtbShirt"
+        );
+
+    const pants =
+        localStorage.getItem(
+            "mtbPants"
+        );
+
+    const accessory =
+        localStorage.getItem(
+            "mtbAccessory"
+        );
+
+
+    document
+    .querySelectorAll(
+        ".item button"
+    )
+    .forEach(function(button) {
+
+        const code =
+            button.getAttribute(
+                "onclick"
+            ) || "";
+
+
+        if (
+            face &&
+            code.includes(
+                "'" + face + "'"
+            )
+        ) {
+
+            button.classList.add(
+                "equipped"
+            );
+
+            button.textContent =
+                "Equipped";
+
+        }
+
+
+        if (
+            shirt &&
+            code.includes(
+                "'" + shirt + "'"
+            )
+        ) {
+
+            button.classList.add(
+                "equipped"
+            );
+
+            button.textContent =
+                "Equipped";
+
+        }
+
+
+        if (
+            pants &&
+            code.includes(
+                "'" + pants + "'"
+            )
+        ) {
+
+            button.classList.add(
+                "equipped"
+            );
+
+            button.textContent =
+                "Equipped";
+
+        }
+
+
+        if (
+            accessory &&
+            code.includes(
+                "'" + accessory + "'"
+            )
+        ) {
+
+            button.classList.add(
+                "equipped"
+            );
+
+            button.textContent =
+                "Equipped";
+
+        }
+
+    });
+
+}
+
+
+startAvatar();
 
 </script>
 
 
 </body>
-
 </html>
 ```
