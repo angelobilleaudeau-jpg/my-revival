@@ -3,13 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-
 <title>MTB REVIVALS</title>
 
 <style>
-*{
-    box-sizing:border-box;
-}
+*{box-sizing:border-box}
 
 html,body{
     margin:0;
@@ -19,19 +16,15 @@ html,body{
     color:#333;
 }
 
-button,input{
-    font-family:inherit;
-}
+button,input{font-family:inherit}
 
-/* =====================================================
-   HEADER
-===================================================== */
+/* HEADER */
 
 .header{
     height:96px;
     background:#4382dc;
     border-bottom:4px solid #ef8a2c;
-    color:#fff;
+    color:white;
     display:flex;
     align-items:center;
     position:sticky;
@@ -55,38 +48,41 @@ button,input{
 .topNav a{
     display:flex;
     align-items:center;
-    padding:0 17px;
-    color:#fff;
+    padding:0 15px;
+    color:white;
     text-decoration:none;
-    font-size:16px;
+    font-size:15px;
     font-weight:bold;
 }
 
-.topNav a:hover,
-.topNav a.active{
-    background:rgba(0,0,0,.14);
+.topNav a:hover{
+    background:rgba(0,0,0,.15);
 }
 
-.coinBox{
+.currency{
     margin-left:auto;
-    margin-right:25px;
-    background:rgba(0,0,0,.16);
-    border:1px solid rgba(255,255,255,.25);
-    padding:12px 17px;
+    margin-right:15px;
+    display:flex;
+    gap:8px;
+}
+
+.currencyBox{
+    padding:10px 12px;
+    background:rgba(0,0,0,.15);
+    border:1px solid rgba(255,255,255,.3);
     border-radius:4px;
     font-weight:bold;
+    font-size:14px;
 }
 
-.coinIcon{
-    color:#ffe25c;
-    margin-right:5px;
-}
+.robuxIcon{color:#55d66d}
+.tixIcon{color:#f2c94c}
 
 .mobileMenu{
     display:none;
-    margin-right:18px;
-    width:48px;
-    height:42px;
+    width:45px;
+    height:40px;
+    margin-right:15px;
     background:transparent;
     border:1px solid rgba(255,255,255,.5);
 }
@@ -95,13 +91,11 @@ button,input{
     display:block;
     width:25px;
     height:3px;
-    background:#fff;
+    background:white;
     margin:5px auto;
 }
 
-/* =====================================================
-   MOBILE NAV
-===================================================== */
+/* MOBILE NAV */
 
 .mobileNav{
     display:none;
@@ -109,28 +103,23 @@ button,input{
     top:96px;
     left:0;
     right:0;
-    background:#fff;
-    border-bottom:1px solid #ccc;
+    background:white;
     z-index:4999;
     box-shadow:0 5px 15px rgba(0,0,0,.2);
 }
 
-.mobileNav.open{
-    display:block;
-}
+.mobileNav.open{display:block}
 
 .mobileNav a{
     display:block;
-    padding:17px 22px;
+    padding:17px;
     border-bottom:1px solid #ddd;
-    color:#333;
     text-decoration:none;
+    color:#333;
     font-weight:bold;
 }
 
-/* =====================================================
-   ANNOUNCEMENT
-===================================================== */
+/* ANNOUNCEMENT */
 
 .announcement{
     background:#ef8a2c;
@@ -138,36 +127,21 @@ button,input{
     text-align:center;
     padding:13px;
     font-weight:bold;
-    font-size:18px;
 }
 
-/* =====================================================
-   PAGE
-===================================================== */
+/* PAGE */
 
 .page{
     max-width:1250px;
     margin:auto;
-    padding:30px 25px 130px;
-}
-
-.pageHeader{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-bottom:25px;
-}
-
-.pageTitle{
-    margin:0;
-    font-size:34px;
+    padding:30px 25px 120px;
 }
 
 .section{
-    background:#fff;
-    border:1px solid #d4d4d4;
-    border-radius:4px;
+    background:white;
+    border:1px solid #d2d2d2;
     margin-bottom:25px;
+    border-radius:4px;
 }
 
 .sectionHeader{
@@ -177,23 +151,19 @@ button,input{
     font-weight:bold;
 }
 
-/* =====================================================
-   HERO
-===================================================== */
+/* HOME */
 
 .hero{
-    background:#fff;
-    border:1px solid #d4d4d4;
+    background:white;
+    border:1px solid #d2d2d2;
     padding:30px;
     display:flex;
     align-items:center;
-    gap:35px;
+    gap:30px;
     margin-bottom:25px;
 }
 
-.heroText{
-    flex:1;
-}
+.heroText{flex:1}
 
 .heroText h1{
     margin:0 0 12px;
@@ -203,36 +173,6 @@ button,input{
 .heroText p{
     color:#666;
     line-height:1.6;
-    font-size:17px;
-}
-
-.heroButtons{
-    display:flex;
-    gap:10px;
-    flex-wrap:wrap;
-}
-
-.primaryButton,
-.secondaryButton{
-    border:0;
-    padding:13px 22px;
-    cursor:pointer;
-    font-weight:bold;
-    border-radius:3px;
-}
-
-.primaryButton{
-    background:#4382dc;
-    color:#fff;
-}
-
-.primaryButton:hover{
-    background:#2868c0;
-}
-
-.secondaryButton{
-    background:#ddd;
-    color:#333;
 }
 
 .heroLogo{
@@ -241,31 +181,28 @@ button,input{
     background:#02030b;
     border:2px solid #222;
     display:flex;
-    align-items:center;
     justify-content:center;
-    color:#fff;
-    font-size:27px;
-    font-weight:900;
+    align-items:center;
     text-align:center;
-    position:relative;
-    overflow:hidden;
+    color:white;
+    font-size:27px;
+    font-weight:bold;
 }
 
-.heroLogo:before{
-    content:"✦  ·   ✧   ·  ✦";
-    position:absolute;
-    inset:15px;
-    color:#fff;
-    font-size:16px;
+.primaryButton{
+    border:0;
+    padding:13px 22px;
+    background:#4382dc;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
 }
 
-/* =====================================================
-   SEARCH
-===================================================== */
+/* SEARCH */
 
 .search{
     display:flex;
-    margin-bottom:25px;
+    padding:20px 20px 0;
 }
 
 .search input{
@@ -274,28 +211,23 @@ button,input{
     border:1px solid #bbb;
     padding:0 15px;
     font-size:16px;
-    outline:none;
 }
 
 .search button{
-    width:58px;
+    width:55px;
     border:0;
     background:#4382dc;
     color:white;
-    cursor:pointer;
-    font-size:20px;
+    font-size:19px;
 }
 
-/* =====================================================
-   FILTERS
-===================================================== */
+/* FILTERS */
 
 .filters{
     display:flex;
     gap:8px;
+    padding:15px 20px 0;
     flex-wrap:wrap;
-    padding:15px;
-    border-bottom:1px solid #ddd;
 }
 
 .filter{
@@ -308,13 +240,10 @@ button,input{
 
 .filter.active{
     background:#4382dc;
-    color:#fff;
-    border-color:#4382dc;
+    color:white;
 }
 
-/* =====================================================
-   ITEM GRID
-===================================================== */
+/* ITEMS */
 
 .itemGrid{
     padding:20px;
@@ -324,61 +253,49 @@ button,input{
 }
 
 .item{
-    border:1px solid #d2d2d2;
-    background:#fff;
-    border-radius:4px;
+    border:1px solid #ccc;
+    background:white;
     overflow:hidden;
-    transition:.15s;
-}
-
-.item:hover{
-    transform:translateY(-2px);
-    box-shadow:0 4px 14px rgba(0,0,0,.12);
 }
 
 .itemImage{
-    height:190px;
+    height:185px;
     background:#eee;
-    border-bottom:1px solid #ddd;
     display:flex;
     justify-content:center;
     align-items:center;
-    overflow:hidden;
+    border-bottom:1px solid #ddd;
 }
 
 .fakeItem{
     width:115px;
     height:115px;
-    position:relative;
 }
 
 .blueValk{
     background:linear-gradient(135deg,#2748bd,#8ea7ff);
     clip-path:polygon(
-        50% 0,63% 28%,90% 10%,78% 47%,
-        100% 66%,66% 63%,50% 100%,
-        34% 63%,0 66%,22% 47%,10% 10%,37% 28%
-    );
+    50% 0,63% 28%,90% 10%,78% 47%,
+    100% 66%,66% 63%,50% 100%,
+    34% 63%,0 66%,22% 47%,10% 10%,37% 28%);
 }
 
 .redValk{
     background:linear-gradient(135deg,#9d1717,#ff5555);
     clip-path:polygon(
-        50% 0,63% 28%,90% 10%,78% 47%,
-        100% 66%,66% 63%,50% 100%,
-        34% 63%,0 66%,22% 47%,10% 10%,37% 28%
-    );
+    50% 0,63% 28%,90% 10%,78% 47%,
+    100% 66%,66% 63%,50% 100%,
+    34% 63%,0 66%,22% 47%,10% 10%,37% 28%);
 }
 
 .hornsBlue{
     width:130px;
     height:105px;
-    background:linear-gradient(#d8fbff,#63bfff);
+    background:linear-gradient(#dffcff,#54c8ff);
     clip-path:polygon(
-        50% 0,65% 28%,100% 7%,78% 48%,
-        100% 72%,65% 65%,50% 100%,
-        35% 65%,0 72%,22% 48%,0 7%,35% 28%
-    );
+    50% 0,65% 28%,100% 7%,78% 48%,
+    100% 72%,65% 65%,50% 100%,
+    35% 65%,0 72%,22% 48%,0 7%,35% 28%);
 }
 
 .ninja{
@@ -390,9 +307,7 @@ button,input{
 .pencil{
     width:31px;
     height:145px;
-    background:linear-gradient(
-        90deg,#c88412,#ffe14f,#c88412
-    );
+    background:linear-gradient(90deg,#c88412,#ffe14f,#c88412);
     transform:rotate(-25deg);
     border:3px solid #7d5b0e;
 }
@@ -402,19 +317,17 @@ button,input{
     height:70px;
     border-radius:60% 60% 20% 20%;
     background:linear-gradient(
-        135deg,#df3333,#e8d03b,
-        #45ce6a,#559cf2,#a94cdd
-    );
+    135deg,#df3333,#e8d03b,#45ce6a,#559cf2,#a94cdd);
 }
 
 .shirtPreview{
     width:110px;
     height:130px;
     background:#151515;
+    color:white;
     display:flex;
     align-items:center;
     justify-content:center;
-    color:#fff;
     font-size:25px;
     font-weight:bold;
 }
@@ -423,11 +336,10 @@ button,input{
     width:90px;
     height:155px;
     background:#252525;
+    color:white;
     display:flex;
     align-items:center;
     justify-content:center;
-    color:#fff;
-    font-size:20px;
     font-weight:bold;
 }
 
@@ -438,24 +350,26 @@ button,input{
 .itemName{
     font-size:17px;
     font-weight:bold;
-    min-height:42px;
+    min-height:40px;
 }
 
 .itemType{
     color:#888;
     font-size:13px;
-    margin-top:4px;
 }
 
-.itemPrice{
-    margin-top:12px;
-    color:#51b965;
+.price{
+    margin-top:10px;
     font-weight:bold;
 }
 
+.price.free{color:#50b961}
+.price.robux{color:#42a85b}
+.price.tix{color:#c59b20}
+
 .itemActions{
     display:flex;
-    gap:7px;
+    gap:6px;
     margin-top:12px;
 }
 
@@ -469,12 +383,11 @@ button,input{
 
 .claim{
     background:#4382dc;
-    color:#fff;
+    color:white;
 }
 
 .equip{
     background:#ddd;
-    color:#333;
 }
 
 .ownedBadge{
@@ -482,14 +395,12 @@ button,input{
     margin-top:8px;
     padding:4px 7px;
     background:#3c8d48;
-    color:#fff;
+    color:white;
     font-size:11px;
     font-weight:bold;
 }
 
-/* =====================================================
-   AVATAR
-===================================================== */
+/* AVATAR */
 
 .avatarLayout{
     display:grid;
@@ -503,15 +414,12 @@ button,input{
     border:1px solid #222;
     background-color:#02030b;
     background-image:
-        radial-gradient(circle,#fff 1px,transparent 2px),
-        radial-gradient(circle,#8fbfff 1px,transparent 2px),
-        radial-gradient(circle,#fff 1px,transparent 2px),
-        radial-gradient(circle,#5d7cff 1px,transparent 2px);
+    radial-gradient(circle,#fff 1px,transparent 2px),
+    radial-gradient(circle,#8fbfff 1px,transparent 2px),
+    radial-gradient(circle,#fff 1px,transparent 2px),
+    radial-gradient(circle,#5d7cff 1px,transparent 2px);
     background-size:
-        90px 90px,
-        150px 150px,
-        210px 210px,
-        270px 270px;
+    90px 90px,150px 150px,210px 210px,270px 270px;
     position:relative;
     overflow:hidden;
 }
@@ -548,13 +456,8 @@ button,input{
     border-radius:50%;
 }
 
-.avatarHead:before{
-    left:25px;
-}
-
-.avatarHead:after{
-    right:25px;
-}
+.avatarHead:before{left:25px}
+.avatarHead:after{right:25px}
 
 .avatarBody{
     position:absolute;
@@ -574,9 +477,9 @@ button,input{
     right:0;
     top:45px;
     text-align:center;
-    color:#fff;
-    font-weight:bold;
+    color:white;
     font-size:30px;
+    font-weight:bold;
 }
 
 .avatarArm{
@@ -587,17 +490,11 @@ button,input{
     background:#efbd76;
     border:4px solid #111;
     border-radius:5px;
-    z-index:2;
     transition:.25s;
 }
 
-.leftArm{
-    left:10px;
-}
-
-.rightArm{
-    right:10px;
-}
+.leftArm{left:10px}
+.rightArm{right:10px}
 
 .holding .rightArm{
     transform:rotate(-55deg);
@@ -612,16 +509,10 @@ button,input{
     height:150px;
     background:#171717;
     border:4px solid #111;
-    z-index:2;
 }
 
-.leftLeg{
-    left:55px;
-}
-
-.rightLeg{
-    right:55px;
-}
+.leftLeg{left:55px}
+.rightLeg{right:55px}
 
 .korblox .rightLeg{
     width:28px;
@@ -634,17 +525,9 @@ button,input{
     display:none;
 }
 
-.headless .avatarBody{
-    top:25px;
-}
-
-.headless .avatarArm{
-    top:30px;
-}
-
-.headless .avatarLeg{
-    top:165px;
-}
+.headless .avatarBody{top:25px}
+.headless .avatarArm{top:30px}
+.headless .avatarLeg{top:165px}
 
 .accessoryVisual{
     position:absolute;
@@ -659,10 +542,9 @@ button,input{
     top:-20px;
     background:linear-gradient(#dffcff,#54c8ff);
     clip-path:polygon(
-        50% 0,65% 30%,100% 8%,78% 50%,
-        100% 72%,65% 66%,50% 100%,
-        35% 66%,0 72%,22% 50%,0 8%,35% 30%
-    );
+    50% 0,65% 30%,100% 8%,78% 50%,
+    100% 72%,65% 66%,50% 100%,
+    35% 66%,0 72%,22% 50%,0 8%,35% 30%);
 }
 
 .visualValk{
@@ -672,10 +554,9 @@ button,input{
     top:-15px;
     background:linear-gradient(135deg,#3658dc,#a8b9ff);
     clip-path:polygon(
-        50% 0,62% 35%,90% 12%,76% 55%,
-        100% 72%,65% 65%,50% 100%,
-        35% 65%,0 72%,24% 55%,10% 12%,38% 35%
-    );
+    50% 0,62% 35%,90% 12%,76% 55%,
+    100% 72%,65% 65%,50% 100%,
+    35% 65%,0 72%,24% 55%,10% 12%,38% 35%);
 }
 
 .visualFedora{
@@ -685,9 +566,7 @@ button,input{
     top:-20px;
     border-radius:50% 50% 20% 20%;
     background:linear-gradient(
-        135deg,#df3333,#e8d03b,
-        #45ce6a,#559cf2,#a94cdd
-    );
+    135deg,#df3333,#e8d03b,#45ce6a,#559cf2,#a94cdd);
 }
 
 .gearVisual{
@@ -698,32 +577,17 @@ button,input{
     z-index:30;
 }
 
-.holding .gearVisual{
-    display:block;
-}
+.holding .gearVisual{display:block}
 
 .gearPencil{
     width:26px;
     height:150px;
-    background:linear-gradient(
-        90deg,#c88412,#ffe14f,#c88412
-    );
+    background:linear-gradient(90deg,#c88412,#ffe14f,#c88412);
     transform:rotate(-25deg);
     border:3px solid #76570d;
 }
 
-.gearSword{
-    width:28px;
-    height:145px;
-    background:linear-gradient(
-        90deg,#555,#fff,#777
-    );
-    transform:rotate(-25deg);
-    clip-path:polygon(
-        50% 0,100% 15%,65% 100%,
-        35% 100%,0 15%
-    );
-}
+/* AVATAR CONTROLS */
 
 .avatarControls{
     border:1px solid #ddd;
@@ -731,41 +595,26 @@ button,input{
     padding:18px;
 }
 
-.avatarControls h3{
-    margin-top:0;
-}
-
 .controlButton{
     width:100%;
     margin-bottom:8px;
     padding:11px;
     border:1px solid #bbb;
-    background:#fff;
+    background:white;
     cursor:pointer;
     text-align:left;
-}
-
-.controlButton:hover{
-    background:#eee;
-}
-
-.equippedList{
-    margin-top:15px;
-    border-top:1px solid #ddd;
-    padding-top:15px;
+    font-weight:bold;
 }
 
 .equippedItem{
-    background:#fff;
+    background:white;
     border:1px solid #ddd;
     padding:8px;
-    margin-bottom:6px;
+    margin-top:6px;
     font-size:13px;
 }
 
-/* =====================================================
-   INVENTORY
-===================================================== */
+/* INVENTORY */
 
 .inventoryGrid{
     padding:20px;
@@ -776,32 +625,27 @@ button,input{
 
 .inventoryItem{
     border:1px solid #ccc;
-    background:#fff;
     padding:15px;
+    background:white;
 }
 
 .inventoryItem h3{
     margin:0 0 7px;
-    font-size:16px;
 }
 
-.inventoryItem small{
-    color:#888;
-}
+.inventoryItem small{color:#888}
 
 .inventoryItem button{
-    margin-top:12px;
     width:100%;
+    margin-top:12px;
     padding:9px;
     border:0;
     background:#4382dc;
-    color:#fff;
+    color:white;
     font-weight:bold;
 }
 
-/* =====================================================
-   GAMES
-===================================================== */
+/* GAMES */
 
 .gamesGrid{
     padding:20px;
@@ -812,40 +656,45 @@ button,input{
 
 .game{
     border:1px solid #ccc;
-    background:#fff;
 }
 
 .gameImage{
     height:150px;
     background:#ddd;
     display:flex;
-    align-items:center;
     justify-content:center;
+    align-items:center;
     font-size:24px;
     font-weight:bold;
 }
 
-.gameInfo{
-    padding:15px;
-}
+.gameInfo{padding:15px}
 
-.gameInfo h3{
-    margin:0 0 7px;
-}
+.gameInfo h3{margin-top:0}
 
 .playButton{
-    margin-top:12px;
     width:100%;
+    margin-top:12px;
     padding:11px;
     border:0;
     background:#4382dc;
     color:white;
     font-weight:bold;
+    cursor:pointer;
 }
 
-/* =====================================================
-   USERS
-===================================================== */
+/* NEWS */
+
+.news{
+    padding:20px;
+}
+
+.newsCard{
+    padding:15px 0;
+    border-bottom:1px solid #ddd;
+}
+
+/* USER SEARCH */
 
 .userSearch{
     padding:20px;
@@ -871,34 +720,7 @@ button,input{
     font-weight:bold;
 }
 
-.userResult{
-    margin-top:15px;
-}
-
-/* =====================================================
-   NEWS
-===================================================== */
-
-.news{
-    padding:20px;
-}
-
-.newsCard{
-    border-bottom:1px solid #ddd;
-    padding:15px 0;
-}
-
-.newsCard:last-child{
-    border-bottom:0;
-}
-
-.newsCard h3{
-    margin:0 0 6px;
-}
-
-/* =====================================================
-   MODAL
-===================================================== */
+/* MODAL */
 
 .modal{
     display:none;
@@ -906,26 +728,19 @@ button,input{
     inset:0;
     background:rgba(0,0,0,.58);
     z-index:10000;
-    align-items:center;
     justify-content:center;
+    align-items:center;
     padding:20px;
 }
 
-.modal.show{
-    display:flex;
-}
+.modal.show{display:flex}
 
 .modalBox{
     width:100%;
     max-width:430px;
-    background:#fff;
-    border-radius:4px;
+    background:white;
     padding:25px;
-    box-shadow:0 10px 40px rgba(0,0,0,.4);
-}
-
-.modalBox h2{
-    margin-top:0;
+    border-radius:4px;
 }
 
 .modalButtons{
@@ -942,50 +757,37 @@ button,input{
     font-weight:bold;
 }
 
-.cancel{
-    background:#ddd;
-}
+.cancel{background:#ddd}
 
 .confirm{
     background:#4382dc;
-    color:#fff;
+    color:white;
 }
 
-/* =====================================================
-   FOOTER
-===================================================== */
+/* FOOTER */
 
 .footer{
     background:#222;
     color:#aaa;
     text-align:center;
     padding:25px;
-    margin-top:40px;
 }
 
-/* =====================================================
-   RESPONSIVE
-===================================================== */
+/* RESPONSIVE */
 
-@media(max-width:900px){
+@media(max-width:950px){
 
-    .topNav{
-        display:none;
-    }
+    .topNav{display:none}
 
-    .mobileMenu{
-        display:block;
-    }
+    .mobileMenu{display:block}
 
     .logo{
-        font-size:26px;
+        font-size:25px;
         margin-left:18px;
     }
 
-    .coinBox{
+    .currency{
         margin-left:auto;
-        margin-right:12px;
-        padding:9px 10px;
     }
 
     .itemGrid{
@@ -1005,49 +807,36 @@ button,input{
     }
 }
 
-@media(max-width:520px){
+@media(max-width:550px){
 
-    .header{
-        height:75px;
-    }
+    .header{height:75px}
 
-    .mobileNav{
-        top:75px;
-    }
-
-    .announcement{
-        font-size:14px;
-    }
+    .mobileNav{top:75px}
 
     .logo{
-        font-size:20px;
+        font-size:18px;
     }
 
-    .coinBox{
-        font-size:12px;
+    .currency{
+        gap:3px;
     }
 
-    .mobileMenu{
-        width:40px;
-        height:36px;
-    }
-
-    .page{
-        padding:18px 12px 100px;
+    .currencyBox{
+        padding:7px;
+        font-size:11px;
     }
 
     .hero{
         flex-direction:column;
         align-items:stretch;
-        padding:20px;
-    }
-
-    .heroText h1{
-        font-size:28px;
     }
 
     .heroLogo{
         width:100%;
+    }
+
+    .page{
+        padding:18px 10px 100px;
     }
 
     .itemGrid{
@@ -1058,10 +847,6 @@ button,input{
 
     .itemImage{
         height:140px;
-    }
-
-    .itemInfo{
-        padding:10px;
     }
 
     .itemName{
@@ -1077,14 +862,6 @@ button,input{
         padding:10px;
     }
 
-    .pageTitle{
-        font-size:28px;
-    }
-
-    .avatarStage{
-        height:500px;
-    }
-
     .userSearchRow{
         flex-direction:column;
     }
@@ -1098,10 +875,6 @@ button,input{
 
 <body>
 
-<!-- =====================================================
-     HEADER
-===================================================== -->
-
 <header class="header">
 
     <div class="logo">
@@ -1109,19 +882,28 @@ button,input{
     </div>
 
     <nav class="topNav">
-
-        <a href="#home" class="active">Home</a>
+        <a href="#home">Home</a>
         <a href="#catalog">Catalog</a>
         <a href="#avatar">Avatar</a>
         <a href="#inventory">Inventory</a>
         <a href="#games">Games</a>
         <a href="#news">News</a>
-
     </nav>
 
-    <div class="coinBox">
-        <span class="coinIcon">●</span>
-        <span id="coinAmount">1,000</span> MTB
+    <div class="currency">
+
+        <div class="currencyBox">
+            <span class="robuxIcon">●</span>
+            <span id="robuxAmount">1,000</span>
+            Robux
+        </div>
+
+        <div class="currencyBox">
+            <span class="tixIcon">●</span>
+            <span id="tixAmount">0</span>
+            Tix
+        </div>
+
     </div>
 
     <button
@@ -1136,25 +918,21 @@ button,input{
 </header>
 
 <nav id="mobileNav" class="mobileNav">
-
-    <a href="#home" onclick="closeMobileMenu()">Home</a>
-    <a href="#catalog" onclick="closeMobileMenu()">Catalog</a>
-    <a href="#avatar" onclick="closeMobileMenu()">Avatar</a>
-    <a href="#inventory" onclick="closeMobileMenu()">Inventory</a>
-    <a href="#games" onclick="closeMobileMenu()">Games</a>
-    <a href="#news" onclick="closeMobileMenu()">News</a>
-
+    <a href="#home">Home</a>
+    <a href="#catalog">Catalog</a>
+    <a href="#avatar">Avatar</a>
+    <a href="#inventory">Inventory</a>
+    <a href="#games">Games</a>
+    <a href="#news">News</a>
 </nav>
 
 <div class="announcement">
-    Welcome to MTB REVIVALS — Everything is FREE right now!
+    Welcome to MTB REVIVALS — Play games to earn Tix!
 </div>
 
 <main class="page">
 
-<!-- =====================================================
-     HOME
-===================================================== -->
+<!-- HOME -->
 
 <section id="home">
 
@@ -1167,28 +945,16 @@ button,input{
             </h1>
 
             <p>
-                Welcome to your classic Roblox-style revival.
                 Explore the catalog, customize your avatar,
-                collect items and discover games.
+                collect items and play games to earn Tix.
             </p>
 
-            <div class="heroButtons">
-
-                <button
-                    class="primaryButton"
-                    onclick="goTo('catalog')"
-                >
-                    Browse Catalog
-                </button>
-
-                <button
-                    class="secondaryButton"
-                    onclick="goTo('avatar')"
-                >
-                    Customize Avatar
-                </button>
-
-            </div>
+            <button
+                class="primaryButton"
+                onclick="goTo('catalog')"
+            >
+                Browse Catalog
+            </button>
 
         </div>
 
@@ -1200,9 +966,7 @@ button,input{
 
 </section>
 
-<!-- =====================================================
-     CATALOG
-===================================================== -->
+<!-- CATALOG -->
 
 <section id="catalog" class="section">
 
@@ -1242,27 +1006,21 @@ button,input{
 
     </div>
 
-    <div style="padding:20px 20px 0;">
+    <div class="search">
 
-        <div class="search">
+        <input
+            id="assetSearch"
+            placeholder="Search catalog..."
+            oninput="searchAssets()"
+        >
 
-            <input
-                id="assetSearch"
-                placeholder="Search the catalog..."
-                oninput="searchAssets()"
-            >
-
-            <button onclick="searchAssets()">
-                🔍
-            </button>
-
-        </div>
+        <button onclick="searchAssets()">🔍</button>
 
     </div>
 
     <div id="itemGrid" class="itemGrid">
 
-        <!-- ITEM 1 -->
+        <!-- VALK -->
 
         <div
             class="item"
@@ -1284,20 +1042,22 @@ button,input{
                     Accessory
                 </div>
 
-                <div class="itemPrice">
+                <div class="price free">
                     FREE
                 </div>
 
-                <div id="badge-valk-gold"></div>
+                <div id="badge-valk"></div>
 
                 <div class="itemActions">
 
                     <button
                         class="claim"
                         onclick="buyItem(
-                            'valk-gold',
-                            'Sparkle Time Valkyrie',
-                            'accessory'
+                        'valk',
+                        'Sparkle Time Valkyrie',
+                        'accessory',
+                        0,
+                        'free'
                         )"
                     >
                         CLAIM
@@ -1306,9 +1066,9 @@ button,input{
                     <button
                         class="equip"
                         onclick="equipOwned(
-                            'valk-gold',
-                            'Sparkle Time Valkyrie',
-                            'accessory'
+                        'valk',
+                        'Sparkle Time Valkyrie',
+                        'accessory'
                         )"
                     >
                         EQUIP
@@ -1320,7 +1080,7 @@ button,input{
 
         </div>
 
-        <!-- ITEM 2 -->
+        <!-- RED VALK -->
 
         <div
             class="item"
@@ -1342,31 +1102,33 @@ button,input{
                     Accessory
                 </div>
 
-                <div class="itemPrice">
-                    FREE
+                <div class="price tix">
+                    250 Tix
                 </div>
 
-                <div id="badge-valk-red"></div>
+                <div id="badge-redvalk"></div>
 
                 <div class="itemActions">
 
                     <button
                         class="claim"
                         onclick="buyItem(
-                            'valk-red',
-                            'Red Valkyrie',
-                            'accessory'
+                        'redvalk',
+                        'Red Valkyrie',
+                        'accessory',
+                        250,
+                        'tix'
                         )"
                     >
-                        CLAIM
+                        BUY
                     </button>
 
                     <button
                         class="equip"
                         onclick="equipOwned(
-                            'valk-red',
-                            'Red Valkyrie',
-                            'accessory'
+                        'redvalk',
+                        'Red Valkyrie',
+                        'accessory'
                         )"
                     >
                         EQUIP
@@ -1378,7 +1140,7 @@ button,input{
 
         </div>
 
-        <!-- ITEM 3 -->
+        <!-- HORNS -->
 
         <div
             class="item"
@@ -1400,20 +1162,22 @@ button,input{
                     Accessory
                 </div>
 
-                <div class="itemPrice">
+                <div class="price free">
                     FREE
                 </div>
 
-                <div id="badge-horns-blue"></div>
+                <div id="badge-horns"></div>
 
                 <div class="itemActions">
 
                     <button
                         class="claim"
                         onclick="buyItem(
-                            'horns-blue',
-                            'Blue Frozen Horns',
-                            'accessory'
+                        'horns',
+                        'Blue Frozen Horns',
+                        'accessory',
+                        0,
+                        'free'
                         )"
                     >
                         CLAIM
@@ -1422,9 +1186,9 @@ button,input{
                     <button
                         class="equip"
                         onclick="equipOwned(
-                            'horns-blue',
-                            'Blue Frozen Horns',
-                            'accessory'
+                        'horns',
+                        'Blue Frozen Horns',
+                        'accessory'
                         )"
                     >
                         EQUIP
@@ -1436,7 +1200,7 @@ button,input{
 
         </div>
 
-        <!-- ITEM 4 -->
+        <!-- NINJA -->
 
         <div
             class="item"
@@ -1458,8 +1222,8 @@ button,input{
                     Accessory
                 </div>
 
-                <div class="itemPrice">
-                    FREE
+                <div class="price robux">
+                    100 Robux
                 </div>
 
                 <div id="badge-ninja"></div>
@@ -1469,20 +1233,22 @@ button,input{
                     <button
                         class="claim"
                         onclick="buyItem(
-                            'ninja',
-                            'Ninja Master',
-                            'accessory'
+                        'ninja',
+                        'Ninja Master',
+                        'accessory',
+                        100,
+                        'robux'
                         )"
                     >
-                        CLAIM
+                        BUY
                     </button>
 
                     <button
                         class="equip"
                         onclick="equipOwned(
-                            'ninja',
-                            'Ninja Master',
-                            'accessory'
+                        'ninja',
+                        'Ninja Master',
+                        'accessory'
                         )"
                     >
                         EQUIP
@@ -1494,7 +1260,7 @@ button,input{
 
         </div>
 
-        <!-- ITEM 5 -->
+        <!-- PENCIL -->
 
         <div
             class="item"
@@ -1516,20 +1282,22 @@ button,input{
                     Gear
                 </div>
 
-                <div class="itemPrice">
+                <div class="price free">
                     FREE
                 </div>
 
-                <div id="badge-big-pencil"></div>
+                <div id="badge-pencil"></div>
 
                 <div class="itemActions">
 
                     <button
                         class="claim"
                         onclick="buyItem(
-                            'big-pencil',
-                            'BIG Pencil',
-                            'gear'
+                        'pencil',
+                        'BIG Pencil',
+                        'gear',
+                        0,
+                        'free'
                         )"
                     >
                         CLAIM
@@ -1538,9 +1306,9 @@ button,input{
                     <button
                         class="equip"
                         onclick="equipOwned(
-                            'big-pencil',
-                            'BIG Pencil',
-                            'gear'
+                        'pencil',
+                        'BIG Pencil',
+                        'gear'
                         )"
                     >
                         EQUIP
@@ -1552,7 +1320,7 @@ button,input{
 
         </div>
 
-        <!-- ITEM 6 -->
+        <!-- FEDORA -->
 
         <div
             class="item"
@@ -1574,31 +1342,33 @@ button,input{
                     Accessory
                 </div>
 
-                <div class="itemPrice">
-                    FREE
+                <div class="price robux">
+                    500 Robux
                 </div>
 
-                <div id="badge-fedora-rainbow"></div>
+                <div id="badge-fedora"></div>
 
                 <div class="itemActions">
 
                     <button
                         class="claim"
                         onclick="buyItem(
-                            'fedora-rainbow',
-                            'Sparkle Time Fedora',
-                            'accessory'
+                        'fedora',
+                        'Sparkle Time Fedora',
+                        'accessory',
+                        500,
+                        'robux'
                         )"
                     >
-                        CLAIM
+                        BUY
                     </button>
 
                     <button
                         class="equip"
                         onclick="equipOwned(
-                            'fedora-rainbow',
-                            'Sparkle Time Fedora',
-                            'accessory'
+                        'fedora',
+                        'Sparkle Time Fedora',
+                        'accessory'
                         )"
                     >
                         EQUIP
@@ -1610,7 +1380,7 @@ button,input{
 
         </div>
 
-        <!-- ITEM 7 -->
+        <!-- SHIRT -->
 
         <div
             class="item"
@@ -1619,9 +1389,7 @@ button,input{
         >
 
             <div class="itemImage">
-                <div class="shirtPreview">
-                    MTB
-                </div>
+                <div class="shirtPreview">MTB</div>
             </div>
 
             <div class="itemInfo">
@@ -1634,20 +1402,22 @@ button,input{
                     Shirt
                 </div>
 
-                <div class="itemPrice">
+                <div class="price free">
                     FREE
                 </div>
 
-                <div id="badge-mtb-shirt"></div>
+                <div id="badge-shirt"></div>
 
                 <div class="itemActions">
 
                     <button
                         class="claim"
                         onclick="buyItem(
-                            'mtb-shirt',
-                            'MTB Shirt',
-                            'shirt'
+                        'shirt',
+                        'MTB Shirt',
+                        'shirt',
+                        0,
+                        'free'
                         )"
                     >
                         CLAIM
@@ -1656,9 +1426,9 @@ button,input{
                     <button
                         class="equip"
                         onclick="equipOwned(
-                            'mtb-shirt',
-                            'MTB Shirt',
-                            'shirt'
+                        'shirt',
+                        'MTB Shirt',
+                        'shirt'
                         )"
                     >
                         EQUIP
@@ -1670,7 +1440,7 @@ button,input{
 
         </div>
 
-        <!-- ITEM 8 -->
+        <!-- LONG SHIRT -->
 
         <div
             class="item"
@@ -1679,9 +1449,7 @@ button,input{
         >
 
             <div class="itemImage">
-                <div class="longShirtPreview">
-                    MTB
-                </div>
+                <div class="longShirtPreview">MTB</div>
             </div>
 
             <div class="itemInfo">
@@ -1694,31 +1462,33 @@ button,input{
                     Shirt
                 </div>
 
-                <div class="itemPrice">
-                    FREE
+                <div class="price tix">
+                    75 Tix
                 </div>
 
-                <div id="badge-mtb-long"></div>
+                <div id="badge-longshirt"></div>
 
                 <div class="itemActions">
 
                     <button
                         class="claim"
                         onclick="buyItem(
-                            'mtb-long',
-                            'MTB VERY Long Shirt',
-                            'shirt'
+                        'longshirt',
+                        'MTB VERY Long Shirt',
+                        'shirt',
+                        75,
+                        'tix'
                         )"
                     >
-                        CLAIM
+                        BUY
                     </button>
 
                     <button
                         class="equip"
                         onclick="equipOwned(
-                            'mtb-long',
-                            'MTB VERY Long Shirt',
-                            'shirt'
+                        'longshirt',
+                        'MTB VERY Long Shirt',
+                        'shirt'
                         )"
                     >
                         EQUIP
@@ -1734,9 +1504,7 @@ button,input{
 
 </section>
 
-<!-- =====================================================
-     AVATAR
-===================================================== -->
+<!-- AVATAR -->
 
 <section id="avatar" class="section">
 
@@ -1751,17 +1519,17 @@ button,input{
             <div id="avatar" class="avatar">
 
                 <div
-                    id="visualAccessory1"
+                    id="visual1"
                     class="accessoryVisual"
                 ></div>
 
                 <div
-                    id="visualAccessory2"
+                    id="visual2"
                     class="accessoryVisual"
                 ></div>
 
                 <div
-                    id="visualAccessory3"
+                    id="visual3"
                     class="accessoryVisual"
                 ></div>
 
@@ -1770,11 +1538,9 @@ button,input{
                 <div class="avatarBody"></div>
 
                 <div class="avatarArm leftArm"></div>
-
                 <div class="avatarArm rightArm"></div>
 
                 <div class="avatarLeg leftLeg"></div>
-
                 <div class="avatarLeg rightLeg"></div>
 
                 <div
@@ -1788,9 +1554,7 @@ button,input{
 
         <div class="avatarControls">
 
-            <h3>
-                Avatar Controls
-            </h3>
+            <h3>Avatar Controls</h3>
 
             <button
                 class="controlButton"
@@ -1820,16 +1584,12 @@ button,input{
                 Remove Gear
             </button>
 
-            <div class="equippedList">
+            <hr>
 
-                <strong>
-                    Equipped
-                </strong>
+            <strong>Equipped Items</strong>
 
-                <div id="equippedList">
-                    Nothing equipped.
-                </div>
-
+            <div id="equippedList">
+                Nothing equipped.
             </div>
 
         </div>
@@ -1838,9 +1598,7 @@ button,input{
 
 </section>
 
-<!-- =====================================================
-     INVENTORY
-===================================================== -->
+<!-- INVENTORY -->
 
 <section id="inventory" class="section">
 
@@ -1855,14 +1613,21 @@ button,input{
 
 </section>
 
-<!-- =====================================================
-     GAMES
-===================================================== -->
+<!-- GAMES -->
 
 <section id="games" class="section">
 
     <div class="sectionHeader">
         Games
+    </div>
+
+    <div style="
+        padding:15px 20px;
+        background:#fff8dc;
+        border-bottom:1px solid #ddd;
+    ">
+        🎮 Play games to earn <strong>Tix</strong>!
+        Each game gives you <strong>25 Tix</strong>.
     </div>
 
     <div class="gamesGrid">
@@ -1875,9 +1640,7 @@ button,input{
 
             <div class="gameInfo">
 
-                <h3>
-                    MTB City
-                </h3>
+                <h3>MTB City</h3>
 
                 <span>
                     0 Players
@@ -1902,9 +1665,7 @@ button,input{
 
             <div class="gameInfo">
 
-                <h3>
-                    Void Hangout
-                </h3>
+                <h3>Void Hangout</h3>
 
                 <span>
                     0 Players
@@ -1929,9 +1690,7 @@ button,input{
 
             <div class="gameInfo">
 
-                <h3>
-                    Classic Roblox
-                </h3>
+                <h3>Classic Roblox</h3>
 
                 <span>
                     0 Players
@@ -1952,9 +1711,7 @@ button,input{
 
 </section>
 
-<!-- =====================================================
-     USER SEARCH
-===================================================== -->
+<!-- USER SEARCH -->
 
 <section class="section">
 
@@ -1977,18 +1734,13 @@ button,input{
 
         </div>
 
-        <div
-            id="userResult"
-            class="userResult"
-        ></div>
+        <div id="userResult"></div>
 
     </div>
 
 </section>
 
-<!-- =====================================================
-     NEWS
-===================================================== -->
+<!-- NEWS -->
 
 <section id="news" class="section">
 
@@ -1999,40 +1751,27 @@ button,input{
     <div class="news">
 
         <div class="newsCard">
-
-            <h3>
+            <strong>
                 MTB REVIVALS is live!
-            </h3>
-
-            <div>
-                Welcome to MTB REVIVALS.
-            </div>
-
+            </strong>
+            <br>
+            Welcome to the revival.
         </div>
 
         <div class="newsCard">
-
-            <h3>
-                Catalog Update
-            </h3>
-
-            <div>
-                New accessories and classic-style
-                clothing are being added.
-            </div>
-
+            <strong>
+                Tix are back!
+            </strong>
+            <br>
+            Play games to earn Tix.
         </div>
 
         <div class="newsCard">
-
-            <h3>
-                Everything is FREE
-            </h3>
-
-            <div>
-                Items currently cost 0 MTB Coins.
-            </div>
-
+            <strong>
+                New catalog
+            </strong>
+            <br>
+            More accessories and clothes coming soon.
         </div>
 
     </div>
@@ -2045,19 +1784,14 @@ button,input{
     MTB REVIVALS © 2026
 </footer>
 
-<!-- =====================================================
-     MODAL
-===================================================== -->
+<!-- MODAL -->
 
-<div
-    id="modal"
-    class="modal"
->
+<div id="modal" class="modal">
 
     <div class="modalBox">
 
-        <h2>
-            Confirm Claim
+        <h2 id="modalTitle">
+            Confirm Purchase
         </h2>
 
         <p id="modalText">
@@ -2089,14 +1823,16 @@ button,input{
 <script>
 
 /* =====================================================
-   MTB REVIVALS DATA
+   PLAYER DATA
 ===================================================== */
 
-const SAVE_KEY = "MTB_REVIVALS_COMPLETE_V2";
+const SAVE_KEY = "MTB_REVIVALS_ROBUX_TIX_V3";
 
-let defaultPlayer = {
+const DEFAULT_PLAYER = {
 
-    coins:1000,
+    robux:1000,
+
+    tix:0,
 
     owned:[],
 
@@ -2114,9 +1850,35 @@ let defaultPlayer = {
 let player =
     JSON.parse(
         localStorage.getItem(SAVE_KEY)
-    ) || defaultPlayer;
+    ) || structuredClone(DEFAULT_PLAYER);
 
-let pendingItem = null;
+let pendingItem=null;
+
+
+/* =====================================================
+   FIX OLD DATA
+===================================================== */
+
+if(typeof player.robux !== "number"){
+    player.robux=1000;
+}
+
+if(typeof player.tix !== "number"){
+    player.tix=0;
+}
+
+if(!Array.isArray(player.owned)){
+    player.owned=[];
+}
+
+if(!player.equipped){
+    player.equipped=
+        structuredClone(DEFAULT_PLAYER.equipped);
+}
+
+if(!Array.isArray(player.equipped.accessories)){
+    player.equipped.accessories=[];
+}
 
 
 /* =====================================================
@@ -2134,15 +1896,20 @@ function save(){
 
 
 /* =====================================================
-   COINS
+   UPDATE CURRENCY
 ===================================================== */
 
-function updateCoins(){
+function updateCurrency(){
 
     document.getElementById(
-        "coinAmount"
+        "robuxAmount"
     ).textContent =
-        Number(player.coins).toLocaleString();
+        Number(player.robux).toLocaleString();
+
+    document.getElementById(
+        "tixAmount"
+    ).textContent =
+        Number(player.tix).toLocaleString();
 
 }
 
@@ -2169,20 +1936,18 @@ function toggleMobileMenu(){
 
 }
 
-function closeMobileMenu(){
-
-    document
-        .getElementById("mobileNav")
-        .classList.remove("open");
-
-}
-
 
 /* =====================================================
-   BUY / CLAIM
+   BUY
 ===================================================== */
 
-function buyItem(id,name,type){
+function buyItem(
+    id,
+    name,
+    type,
+    price,
+    currency
+){
 
     if(
         player.owned.some(
@@ -2190,7 +1955,11 @@ function buyItem(id,name,type){
         )
     ){
 
-        equipOwned(id,name,type);
+        equipOwned(
+            id,
+            name,
+            type
+        );
 
         return;
 
@@ -2199,17 +1968,52 @@ function buyItem(id,name,type){
     pendingItem={
         id,
         name,
-        type
+        type,
+        price,
+        currency
     };
 
-    document.getElementById(
-        "modalText"
-    ).innerHTML =
-        "<strong>"+escapeHTML(name)+
-        "</strong><br><br>"+
-        "Price: <strong>FREE</strong>"+
-        "<br><br>"+
-        "Do you want to claim this item?";
+    if(currency==="free"){
+
+        document.getElementById(
+            "modalTitle"
+        ).textContent="Confirm Claim";
+
+        document.getElementById(
+            "modalText"
+        ).innerHTML =
+            "<strong>"+
+            escapeHTML(name)+
+            "</strong><br><br>"+
+            "Price: <strong>FREE</strong>"+
+            "<br><br>"+
+            "Do you want to claim this item?";
+
+    }else{
+
+        const currencyName =
+            currency==="robux"
+            ? "Robux"
+            : "Tix";
+
+        document.getElementById(
+            "modalTitle"
+        ).textContent="Confirm Purchase";
+
+        document.getElementById(
+            "modalText"
+        ).innerHTML =
+            "<strong>"+
+            escapeHTML(name)+
+            "</strong><br><br>"+
+            "Price: <strong>"+
+            Number(price).toLocaleString()+
+            " "+
+            currencyName+
+            "</strong><br><br>"+
+            "Do you want to purchase this item?";
+
+    }
 
     document
         .getElementById("modal")
@@ -2219,7 +2023,7 @@ function buyItem(id,name,type){
 
 
 /* =====================================================
-   CONFIRM
+   CONFIRM PURCHASE
 ===================================================== */
 
 function confirmPurchase(){
@@ -2228,30 +2032,57 @@ function confirmPurchase(){
         return;
     }
 
-    if(
-        player.owned.some(
-            item=>item.id===pendingItem.id
-        )
-    ){
+    const item=pendingItem;
 
-        closeModal();
-        return;
+    if(item.currency==="robux"){
+
+        if(player.robux < item.price){
+
+            alert(
+                "You do not have enough Robux."
+            );
+
+            return;
+
+        }
+
+        player.robux -= item.price;
+
+    }
+
+    if(item.currency==="tix"){
+
+        if(player.tix < item.price){
+
+            alert(
+                "You do not have enough Tix. Play games to earn more!"
+            );
+
+            return;
+
+        }
+
+        player.tix -= item.price;
 
     }
 
     player.owned.push({
 
-        id:pendingItem.id,
+        id:item.id,
 
-        name:pendingItem.name,
+        name:item.name,
 
-        type:pendingItem.type,
+        type:item.type,
 
-        price:0
+        price:item.price,
+
+        currency:item.currency
 
     });
 
     save();
+
+    updateCurrency();
 
     updateInventory();
 
@@ -2263,7 +2094,7 @@ function confirmPurchase(){
 
 
 /* =====================================================
-   CLOSE
+   CLOSE MODAL
 ===================================================== */
 
 function closeModal(){
@@ -2281,7 +2112,11 @@ function closeModal(){
    EQUIP
 ===================================================== */
 
-function equipOwned(id,name,type){
+function equipOwned(
+    id,
+    name,
+    type
+){
 
     const owned =
         player.owned.some(
@@ -2290,7 +2125,9 @@ function equipOwned(id,name,type){
 
     if(!owned){
 
-        buyItem(id,name,type);
+        alert(
+            "You need to own this item first."
+        );
 
         return;
 
@@ -2303,7 +2140,7 @@ function equipOwned(id,name,type){
                 .accessories
                 .indexOf(id);
 
-        if(index !== -1){
+        if(index!==-1){
 
             player.equipped
                 .accessories
@@ -2314,11 +2151,11 @@ function equipOwned(id,name,type){
             if(
                 player.equipped
                     .accessories
-                    .length >= 3
+                    .length>=3
             ){
 
                 alert(
-                    "You can only wear 3 accessories at once."
+                    "You can only wear 3 accessories."
                 );
 
                 return;
@@ -2335,19 +2172,33 @@ function equipOwned(id,name,type){
 
     if(type==="shirt"){
 
-        player.equipped.shirt =
+        if(
             player.equipped.shirt===id
-            ? null
-            : id;
+        ){
+
+            player.equipped.shirt=null;
+
+        }else{
+
+            player.equipped.shirt=id;
+
+        }
 
     }
 
     if(type==="gear"){
 
-        player.equipped.gear =
+        if(
             player.equipped.gear===id
-            ? null
-            : id;
+        ){
+
+            player.equipped.gear=null;
+
+        }else{
+
+            player.equipped.gear=id;
+
+        }
 
     }
 
@@ -2373,16 +2224,16 @@ function updateInventory(){
 
     if(player.owned.length===0){
 
-        grid.innerHTML =
-            "<p>Your inventory is empty. "+
-            "Claim something from the catalog!</p>";
+        grid.innerHTML=
+            "<p>Your inventory is empty.</p>";
 
         return;
 
     }
 
     grid.innerHTML =
-        player.owned.map(item=>{
+        player.owned
+        .map(item=>{
 
             let equipped=false;
 
@@ -2423,11 +2274,23 @@ function updateInventory(){
                         ${escapeHTML(item.type)}
                     </small>
 
+                    <br>
+
+                    <small>
+                        ${item.currency==="free"
+                            ? "FREE"
+                            : Number(item.price).toLocaleString()
+                              +" "+
+                              (item.currency==="robux"
+                                ? "Robux"
+                                : "Tix")}
+                    </small>
+
                     <button
                         onclick="equipOwned(
-                            '${item.id}',
+                            '${escapeJS(item.id)}',
                             '${escapeJS(item.name)}',
-                            '${item.type}'
+                            '${escapeJS(item.type)}'
                         )"
                     >
                         ${equipped
@@ -2439,7 +2302,8 @@ function updateInventory(){
 
             `;
 
-        }).join("");
+        })
+        .join("");
 
 }
 
@@ -2475,32 +2339,20 @@ function renderAvatar(){
             ".avatarBody"
         );
 
-    if(player.equipped.shirt==="mtb-long"){
-
-        body.style.background="#333";
-
-    }else{
-
-        body.style.background="#171717";
-
-    }
+    body.style.background =
+        player.equipped.shirt==="longshirt"
+        ? "#333"
+        : "#171717";
 
     const visuals=[
-        document.getElementById(
-            "visualAccessory1"
-        ),
-        document.getElementById(
-            "visualAccessory2"
-        ),
-        document.getElementById(
-            "visualAccessory3"
-        )
+        document.getElementById("visual1"),
+        document.getElementById("visual2"),
+        document.getElementById("visual3")
     ];
 
     visuals.forEach(
         visual=>{
-            visual.className=
-                "accessoryVisual";
+            visual.className="accessoryVisual";
         }
     );
 
@@ -2513,38 +2365,22 @@ function renderAvatar(){
                     return;
                 }
 
-                if(
-                    id==="horns-blue"
-                ){
-
+                if(id==="horns"){
                     visuals[index]
-                        .classList.add(
-                            "visualHorns"
-                        );
-
+                        .classList.add("visualHorns");
                 }
 
                 if(
-                    id==="valk-gold" ||
-                    id==="valk-red"
+                    id==="valk" ||
+                    id==="redvalk"
                 ){
-
                     visuals[index]
-                        .classList.add(
-                            "visualValk"
-                        );
-
+                        .classList.add("visualValk");
                 }
 
-                if(
-                    id==="fedora-rainbow"
-                ){
-
+                if(id==="fedora"){
                     visuals[index]
-                        .classList.add(
-                            "visualFedora"
-                        );
-
+                        .classList.add("visualFedora");
                 }
 
             }
@@ -2558,8 +2394,7 @@ function renderAvatar(){
     gear.className="gearVisual";
 
     if(
-        player.equipped.gear===
-        "big-pencil"
+        player.equipped.gear==="pencil"
     ){
 
         gear.classList.add(
@@ -2574,7 +2409,7 @@ function renderAvatar(){
 
 
 /* =====================================================
-   EQUIPPED LIST
+   EQUIPPED
 ===================================================== */
 
 function updateEquipped(){
@@ -2588,7 +2423,7 @@ function updateEquipped(){
 
     if(player.equipped.shirt){
 
-        html += `
+        html+=`
             <div class="equippedItem">
                 Shirt: ${escapeHTML(
                     player.equipped.shirt
@@ -2600,21 +2435,19 @@ function updateEquipped(){
 
     player.equipped
         .accessories
-        .forEach(
-            id=>{
+        .forEach(id=>{
 
-                html += `
-                    <div class="equippedItem">
-                        Accessory: ${escapeHTML(id)}
-                    </div>
-                `;
+            html+=`
+                <div class="equippedItem">
+                    Accessory: ${escapeHTML(id)}
+                </div>
+            `;
 
-            }
-        );
+        });
 
     if(player.equipped.gear){
 
-        html += `
+        html+=`
             <div class="equippedItem">
                 Gear: ${escapeHTML(
                     player.equipped.gear
@@ -2624,11 +2457,9 @@ function updateEquipped(){
 
     }
 
-    if(
-        player.equipped.headless
-    ){
+    if(player.equipped.headless){
 
-        html += `
+        html+=`
             <div class="equippedItem">
                 Headless
             </div>
@@ -2636,11 +2467,9 @@ function updateEquipped(){
 
     }
 
-    if(
-        player.equipped.korblox
-    ){
+    if(player.equipped.korblox){
 
-        html += `
+        html+=`
             <div class="equippedItem">
                 Korblox Leg
             </div>
@@ -2650,8 +2479,7 @@ function updateEquipped(){
 
     if(!html){
 
-        html =
-            "<p>Nothing equipped.</p>";
+        html="<p>Nothing equipped.</p>";
 
     }
 
@@ -2670,7 +2498,6 @@ function toggleHeadless(){
         !player.equipped.headless;
 
     save();
-
     renderAvatar();
 
 }
@@ -2686,7 +2513,6 @@ function toggleKorblox(){
         !player.equipped.korblox;
 
     save();
-
     renderAvatar();
 
 }
@@ -2733,14 +2559,14 @@ function removeGear(){
 function updateBadges(){
 
     const ids=[
-        "valk-gold",
-        "valk-red",
-        "horns-blue",
+        "valk",
+        "redvalk",
+        "horns",
         "ninja",
-        "big-pencil",
-        "fedora-rainbow",
-        "mtb-shirt",
-        "mtb-long"
+        "pencil",
+        "fedora",
+        "shirt",
+        "longshirt"
     ];
 
     ids.forEach(id=>{
@@ -2754,20 +2580,15 @@ function updateBadges(){
             return;
         }
 
-        if(
+        const owned =
             player.owned.some(
                 item=>item.id===id
-            )
-        ){
+            );
 
-            element.innerHTML =
-                '<span class="ownedBadge">OWNED</span>';
-
-        }else{
-
-            element.innerHTML="";
-
-        }
+        element.innerHTML =
+            owned
+            ? '<span class="ownedBadge">OWNED</span>'
+            : "";
 
     });
 
@@ -2778,7 +2599,10 @@ function updateBadges(){
    FILTER
 ===================================================== */
 
-function filterItems(type,button){
+function filterItems(
+    type,
+    button
+){
 
     document
         .querySelectorAll(".filter")
@@ -2792,18 +2616,11 @@ function filterItems(type,button){
         .querySelectorAll(".item")
         .forEach(item=>{
 
-            if(
+            item.style.display =
                 type==="all" ||
                 item.dataset.type===type
-            ){
-
-                item.style.display="";
-
-            }else{
-
-                item.style.display="none";
-
-            }
+                ? ""
+                : "none";
 
         });
 
@@ -2818,11 +2635,11 @@ function searchAssets(){
 
     const query =
         document
-            .getElementById(
-                "assetSearch"
-            )
-            .value
-            .toLowerCase();
+        .getElementById(
+            "assetSearch"
+        )
+        .value
+        .toLowerCase();
 
     document
         .querySelectorAll(".item")
@@ -2830,7 +2647,7 @@ function searchAssets(){
 
             const name =
                 item.dataset.name
-                    .toLowerCase();
+                .toLowerCase();
 
             item.style.display =
                 name.includes(query)
@@ -2843,18 +2660,40 @@ function searchAssets(){
 
 
 /* =====================================================
-   USER SEARCH
+   PLAY GAME / EARN TIX
+===================================================== */
+
+function playGame(name){
+
+    const TIX_REWARD=25;
+
+    player.tix += TIX_REWARD;
+
+    save();
+
+    updateCurrency();
+
+    alert(
+        "You played "+name+"!\n\n"+
+        "+25 Tix earned!"
+    );
+
+}
+
+
+/* =====================================================
+   ROBLOX USER SEARCH
 ===================================================== */
 
 async function searchUser(){
 
     const username =
         document
-            .getElementById(
-                "username"
-            )
-            .value
-            .trim();
+        .getElementById(
+            "username"
+        )
+        .value
+        .trim();
 
     const result =
         document.getElementById(
@@ -2915,13 +2754,12 @@ async function searchUser(){
 
         result.innerHTML=`
 
-            <div
-                style="
+            <div style="
                 border:1px solid #ccc;
                 padding:15px;
-                background:#fff;
-                "
-            >
+                background:white;
+                margin-top:15px;
+            ">
 
                 <h3>
                     ${escapeHTML(user.name)}
@@ -2961,21 +2799,7 @@ async function searchUser(){
 
 
 /* =====================================================
-   GAMES
-===================================================== */
-
-function playGame(name){
-
-    alert(
-        name+
-        " does not have a connected game server yet."
-    );
-
-}
-
-
-/* =====================================================
-   SECURITY HELPERS
+   SECURITY
 ===================================================== */
 
 function escapeHTML(text){
@@ -2999,37 +2823,12 @@ function escapeJS(text){
 
 
 /* =====================================================
-   LOAD
+   START
 ===================================================== */
 
 function load(){
 
-    if(!player.equipped){
-        player.equipped=
-            defaultPlayer.equipped;
-    }
-
-    if(
-        !Array.isArray(
-            player.owned
-        )
-    ){
-
-        player.owned=[];
-
-    }
-
-    if(
-        !Array.isArray(
-            player.equipped.accessories
-        )
-    ){
-
-        player.equipped.accessories=[];
-
-    }
-
-    updateCoins();
+    updateCurrency();
 
     updateInventory();
 
