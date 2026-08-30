@@ -1,117 +1,1208 @@
 ```html
-<script>
+<!DOCTYPE html>
+<html lang="en">
 
-function buyItem(itemName, price, itemType) {
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    const confirmed = confirm(
-        "Are you sure you want to buy " +
-        itemName +
-        " for " +
-        price +
-        " MTB Coins?"
-    );
+<title>MTB REVIVALS - Avatar</title>
 
-    if (!confirmed) {
-        return;
-    }
+<style>
 
-    /*
-       Save the purchased item.
-       Each item type gets its own inventory list.
-    */
+* {
+    box-sizing: border-box;
+}
 
-    let inventoryKey =
-        "mtb_" + itemType + "_inventory";
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #e8e8e8;
+    color: #333;
+}
 
-    let inventory =
-        JSON.parse(
-            localStorage.getItem(inventoryKey)
-        ) || [];
+/* HEADER */
 
-    /*
-       Don't buy the same item twice.
-    */
+header {
+    background: linear-gradient(#f7f7f7, #d0d0d0);
+    border-bottom: 1px solid #999;
+}
 
-    if (inventory.includes(itemName)) {
+.header-inner {
+    max-width: 1000px;
+    margin: auto;
+    padding: 8px 10px 0;
+}
 
-        alert(
-            "You already own " +
-            itemName +
-            "!"
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    padding: 5px 0 10px;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+nav a {
+    padding: 9px 13px;
+    color: #444;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background: #ddd;
+}
+
+nav a.active {
+    background: white;
+    border: 1px solid #aaa;
+    color: #1683c5;
+}
+
+
+/* MAIN */
+
+.container {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 0 10px;
+}
+
+.title {
+    background: linear-gradient(#666, #444);
+    color: white;
+    border: 1px solid #333;
+    padding: 10px 12px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+/* AVATAR AREA */
+
+.avatar-box {
+    margin-top: 15px;
+    background: white;
+    border: 1px solid #aaa;
+    padding: 20px;
+    min-height: 520px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* AVATAR */
+
+.avatar {
+    position: relative;
+    width: 260px;
+    height: 440px;
+}
+
+
+/* HEAD */
+
+.head {
+    position: absolute;
+
+    width: 110px;
+    height: 110px;
+
+    left: 75px;
+    top: 75px;
+
+    background: #f2c29b;
+
+    border: 3px solid #555;
+
+    border-radius: 4px;
+
+    z-index: 5;
+}
+
+
+/* FACE */
+
+.face-eye {
+    position: absolute;
+
+    width: 10px;
+    height: 14px;
+
+    background: #222;
+
+    top: 42px;
+}
+
+.eye-left {
+    left: 27px;
+}
+
+.eye-right {
+    right: 27px;
+}
+
+.face-smile {
+    position: absolute;
+
+    width: 35px;
+    height: 15px;
+
+    left: 35px;
+    top: 68px;
+
+    border-bottom: 3px solid #222;
+
+    border-radius: 50%;
+}
+
+
+/* BODY */
+
+.body {
+    position: absolute;
+
+    width: 125px;
+    height: 135px;
+
+    left: 67px;
+    top: 185px;
+
+    background: #1683ff;
+
+    border: 3px solid #555;
+
+    z-index: 2;
+}
+
+
+/* ARMS */
+
+.arm {
+    position: absolute;
+
+    width: 45px;
+    height: 130px;
+
+    top: 188px;
+
+    background: #f2c29b;
+
+    border: 3px solid #555;
+
+    z-index: 1;
+}
+
+.arm-left {
+    left: 20px;
+}
+
+.arm-right {
+    right: 20px;
+}
+
+
+/* LEGS */
+
+.leg {
+    position: absolute;
+
+    width: 55px;
+    height: 125px;
+
+    top: 320px;
+
+    background: #333;
+
+    border: 3px solid #555;
+
+    z-index: 1;
+}
+
+.leg-left {
+    left: 68px;
+}
+
+.leg-right {
+    right: 68px;
+}
+
+
+/* =========================
+   FEDORA
+========================= */
+
+.fedora {
+    position: absolute;
+
+    width: 150px;
+    height: 70px;
+
+    left: 55px;
+    top: 28px;
+
+    border-radius:
+        50% 50% 20% 20%;
+
+    border: 3px solid rgba(0,0,0,.35);
+
+    z-index: 20;
+
+    box-shadow:
+        inset 0 8px 12px
+        rgba(255,255,255,.4),
+
+        0 4px 12px
+        rgba(0,0,0,.35);
+}
+
+.fedora::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 185px;
+    height: 18px;
+
+    left: -20px;
+    bottom: -7px;
+
+    background: inherit;
+
+    border-radius: 50%;
+
+    border: 3px solid rgba(0,0,0,.35);
+}
+
+.fedora::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 115px;
+    height: 7px;
+
+    left: 15px;
+    top: 32px;
+
+    background:
+        rgba(255,255,255,.55);
+
+    box-shadow:
+        0 0 10px white;
+}
+
+
+/* FEDORA COLORS */
+
+.classic {
+    background:
+        linear-gradient(
+            135deg,
+            #eee,
+            #999,
+            #fff
+        );
+}
+
+.red {
+    background:
+        linear-gradient(
+            135deg,
+            #ff7777,
+            #b91515,
+            #ffaaaa
+        );
+}
+
+.orange {
+    background:
+        linear-gradient(
+            135deg,
+            #ffd080,
+            #e87800,
+            #fff0b0
+        );
+}
+
+.gold {
+    background:
+        linear-gradient(
+            135deg,
+            #fff3a0,
+            #d7a400,
+            #fff7c7
+        );
+}
+
+.green {
+    background:
+        linear-gradient(
+            135deg,
+            #83ffae,
+            #129448,
+            #b5ffd0
+        );
+}
+
+.blue {
+    background:
+        linear-gradient(
+            135deg,
+            #7edcff,
+            #0876c9,
+            #bceeff
+        );
+}
+
+.purple {
+    background:
+        linear-gradient(
+            135deg,
+            #db9cff,
+            #7420b5,
+            #f0c9ff
+        );
+}
+
+.pink {
+    background:
+        linear-gradient(
+            135deg,
+            #ff9edb,
+            #d52c8a,
+            #ffd2ef
+        );
+}
+
+.cyan {
+    background:
+        linear-gradient(
+            135deg,
+            #b7ffff,
+            #009fa8,
+            #d9ffff
+        );
+}
+
+.black {
+    background:
+        linear-gradient(
+            135deg,
+            #777,
+            #090909,
+            #555
+        );
+}
+
+.white {
+    background:
+        linear-gradient(
+            135deg,
+            #fff,
+            #ccc,
+            #fff
+        );
+}
+
+.rainbow {
+    background:
+        linear-gradient(
+            120deg,
+            #ff3b3b,
+            #ffb52e,
+            #fff238,
+            #39d86a,
+            #35bfff,
+            #7c4dff,
+            #ff54c8
         );
 
-        return;
+    animation:
+        rainbow 3s linear infinite;
+}
+
+@keyframes rainbow {
+
+    0% {
+        filter:
+            hue-rotate(0deg)
+            brightness(1);
     }
 
+    50% {
+        filter:
+            hue-rotate(30deg)
+            brightness(1.3);
+    }
+
+    100% {
+        filter:
+            hue-rotate(0deg)
+            brightness(1);
+    }
+}
+
+
+/* =========================
+   SPARKLES
+========================= */
+
+.sparkle {
+    position: absolute;
+
+    width: 7px;
+    height: 7px;
+
+    background: white;
+
+    transform: rotate(45deg);
+
+    box-shadow:
+        0 0 8px white;
+
+    animation:
+        sparkle 1.3s infinite;
+}
+
+.s1 {
+    left: 20px;
+    top: 15px;
+}
+
+.s2 {
+    left: 70px;
+    top: 48px;
+    animation-delay: .3s;
+}
+
+.s3 {
+    right: 25px;
+    top: 20px;
+    animation-delay: .6s;
+}
+
+.s4 {
+    right: 45px;
+    top: 48px;
+    animation-delay: .9s;
+}
+
+@keyframes sparkle {
+
+    0%,100% {
+        opacity: .2;
+        transform:
+            rotate(45deg)
+            scale(.5);
+    }
+
+    50% {
+        opacity: 1;
+        transform:
+            rotate(45deg)
+            scale(1.5);
+    }
+}
+
+
+/* =========================
+   FROZEN HORNS
+========================= */
+
+.horns {
+    position: absolute;
+
+    width: 180px;
+    height: 120px;
+
+    left: 40px;
+    top: 5px;
+
+    z-index: 18;
+}
+
+.horn {
+    position: absolute;
+
+    width: 38px;
+    height: 105px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #8eeaff,
+            #277cae
+        );
+
+    border:
+        3px solid #377f9c;
+
+    box-shadow:
+        0 0 14px #69eaff;
+
+    border-radius:
+        75% 25% 20% 20%;
+}
+
+.horn.left {
+    left: 20px;
+
+    transform:
+        rotate(-28deg);
+}
+
+.horn.right {
+    right: 20px;
+
+    transform:
+        rotate(28deg)
+        scaleX(-1);
+}
+
+
+/* HORN SPIKES */
+
+.horn::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 25px;
+    height: 25px;
+
+    top: 15px;
+    left: 20px;
+
+    background: #dfffff;
+
+    clip-path:
+        polygon(
+            0 100%,
+            50% 0,
+            100% 100%
+        );
+}
+
+
+/* CROWN */
+
+.crown {
+    position: absolute;
+
+    width: 125px;
+    height: 80px;
+
+    left: 67px;
+    top: 35px;
+
+    z-index: 15;
+
+    background:
+        linear-gradient(
+            #fff47b,
+            #d39d00
+        );
+
+    clip-path:
+        polygon(
+            0 100%,
+            10% 20%,
+            30% 55%,
+            50% 0,
+            70% 55%,
+            90% 20%,
+            100% 100%
+        );
+
+    border: 3px solid #8c6800;
+}
+
+
+/* WINGS */
+
+.wings {
+    position: absolute;
+
+    width: 260px;
+    height: 150px;
+
+    left: 0;
+    top: 205px;
+
+    z-index: 0;
+}
+
+.wings::before,
+.wings::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 105px;
+    height: 140px;
+
+    background:
+        linear-gradient(
+            135deg,
+            white,
+            #a8dfff,
+            #559cc5
+        );
+
+    border:
+        3px solid #6095ad;
+
+    border-radius:
+        80% 20% 80% 20%;
+}
+
+.wings::before {
+
+    left: 0;
+
+    transform:
+        rotate(-20deg);
+}
+
+.wings::after {
+
+    right: 0;
+
+    transform:
+        rotate(20deg)
+        scaleX(-1);
+}
+
+
+/* CONTROLS */
+
+.controls {
+
+    margin-top: 15px;
+
+    background: white;
+
+    border: 1px solid #aaa;
+
+    padding: 15px;
+
+    text-align: center;
+}
+
+button {
+
+    padding: 9px 18px;
+
+    border:
+        1px solid #555;
+
+    border-radius: 3px;
+
+    background:
+        linear-gradient(
+            #65b5e8,
+            #1683c5
+        );
+
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+button:hover {
+
+    background:
+        linear-gradient(
+            #79c5ed,
+            #1683c5
+        );
+}
+
+.status {
+
+    margin-top: 10px;
+
+    color: #1683c5;
+
+    font-weight: bold;
+}
+
+
+/* MOBILE */
+
+@media(max-width:600px) {
+
+    .logo {
+        text-align: center;
+    }
+
+    nav a {
+        padding: 8px 9px;
+        font-size: 12px;
+    }
+
+    .avatar-box {
+        overflow: hidden;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<div class="header-inner">
+
+<div class="logo">
+MTB REVIVALS
+</div>
+
+<nav>
+
+<a href="index.html">
+Home
+</a>
+
+<a href="login.html">
+Account
+</a>
+
+<a href="avatar.html"
+   class="active">
+Avatar
+</a>
+
+<a href="accessories.html">
+Accessories
+</a>
+
+<a href="clothes.html">
+Clothes
+</a>
+
+<a href="inventory.html">
+Inventory
+</a>
+
+<a href="games.html">
+Games
+</a>
+
+<a href="news.html">
+News
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<div class="container">
+
+<div class="title">
+My Avatar
+</div>
+
+
+<div class="avatar-box">
+
+<div class="avatar"
+     id="avatar">
+
+
+<!-- ACCESSORY -->
+
+<div id="accessory"></div>
+
+
+<!-- WINGS -->
+
+<div id="wings"></div>
+
+
+<!-- HEAD -->
+
+<div class="head">
+
+<div class="face-eye eye-left"></div>
+<div class="face-eye eye-right"></div>
+
+<div class="face-smile"></div>
+
+</div>
+
+
+<!-- BODY -->
+
+<div class="body"></div>
+
+
+<!-- ARMS -->
+
+<div class="arm arm-left"></div>
+<div class="arm arm-right"></div>
+
+
+<!-- LEGS -->
+
+<div class="leg leg-left"></div>
+<div class="leg leg-right"></div>
+
+
+</div>
+
+</div>
+
+
+<div class="controls">
+
+<button onclick="removeAccessory()">
+Remove Accessory
+</button>
+
+<div
+class="status"
+id="status">
+Loading avatar...
+</div>
+
+</div>
+
+
+</div>
+
+
+<footer>
+
+MTB REVIVALS © 2026
+
+</footer>
+
+
+<script>
+
+/* =========================
+   LOAD EQUIPPED ACCESSORY
+========================= */
+
+function loadAccessory() {
+
+    const item =
+        localStorage.getItem(
+            "mtbAccessory"
+        );
+
+
+    const accessory =
+        document.getElementById(
+            "accessory"
+        );
+
+
+    const wings =
+        document.getElementById(
+            "wings"
+        );
+
+
+    accessory.innerHTML = "";
+    wings.innerHTML = "";
+
+
+    if (!item) {
+
+        document
+            .getElementById("status")
+            .textContent =
+            "No accessory equipped.";
+
+        return;
+
+    }
+
+
     /*
-       Add item to inventory.
+       FEDORAS
     */
 
-    inventory.push(itemName);
+    const fedoraColors = {
 
-    localStorage.setItem(
-        inventoryKey,
-        JSON.stringify(inventory)
-    );
+        "Sparkle Fedora":
+            "classic",
+
+        "Sparkle Fedora - Red":
+            "red",
+
+        "Sparkle Fedora - Orange":
+            "orange",
+
+        "Sparkle Fedora - Gold":
+            "gold",
+
+        "Sparkle Fedora - Green":
+            "green",
+
+        "Sparkle Fedora - Blue":
+            "blue",
+
+        "Sparkle Fedora - Purple":
+            "purple",
+
+        "Sparkle Fedora - Pink":
+            "pink",
+
+        "Sparkle Fedora - Cyan":
+            "cyan",
+
+        "Sparkle Fedora - Black":
+            "black",
+
+        "Sparkle Fedora - White":
+            "white",
+
+        "Sparkle Fedora - Rainbow":
+            "rainbow"
+
+    };
+
+
+    if (
+        fedoraColors[item]
+    ) {
+
+        const fedora =
+            document.createElement(
+                "div"
+            );
+
+        fedora.className =
+            "fedora " +
+            fedoraColors[item];
+
+
+        for (
+            let i = 1;
+            i <= 4;
+            i++
+        ) {
+
+            const sparkle =
+                document.createElement(
+                    "span"
+                );
+
+            sparkle.className =
+                "sparkle s" + i;
+
+            fedora.appendChild(
+                sparkle
+            );
+
+        }
+
+
+        accessory.appendChild(
+            fedora
+        );
+
+    }
+
 
     /*
-       Show success message.
+       FROZEN HORNS
     */
 
-    alert(
-        "Purchase successful!\n\n" +
-        itemName +
-        " has been added to your inventory."
-    );
+    else if (
+        item ===
+        "Frozen Crystal Horns"
+    ) {
+
+        const horns =
+            document.createElement(
+                "div"
+            );
+
+        horns.className =
+            "horns";
+
+        horns.innerHTML = `
+
+            <div class="horn left"></div>
+
+            <div class="horn right"></div>
+
+        `;
+
+        accessory.appendChild(
+            horns
+        );
+
+    }
+
+
+    /*
+       CROWN
+    */
+
+    else if (
+        item ===
+        "Royal Crown"
+    ) {
+
+        const crown =
+            document.createElement(
+                "div"
+            );
+
+        crown.className =
+            "crown";
+
+        accessory.appendChild(
+            crown
+        );
+
+    }
+
+
+    /*
+       WINGS
+    */
+
+    else if (
+        item ===
+        "Crystal Wings"
+    ) {
+
+        const wing =
+            document.createElement(
+                "div"
+            );
+
+        wing.className =
+            "wings";
+
+        wings.appendChild(
+            wing
+        );
+
+    }
+
+
+    /*
+       TOP HAT
+    */
+
+    else if (
+        item ===
+        "Classic Top Hat"
+    ) {
+
+        const hat =
+            document.createElement(
+                "div"
+            );
+
+        hat.style.position =
+            "absolute";
+
+        hat.style.width =
+            "105px";
+
+        hat.style.height =
+            "100px";
+
+        hat.style.left =
+            "77px";
+
+        hat.style.top =
+            "28px";
+
+        hat.style.background =
+            "linear-gradient(#555,#111)";
+
+        hat.style.border =
+            "3px solid #222";
+
+        hat.style.zIndex =
+            "20";
+
+        hat.style.boxShadow =
+            "0 4px 10px rgba(0,0,0,.4)";
+
+
+        accessory.appendChild(
+            hat
+        );
+
+    }
+
+
+    document
+        .getElementById("status")
+        .textContent =
+        item +
+        " equipped.";
 
 }
 
 
 /* =========================
-   EXAMPLE BUTTONS
+   REMOVE
 ========================= */
 
+function removeAccessory() {
+
+    localStorage.removeItem(
+        "mtbAccessory"
+    );
+
+    loadAccessory();
+
+}
+
+
+/* =========================
+   START
+========================= */
+
+loadAccessory();
+
+
+/*
+   Update automatically if
+   another page changes the
+   accessory.
+*/
+
+window.addEventListener(
+    "storage",
+    loadAccessory
+);
+
 </script>
+
+
+</body>
+
+</html>
 ```
-
-Then change your item buttons to:
-
-```html
-<button onclick="buyItem(
-    'MTB Black Logo Pants',
-    'FREE',
-    'pants'
-)">
-    Buy
-</button>
-```
-
-For a shirt:
-
-```html
-<button onclick="buyItem(
-    'MTB Classic Logo',
-    '100',
-    'shirts'
-)">
-    Buy
-</button>
-```
-
-For an accessory:
-
-```html
-<button onclick="buyItem(
-    'Sparkle Fedora - Blue',
-    '250',
-    'accessories'
-)">
-    Buy
-</button>
-```
-
-The player will get:
-
-**Buy → Confirm → Cancel / OK → Item added to inventory**
-
-We can also make the next version use an actual **MTB Coins balance**, where buying something subtracts the coins and the confirmation shows the player's current balance.
