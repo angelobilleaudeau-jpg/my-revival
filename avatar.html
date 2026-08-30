@@ -1,4 +1,4 @@
-```html```html
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +19,9 @@ body {
     color: #333;
 }
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 
 header {
     background: linear-gradient(#f7f7f7, #cfcfcf);
@@ -59,7 +61,9 @@ nav a.active {
     color: #1683c5;
 }
 
-/* MAIN */
+/* =========================
+   MAIN
+========================= */
 
 .container {
     max-width: 1100px;
@@ -76,7 +80,9 @@ nav a.active {
     font-weight: bold;
 }
 
-/* AVATAR */
+/* =========================
+   AVATAR
+========================= */
 
 .avatar-section {
     background: white;
@@ -90,7 +96,7 @@ nav a.active {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #eee, #d4d4d4);
+    background: linear-gradient(135deg,#eee,#d4d4d4);
     border: 1px solid #aaa;
     overflow: hidden;
 }
@@ -101,7 +107,9 @@ nav a.active {
     height: 460px;
 }
 
-/* HEAD */
+/* =========================
+   HEAD
+========================= */
 
 .head {
     position: absolute;
@@ -115,7 +123,9 @@ nav a.active {
     z-index: 5;
 }
 
-/* FACES */
+/* =========================
+   FACES
+========================= */
 
 .face {
     position: absolute;
@@ -265,7 +275,9 @@ nav a.active {
     right: 20px;
 }
 
-/* BODY */
+/* =========================
+   BODY
+========================= */
 
 .body {
     position: absolute;
@@ -327,7 +339,9 @@ nav a.active {
     font-size: 55px;
 }
 
-/* ARMS */
+/* =========================
+   ARMS
+========================= */
 
 .arm {
     position: absolute;
@@ -347,7 +361,9 @@ nav a.active {
     right: 30px;
 }
 
-/* LEGS */
+/* =========================
+   LEGS
+========================= */
 
 .leg {
     position: absolute;
@@ -419,7 +435,7 @@ nav a.active {
 }
 
 @keyframes seasons {
-    0%, 24% {
+    0%,24% {
         background: linear-gradient(90deg,#67d477,#f2a5d4);
     }
 
@@ -436,7 +452,9 @@ nav a.active {
     }
 }
 
-/* ACCESSORIES */
+/* =========================
+   ACCESSORIES
+========================= */
 
 .accessory {
     position: absolute;
@@ -444,7 +462,9 @@ nav a.active {
     pointer-events: none;
 }
 
-/* FEDORA */
+/* =========================
+   Fedoras
+========================= */
 
 .fedora {
     position: absolute;
@@ -455,6 +475,7 @@ nav a.active {
     border-radius: 50% 50% 20% 20%;
     border: 3px solid rgba(0,0,0,.35);
     z-index: 20;
+
     box-shadow:
         inset 0 8px 12px rgba(255,255,255,.4),
         0 4px 12px rgba(0,0,0,.35);
@@ -509,7 +530,9 @@ nav a.active {
     );
 }
 
-/* FROZEN HORNS */
+/* =========================
+   FROZEN HORNS
+========================= */
 
 .horns {
     position: absolute;
@@ -556,7 +579,74 @@ nav a.active {
     transform: rotate(30deg) scaleX(-1);
 }
 
-/* BLUE FIRE */
+/* =========================
+   BLUE HORNS
+========================= */
+
+.horns.blue-horns .horn {
+    background: linear-gradient(
+        135deg,
+        #ffffff,
+        #b9f7ff,
+        #26bde8,
+        #087ca8,
+        #ffffff
+    );
+
+    border-color: #3689a8;
+
+    box-shadow:
+        0 0 8px #55eaff,
+        0 0 18px rgba(60,220,255,.8);
+}
+
+/* =========================
+   RED HORNS
+========================= */
+
+.horns.red-horns .horn {
+    background: linear-gradient(
+        135deg,
+        #ffffff,
+        #ffb0b0,
+        #e52b2b,
+        #8b0000,
+        #ffffff
+    );
+
+    border-color: #9b2222;
+
+    box-shadow:
+        0 0 8px #ff3333,
+        0 0 18px rgba(255,40,40,.8),
+        inset 5px 0 10px rgba(255,255,255,.9);
+}
+
+/* =========================
+   GREEN HORNS
+========================= */
+
+.horns.green-horns .horn {
+    background: linear-gradient(
+        135deg,
+        #ffffff,
+        #aaffbb,
+        #21c95b,
+        #08752d,
+        #ffffff
+    );
+
+    border-color: #16833d;
+
+    box-shadow:
+        0 0 8px #35ff75,
+        0 0 18px rgba(30,255,100,.8),
+        inset 5px 0 10px rgba(255,255,255,.9);
+}
+
+/* =========================
+   FIRE
+========================= */
 
 .frozen-fire {
     position: absolute;
@@ -574,6 +664,8 @@ nav a.active {
     animation:
         frozenFireFloat 1.2s ease-in-out infinite alternate;
 }
+
+/* BLUE FIRE */
 
 .frozen-fire::before {
     content: "";
@@ -610,8 +702,6 @@ nav a.active {
         20% 15%,
         38% 28%
     );
-
-    opacity: .95;
 }
 
 .frozen-fire::after {
@@ -644,35 +734,121 @@ nav a.active {
     );
 }
 
+/* RED FIRE */
+
+.horns.red-horns .frozen-fire {
+    filter:
+        drop-shadow(0 0 5px #ff3333)
+        drop-shadow(0 0 12px #ff0000)
+        drop-shadow(0 0 20px #a00000);
+}
+
+.horns.red-horns .frozen-fire::before {
+    background: linear-gradient(
+        to top,
+        #a00000,
+        #ff2020,
+        #ff6666,
+        #ffffff
+    );
+}
+
+.horns.red-horns .frozen-fire::after {
+    background: linear-gradient(
+        to top,
+        #ff0000,
+        #ff5555,
+        #ffffff
+    );
+}
+
+/* GREEN FIRE */
+
+.horns.green-horns .frozen-fire {
+    filter:
+        drop-shadow(0 0 5px #36ff75)
+        drop-shadow(0 0 12px #00ff55)
+        drop-shadow(0 0 20px #00a83b);
+}
+
+.horns.green-horns .frozen-fire::before {
+    background: linear-gradient(
+        to top,
+        #008b32,
+        #00e957,
+        #66ff99,
+        #ffffff
+    );
+}
+
+.horns.green-horns .frozen-fire::after {
+    background: linear-gradient(
+        to top,
+        #00c94b,
+        #62ff91,
+        #ffffff
+    );
+}
+
+/* FIRE ANIMATION */
+
 @keyframes frozenFireFloat {
 
     0% {
-        transform: translateY(3px) scale(.96);
+        transform:
+            translateY(3px)
+            scale(.96);
     }
 
     50% {
-        transform: translateY(-5px) scale(1.03);
+        transform:
+            translateY(-5px)
+            scale(1.03);
     }
 
     100% {
-        transform: translateY(-10px) scale(.98);
+        transform:
+            translateY(-10px)
+            scale(.98);
     }
 }
 
-/* FIRE SPARKS */
+/* SPARKS */
 
 .frozen-fire-spark {
     position: absolute;
     width: 6px;
     height: 6px;
-    background: #8ff7ff;
+
     border-radius: 50%;
+
+    animation:
+        iceSpark 1.5s infinite ease-out;
+}
+
+.horns:not(.red-horns):not(.green-horns)
+.frozen-fire-spark {
+    background: #8ff7ff;
 
     box-shadow:
         0 0 6px #00d9ff,
         0 0 12px #008cff;
+}
 
-    animation: iceSpark 1.5s infinite ease-out;
+.horns.red-horns .frozen-fire-spark {
+    background: #ff7777;
+
+    box-shadow:
+        0 0 6px #ff2222,
+        0 0 12px #ff0000;
+}
+
+.horns.green-horns .frozen-fire-spark {
+    background: #78ff9c;
+
+    box-shadow:
+        0 0 6px #21ff68,
+        0 0 12px #00c94b;
 }
 
 .spark1 {
@@ -702,7 +878,9 @@ nav a.active {
 
     0% {
         opacity: 0;
-        transform: translateY(15px) scale(.5);
+        transform:
+            translateY(15px)
+            scale(.5);
     }
 
     30% {
@@ -711,11 +889,15 @@ nav a.active {
 
     100% {
         opacity: 0;
-        transform: translateY(-35px) scale(1.2);
+        transform:
+            translateY(-35px)
+            scale(1.2);
     }
 }
 
-/* CROWN */
+/* =========================
+   CROWN
+========================= */
 
 .crown {
     position: absolute;
@@ -725,7 +907,10 @@ nav a.active {
     top: 35px;
     z-index: 15;
 
-    background: linear-gradient(#fff47b,#d39d00);
+    background: linear-gradient(
+        #fff47b,
+        #d39d00
+    );
 
     clip-path: polygon(
         0 100%,
@@ -738,7 +923,9 @@ nav a.active {
     );
 }
 
-/* WINGS */
+/* =========================
+   WINGS
+========================= */
 
 .wings {
     position: absolute;
@@ -777,7 +964,9 @@ nav a.active {
     transform: rotate(20deg) scaleX(-1);
 }
 
-/* VALKYRIE */
+/* =========================
+   VALKYRIES
+========================= */
 
 .valkyrie {
     position: absolute;
@@ -926,7 +1115,9 @@ nav a.active {
     );
 }
 
-/* ACCESSORY COUNT */
+/* =========================
+   ACCESSORY COUNT
+========================= */
 
 .accessory-count {
     margin-top: 12px;
@@ -941,8 +1132,6 @@ nav a.active {
     color: #1683c5;
 }
 
-/* STATUS */
-
 .status {
     margin-top: 15px;
     padding: 12px;
@@ -952,7 +1141,9 @@ nav a.active {
     font-weight: bold;
 }
 
-/* CATALOG */
+/* =========================
+   CATALOG
+========================= */
 
 .catalog {
     margin-top: 15px;
@@ -989,7 +1180,12 @@ nav a.active {
 
 .item-preview {
     height: 120px;
-    background: linear-gradient(135deg,#ddd,#eee);
+    background: linear-gradient(
+        135deg,
+        #ddd,
+        #eee
+    );
+
     border: 1px solid #bbb;
 
     display: flex;
@@ -1044,10 +1240,15 @@ button.equipped {
 
 .clear {
     margin-top: 10px;
-    background: linear-gradient(#777,#555);
+    background: linear-gradient(
+        #777,
+        #555
+    );
 }
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 
 footer {
     text-align: center;
@@ -1055,7 +1256,9 @@ footer {
     color: #777;
 }
 
-/* MOBILE */
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:600px) {
 
@@ -1162,7 +1365,8 @@ Loading avatar...
 </div>
 
 
-<button class="clear" onclick="clearAvatar()">
+<button class="clear"
+onclick="clearAvatar()">
 Clear Equipped Items
 </button>
 
@@ -1174,7 +1378,9 @@ Clear Equipped Items
 <h2>Avatar Items</h2>
 
 
-<!-- FACES -->
+<!-- =========================
+     FACES
+========================= -->
 
 <div class="category">
 
@@ -1303,7 +1509,9 @@ Equip
 </div>
 
 
-<!-- SHIRTS -->
+<!-- =========================
+     SHIRTS
+========================= -->
 
 <div class="category">
 
@@ -1378,7 +1586,9 @@ Equip
 </div>
 
 
-<!-- PANTS -->
+<!-- =========================
+     PANTS
+========================= -->
 
 <div class="category">
 
@@ -1455,7 +1665,9 @@ Equip
 </div>
 
 
-<!-- ACCESSORIES -->
+<!-- =========================
+     ACCESSORIES
+========================= -->
 
 <div class="category">
 
@@ -1463,6 +1675,7 @@ Equip
 
 <div class="items">
 
+<!-- FEDORAS -->
 
 <div class="item">
 <div class="item-preview">✨ FEDORA</div>
@@ -1473,7 +1686,6 @@ Equip
 </button>
 </div>
 
-
 <div class="item">
 <div class="item-preview">🔴 FEDORA</div>
 <h4>Sparkle Fedora - Red</h4>
@@ -1482,7 +1694,6 @@ Equip
 Equip
 </button>
 </div>
-
 
 <div class="item">
 <div class="item-preview">🔵 FEDORA</div>
@@ -1493,7 +1704,6 @@ Equip
 </button>
 </div>
 
-
 <div class="item">
 <div class="item-preview">🟡 FEDORA</div>
 <h4>Sparkle Fedora - Gold</h4>
@@ -1502,7 +1712,6 @@ Equip
 Equip
 </button>
 </div>
-
 
 <div class="item">
 <div class="item-preview">🟣 FEDORA</div>
@@ -1513,7 +1722,6 @@ Equip
 </button>
 </div>
 
-
 <div class="item">
 <div class="item-preview">🩷 FEDORA</div>
 <h4>Sparkle Fedora - Pink</h4>
@@ -1522,7 +1730,6 @@ Equip
 Equip
 </button>
 </div>
-
 
 <div class="item">
 <div class="item-preview">🌈 FEDORA</div>
@@ -1537,14 +1744,34 @@ Equip
 <!-- FROZEN HORNS -->
 
 <div class="item">
-<div class="item-preview">❄️🔥</div>
-<h4>Frozen Crystal Horns</h4>
-<p>Icy horns with blue fire.</p>
+<div class="item-preview">❄️🔥🔵</div>
+<h4>Blue Frozen Horns</h4>
+<p>Blue crystal horns with blue fire.</p>
 <button onclick="toggleAccessory(this,'Frozen Crystal Horns')">
 Equip
 </button>
 </div>
 
+<div class="item">
+<div class="item-preview">❄️🔥🔴</div>
+<h4>Red Frozen Horns</h4>
+<p>Red crystal horns with red fire.</p>
+<button onclick="toggleAccessory(this,'Red Frozen Horns')">
+Equip
+</button>
+</div>
+
+<div class="item">
+<div class="item-preview">❄️🔥🟢</div>
+<h4>Green Frozen Horns</h4>
+<p>Green crystal horns with green fire.</p>
+<button onclick="toggleAccessory(this,'Green Frozen Horns')">
+Equip
+</button>
+</div>
+
+
+<!-- OTHER ACCESSORIES -->
 
 <div class="item">
 <div class="item-preview">👑</div>
@@ -1554,7 +1781,6 @@ Equip
 Equip
 </button>
 </div>
-
 
 <div class="item">
 <div class="item-preview">🪽</div>
@@ -1577,7 +1803,6 @@ Equip
 </button>
 </div>
 
-
 <div class="item">
 <div class="item-preview">🔴👑</div>
 <h4>Red Valkyrie</h4>
@@ -1586,7 +1811,6 @@ Equip
 Equip
 </button>
 </div>
-
 
 <div class="item">
 <div class="item-preview">🔵👑</div>
@@ -1597,7 +1821,6 @@ Equip
 </button>
 </div>
 
-
 <div class="item">
 <div class="item-preview">🟣👑</div>
 <h4>Purple Valkyrie</h4>
@@ -1606,7 +1829,6 @@ Equip
 Equip
 </button>
 </div>
-
 
 <div class="item">
 <div class="item-preview">🟢👑</div>
@@ -1617,7 +1839,6 @@ Equip
 </button>
 </div>
 
-
 <div class="item">
 <div class="item-preview">🩷👑</div>
 <h4>Pink Valkyrie</h4>
@@ -1626,7 +1847,6 @@ Equip
 Equip
 </button>
 </div>
-
 
 <div class="item">
 <div class="item-preview">⚪👑</div>
@@ -1637,7 +1857,6 @@ Equip
 </button>
 </div>
 
-
 <div class="item">
 <div class="item-preview">⚫👑</div>
 <h4>Black Valkyrie</h4>
@@ -1646,7 +1865,6 @@ Equip
 Equip
 </button>
 </div>
-
 
 <div class="item">
 <div class="item-preview">🟡👑</div>
@@ -1657,7 +1875,6 @@ Equip
 </button>
 </div>
 
-
 <div class="item">
 <div class="item-preview">🌈👑</div>
 <h4>Rainbow Valkyrie</h4>
@@ -1667,12 +1884,10 @@ Equip
 </button>
 </div>
 
-
 </div>
 </div>
 
 </div>
-
 </div>
 
 
@@ -1694,8 +1909,9 @@ function equipFace(button, face) {
         face
     );
 
-    document.getElementById("face")
-        .className =
+    document.getElementById(
+        "face"
+    ).className =
         "face face-" + face;
 
     document
@@ -1704,13 +1920,21 @@ function equipFace(button, face) {
         )
         .forEach(function(btn) {
 
-            btn.classList.remove("equipped");
-            btn.textContent = "Equip";
+            btn.classList.remove(
+                "equipped"
+            );
+
+            btn.textContent =
+                "Equip";
 
         });
 
-    button.classList.add("equipped");
-    button.textContent = "Equipped";
+    button.classList.add(
+        "equipped"
+    );
+
+    button.textContent =
+        "Equipped";
 
     updateStatus();
 }
@@ -1733,13 +1957,21 @@ function equipShirt(button, shirt) {
         )
         .forEach(function(btn) {
 
-            btn.classList.remove("equipped");
-            btn.textContent = "Equip";
+            btn.classList.remove(
+                "equipped"
+            );
+
+            btn.textContent =
+                "Equip";
 
         });
 
-    button.classList.add("equipped");
-    button.textContent = "Equipped";
+    button.classList.add(
+        "equipped"
+    );
+
+    button.textContent =
+        "Equipped";
 
     loadShirt();
     updateStatus();
@@ -1763,13 +1995,21 @@ function equipPants(button, pants) {
         )
         .forEach(function(btn) {
 
-            btn.classList.remove("equipped");
-            btn.textContent = "Equip";
+            btn.classList.remove(
+                "equipped"
+            );
+
+            btn.textContent =
+                "Equip";
 
         });
 
-    button.classList.add("equipped");
-    button.textContent = "Equipped";
+    button.classList.add(
+        "equipped"
+    );
+
+    button.textContent =
+        "Equipped";
 
     loadPants();
     updateStatus();
@@ -1816,13 +2056,18 @@ function toggleAccessory(button, name) {
         accessories.indexOf(name);
 
 
-    /* REMOVE */
+    /* UNEQUIP */
 
     if (index !== -1) {
 
-        accessories.splice(index,1);
+        accessories.splice(
+            index,
+            1
+        );
 
-        saveAccessories(accessories);
+        saveAccessories(
+            accessories
+        );
 
         loadAccessories();
         updateStatus();
@@ -1831,9 +2076,11 @@ function toggleAccessory(button, name) {
     }
 
 
-    /* MAX 3 */
+    /* MAXIMUM 3 */
 
-    if (accessories.length >= 3) {
+    if (
+        accessories.length >= 3
+    ) {
 
         alert(
             "You can only wear 3 accessories at a time!"
@@ -1847,7 +2094,9 @@ function toggleAccessory(button, name) {
 
     accessories.push(name);
 
-    saveAccessories(accessories);
+    saveAccessories(
+        accessories
+    );
 
     loadAccessories();
     updateStatus();
@@ -1871,72 +2120,102 @@ function loadAccessories() {
     container.innerHTML = "";
 
 
-    accessories.forEach(function(item) {
+    accessories.forEach(
+        function(item) {
 
 
         /* FEDORAS */
 
         const fedoraColors = {
 
-            "Sparkle Fedora":"classic",
-            "Sparkle Fedora - Red":"red",
-            "Sparkle Fedora - Blue":"blue",
-            "Sparkle Fedora - Gold":"gold",
-            "Sparkle Fedora - Purple":"purple",
-            "Sparkle Fedora - Pink":"pink",
-            "Sparkle Fedora - Rainbow":"rainbow"
+            "Sparkle Fedora":
+                "classic",
+
+            "Sparkle Fedora - Red":
+                "red",
+
+            "Sparkle Fedora - Blue":
+                "blue",
+
+            "Sparkle Fedora - Gold":
+                "gold",
+
+            "Sparkle Fedora - Purple":
+                "purple",
+
+            "Sparkle Fedora - Pink":
+                "pink",
+
+            "Sparkle Fedora - Rainbow":
+                "rainbow"
 
         };
 
 
-        if (fedoraColors[item]) {
+        if (
+            fedoraColors[item]
+        ) {
 
             const fedora =
-                document.createElement("div");
+                document.createElement(
+                    "div"
+                );
 
             fedora.className =
                 "fedora " +
                 fedoraColors[item];
 
-            container.appendChild(fedora);
+            container.appendChild(
+                fedora
+            );
 
             return;
         }
 
 
-        /* FROZEN HORNS */
+        /* BLUE FROZEN HORNS */
 
         if (
-            item === "Frozen Crystal Horns"
+            item ===
+            "Frozen Crystal Horns"
         ) {
 
-            const horns =
-                document.createElement("div");
+            createFrozenHorns(
+                container,
+                "blue-horns"
+            );
 
-            horns.className =
-                "horns";
+            return;
+        }
 
-            horns.innerHTML = `
 
-                <div class="horn left"></div>
+        /* RED FROZEN HORNS */
 
-                <div class="horn right"></div>
+        if (
+            item ===
+            "Red Frozen Horns"
+        ) {
 
-                <div class="frozen-fire">
+            createFrozenHorns(
+                container,
+                "red-horns"
+            );
 
-                    <div class="frozen-fire-spark spark1"></div>
+            return;
+        }
 
-                    <div class="frozen-fire-spark spark2"></div>
 
-                    <div class="frozen-fire-spark spark3"></div>
+        /* GREEN FROZEN HORNS */
 
-                    <div class="frozen-fire-spark spark4"></div>
+        if (
+            item ===
+            "Green Frozen Horns"
+        ) {
 
-                </div>
-
-            `;
-
-            container.appendChild(horns);
+            createFrozenHorns(
+                container,
+                "green-horns"
+            );
 
             return;
         }
@@ -1945,16 +2224,21 @@ function loadAccessories() {
         /* CROWN */
 
         if (
-            item === "Royal Crown"
+            item ===
+            "Royal Crown"
         ) {
 
             const crown =
-                document.createElement("div");
+                document.createElement(
+                    "div"
+                );
 
             crown.className =
                 "crown";
 
-            container.appendChild(crown);
+            container.appendChild(
+                crown
+            );
 
             return;
         }
@@ -1963,16 +2247,21 @@ function loadAccessories() {
         /* WINGS */
 
         if (
-            item === "Crystal Wings"
+            item ===
+            "Crystal Wings"
         ) {
 
             const wings =
-                document.createElement("div");
+                document.createElement(
+                    "div"
+                );
 
             wings.className =
                 "wings";
 
-            container.appendChild(wings);
+            container.appendChild(
+                wings
+            );
 
             return;
         }
@@ -1982,16 +2271,35 @@ function loadAccessories() {
 
         const valkyrieColors = {
 
-            "Sparkle Time Valkyrie":"sparkle",
-            "Red Valkyrie":"red",
-            "Blue Valkyrie":"blue",
-            "Purple Valkyrie":"purple",
-            "Green Valkyrie":"green",
-            "Pink Valkyrie":"pink",
-            "White Valkyrie":"white",
-            "Black Valkyrie":"black",
-            "Gold Valkyrie":"gold",
-            "Rainbow Valkyrie":"rainbow"
+            "Sparkle Time Valkyrie":
+                "sparkle",
+
+            "Red Valkyrie":
+                "red",
+
+            "Blue Valkyrie":
+                "blue",
+
+            "Purple Valkyrie":
+                "purple",
+
+            "Green Valkyrie":
+                "green",
+
+            "Pink Valkyrie":
+                "pink",
+
+            "White Valkyrie":
+                "white",
+
+            "Black Valkyrie":
+                "black",
+
+            "Gold Valkyrie":
+                "gold",
+
+            "Rainbow Valkyrie":
+                "rainbow"
 
         };
 
@@ -2001,7 +2309,9 @@ function loadAccessories() {
         ) {
 
             const valkyrie =
-                document.createElement("div");
+                document.createElement(
+                    "div"
+                );
 
             valkyrie.className =
                 "valkyrie " +
@@ -2020,6 +2330,7 @@ function loadAccessories() {
             container.appendChild(
                 valkyrie
             );
+
         }
 
     });
@@ -2030,7 +2341,50 @@ function loadAccessories() {
 
 
 /* =========================
-   ACCESSORY BUTTONS
+   CREATE FROZEN HORNS
+========================= */
+
+function createFrozenHorns(
+    container,
+    color
+) {
+
+    const horns =
+        document.createElement(
+            "div"
+        );
+
+    horns.className =
+        "horns " + color;
+
+    horns.innerHTML = `
+
+        <div class="horn left"></div>
+
+        <div class="horn right"></div>
+
+        <div class="frozen-fire">
+
+            <div class="frozen-fire-spark spark1"></div>
+
+            <div class="frozen-fire-spark spark2"></div>
+
+            <div class="frozen-fire-spark spark3"></div>
+
+            <div class="frozen-fire-spark spark4"></div>
+
+        </div>
+
+    `;
+
+    container.appendChild(
+        horns
+    );
+}
+
+
+/* =========================
+   UPDATE ACCESSORY BUTTONS
 ========================= */
 
 function updateAccessoryButtons() {
@@ -2087,7 +2441,8 @@ function updateAccessoryButtons() {
     document.getElementById(
         "accessoryCount"
     ).textContent =
-        equipped.length + " / 3";
+        equipped.length +
+        " / 3";
 }
 
 
@@ -2122,7 +2477,8 @@ function loadShirt() {
 
 
     if (
-        shirt === "MTB Classic Logo"
+        shirt ===
+        "MTB Classic Logo"
     ) {
 
         graphic.innerHTML =
@@ -2130,27 +2486,33 @@ function loadShirt() {
 
     }
 
-
     else if (
-        shirt === "MTB Star Streetwear"
+        shirt ===
+        "MTB Star Streetwear"
     ) {
 
         body.style.background =
             "#111";
 
         graphic.innerHTML = `
+
             <div class="shirt-star"></div>
-            <div class="shirt-logo"
-            style="font-size:18px;top:103px;">
-            MTB
+
+            <div
+                class="shirt-logo"
+                style="
+                font-size:18px;
+                top:103px;">
+                MTB
             </div>
+
         `;
 
     }
 
-
     else if (
-        shirt === "MTB Flame"
+        shirt ===
+        "MTB Flame"
     ) {
 
         body.style.background =
@@ -2161,9 +2523,9 @@ function loadShirt() {
 
     }
 
-
     else if (
-        shirt === "MTB Lightning"
+        shirt ===
+        "MTB Lightning"
     ) {
 
         body.style.background =
@@ -2174,9 +2536,9 @@ function loadShirt() {
 
     }
 
-
     else if (
-        shirt === "MTB Grey Essential"
+        shirt ===
+        "MTB Grey Essential"
     ) {
 
         body.style.background =
@@ -2187,9 +2549,9 @@ function loadShirt() {
 
     }
 
-
     else if (
-        shirt === "MTB Gothic"
+        shirt ===
+        "MTB Gothic"
     ) {
 
         body.style.background =
@@ -2200,21 +2562,24 @@ function loadShirt() {
 
     }
 
-
     else if (
-        shirt === "MTB White Classic"
+        shirt ===
+        "MTB White Classic"
     ) {
 
         body.style.background =
             "#eee";
 
         graphic.innerHTML = `
-            <div class="shirt-logo"
-            style="
-            color:#111;
-            text-shadow:1px 1px #aaa;">
-            MTB
+
+            <div
+                class="shirt-logo"
+                style="
+                color:#111;
+                text-shadow:1px 1px #aaa;">
+                MTB
             </div>
+
         `;
 
     }
@@ -2253,11 +2618,19 @@ function loadPants() {
     right.innerHTML = "";
 
 
+    left.style.background =
+        "#333";
+
+    right.style.background =
+        "#333";
+
+
     if (!pants) return;
 
 
     if (
-        pants === "MTB Black Logo Pants"
+        pants ===
+        "MTB Black Logo Pants"
     ) {
 
         left.innerHTML =
@@ -2268,9 +2641,9 @@ function loadPants() {
 
     }
 
-
     else if (
-        pants === "MTB Grey Classic Pants"
+        pants ===
+        "MTB Grey Classic Pants"
     ) {
 
         left.style.background =
@@ -2287,9 +2660,9 @@ function loadPants() {
 
     }
 
-
     else if (
-        pants === "MTB Star Pants"
+        pants ===
+        "MTB Star Pants"
     ) {
 
         left.style.background =
@@ -2306,9 +2679,9 @@ function loadPants() {
 
     }
 
-
     else if (
-        pants === "MTB Flame Pants"
+        pants ===
+        "MTB Flame Pants"
     ) {
 
         left.style.background =
@@ -2325,9 +2698,9 @@ function loadPants() {
 
     }
 
-
     else if (
-        pants === "MTB Lightning Pants"
+        pants ===
+        "MTB Lightning Pants"
     ) {
 
         left.style.background =
@@ -2344,9 +2717,9 @@ function loadPants() {
 
     }
 
-
     else if (
-        pants === "MTB Classic Jeans"
+        pants ===
+        "MTB Classic Jeans"
     ) {
 
         left.style.background =
@@ -2363,9 +2736,9 @@ function loadPants() {
 
     }
 
-
     else if (
-        pants === "MTB All Seasons Pants"
+        pants ===
+        "MTB All Seasons Pants"
     ) {
 
         left.classList.add(
@@ -2409,11 +2782,14 @@ function updateStatus() {
         "status"
     ).textContent =
 
-        "Face: " + face +
+        "Face: " +
+        face +
 
-        " | Shirt: " + shirt +
+        " | Shirt: " +
+        shirt +
 
-        " | Pants: " + pants +
+        " | Pants: " +
+        pants +
 
         " | Accessories: " +
 
@@ -2426,7 +2802,7 @@ function updateStatus() {
 
 
 /* =========================
-   CLEAR
+   CLEAR AVATAR
 ========================= */
 
 function clearAvatar() {
@@ -2542,10 +2918,10 @@ function loadAvatar() {
 
             if (
                 button
-                    .getAttribute("onclick")
-                    .includes(
-                        "'" + face + "'"
-                    )
+                .getAttribute("onclick")
+                .includes(
+                    "'" + face + "'"
+                )
             ) {
 
                 button.classList.add(
@@ -2574,10 +2950,10 @@ function loadAvatar() {
             if (
                 shirt &&
                 button
-                    .getAttribute("onclick")
-                    .includes(
-                        "'" + shirt + "'"
-                    )
+                .getAttribute("onclick")
+                .includes(
+                    "'" + shirt + "'"
+                )
             ) {
 
                 button.classList.add(
@@ -2606,10 +2982,10 @@ function loadAvatar() {
             if (
                 pants &&
                 button
-                    .getAttribute("onclick")
-                    .includes(
-                        "'" + pants + "'"
-                    )
+                .getAttribute("onclick")
+                .includes(
+                    "'" + pants + "'"
+                )
             ) {
 
                 button.classList.add(
@@ -2633,118 +3009,6 @@ loadAvatar();
 
 </script>
 
-</body>/* =========================
-   RED FROZEN HORNS
-========================= */
-
-.horns.red-horns .horn {
-    background: linear-gradient(
-        135deg,
-        #ffffff,
-        #ffb0b0,
-        #e52b2b,
-        #8b0000,
-        #ffffff
-    );
-
-    border-color: #9b2222;
-
-    box-shadow:
-        0 0 8px #ff3333,
-        0 0 18px rgba(255,40,40,.8),
-        inset 5px 0 10px rgba(255,255,255,.9);
-}
-
-.horns.red-horns .frozen-fire {
-    filter:
-        drop-shadow(0 0 5px #ff3333)
-        drop-shadow(0 0 12px #ff0000)
-        drop-shadow(0 0 20px #a00000);
-}
-
-.horns.red-horns .frozen-fire::before {
-    background: linear-gradient(
-        to top,
-        #a00000,
-        #ff2020,
-        #ff6666,
-        #ffffff
-    );
-}
-
-.horns.red-horns .frozen-fire::after {
-    background: linear-gradient(
-        to top,
-        #ff0000,
-        #ff5555,
-        #ffffff
-    );
-}
-
-.horns.red-horns .frozen-fire-spark {
-    background: #ff7777;
-
-    box-shadow:
-        0 0 6px #ff2222,
-        0 0 12px #ff0000;
-}
-
-
-/* =========================
-   GREEN FROZEN HORNS
-========================= */
-
-.horns.green-horns .horn {
-    background: linear-gradient(
-        135deg,
-        #ffffff,
-        #aaffbb,
-        #21c95b,
-        #08752d,
-        #ffffff
-    );
-
-    border-color: #16833d;
-
-    box-shadow:
-        0 0 8px #35ff75,
-        0 0 18px rgba(30,255,100,.8),
-        inset 5px 0 10px rgba(255,255,255,.9);
-}
-
-.horns.green-horns .frozen-fire {
-    filter:
-        drop-shadow(0 0 5px #36ff75)
-        drop-shadow(0 0 12px #00ff55)
-        drop-shadow(0 0 20px #00a83b);
-}
-
-.horns.green-horns .frozen-fire::before {
-    background: linear-gradient(
-        to top,
-        #008b32,
-        #00e957,
-        #66ff99,
-        #ffffff
-    );
-}
-
-.horns.green-horns .frozen-fire::after {
-    background: linear-gradient(
-        to top,
-        #00c94b,
-        #62ff91,
-        #ffffff
-    );
-}
-
-.horns.green-horns .frozen-fire-spark {
-    background: #78ff9c;
-
-    box-shadow:
-        0 0 6px #21ff68,
-        0 0 12px #00c94b;
-}
+</body>
 </html>
 ```
-
