@@ -4,13 +4,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>MTB REVIVALS - Avatar</title>
 
 <style>
-*{
-    box-sizing:border-box;
-}
+*{box-sizing:border-box}
 
 body{
     margin:0;
@@ -47,9 +44,7 @@ nav a{
     border-radius:5px;
 }
 
-nav a:hover{
-    background:#aaa;
-}
+nav a:hover{background:#aaa}
 
 .coinbar{
     max-width:1100px;
@@ -57,10 +52,10 @@ nav a:hover{
     padding:12px 18px;
     background:white;
     border:1px solid #aaa;
-
     display:flex;
     justify-content:space-between;
     align-items:center;
+    gap:10px;
 }
 
 .coin{
@@ -93,18 +88,13 @@ nav a:hover{
     margin-top:20px;
 }
 
-.avatarBox,
-.items{
+.avatarBox,.items{
     background:white;
     border:1px solid #aaa;
     padding:20px;
 }
 
-.avatarBox{
-    text-align:center;
-}
-
-/* ================= AVATAR ================= */
+.avatarBox{text-align:center}
 
 .avatar{
     position:relative;
@@ -112,6 +102,8 @@ nav a:hover{
     height:410px;
     margin:15px auto;
 }
+
+/* ================= HEAD ================= */
 
 .head{
     position:absolute;
@@ -145,11 +137,7 @@ nav a:hover{
     background:#f1c27d;
     border:3px solid #333;
     top:130px;
-
-    transition:
-        transform .3s ease,
-        top .3s ease,
-        right .3s ease;
+    transition:.3s ease;
 }
 
 .leftArm{
@@ -169,47 +157,81 @@ nav a:hover{
     transform:rotate(-58deg);
 }
 
-.rightArm:after{
-    content:"";
-    position:absolute;
-    width:32px;
-    height:32px;
-    background:#f1c27d;
-    border:3px solid #333;
-    border-radius:50%;
-    bottom:-18px;
-    left:0;
-}
-
-/* ================= LEGS ================= */
+/* ================= NORMAL LEGS ================= */
 
 .leg{
     position:absolute;
-    width:50px;
-    height:120px;
     background:#222;
     border:3px solid #333;
-    top:250px;
     z-index:3;
 }
 
 .leftLeg{
+    width:50px;
+    height:120px;
+    top:250px;
     left:67px;
 }
 
 .rightLeg{
+    width:50px;
+    height:120px;
+    top:250px;
     right:67px;
 }
 
-.korblox{
-    background:linear-gradient(
-        90deg,
-        #111,
-        #555,
-        #181818
-    ) !important;
+/* =================================================
+   KORBLOX-STYLE SMALL BLUE LEG
+================================================= */
 
-    border-color:#111 !important;
+.leftLeg.korblox{
+    width:24px;
+    height:78px;
+
+    top:292px;
+    left:80px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #101a2b 0%,
+            #326ba8 35%,
+            #75bfff 50%,
+            #24517f 70%,
+            #0b1420 100%
+        ) !important;
+
+    border:3px solid #101722 !important;
+
+    border-radius:5px 5px 10px 10px;
+
+    box-shadow:
+        inset 3px 0 4px rgba(255,255,255,.25),
+        inset -4px 0 5px rgba(0,0,0,.5),
+        0 2px 4px rgba(0,0,0,.4);
+}
+
+.leftLeg.korblox:before{
+    content:"";
+    position:absolute;
+    width:30px;
+    height:13px;
+    left:-6px;
+    top:-8px;
+    background:#172436;
+    border:2px solid #101722;
+    border-radius:5px;
+}
+
+.leftLeg.korblox:after{
+    content:"";
+    position:absolute;
+    width:5px;
+    height:55px;
+    left:5px;
+    top:8px;
+    background:rgba(150,220,255,.55);
+    border-radius:5px;
 }
 
 /* ================= FACE ================= */
@@ -232,21 +254,11 @@ nav a:hover{
     top:38px;
 }
 
-.leftEye{
-    left:32px;
-}
-
-.rightEye{
-    right:32px;
-}
-
-.mouth{
-    position:absolute;
-}
-
-/* SMILE */
+.leftEye{left:32px}
+.rightEye{right:32px}
 
 .classicSmile .mouth{
+    position:absolute;
     width:42px;
     height:20px;
     border-bottom:4px solid #111;
@@ -255,9 +267,8 @@ nav a:hover{
     top:53px;
 }
 
-/* HAPPY */
-
 .classicHappy .mouth{
+    position:absolute;
     width:40px;
     height:22px;
     background:#111;
@@ -276,9 +287,8 @@ nav a:hover{
     top:2px;
 }
 
-/* SERIOUS */
-
 .classicSerious .mouth{
+    position:absolute;
     width:38px;
     height:4px;
     background:#111;
@@ -286,9 +296,8 @@ nav a:hover{
     top:60px;
 }
 
-/* SMIRK */
-
 .classicSmirk .mouth{
+    position:absolute;
     width:38px;
     height:16px;
     border-bottom:4px solid #111;
@@ -297,8 +306,6 @@ nav a:hover{
     left:31px;
     top:52px;
 }
-
-/* EVIL */
 
 .classicEvil .leftEye{
     transform:rotate(15deg);
@@ -309,6 +316,7 @@ nav a:hover{
 }
 
 .classicEvil .mouth{
+    position:absolute;
     width:40px;
     height:18px;
     border-top:4px solid #111;
@@ -317,13 +325,15 @@ nav a:hover{
     top:57px;
 }
 
-/* ================= HORNS ================= */
+/* ================= ACCESSORIES ================= */
 
 .accessory{
     position:absolute;
     pointer-events:none;
     z-index:20;
 }
+
+/* ================= FROZEN HORNS ================= */
 
 .frozenHorns{
     width:170px;
@@ -355,39 +365,32 @@ nav a:hover{
     );
 }
 
-.blueHorns:before,
-.blueHorns:after{
+.blueHorns:before,.blueHorns:after{
     background:#b9f3ff;
     border-color:#42b8ed;
     box-shadow:0 0 12px #66dfff;
 }
 
-.blueHorns:before,
-.redHorns:before,
-.greenHorns:before{
-    left:15px;
-    transform:rotate(-25deg);
-}
-
-.blueHorns:after,
-.redHorns:after,
-.greenHorns:after{
-    right:15px;
-    transform:rotate(25deg);
-}
-
-.redHorns:before,
-.redHorns:after{
+.redHorns:before,.redHorns:after{
     background:#ff4b4b;
     border-color:#a00000;
     box-shadow:0 0 12px #ff3333;
 }
 
-.greenHorns:before,
-.greenHorns:after{
+.greenHorns:before,.greenHorns:after{
     background:#53ff8b;
     border-color:#008c3c;
     box-shadow:0 0 12px #2dff75;
+}
+
+.blueHorns:before,.redHorns:before,.greenHorns:before{
+    left:15px;
+    transform:rotate(-25deg);
+}
+
+.blueHorns:after,.redHorns:after,.greenHorns:after{
+    right:15px;
+    transform:rotate(25deg);
 }
 
 .fire{
@@ -407,8 +410,7 @@ nav a:hover{
     z-index:19;
 }
 
-.valk:before,
-.valk:after{
+.valk:before,.valk:after{
     content:"";
     position:absolute;
     width:48px;
@@ -428,110 +430,80 @@ nav a:hover{
     transform:rotate(25deg);
 }
 
-.goldValk:before,
-.goldValk:after{
+.goldValk:before,.goldValk:after{
     background:#f5d76e;
     border-color:#9d7610;
 }
 
-.redValk:before,
-.redValk:after{
+.redValk:before,.redValk:after{
     background:#e34b4b;
     border-color:#7d1111;
 }
 
-.blueValk:before,
-.blueValk:after{
+.blueValk:before,.blueValk:after{
     background:#4d9cff;
     border-color:#174e9b;
 }
 
-.greenValk:before,
-.greenValk:after{
+.greenValk:before,.greenValk:after{
     background:#4ddd78;
     border-color:#167536;
 }
 
-.purpleValk:before,
-.purpleValk:after{
+.purpleValk:before,.purpleValk:after{
     background:#a76bea;
     border-color:#59208e;
 }
 
-.blackValk:before,
-.blackValk:after{
+.blackValk:before,.blackValk:after{
     background:#333;
     border-color:#111;
 }
 
-/* ================= FEDORA ================= */
+/* ================= FEDORAS ================= */
 
 .fedora{
     position:absolute;
-
     width:125px;
     height:55px;
-
     left:58px;
     top:-8px;
-
     z-index:18;
 }
 
 .fedora:before{
     content:"";
-
     position:absolute;
-
     width:92px;
     height:42px;
-
     left:16px;
     top:0;
-
-    border-radius:
-        50% 50% 20% 20%;
-
+    border-radius:50% 50% 20% 20%;
     border:5px solid;
-
-    background:
-        linear-gradient(
-            135deg,
-            #fff,
-            #999
-        );
+    background:linear-gradient(135deg,#fff,#999);
 }
 
 .fedora:after{
     content:"";
-
     position:absolute;
-
     width:125px;
     height:18px;
-
     left:0;
     top:35px;
-
     border-radius:50%;
-
     border:4px solid;
-
     background:#777;
 }
 
-/* FEDORA COLORS */
-
 .fedoraRainbow:before{
-    background:
-        linear-gradient(
-            135deg,
-            #ff3b3b,
-            #ffd43b,
-            #45e06f,
-            #4ba3ff,
-            #a66cff
-        );
+    background:linear-gradient(
+        135deg,
+        #ff3b3b,
+        #ffd43b,
+        #45e06f,
+        #4ba3ff,
+        #a66cff
+    );
     border-color:#fff;
 }
 
@@ -629,7 +601,6 @@ nav a:hover{
     top:135px;
     right:-5px;
     transform:rotate(-15deg);
-
     transition:.3s ease;
 }
 
@@ -637,6 +608,13 @@ nav a:hover{
     top:172px;
     right:-18px;
     transform:rotate(-35deg);
+}
+
+/* ================= HEADLESS ================= */
+
+.head.headless{
+    background:transparent !important;
+    border-color:transparent !important;
 }
 
 /* ================= ITEMS ================= */
@@ -654,11 +632,10 @@ nav a:hover{
 
 .grid{
     display:grid;
-    grid-template-columns:
-        repeat(
-            auto-fill,
-            minmax(145px,1fr)
-        );
+    grid-template-columns:repeat(
+        auto-fill,
+        minmax(145px,1fr)
+    );
     gap:10px;
 }
 
@@ -705,13 +682,8 @@ button:hover{
     background:#006bd6;
 }
 
-button.gray{
-    background:#777;
-}
-
-button.red{
-    background:#d33;
-}
+button.gray{background:#777}
+button.red{background:#d33}
 
 .equippedList{
     text-align:left;
@@ -719,6 +691,12 @@ button.red{
     border:1px solid #aaa;
     padding:10px;
     min-height:45px;
+}
+
+.saveStatus{
+    font-size:12px;
+    color:#238636;
+    font-weight:bold;
 }
 
 .message{
@@ -734,19 +712,7 @@ button.red{
     z-index:100;
 }
 
-.headless{
-    background:transparent !important;
-    border-color:transparent !important;
-}
-
-.saveStatus{
-    font-size:12px;
-    color:#238636;
-    font-weight:bold;
-}
-
 @media(max-width:700px){
-
     .avatarLayout{
         grid-template-columns:1fr;
     }
@@ -762,14 +728,10 @@ button.red{
         grid-template-columns:repeat(2,1fr);
     }
 
-    nav a{
-        text-align:center;
-    }
+    nav a{text-align:center}
 }
-
 </style>
 </head>
-
 
 <body>
 
@@ -789,17 +751,12 @@ MTB REVIVALS
 
 </header>
 
-
 <div class="coinbar">
 
 <div>
-
 <span class="coin"></span>
-
 <b>MTB Coins:</b>
-
 <span id="coins">1000</span>
-
 </div>
 
 <div class="saveStatus">
@@ -812,15 +769,11 @@ Earn 100 Coins
 
 </div>
 
-
 <div class="container">
-
 
 <div class="title">
 
-<h1>
-Avatar Editor
-</h1>
+<h1>Avatar Editor</h1>
 
 <p>
 Customize your MTB REVIVALS avatar.
@@ -832,9 +785,7 @@ Maximum 3 accessories or gear at once.
 
 </div>
 
-
 <div class="avatarLayout">
-
 
 <!-- ================= AVATAR ================= -->
 
@@ -842,35 +793,17 @@ Maximum 3 accessories or gear at once.
 
 <h2>Your Avatar</h2>
 
-
 <div id="avatar" class="avatar">
 
+<div id="headAccessory" class="accessory"></div>
 
-<div
-id="headAccessory"
-class="accessory">
-</div>
+<div id="fire" class="accessory"></div>
 
+<div id="gear" class="gear"></div>
 
-<div
-id="fire"
-class="accessory">
-</div>
+<div id="head" class="head">
 
-
-<div
-id="gear"
-class="gear">
-</div>
-
-
-<div
-id="head"
-class="head">
-
-<div
-id="face"
-class="face classicSmile">
+<div id="face" class="face classicSmile">
 
 <span class="eye leftEye"></span>
 <span class="eye rightEye"></span>
@@ -880,131 +813,89 @@ class="face classicSmile">
 
 </div>
 
-
 <div class="body"></div>
 
 <div class="arm leftArm"></div>
 <div class="arm rightArm"></div>
 
-<div
-id="leftLeg"
-class="leg leftLeg">
-</div>
+<div id="leftLeg" class="leg leftLeg"></div>
 
-<div
-class="leg rightLeg">
-</div>
-
+<div id="rightLeg" class="leg rightLeg"></div>
 
 </div>
 
+<h3>Equipped Items</h3>
 
-<h3>
-Equipped Items
-</h3>
-
-<div
-id="equippedList"
-class="equippedList">
+<div id="equippedList" class="equippedList">
 None
 </div>
 
 <br>
 
-<button
-class="gray"
-onclick="clearAccessories()">
-
+<button class="gray" onclick="clearAccessories()">
 Remove All Accessories/Gear
-
 </button>
 
 <br><br>
 
-<button
-class="red"
-onclick="resetAvatar()">
-
+<button class="red" onclick="resetAvatar()">
 Reset Saved Avatar
-
 </button>
 
 </div>
-
 
 <!-- ================= ITEMS ================= -->
 
 <div class="items">
 
-
 <!-- FACES -->
 
 <div class="category">
 
-<h2>
-Classic Faces
-</h2>
+<h2>Classic Faces</h2>
 
 <div class="grid">
 
 <div class="item">
 <div class="preview">🙂</div>
 <h3>Classic Smile</h3>
-<button onclick="setFace('classicSmile')">
-Wear
-</button>
+<button onclick="setFace('classicSmile')">Wear</button>
 </div>
 
 <div class="item">
 <div class="preview">:D</div>
 <h3>Classic Happy</h3>
-<button onclick="setFace('classicHappy')">
-Wear
-</button>
+<button onclick="setFace('classicHappy')">Wear</button>
 </div>
 
 <div class="item">
 <div class="preview">—</div>
 <h3>Serious</h3>
-<button onclick="setFace('classicSerious')">
-Wear
-</button>
+<button onclick="setFace('classicSerious')">Wear</button>
 </div>
 
 <div class="item">
 <div class="preview">;)</div>
 <h3>Smirk</h3>
-<button onclick="setFace('classicSmirk')">
-Wear
-</button>
+<button onclick="setFace('classicSmirk')">Wear</button>
 </div>
 
 <div class="item">
 <div class="preview">>:)</div>
 <h3>Evil</h3>
-<button onclick="setFace('classicEvil')">
-Wear
-</button>
+<button onclick="setFace('classicEvil')">Wear</button>
 </div>
 
 </div>
 </div>
 
-
-<!-- ================= FEDORAS ================= -->
+<!-- FEDORAS -->
 
 <div class="category">
 
-<h2>
-Sparkle Time Fedora Collection
-</h2>
-
-<p>
-All colors are saved to your avatar automatically.
-</p>
+<h2>Sparkle Time Fedora Collection</h2>
 
 <div class="grid">
-
 
 <div class="item">
 <div class="preview">🌈</div>
@@ -1014,7 +905,6 @@ Equip
 </button>
 </div>
 
-
 <div class="item">
 <div class="preview">🔴</div>
 <h3>Red Fedora</h3>
@@ -1022,7 +912,6 @@ Equip
 Equip
 </button>
 </div>
-
 
 <div class="item">
 <div class="preview">🔵</div>
@@ -1032,7 +921,6 @@ Equip
 </button>
 </div>
 
-
 <div class="item">
 <div class="preview">🟢</div>
 <h3>Green Fedora</h3>
@@ -1040,7 +928,6 @@ Equip
 Equip
 </button>
 </div>
-
 
 <div class="item">
 <div class="preview">🟣</div>
@@ -1050,7 +937,6 @@ Equip
 </button>
 </div>
 
-
 <div class="item">
 <div class="preview">⚫</div>
 <h3>Black Fedora</h3>
@@ -1058,7 +944,6 @@ Equip
 Equip
 </button>
 </div>
-
 
 <div class="item">
 <div class="preview">⚪</div>
@@ -1068,7 +953,6 @@ Equip
 </button>
 </div>
 
-
 <div class="item">
 <div class="preview">🟡</div>
 <h3>Gold Fedora</h3>
@@ -1076,7 +960,6 @@ Equip
 Equip
 </button>
 </div>
-
 
 <div class="item">
 <div class="preview">🩷</div>
@@ -1089,41 +972,36 @@ Equip
 </div>
 </div>
 
-
-<!-- ================= HORNS ================= -->
+<!-- HORNS -->
 
 <div class="category">
 
-<h2>
-Frozen Horns
-</h2>
+<h2>Frozen Horns</h2>
 
 <div class="grid">
 
 <div class="item">
 <div class="preview">❄️</div>
 <h3>Frozen Horns</h3>
-<p>Blue crystal + blue fire</p>
+<p>Blue crystals + blue fire</p>
 <button onclick="equipAccessory('Frozen Horns','blue')">
 Equip
 </button>
 </div>
 
-
 <div class="item">
 <div class="preview">🔴</div>
 <h3>Red Frozen Horns</h3>
-<p>Red crystal + red fire</p>
+<p>Red crystals + red fire</p>
 <button onclick="equipAccessory('Red Frozen Horns','red')">
 Equip
 </button>
 </div>
 
-
 <div class="item">
 <div class="preview">🟢</div>
 <h3>Green Frozen Horns</h3>
-<p>Green crystal + green fire</p>
+<p>Green crystals + green fire</p>
 <button onclick="equipAccessory('Green Frozen Horns','green')">
 Equip
 </button>
@@ -1132,14 +1010,11 @@ Equip
 </div>
 </div>
 
-
-<!-- ================= VALKYRIES ================= -->
+<!-- VALKYRIES -->
 
 <div class="category">
 
-<h2>
-Valkyries
-</h2>
+<h2>Valkyries</h2>
 
 <div class="grid">
 
@@ -1194,14 +1069,11 @@ Equip
 </div>
 </div>
 
-
-<!-- ================= GEAR ================= -->
+<!-- GEAR -->
 
 <div class="category">
 
-<h2>
-Gear
-</h2>
+<h2>Gear</h2>
 
 <div class="grid">
 
@@ -1264,101 +1136,91 @@ Equip
 </div>
 </div>
 
-
-<!-- ================= BODY ================= -->
+<!-- BODY -->
 
 <div class="category">
 
-<h2>
-Body
-</h2>
+<h2>Body</h2>
 
 <div class="grid">
 
 <div class="item">
-
-<div class="preview">
-LEG
-</div>
-
-<h3>
-Korblox-Style Leg
-</h3>
-
+<div class="preview">🦿</div>
+<h3>Blue Korblox-Style Leg</h3>
+<p>Small blue metallic leg</p>
 <button onclick="toggleKorblox()">
 Equip
 </button>
-
 </div>
-
 
 <div class="item">
-
-<div class="preview">
-HEAD
-</div>
-
-<h3>
-Headless Style
-</h3>
-
+<div class="preview">HEAD</div>
+<h3>Headless Style</h3>
 <button onclick="toggleHeadless()">
 Equip
 </button>
-
 </div>
 
 </div>
-
 </div>
 
+<!-- MTB CLOTHES -->
+
+<div class="category">
+
+<h2>MTB Clothes</h2>
+
+<div class="grid">
+
+<div class="item">
+<div class="preview">MTB</div>
+<h3>MTB Shirt</h3>
+<button onclick="showMessage('MTB Shirt selected!')">
+Select
+</button>
+</div>
+
+<div class="item">
+<div class="preview">👖</div>
+<h3>MTB Pants</h3>
+<button onclick="showMessage('MTB Pants selected!')">
+Select
+</button>
+</div>
+
+</div>
+</div>
 
 </div>
 </div>
 </div>
 
-
-<div
-id="message"
-class="message">
-</div>
-
+<div id="message" class="message"></div>
 
 <script>
 
 /* =====================================================
-   SAVE SYSTEM
+   SAVE DATA
 ===================================================== */
 
-const SAVE_KEY =
-    "MTB_REVIVALS_AVATAR";
+const SAVE_KEY = "MTB_REVIVALS_AVATAR";
 
-
-let saved =
+let avatarData =
     JSON.parse(
-        localStorage.getItem(
-            SAVE_KEY
-        ) || "null"
-    );
+        localStorage.getItem(SAVE_KEY)
+    ) || {
+        coins:1000,
+        face:"classicSmile",
+        accessories:[],
+        gear:null,
+        korblox:false,
+        headless:false
+    };
 
+let coins = avatarData.coins;
 
-/* DEFAULT DATA */
-
-let avatarData = saved || {
-
-    coins:1000,
-
-    face:"classicSmile",
-
-    accessories:[],
-
-    gear:null,
-
-    korblox:false,
-
-    headless:false
-
-};
+let equipped =
+    avatarData.accessories || [];
 
 
 /* =====================================================
@@ -1367,97 +1229,15 @@ let avatarData = saved || {
 
 function saveAvatar(){
 
+    avatarData.coins = coins;
+
+    avatarData.accessories =
+        equipped;
+
     localStorage.setItem(
         SAVE_KEY,
-        JSON.stringify(
-            avatarData
-        )
+        JSON.stringify(avatarData)
     );
-
-}
-
-
-/* =====================================================
-   LOAD
-===================================================== */
-
-function loadAvatar(){
-
-    coins =
-        avatarData.coins;
-
-    equipped =
-        avatarData.accessories || [];
-
-
-    document.getElementById(
-        "coins"
-    ).textContent =
-        coins;
-
-
-    setFace(
-        avatarData.face ||
-        "classicSmile",
-        false
-    );
-
-
-    if(
-        avatarData.korblox
-    ){
-
-        document.getElementById(
-            "leftLeg"
-        ).classList.add(
-            "korblox"
-        );
-
-    }
-
-
-    if(
-        avatarData.headless
-    ){
-
-        headless = true;
-
-        document.getElementById(
-            "head"
-        ).classList.add(
-            "headless"
-        );
-
-        document.getElementById(
-            "face"
-        ).style.display =
-            "none";
-
-    }
-
-
-    if(
-        avatarData.gear
-    ){
-
-        document.getElementById(
-            "gear"
-        ).textContent =
-            avatarData.gear.icon;
-
-        document.getElementById(
-            "avatar"
-        ).classList.add(
-            "holdingGear"
-        );
-
-    }
-
-
-    updateAvatar();
-
-    updateList();
-
 }
 
 
@@ -1465,28 +1245,17 @@ function loadAvatar(){
    COINS
 ===================================================== */
 
-let coins =
-    avatarData.coins;
-
-
 function earnCoins(){
 
     coins += 100;
 
-    avatarData.coins =
-        coins;
+    document.getElementById(
+        "coins"
+    ).textContent = coins;
 
     saveAvatar();
 
-    document.getElementById(
-        "coins"
-    ).textContent =
-        coins;
-
-    showMessage(
-        "+100 MTB Coins!"
-    );
-
+    showMessage("+100 MTB Coins!");
 }
 
 
@@ -1494,69 +1263,42 @@ function earnCoins(){
    ACCESSORIES
 ===================================================== */
 
-let equipped =
-    avatarData.accessories || [];
+function equipAccessory(name,type){
 
-
-function equipAccessory(
-    name,
-    type
-){
-
-    if(
-        equipped.includes(name)
-    ){
+    if(equipped.includes(name)){
 
         equipped =
             equipped.filter(
-                item =>
-                    item !== name
+                item => item !== name
             );
 
-        avatarData.accessories =
-            equipped;
-
         saveAvatar();
-
         updateAvatar();
 
         showMessage(
-            name +
-            " removed."
+            name + " removed."
         );
 
         return;
-
     }
 
-
-    if(
-        equipped.length >= 3
-    ){
+    if(equipped.length >= 3){
 
         showMessage(
             "Maximum 3 accessories/gear!"
         );
 
         return;
-
     }
-
 
     equipped.push(name);
 
-    avatarData.accessories =
-        equipped;
-
     saveAvatar();
-
     updateAvatar();
 
     showMessage(
-        name +
-        " equipped and saved!"
+        name + " equipped and saved!"
     );
-
 }
 
 
@@ -1565,7 +1307,6 @@ function equipAccessory(
 ===================================================== */
 
 const gearNames = [
-
     "Classic Sword",
     "Dark Blade",
     "Shield",
@@ -1573,94 +1314,52 @@ const gearNames = [
     "Guitar",
     "Classic Bow",
     "Magic Staff"
-
 ];
 
+function equipGear(icon,name){
 
-function equipGear(
-    icon,
-    name
-){
-
-    if(
-        equipped.includes(name)
-    ){
+    if(equipped.includes(name)){
 
         equipped =
             equipped.filter(
-                item =>
-                    item !== name
+                item => item !== name
             );
 
-        avatarData.accessories =
-            equipped;
-
-        avatarData.gear =
-            null;
+        avatarData.gear = null;
 
         document.getElementById(
             "gear"
-        ).textContent =
-            "";
-
-        if(
-            !hasGear()
-        ){
-
-            document.getElementById(
-                "avatar"
-            ).classList.remove(
-                "holdingGear"
-            );
-
-        }
+        ).textContent = "";
 
         saveAvatar();
-
-        updateList();
+        updateAvatar();
 
         showMessage(
-            name +
-            " removed."
+            name + " removed."
         );
 
         return;
-
     }
 
-
-    if(
-        equipped.length >= 3
-    ){
+    if(equipped.length >= 3){
 
         showMessage(
             "Maximum 3 accessories/gear!"
         );
 
         return;
-
     }
-
 
     equipped.push(name);
 
-    avatarData.accessories =
-        equipped;
-
     avatarData.gear = {
-
         name:name,
-
         icon:icon
-
     };
-
 
     document.getElementById(
         "gear"
-    ).textContent =
-        icon;
-
+    ).textContent = icon;
 
     document.getElementById(
         "avatar"
@@ -1668,21 +1367,17 @@ function equipGear(
         "holdingGear"
     );
 
-
     saveAvatar();
-
     updateList();
 
     showMessage(
-        name +
-        " equipped and saved!"
+        name + " equipped and saved!"
     );
-
 }
 
 
 /* =====================================================
-   HAS GEAR
+   GEAR CHECK
 ===================================================== */
 
 function hasGear(){
@@ -1691,7 +1386,6 @@ function hasGear(){
         item =>
             gearNames.includes(item)
     );
-
 }
 
 
@@ -1699,48 +1393,29 @@ function hasGear(){
    FACE
 ===================================================== */
 
-function setFace(
-    type,
-    notify=true
-){
+function setFace(type,notify=true){
 
     const face =
         document.getElementById(
             "face"
         );
 
-
     face.className =
-        "face " +
-        type;
-
+        "face " + type;
 
     face.innerHTML = `
-
         <span class="eye leftEye"></span>
-
         <span class="eye rightEye"></span>
-
         <span class="mouth"></span>
-
     `;
 
-
-    avatarData.face =
-        type;
-
+    avatarData.face = type;
 
     saveAvatar();
 
-
     if(notify){
-
-        showMessage(
-            "Face saved!"
-        );
-
+        showMessage("Face saved!");
     }
-
 }
 
 
@@ -1755,37 +1430,37 @@ function toggleKorblox(){
             "leftLeg"
         );
 
-
-    leg.classList.toggle(
-        "korblox"
-    );
-
-
     avatarData.korblox =
-        leg.classList.contains(
+        !avatarData.korblox;
+
+    if(avatarData.korblox){
+
+        leg.classList.add(
             "korblox"
         );
 
+        showMessage(
+            "Blue Korblox-style leg equipped!"
+        );
+
+    }else{
+
+        leg.classList.remove(
+            "korblox"
+        );
+
+        showMessage(
+            "Korblox-style leg removed!"
+        );
+    }
 
     saveAvatar();
-
-
-    showMessage(
-        avatarData.korblox
-            ? "Korblox style saved!"
-            : "Korblox style removed!"
-    );
-
 }
 
 
 /* =====================================================
    HEADLESS
 ===================================================== */
-
-let headless =
-    avatarData.headless || false;
-
 
 function toggleHeadless(){
 
@@ -1799,16 +1474,10 @@ function toggleHeadless(){
             "face"
         );
 
-
-    headless =
-        !headless;
-
-
     avatarData.headless =
-        headless;
+        !avatarData.headless;
 
-
-    if(headless){
+    if(avatarData.headless){
 
         head.classList.add(
             "headless"
@@ -1833,12 +1502,9 @@ function toggleHeadless(){
         showMessage(
             "Head restored!"
         );
-
     }
 
-
     saveAvatar();
-
 }
 
 
@@ -1858,26 +1524,18 @@ function updateAvatar(){
             "fire"
         );
 
-
     accessory.className =
         "accessory";
 
     fire.className =
         "accessory";
 
-    fire.textContent =
-        "";
+    fire.textContent = "";
 
 
-    /*
-       FROZEN HORNS
-    */
+    /* HORNS */
 
-    if(
-        equipped.includes(
-            "Frozen Horns"
-        )
-    ){
+    if(equipped.includes("Frozen Horns")){
 
         accessory.className =
             "accessory frozenHorns blueHorns";
@@ -1885,17 +1543,10 @@ function updateAvatar(){
         fire.className =
             "accessory fire";
 
-        fire.textContent =
-            "🔥";
-
+        fire.textContent = "🔥";
     }
 
-
-    if(
-        equipped.includes(
-            "Red Frozen Horns"
-        )
-    ){
+    if(equipped.includes("Red Frozen Horns")){
 
         accessory.className =
             "accessory frozenHorns redHorns";
@@ -1903,17 +1554,10 @@ function updateAvatar(){
         fire.className =
             "accessory fire";
 
-        fire.textContent =
-            "🔥";
-
+        fire.textContent = "🔥";
     }
 
-
-    if(
-        equipped.includes(
-            "Green Frozen Horns"
-        )
-    ){
+    if(equipped.includes("Green Frozen Horns")){
 
         accessory.className =
             "accessory frozenHorns greenHorns";
@@ -1921,122 +1565,73 @@ function updateAvatar(){
         fire.className =
             "accessory fire";
 
-        fire.textContent =
-            "🔥";
-
+        fire.textContent = "🔥";
     }
 
 
-    /*
-       VALKYRIES
-    */
+    /* VALKYRIES */
 
     const valkMap = {
 
-        "Sparkle Time Valkyrie":
-            "goldValk",
-
-        "Red Valkyrie":
-            "redValk",
-
-        "Blue Valkyrie":
-            "blueValk",
-
-        "Green Valkyrie":
-            "greenValk",
-
-        "Purple Valkyrie":
-            "purpleValk",
-
-        "Black Valkyrie":
-            "blackValk"
+        "Sparkle Time Valkyrie":"goldValk",
+        "Red Valkyrie":"redValk",
+        "Blue Valkyrie":"blueValk",
+        "Green Valkyrie":"greenValk",
+        "Purple Valkyrie":"purpleValk",
+        "Black Valkyrie":"blackValk"
 
     };
-
 
     for(
         const name in valkMap
     ){
 
-        if(
-            equipped.includes(name)
-        ){
+        if(equipped.includes(name)){
 
             accessory.className =
                 "accessory valk " +
                 valkMap[name];
-
         }
-
     }
 
 
-    /*
-       FEDORAS
-    */
+    /* FEDORAS */
 
     const fedoraMap = {
 
-        "Sparkle Time Fedora":
-            "fedoraRainbow",
-
-        "Red Sparkle Time Fedora":
-            "fedoraRed",
-
-        "Blue Sparkle Time Fedora":
-            "fedoraBlue",
-
-        "Green Sparkle Time Fedora":
-            "fedoraGreen",
-
-        "Purple Sparkle Time Fedora":
-            "fedoraPurple",
-
-        "Black Sparkle Time Fedora":
-            "fedoraBlack",
-
-        "White Sparkle Time Fedora":
-            "fedoraWhite",
-
-        "Gold Sparkle Time Fedora":
-            "fedoraGold",
-
-        "Pink Sparkle Time Fedora":
-            "fedoraPink"
+        "Sparkle Time Fedora":"fedoraRainbow",
+        "Red Sparkle Time Fedora":"fedoraRed",
+        "Blue Sparkle Time Fedora":"fedoraBlue",
+        "Green Sparkle Time Fedora":"fedoraGreen",
+        "Purple Sparkle Time Fedora":"fedoraPurple",
+        "Black Sparkle Time Fedora":"fedoraBlack",
+        "White Sparkle Time Fedora":"fedoraWhite",
+        "Gold Sparkle Time Fedora":"fedoraGold",
+        "Pink Sparkle Time Fedora":"fedoraPink"
 
     };
-
 
     for(
         const name in fedoraMap
     ){
 
-        if(
-            equipped.includes(name)
-        ){
+        if(equipped.includes(name)){
 
             accessory.className =
                 "accessory fedora " +
                 fedoraMap[name];
-
         }
-
     }
 
 
-    /*
-       GEAR ARM
-    */
+    /* GEAR */
 
     const avatar =
         document.getElementById(
             "avatar"
         );
 
-
-    if(
-        hasGear()
-    ){
+    if(hasGear()){
 
         avatar.classList.add(
             "holdingGear"
@@ -2050,16 +1645,66 @@ function updateAvatar(){
 
         document.getElementById(
             "gear"
-        ).textContent =
-            "";
+        ).textContent = "";
 
     }
 
 
+    /* KORBLOX */
+
+    const leg =
+        document.getElementById(
+            "leftLeg"
+        );
+
+    if(avatarData.korblox){
+
+        leg.classList.add(
+            "korblox"
+        );
+
+    }else{
+
+        leg.classList.remove(
+            "korblox"
+        );
+    }
+
+
+    /* HEADLESS */
+
+    const head =
+        document.getElementById(
+            "head"
+        );
+
+    const face =
+        document.getElementById(
+            "face"
+        );
+
+    if(avatarData.headless){
+
+        head.classList.add(
+            "headless"
+        );
+
+        face.style.display =
+            "none";
+
+    }else{
+
+        head.classList.remove(
+            "headless"
+        );
+
+        face.style.display =
+            "block";
+    }
+
+
     updateList();
-
     saveAvatar();
-
 }
 
 
@@ -2074,69 +1719,51 @@ function updateList(){
             "equippedList"
         );
 
+    if(equipped.length === 0){
 
-    if(
-        equipped.length === 0
-    ){
-
-        list.textContent =
-            "None";
+        list.textContent = "None";
 
         return;
-
     }
-
 
     list.innerHTML =
         equipped
-            .map(
-                item =>
-                    "• " +
-                    item
-            )
-            .join("<br>");
-
+        .map(
+            item => "• " + item
+        )
+        .join("<br>");
 }
 
 
 /* =====================================================
-   CLEAR
+   CLEAR ACCESSORIES
 ===================================================== */
 
 function clearAccessories(){
 
     equipped = [];
 
-    avatarData.accessories =
-        [];
+    avatarData.accessories = [];
 
-    avatarData.gear =
-        null;
-
+    avatarData.gear = null;
 
     document.getElementById(
         "headAccessory"
     ).className =
         "accessory";
 
-
     document.getElementById(
         "fire"
     ).className =
         "accessory";
 
-
     document.getElementById(
         "fire"
-    ).textContent =
-        "";
-
+    ).textContent = "";
 
     document.getElementById(
         "gear"
-    ).textContent =
-        "";
-
+    ).textContent = "";
 
     document.getElementById(
         "avatar"
@@ -2144,15 +1771,12 @@ function clearAccessories(){
         "holdingGear"
     );
 
-
     saveAvatar();
-
     updateList();
 
     showMessage(
         "Accessories and gear cleared."
     );
-
 }
 
 
@@ -2162,23 +1786,17 @@ function clearAccessories(){
 
 function resetAvatar(){
 
-    if(
-        !confirm(
-            "Reset your saved avatar?"
-        )
-    ){
-
+    if(!confirm(
+        "Reset your saved avatar?"
+    )){
         return;
-
     }
-
 
     localStorage.removeItem(
         SAVE_KEY
     );
 
     location.reload();
-
 }
 
 
@@ -2193,31 +1811,54 @@ function showMessage(text){
             "message"
         );
 
-
-    box.textContent =
-        text;
-
+    box.textContent = text;
 
     box.style.display =
         "block";
 
-
     setTimeout(
-        function(){
-
+        () => {
             box.style.display =
                 "none";
-
         },
         2000
     );
-
 }
 
 
 /* =====================================================
-   START
+   LOAD SAVED AVATAR
 ===================================================== */
+
+function loadAvatar(){
+
+    document.getElementById(
+        "coins"
+    ).textContent =
+        coins;
+
+    setFace(
+        avatarData.face ||
+        "classicSmile",
+        false
+    );
+
+    if(
+        avatarData.gear
+    ){
+
+        document.getElementById(
+            "gear"
+        ).textContent =
+            avatarData.gear.icon;
+
+    }
+
+    updateAvatar();
+}
+
+
+/* START */
 
 loadAvatar();
 
