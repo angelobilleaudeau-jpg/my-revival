@@ -9,7 +9,6 @@
 <title>MTB REVIVALS - Avatar</title>
 
 <style>
-
 * {
     box-sizing: border-box;
 }
@@ -21,9 +20,7 @@ body {
     color: #333;
 }
 
-/* =========================
-   HEADER
-========================= */
+/* HEADER */
 
 header {
     background: linear-gradient(#f7f7f7,#cfcfcf);
@@ -63,9 +60,7 @@ nav a.active {
     color: #1683c5;
 }
 
-/* =========================
-   MAIN
-========================= */
+/* MAIN */
 
 .container {
     max-width: 1100px;
@@ -82,9 +77,7 @@ nav a.active {
     font-weight: bold;
 }
 
-/* =========================
-   AVATAR
-========================= */
+/* AVATAR */
 
 .avatar-section {
     background: white;
@@ -98,12 +91,7 @@ nav a.active {
     display: flex;
     align-items: center;
     justify-content: center;
-    background:
-        linear-gradient(
-            135deg,
-            #eee,
-            #d4d4d4
-        );
+    background: linear-gradient(135deg,#eee,#d4d4d4);
     border: 1px solid #aaa;
     overflow: hidden;
 }
@@ -114,9 +102,7 @@ nav a.active {
     height: 460px;
 }
 
-/* =========================
-   HEAD
-========================= */
+/* HEAD */
 
 .head {
     position: absolute;
@@ -130,9 +116,7 @@ nav a.active {
     z-index: 5;
 }
 
-/* =========================
-   FACE
-========================= */
+/* FACE */
 
 .face {
     position: absolute;
@@ -166,8 +150,6 @@ nav a.active {
     border-bottom: 4px solid #222;
     border-radius: 50%;
 }
-
-/* Faces */
 
 .face-big-smile .smile {
     width: 48px;
@@ -289,13 +271,7 @@ nav a.active {
     right: 20px;
 }
 
-.face-proud .eye {
-    height: 7px;
-}
-
-/* =========================
-   BODY
-========================= */
+/* BODY */
 
 .body {
     position: absolute;
@@ -308,9 +284,7 @@ nav a.active {
     z-index: 2;
 }
 
-/* =========================
-   SHIRT GRAPHICS
-========================= */
+/* SHIRTS */
 
 .shirt-logo {
     position: absolute;
@@ -331,19 +305,18 @@ nav a.active {
     left: 32px;
     top: 35px;
     background: white;
-    clip-path:
-        polygon(
-            50% 0,
-            61% 35%,
-            100% 35%,
-            69% 58%,
-            81% 100%,
-            50% 74%,
-            19% 100%,
-            31% 58%,
-            0 35%,
-            39% 35%
-        );
+    clip-path: polygon(
+        50% 0,
+        61% 35%,
+        100% 35%,
+        69% 58%,
+        81% 100%,
+        50% 74%,
+        19% 100%,
+        31% 58%,
+        0 35%,
+        39% 35%
+    );
 }
 
 .shirt-flame {
@@ -361,12 +334,9 @@ nav a.active {
     text-align: center;
     font-size: 55px;
     color: white;
-    text-shadow: 0 0 8px #6bd8ff;
 }
 
-/* =========================
-   ARMS
-========================= */
+/* ARMS */
 
 .arm {
     position: absolute;
@@ -386,9 +356,7 @@ nav a.active {
     right: 30px;
 }
 
-/* =========================
-   LEGS
-========================= */
+/* LEGS */
 
 .leg {
     position: absolute;
@@ -408,9 +376,7 @@ nav a.active {
     right: 78px;
 }
 
-/* =========================
-   PANTS
-========================= */
+/* PANTS */
 
 .pants-logo {
     position: absolute;
@@ -420,7 +386,6 @@ nav a.active {
     font-size: 12px;
     font-weight: 900;
     color: white;
-    text-shadow: 1px 1px #111;
 }
 
 .pants-star {
@@ -430,19 +395,18 @@ nav a.active {
     left: 7px;
     top: 35px;
     background: white;
-    clip-path:
-        polygon(
-            50% 0,
-            61% 35%,
-            100% 35%,
-            69% 58%,
-            81% 100%,
-            50% 74%,
-            19% 100%,
-            31% 58%,
-            0 35%,
-            39% 35%
-        );
+    clip-path: polygon(
+        50% 0,
+        61% 35%,
+        100% 35%,
+        69% 58%,
+        81% 100%,
+        50% 74%,
+        19% 100%,
+        31% 58%,
+        0 35%,
+        39% 35%
+    );
 }
 
 .pants-flame {
@@ -460,7 +424,6 @@ nav a.active {
     text-align: center;
     font-size: 35px;
     color: white;
-    text-shadow: 0 0 5px #6bd8ff;
 }
 
 .season-pants {
@@ -468,41 +431,20 @@ nav a.active {
 }
 
 @keyframes seasons {
-
     0%,24% {
-        background:
-            linear-gradient(
-                90deg,
-                #67d477,
-                #f2a5d4
-            );
+        background: linear-gradient(90deg,#67d477,#f2a5d4);
     }
 
     25%,49% {
-        background:
-            linear-gradient(
-                90deg,
-                #18bde9,
-                #f4df54
-            );
+        background: linear-gradient(90deg,#18bde9,#f4df54);
     }
 
     50%,74% {
-        background:
-            linear-gradient(
-                90deg,
-                #8a4218,
-                #df7a1d
-            );
+        background: linear-gradient(90deg,#8a4218,#df7a1d);
     }
 
     75%,100% {
-        background:
-            linear-gradient(
-                90deg,
-                #69d8ff,
-                #eafaff
-            );
+        background: linear-gradient(90deg,#69d8ff,#eafaff);
     }
 }
 
@@ -516,7 +458,7 @@ nav a.active {
     pointer-events: none;
 }
 
-/* Fedora */
+/* FEDORAS */
 
 .fedora {
     position: absolute;
@@ -569,20 +511,19 @@ nav a.active {
 }
 
 .fedora.rainbow {
-    background:
-        linear-gradient(
-            120deg,
-            #ff3b3b,
-            #ffb52e,
-            #fff238,
-            #39d86a,
-            #35bfff,
-            #7c4dff,
-            #ff54c8
-        );
+    background: linear-gradient(
+        120deg,
+        #ff3b3b,
+        #ffb52e,
+        #fff238,
+        #39d86a,
+        #35bfff,
+        #7c4dff,
+        #ff54c8
+    );
 }
 
-/* Frozen-style crystal horns */
+/* FROZEN HORNS */
 
 .horns {
     position: absolute;
@@ -597,30 +538,18 @@ nav a.active {
     position: absolute;
     width: 42px;
     height: 120px;
-    background:
-        linear-gradient(
-            135deg,
-            #ffffff,
-            #a6f2ff,
-            #54b6dc,
-            #dfffff
-        );
+    background: linear-gradient(
+        135deg,
+        #ffffff,
+        #a6f2ff,
+        #54b6dc,
+        #dfffff
+    );
     border: 3px solid #377f9c;
     box-shadow:
         0 0 8px #69eaff,
         inset 5px 0 8px rgba(255,255,255,.8);
     border-radius: 80% 25% 20% 20%;
-}
-
-.horn::after {
-    content: "";
-    position: absolute;
-    width: 8px;
-    height: 85px;
-    left: 8px;
-    top: 8px;
-    background: rgba(255,255,255,.75);
-    transform: rotate(-10deg);
 }
 
 .horn.left {
@@ -633,7 +562,7 @@ nav a.active {
     transform: rotate(30deg) scaleX(-1);
 }
 
-/* Crown */
+/* CROWN */
 
 .crown {
     position: absolute;
@@ -642,21 +571,19 @@ nav a.active {
     left: 77px;
     top: 35px;
     z-index: 15;
-    background:
-        linear-gradient(#fff47b,#d39d00);
-    clip-path:
-        polygon(
-            0 100%,
-            10% 20%,
-            30% 55%,
-            50% 0,
-            70% 55%,
-            90% 20%,
-            100% 100%
-        );
+    background: linear-gradient(#fff47b,#d39d00);
+    clip-path: polygon(
+        0 100%,
+        10% 20%,
+        30% 55%,
+        50% 0,
+        70% 55%,
+        90% 20%,
+        100% 100%
+    );
 }
 
-/* Wings */
+/* WINGS */
 
 .wings {
     position: absolute;
@@ -673,13 +600,12 @@ nav a.active {
     position: absolute;
     width: 105px;
     height: 140px;
-    background:
-        linear-gradient(
-            135deg,
-            white,
-            #a8dfff,
-            #559cc5
-        );
+    background: linear-gradient(
+        135deg,
+        white,
+        #a8dfff,
+        #559cc5
+    );
     border: 3px solid #6095ad;
     border-radius: 80% 20% 80% 20%;
 }
@@ -695,8 +621,23 @@ nav a.active {
 }
 
 /* =========================
-   EQUIPPED INFO
+   ACCESSORY COUNTER
 ========================= */
+
+.accessory-count {
+    margin-top: 12px;
+    padding: 10px;
+    background: #f5f5f5;
+    border: 1px solid #aaa;
+    text-align: center;
+    font-weight: bold;
+}
+
+.accessory-count span {
+    color: #1683c5;
+}
+
+/* STATUS */
 
 .status {
     margin-top: 15px;
@@ -707,9 +648,7 @@ nav a.active {
     font-weight: bold;
 }
 
-/* =========================
-   CATALOG
-========================= */
+/* CATALOG */
 
 .catalog {
     margin-top: 15px;
@@ -720,7 +659,6 @@ nav a.active {
 
 .catalog h2 {
     margin-top: 0;
-    font-size: 20px;
 }
 
 .category {
@@ -734,8 +672,7 @@ nav a.active {
 
 .items {
     display: grid;
-    grid-template-columns:
-        repeat(auto-fit,minmax(170px,1fr));
+    grid-template-columns: repeat(auto-fit,minmax(170px,1fr));
     gap: 10px;
 }
 
@@ -747,12 +684,7 @@ nav a.active {
 
 .item-preview {
     height: 120px;
-    background:
-        linear-gradient(
-            135deg,
-            #ddd,
-            #eee
-        );
+    background: linear-gradient(135deg,#ddd,#eee);
     border: 1px solid #bbb;
     display: flex;
     align-items: center;
@@ -777,27 +709,23 @@ button {
     padding: 9px;
     border: 1px solid #555;
     border-radius: 3px;
-    background:
-        linear-gradient(#69b9e9,#1683c5);
+    background: linear-gradient(#69b9e9,#1683c5);
     color: white;
     font-weight: bold;
     cursor: pointer;
 }
 
 button:hover {
-    background:
-        linear-gradient(#82c9ef,#1683c5);
+    background: linear-gradient(#82c9ef,#1683c5);
 }
 
 button.equipped {
-    background:
-        linear-gradient(#777,#555);
+    background: linear-gradient(#777,#555);
 }
 
 .clear {
     margin-top: 10px;
-    background:
-        linear-gradient(#777,#555);
+    background: linear-gradient(#777,#555);
 }
 
 footer {
@@ -824,15 +752,12 @@ footer {
     .items {
         grid-template-columns: repeat(2,1fr);
     }
-
 }
-
 </style>
 </head>
 
 
 <body>
-
 
 <header>
 
@@ -863,24 +788,25 @@ MTB REVIVALS
 
 <div class="container">
 
-
 <div class="title">
 MTB REVIVALS - Avatar
 </div>
 
 
-<!-- AVATAR -->
-
 <div class="avatar-section">
 
 <div class="avatar-area">
 
-<div class="avatar" id="avatar">
+<div class="avatar">
+
+<!-- ACCESSORIES APPEAR HERE -->
 
 <div id="accessory"
 class="accessory">
 </div>
 
+
+<!-- HEAD -->
 
 <div class="head">
 
@@ -889,13 +815,14 @@ class="face face-happy">
 
 <div class="eye eye-left"></div>
 <div class="eye eye-right"></div>
-
 <div class="smile"></div>
 
 </div>
 
 </div>
 
+
+<!-- BODY -->
 
 <div class="body">
 
@@ -907,7 +834,6 @@ class="face face-happy">
 <div class="arm arm-left"></div>
 <div class="arm arm-right"></div>
 
-
 <div class="leg leg-left"></div>
 <div class="leg leg-right"></div>
 
@@ -916,11 +842,17 @@ class="face face-happy">
 </div>
 
 
+<div class="accessory-count">
+
+Accessories equipped:
+<span id="accessoryCount">0 / 3</span>
+
+</div>
+
+
 <div class="status"
 id="status">
-
 Loading avatar...
-
 </div>
 
 
@@ -935,7 +867,9 @@ Clear Equipped Items
 </div>
 
 
-<!-- CATALOG -->
+<!-- =========================
+     CATALOG
+========================= -->
 
 <div class="catalog">
 
@@ -954,189 +888,98 @@ Classic Faces
 
 <div class="items">
 
-
 <div class="item">
-<div class="item-preview">
-🙂
-</div>
+<div class="item-preview">🙂</div>
 <h4>Classic Smile</h4>
 <p>Classic happy face.</p>
-<button onclick="equipFace(this,'happy')">
-Equip
-</button>
+<button onclick="equipFace(this,'happy')">Equip</button>
 </div>
-
 
 <div class="item">
-<div class="item-preview">
-😄
-</div>
+<div class="item-preview">😄</div>
 <h4>Big Smile</h4>
 <p>Big classic smile.</p>
-<button onclick="equipFace(this,'big-smile')">
-Equip
-</button>
+<button onclick="equipFace(this,'big-smile')">Equip</button>
 </div>
-
 
 <div class="item">
-<div class="item-preview">
-😐
-</div>
+<div class="item-preview">😐</div>
 <h4>Neutral</h4>
 <p>Simple classic face.</p>
-<button onclick="equipFace(this,'neutral')">
-Equip
-</button>
+<button onclick="equipFace(this,'neutral')">Equip</button>
 </div>
-
 
 <div class="item">
-<div class="item-preview">
-😢
-</div>
+<div class="item-preview">😢</div>
 <h4>Sad</h4>
 <p>Sad classic face.</p>
-<button onclick="equipFace(this,'sad')">
-Equip
-</button>
+<button onclick="equipFace(this,'sad')">Equip</button>
 </div>
-
 
 <div class="item">
-<div class="item-preview">
-😮
-</div>
+<div class="item-preview">😮</div>
 <h4>Surprised</h4>
 <p>Surprised face.</p>
-<button onclick="equipFace(this,'surprised')">
-Equip
-</button>
+<button onclick="equipFace(this,'surprised')">Equip</button>
 </div>
-
 
 <div class="item">
-<div class="item-preview">
-😡
-</div>
+<div class="item-preview">😡</div>
 <h4>Angry</h4>
 <p>Angry classic face.</p>
-<button onclick="equipFace(this,'angry')">
-Equip
-</button>
+<button onclick="equipFace(this,'angry')">Equip</button>
 </div>
-
 
 <div class="item">
-<div class="item-preview">
-😴
-</div>
+<div class="item-preview">😴</div>
 <h4>Sleepy</h4>
 <p>Sleepy face.</p>
-<button onclick="equipFace(this,'sleepy')">
-Equip
-</button>
+<button onclick="equipFace(this,'sleepy')">Equip</button>
 </div>
-
 
 <div class="item">
-<div class="item-preview">
-😉
-</div>
+<div class="item-preview">😉</div>
 <h4>Wink</h4>
 <p>Classic wink.</p>
-<button onclick="equipFace(this,'wink')">
-Equip
-</button>
+<button onclick="equipFace(this,'wink')">Equip</button>
 </div>
-
 
 <div class="item">
-<div class="item-preview">
-😜
-</div>
+<div class="item-preview">😜</div>
 <h4>Silly</h4>
 <p>Silly classic face.</p>
-<button onclick="equipFace(this,'silly')">
-Equip
-</button>
+<button onclick="equipFace(this,'silly')">Equip</button>
 </div>
-
 
 <div class="item">
-<div class="item-preview">
-😈
-</div>
+<div class="item-preview">😈</div>
 <h4>Evil</h4>
 <p>Dark classic face.</p>
-<button onclick="equipFace(this,'evil')">
-Equip
-</button>
+<button onclick="equipFace(this,'evil')">Equip</button>
 </div>
-
 
 <div class="item">
-<div class="item-preview">
-😎
-</div>
+<div class="item-preview">😎</div>
 <h4>Cool</h4>
 <p>Cool shades face.</p>
-<button onclick="equipFace(this,'cool')">
-Equip
-</button>
+<button onclick="equipFace(this,'cool')">Equip</button>
 </div>
-
 
 <div class="item">
-<div class="item-preview">
-😱
-</div>
-<h4>Shocked</h4>
-<p>Shocked expression.</p>
-<button onclick="equipFace(this,'shocked')">
-Equip
-</button>
-</div>
-
-
-<div class="item">
-<div class="item-preview">
-🤓
-</div>
+<div class="item-preview">🤓</div>
 <h4>Nerd</h4>
 <p>Classic nerd face.</p>
-<button onclick="equipFace(this,'nerd')">
-Equip
-</button>
+<button onclick="equipFace(this,'nerd')">Equip</button>
 </div>
-
 
 <div class="item">
-<div class="item-preview">
-😨
-</div>
-<h4>Scared</h4>
-<p>Scared expression.</p>
-<button onclick="equipFace(this,'scared')">
-Equip
-</button>
+<div class="item-preview">😱</div>
+<h4>Shocked</h4>
+<p>Shocked expression.</p>
+<button onclick="equipFace(this,'shocked')">Equip</button>
 </div>
 
-
-<div class="item">
-<div class="item-preview">
-😏
 </div>
-<h4>Proud</h4>
-<p>Confident expression.</p>
-<button onclick="equipFace(this,'proud')">
-Equip
-</button>
-</div>
-
-
-</div>
-
 </div>
 
 
@@ -1150,105 +993,56 @@ MTB Shirts
 
 <div class="items">
 
-
 <div class="item">
-<div class="item-preview">
-MTB
-</div>
+<div class="item-preview">MTB</div>
 <h4>MTB Classic Logo</h4>
 <p>Classic MTB shirt.</p>
-<button onclick="equipShirt(this,'MTB Classic Logo')">
-Equip
-</button>
+<button onclick="equipShirt(this,'MTB Classic Logo')">Equip</button>
 </div>
-
 
 <div class="item">
-<div class="item-preview">
-★ MTB
-</div>
+<div class="item-preview">★ MTB</div>
 <h4>MTB Star Streetwear</h4>
-<p>MTB star design.</p>
-<button onclick="equipShirt(this,'MTB Star Streetwear')">
-Equip
-</button>
+<p>Star design.</p>
+<button onclick="equipShirt(this,'MTB Star Streetwear')">Equip</button>
 </div>
-
 
 <div class="item">
-<div class="item-preview">
-🔥
-</div>
+<div class="item-preview">🔥</div>
 <h4>MTB Flame</h4>
-<p>Original flame design.</p>
-<button onclick="equipShirt(this,'MTB Flame')">
-Equip
-</button>
+<p>Flame design.</p>
+<button onclick="equipShirt(this,'MTB Flame')">Equip</button>
 </div>
-
 
 <div class="item">
-<div class="item-preview">
-⚡
-</div>
+<div class="item-preview">⚡</div>
 <h4>MTB Lightning</h4>
-<p>Electric MTB design.</p>
-<button onclick="equipShirt(this,'MTB Lightning')">
-Equip
-</button>
+<p>Electric design.</p>
+<button onclick="equipShirt(this,'MTB Lightning')">Equip</button>
 </div>
-
 
 <div class="item">
-<div class="item-preview">
-MTB
-</div>
+<div class="item-preview">MTB</div>
 <h4>MTB Grey Essential</h4>
 <p>Grey classic shirt.</p>
-<button onclick="equipShirt(this,'MTB Grey Essential')">
-Equip
-</button>
+<button onclick="equipShirt(this,'MTB Grey Essential')">Equip</button>
 </div>
-
 
 <div class="item">
-<div class="item-preview">
-MTB
-</div>
+<div class="item-preview">MTB</div>
 <h4>MTB Gothic</h4>
 <p>Dark MTB style.</p>
-<button onclick="equipShirt(this,'MTB Gothic')">
-Equip
-</button>
+<button onclick="equipShirt(this,'MTB Gothic')">Equip</button>
 </div>
-
 
 <div class="item">
-<div class="item-preview">
-MTB
-</div>
+<div class="item-preview">MTB</div>
 <h4>MTB White Classic</h4>
 <p>White MTB shirt.</p>
-<button onclick="equipShirt(this,'MTB White Classic')">
-Equip
-</button>
+<button onclick="equipShirt(this,'MTB White Classic')">Equip</button>
 </div>
 
-
-<div class="item">
-<div class="item-preview">
-✚
 </div>
-<h4>Midnight Cross</h4>
-<p>Dark cross design.</p>
-<button onclick="equipShirt(this,'Midnight Cross')">
-Equip
-</button>
-</div>
-
-
-</div>
-
 </div>
 
 
@@ -1262,105 +1056,56 @@ MTB Pants
 
 <div class="items">
 
-
 <div class="item">
-<div class="item-preview">
-MTB
-</div>
+<div class="item-preview">MTB</div>
 <h4>MTB Black Logo Pants</h4>
 <p>Classic black pants.</p>
-<button onclick="equipPants(this,'MTB Black Logo Pants')">
-Equip
-</button>
+<button onclick="equipPants(this,'MTB Black Logo Pants')">Equip</button>
 </div>
-
 
 <div class="item">
-<div class="item-preview">
-MTB
-</div>
+<div class="item-preview">MTB</div>
 <h4>MTB Grey Classic Pants</h4>
 <p>Classic grey pants.</p>
-<button onclick="equipPants(this,'MTB Grey Classic Pants')">
-Equip
-</button>
+<button onclick="equipPants(this,'MTB Grey Classic Pants')">Equip</button>
 </div>
-
 
 <div class="item">
-<div class="item-preview">
-★
-</div>
+<div class="item-preview">★</div>
 <h4>MTB Star Pants</h4>
-<p>Star streetwear pants.</p>
-<button onclick="equipPants(this,'MTB Star Pants')">
-Equip
-</button>
+<p>Star pants.</p>
+<button onclick="equipPants(this,'MTB Star Pants')">Equip</button>
 </div>
-
 
 <div class="item">
-<div class="item-preview">
-🔥
-</div>
+<div class="item-preview">🔥</div>
 <h4>MTB Flame Pants</h4>
 <p>Flame pants.</p>
-<button onclick="equipPants(this,'MTB Flame Pants')">
-Equip
-</button>
+<button onclick="equipPants(this,'MTB Flame Pants')">Equip</button>
 </div>
-
 
 <div class="item">
-<div class="item-preview">
-⚡
-</div>
+<div class="item-preview">⚡</div>
 <h4>MTB Lightning Pants</h4>
 <p>Lightning pants.</p>
-<button onclick="equipPants(this,'MTB Lightning Pants')">
-Equip
-</button>
+<button onclick="equipPants(this,'MTB Lightning Pants')">Equip</button>
 </div>
-
 
 <div class="item">
-<div class="item-preview">
-MIDNIGHT
-</div>
-<h4>MTB Midnight Pants</h4>
-<p>Dark streetwear pants.</p>
-<button onclick="equipPants(this,'MTB Midnight Pants')">
-Equip
-</button>
-</div>
-
-
-<div class="item">
-<div class="item-preview">
-MTB JEANS
-</div>
+<div class="item-preview">MTB JEANS</div>
 <h4>MTB Classic Jeans</h4>
 <p>Blue denim style.</p>
-<button onclick="equipPants(this,'MTB Classic Jeans')">
-Equip
-</button>
+<button onclick="equipPants(this,'MTB Classic Jeans')">Equip</button>
 </div>
-
 
 <div class="item">
-<div class="item-preview">
-🌸 ☀️ 🍂 ❄️
-</div>
+<div class="item-preview">🌸 ☀️ 🍂 ❄️</div>
 <h4>MTB All Seasons Pants</h4>
-<p>Spring, Summer, Fall & Winter.</p>
-<button onclick="equipPants(this,'MTB All Seasons Pants')">
-Equip
-</button>
+<p>All four seasons.</p>
+<button onclick="equipPants(this,'MTB All Seasons Pants')">Equip</button>
 </div>
 
-
 </div>
-
 </div>
 
 
@@ -1369,136 +1114,83 @@ Equip
 <div class="category">
 
 <h3>
-Accessories
+Accessories — Wear Up To 3
 </h3>
 
 <div class="items">
 
-
 <div class="item">
-<div class="item-preview">
-✨ Fedora
-</div>
+<div class="item-preview">✨ FEDORA</div>
 <h4>Sparkle Fedora</h4>
 <p>Classic sparkle style.</p>
-<button onclick="equipAccessory(this,'Sparkle Fedora')">
-Equip
-</button>
+<button onclick="toggleAccessory(this,'Sparkle Fedora')">Equip</button>
 </div>
-
 
 <div class="item">
-<div class="item-preview">
-🔴 Fedora
-</div>
+<div class="item-preview">🔴 FEDORA</div>
 <h4>Sparkle Fedora - Red</h4>
-<p>Red sparkle variant.</p>
-<button onclick="equipAccessory(this,'Sparkle Fedora - Red')">
-Equip
-</button>
+<p>Red variant.</p>
+<button onclick="toggleAccessory(this,'Sparkle Fedora - Red')">Equip</button>
 </div>
-
 
 <div class="item">
-<div class="item-preview">
-🔵 Fedora
-</div>
+<div class="item-preview">🔵 FEDORA</div>
 <h4>Sparkle Fedora - Blue</h4>
-<p>Blue sparkle variant.</p>
-<button onclick="equipAccessory(this,'Sparkle Fedora - Blue')">
-Equip
-</button>
+<p>Blue variant.</p>
+<button onclick="toggleAccessory(this,'Sparkle Fedora - Blue')">Equip</button>
 </div>
-
 
 <div class="item">
-<div class="item-preview">
-🟡 Fedora
-</div>
+<div class="item-preview">🟡 FEDORA</div>
 <h4>Sparkle Fedora - Gold</h4>
-<p>Gold sparkle variant.</p>
-<button onclick="equipAccessory(this,'Sparkle Fedora - Gold')">
-Equip
-</button>
+<p>Gold variant.</p>
+<button onclick="toggleAccessory(this,'Sparkle Fedora - Gold')">Equip</button>
 </div>
-
 
 <div class="item">
-<div class="item-preview">
-🟣 Fedora
-</div>
+<div class="item-preview">🟣 FEDORA</div>
 <h4>Sparkle Fedora - Purple</h4>
-<p>Purple sparkle variant.</p>
-<button onclick="equipAccessory(this,'Sparkle Fedora - Purple')">
-Equip
-</button>
+<p>Purple variant.</p>
+<button onclick="toggleAccessory(this,'Sparkle Fedora - Purple')">Equip</button>
 </div>
-
 
 <div class="item">
-<div class="item-preview">
-🩷 Fedora
-</div>
+<div class="item-preview">🩷 FEDORA</div>
 <h4>Sparkle Fedora - Pink</h4>
-<p>Pink sparkle variant.</p>
-<button onclick="equipAccessory(this,'Sparkle Fedora - Pink')">
-Equip
-</button>
+<p>Pink variant.</p>
+<button onclick="toggleAccessory(this,'Sparkle Fedora - Pink')">Equip</button>
 </div>
-
 
 <div class="item">
-<div class="item-preview">
-🌈 Fedora
-</div>
+<div class="item-preview">🌈 FEDORA</div>
 <h4>Sparkle Fedora - Rainbow</h4>
-<p>Rainbow sparkle variant.</p>
-<button onclick="equipAccessory(this,'Sparkle Fedora - Rainbow')">
-Equip
-</button>
+<p>Rainbow variant.</p>
+<button onclick="toggleAccessory(this,'Sparkle Fedora - Rainbow')">Equip</button>
 </div>
-
 
 <div class="item">
-<div class="item-preview">
-❄️ Horns
-</div>
+<div class="item-preview">❄️ HORNS</div>
 <h4>Frozen Crystal Horns</h4>
 <p>Tall icy crystal horns.</p>
-<button onclick="equipAccessory(this,'Frozen Crystal Horns')">
-Equip
-</button>
+<button onclick="toggleAccessory(this,'Frozen Crystal Horns')">Equip</button>
 </div>
-
 
 <div class="item">
-<div class="item-preview">
-👑 Crown
-</div>
+<div class="item-preview">👑 CROWN</div>
 <h4>Royal Crown</h4>
 <p>Classic golden crown.</p>
-<button onclick="equipAccessory(this,'Royal Crown')">
-Equip
-</button>
+<button onclick="toggleAccessory(this,'Royal Crown')">Equip</button>
 </div>
-
 
 <div class="item">
-<div class="item-preview">
-🪽 Wings
-</div>
+<div class="item-preview">🪽 WINGS</div>
 <h4>Crystal Wings</h4>
 <p>Blue crystal wings.</p>
-<button onclick="equipAccessory(this,'Crystal Wings')">
-Equip
-</button>
-</div>
-
-
+<button onclick="toggleAccessory(this,'Crystal Wings')">Equip</button>
 </div>
 
 </div>
-
+</div>
 
 </div>
 
@@ -1510,225 +1202,341 @@ MTB REVIVALS © 2026
 
 <script>
 
-/* =========================
-   EQUIP FACE
-========================= */
+/* =====================================================
+   FACE
+===================================================== */
 
 function equipFace(button, face) {
 
-    localStorage.setItem(
-        "mtbFace",
-        face
-    );
+    localStorage.setItem("mtbFace", face);
 
-    loadFace();
+    document
+        .getElementById("face")
+        .className = "face face-" + face;
 
-    updateButtons(
-        "mtbFace",
-        face,
-        button
-    );
+    document
+        .querySelectorAll('button[onclick*="equipFace"]')
+        .forEach(function(btn) {
+
+            btn.classList.remove("equipped");
+            btn.textContent = "Equip";
+
+        });
+
+    button.classList.add("equipped");
+    button.textContent = "Equipped";
 
     updateStatus();
 }
 
 
-/* =========================
-   EQUIP SHIRT
-========================= */
+/* =====================================================
+   SHIRT
+===================================================== */
 
 function equipShirt(button, shirt) {
 
-    localStorage.setItem(
-        "mtbShirt",
-        shirt
-    );
+    localStorage.setItem("mtbShirt", shirt);
 
     loadShirt();
 
-    updateButtons(
-        "mtbShirt",
-        shirt,
-        button
-    );
+    document
+        .querySelectorAll('button[onclick*="equipShirt"]')
+        .forEach(function(btn) {
+
+            btn.classList.remove("equipped");
+            btn.textContent = "Equip";
+
+        });
+
+    button.classList.add("equipped");
+    button.textContent = "Equipped";
 
     updateStatus();
 }
 
 
-/* =========================
-   EQUIP PANTS
-========================= */
+/* =====================================================
+   PANTS
+===================================================== */
 
 function equipPants(button, pants) {
 
-    localStorage.setItem(
-        "mtbPants",
-        pants
-    );
+    localStorage.setItem("mtbPants", pants);
 
     loadPants();
 
-    updateButtons(
-        "mtbPants",
-        pants,
-        button
-    );
+    document
+        .querySelectorAll('button[onclick*="equipPants"]')
+        .forEach(function(btn) {
+
+            btn.classList.remove("equipped");
+            btn.textContent = "Equip";
+
+        });
+
+    button.classList.add("equipped");
+    button.textContent = "Equipped";
 
     updateStatus();
 }
 
 
-/* =========================
-   EQUIP ACCESSORY
-========================= */
+/* =====================================================
+   ACCESSORIES — MAX 3
+===================================================== */
 
-function equipAccessory(button, accessory) {
+function getAccessories() {
+
+    try {
+
+        return JSON.parse(
+            localStorage.getItem("mtbAccessories")
+        ) || [];
+
+    } catch {
+
+        return [];
+
+    }
+}
+
+
+function saveAccessories(accessories) {
 
     localStorage.setItem(
-        "mtbAccessory",
-        accessory
+        "mtbAccessories",
+        JSON.stringify(accessories)
     );
+}
 
-    loadAccessory();
 
-    updateButtons(
-        "mtbAccessory",
-        accessory,
-        button
-    );
+function toggleAccessory(button, accessoryName) {
 
+    let accessories = getAccessories();
+
+    const existing =
+        accessories.indexOf(accessoryName);
+
+
+    /* REMOVE IF ALREADY EQUIPPED */
+
+    if (existing !== -1) {
+
+        accessories.splice(existing,1);
+
+        saveAccessories(accessories);
+
+        button.classList.remove("equipped");
+        button.textContent = "Equip";
+
+        loadAccessories();
+        updateStatus();
+
+        return;
+    }
+
+
+    /* MAX 3 CHECK */
+
+    if (accessories.length >= 3) {
+
+        alert(
+            "You can only wear 3 accessories at a time!"
+        );
+
+        return;
+    }
+
+
+    /* ADD */
+
+    accessories.push(accessoryName);
+
+    saveAccessories(accessories);
+
+    button.classList.add("equipped");
+    button.textContent = "Equipped";
+
+    loadAccessories();
     updateStatus();
 }
 
 
-/* =========================
-   BUTTONS
-========================= */
+/* =====================================================
+   LOAD ACCESSORIES
+===================================================== */
 
-function updateButtons(
-    storageKey,
-    value,
-    selectedButton
-) {
+function loadAccessories() {
 
-    document
-    .querySelectorAll("button")
-    .forEach(function(button) {
+    const accessories =
+        getAccessories();
 
-        const code =
-            button.getAttribute(
-                "onclick"
-            );
+    const container =
+        document.getElementById("accessory");
 
-        if (!code) {
-            return;
-        }
+    container.innerHTML = "";
 
-        if (
-            code.includes(
-                "equipFace"
-            ) &&
-            storageKey === "mtbFace"
-        ) {
 
-            button.classList.remove(
-                "equipped"
-            );
+    accessories.forEach(function(item) {
 
-            button.textContent =
-                "Equip";
+        const fedoraColors = {
 
-        }
+            "Sparkle Fedora": "classic",
+            "Sparkle Fedora - Red": "red",
+            "Sparkle Fedora - Blue": "blue",
+            "Sparkle Fedora - Gold": "gold",
+            "Sparkle Fedora - Purple": "purple",
+            "Sparkle Fedora - Pink": "pink",
+            "Sparkle Fedora - Rainbow": "rainbow"
 
-        if (
-            code.includes(
-                "equipShirt"
-            ) &&
-            storageKey === "mtbShirt"
-        ) {
+        };
 
-            button.classList.remove(
-                "equipped"
-            );
 
-            button.textContent =
-                "Equip";
+        /* FEDORA */
+
+        if (fedoraColors[item]) {
+
+            const fedora =
+                document.createElement("div");
+
+            fedora.className =
+                "fedora " +
+                fedoraColors[item];
+
+            container.appendChild(fedora);
 
         }
 
-        if (
-            code.includes(
-                "equipPants"
-            ) &&
-            storageKey === "mtbPants"
+
+        /* FROZEN HORNS */
+
+        else if (
+            item === "Frozen Crystal Horns"
         ) {
 
-            button.classList.remove(
-                "equipped"
-            );
+            const horns =
+                document.createElement("div");
 
-            button.textContent =
-                "Equip";
+            horns.className = "horns";
+
+            horns.innerHTML = `
+                <div class="horn left"></div>
+                <div class="horn right"></div>
+            `;
+
+            container.appendChild(horns);
 
         }
 
-        if (
-            code.includes(
-                "equipAccessory"
-            ) &&
-            storageKey === "mtbAccessory"
+
+        /* CROWN */
+
+        else if (
+            item === "Royal Crown"
         ) {
 
-            button.classList.remove(
-                "equipped"
-            );
+            const crown =
+                document.createElement("div");
 
-            button.textContent =
-                "Equip";
+            crown.className = "crown";
+
+            container.appendChild(crown);
+
+        }
+
+
+        /* WINGS */
+
+        else if (
+            item === "Crystal Wings"
+        ) {
+
+            const wings =
+                document.createElement("div");
+
+            wings.className = "wings";
+
+            container.appendChild(wings);
 
         }
 
     });
 
 
-    selectedButton.classList.add(
-        "equipped"
-    );
-
-    selectedButton.textContent =
-        "Equipped";
+    updateAccessoryButtons();
 }
 
 
-/* =========================
-   FACE DISPLAY
-========================= */
+/* =====================================================
+   UPDATE ACCESSORY BUTTONS
+===================================================== */
 
-function loadFace() {
+function updateAccessoryButtons() {
 
-    const saved =
-        localStorage.getItem(
-            "mtbFace"
-        ) || "happy";
+    const equipped =
+        getAccessories();
 
     document
-    .getElementById("face")
-    .className =
-        "face face-" + saved;
+        .querySelectorAll(
+            'button[onclick*="toggleAccessory"]'
+        )
+        .forEach(function(button) {
+
+            const code =
+                button.getAttribute("onclick");
+
+            const match =
+                code.match(
+                    /toggleAccessory\(this,'(.*?)'\)/
+                );
+
+            if (!match) return;
+
+            const name = match[1];
+
+            if (
+                equipped.includes(name)
+            ) {
+
+                button.classList.add(
+                    "equipped"
+                );
+
+                button.textContent =
+                    "Equipped";
+
+            } else {
+
+                button.classList.remove(
+                    "equipped"
+                );
+
+                button.textContent =
+                    "Equip";
+
+            }
+
+        });
+
+
+    document
+        .getElementById(
+            "accessoryCount"
+        )
+        .textContent =
+            equipped.length + " / 3";
 }
 
 
-/* =========================
+/* =====================================================
    SHIRT DISPLAY
-========================= */
+===================================================== */
 
 function loadShirt() {
 
     const shirt =
-        localStorage.getItem(
-            "mtbShirt"
-        );
+        localStorage.getItem("mtbShirt");
 
     const graphic =
         document.getElementById(
@@ -1736,9 +1544,7 @@ function loadShirt() {
         );
 
     const body =
-        document.querySelector(
-            ".body"
-        );
+        document.querySelector(".body");
 
     graphic.innerHTML = "";
 
@@ -1746,15 +1552,10 @@ function loadShirt() {
         "#1683ff";
 
 
-    if (!shirt) {
-        return;
-    }
+    if (!shirt) return;
 
 
-    if (
-        shirt ===
-        "MTB Classic Logo"
-    ) {
+    if (shirt === "MTB Classic Logo") {
 
         body.style.background =
             "#1683ff";
@@ -1765,8 +1566,7 @@ function loadShirt() {
     }
 
     else if (
-        shirt ===
-        "MTB Star Streetwear"
+        shirt === "MTB Star Streetwear"
     ) {
 
         body.style.background =
@@ -1783,8 +1583,7 @@ function loadShirt() {
     }
 
     else if (
-        shirt ===
-        "MTB Flame"
+        shirt === "MTB Flame"
     ) {
 
         body.style.background =
@@ -1796,8 +1595,7 @@ function loadShirt() {
     }
 
     else if (
-        shirt ===
-        "MTB Lightning"
+        shirt === "MTB Lightning"
     ) {
 
         body.style.background =
@@ -1809,8 +1607,7 @@ function loadShirt() {
     }
 
     else if (
-        shirt ===
-        "MTB Grey Essential"
+        shirt === "MTB Grey Essential"
     ) {
 
         body.style.background =
@@ -1822,25 +1619,19 @@ function loadShirt() {
     }
 
     else if (
-        shirt ===
-        "MTB Gothic"
+        shirt === "MTB Gothic"
     ) {
 
         body.style.background =
             "#151515";
 
-        graphic.innerHTML = `
-            <div class="shirt-logo"
-                 style="font-size:22px;">
-                MTB
-            </div>
-        `;
+        graphic.innerHTML =
+            `<div class="shirt-logo">MTB</div>`;
 
     }
 
     else if (
-        shirt ===
-        "MTB White Classic"
+        shirt === "MTB White Classic"
     ) {
 
         body.style.background =
@@ -1856,47 +1647,23 @@ function loadShirt() {
         `;
 
     }
-
-    else if (
-        shirt ===
-        "Midnight Cross"
-    ) {
-
-        body.style.background =
-            "#080808";
-
-        graphic.innerHTML = `
-            <div class="shirt-logo"
-                 style="font-size:48px;">
-                ✚
-            </div>
-        `;
-
-    }
-
 }
 
 
-/* =========================
+/* =====================================================
    PANTS DISPLAY
-========================= */
+===================================================== */
 
 function loadPants() {
 
     const pants =
-        localStorage.getItem(
-            "mtbPants"
-        );
+        localStorage.getItem("mtbPants");
 
     const left =
-        document.querySelector(
-            ".leg-left"
-        );
+        document.querySelector(".leg-left");
 
     const right =
-        document.querySelector(
-            ".leg-right"
-        );
+        document.querySelector(".leg-right");
 
 
     left.className =
@@ -1909,14 +1676,11 @@ function loadPants() {
     right.innerHTML = "";
 
 
-    if (!pants) {
-        return;
-    }
+    if (!pants) return;
 
 
     if (
-        pants ===
-        "MTB Black Logo Pants"
+        pants === "MTB Black Logo Pants"
     ) {
 
         left.innerHTML =
@@ -1928,8 +1692,7 @@ function loadPants() {
     }
 
     else if (
-        pants ===
-        "MTB Grey Classic Pants"
+        pants === "MTB Grey Classic Pants"
     ) {
 
         left.style.background =
@@ -1947,8 +1710,7 @@ function loadPants() {
     }
 
     else if (
-        pants ===
-        "MTB Star Pants"
+        pants === "MTB Star Pants"
     ) {
 
         left.style.background =
@@ -1966,8 +1728,7 @@ function loadPants() {
     }
 
     else if (
-        pants ===
-        "MTB Flame Pants"
+        pants === "MTB Flame Pants"
     ) {
 
         left.style.background =
@@ -1985,8 +1746,7 @@ function loadPants() {
     }
 
     else if (
-        pants ===
-        "MTB Lightning Pants"
+        pants === "MTB Lightning Pants"
     ) {
 
         left.style.background =
@@ -2004,27 +1764,7 @@ function loadPants() {
     }
 
     else if (
-        pants ===
-        "MTB Midnight Pants"
-    ) {
-
-        left.style.background =
-            "#111";
-
-        right.style.background =
-            "#111";
-
-        left.innerHTML =
-            `<div class="pants-logo">MIDNIGHT</div>`;
-
-        right.innerHTML =
-            `<div class="pants-logo">MTB</div>`;
-
-    }
-
-    else if (
-        pants ===
-        "MTB Classic Jeans"
+        pants === "MTB Classic Jeans"
     ) {
 
         left.style.background =
@@ -2042,8 +1782,7 @@ function loadPants() {
     }
 
     else if (
-        pants ===
-        "MTB All Seasons Pants"
+        pants === "MTB All Seasons Pants"
     ) {
 
         left.classList.add(
@@ -2055,116 +1794,12 @@ function loadPants() {
         );
 
     }
-
 }
 
 
-/* =========================
-   ACCESSORY DISPLAY
-========================= */
-
-function loadAccessory() {
-
-    const item =
-        localStorage.getItem(
-            "mtbAccessory"
-        );
-
-    const accessory =
-        document.getElementById(
-            "accessory"
-        );
-
-    accessory.innerHTML = "";
-
-
-    if (!item) {
-        return;
-    }
-
-
-    const fedoraColors = {
-
-        "Sparkle Fedora":
-            "classic",
-
-        "Sparkle Fedora - Red":
-            "red",
-
-        "Sparkle Fedora - Blue":
-            "blue",
-
-        "Sparkle Fedora - Gold":
-            "gold",
-
-        "Sparkle Fedora - Purple":
-            "purple",
-
-        "Sparkle Fedora - Pink":
-            "pink",
-
-        "Sparkle Fedora - Rainbow":
-            "rainbow"
-
-    };
-
-
-    if (
-        fedoraColors[item]
-    ) {
-
-        accessory.innerHTML =
-            `<div class="fedora ${
-                fedoraColors[item]
-            }"></div>`;
-
-    }
-
-    else if (
-        item ===
-        "Frozen Crystal Horns"
-    ) {
-
-        accessory.innerHTML = `
-            <div class="horns">
-
-                <div class="horn left">
-                </div>
-
-                <div class="horn right">
-                </div>
-
-            </div>
-        `;
-
-    }
-
-    else if (
-        item ===
-        "Royal Crown"
-    ) {
-
-        accessory.innerHTML =
-            `<div class="crown"></div>`;
-
-    }
-
-    else if (
-        item ===
-        "Crystal Wings"
-    ) {
-
-        accessory.innerHTML =
-            `<div class="wings"></div>`;
-
-    }
-
-}
-
-
-/* =========================
+/* =====================================================
    STATUS
-========================= */
+===================================================== */
 
 function updateStatus() {
 
@@ -2176,223 +1811,230 @@ function updateStatus() {
     const shirt =
         localStorage.getItem(
             "mtbShirt"
-        );
+        ) || "None";
 
     const pants =
         localStorage.getItem(
             "mtbPants"
-        );
+        ) || "None";
 
-    const accessory =
-        localStorage.getItem(
-            "mtbAccessory"
-        );
-
-
-    let text =
-        "Face: " +
-        face;
-
-
-    text +=
-        " | Shirt: " +
-        (shirt || "None");
-
-
-    text +=
-        " | Pants: " +
-        (pants || "None");
-
-
-    text +=
-        " | Accessory: " +
-        (accessory || "None");
+    const accessories =
+        getAccessories();
 
 
     document
-    .getElementById("status")
-    .textContent =
-        text;
-
+        .getElementById("status")
+        .textContent =
+            "Face: " + face +
+            " | Shirt: " + shirt +
+            " | Pants: " + pants +
+            " | Accessories: " +
+            (
+                accessories.length
+                    ? accessories.join(", ")
+                    : "None"
+            );
 }
 
 
-/* =========================
-   CLEAR
-========================= */
+/* =====================================================
+   CLEAR EVERYTHING
+===================================================== */
 
 function clearAvatar() {
 
-    localStorage.removeItem(
-        "mtbFace"
-    );
+    localStorage.removeItem("mtbFace");
+    localStorage.removeItem("mtbShirt");
+    localStorage.removeItem("mtbPants");
+    localStorage.removeItem("mtbAccessories");
 
-    localStorage.removeItem(
-        "mtbShirt"
-    );
-
-    localStorage.removeItem(
-        "mtbPants"
-    );
-
-    localStorage.removeItem(
-        "mtbAccessory"
-    );
-
-
-    loadFace();
-    loadShirt();
-    loadPants();
-    loadAccessory();
 
     document
-    .querySelectorAll(
-        ".item button"
-    )
-    .forEach(function(button) {
-
-        button.classList.remove(
-            "equipped"
-        );
-
-        button.textContent =
-            "Equip";
-
-    });
+        .getElementById("face")
+        .className =
+            "face face-happy";
 
 
+    document
+        .getElementById("shirtGraphic")
+        .innerHTML = "";
+
+
+    const body =
+        document.querySelector(".body");
+
+    body.style.background =
+        "#1683ff";
+
+
+    const left =
+        document.querySelector(".leg-left");
+
+    const right =
+        document.querySelector(".leg-right");
+
+
+    left.className =
+        "leg leg-left";
+
+    right.className =
+        "leg leg-right";
+
+    left.innerHTML = "";
+    right.innerHTML = "";
+
+
+    document
+        .getElementById("accessory")
+        .innerHTML = "";
+
+
+    document
+        .querySelectorAll(".item button")
+        .forEach(function(button) {
+
+            button.classList.remove(
+                "equipped"
+            );
+
+            button.textContent =
+                "Equip";
+
+        });
+
+
+    updateAccessoryButtons();
     updateStatus();
-
 }
 
 
-/* =========================
-   START
-========================= */
+/* =====================================================
+   LOAD SAVED AVATAR
+===================================================== */
 
-function startAvatar() {
-
-    loadFace();
-    loadShirt();
-    loadPants();
-    loadAccessory();
-
-    updateStatus();
-
-
-    /*
-       Mark saved items as equipped.
-    */
+function loadAvatar() {
 
     const face =
         localStorage.getItem(
             "mtbFace"
-        );
+        ) || "happy";
+
+
+    document
+        .getElementById("face")
+        .className =
+            "face face-" + face;
+
+
+    loadShirt();
+    loadPants();
+    loadAccessories();
+
+
+    /* FACE BUTTON */
+
+    document
+        .querySelectorAll(
+            'button[onclick*="equipFace"]'
+        )
+        .forEach(function(button) {
+
+            const code =
+                button.getAttribute(
+                    "onclick"
+                );
+
+            if (
+                code.includes(
+                    "'" + face + "'"
+                )
+            ) {
+
+                button.classList.add(
+                    "equipped"
+                );
+
+                button.textContent =
+                    "Equipped";
+            }
+
+        });
+
+
+    /* SHIRT BUTTON */
 
     const shirt =
         localStorage.getItem(
             "mtbShirt"
         );
 
+    document
+        .querySelectorAll(
+            'button[onclick*="equipShirt"]'
+        )
+        .forEach(function(button) {
+
+            if (
+                shirt &&
+                button
+                    .getAttribute("onclick")
+                    .includes(
+                        "'" + shirt + "'"
+                    )
+            ) {
+
+                button.classList.add(
+                    "equipped"
+                );
+
+                button.textContent =
+                    "Equipped";
+            }
+
+        });
+
+
+    /* PANTS BUTTON */
+
     const pants =
         localStorage.getItem(
             "mtbPants"
         );
 
-    const accessory =
-        localStorage.getItem(
-            "mtbAccessory"
-        );
-
-
     document
-    .querySelectorAll(
-        ".item button"
-    )
-    .forEach(function(button) {
+        .querySelectorAll(
+            'button[onclick*="equipPants"]'
+        )
+        .forEach(function(button) {
 
-        const code =
-            button.getAttribute(
-                "onclick"
-            ) || "";
+            if (
+                pants &&
+                button
+                    .getAttribute("onclick")
+                    .includes(
+                        "'" + pants + "'"
+                    )
+            ) {
 
+                button.classList.add(
+                    "equipped"
+                );
 
-        if (
-            face &&
-            code.includes(
-                "'" + face + "'"
-            )
-        ) {
+                button.textContent =
+                    "Equipped";
+            }
 
-            button.classList.add(
-                "equipped"
-            );
-
-            button.textContent =
-                "Equipped";
-
-        }
+        });
 
 
-        if (
-            shirt &&
-            code.includes(
-                "'" + shirt + "'"
-            )
-        ) {
-
-            button.classList.add(
-                "equipped"
-            );
-
-            button.textContent =
-                "Equipped";
-
-        }
-
-
-        if (
-            pants &&
-            code.includes(
-                "'" + pants + "'"
-            )
-        ) {
-
-            button.classList.add(
-                "equipped"
-            );
-
-            button.textContent =
-                "Equipped";
-
-        }
-
-
-        if (
-            accessory &&
-            code.includes(
-                "'" + accessory + "'"
-            )
-        ) {
-
-            button.classList.add(
-                "equipped"
-            );
-
-            button.textContent =
-                "Equipped";
-
-        }
-
-    });
-
+    updateAccessoryButtons();
+    updateStatus();
 }
 
 
-startAvatar();
+loadAvatar();
 
 </script>
-
 
 </body>
 </html>
