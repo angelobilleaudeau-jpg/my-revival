@@ -12,12 +12,12 @@
 body{
     margin:0;
     font-family:Arial,sans-serif;
-    background:#e8e8e8;
+    background:#e9e9e9;
     color:#222;
 }
 
 header{
-    background:#c7c7c7;
+    background:#c8c8c8;
     border-bottom:3px solid #888;
     padding:15px;
 }
@@ -29,25 +29,27 @@ header{
 }
 
 nav{
-    margin-top:12px;
     display:flex;
     justify-content:center;
     flex-wrap:wrap;
     gap:5px;
+    margin-top:12px;
 }
 
 nav a{
-    text-decoration:none;
     color:#222;
+    text-decoration:none;
     font-weight:bold;
     padding:9px 13px;
     border-radius:5px;
 }
 
-nav a:hover{background:#aaa}
+nav a:hover{
+    background:#aaa;
+}
 
 .coinbar{
-    max-width:1100px;
+    max-width:1150px;
     margin:15px auto;
     padding:12px 18px;
     background:white;
@@ -55,6 +57,7 @@ nav a:hover{background:#aaa}
     display:flex;
     justify-content:space-between;
     align-items:center;
+    flex-wrap:wrap;
     gap:10px;
 }
 
@@ -62,14 +65,14 @@ nav a:hover{background:#aaa}
     display:inline-block;
     width:20px;
     height:20px;
-    background:#e6aa00;
-    border:2px solid #9b7000;
+    background:#e5ad00;
+    border:2px solid #936d00;
     border-radius:50%;
     vertical-align:middle;
 }
 
 .container{
-    max-width:1100px;
+    max-width:1150px;
     margin:20px auto;
     padding:0 15px;
 }
@@ -81,140 +84,264 @@ nav a:hover{background:#aaa}
     text-align:center;
 }
 
-.avatarLayout{
+.layout{
     display:grid;
-    grid-template-columns:330px 1fr;
+    grid-template-columns:340px 1fr;
     gap:20px;
     margin-top:20px;
 }
 
-.avatarBox,.items{
+.avatarPanel,
+.itemsPanel{
     background:white;
     border:1px solid #aaa;
     padding:20px;
 }
 
-.avatarBox{text-align:center}
+.avatarPanel{
+    text-align:center;
+}
 
 .avatar{
     position:relative;
-    width:240px;
-    height:410px;
+    width:250px;
+    height:430px;
     margin:15px auto;
 }
 
-/* ================= HEAD ================= */
+/* ================= BODY ================= */
 
 .head{
     position:absolute;
-    width:100px;
-    height:100px;
+    width:105px;
+    height:105px;
+    top:35px;
+    left:72px;
     background:#f1c27d;
     border:3px solid #333;
-    border-radius:10px;
-    top:25px;
-    left:70px;
-    z-index:10;
+    border-radius:12px;
+    z-index:20;
 }
 
 .body{
     position:absolute;
-    width:115px;
+    width:120px;
     height:125px;
+    top:140px;
+    left:65px;
     background:#1683ff;
     border:3px solid #333;
-    top:125px;
-    left:62px;
+    z-index:5;
+    overflow:hidden;
+}
+
+/* ================= CLOTHING ================= */
+
+/* Shirt appears directly over the torso */
+
+.shirt{
+    position:absolute;
+    inset:0;
     z-index:2;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:900;
+    font-size:24px;
+    color:white;
+    letter-spacing:2px;
+}
+
+.mtbShirt{
+    background:
+        linear-gradient(135deg,#111 0%,#333 45%,#111 100%);
+}
+
+.mtbShirt span{
+    background:white;
+    color:#111;
+    padding:5px 9px;
+    border-radius:4px;
+    font-size:22px;
+}
+
+.hellShirt{
+    background:
+        linear-gradient(135deg,#080808,#202020,#080808);
+}
+
+.hellShirt span{
+    color:#d7d7d7;
+    font-size:17px;
+}
+
+/* Seasonal shirts */
+
+.springShirt{
+    background:linear-gradient(135deg,#75d67d,#b8f3c0);
+}
+
+.summerShirt{
+    background:linear-gradient(135deg,#18a9ff,#ffdf45);
+}
+
+.fallShirt{
+    background:linear-gradient(135deg,#d46b25,#703414);
+}
+
+.winterShirt{
+    background:linear-gradient(135deg,#4ba9ff,#dff7ff);
+}
+
+/* Pants cover both legs */
+
+.pants{
+    position:absolute;
+    z-index:7;
+    top:260px;
+    left:65px;
+    width:120px;
+    height:130px;
+    pointer-events:none;
+}
+
+.pantsPiece{
+    position:absolute;
+    top:0;
+    width:54px;
+    height:125px;
+    border:3px solid #333;
+}
+
+.leftPants{
+    left:0;
+}
+
+.rightPants{
+    right:0;
+}
+
+.mtbPants .pantsPiece{
+    background:
+        linear-gradient(90deg,#101010,#353535,#111);
+}
+
+.seasonSpring .pantsPiece{
+    background:#4cae64;
+}
+
+.seasonSummer .pantsPiece{
+    background:#2787d9;
+}
+
+.seasonFall .pantsPiece{
+    background:#70421e;
+}
+
+.seasonWinter .pantsPiece{
+    background:#dcecff;
 }
 
 /* ================= ARMS ================= */
 
 .arm{
     position:absolute;
-    width:38px;
+    width:40px;
     height:115px;
+    top:145px;
     background:#f1c27d;
     border:3px solid #333;
-    top:130px;
-    transition:.3s ease;
+    z-index:9;
 }
 
 .leftArm{
-    left:20px;
-    z-index:5;
+    left:22px;
 }
 
 .rightArm{
-    right:20px;
-    transform-origin:50% 5%;
-    z-index:5;
+    right:22px;
+    transform-origin:50% 8%;
+    transition:.35s ease;
 }
 
 .avatar.holdingGear .rightArm{
-    right:0;
-    top:112px;
+    right:2px;
+    top:125px;
     transform:rotate(-58deg);
+}
+
+/* Shirt sleeves */
+
+.sleeve{
+    position:absolute;
+    width:40px;
+    height:45px;
+    top:0;
+    border:3px solid #333;
+}
+
+.sleeve.left{
+    left:-3px;
+}
+
+.sleeve.right{
+    right:-3px;
+}
+
+.mtbSleeve{
+    background:#111;
 }
 
 /* ================= NORMAL LEGS ================= */
 
 .leg{
     position:absolute;
+    top:265px;
+    width:52px;
+    height:125px;
     background:#222;
     border:3px solid #333;
-    z-index:3;
+    z-index:4;
 }
 
 .leftLeg{
-    width:50px;
-    height:120px;
-    top:250px;
-    left:67px;
+    left:65px;
 }
 
 .rightLeg{
-    width:50px;
-    height:120px;
-    top:250px;
-    right:67px;
+    right:65px;
 }
 
-/* =================================================
-   KORBLOX-STYLE SMALL BLUE LEG
-================================================= */
+/* ================= KORBLOX STYLE ================= */
 
 .leftLeg.korblox{
-    width:24px;
-    height:78px;
-
-    top:292px;
-    left:80px;
+    width:25px;
+    height:82px;
+    top:308px;
+    left:79px;
 
     background:
         linear-gradient(
             90deg,
-            #101a2b 0%,
-            #326ba8 35%,
-            #75bfff 50%,
-            #24517f 70%,
-            #0b1420 100%
+            #0b1420,
+            #285b91 32%,
+            #7acfff 50%,
+            #24517f 72%,
+            #08111b
         ) !important;
 
     border:3px solid #101722 !important;
-
     border-radius:5px 5px 10px 10px;
 
     box-shadow:
-        inset 3px 0 4px rgba(255,255,255,.25),
-        inset -4px 0 5px rgba(0,0,0,.5),
-        0 2px 4px rgba(0,0,0,.4);
+        inset 3px 0 5px rgba(255,255,255,.25),
+        inset -4px 0 5px rgba(0,0,0,.55);
 }
 
 .leftLeg.korblox:before{
     content:"";
     position:absolute;
-    width:30px;
+    width:31px;
     height:13px;
     left:-6px;
     top:-8px;
@@ -227,10 +354,10 @@ nav a:hover{background:#aaa}
     content:"";
     position:absolute;
     width:5px;
-    height:55px;
+    height:57px;
     left:5px;
-    top:8px;
-    background:rgba(150,220,255,.55);
+    top:9px;
+    background:rgba(180,230,255,.6);
     border-radius:5px;
 }
 
@@ -238,43 +365,42 @@ nav a:hover{background:#aaa}
 
 .face{
     position:absolute;
-    width:100%;
-    height:100%;
-    top:0;
-    left:0;
-    z-index:15;
+    inset:0;
+    z-index:25;
 }
 
 .eye{
     position:absolute;
     width:9px;
-    height:13px;
+    height:14px;
     background:#111;
     border-radius:50%;
-    top:38px;
+    top:40px;
 }
 
-.leftEye{left:32px}
-.rightEye{right:32px}
+.leftEye{left:34px}
+.rightEye{right:34px}
+
+.mouth{
+    position:absolute;
+}
 
 .classicSmile .mouth{
-    position:absolute;
     width:42px;
     height:20px;
+    left:30px;
+    top:55px;
     border-bottom:4px solid #111;
     border-radius:0 0 50% 50%;
-    left:29px;
-    top:53px;
 }
 
 .classicHappy .mouth{
-    position:absolute;
-    width:40px;
-    height:22px;
+    width:42px;
+    height:23px;
+    left:29px;
+    top:54px;
     background:#111;
     border-radius:5px 5px 50% 50%;
-    left:30px;
-    top:52px;
 }
 
 .classicHappy .mouth:after{
@@ -282,29 +408,27 @@ nav a:hover{background:#aaa}
     position:absolute;
     width:25px;
     height:6px;
-    background:white;
     left:8px;
     top:2px;
+    background:white;
 }
 
 .classicSerious .mouth{
-    position:absolute;
-    width:38px;
+    width:40px;
     height:4px;
-    background:#111;
     left:31px;
-    top:60px;
+    top:63px;
+    background:#111;
 }
 
 .classicSmirk .mouth{
-    position:absolute;
-    width:38px;
-    height:16px;
+    width:40px;
+    height:17px;
+    left:31px;
+    top:55px;
     border-bottom:4px solid #111;
     border-radius:0 0 60% 20%;
     transform:rotate(-8deg);
-    left:31px;
-    top:52px;
 }
 
 .classicEvil .leftEye{
@@ -316,298 +440,281 @@ nav a:hover{background:#aaa}
 }
 
 .classicEvil .mouth{
-    position:absolute;
-    width:40px;
+    width:42px;
     height:18px;
+    left:30px;
+    top:58px;
     border-top:4px solid #111;
     border-radius:50%;
-    left:30px;
-    top:57px;
 }
 
-/* ================= ACCESSORIES ================= */
+/* ================= ACCESSORY LAYERS ================= */
 
-.accessory{
+/*
+   THREE SEPARATE ACCESSORY SLOTS.
+   This fixes the previous problem where only
+   one hat could visually appear.
+*/
+
+.accessorySlot{
     position:absolute;
+    width:190px;
+    height:120px;
+    left:30px;
+    top:-30px;
     pointer-events:none;
-    z-index:20;
+    z-index:30;
 }
+
+.slot1{z-index:31}
+.slot2{z-index:32}
+.slot3{z-index:33}
 
 /* ================= FROZEN HORNS ================= */
 
 .frozenHorns{
-    width:170px;
-    height:95px;
-    top:-45px;
-    left:35px;
+    position:absolute;
+    width:180px;
+    height:105px;
+    left:5px;
+    top:0;
 }
 
-.frozenHorns:before,
-.frozenHorns:after{
-    content:"";
+.horn{
     position:absolute;
-    width:40px;
-    height:90px;
-    border:3px solid;
+    width:43px;
+    height:100px;
     clip-path:polygon(
         50% 0%,
-        72% 17%,
+        75% 15%,
         100% 30%,
         78% 43%,
-        94% 61%,
-        68% 59%,
-        55% 100%,
-        42% 63%,
-        12% 78%,
+        95% 62%,
+        67% 60%,
+        53% 100%,
+        40% 64%,
+        10% 78%,
         22% 52%,
         0% 39%,
         28% 20%
     );
 }
 
-.blueHorns:before,.blueHorns:after{
-    background:#b9f3ff;
-    border-color:#42b8ed;
-    box-shadow:0 0 12px #66dfff;
+.horn.left{
+    left:12px;
+    transform:rotate(-24deg);
 }
 
-.redHorns:before,.redHorns:after{
-    background:#ff4b4b;
-    border-color:#a00000;
-    box-shadow:0 0 12px #ff3333;
+.horn.right{
+    right:12px;
+    transform:rotate(24deg);
 }
 
-.greenHorns:before,.greenHorns:after{
-    background:#53ff8b;
-    border-color:#008c3c;
-    box-shadow:0 0 12px #2dff75;
+.blueHorns .horn{
+    background:#baf5ff;
+    box-shadow:0 0 15px #51d9ff;
 }
 
-.blueHorns:before,.redHorns:before,.greenHorns:before{
-    left:15px;
-    transform:rotate(-25deg);
+.redHorns .horn{
+    background:#ff4d4d;
 }
 
-.blueHorns:after,.redHorns:after,.greenHorns:after{
-    right:15px;
-    transform:rotate(25deg);
+.greenHorns .horn{
+    background:#50ef7b;
 }
 
 .fire{
-    top:-38px;
-    left:98px;
-    font-size:42px;
-    z-index:21;
+    position:absolute;
+    left:73px;
+    top:-5px;
+    font-size:50px;
+    filter:drop-shadow(0 0 8px #40cfff);
 }
 
-/* ================= VALKYRIE ================= */
+/* ================= VALKYRIES ================= */
 
 .valk{
-    top:-35px;
-    left:50px;
-    width:140px;
-    height:60px;
-    z-index:19;
-}
-
-.valk:before,.valk:after{
-    content:"";
     position:absolute;
-    width:48px;
-    height:60px;
-    border:4px solid #777;
-    border-radius:45% 45% 10% 10%;
-    background:#ddd;
-}
-
-.valk:before{
+    width:175px;
+    height:75px;
     left:2px;
-    transform:rotate(-25deg);
+    top:5px;
 }
 
-.valk:after{
-    right:2px;
-    transform:rotate(25deg);
+.valkWing{
+    position:absolute;
+    width:62px;
+    height:72px;
+    border:5px solid #777;
+    border-radius:50% 50% 15% 15%;
 }
 
-.goldValk:before,.goldValk:after{
-    background:#f5d76e;
-    border-color:#9d7610;
+.valkWing.left{
+    left:0;
+    transform:rotate(-27deg);
 }
 
-.redValk:before,.redValk:after{
-    background:#e34b4b;
-    border-color:#7d1111;
+.valkWing.right{
+    right:0;
+    transform:rotate(27deg);
 }
 
-.blueValk:before,.blueValk:after{
-    background:#4d9cff;
-    border-color:#174e9b;
+.goldValk .valkWing{
+    background:#f2d36b;
+    border-color:#9b7412;
 }
 
-.greenValk:before,.greenValk:after{
-    background:#4ddd78;
-    border-color:#167536;
+.redValk .valkWing{
+    background:#e34343;
+    border-color:#861515;
 }
 
-.purpleValk:before,.purpleValk:after{
-    background:#a76bea;
-    border-color:#59208e;
+.blueValk .valkWing{
+    background:#4a9cff;
+    border-color:#164f9b;
 }
 
-.blackValk:before,.blackValk:after{
+.greenValk .valkWing{
+    background:#49db72;
+    border-color:#147238;
+}
+
+.purpleValk .valkWing{
+    background:#a764e5;
+    border-color:#5a208e;
+}
+
+.blackValk .valkWing{
     background:#333;
     border-color:#111;
 }
 
-/* ================= FEDORAS ================= */
+/* ================= FEDORA ================= */
 
 .fedora{
     position:absolute;
-    width:125px;
-    height:55px;
-    left:58px;
-    top:-8px;
-    z-index:18;
+    width:145px;
+    height:80px;
+    left:22px;
+    top:3px;
 }
 
-.fedora:before{
-    content:"";
+.fedoraTop{
     position:absolute;
-    width:92px;
-    height:42px;
-    left:16px;
+    width:105px;
+    height:47px;
+    left:20px;
     top:0;
+    border:5px solid #777;
     border-radius:50% 50% 20% 20%;
-    border:5px solid;
-    background:linear-gradient(135deg,#fff,#999);
 }
 
-.fedora:after{
-    content:"";
+.fedoraBottom{
     position:absolute;
-    width:125px;
-    height:18px;
+    width:145px;
+    height:22px;
     left:0;
-    top:35px;
+    top:43px;
+    border:4px solid #777;
     border-radius:50%;
-    border:4px solid;
-    background:#777;
 }
 
-.fedoraRainbow:before{
-    background:linear-gradient(
-        135deg,
-        #ff3b3b,
-        #ffd43b,
-        #45e06f,
-        #4ba3ff,
-        #a66cff
-    );
-    border-color:#fff;
+.fedoraRainbow .fedoraTop{
+    background:
+        linear-gradient(
+            135deg,
+            #f33,
+            #ffd447,
+            #43dc73,
+            #45a7ff,
+            #a966e8
+        );
 }
 
-.fedoraRainbow:after{
-    background:#d7a93c;
-    border-color:#fff;
+.fedoraRainbow .fedoraBottom{
+    background:#d5a62f;
 }
 
-.fedoraRed:before{
-    background:#d93434;
-    border-color:#ffaaaa;
+.fedoraRed .fedoraTop{
+    background:#d83232;
 }
 
-.fedoraRed:after{
-    background:#8b1111;
-    border-color:#ffaaaa;
+.fedoraRed .fedoraBottom{
+    background:#811111;
 }
 
-.fedoraBlue:before{
+.fedoraBlue .fedoraTop{
     background:#348cff;
-    border-color:#a9d5ff;
 }
 
-.fedoraBlue:after{
-    background:#174d9c;
-    border-color:#a9d5ff;
+.fedoraBlue .fedoraBottom{
+    background:#174c9b;
 }
 
-.fedoraGreen:before{
-    background:#39d46a;
-    border-color:#a8ffbd;
+.fedoraGreen .fedoraTop{
+    background:#36d46a;
 }
 
-.fedoraGreen:after{
-    background:#16753a;
-    border-color:#a8ffbd;
+.fedoraGreen .fedoraBottom{
+    background:#16713a;
 }
 
-.fedoraPurple:before{
-    background:#a05be8;
-    border-color:#dfbaff;
+.fedoraPurple .fedoraTop{
+    background:#9d58dc;
 }
 
-.fedoraPurple:after{
-    background:#57228e;
-    border-color:#dfbaff;
+.fedoraPurple .fedoraBottom{
+    background:#55218a;
 }
 
-.fedoraBlack:before{
+.fedoraBlack .fedoraTop{
     background:#222;
-    border-color:#888;
 }
 
-.fedoraBlack:after{
+.fedoraBlack .fedoraBottom{
     background:#050505;
-    border-color:#888;
 }
 
-.fedoraWhite:before{
+.fedoraWhite .fedoraTop{
     background:#fff;
-    border-color:#ddd;
 }
 
-.fedoraWhite:after{
+.fedoraWhite .fedoraBottom{
     background:#aaa;
-    border-color:#eee;
 }
 
-.fedoraGold:before{
-    background:#e5b934;
-    border-color:#fff0a8;
+.fedoraGold .fedoraTop{
+    background:#e4b72f;
 }
 
-.fedoraGold:after{
-    background:#916d08;
-    border-color:#fff0a8;
+.fedoraGold .fedoraBottom{
+    background:#8f6907;
 }
 
-.fedoraPink:before{
-    background:#ff6fae;
-    border-color:#ffc4df;
+.fedoraPink .fedoraTop{
+    background:#ff69aa;
 }
 
-.fedoraPink:after{
-    background:#b42d69;
-    border-color:#ffc4df;
+.fedoraPink .fedoraBottom{
+    background:#b22c68;
 }
 
 /* ================= GEAR ================= */
 
 .gear{
     position:absolute;
-    z-index:30;
-    font-size:45px;
-    top:135px;
+    top:170px;
     right:-5px;
-    transform:rotate(-15deg);
-    transition:.3s ease;
+    z-index:50;
+    font-size:45px;
+    transform:rotate(-25deg);
+    transition:.35s;
 }
 
 .avatar.holdingGear .gear{
-    top:172px;
-    right:-18px;
-    transform:rotate(-35deg);
+    right:-22px;
+    top:195px;
+    transform:rotate(-45deg);
 }
 
 /* ================= HEADLESS ================= */
@@ -615,6 +722,10 @@ nav a:hover{background:#aaa}
 .head.headless{
     background:transparent !important;
     border-color:transparent !important;
+}
+
+.head.headless .face{
+    display:none !important;
 }
 
 /* ================= ITEMS ================= */
@@ -647,13 +758,13 @@ nav a:hover{background:#aaa}
 }
 
 .preview{
-    height:90px;
+    height:80px;
     background:#ddd;
     border:1px solid #aaa;
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:30px;
+    font-size:28px;
     margin-bottom:8px;
 }
 
@@ -665,7 +776,7 @@ nav a:hover{background:#aaa}
 .item p{
     font-size:11px;
     color:#666;
-    min-height:25px;
+    min-height:24px;
 }
 
 button{
@@ -682,53 +793,51 @@ button:hover{
     background:#006bd6;
 }
 
-button.gray{background:#777}
-button.red{background:#d33}
+.gray{
+    background:#777;
+}
 
-.equippedList{
-    text-align:left;
+.red{
+    background:#d33;
+}
+
+.equipped{
     background:#eee;
     border:1px solid #aaa;
     padding:10px;
+    text-align:left;
     min-height:45px;
 }
 
-.saveStatus{
+.status{
+    color:#218838;
     font-size:12px;
-    color:#238636;
     font-weight:bold;
 }
 
 .message{
+    display:none;
     position:fixed;
-    left:50%;
     bottom:20px;
+    left:50%;
     transform:translateX(-50%);
-    background:#333;
+    background:#222;
     color:white;
     padding:12px 20px;
-    border-radius:5px;
-    display:none;
-    z-index:100;
+    border-radius:6px;
+    z-index:999;
 }
 
-@media(max-width:700px){
-    .avatarLayout{
+@media(max-width:750px){
+
+    .layout{
         grid-template-columns:1fr;
     }
 
     .coinbar{
         margin-left:15px;
         margin-right:15px;
-        flex-direction:column;
     }
-
-    nav{
-        display:grid;
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    nav a{text-align:center}
 }
 </style>
 </head>
@@ -759,8 +868,8 @@ MTB REVIVALS
 <span id="coins">1000</span>
 </div>
 
-<div class="saveStatus">
-✓ Avatar saves automatically
+<div class="status">
+✓ Avatar automatically saved
 </div>
 
 <button onclick="earnCoins()">
@@ -772,32 +881,28 @@ Earn 100 Coins
 <div class="container">
 
 <div class="title">
-
 <h1>Avatar Editor</h1>
-
-<p>
-Customize your MTB REVIVALS avatar.
-</p>
-
-<b>
-Maximum 3 accessories or gear at once.
-</b>
-
+<p>Build your MTB avatar.</p>
+<b>Up to 3 accessories can be equipped at once.</b>
 </div>
 
-<div class="avatarLayout">
+<div class="layout">
 
-<!-- ================= AVATAR ================= -->
+<!-- =================================================
+     AVATAR
+================================================= -->
 
-<div class="avatarBox">
+<div class="avatarPanel">
 
 <h2>Your Avatar</h2>
 
 <div id="avatar" class="avatar">
 
-<div id="headAccessory" class="accessory"></div>
+<!-- THREE INDEPENDENT HAT SLOTS -->
 
-<div id="fire" class="accessory"></div>
+<div id="slot1" class="accessorySlot slot1"></div>
+<div id="slot2" class="accessorySlot slot2"></div>
+<div id="slot3" class="accessorySlot slot3"></div>
 
 <div id="gear" class="gear"></div>
 
@@ -813,40 +918,57 @@ Maximum 3 accessories or gear at once.
 
 </div>
 
-<div class="body"></div>
+<div id="body" class="body">
 
-<div class="arm leftArm"></div>
-<div class="arm rightArm"></div>
-
-<div id="leftLeg" class="leg leftLeg"></div>
-
-<div id="rightLeg" class="leg rightLeg"></div>
+<div id="shirt" class="shirt mtbShirt">
+<span>MTB</span>
+</div>
 
 </div>
 
-<h3>Equipped Items</h3>
+<div class="arm leftArm">
+<div id="leftSleeve" class="sleeve left mtbSleeve"></div>
+</div>
 
-<div id="equippedList" class="equippedList">
+<div class="arm rightArm">
+<div id="rightSleeve" class="sleeve right mtbSleeve"></div>
+</div>
+
+<div id="leftLeg" class="leg leftLeg"></div>
+<div id="rightLeg" class="leg rightLeg"></div>
+
+<div id="pants" class="pants mtbPants">
+<div class="pantsPiece leftPants"></div>
+<div class="pantsPiece rightPants"></div>
+</div>
+
+</div>
+
+<h3>Equipped</h3>
+
+<div id="equippedList" class="equipped">
 None
 </div>
 
 <br>
 
 <button class="gray" onclick="clearAccessories()">
-Remove All Accessories/Gear
+Remove Hats/Gear
 </button>
 
 <br><br>
 
 <button class="red" onclick="resetAvatar()">
-Reset Saved Avatar
+Reset Avatar
 </button>
 
 </div>
 
-<!-- ================= ITEMS ================= -->
+<!-- =================================================
+     ITEMS
+================================================= -->
 
-<div class="items">
+<div class="itemsPanel">
 
 <!-- FACES -->
 
@@ -889,18 +1011,117 @@ Reset Saved Avatar
 </div>
 </div>
 
+<!-- CLOTHES -->
+
+<div class="category">
+
+<h2>MTB Clothes</h2>
+
+<div class="grid">
+
+<div class="item">
+<div class="preview"><b>MTB</b></div>
+<h3>MTB Shirt</h3>
+<button onclick="setClothes('mtbShirt','MTB Shirt')">
+Wear
+</button>
+</div>
+
+<div class="item">
+<div class="preview">🔥</div>
+<h3>Hellstar Style</h3>
+<button onclick="setClothes('hellShirt','Hellstar Style Shirt')">
+Wear
+</button>
+</div>
+
+<div class="item">
+<div class="preview">🌸</div>
+<h3>Spring Outfit</h3>
+<button onclick="setClothes('springShirt','Spring Outfit')">
+Wear
+</button>
+</div>
+
+<div class="item">
+<div class="preview">☀️</div>
+<h3>Summer Outfit</h3>
+<button onclick="setClothes('summerShirt','Summer Outfit')">
+Wear
+</button>
+</div>
+
+<div class="item">
+<div class="preview">🍂</div>
+<h3>Fall Outfit</h3>
+<button onclick="setClothes('fallShirt','Fall Outfit')">
+Wear
+</button>
+</div>
+
+<div class="item">
+<div class="preview">❄️</div>
+<h3>Winter Outfit</h3>
+<button onclick="setClothes('winterShirt','Winter Outfit')">
+Wear
+</button>
+</div>
+
+<div class="item">
+<div class="preview">👖</div>
+<h3>MTB Pants</h3>
+<button onclick="setPants('mtbPants','MTB Pants')">
+Wear
+</button>
+</div>
+
+<div class="item">
+<div class="preview">🌸</div>
+<h3>Spring Pants</h3>
+<button onclick="setPants('seasonSpring','Spring Pants')">
+Wear
+</button>
+</div>
+
+<div class="item">
+<div class="preview">☀️</div>
+<h3>Summer Pants</h3>
+<button onclick="setPants('seasonSummer','Summer Pants')">
+Wear
+</button>
+</div>
+
+<div class="item">
+<div class="preview">🍂</div>
+<h3>Fall Pants</h3>
+<button onclick="setPants('seasonFall','Fall Pants')">
+Wear
+</button>
+</div>
+
+<div class="item">
+<div class="preview">❄️</div>
+<h3>Winter Pants</h3>
+<button onclick="setPants('seasonWinter','Winter Pants')">
+Wear
+</button>
+</div>
+
+</div>
+</div>
+
 <!-- FEDORAS -->
 
 <div class="category">
 
-<h2>Sparkle Time Fedora Collection</h2>
+<h2>Sparkle Time Fedora Colors</h2>
 
 <div class="grid">
 
 <div class="item">
 <div class="preview">🌈</div>
 <h3>Sparkle Time Fedora</h3>
-<button onclick="equipAccessory('Sparkle Time Fedora','fedoraRainbow')">
+<button onclick="toggleAccessory('Sparkle Time Fedora','fedoraRainbow')">
 Equip
 </button>
 </div>
@@ -908,7 +1129,7 @@ Equip
 <div class="item">
 <div class="preview">🔴</div>
 <h3>Red Fedora</h3>
-<button onclick="equipAccessory('Red Sparkle Time Fedora','fedoraRed')">
+<button onclick="toggleAccessory('Red Sparkle Time Fedora','fedoraRed')">
 Equip
 </button>
 </div>
@@ -916,7 +1137,7 @@ Equip
 <div class="item">
 <div class="preview">🔵</div>
 <h3>Blue Fedora</h3>
-<button onclick="equipAccessory('Blue Sparkle Time Fedora','fedoraBlue')">
+<button onclick="toggleAccessory('Blue Sparkle Time Fedora','fedoraBlue')">
 Equip
 </button>
 </div>
@@ -924,7 +1145,7 @@ Equip
 <div class="item">
 <div class="preview">🟢</div>
 <h3>Green Fedora</h3>
-<button onclick="equipAccessory('Green Sparkle Time Fedora','fedoraGreen')">
+<button onclick="toggleAccessory('Green Sparkle Time Fedora','fedoraGreen')">
 Equip
 </button>
 </div>
@@ -932,7 +1153,7 @@ Equip
 <div class="item">
 <div class="preview">🟣</div>
 <h3>Purple Fedora</h3>
-<button onclick="equipAccessory('Purple Sparkle Time Fedora','fedoraPurple')">
+<button onclick="toggleAccessory('Purple Sparkle Time Fedora','fedoraPurple')">
 Equip
 </button>
 </div>
@@ -940,7 +1161,7 @@ Equip
 <div class="item">
 <div class="preview">⚫</div>
 <h3>Black Fedora</h3>
-<button onclick="equipAccessory('Black Sparkle Time Fedora','fedoraBlack')">
+<button onclick="toggleAccessory('Black Sparkle Time Fedora','fedoraBlack')">
 Equip
 </button>
 </div>
@@ -948,7 +1169,7 @@ Equip
 <div class="item">
 <div class="preview">⚪</div>
 <h3>White Fedora</h3>
-<button onclick="equipAccessory('White Sparkle Time Fedora','fedoraWhite')">
+<button onclick="toggleAccessory('White Sparkle Time Fedora','fedoraWhite')">
 Equip
 </button>
 </div>
@@ -956,7 +1177,7 @@ Equip
 <div class="item">
 <div class="preview">🟡</div>
 <h3>Gold Fedora</h3>
-<button onclick="equipAccessory('Gold Sparkle Time Fedora','fedoraGold')">
+<button onclick="toggleAccessory('Gold Sparkle Time Fedora','fedoraGold')">
 Equip
 </button>
 </div>
@@ -964,7 +1185,7 @@ Equip
 <div class="item">
 <div class="preview">🩷</div>
 <h3>Pink Fedora</h3>
-<button onclick="equipAccessory('Pink Sparkle Time Fedora','fedoraPink')">
+<button onclick="toggleAccessory('Pink Sparkle Time Fedora','fedoraPink')">
 Equip
 </button>
 </div>
@@ -984,7 +1205,7 @@ Equip
 <div class="preview">❄️</div>
 <h3>Frozen Horns</h3>
 <p>Blue crystals + blue fire</p>
-<button onclick="equipAccessory('Frozen Horns','blue')">
+<button onclick="toggleAccessory('Frozen Horns','blueHorns')">
 Equip
 </button>
 </div>
@@ -993,7 +1214,7 @@ Equip
 <div class="preview">🔴</div>
 <h3>Red Frozen Horns</h3>
 <p>Red crystals + red fire</p>
-<button onclick="equipAccessory('Red Frozen Horns','red')">
+<button onclick="toggleAccessory('Red Frozen Horns','redHorns')">
 Equip
 </button>
 </div>
@@ -1002,7 +1223,7 @@ Equip
 <div class="preview">🟢</div>
 <h3>Green Frozen Horns</h3>
 <p>Green crystals + green fire</p>
-<button onclick="equipAccessory('Green Frozen Horns','green')">
+<button onclick="toggleAccessory('Green Frozen Horns','greenHorns')">
 Equip
 </button>
 </div>
@@ -1019,9 +1240,9 @@ Equip
 <div class="grid">
 
 <div class="item">
-<div class="preview">V</div>
+<div class="preview">✨</div>
 <h3>Sparkle Time Valkyrie</h3>
-<button onclick="equipAccessory('Sparkle Time Valkyrie','goldValk')">
+<button onclick="toggleAccessory('Sparkle Time Valkyrie','goldValk')">
 Equip
 </button>
 </div>
@@ -1029,7 +1250,7 @@ Equip
 <div class="item">
 <div class="preview">🔴</div>
 <h3>Red Valkyrie</h3>
-<button onclick="equipAccessory('Red Valkyrie','redValk')">
+<button onclick="toggleAccessory('Red Valkyrie','redValk')">
 Equip
 </button>
 </div>
@@ -1037,7 +1258,7 @@ Equip
 <div class="item">
 <div class="preview">🔵</div>
 <h3>Blue Valkyrie</h3>
-<button onclick="equipAccessory('Blue Valkyrie','blueValk')">
+<button onclick="toggleAccessory('Blue Valkyrie','blueValk')">
 Equip
 </button>
 </div>
@@ -1045,7 +1266,7 @@ Equip
 <div class="item">
 <div class="preview">🟢</div>
 <h3>Green Valkyrie</h3>
-<button onclick="equipAccessory('Green Valkyrie','greenValk')">
+<button onclick="toggleAccessory('Green Valkyrie','greenValk')">
 Equip
 </button>
 </div>
@@ -1053,7 +1274,7 @@ Equip
 <div class="item">
 <div class="preview">🟣</div>
 <h3>Purple Valkyrie</h3>
-<button onclick="equipAccessory('Purple Valkyrie','purpleValk')">
+<button onclick="toggleAccessory('Purple Valkyrie','purpleValk')">
 Equip
 </button>
 </div>
@@ -1061,7 +1282,35 @@ Equip
 <div class="item">
 <div class="preview">⚫</div>
 <h3>Black Valkyrie</h3>
-<button onclick="equipAccessory('Black Valkyrie','blackValk')">
+<button onclick="toggleAccessory('Black Valkyrie','blackValk')">
+Equip
+</button>
+</div>
+
+</div>
+</div>
+
+<!-- BODY -->
+
+<div class="category">
+
+<h2>Body</h2>
+
+<div class="grid">
+
+<div class="item">
+<div class="preview">🦿</div>
+<h3>Blue Korblox Style</h3>
+<p>Small blue metallic leg</p>
+<button onclick="toggleKorblox()">
+Equip
+</button>
+</div>
+
+<div class="item">
+<div class="preview">◻️</div>
+<h3>Headless Style</h3>
+<button onclick="toggleHeadless()">
 Equip
 </button>
 </div>
@@ -1080,7 +1329,7 @@ Equip
 <div class="item">
 <div class="preview">⚔️</div>
 <h3>Classic Sword</h3>
-<button onclick="equipGear('⚔️','Classic Sword')">
+<button onclick="toggleGear('⚔️','Classic Sword')">
 Equip
 </button>
 </div>
@@ -1088,7 +1337,7 @@ Equip
 <div class="item">
 <div class="preview">🗡️</div>
 <h3>Dark Blade</h3>
-<button onclick="equipGear('🗡️','Dark Blade')">
+<button onclick="toggleGear('🗡️','Dark Blade')">
 Equip
 </button>
 </div>
@@ -1096,7 +1345,7 @@ Equip
 <div class="item">
 <div class="preview">🛡️</div>
 <h3>Shield</h3>
-<button onclick="equipGear('🛡️','Shield')">
+<button onclick="toggleGear('🛡️','Shield')">
 Equip
 </button>
 </div>
@@ -1104,7 +1353,7 @@ Equip
 <div class="item">
 <div class="preview">🔨</div>
 <h3>Builder Hammer</h3>
-<button onclick="equipGear('🔨','Builder Hammer')">
+<button onclick="toggleGear('🔨','Builder Hammer')">
 Equip
 </button>
 </div>
@@ -1112,7 +1361,7 @@ Equip
 <div class="item">
 <div class="preview">🎸</div>
 <h3>Guitar</h3>
-<button onclick="equipGear('🎸','Guitar')">
+<button onclick="toggleGear('🎸','Guitar')">
 Equip
 </button>
 </div>
@@ -1120,7 +1369,7 @@ Equip
 <div class="item">
 <div class="preview">🏹</div>
 <h3>Classic Bow</h3>
-<button onclick="equipGear('🏹','Classic Bow')">
+<button onclick="toggleGear('🏹','Classic Bow')">
 Equip
 </button>
 </div>
@@ -1128,63 +1377,8 @@ Equip
 <div class="item">
 <div class="preview">🔮</div>
 <h3>Magic Staff</h3>
-<button onclick="equipGear('🔮','Magic Staff')">
+<button onclick="toggleGear('🔮','Magic Staff')">
 Equip
-</button>
-</div>
-
-</div>
-</div>
-
-<!-- BODY -->
-
-<div class="category">
-
-<h2>Body</h2>
-
-<div class="grid">
-
-<div class="item">
-<div class="preview">🦿</div>
-<h3>Blue Korblox-Style Leg</h3>
-<p>Small blue metallic leg</p>
-<button onclick="toggleKorblox()">
-Equip
-</button>
-</div>
-
-<div class="item">
-<div class="preview">HEAD</div>
-<h3>Headless Style</h3>
-<button onclick="toggleHeadless()">
-Equip
-</button>
-</div>
-
-</div>
-</div>
-
-<!-- MTB CLOTHES -->
-
-<div class="category">
-
-<h2>MTB Clothes</h2>
-
-<div class="grid">
-
-<div class="item">
-<div class="preview">MTB</div>
-<h3>MTB Shirt</h3>
-<button onclick="showMessage('MTB Shirt selected!')">
-Select
-</button>
-</div>
-
-<div class="item">
-<div class="preview">👖</div>
-<h3>MTB Pants</h3>
-<button onclick="showMessage('MTB Pants selected!')">
-Select
 </button>
 </div>
 
@@ -1200,43 +1394,56 @@ Select
 <script>
 
 /* =====================================================
-   SAVE DATA
+   SAVING
 ===================================================== */
 
-const SAVE_KEY = "MTB_REVIVALS_AVATAR";
+const SAVE_KEY = "MTB_REVIVALS_AVATAR_V3";
 
-let avatarData =
-    JSON.parse(
-        localStorage.getItem(SAVE_KEY)
-    ) || {
-        coins:1000,
-        face:"classicSmile",
-        accessories:[],
-        gear:null,
-        korblox:false,
-        headless:false
-    };
+let data =
+JSON.parse(localStorage.getItem(SAVE_KEY)) || {
 
-let coins = avatarData.coins;
+    coins:1000,
 
-let equipped =
-    avatarData.accessories || [];
+    face:"classicSmile",
+
+    shirt:{
+        class:"mtbShirt",
+        name:"MTB Shirt"
+    },
+
+    pants:{
+        class:"mtbPants",
+        name:"MTB Pants"
+    },
+
+    accessories:[],
+
+    gear:null,
+
+    korblox:false,
+
+    headless:false
+};
+
+let coins = data.coins || 1000;
+
+let accessories =
+data.accessories || [];
 
 
 /* =====================================================
    SAVE
 ===================================================== */
 
-function saveAvatar(){
+function save(){
 
-    avatarData.coins = coins;
+    data.coins = coins;
 
-    avatarData.accessories =
-        equipped;
+    data.accessories = accessories;
 
     localStorage.setItem(
         SAVE_KEY,
-        JSON.stringify(avatarData)
+        JSON.stringify(data)
     );
 }
 
@@ -1253,9 +1460,136 @@ function earnCoins(){
         "coins"
     ).textContent = coins;
 
-    saveAvatar();
+    save();
 
-    showMessage("+100 MTB Coins!");
+    message("+100 MTB Coins!");
+}
+
+
+/* =====================================================
+   MESSAGE
+===================================================== */
+
+function message(text){
+
+    const box =
+    document.getElementById("message");
+
+    box.textContent = text;
+
+    box.style.display = "block";
+
+    setTimeout(()=>{
+        box.style.display = "none";
+    },2000);
+}
+
+
+/* =====================================================
+   FACES
+===================================================== */
+
+function setFace(type){
+
+    data.face = type;
+
+    renderFace();
+
+    save();
+
+    message("Face equipped!");
+}
+
+function renderFace(){
+
+    const face =
+    document.getElementById("face");
+
+    face.className =
+    "face " + data.face;
+
+    face.innerHTML = `
+        <span class="eye leftEye"></span>
+        <span class="eye rightEye"></span>
+        <span class="mouth"></span>
+    `;
+}
+
+
+/* =====================================================
+   SHIRTS
+===================================================== */
+
+function setClothes(className,name){
+
+    data.shirt = {
+        class:className,
+        name:name
+    };
+
+    renderClothes();
+
+    save();
+
+    message(name + " equipped!");
+}
+
+function renderClothes(){
+
+    const shirt =
+    document.getElementById("shirt");
+
+    shirt.className =
+    "shirt " + data.shirt.class;
+
+    if(data.shirt.class === "mtbShirt"){
+
+        shirt.innerHTML =
+        "<span>MTB</span>";
+
+    }else if(data.shirt.class === "hellShirt"){
+
+        shirt.innerHTML =
+        "<span>MTB</span>";
+
+    }else{
+
+        shirt.innerHTML =
+        "<span>MTB</span>";
+    }
+}
+
+
+/* =====================================================
+   PANTS
+===================================================== */
+
+function setPants(className,name){
+
+    data.pants = {
+        class:className,
+        name:name
+    };
+
+    renderPants();
+
+    save();
+
+    message(name + " equipped!");
+}
+
+function renderPants(){
+
+    const pants =
+    document.getElementById("pants");
+
+    pants.className =
+    "pants " + data.pants.class;
+
+    pants.innerHTML = `
+        <div class="pantsPiece leftPants"></div>
+        <div class="pantsPiece rightPants"></div>
+    `;
 }
 
 
@@ -1263,42 +1597,114 @@ function earnCoins(){
    ACCESSORIES
 ===================================================== */
 
-function equipAccessory(name,type){
+function toggleAccessory(name,type){
 
-    if(equipped.includes(name)){
-
-        equipped =
-            equipped.filter(
-                item => item !== name
-            );
-
-        saveAvatar();
-        updateAvatar();
-
-        showMessage(
-            name + " removed."
-        );
-
-        return;
-    }
-
-    if(equipped.length >= 3){
-
-        showMessage(
-            "Maximum 3 accessories/gear!"
-        );
-
-        return;
-    }
-
-    equipped.push(name);
-
-    saveAvatar();
-    updateAvatar();
-
-    showMessage(
-        name + " equipped and saved!"
+    const existing =
+    accessories.find(
+        a => a.name === name
     );
+
+    if(existing){
+
+        accessories =
+        accessories.filter(
+            a => a.name !== name
+        );
+
+        save();
+        renderAccessories();
+        updateList();
+
+        message(name + " removed!");
+
+        return;
+    }
+
+    if(accessories.length >= 3){
+
+        message(
+            "You can only wear 3 accessories!"
+        );
+
+        return;
+    }
+
+    accessories.push({
+        name:name,
+        type:type
+    });
+
+    save();
+
+    renderAccessories();
+    updateList();
+
+    message(name + " equipped!");
+}
+
+
+/* =====================================================
+   ACCESSORY RENDERING
+===================================================== */
+
+function renderAccessories(){
+
+    const slots = [
+        document.getElementById("slot1"),
+        document.getElementById("slot2"),
+        document.getElementById("slot3")
+    ];
+
+    slots.forEach(
+        slot => slot.innerHTML = ""
+    );
+
+    accessories
+    .slice(0,3)
+    .forEach((item,index)=>{
+
+        const slot = slots[index];
+
+        /* FEDORA */
+
+        if(item.type.startsWith("fedora")){
+
+            slot.innerHTML = `
+                <div class="fedora ${item.type}">
+                    <div class="fedoraTop"></div>
+                    <div class="fedoraBottom"></div>
+                </div>
+            `;
+        }
+
+        /* VALKYRIE */
+
+        else if(item.type.endsWith("Valk")){
+
+            slot.innerHTML = `
+                <div class="valk ${item.type}">
+                    <div class="valkWing left"></div>
+                    <div class="valkWing right"></div>
+                </div>
+            `;
+        }
+
+        /* HORNS */
+
+        else if(item.type.endsWith("Horns")){
+
+            let fireIcon = "🔥";
+
+            slot.innerHTML = `
+                <div class="frozenHorns ${item.type}">
+                    <div class="horn left"></div>
+                    <div class="horn right"></div>
+                    <div class="fire">${fireIcon}</div>
+                </div>
+            `;
+        }
+
+    });
 }
 
 
@@ -1306,55 +1712,57 @@ function equipAccessory(name,type){
    GEAR
 ===================================================== */
 
-const gearNames = [
-    "Classic Sword",
-    "Dark Blade",
-    "Shield",
-    "Builder Hammer",
-    "Guitar",
-    "Classic Bow",
-    "Magic Staff"
-];
+function toggleGear(icon,name){
 
-function equipGear(icon,name){
+    const existing =
+    accessories.find(
+        a => a.name === name
+    );
 
-    if(equipped.includes(name)){
+    if(existing){
 
-        equipped =
-            equipped.filter(
-                item => item !== name
-            );
+        accessories =
+        accessories.filter(
+            a => a.name !== name
+        );
 
-        avatarData.gear = null;
+        data.gear = null;
 
         document.getElementById(
             "gear"
         ).textContent = "";
 
-        saveAvatar();
-        updateAvatar();
+        document.getElementById(
+            "avatar"
+        ).classList.remove(
+            "holdingGear"
+        );
 
-        showMessage(
-            name + " removed."
+        save();
+        updateList();
+
+        message(name + " removed!");
+
+        return;
+    }
+
+    if(accessories.length >= 3){
+
+        message(
+            "You can only wear 3 accessories/gear!"
         );
 
         return;
     }
 
-    if(equipped.length >= 3){
-
-        showMessage(
-            "Maximum 3 accessories/gear!"
-        );
-
-        return;
-    }
-
-    equipped.push(name);
-
-    avatarData.gear = {
+    accessories.push({
         name:name,
-        icon:icon
+        type:"gear"
+    });
+
+    data.gear = {
+        icon:icon,
+        name:name
     };
 
     document.getElementById(
@@ -1367,55 +1775,10 @@ function equipGear(icon,name){
         "holdingGear"
     );
 
-    saveAvatar();
+    save();
     updateList();
 
-    showMessage(
-        name + " equipped and saved!"
-    );
-}
-
-
-/* =====================================================
-   GEAR CHECK
-===================================================== */
-
-function hasGear(){
-
-    return equipped.some(
-        item =>
-            gearNames.includes(item)
-    );
-}
-
-
-/* =====================================================
-   FACE
-===================================================== */
-
-function setFace(type,notify=true){
-
-    const face =
-        document.getElementById(
-            "face"
-        );
-
-    face.className =
-        "face " + type;
-
-    face.innerHTML = `
-        <span class="eye leftEye"></span>
-        <span class="eye rightEye"></span>
-        <span class="mouth"></span>
-    `;
-
-    avatarData.face = type;
-
-    saveAvatar();
-
-    if(notify){
-        showMessage("Face saved!");
-    }
+    message(name + " equipped!");
 }
 
 
@@ -1425,36 +1788,30 @@ function setFace(type,notify=true){
 
 function toggleKorblox(){
 
+    data.korblox =
+    !data.korblox;
+
     const leg =
-        document.getElementById(
-            "leftLeg"
-        );
+    document.getElementById("leftLeg");
 
-    avatarData.korblox =
-        !avatarData.korblox;
+    if(data.korblox){
 
-    if(avatarData.korblox){
+        leg.classList.add("korblox");
 
-        leg.classList.add(
-            "korblox"
-        );
-
-        showMessage(
+        message(
             "Blue Korblox-style leg equipped!"
         );
 
     }else{
 
-        leg.classList.remove(
-            "korblox"
-        );
+        leg.classList.remove("korblox");
 
-        showMessage(
+        message(
             "Korblox-style leg removed!"
         );
     }
 
-    saveAvatar();
+    save();
 }
 
 
@@ -1464,262 +1821,45 @@ function toggleKorblox(){
 
 function toggleHeadless(){
 
+    data.headless =
+    !data.headless;
+
     const head =
-        document.getElementById(
-            "head"
-        );
+    document.getElementById("head");
 
-    const face =
-        document.getElementById(
-            "face"
-        );
+    if(data.headless){
 
-    avatarData.headless =
-        !avatarData.headless;
+        head.classList.add("headless");
 
-    if(avatarData.headless){
-
-        head.classList.add(
-            "headless"
-        );
-
-        face.style.display =
-            "none";
-
-        showMessage(
-            "Headless style saved!"
+        message(
+            "Headless style equipped!"
         );
 
     }else{
 
-        head.classList.remove(
-            "headless"
-        );
+        head.classList.remove("headless");
 
-        face.style.display =
-            "block";
-
-        showMessage(
+        message(
             "Head restored!"
         );
     }
 
-    saveAvatar();
+    save();
 }
 
 
 /* =====================================================
-   UPDATE AVATAR
-===================================================== */
-
-function updateAvatar(){
-
-    const accessory =
-        document.getElementById(
-            "headAccessory"
-        );
-
-    const fire =
-        document.getElementById(
-            "fire"
-        );
-
-    accessory.className =
-        "accessory";
-
-    fire.className =
-        "accessory";
-
-    fire.textContent = "";
-
-
-    /* HORNS */
-
-    if(equipped.includes("Frozen Horns")){
-
-        accessory.className =
-            "accessory frozenHorns blueHorns";
-
-        fire.className =
-            "accessory fire";
-
-        fire.textContent = "🔥";
-    }
-
-    if(equipped.includes("Red Frozen Horns")){
-
-        accessory.className =
-            "accessory frozenHorns redHorns";
-
-        fire.className =
-            "accessory fire";
-
-        fire.textContent = "🔥";
-    }
-
-    if(equipped.includes("Green Frozen Horns")){
-
-        accessory.className =
-            "accessory frozenHorns greenHorns";
-
-        fire.className =
-            "accessory fire";
-
-        fire.textContent = "🔥";
-    }
-
-
-    /* VALKYRIES */
-
-    const valkMap = {
-
-        "Sparkle Time Valkyrie":"goldValk",
-        "Red Valkyrie":"redValk",
-        "Blue Valkyrie":"blueValk",
-        "Green Valkyrie":"greenValk",
-        "Purple Valkyrie":"purpleValk",
-        "Black Valkyrie":"blackValk"
-
-    };
-
-    for(
-        const name in valkMap
-    ){
-
-        if(equipped.includes(name)){
-
-            accessory.className =
-                "accessory valk " +
-                valkMap[name];
-        }
-    }
-
-
-    /* FEDORAS */
-
-    const fedoraMap = {
-
-        "Sparkle Time Fedora":"fedoraRainbow",
-        "Red Sparkle Time Fedora":"fedoraRed",
-        "Blue Sparkle Time Fedora":"fedoraBlue",
-        "Green Sparkle Time Fedora":"fedoraGreen",
-        "Purple Sparkle Time Fedora":"fedoraPurple",
-        "Black Sparkle Time Fedora":"fedoraBlack",
-        "White Sparkle Time Fedora":"fedoraWhite",
-        "Gold Sparkle Time Fedora":"fedoraGold",
-        "Pink Sparkle Time Fedora":"fedoraPink"
-
-    };
-
-    for(
-        const name in fedoraMap
-    ){
-
-        if(equipped.includes(name)){
-
-            accessory.className =
-                "accessory fedora " +
-                fedoraMap[name];
-        }
-    }
-
-
-    /* GEAR */
-
-    const avatar =
-        document.getElementById(
-            "avatar"
-        );
-
-    if(hasGear()){
-
-        avatar.classList.add(
-            "holdingGear"
-        );
-
-    }else{
-
-        avatar.classList.remove(
-            "holdingGear"
-        );
-
-        document.getElementById(
-            "gear"
-        ).textContent = "";
-
-    }
-
-
-    /* KORBLOX */
-
-    const leg =
-        document.getElementById(
-            "leftLeg"
-        );
-
-    if(avatarData.korblox){
-
-        leg.classList.add(
-            "korblox"
-        );
-
-    }else{
-
-        leg.classList.remove(
-            "korblox"
-        );
-    }
-
-
-    /* HEADLESS */
-
-    const head =
-        document.getElementById(
-            "head"
-        );
-
-    const face =
-        document.getElementById(
-            "face"
-        );
-
-    if(avatarData.headless){
-
-        head.classList.add(
-            "headless"
-        );
-
-        face.style.display =
-            "none";
-
-    }else{
-
-        head.classList.remove(
-            "headless"
-        );
-
-        face.style.display =
-            "block";
-    }
-
-
-    updateList();
-    saveAvatar();
-}
-
-
-/* =====================================================
-   LIST
+   EQUIPPED LIST
 ===================================================== */
 
 function updateList(){
 
     const list =
-        document.getElementById(
-            "equippedList"
-        );
+    document.getElementById(
+        "equippedList"
+    );
 
-    if(equipped.length === 0){
+    if(accessories.length === 0){
 
         list.textContent = "None";
 
@@ -1727,11 +1867,12 @@ function updateList(){
     }
 
     list.innerHTML =
-        equipped
-        .map(
-            item => "• " + item
-        )
-        .join("<br>");
+    accessories
+    .map(
+        (item,index) =>
+        `${index+1}. ${item.name}`
+    )
+    .join("<br>");
 }
 
 
@@ -1741,25 +1882,21 @@ function updateList(){
 
 function clearAccessories(){
 
-    equipped = [];
+    accessories = [];
 
-    avatarData.accessories = [];
-
-    avatarData.gear = null;
+    data.gear = null;
 
     document.getElementById(
-        "headAccessory"
-    ).className =
-        "accessory";
+        "slot1"
+    ).innerHTML = "";
 
     document.getElementById(
-        "fire"
-    ).className =
-        "accessory";
+        "slot2"
+    ).innerHTML = "";
 
     document.getElementById(
-        "fire"
-    ).textContent = "";
+        "slot3"
+    ).innerHTML = "";
 
     document.getElementById(
         "gear"
@@ -1771,11 +1908,12 @@ function clearAccessories(){
         "holdingGear"
     );
 
-    saveAvatar();
+    save();
+
     updateList();
 
-    showMessage(
-        "Accessories and gear cleared."
+    message(
+        "All hats and gear removed!"
     );
 }
 
@@ -1786,9 +1924,11 @@ function clearAccessories(){
 
 function resetAvatar(){
 
-    if(!confirm(
-        "Reset your saved avatar?"
-    )){
+    if(
+        !confirm(
+            "Reset your saved avatar?"
+        )
+    ){
         return;
     }
 
@@ -1801,60 +1941,52 @@ function resetAvatar(){
 
 
 /* =====================================================
-   MESSAGE
-===================================================== */
-
-function showMessage(text){
-
-    const box =
-        document.getElementById(
-            "message"
-        );
-
-    box.textContent = text;
-
-    box.style.display =
-        "block";
-
-    setTimeout(
-        () => {
-            box.style.display =
-                "none";
-        },
-        2000
-    );
-}
-
-
-/* =====================================================
-   LOAD SAVED AVATAR
+   LOAD EVERYTHING
 ===================================================== */
 
 function loadAvatar(){
 
     document.getElementById(
         "coins"
-    ).textContent =
-        coins;
+    ).textContent = coins;
 
-    setFace(
-        avatarData.face ||
-        "classicSmile",
-        false
-    );
+    renderFace();
 
-    if(
-        avatarData.gear
-    ){
+    renderClothes();
+
+    renderPants();
+
+    renderAccessories();
+
+    updateList();
+
+    if(data.korblox){
+
+        document.getElementById(
+            "leftLeg"
+        ).classList.add("korblox");
+    }
+
+    if(data.headless){
+
+        document.getElementById(
+            "head"
+        ).classList.add("headless");
+    }
+
+    if(data.gear){
 
         document.getElementById(
             "gear"
         ).textContent =
-            avatarData.gear.icon;
+        data.gear.icon;
 
+        document.getElementById(
+            "avatar"
+        ).classList.add(
+            "holdingGear"
+        );
     }
-
-    updateAvatar();
 }
 
 
