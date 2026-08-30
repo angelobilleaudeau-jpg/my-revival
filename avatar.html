@@ -4,3181 +4,845 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>MTB REVIVALS - Avatar</title>
 
 <style>
-* {
-    box-sizing: border-box;
+*{box-sizing:border-box}
+
+body{
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#e8e8e8;
+    color:#222;
 }
 
-body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: #e9e9e9;
-    color: #333;
+header{
+    background:#c6c6c6;
+    border-bottom:3px solid #888;
+    padding:12px;
 }
 
-/* =========================
-   HEADER
-========================= */
-
-header {
-    background: linear-gradient(#f7f7f7, #cfcfcf);
-    border-bottom: 1px solid #999;
+.logo{
+    text-align:center;
+    font-size:28px;
+    font-weight:bold;
+    margin-bottom:12px;
 }
 
-.header-inner {
-    max-width: 1100px;
-    margin: auto;
-    padding: 8px 10px 0;
+nav{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:4px;
 }
 
-.logo {
-    font-size: 25px;
-    font-weight: bold;
-    padding: 5px 0 10px;
+nav a{
+    color:#222;
+    text-decoration:none;
+    font-weight:bold;
+    padding:9px 13px;
+    border-radius:4px;
 }
 
-nav {
-    display: flex;
-    flex-wrap: wrap;
+nav a:hover{background:#aaa}
+
+.coinbar{
+    max-width:1100px;
+    margin:15px auto 0;
+    padding:12px 18px;
+    background:#fff;
+    border:1px solid #aaa;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
 
-nav a {
-    color: #444;
-    text-decoration: none;
-    padding: 9px 13px;
+.coins{
+    font-size:18px;
+    font-weight:bold;
 }
 
-nav a:hover {
-    background: #ddd;
+.coin{
+    display:inline-block;
+    width:20px;
+    height:20px;
+    background:#e6aa00;
+    border:2px solid #9b7000;
+    border-radius:50%;
+    vertical-align:middle;
 }
 
-nav a.active {
-    background: white;
-    border: 1px solid #aaa;
-    color: #1683c5;
+.container{
+    max-width:1100px;
+    margin:20px auto;
+    padding:0 15px;
 }
 
-/* =========================
-   COINS
-========================= */
-
-.coin-bar {
-    max-width: 1100px;
-    margin: 12px auto 0;
-    padding: 0 10px;
+.title{
+    background:#fff;
+    border:1px solid #aaa;
+    padding:15px;
+    text-align:center;
 }
 
-.coins {
-    display: inline-block;
-    padding: 8px 15px;
-
-    background: linear-gradient(
-        #fff9a0,
-        #e5bd16
-    );
-
-    border: 1px solid #a18400;
-    border-radius: 4px;
-
-    font-weight: bold;
-    color: #222;
-
-    box-shadow:
-        0 1px 3px rgba(0,0,0,.25);
+.avatarLayout{
+    display:grid;
+    grid-template-columns:330px 1fr;
+    gap:20px;
+    margin-top:20px;
 }
 
-#coinAmount {
-    margin-left: 5px;
+.avatarBox,
+.items{
+    background:#fff;
+    border:1px solid #aaa;
+    padding:20px;
 }
 
-/* =========================
-   MAIN
-========================= */
+.avatarBox{text-align:center}
 
-.container {
-    max-width: 1100px;
-    margin: 20px auto;
-    padding: 0 10px;
+.avatar{
+    position:relative;
+    width:210px;
+    height:390px;
+    margin:15px auto;
 }
 
-.title {
-    background: linear-gradient(#666, #444);
-    color: white;
-    border: 1px solid #333;
-    padding: 11px 13px;
-    font-size: 18px;
-    font-weight: bold;
+.head{
+    position:absolute;
+    width:100px;
+    height:100px;
+    background:#f1c27d;
+    border:3px solid #333;
+    border-radius:10px;
+    top:20px;
+    left:55px;
+    z-index:5;
 }
 
-/* =========================
-   AVATAR
-========================= */
-
-.avatar-section {
-    background: white;
-    border: 1px solid #aaa;
-    margin-top: 15px;
-    padding: 20px;
+.face{
+    position:absolute;
+    width:100%;
+    top:40px;
+    text-align:center;
+    font-size:25px;
+    z-index:8;
 }
 
-.avatar-area {
-    min-height: 500px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background:
-        linear-gradient(
-            135deg,
-            #eeeeee,
-            #d1d1d1
-        );
-
-    border: 1px solid #aaa;
-    overflow: hidden;
+.body{
+    position:absolute;
+    width:115px;
+    height:125px;
+    background:#1683ff;
+    border:3px solid #333;
+    top:120px;
+    left:48px;
+    z-index:2;
 }
 
-.avatar {
-    position: relative;
-    width: 280px;
-    height: 460px;
+.arm{
+    position:absolute;
+    width:38px;
+    height:115px;
+    background:#f1c27d;
+    border:3px solid #333;
+    top:125px;
 }
 
-/* =========================
-   HEAD
-========================= */
+.leftArm{left:7px}
+.rightArm{right:7px}
 
-.head {
-    position: absolute;
-
-    width: 110px;
-    height: 110px;
-
-    left: 85px;
-    top: 75px;
-
-    background: #f2c29b;
-
-    border: 3px solid #555;
-
-    border-radius: 4px;
-
-    z-index: 5;
+.leg{
+    position:absolute;
+    width:50px;
+    height:120px;
+    background:#222;
+    border:3px solid #333;
+    top:245px;
 }
 
-/* =========================
-   FACES
-========================= */
+.leftLeg{left:52px}
+.rightLeg{right:52px}
 
-.face {
-    position: absolute;
-    inset: 0;
-    z-index: 10;
+.korblox{
+    background:linear-gradient(90deg,#171717,#555,#1b1b1b)!important;
+    border-color:#111!important;
 }
 
-.eye {
-    position: absolute;
-
-    width: 10px;
-    height: 14px;
-
-    top: 38px;
-
-    background: #222;
-
-    border-radius: 2px;
+.korblox:after{
+    content:"";
+    position:absolute;
+    width:8px;
+    height:100%;
+    background:#777;
+    left:15px;
+    top:0;
+    opacity:.5;
 }
 
-.eye-left {
-    left: 27px;
+/* ACCESSORIES */
+
+.accessory{
+    position:absolute;
+    pointer-events:none;
+    z-index:20;
 }
 
-.eye-right {
-    right: 27px;
+/* Frozen crystalline horns */
+
+.frozenHorns{
+    width:160px;
+    height:90px;
+    top:-42px;
+    left:25px;
 }
 
-.smile {
-    position: absolute;
-
-    width: 38px;
-    height: 18px;
-
-    left: 33px;
-    top: 65px;
-
-    border-bottom: 4px solid #222;
-
-    border-radius: 50%;
-}
-
-.face-big-smile .smile {
-    width: 48px;
-    height: 25px;
-
-    left: 28px;
-
-    border-bottom-width: 7px;
-}
-
-.face-neutral .smile {
-    width: 35px;
-    height: 0;
-
-    top: 76px;
-
-    border-radius: 0;
-}
-
-.face-sad .smile {
-    top: 78px;
-
-    border: 0;
-    border-top: 4px solid #222;
-}
-
-.face-surprised .smile,
-.face-shocked .smile {
-    width: 20px;
-    height: 25px;
-
-    left: 45px;
-    top: 68px;
-
-    border: 4px solid #222;
-
-    border-radius: 50%;
-}
-
-.face-angry .eye-left {
-    transform: rotate(25deg);
-}
-
-.face-angry .eye-right {
-    transform: rotate(-25deg);
-}
-
-.face-angry .smile {
-    top: 78px;
-
-    border: 0;
-    border-top: 4px solid #222;
-}
-
-.face-sleepy .eye {
-    height: 3px;
-    top: 44px;
-    border-radius: 5px;
-}
-
-.face-wink .eye-right {
-    height: 3px;
-    top: 44px;
-    border-radius: 5px;
-}
-
-.face-silly .eye-left {
-    transform: rotate(15deg);
-}
-
-.face-silly .eye-right {
-    transform: rotate(-15deg);
-}
-
-.face-evil .eye {
-    background: #a00000;
-    box-shadow: 0 0 5px red;
-}
-
-.face-cool .eye {
-    width: 28px;
-    height: 10px;
-    top: 38px;
-    background: #111;
-}
-
-.face-cool .eye-left {
-    left: 15px;
-}
-
-.face-cool .eye-right {
-    right: 15px;
-}
-
-.face-nerd .eye {
-    width: 20px;
-    height: 20px;
-
-    top: 34px;
-
-    background: transparent;
-
-    border: 3px solid #222;
-
-    border-radius: 50%;
-}
-
-.face-nerd .eye-left {
-    left: 18px;
-}
-
-.face-nerd .eye-right {
-    right: 18px;
-}
-
-.face-scared .eye {
-    width: 18px;
-    height: 20px;
-    border-radius: 50%;
-}
-
-.face-scared .eye-left {
-    left: 20px;
-}
-
-.face-scared .eye-right {
-    right: 20px;
-}
-
-/* =========================
-   BODY
-========================= */
-
-.body {
-    position: absolute;
-
-    width: 125px;
-    height: 135px;
-
-    left: 77px;
-    top: 185px;
-
-    background: #1683ff;
-
-    border: 3px solid #555;
-
-    z-index: 2;
-}
-
-.shirt-logo {
-    position: absolute;
-
-    width: 100%;
-
-    top: 48px;
-
-    text-align: center;
-
-    color: white;
-
-    font-size: 27px;
-
-    font-weight: 900;
-
-    letter-spacing: 2px;
-
-    text-shadow:
-        2px 2px #111;
-}
-
-.shirt-star {
-    position: absolute;
-
-    width: 55px;
-    height: 55px;
-
-    left: 32px;
-    top: 35px;
-
-    background: white;
-
-    clip-path: polygon(
-        50% 0,
-        61% 35%,
-        100% 35%,
-        69% 58%,
-        81% 100%,
-        50% 74%,
-        19% 100%,
-        31% 58%,
-        0 35%,
-        39% 35%
+.frozenHorns:before,
+.frozenHorns:after{
+    content:"";
+    position:absolute;
+    width:38px;
+    height:82px;
+    border:3px solid;
+    clip-path:polygon(
+        50% 0%,72% 17%,100% 30%,
+        78% 43%,94% 61%,68% 59%,
+        55% 100%,42% 63%,12% 78%,
+        22% 52%,0% 39%,28% 20%
     );
 }
 
-.shirt-flame {
-    position: absolute;
-
-    width: 100%;
-
-    top: 38px;
-
-    text-align: center;
-
-    font-size: 45px;
+.frozenHorns:before{
+    left:13px;
+    transform:rotate(-25deg);
 }
 
-.shirt-lightning {
-    position: absolute;
-
-    width: 100%;
-
-    top: 30px;
-
-    text-align: center;
-
-    font-size: 55px;
+.frozenHorns:after{
+    right:13px;
+    transform:rotate(25deg);
 }
 
-/* =========================
-   ARMS
-========================= */
-
-.arm {
-    position: absolute;
-
-    width: 45px;
-    height: 130px;
-
-    top: 188px;
-
-    background: #f2c29b;
-
-    border: 3px solid #555;
-
-    z-index: 1;
+.blueHorns:before,
+.blueHorns:after{
+    background:#b9f3ff;
+    border-color:#42b8ed;
+    box-shadow:0 0 12px #66dfff;
 }
 
-.arm-left {
-    left: 30px;
+.redHorns:before,
+.redHorns:after{
+    background:#ff4b4b;
+    border-color:#a00000;
+    box-shadow:0 0 12px #ff3333;
 }
 
-.arm-right {
-    right: 30px;
+.greenHorns:before,
+.greenHorns:after{
+    background:#53ff8b;
+    border-color:#008c3c;
+    box-shadow:0 0 12px #2dff75;
 }
 
-/* =========================
-   LEGS
-========================= */
-
-.leg {
-    position: absolute;
-
-    width: 55px;
-    height: 125px;
-
-    top: 320px;
-
-    background: #333;
-
-    border: 3px solid #555;
-
-    z-index: 1;
+.fire{
+    top:-34px;
+    left:78px;
+    width:55px;
+    height:80px;
+    font-size:45px;
+    z-index:21;
 }
 
-.leg-left {
-    left: 78px;
+.blueFire{
+    filter:hue-rotate(150deg) saturate(2);
 }
 
-.leg-right {
-    right: 78px;
+.greenFire{
+    filter:hue-rotate(65deg) saturate(2);
 }
 
-.pants-logo {
-    position: absolute;
+/* Valkyrie */
 
-    width: 100%;
-
-    top: 45px;
-
-    text-align: center;
-
-    font-size: 12px;
-
-    font-weight: 900;
-
-    color: white;
+.valk{
+    top:-35px;
+    left:35px;
+    width:140px;
+    height:55px;
+    z-index:19;
 }
 
-.pants-star {
-    position: absolute;
-
-    width: 35px;
-    height: 35px;
-
-    left: 7px;
-    top: 35px;
-
-    background: white;
-
-    clip-path: polygon(
-        50% 0,
-        61% 35%,
-        100% 35%,
-        69% 58%,
-        81% 100%,
-        50% 74%,
-        19% 100%,
-        31% 58%,
-        0 35%,
-        39% 35%
-    );
+.valk:before,
+.valk:after{
+    content:"";
+    position:absolute;
+    width:48px;
+    height:60px;
+    border:4px solid #777;
+    border-radius:45% 45% 10% 10%;
+    background:#ddd;
 }
 
-.pants-flame {
-    position: absolute;
-
-    width: 100%;
-
-    top: 35px;
-
-    text-align: center;
-
-    font-size: 28px;
+.valk:before{
+    left:2px;
+    transform:rotate(-25deg);
 }
 
-.pants-lightning {
-    position: absolute;
-
-    width: 100%;
-
-    top: 25px;
-
-    text-align: center;
-
-    font-size: 35px;
+.valk:after{
+    right:2px;
+    transform:rotate(25deg);
 }
 
-/* =========================
-   SEASON PANTS
-========================= */
-
-.season-pants {
-    animation: seasons 12s infinite;
+.goldValk:before,.goldValk:after{
+    background:#f5d76e;
+    border-color:#9d7610;
 }
 
-@keyframes seasons {
+.redValk:before,.redValk:after{
+    background:#e34b4b;
+    border-color:#7d1111;
+}
 
-    0%,24% {
-        background:
-            linear-gradient(
-                90deg,
-                #67d477,
-                #f2a5d4
-            );
+.blueValk:before,.blueValk:after{
+    background:#4d9cff;
+    border-color:#174e9b;
+}
+
+.greenValk:before,.greenValk:after{
+    background:#4ddd78;
+    border-color:#167536;
+}
+
+.purpleValk:before,.purpleValk:after{
+    background:#a76bea;
+    border-color:#59208e;
+}
+
+.blackValk:before,.blackValk:after{
+    background:#333;
+    border-color:#111;
+}
+
+/* HELD GEAR */
+
+.gear{
+    position:absolute;
+    z-index:30;
+    font-size:45px;
+    top:145px;
+    right:-15px;
+    transform:rotate(-15deg);
+}
+
+/* HEADLESS */
+
+.headless{
+    background:transparent!important;
+    border-color:transparent!important;
+}
+
+.category{
+    margin-bottom:25px;
+}
+
+.category h2{
+    background:#d0d0d0;
+    border-bottom:2px solid #999;
+    padding:10px;
+    margin:0 0 12px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(145px,1fr));
+    gap:10px;
+}
+
+.item{
+    background:#f5f5f5;
+    border:1px solid #aaa;
+    padding:10px;
+    text-align:center;
+}
+
+.preview{
+    height:90px;
+    background:#ddd;
+    border:1px solid #aaa;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:38px;
+    margin-bottom:8px;
+}
+
+.item h3{
+    font-size:14px;
+    margin:5px 0;
+}
+
+.item p{
+    font-size:11px;
+    color:#666;
+    min-height:25px;
+}
+
+button{
+    border:0;
+    background:#1683ff;
+    color:#fff;
+    padding:8px 12px;
+    border-radius:4px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+button:hover{background:#006bd6}
+
+.remove{
+    background:#777;
+}
+
+.message{
+    position:fixed;
+    left:50%;
+    bottom:20px;
+    transform:translateX(-50%);
+    background:#333;
+    color:#fff;
+    padding:12px 20px;
+    border-radius:5px;
+    display:none;
+    z-index:100;
+}
+
+.equippedList{
+    text-align:left;
+    background:#eee;
+    border:1px solid #aaa;
+    padding:10px;
+    min-height:45px;
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+    color:#666;
+}
+
+@media(max-width:700px){
+    .avatarLayout{grid-template-columns:1fr}
+    .coinbar{
+        margin-left:15px;
+        margin-right:15px;
     }
-
-    25%,49% {
-        background:
-            linear-gradient(
-                90deg,
-                #18bde9,
-                #f4df54
-            );
+    nav{
+        display:grid;
+        grid-template-columns:repeat(2,1fr);
     }
-
-    50%,74% {
-        background:
-            linear-gradient(
-                90deg,
-                #8a4218,
-                #df7a1d
-            );
-    }
-
-    75%,100% {
-        background:
-            linear-gradient(
-                90deg,
-                #69d8ff,
-                #eafaff
-            );
-    }
-}
-
-/* =========================
-   ACCESSORIES
-========================= */
-
-.accessory {
-    position: absolute;
-    inset: 0;
-
-    pointer-events: none;
-}
-
-/* =========================
-   FEDORAS
-========================= */
-
-.fedora {
-    position: absolute;
-
-    width: 150px;
-    height: 70px;
-
-    left: 65px;
-    top: 28px;
-
-    border-radius:
-        50% 50% 20% 20%;
-
-    border:
-        3px solid rgba(0,0,0,.35);
-
-    z-index: 20;
-
-    box-shadow:
-        inset 0 8px 12px
-        rgba(255,255,255,.4),
-        0 4px 12px
-        rgba(0,0,0,.35);
-}
-
-.fedora::before {
-    content: "";
-
-    position: absolute;
-
-    width: 185px;
-    height: 18px;
-
-    left: -20px;
-    bottom: -7px;
-
-    background: inherit;
-
-    border-radius: 50%;
-
-    border:
-        3px solid rgba(0,0,0,.35);
-}
-
-.fedora.classic {
-    background:
-        linear-gradient(
-            135deg,
-            #eee,
-            #999,
-            #fff
-        );
-}
-
-.fedora.red {
-    background:
-        linear-gradient(
-            135deg,
-            #ff7777,
-            #b91515,
-            #ffaaaa
-        );
-}
-
-.fedora.blue {
-    background:
-        linear-gradient(
-            135deg,
-            #7edcff,
-            #0876c9,
-            #bceeff
-        );
-}
-
-.fedora.gold {
-    background:
-        linear-gradient(
-            135deg,
-            #fff3a0,
-            #d7a400,
-            #fff7c7
-        );
-}
-
-.fedora.purple {
-    background:
-        linear-gradient(
-            135deg,
-            #db9cff,
-            #7420b5,
-            #f0c9ff
-        );
-}
-
-.fedora.pink {
-    background:
-        linear-gradient(
-            135deg,
-            #ff9edb,
-            #d52c8a,
-            #ffd2ef
-        );
-}
-
-.fedora.rainbow {
-    background:
-        linear-gradient(
-            120deg,
-            #ff3b3b,
-            #ffb52e,
-            #fff238,
-            #39d86a,
-            #35bfff,
-            #7c4dff,
-            #ff54c8
-        );
-}
-
-/* =========================
-   FROZEN HORNS
-========================= */
-
-.horns {
-    position: absolute;
-
-    width: 190px;
-    height: 155px;
-
-    left: 45px;
-    top: -5px;
-
-    z-index: 18;
-}
-
-.horn {
-    position: absolute;
-
-    width: 44px;
-    height: 125px;
-
-    border-radius:
-        80% 25% 20% 20%;
-
-    border: 3px solid #3689a8;
-
-    box-shadow:
-        inset 5px 0 10px
-        rgba(255,255,255,.9);
-
-    background:
-        linear-gradient(
-            135deg,
-            #fff,
-            #b9f7ff,
-            #45c9ed,
-            #dfffff,
-            #fff
-        );
-}
-
-.horn.left {
-    left: 12px;
-    top: 12px;
-
-    transform:
-        rotate(-30deg);
-}
-
-.horn.right {
-    right: 12px;
-    top: 12px;
-
-    transform:
-        rotate(30deg)
-        scaleX(-1);
-}
-
-/* BLUE */
-
-.horns.blue-horns .horn {
-    background:
-        linear-gradient(
-            135deg,
-            #fff,
-            #b9f7ff,
-            #26bde8,
-            #087ca8,
-            #fff
-        );
-
-    border-color: #3689a8;
-
-    box-shadow:
-        0 0 8px #55eaff,
-        0 0 18px
-        rgba(60,220,255,.8),
-        inset 5px 0 10px
-        rgba(255,255,255,.9);
-}
-
-/* RED */
-
-.horns.red-horns .horn {
-    background:
-        linear-gradient(
-            135deg,
-            #fff,
-            #ffb0b0,
-            #e52b2b,
-            #8b0000,
-            #fff
-        );
-
-    border-color: #9b2222;
-
-    box-shadow:
-        0 0 8px #ff3333,
-        0 0 18px
-        rgba(255,40,40,.8),
-        inset 5px 0 10px
-        rgba(255,255,255,.9);
-}
-
-/* GREEN */
-
-.horns.green-horns .horn {
-    background:
-        linear-gradient(
-            135deg,
-            #fff,
-            #aaffbb,
-            #21c95b,
-            #08752d,
-            #fff
-        );
-
-    border-color: #16833d;
-
-    box-shadow:
-        0 0 8px #35ff75,
-        0 0 18px
-        rgba(30,255,100,.8),
-        inset 5px 0 10px
-        rgba(255,255,255,.9);
-}
-
-/* =========================
-   FIRE
-========================= */
-
-.frozen-fire {
-    position: absolute;
-
-    width: 65px;
-    height: 125px;
-
-    left: 62px;
-    top: -8px;
-
-    z-index: 30;
-
-    animation:
-        frozenFireFloat
-        1.2s
-        ease-in-out
-        infinite
-        alternate;
-}
-
-.frozen-fire::before {
-    content: "";
-
-    position: absolute;
-
-    width: 55px;
-    height: 115px;
-
-    left: 5px;
-    top: 5px;
-
-    background:
-        linear-gradient(
-            to top,
-            #006eff,
-            #00bfff,
-            #66f5ff,
-            #fff
-        );
-
-    clip-path: polygon(
-        50% 0%,
-        65% 22%,
-        60% 38%,
-        82% 25%,
-        75% 55%,
-        100% 45%,
-        78% 75%,
-        66% 100%,
-        48% 78%,
-        35% 100%,
-        32% 73%,
-        10% 88%,
-        22% 57%,
-        0% 64%,
-        23% 35%,
-        20% 15%,
-        38% 28%
-    );
-}
-
-.frozen-fire::after {
-    content: "";
-
-    position: absolute;
-
-    width: 30px;
-    height: 75px;
-
-    left: 18px;
-    top: 35px;
-
-    background:
-        linear-gradient(
-            to top,
-            #008cff,
-            #5ceeff,
-            #fff
-        );
-
-    clip-path: polygon(
-        50% 0%,
-        75% 35%,
-        65% 50%,
-        100% 45%,
-        70% 75%,
-        50% 100%,
-        38% 75%,
-        5% 85%,
-        30% 55%,
-        10% 60%,
-        38% 30%
-    );
-}
-
-/* RED FIRE */
-
-.horns.red-horns .frozen-fire {
-    filter:
-        drop-shadow(0 0 5px #ff3333)
-        drop-shadow(0 0 12px #ff0000)
-        drop-shadow(0 0 20px #a00000);
-}
-
-.horns.red-horns .frozen-fire::before {
-    background:
-        linear-gradient(
-            to top,
-            #a00000,
-            #ff2020,
-            #ff6666,
-            #fff
-        );
-}
-
-.horns.red-horns .frozen-fire::after {
-    background:
-        linear-gradient(
-            to top,
-            #ff0000,
-            #ff5555,
-            #fff
-        );
-}
-
-/* GREEN FIRE */
-
-.horns.green-horns .frozen-fire {
-    filter:
-        drop-shadow(0 0 5px #36ff75)
-        drop-shadow(0 0 12px #00ff55)
-        drop-shadow(0 0 20px #00a83b);
-}
-
-.horns.green-horns .frozen-fire::before {
-    background:
-        linear-gradient(
-            to top,
-            #008b32,
-            #00e957,
-            #66ff99,
-            #fff
-        );
-}
-
-.horns.green-horns .frozen-fire::after {
-    background:
-        linear-gradient(
-            to top,
-            #00c94b,
-            #62ff91,
-            #fff
-        );
-}
-
-/* FIRE ANIMATION */
-
-@keyframes frozenFireFloat {
-
-    0% {
-        transform:
-            translateY(3px)
-            scale(.96);
-    }
-
-    50% {
-        transform:
-            translateY(-5px)
-            scale(1.03);
-    }
-
-    100% {
-        transform:
-            translateY(-10px)
-            scale(.98);
-    }
-}
-
-/* =========================
-   FIRE SPARKS
-========================= */
-
-.frozen-fire-spark {
-    position: absolute;
-
-    width: 6px;
-    height: 6px;
-
-    border-radius: 50%;
-
-    animation:
-        iceSpark
-        1.5s
-        infinite
-        ease-out;
-}
-
-.horns.blue-horns
-.frozen-fire-spark {
-    background: #8ff7ff;
-
-    box-shadow:
-        0 0 6px #00d9ff,
-        0 0 12px #008cff;
-}
-
-.horns.red-horns
-.frozen-fire-spark {
-    background: #ff7777;
-
-    box-shadow:
-        0 0 6px #ff2222,
-        0 0 12px #ff0000;
-}
-
-.horns.green-horns
-.frozen-fire-spark {
-    background: #78ff9c;
-
-    box-shadow:
-        0 0 6px #21ff68,
-        0 0 12px #00c94b;
-}
-
-.spark1 {
-    left: 8px;
-    top: 50px;
-}
-
-.spark2 {
-    right: 5px;
-    top: 35px;
-
-    animation-delay: .4s;
-}
-
-.spark3 {
-    left: 20px;
-    top: 10px;
-
-    animation-delay: .8s;
-}
-
-.spark4 {
-    right: 20px;
-    top: 70px;
-
-    animation-delay: 1s;
-}
-
-@keyframes iceSpark {
-
-    0% {
-        opacity: 0;
-
-        transform:
-            translateY(15px)
-            scale(.5);
-    }
-
-    30% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 0;
-
-        transform:
-            translateY(-35px)
-            scale(1.2);
-    }
-}
-
-/* =========================
-   CROWN
-========================= */
-
-.crown {
-    position: absolute;
-
-    width: 125px;
-    height: 80px;
-
-    left: 77px;
-    top: 35px;
-
-    z-index: 15;
-
-    background:
-        linear-gradient(
-            #fff47b,
-            #d39d00
-        );
-
-    clip-path: polygon(
-        0 100%,
-        10% 20%,
-        30% 55%,
-        50% 0,
-        70% 55%,
-        90% 20%,
-        100% 100%
-    );
-}
-
-/* =========================
-   WINGS
-========================= */
-
-.wings {
-    position: absolute;
-
-    width: 280px;
-    height: 150px;
-
-    left: 0;
-    top: 205px;
-
-    z-index: 0;
-}
-
-.wings::before,
-.wings::after {
-    content: "";
-
-    position: absolute;
-
-    width: 105px;
-    height: 140px;
-
-    background:
-        linear-gradient(
-            135deg,
-            white,
-            #a8dfff,
-            #559cc5
-        );
-
-    border: 3px solid #6095ad;
-
-    border-radius:
-        80% 20% 80% 20%;
-}
-
-.wings::before {
-    left: 0;
-    transform: rotate(-20deg);
-}
-
-.wings::after {
-    right: 0;
-    transform:
-        rotate(20deg)
-        scaleX(-1);
-}
-
-/* =========================
-   VALKYRIES
-========================= */
-
-.valkyrie {
-    position: absolute;
-
-    width: 165px;
-    height: 125px;
-
-    left: 57px;
-    top: 8px;
-
-    z-index: 21;
-
-    filter:
-        drop-shadow(
-            0 3px 5px
-            rgba(0,0,0,.35)
-        );
-}
-
-.valkyrie .hood {
-    position: absolute;
-
-    width: 130px;
-    height: 67px;
-
-    left: 18px;
-    top: 24px;
-
-    border-radius:
-        65px 65px 18px 18px;
-
-    border: 3px solid #555;
-}
-
-.valkyrie .horn {
-    position: absolute;
-
-    width: 48px;
-    height: 100px;
-
-    top: 0;
-
-    border: 3px solid #555;
-
-    border-radius:
-        80% 20% 20% 20%;
-}
-
-.valkyrie .horn.left {
-    left: 0;
-
-    transform:
-        rotate(-27deg);
-}
-
-.valkyrie .horn.right {
-    right: 0;
-
-    transform:
-        rotate(27deg)
-        scaleX(-1);
-}
-
-.valkyrie.sparkle .hood,
-.valkyrie.sparkle .horn {
-    background:
-        linear-gradient(
-            135deg,
-            #fff,
-            #f4d7ff,
-            #ffe36e,
-            #fff,
-            #8deaff
-        );
-}
-
-.valkyrie.red .hood,
-.valkyrie.red .horn {
-    background:
-        linear-gradient(
-            135deg,
-            #ff7777,
-            #b30000,
-            #ffb0b0
-        );
-}
-
-.valkyrie.blue .hood,
-.valkyrie.blue .horn {
-    background:
-        linear-gradient(
-            135deg,
-            #a9efff,
-            #1683c5,
-            #d8fbff
-        );
-}
-
-.valkyrie.purple .hood,
-.valkyrie.purple .horn {
-    background:
-        linear-gradient(
-            135deg,
-            #e2b0ff,
-            #7020a8,
-            #f3d7ff
-        );
-}
-
-.valkyrie.green .hood,
-.valkyrie.green .horn {
-    background:
-        linear-gradient(
-            135deg,
-            #aaffbd,
-            #159447,
-            #d8ffe2
-        );
-}
-
-.valkyrie.pink .hood,
-.valkyrie.pink .horn {
-    background:
-        linear-gradient(
-            135deg,
-            #ffd0ee,
-            #db268c,
-            #ffeff9
-        );
-}
-
-.valkyrie.white .hood,
-.valkyrie.white .horn {
-    background:
-        linear-gradient(
-            135deg,
-            #fff,
-            #c9c9c9,
-            #fff
-        );
-}
-
-.valkyrie.black .hood,
-.valkyrie.black .horn {
-    background:
-        linear-gradient(
-            135deg,
-            #555,
-            #111,
-            #777
-        );
-}
-
-.valkyrie.gold .hood,
-.valkyrie.gold .horn {
-    background:
-        linear-gradient(
-            135deg,
-            #fff3a0,
-            #c99000,
-            #fff8c7
-        );
-}
-
-.valkyrie.rainbow .hood,
-.valkyrie.rainbow .horn {
-    background:
-        linear-gradient(
-            120deg,
-            #ff3333,
-            #ffb52e,
-            #fff32e,
-            #36d66a,
-            #38bfff,
-            #774cff,
-            #ff4bc8
-        );
-}
-
-/* =========================
-   ACCESSORY COUNT
-========================= */
-
-.accessory-count {
-    margin-top: 12px;
-
-    padding: 10px;
-
-    background: #f5f5f5;
-
-    border: 1px solid #aaa;
-
-    text-align: center;
-
-    font-weight: bold;
-}
-
-.accessory-count span {
-    color: #1683c5;
-}
-
-.status {
-    margin-top: 15px;
-
-    padding: 12px;
-
-    background: white;
-
-    border: 1px solid #aaa;
-
-    color: #1683c5;
-
-    font-weight: bold;
-}
-
-/* =========================
-   CATALOG
-========================= */
-
-.catalog {
-    margin-top: 15px;
-
-    background: white;
-
-    border: 1px solid #aaa;
-
-    padding: 15px;
-}
-
-.catalog h2 {
-    margin-top: 0;
-}
-
-.category {
-    margin-top: 20px;
-}
-
-.category h3 {
-    border-bottom:
-        1px solid #ccc;
-
-    padding-bottom: 7px;
-}
-
-.items {
-    display: grid;
-
-    grid-template-columns:
-        repeat(
-            auto-fit,
-            minmax(170px,1fr)
-        );
-
-    gap: 10px;
-}
-
-.item {
-    background: #f5f5f5;
-
-    border: 1px solid #aaa;
-
-    padding: 10px;
-}
-
-.item-preview {
-    height: 120px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #ddd,
-            #eee
-        );
-
-    border: 1px solid #bbb;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    font-weight: bold;
-
-    text-align: center;
-}
-
-.item h4 {
-    margin: 9px 0 4px;
-}
-
-.item p {
-    margin: 0;
-
-    font-size: 12px;
-
-    color: #666;
-}
-
-button {
-    width: 100%;
-
-    margin-top: 8px;
-
-    padding: 9px;
-
-    border:
-        1px solid #555;
-
-    border-radius: 3px;
-
-    background:
-        linear-gradient(
-            #69b9e9,
-            #1683c5
-        );
-
-    color: white;
-
-    font-weight: bold;
-
-    cursor: pointer;
-}
-
-button:hover {
-    background:
-        linear-gradient(
-            #82c9ef,
-            #1683c5
-        );
-}
-
-button.equipped {
-    background:
-        linear-gradient(
-            #777,
-            #555
-        );
-}
-
-button.buy {
-    background:
-        linear-gradient(
-            #72c86b,
-            #399632
-        );
-}
-
-button.buy:hover {
-    background:
-        linear-gradient(
-            #86d77d,
-            #399632
-        );
-}
-
-.clear {
-    margin-top: 10px;
-
-    background:
-        linear-gradient(
-            #777,
-            #555
-        );
-}
-
-/* =========================
-   GAME REWARD
-========================= */
-
-.game-box {
-    margin-top: 15px;
-
-    background: white;
-
-    border: 1px solid #aaa;
-
-    padding: 15px;
-}
-
-.game-box h2 {
-    margin-top: 0;
-}
-
-.reward {
-    background: #f5f5f5;
-
-    border: 1px solid #bbb;
-
-    padding: 12px;
-
-    margin-top: 10px;
-}
-
-.reward button {
-    max-width: 250px;
-}
-
-/* =========================
-   FOOTER
-========================= */
-
-footer {
-    text-align: center;
-
-    padding: 25px;
-
-    color: #777;
-}
-
-/* =========================
-   MOBILE
-========================= */
-
-@media(max-width:600px) {
-
-    .logo {
-        text-align: center;
-    }
-
-    nav a {
-        padding: 8px 9px;
-        font-size: 12px;
-    }
-
-    .avatar {
-        transform: scale(.8);
-    }
-
-    .items {
-        grid-template-columns:
-            repeat(2,1fr);
-    }
-
-    .coin-bar {
-        text-align: center;
-    }
+    nav a{text-align:center}
 }
 </style>
 </head>
 
 <body>
 
-<!-- =========================
-     HEADER
-========================= -->
-
 <header>
+    <div class="logo">MTB REVIVALS</div>
 
-<div class="header-inner">
-
-<div class="logo">
-MTB REVIVALS
-</div>
-
-<nav>
-
-<a href="index.html">
-Home
-</a>
-
-<a href="login.html">
-Account
-</a>
-
-<a href="avatar.html"
-class="active">
-Avatar
-</a>
-
-<a href="accessories.html">
-Accessories
-</a>
-
-<a href="clothes.html">
-Clothes
-</a>
-
-<a href="pants.html">
-Pants
-</a>
-
-<a href="inventory.html">
-Inventory
-</a>
-
-<a href="games.html">
-Games
-</a>
-
-<a href="news.html">
-News
-</a>
-
-</nav>
-
-</div>
-
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="login.html">Account</a>
+        <a href="avatar.html">Avatar</a>
+        <a href="accessories.html">Accessories</a>
+        <a href="clothes.html">Clothes</a>
+        <a href="inventory.html">Inventory</a>
+        <a href="games.html">Games</a>
+        <a href="news.html">News</a>
+    </nav>
 </header>
 
+<div class="coinbar">
+    <div class="coins">
+        <span class="coin"></span>
+        MTB Coins: <span id="coins">1000</span>
+    </div>
 
-<!-- =========================
-     COIN DISPLAY
-========================= -->
-
-<div class="coin-bar">
-
-<div class="coins">
-
-🪙 MTB Coins:
-
-<span id="coinAmount">
-1,000
-</span>
-
+    <button onclick="earnCoins()">🎮 Earn 100 Coins</button>
 </div>
-
-</div>
-
 
 <div class="container">
 
-
 <div class="title">
-MTB REVIVALS - Avatar
+    <h1>Avatar Editor</h1>
+    <p>Customize your MTB REVIVALS avatar.</p>
+    <b>Maximum 3 accessories/gear equipped at once.</b>
 </div>
 
+<div class="avatarLayout">
 
-<!-- =========================
-     AVATAR
-========================= -->
+<!-- AVATAR -->
 
-<div class="avatar-section">
+<div class="avatarBox">
 
-<div class="avatar-area">
+<h2>Your Avatar</h2>
 
 <div class="avatar">
 
-<div id="accessory"
-class="accessory">
-</div>
+    <div id="headAccessory" class="accessory"></div>
+    <div id="fire" class="accessory"></div>
+    <div id="gear" class="gear"></div>
 
+    <div id="head" class="head">
+        <div id="face" class="face">🙂</div>
+    </div>
 
-<div class="head">
+    <div class="body"></div>
 
-<div id="face"
-class="face face-happy">
+    <div class="arm leftArm"></div>
+    <div class="arm rightArm"></div>
 
-<div class="eye eye-left"></div>
-
-<div class="eye eye-right"></div>
-
-<div class="smile"></div>
-
-</div>
+    <div id="leftLeg" class="leg leftLeg"></div>
+    <div class="leg rightLeg"></div>
 
 </div>
 
+<h3>Equipped</h3>
+<div id="equippedList" class="equippedList">None</div>
 
-<div class="body">
+<br>
 
-<div id="shirtGraphic">
-</div>
-
-</div>
-
-
-<div class="arm arm-left">
-</div>
-
-<div class="arm arm-right">
-</div>
-
-
-<div class="leg leg-left">
-</div>
-
-<div class="leg leg-right">
-</div>
-
-</div>
-
-</div>
-
-
-<div class="accessory-count">
-
-Accessories equipped:
-
-<span id="accessoryCount">
-0 / 3
-</span>
-
-</div>
-
-
-<div class="status"
-id="status">
-
-Loading avatar...
-
-</div>
-
-
-<button
-class="clear"
-onclick="clearAvatar()">
-
-Clear Equipped Items
-
+<button class="remove" onclick="clearAccessories()">
+    Remove Accessories
 </button>
 
 </div>
 
-
-<!-- =========================
-     GAME REWARDS
-========================= -->
-
-<div class="game-box">
-
-<h2>
-🎮 Play Games & Earn MTB Coins
-</h2>
-
-<p>
-Play MTB REVIVALS games to earn MTB Coins.
-</p>
-
-<div class="reward">
-
-<strong>
-Classic Obby
-</strong>
-
-<br>
-
-Reward:
-<strong>
-+100 MTB Coins
-</strong>
-
-<br>
-
-<button
-onclick="completeGame(100)">
-
-Complete Game +100 Coins
-
-</button>
-
-</div>
-
-
-<div class="reward">
-
-<strong>
-Brick Battle
-</strong>
-
-<br>
-
-Reward:
-<strong>
-+250 MTB Coins
-</strong>
-
-<br>
-
-<button
-onclick="completeGame(250)">
-
-Complete Game +250 Coins
-
-</button>
-
-</div>
-
-
-<div class="reward">
-
-<strong>
-MTB Town
-</strong>
-
-<br>
-
-Reward:
-<strong>
-+500 MTB Coins
-</strong>
-
-<br>
-
-<button
-onclick="completeGame(500)">
-
-Complete Game +500 Coins
-
-</button>
-
-</div>
-
-</div>
-
-
-<!-- =========================
-     CATALOG
-========================= -->
-
-<div class="catalog">
-
-<h2>
-Avatar Items
-</h2>
-
-
-<!-- =========================
-     FACES
-========================= -->
-
-<div class="category">
-
-<h3>
-Classic Faces
-</h3>
+<!-- ITEMS -->
 
 <div class="items">
 
-
-<div class="item">
-
-<div class="item-preview">
-🙂
-</div>
-
-<h4>
-Classic Smile
-</h4>
-
-<p>
-Classic happy face.
-</p>
-
-<button
-onclick="equipFace(this,'happy')">
-
-Equip
-
-</button>
-
-</div>
-
-
-<div class="item">
-
-<div class="item-preview">
-😄
-</div>
-
-<h4>
-Big Smile
-</h4>
-
-<p>
-Big classic smile.
-</p>
-
-<button
-onclick="equipFace(this,'big-smile')">
-
-Equip
-
-</button>
-
-</div>
-
-
-<div class="item">
-
-<div class="item-preview">
-😐
-</div>
-
-<h4>
-Neutral
-</h4>
-
-<p>
-Simple classic face.
-</p>
-
-<button
-onclick="equipFace(this,'neutral')">
-
-Equip
-
-</button>
-
-</div>
-
-
-<div class="item">
-
-<div class="item-preview">
-😢
-</div>
-
-<h4>
-Sad
-</h4>
-
-<p>
-Sad classic face.
-</p>
-
-<button
-onclick="equipFace(this,'sad')">
-
-Equip
-
-</button>
-
-</div>
-
-
-<div class="item">
-
-<div class="item-preview">
-😮
-</div>
-
-<h4>
-Surprised
-</h4>
-
-<p>
-Surprised face.
-</p>
-
-<button
-onclick="equipFace(this,'surprised')">
-
-Equip
-
-</button>
-
-</div>
-
-
-<div class="item">
-
-<div class="item-preview">
-😡
-</div>
-
-<h4>
-Angry
-</h4>
-
-<p>
-Angry face.
-</p>
-
-<button
-onclick="equipFace(this,'angry')">
-
-Equip
-
-</button>
-
-</div>
-
-
-<div class="item">
-
-<div class="item-preview">
-😴
-</div>
-
-<h4>
-Sleepy
-</h4>
-
-<p>
-Sleepy face.
-</p>
-
-<button
-onclick="equipFace(this,'sleepy')">
-
-Equip
-
-</button>
-
-</div>
-
-
-<div class="item">
-
-<div class="item-preview">
-😉
-</div>
-
-<h4>
-Wink
-</h4>
-
-<p>
-Classic wink.
-</p>
-
-<button
-onclick="equipFace(this,'wink')">
-
-Equip
-
-</button>
-
-</div>
-
-
-<div class="item">
-
-<div class="item-preview">
-😜
-</div>
-
-<h4>
-Silly
-</h4>
-
-<p>
-Silly face.
-</p>
-
-<button
-onclick="equipFace(this,'silly')">
-
-Equip
-
-</button>
-
-</div>
-
-
-<div class="item">
-
-<div class="item-preview">
-😈
-</div>
-
-<h4>
-Evil
-</h4>
-
-<p>
-Dark face.
-</p>
-
-<button
-onclick="equipFace(this,'evil')">
-
-Equip
-
-</button>
-
-</div>
-
-
-<div class="item">
-
-<div class="item-preview">
-😎
-</div>
-
-<h4>
-Cool
-</h4>
-
-<p>
-Cool face.
-</p>
-
-<button
-onclick="equipFace(this,'cool')">
-
-Equip
-
-</button>
-
-</div>
-
-
-<div class="item">
-
-<div class="item-preview">
-🤓
-</div>
-
-<h4>
-Nerd
-</h4>
-
-<p>
-Nerd face.
-</p>
-
-<button
-onclick="equipFace(this,'nerd')">
-
-Equip
-
-</button>
-
-</div>
-
-
-<div class="item">
-
-<div class="item-preview">
-😱
-</div>
-
-<h4>
-Shocked
-</h4>
-
-<p>
-Shocked face.
-</p>
-
-<button
-onclick="equipFace(this,'shocked')">
-
-Equip
-
-</button>
-
-</div>
-
-</div>
-</div>
-
-
-<!-- =========================
-     SHIRTS
-========================= -->
+<!-- FACES -->
 
 <div class="category">
+<h2>😀 Classic Faces</h2>
 
-<h3>
-MTB Shirts
-</h3>
-
-<div class="items">
-
+<div class="grid">
 
 <div class="item">
-
-<div class="item-preview">
-MTB
+<div class="preview">🙂</div>
+<h3>Classic Smile</h3>
+<button onclick="setFace('🙂')">Wear</button>
 </div>
-
-<h4>
-MTB Classic Logo
-</h4>
-
-<p>
-Classic MTB shirt.
-</p>
-
-<button
-onclick="equipShirt(this,'MTB Classic Logo')">
-
-Equip
-
-</button>
-
-</div>
-
 
 <div class="item">
-
-<div class="item-preview">
-★ MTB
+<div class="preview">😎</div>
+<h3>Cool</h3>
+<button onclick="setFace('😎')">Wear</button>
 </div>
-
-<h4>
-MTB Star Streetwear
-</h4>
-
-<p>
-Star design.
-</p>
-
-<button
-onclick="equipShirt(this,'MTB Star Streetwear')">
-
-Equip
-
-</button>
-
-</div>
-
 
 <div class="item">
-
-<div class="item-preview">
-🔥
+<div class="preview">😃</div>
+<h3>Happy</h3>
+<button onclick="setFace('😃')">Wear</button>
 </div>
-
-<h4>
-MTB Flame
-</h4>
-
-<p>
-Flame design.
-</p>
-
-<button
-onclick="equipShirt(this,'MTB Flame')">
-
-Equip
-
-</button>
-
-</div>
-
 
 <div class="item">
-
-<div class="item-preview">
-⚡
+<div class="preview">😐</div>
+<h3>Serious</h3>
+<button onclick="setFace('😐')">Wear</button>
 </div>
-
-<h4>
-MTB Lightning
-</h4>
-
-<p>
-Lightning design.
-</p>
-
-<button
-onclick="equipShirt(this,'MTB Lightning')">
-
-Equip
-
-</button>
-
-</div>
-
 
 <div class="item">
-
-<div class="item-preview">
-MTB
+<div class="preview">😈</div>
+<h3>Evil</h3>
+<button onclick="setFace('😈')">Wear</button>
 </div>
-
-<h4>
-MTB Grey Essential
-</h4>
-
-<p>
-Grey MTB shirt.
-</p>
-
-<button
-onclick="equipShirt(this,'MTB Grey Essential')">
-
-Equip
-
-</button>
-
-</div>
-
 
 <div class="item">
-
-<div class="item-preview">
-MTB
+<div class="preview">🤨</div>
+<h3>Skeptic</h3>
+<button onclick="setFace('🤨')">Wear</button>
 </div>
-
-<h4>
-MTB Gothic
-</h4>
-
-<p>
-Dark MTB shirt.
-</p>
-
-<button
-onclick="equipShirt(this,'MTB Gothic')">
-
-Equip
-
-</button>
-
-</div>
-
 
 <div class="item">
-
-<div class="item-preview">
-MTB
+<div class="preview">😏</div>
+<h3>Smirk</h3>
+<button onclick="setFace('😏')">Wear</button>
 </div>
 
-<h4>
-MTB White Classic
-</h4>
-
-<p>
-White MTB shirt.
-</p>
-
-<button
-onclick="equipShirt(this,'MTB White Classic')">
-
-Equip
-
-</button>
-
+<div class="item">
+<div class="preview">😂</div>
+<h3>Laugh</h3>
+<button onclick="setFace('😂')">Wear</button>
 </div>
 
 </div>
 </div>
 
-
-<!-- =========================
-     PANTS
-========================= -->
+<!-- MTB SHIRTS -->
 
 <div class="category">
+<h2>👕 MTB Shirts</h2>
 
-<h3>
-MTB Pants
-</h3>
-
-<div class="items">
-
+<div class="grid">
 
 <div class="item">
-
-<div class="item-preview">
-MTB
+<div class="preview">👕</div>
+<h3>MTB Classic</h3>
+<p>MTB logo shirt</p>
+<button onclick="buyItem('MTB Classic Shirt',100)">Buy - 100</button>
 </div>
-
-<h4>
-MTB Black Logo Pants
-</h4>
-
-<p>
-Classic black pants.
-</p>
-
-<button
-onclick="equipPants(this,'MTB Black Logo Pants')">
-
-Equip
-
-</button>
-
-</div>
-
 
 <div class="item">
-
-<div class="item-preview">
-MTB
+<div class="preview">🖤</div>
+<h3>MTB Black</h3>
+<p>Black MTB shirt</p>
+<button onclick="buyItem('MTB Black Shirt',150)">Buy - 150</button>
 </div>
-
-<h4>
-MTB Grey Classic Pants
-</h4>
-
-<p>
-Classic grey pants.
-</p>
-
-<button
-onclick="equipPants(this,'MTB Grey Classic Pants')">
-
-Equip
-
-</button>
-
-</div>
-
 
 <div class="item">
-
-<div class="item-preview">
-★
+<div class="preview">❤️</div>
+<h3>MTB Red</h3>
+<p>Red MTB shirt</p>
+<button onclick="buyItem('MTB Red Shirt',150)">Buy - 150</button>
 </div>
-
-<h4>
-MTB Star Pants
-</h4>
-
-<p>
-Star pants.
-</p>
-
-<button
-onclick="equipPants(this,'MTB Star Pants')">
-
-Equip
-
-</button>
-
-</div>
-
 
 <div class="item">
-
-<div class="item-preview">
-🔥
+<div class="preview">💙</div>
+<h3>MTB Blue</h3>
+<p>Blue MTB shirt</p>
+<button onclick="buyItem('MTB Blue Shirt',150)">Buy - 150</button>
 </div>
-
-<h4>
-MTB Flame Pants
-</h4>
-
-<p>
-Flame pants.
-</p>
-
-<button
-onclick="equipPants(this,'MTB Flame Pants')">
-
-Equip
-
-</button>
-
-</div>
-
 
 <div class="item">
-
-<div class="item-preview">
-⚡
-</div>
-
-<h4>
-MTB Lightning Pants
-</h4>
-
-<p>
-Lightning pants.
-</p>
-
-<button
-onclick="equipPants(this,'MTB Lightning Pants')">
-
-Equip
-
-</button>
-
-</div>
-
-
-<div class="item">
-
-<div class="item-preview">
-MTB JEANS
-</div>
-
-<h4>
-MTB Classic Jeans
-</h4>
-
-<p>
-Blue denim style.
-</p>
-
-<button
-onclick="equipPants(this,'MTB Classic Jeans')">
-
-Equip
-
-</button>
-
-</div>
-
-
-<div class="item">
-
-<div class="item-preview">
-🌸 ☀️ 🍂 ❄️
-</div>
-
-<h4>
-MTB All Seasons Pants
-</h4>
-
-<p>
-Spring, Summer, Fall & Winter.
-</p>
-
-<button
-onclick="equipPants(this,'MTB All Seasons Pants')">
-
-Equip
-
-</button>
-
+<div class="preview">⭐</div>
+<h3>MTB Hellstar Style</h3>
+<p>Dark streetwear-inspired design</p>
+<button onclick="buyItem('MTB Hellstar Style Shirt',200)">Buy - 200</button>
 </div>
 
 </div>
 </div>
 
-
-<!-- =========================
-     ACCESSORIES
-========================= -->
+<!-- MTB PANTS -->
 
 <div class="category">
+<h2>👖 MTB Pants</h2>
 
-<h3>
-Accessories — Maximum 3
-</h3>
-
-<div class="items">
-
-
-<!-- FEDORAS -->
+<div class="grid">
 
 <div class="item">
-
-<div class="item-preview">
-✨ FEDORA
+<div class="preview">👖</div>
+<h3>MTB Black Pants</h3>
+<button onclick="buyItem('MTB Black Pants',100)">Buy - 100</button>
 </div>
-
-<h4>
-Sparkle Fedora
-</h4>
-
-<p>
-Classic sparkle style.
-</p>
-
-<button
-onclick="toggleAccessory(this,'Sparkle Fedora')">
-
-Equip
-
-</button>
-
-</div>
-
 
 <div class="item">
-
-<div class="item-preview">
-🔴 FEDORA
+<div class="preview">🔥</div>
+<h3>MTB Fire Pants</h3>
+<button onclick="buyItem('MTB Fire Pants',150)">Buy - 150</button>
 </div>
-
-<h4>
-Sparkle Fedora - Red
-</h4>
-
-<p>
-Red variant.
-</p>
-
-<button
-onclick="toggleAccessory(this,'Sparkle Fedora - Red')">
-
-Equip
-
-</button>
-
-</div>
-
 
 <div class="item">
-
-<div class="item-preview">
-🔵 FEDORA
+<div class="preview">❄️</div>
+<h3>MTB Ice Pants</h3>
+<button onclick="buyItem('MTB Ice Pants',150)">Buy - 150</button>
 </div>
-
-<h4>
-Sparkle Fedora - Blue
-</h4>
-
-<p>
-Blue variant.
-</p>
-
-<button
-onclick="toggleAccessory(this,'Sparkle Fedora - Blue')">
-
-Equip
-
-</button>
-
-</div>
-
 
 <div class="item">
-
-<div class="item-preview">
-🟡 FEDORA
+<div class="preview">⭐</div>
+<h3>MTB Street Pants</h3>
+<button onclick="buyItem('MTB Street Pants',200)">Buy - 200</button>
 </div>
 
-<h4>
-Sparkle Fedora - Gold
-</h4>
-
-<p>
-Gold variant.
-</p>
-
-<button
-onclick="toggleAccessory(this,'Sparkle Fedora - Gold')">
-
-Equip
-
-</button>
-
+</div>
 </div>
 
+<!-- SEASONS -->
+
+<div class="category">
+<h2>🌎 Seasonal Clothes</h2>
+
+<div class="grid">
 
 <div class="item">
-
-<div class="item-preview">
-🟣 FEDORA
+<div class="preview">🌸</div>
+<h3>Spring MTB</h3>
+<button onclick="buyItem('Spring MTB Outfit',150)">Buy - 150</button>
 </div>
-
-<h4>
-Sparkle Fedora - Purple
-</h4>
-
-<p>
-Purple variant.
-</p>
-
-<button
-onclick="toggleAccessory(this,'Sparkle Fedora - Purple')">
-
-Equip
-
-</button>
-
-</div>
-
 
 <div class="item">
-
-<div class="item-preview">
-🩷 FEDORA
+<div class="preview">☀️</div>
+<h3>Summer MTB</h3>
+<button onclick="buyItem('Summer MTB Outfit',150)">Buy - 150</button>
 </div>
-
-<h4>
-Sparkle Fedora - Pink
-</h4>
-
-<p>
-Pink variant.
-</p>
-
-<button
-onclick="toggleAccessory(this,'Sparkle Fedora - Pink')">
-
-Equip
-
-</button>
-
-</div>
-
 
 <div class="item">
-
-<div class="item-preview">
-🌈 FEDORA
+<div class="preview">🍂</div>
+<h3>Fall MTB</h3>
+<button onclick="buyItem('Fall MTB Outfit',150)">Buy - 150</button>
 </div>
-
-<h4>
-Sparkle Fedora - Rainbow
-</h4>
-
-<p>
-Rainbow variant.
-</p>
-
-<button
-onclick="toggleAccessory(this,'Sparkle Fedora - Rainbow')">
-
-Equip
-
-</button>
-
-</div>
-
-
-<!-- FROZEN HORNS -->
 
 <div class="item">
-
-<div class="item-preview">
-❄️ 🔥 🔵
+<div class="preview">❄️</div>
+<h3>Winter MTB</h3>
+<button onclick="buyItem('Winter MTB Outfit',150)">Buy - 150</button>
 </div>
 
-<h4>
-Blue Frozen Horns
-</h4>
-
-<p>
-Blue crystalline horns with blue fire.
-</p>
-
-<button
-onclick="toggleAccessory(this,'Frozen Crystal Horns')">
-
-Equip
-
-</button>
-
+</div>
 </div>
 
+<!-- HORNS -->
+
+<div class="category">
+<h2>❄️ Frozen Horns</h2>
+
+<div class="grid">
 
 <div class="item">
-
-<div class="item-preview">
-❄️ 🔥 🔴
+<div class="preview">❄️🔥</div>
+<h3>Frozen Horns</h3>
+<p>Blue icy horns + blue fire</p>
+<button onclick="equipAccessory('Frozen Horns','blue')">Equip</button>
 </div>
-
-<h4>
-Red Frozen Horns
-</h4>
-
-<p>
-Red crystalline horns with red fire.
-</p>
-
-<button
-onclick="toggleAccessory(this,'Red Frozen Horns')">
-
-Equip
-
-</button>
-
-</div>
-
 
 <div class="item">
-
-<div class="item-preview">
-❄️ 🔥 🟢
+<div class="preview">❤️🔥</div>
+<h3>Red Frozen Horns</h3>
+<p>Red horns + red fire</p>
+<button onclick="equipAccessory('Red Frozen Horns','red')">Equip</button>
 </div>
-
-<h4>
-Green Frozen Horns
-</h4>
-
-<p>
-Green crystalline horns with green fire.
-</p>
-
-<button
-onclick="toggleAccessory(this,'Green Frozen Horns')">
-
-Equip
-
-</button>
-
-</div>
-
-
-<!-- OTHER -->
 
 <div class="item">
-
-<div class="item-preview">
-👑
+<div class="preview">💚🔥</div>
+<h3>Green Frozen Horns</h3>
+<p>Green horns + green fire</p>
+<button onclick="equipAccessory('Green Frozen Horns','green')">Equip</button>
 </div>
 
-<h4>
-Royal Crown
-</h4>
-
-<p>
-Golden crown.
-</p>
-
-<button
-onclick="toggleAccessory(this,'Royal Crown')">
-
-Equip
-
-</button>
-
 </div>
-
-
-<div class="item">
-
-<div class="item-preview">
-🪽
 </div>
-
-<h4>
-Crystal Wings
-</h4>
-
-<p>
-Blue crystal wings.
-</p>
-
-<button
-onclick="toggleAccessory(this,'Crystal Wings')">
-
-Equip
-
-</button>
-
-</div>
-
 
 <!-- VALKYRIES -->
 
-<div class="item">
+<div class="category">
+<h2>👑 Valkyries</h2>
 
-<div class="item-preview">
-✨ 👑
-</div>
-
-<h4>
-Sparkle Time Valkyrie
-</h4>
-
-<p>
-Sparkle Valkyrie style.
-</p>
-
-<button
-onclick="toggleAccessory(this,'Sparkle Time Valkyrie')">
-
-Equip
-
-</button>
-
-</div>
-
+<div class="grid">
 
 <div class="item">
-
-<div class="item-preview">
-🔴 👑
+<div class="preview">👑</div>
+<h3>Sparkle Time Valkyrie</h3>
+<button onclick="equipAccessory('Sparkle Time Valkyrie','gold')">Equip</button>
 </div>
-
-<h4>
-Red Valkyrie
-</h4>
-
-<p>
-Red Valkyrie style.
-</p>
-
-<button
-onclick="toggleAccessory(this,'Red Valkyrie')">
-
-Equip
-
-</button>
-
-</div>
-
 
 <div class="item">
-
-<div class="item-preview">
-🔵 👑
+<div class="preview">🔴</div>
+<h3>Red Valkyrie</h3>
+<button onclick="equipAccessory('Red Valkyrie','redValk')">Equip</button>
 </div>
-
-<h4>
-Blue Valkyrie
-</h4>
-
-<p>
-Blue Valkyrie style.
-</p>
-
-<button
-onclick="toggleAccessory(this,'Blue Valkyrie')">
-
-Equip
-
-</button>
-
-</div>
-
 
 <div class="item">
-
-<div class="item-preview">
-🟣 👑
+<div class="preview">🔵</div>
+<h3>Blue Valkyrie</h3>
+<button onclick="equipAccessory('Blue Valkyrie','blueValk')">Equip</button>
 </div>
-
-<h4>
-Purple Valkyrie
-</h4>
-
-<p>
-Purple Valkyrie style.
-</p>
-
-<button
-onclick="toggleAccessory(this,'Purple Valkyrie')">
-
-Equip
-
-</button>
-
-</div>
-
 
 <div class="item">
-
-<div class="item-preview">
-🟢 👑
+<div class="preview">🟢</div>
+<h3>Green Valkyrie</h3>
+<button onclick="equipAccessory('Green Valkyrie','greenValk')">Equip</button>
 </div>
-
-<h4>
-Green Valkyrie
-</h4>
-
-<p>
-Green Valkyrie style.
-</p>
-
-<button
-onclick="toggleAccessory(this,'Green Valkyrie')">
-
-Equip
-
-</button>
-
-</div>
-
 
 <div class="item">
-
-<div class="item-preview">
-🩷 👑
+<div class="preview">🟣</div>
+<h3>Purple Valkyrie</h3>
+<button onclick="equipAccessory('Purple Valkyrie','purpleValk')">Equip</button>
 </div>
-
-<h4>
-Pink Valkyrie
-</h4>
-
-<p>
-Pink Valkyrie style.
-</p>
-
-<button
-onclick="toggleAccessory(this,'Pink Valkyrie')">
-
-Equip
-
-</button>
-
-</div>
-
 
 <div class="item">
-
-<div class="item-preview">
-⚪ 👑
+<div class="preview">⚫</div>
+<h3>Black Valkyrie</h3>
+<button onclick="equipAccessory('Black Valkyrie','blackValk')">Equip</button>
 </div>
 
-<h4>
-White Valkyrie
-</h4>
-
-<p>
-White Valkyrie style.
-</p>
-
-<button
-onclick="toggleAccessory(this,'White Valkyrie')">
-
-Equip
-
-</button>
-
+</div>
 </div>
 
+<!-- BODY -->
+
+<div class="category">
+<h2>🧍 Body</h2>
+
+<div class="grid">
 
 <div class="item">
-
-<div class="item-preview">
-⚫ 👑
+<div class="preview">🦵</div>
+<h3>Korblox-Style Leg</h3>
+<button onclick="toggleKorblox()">Equip</button>
 </div>
-
-<h4>
-Black Valkyrie
-</h4>
-
-<p>
-Black Valkyrie style.
-</p>
-
-<button
-onclick="toggleAccessory(this,'Black Valkyrie')">
-
-Equip
-
-</button>
-
-</div>
-
 
 <div class="item">
-
-<div class="item-preview">
-🟡 👑
+<div class="preview">👤</div>
+<h3>Headless Style</h3>
+<button onclick="toggleHeadless()">Equip</button>
 </div>
 
-<h4>
-Gold Valkyrie
-</h4>
-
-<p>
-Gold Valkyrie style.
-</p>
-
-<button
-onclick="toggleAccessory(this,'Gold Valkyrie')">
-
-Equip
-
-</button>
-
+</div>
 </div>
 
+<!-- GEAR -->
+
+<div class="category">
+<h2>⚔️ Gear</h2>
+
+<div class="grid">
 
 <div class="item">
-
-<div class="item-preview">
-🌈 👑
+<div class="preview">⚔️</div>
+<h3>Classic Sword</h3>
+<button onclick="equipGear('⚔️','Classic Sword')">Equip</button>
 </div>
 
-<h4>
-Rainbow Valkyrie
-</h4>
+<div class="item">
+<div class="preview">🗡️</div>
+<h3>Dark Blade</h3>
+<button onclick="equipGear('🗡️','Dark Blade')">Equip</button>
+</div>
 
-<p>
-Rainbow Valkyrie style.
-</p>
+<div class="item">
+<div class="preview">🛡️</div>
+<h3>Shield</h3>
+<button onclick="equipGear('🛡️','Shield')">Equip</button>
+</div>
 
-<button
-onclick="toggleAccessory(this,'Rainbow Valkyrie')">
+<div class="item">
+<div class="preview">🔨</div>
+<h3>Builder Hammer</h3>
+<button onclick="equipGear('🔨','Builder Hammer')">Equip</button>
+</div>
 
-Equip
+<div class="item">
+<div class="preview">🎸</div>
+<h3>Guitar</h3>
+<button onclick="equipGear('🎸','Guitar')">Equip</button>
+</div>
 
-</button>
+<div class="item">
+<div class="preview">🏹</div>
+<h3>Classic Bow</h3>
+<button onclick="equipGear('🏹','Classic Bow')">Equip</button>
+</div>
 
+<div class="item">
+<div class="preview">🔮</div>
+<h3>Magic Staff</h3>
+<button onclick="equipGear('🔮','Magic Staff')">Equip</button>
+</div>
+
+<div class="item">
+<div class="preview">💰</div>
+<h3>Money Bag</h3>
+<button onclick="equipGear('💰','Money Bag')">Equip</button>
 </div>
 
 </div>
@@ -3186,1430 +850,328 @@ Equip
 
 </div>
 </div>
+</div>
 
+<div id="message" class="message"></div>
 
 <footer>
-MTB REVIVALS © 2026
+© 2026 MTB REVIVALS
 </footer>
-
 
 <script>
 
-/* =====================================================
+/* =========================
    MTB COINS
-===================================================== */
+========================= */
 
-function getCoins() {
+let coins = localStorage.getItem("mtbCoins");
 
-    let coins =
-        localStorage.getItem(
-            "mtbCoins"
-        );
-
-    /*
-       New players automatically
-       start with 1,000 MTB Coins.
-    */
-
-    if (coins === null) {
-
-        coins = 1000;
-
-        localStorage.setItem(
-            "mtbCoins",
-            coins
-        );
-    }
-
-    return Number(coins);
+if(coins === null){
+    coins = 1000;
+    localStorage.setItem("mtbCoins",coins);
 }
 
+coins = Number(coins);
 
-function updateCoins() {
-
-    const coins =
-        getCoins();
-
-    document.getElementById(
-        "coinAmount"
-    ).textContent =
-        coins.toLocaleString();
+function updateCoins(){
+    document.getElementById("coins").textContent = coins;
 }
 
-
-/* =====================================================
-   EARN COINS
-===================================================== */
-
-function earnCoins(amount) {
-
-    let coins =
-        getCoins();
-
-    coins += Number(amount);
-
-    localStorage.setItem(
-        "mtbCoins",
-        coins
-    );
-
+function earnCoins(){
+    coins += 100;
+    localStorage.setItem("mtbCoins",coins);
     updateCoins();
-
-    alert(
-        "+" +
-        Number(amount).toLocaleString() +
-        " MTB Coins!"
-    );
+    message("+100 MTB Coins earned!");
 }
 
 
-/* =====================================================
-   SPEND COINS
-===================================================== */
+/* =========================
+   CONFIRMATION + PURCHASES
+========================= */
 
-function spendCoins(amount) {
+function buyItem(name,price){
 
-    let coins =
-        getCoins();
-
-    amount =
-        Number(amount);
-
-    if (coins < amount) {
-
-        alert(
-            "You don't have enough MTB Coins!"
-        );
-
-        return false;
-    }
-
-    coins -= amount;
-
-    localStorage.setItem(
-        "mtbCoins",
-        coins
-    );
-
-    updateCoins();
-
-    return true;
-}
-
-
-/* =====================================================
-   GAME COMPLETION
-===================================================== */
-
-function completeGame(reward) {
-
-    earnCoins(reward);
-
-}
-
-
-/* =====================================================
-   FACES
-===================================================== */
-
-function equipFace(
-    button,
-    face
-) {
-
-    localStorage.setItem(
-        "mtbFace",
-        face
-    );
-
-    document.getElementById(
-        "face"
-    ).className =
-        "face face-" + face;
-
-
-    document
-        .querySelectorAll(
-            'button[onclick*="equipFace"]'
-        )
-        .forEach(
-            function(btn) {
-
-                btn.classList.remove(
-                    "equipped"
-                );
-
-                btn.textContent =
-                    "Equip";
-
-            }
-        );
-
-
-    button.classList.add(
-        "equipped"
-    );
-
-    button.textContent =
-        "Equipped";
-
-    updateStatus();
-}
-
-
-/* =====================================================
-   SHIRTS
-===================================================== */
-
-function equipShirt(
-    button,
-    shirt
-) {
-
-    localStorage.setItem(
-        "mtbShirt",
-        shirt
-    );
-
-
-    document
-        .querySelectorAll(
-            'button[onclick*="equipShirt"]'
-        )
-        .forEach(
-            function(btn) {
-
-                btn.classList.remove(
-                    "equipped"
-                );
-
-                btn.textContent =
-                    "Equip";
-
-            }
-        );
-
-
-    button.classList.add(
-        "equipped"
-    );
-
-    button.textContent =
-        "Equipped";
-
-
-    loadShirt();
-    updateStatus();
-}
-
-
-/* =====================================================
-   PANTS
-===================================================== */
-
-function equipPants(
-    button,
-    pants
-) {
-
-    localStorage.setItem(
-        "mtbPants",
-        pants
-    );
-
-
-    document
-        .querySelectorAll(
-            'button[onclick*="equipPants"]'
-        )
-        .forEach(
-            function(btn) {
-
-                btn.classList.remove(
-                    "equipped"
-                );
-
-                btn.textContent =
-                    "Equip";
-
-            }
-        );
-
-
-    button.classList.add(
-        "equipped"
-    );
-
-    button.textContent =
-        "Equipped";
-
-
-    loadPants();
-    updateStatus();
-}
-
-
-/* =====================================================
-   ACCESSORY STORAGE
-===================================================== */
-
-function getAccessories() {
-
-    try {
-
-        return JSON.parse(
-            localStorage.getItem(
-                "mtbAccessories"
-            )
-        ) || [];
-
-    } catch {
-
-        return [];
-
-    }
-}
-
-
-function saveAccessories(
-    accessories
-) {
-
-    localStorage.setItem(
-        "mtbAccessories",
-        JSON.stringify(
-            accessories
-        )
-    );
-}
-
-
-/* =====================================================
-   ACCESSORY EQUIP
-===================================================== */
-
-function toggleAccessory(
-    button,
-    name
-) {
-
-    let accessories =
-        getAccessories();
-
-    let index =
-        accessories.indexOf(
-            name
-        );
-
-
-    /* UNEQUIP */
-
-    if (index !== -1) {
-
-        accessories.splice(
-            index,
-            1
-        );
-
-        saveAccessories(
-            accessories
-        );
-
-        loadAccessories();
-
-        updateStatus();
-
+    if(coins < price){
+        message("You don't have enough MTB Coins!");
         return;
     }
 
+    let confirmed = confirm(
+        "Purchase " + name +
+        " for " + price +
+        " MTB Coins?"
+    );
 
-    /* MAX 3 */
-
-    if (
-        accessories.length >= 3
-    ) {
-
-        alert(
-            "You can only wear 3 accessories at a time!"
-        );
-
+    if(!confirmed){
+        message("Purchase cancelled.");
         return;
     }
 
-
-    /* EQUIP */
-
-    accessories.push(
-        name
-    );
-
-    saveAccessories(
-        accessories
-    );
-
-    loadAccessories();
-
-    updateStatus();
-}
-
-
-/* =====================================================
-   LOAD ACCESSORIES
-===================================================== */
-
-function loadAccessories() {
-
-    const accessories =
-        getAccessories();
-
-    const container =
-        document.getElementById(
-            "accessory"
-        );
-
-    container.innerHTML = "";
-
-
-    accessories.forEach(
-        function(item) {
-
-
-        /* FEDORAS */
-
-        const fedoraColors = {
-
-            "Sparkle Fedora":
-                "classic",
-
-            "Sparkle Fedora - Red":
-                "red",
-
-            "Sparkle Fedora - Blue":
-                "blue",
-
-            "Sparkle Fedora - Gold":
-                "gold",
-
-            "Sparkle Fedora - Purple":
-                "purple",
-
-            "Sparkle Fedora - Pink":
-                "pink",
-
-            "Sparkle Fedora - Rainbow":
-                "rainbow"
-
-        };
-
-
-        if (
-            fedoraColors[item]
-        ) {
-
-            const fedora =
-                document.createElement(
-                    "div"
-                );
-
-            fedora.className =
-                "fedora " +
-                fedoraColors[item];
-
-            container.appendChild(
-                fedora
-            );
-
-            return;
-        }
-
-
-        /* BLUE HORNS */
-
-        if (
-            item ===
-            "Frozen Crystal Horns"
-        ) {
-
-            createFrozenHorns(
-                container,
-                "blue-horns"
-            );
-
-            return;
-        }
-
-
-        /* RED HORNS */
-
-        if (
-            item ===
-            "Red Frozen Horns"
-        ) {
-
-            createFrozenHorns(
-                container,
-                "red-horns"
-            );
-
-            return;
-        }
-
-
-        /* GREEN HORNS */
-
-        if (
-            item ===
-            "Green Frozen Horns"
-        ) {
-
-            createFrozenHorns(
-                container,
-                "green-horns"
-            );
-
-            return;
-        }
-
-
-        /* CROWN */
-
-        if (
-            item ===
-            "Royal Crown"
-        ) {
-
-            const crown =
-                document.createElement(
-                    "div"
-                );
-
-            crown.className =
-                "crown";
-
-            container.appendChild(
-                crown
-            );
-
-            return;
-        }
-
-
-        /* WINGS */
-
-        if (
-            item ===
-            "Crystal Wings"
-        ) {
-
-            const wings =
-                document.createElement(
-                    "div"
-                );
-
-            wings.className =
-                "wings";
-
-            container.appendChild(
-                wings
-            );
-
-            return;
-        }
-
-
-        /* VALKYRIES */
-
-        const valkyrieColors = {
-
-            "Sparkle Time Valkyrie":
-                "sparkle",
-
-            "Red Valkyrie":
-                "red",
-
-            "Blue Valkyrie":
-                "blue",
-
-            "Purple Valkyrie":
-                "purple",
-
-            "Green Valkyrie":
-                "green",
-
-            "Pink Valkyrie":
-                "pink",
-
-            "White Valkyrie":
-                "white",
-
-            "Black Valkyrie":
-                "black",
-
-            "Gold Valkyrie":
-                "gold",
-
-            "Rainbow Valkyrie":
-                "rainbow"
-
-        };
-
-
-        if (
-            valkyrieColors[item]
-        ) {
-
-            const valkyrie =
-                document.createElement(
-                    "div"
-                );
-
-            valkyrie.className =
-                "valkyrie " +
-                valkyrieColors[item];
-
-
-            valkyrie.innerHTML = `
-
-                <div class="horn left">
-                </div>
-
-                <div class="horn right">
-                </div>
-
-                <div class="hood">
-                </div>
-
-            `;
-
-
-            container.appendChild(
-                valkyrie
-            );
-        }
-
-    });
-
-
-    updateAccessoryButtons();
-    updateAccessoryCount();
-}
-
-
-/* =====================================================
-   CREATE FROZEN HORNS
-===================================================== */
-
-function createFrozenHorns(
-    container,
-    color
-) {
-
-    const horns =
-        document.createElement(
-            "div"
-        );
-
-    horns.className =
-        "horns " + color;
-
-
-    horns.innerHTML = `
-
-        <div class="horn left">
-        </div>
-
-        <div class="horn right">
-        </div>
-
-        <div class="frozen-fire">
-
-            <div
-                class="frozen-fire-spark spark1">
-            </div>
-
-            <div
-                class="frozen-fire-spark spark2">
-            </div>
-
-            <div
-                class="frozen-fire-spark spark3">
-            </div>
-
-            <div
-                class="frozen-fire-spark spark4">
-            </div>
-
-        </div>
-
-    `;
-
-
-    container.appendChild(
-        horns
-    );
-}
-
-
-/* =====================================================
-   ACCESSORY BUTTONS
-===================================================== */
-
-function updateAccessoryButtons() {
-
-    const equipped =
-        getAccessories();
-
-
-    document
-        .querySelectorAll(
-            'button[onclick*="toggleAccessory"]'
-        )
-        .forEach(
-            function(button) {
-
-                const code =
-                    button.getAttribute(
-                        "onclick"
-                    );
-
-
-                const match =
-                    code.match(
-                        /toggleAccessory\(this,'(.*?)'\)/
-                    );
-
-
-                if (!match) return;
-
-
-                const name =
-                    match[1];
-
-
-                if (
-                    equipped.includes(
-                        name
-                    )
-                ) {
-
-                    button.classList.add(
-                        "equipped"
-                    );
-
-                    button.textContent =
-                        "Unequip";
-
-                } else {
-
-                    button.classList.remove(
-                        "equipped"
-                    );
-
-                    button.textContent =
-                        "Equip";
-                }
-
-            }
-        );
-}
-
-
-/* =====================================================
-   ACCESSORY COUNT
-===================================================== */
-
-function updateAccessoryCount() {
-
-    const count =
-        getAccessories().length;
-
-
-    document.getElementById(
-        "accessoryCount"
-    ).textContent =
-        count + " / 3";
-}
-
-
-/* =====================================================
-   SHIRT DISPLAY
-===================================================== */
-
-function loadShirt() {
-
-    const shirt =
-        localStorage.getItem(
-            "mtbShirt"
-        );
-
-
-    const graphic =
-        document.getElementById(
-            "shirtGraphic"
-        );
-
-
-    const body =
-        document.querySelector(
-            ".body"
-        );
-
-
-    graphic.innerHTML = "";
-
-    body.style.background =
-        "#1683ff";
-
-
-    if (!shirt) return;
-
-
-    if (
-        shirt ===
-        "MTB Classic Logo"
-    ) {
-
-        graphic.innerHTML =
-            `<div class="shirt-logo">
-                MTB
-            </div>`;
-
-    }
-
-
-    else if (
-        shirt ===
-        "MTB Star Streetwear"
-    ) {
-
-        body.style.background =
-            "#111";
-
-
-        graphic.innerHTML = `
-
-            <div class="shirt-star">
-            </div>
-
-            <div
-                class="shirt-logo"
-                style="
-                font-size:18px;
-                top:103px;">
-
-                MTB
-
-            </div>
-
-        `;
-
-    }
-
-
-    else if (
-        shirt ===
-        "MTB Flame"
-    ) {
-
-        body.style.background =
-            "#8b1111";
-
-
-        graphic.innerHTML =
-            `<div class="shirt-flame">
-                🔥
-            </div>`;
-
-    }
-
-
-    else if (
-        shirt ===
-        "MTB Lightning"
-    ) {
-
-        body.style.background =
-            "#07558c";
-
-
-        graphic.innerHTML =
-            `<div class="shirt-lightning">
-                ⚡
-            </div>`;
-
-    }
-
-
-    else if (
-        shirt ===
-        "MTB Grey Essential"
-    ) {
-
-        body.style.background =
-            "#555";
-
-
-        graphic.innerHTML =
-            `<div class="shirt-logo">
-                MTB
-            </div>`;
-
-    }
-
-
-    else if (
-        shirt ===
-        "MTB Gothic"
-    ) {
-
-        body.style.background =
-            "#151515";
-
-
-        graphic.innerHTML =
-            `<div class="shirt-logo">
-                MTB
-            </div>`;
-
-    }
-
-
-    else if (
-        shirt ===
-        "MTB White Classic"
-    ) {
-
-        body.style.background =
-            "#eee";
-
-
-        graphic.innerHTML = `
-
-            <div
-                class="shirt-logo"
-                style="
-                color:#111;
-                text-shadow:
-                1px 1px #aaa;">
-
-                MTB
-
-            </div>
-
-        `;
-    }
-}
-
-
-/* =====================================================
-   PANTS DISPLAY
-===================================================== */
-
-function loadPants() {
-
-    const pants =
-        localStorage.getItem(
-            "mtbPants"
-        );
-
-
-    const left =
-        document.querySelector(
-            ".leg-left"
-        );
-
-
-    const right =
-        document.querySelector(
-            ".leg-right"
-        );
-
-
-    left.className =
-        "leg leg-left";
-
-    right.className =
-        "leg leg-right";
-
-
-    left.innerHTML = "";
-    right.innerHTML = "";
-
-
-    left.style.background =
-        "#333";
-
-    right.style.background =
-        "#333";
-
-
-    if (!pants) return;
-
-
-    if (
-        pants ===
-        "MTB Black Logo Pants"
-    ) {
-
-        left.innerHTML =
-            `<div class="pants-logo">
-                MTB
-            </div>`;
-
-        right.innerHTML =
-            `<div class="pants-logo">
-                MTB
-            </div>`;
-
-    }
-
-
-    else if (
-        pants ===
-        "MTB Grey Classic Pants"
-    ) {
-
-        left.style.background =
-            "#555";
-
-        right.style.background =
-            "#555";
-
-
-        left.innerHTML =
-            `<div class="pants-logo">
-                MTB
-            </div>`;
-
-        right.innerHTML =
-            `<div class="pants-logo">
-                MTB
-            </div>`;
-
-    }
-
-
-    else if (
-        pants ===
-        "MTB Star Pants"
-    ) {
-
-        left.style.background =
-            "#111";
-
-        right.style.background =
-            "#111";
-
-
-        left.innerHTML =
-            `<div class="pants-star">
-            </div>`;
-
-        right.innerHTML =
-            `<div class="pants-star">
-            </div>`;
-
-    }
-
-
-    else if (
-        pants ===
-        "MTB Flame Pants"
-    ) {
-
-        left.style.background =
-            "#8b1111";
-
-        right.style.background =
-            "#8b1111";
-
-
-        left.innerHTML =
-            `<div class="pants-flame">
-                🔥
-            </div>`;
-
-        right.innerHTML =
-            `<div class="pants-flame">
-                🔥
-            </div>`;
-
-    }
-
-
-    else if (
-        pants ===
-        "MTB Lightning Pants"
-    ) {
-
-        left.style.background =
-            "#07558c";
-
-        right.style.background =
-            "#07558c";
-
-
-        left.innerHTML =
-            `<div class="pants-lightning">
-                ⚡
-            </div>`;
-
-        right.innerHTML =
-            `<div class="pants-lightning">
-                ⚡
-            </div>`;
-
-    }
-
-
-    else if (
-        pants ===
-        "MTB Classic Jeans"
-    ) {
-
-        left.style.background =
-            "#2166a5";
-
-        right.style.background =
-            "#2166a5";
-
-
-        left.innerHTML =
-            `<div class="pants-logo">
-                MTB
-            </div>`;
-
-        right.innerHTML =
-            `<div class="pants-logo">
-                MTB
-            </div>`;
-
-    }
-
-
-    else if (
-        pants ===
-        "MTB All Seasons Pants"
-    ) {
-
-        left.classList.add(
-            "season-pants"
-        );
-
-        right.classList.add(
-            "season-pants"
-        );
-    }
-}
-
-
-/* =====================================================
-   STATUS
-===================================================== */
-
-function updateStatus() {
-
-    const face =
-        localStorage.getItem(
-            "mtbFace"
-        ) || "happy";
-
-
-    const shirt =
-        localStorage.getItem(
-            "mtbShirt"
-        ) || "None";
-
-
-    const pants =
-        localStorage.getItem(
-            "mtbPants"
-        ) || "None";
-
-
-    const accessories =
-        getAccessories();
-
-
-    document.getElementById(
-        "status"
-    ).textContent =
-
-        "Face: " +
-        face +
-
-        " | Shirt: " +
-        shirt +
-
-        " | Pants: " +
-        pants +
-
-        " | Accessories: " +
-
-        (
-            accessories.length
-            ? accessories.join(", ")
-            : "None"
-        );
-}
-
-
-/* =====================================================
-   CLEAR AVATAR
-===================================================== */
-
-function clearAvatar() {
-
-    localStorage.removeItem(
-        "mtbFace"
-    );
-
-    localStorage.removeItem(
-        "mtbShirt"
-    );
-
-    localStorage.removeItem(
-        "mtbPants"
-    );
-
-    localStorage.removeItem(
-        "mtbAccessories"
-    );
-
-
-    document.getElementById(
-        "face"
-    ).className =
-        "face face-happy";
-
-
-    document.getElementById(
-        "shirtGraphic"
-    ).innerHTML = "";
-
-
-    document.querySelector(
-        ".body"
-    ).style.background =
-        "#1683ff";
-
-
-    const left =
-        document.querySelector(
-            ".leg-left"
-        );
-
-
-    const right =
-        document.querySelector(
-            ".leg-right"
-        );
-
-
-    left.className =
-        "leg leg-left";
-
-    right.className =
-        "leg leg-right";
-
-
-    left.innerHTML = "";
-    right.innerHTML = "";
-
-
-    document.getElementById(
-        "accessory"
-    ).innerHTML = "";
-
-
-    document
-        .querySelectorAll(
-            ".item button"
-        )
-        .forEach(
-            function(button) {
-
-                button.classList.remove(
-                    "equipped"
-                );
-
-                button.textContent =
-                    "Equip";
-
-            }
-        );
-
-
-    updateAccessoryCount();
-    updateStatus();
-}
-
-
-/* =====================================================
-   LOAD EVERYTHING
-===================================================== */
-
-function loadAvatar() {
-
-    /* COINS */
+    coins -= price;
+    localStorage.setItem("mtbCoins",coins);
 
     updateCoins();
 
-
-    /* FACE */
-
-    const face =
-        localStorage.getItem(
-            "mtbFace"
-        ) || "happy";
-
-
-    document.getElementById(
-        "face"
-    ).className =
-        "face face-" + face;
-
-
-    /* SHIRT */
-
-    loadShirt();
-
-
-    /* PANTS */
-
-    loadPants();
-
-
-    /* ACCESSORIES */
-
-    loadAccessories();
-
-
-    /* FACE BUTTON */
-
-    document
-        .querySelectorAll(
-            'button[onclick*="equipFace"]'
-        )
-        .forEach(
-            function(button) {
-
-                if (
-                    button
-                    .getAttribute(
-                        "onclick"
-                    )
-                    .includes(
-                        "'" +
-                        face +
-                        "'"
-                    )
-                ) {
-
-                    button.classList.add(
-                        "equipped"
-                    );
-
-                    button.textContent =
-                        "Equipped";
-                }
-
-            }
-        );
-
-
-    /* SHIRT BUTTON */
-
-    const shirt =
-        localStorage.getItem(
-            "mtbShirt"
-        );
-
-
-    document
-        .querySelectorAll(
-            'button[onclick*="equipShirt"]'
-        )
-        .forEach(
-            function(button) {
-
-                if (
-                    shirt &&
-                    button
-                    .getAttribute(
-                        "onclick"
-                    )
-                    .includes(
-                        "'" +
-                        shirt +
-                        "'"
-                    )
-                ) {
-
-                    button.classList.add(
-                        "equipped"
-                    );
-
-                    button.textContent =
-                        "Equipped";
-                }
-
-            }
-        );
-
-
-    /* PANTS BUTTON */
-
-    const pants =
-        localStorage.getItem(
-            "mtbPants"
-        );
-
-
-    document
-        .querySelectorAll(
-            'button[onclick*="equipPants"]'
-        )
-        .forEach(
-            function(button) {
-
-                if (
-                    pants &&
-                    button
-                    .getAttribute(
-                        "onclick"
-                    )
-                    .includes(
-                        "'" +
-                        pants +
-                        "'"
-                    )
-                ) {
-
-                    button.classList.add(
-                        "equipped"
-                    );
-
-                    button.textContent =
-                        "Equipped";
-                }
-
-            }
-        );
-
-
-    updateCoins();
-    updateAccessoryButtons();
-    updateAccessoryCount();
-    updateStatus();
+    message(name + " purchased!");
 }
 
 
-/* =====================================================
-   START
-===================================================== */
+/* =========================
+   ACCESSORIES
+========================= */
 
-loadAvatar();
+let equipped = [];
+
+function equipAccessory(name,type){
+
+    if(equipped.includes(name)){
+        equipped = equipped.filter(x => x !== name);
+        message(name + " removed.");
+        updateAvatar();
+        return;
+    }
+
+    if(equipped.length >= 3){
+        message("Maximum 3 accessories/gear!");
+        return;
+    }
+
+    equipped.push(name);
+
+    let headAccessory =
+        document.getElementById("headAccessory");
+
+    let fire =
+        document.getElementById("fire");
+
+    headAccessory.className = "accessory";
+    fire.className = "accessory";
+
+    if(type === "blue"){
+        headAccessory.className =
+            "accessory frozenHorns blueHorns";
+
+        fire.className =
+            "accessory fire blueFire";
+
+        fire.textContent = "🔥";
+    }
+
+    if(type === "red"){
+        headAccessory.className =
+            "accessory frozenHorns redHorns";
+
+        fire.className =
+            "accessory fire";
+
+        fire.textContent = "🔥";
+    }
+
+    if(type === "green"){
+        headAccessory.className =
+            "accessory frozenHorns greenHorns";
+
+        fire.className =
+            "accessory fire greenFire";
+
+        fire.textContent = "🔥";
+    }
+
+    if(type === "gold"){
+        headAccessory.className =
+            "accessory valk goldValk";
+    }
+
+    if(type === "redValk"){
+        headAccessory.className =
+            "accessory valk redValk";
+    }
+
+    if(type === "blueValk"){
+        headAccessory.className =
+            "accessory valk blueValk";
+    }
+
+    if(type === "greenValk"){
+        headAccessory.className =
+            "accessory valk greenValk";
+    }
+
+    if(type === "purpleValk"){
+        headAccessory.className =
+            "accessory valk purpleValk";
+    }
+
+    if(type === "blackValk"){
+        headAccessory.className =
+            "accessory valk blackValk";
+    }
+
+    message(name + " equipped!");
+    updateList();
+}
+
+
+/* =========================
+   GEAR
+========================= */
+
+function equipGear(icon,name){
+
+    if(equipped.includes(name)){
+
+        equipped =
+            equipped.filter(x => x !== name);
+
+        document.getElementById("gear").textContent = "";
+
+        message(name + " removed.");
+
+        updateList();
+        return;
+    }
+
+    if(equipped.length >= 3){
+        message("Maximum 3 accessories/gear!");
+        return;
+    }
+
+    equipped.push(name);
+
+    document.getElementById("gear").textContent = icon;
+
+    message(name + " equipped!");
+
+    updateList();
+}
+
+
+/* =========================
+   FACE
+========================= */
+
+function setFace(face){
+
+    document.getElementById("face").textContent = face;
+
+    message("Face equipped!");
+}
+
+
+/* =========================
+   KORBLOX STYLE
+========================= */
+
+function toggleKorblox(){
+
+    let leg =
+        document.getElementById("leftLeg");
+
+    leg.classList.toggle("korblox");
+
+    if(leg.classList.contains("korblox")){
+        message("Korblox-style leg equipped!");
+    }else{
+        message("Korblox-style leg removed!");
+    }
+}
+
+
+/* =========================
+   HEADLESS STYLE
+========================= */
+
+let headless = false;
+
+function toggleHeadless(){
+
+    let head =
+        document.getElementById("head");
+
+    let face =
+        document.getElementById("face");
+
+    headless = !headless;
+
+    if(headless){
+
+        head.classList.add("headless");
+        face.style.display = "none";
+
+        message("Headless style equipped!");
+
+    }else{
+
+        head.classList.remove("headless");
+        face.style.display = "block";
+
+        message("Head restored!");
+    }
+}
+
+
+/* =========================
+   CLEAR
+========================= */
+
+function clearAccessories(){
+
+    equipped = [];
+
+    document.getElementById("headAccessory").className =
+        "accessory";
+
+    document.getElementById("fire").className =
+        "accessory";
+
+    document.getElementById("fire").textContent = "";
+
+    document.getElementById("gear").textContent = "";
+
+    updateList();
+
+    message("Accessories removed.");
+}
+
+
+/* =========================
+   EQUIPPED LIST
+========================= */
+
+function updateList(){
+
+    let list =
+        document.getElementById("equippedList");
+
+    if(equipped.length === 0){
+        list.textContent = "None";
+        return;
+    }
+
+    list.innerHTML =
+        equipped.map(x => "• " + x).join("<br>");
+}
+
+
+/* =========================
+   MESSAGE
+========================= */
+
+function message(text){
+
+    let box =
+        document.getElementById("message");
+
+    box.textContent = text;
+    box.style.display = "block";
+
+    setTimeout(()=>{
+        box.style.display = "none";
+    },2000);
+}
+
+updateCoins();
+updateList();
 
 </script>
 
