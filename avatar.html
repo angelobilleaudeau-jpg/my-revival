@@ -4,6 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>MTB REVIVALS - Avatar</title>
 
 <style>
@@ -19,45 +20,45 @@ body{
     color:#222;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
 
 header{
-    background:#c6c6c6;
+    background:#c7c7c7;
     border-bottom:3px solid #888;
-    padding:12px;
+    padding:15px;
 }
 
 .logo{
     text-align:center;
     font-size:28px;
     font-weight:bold;
-    margin-bottom:12px;
 }
 
 nav{
+    margin-top:12px;
     display:flex;
     justify-content:center;
     flex-wrap:wrap;
-    gap:4px;
+    gap:5px;
 }
 
 nav a{
-    color:#222;
     text-decoration:none;
+    color:#222;
     font-weight:bold;
     padding:9px 13px;
-    border-radius:4px;
+    border-radius:5px;
 }
 
 nav a:hover{
     background:#aaa;
 }
 
-/* COINS */
+/* ================= COINS ================= */
 
 .coinbar{
     max-width:1100px;
-    margin:15px auto 0;
+    margin:15px auto;
     padding:12px 18px;
     background:white;
     border:1px solid #aaa;
@@ -65,11 +66,7 @@ nav a:hover{
     display:flex;
     justify-content:space-between;
     align-items:center;
-}
-
-.coins{
-    font-size:18px;
-    font-weight:bold;
+    gap:10px;
 }
 
 .coin{
@@ -82,7 +79,7 @@ nav a:hover{
     vertical-align:middle;
 }
 
-/* MAIN */
+/* ================= MAIN ================= */
 
 .container{
     max-width:1100px;
@@ -115,17 +112,20 @@ nav a:hover{
     text-align:center;
 }
 
-/* AVATAR */
+/* ================= AVATAR ================= */
 
 .avatar{
     position:relative;
-    width:210px;
-    height:390px;
+    width:240px;
+    height:410px;
     margin:15px auto;
 }
 
+/* HEAD */
+
 .head{
     position:absolute;
+
     width:100px;
     height:100px;
 
@@ -134,10 +134,10 @@ nav a:hover{
     border:3px solid #333;
     border-radius:10px;
 
-    top:20px;
-    left:55px;
+    top:25px;
+    left:70px;
 
-    z-index:5;
+    z-index:10;
 }
 
 /* BODY */
@@ -152,13 +152,13 @@ nav a:hover{
 
     border:3px solid #333;
 
-    top:120px;
-    left:48px;
+    top:125px;
+    left:62px;
 
     z-index:2;
 }
 
-/* ARMS */
+/* ================= ARMS ================= */
 
 .arm{
     position:absolute;
@@ -170,18 +170,69 @@ nav a:hover{
 
     border:3px solid #333;
 
-    top:125px;
+    top:130px;
+
+    transition:
+        transform .3s ease,
+        top .3s ease,
+        right .3s ease,
+        left .3s ease;
+
+    z-index:5;
 }
 
 .leftArm{
-    left:7px;
+    left:20px;
 }
+
+/* NORMAL RIGHT ARM */
 
 .rightArm{
-    right:7px;
+    right:20px;
+
+    transform-origin:
+        50% 5%;
 }
 
-/* LEGS */
+/* ================= HOLDING GEAR ================= */
+
+/*
+   The arm moves outward and rotates
+   when the avatar has gear equipped.
+*/
+
+.avatar.holdingGear .rightArm{
+
+    right:0;
+
+    top:112px;
+
+    transform:
+        rotate(-58deg);
+}
+
+/* HAND */
+
+.rightArm:after{
+
+    content:"";
+
+    position:absolute;
+
+    width:32px;
+    height:32px;
+
+    background:#f1c27d;
+
+    border:3px solid #333;
+
+    border-radius:50%;
+
+    bottom:-18px;
+    left:0;
+}
+
+/* ================= LEGS ================= */
 
 .leg{
     position:absolute;
@@ -193,20 +244,23 @@ nav a:hover{
 
     border:3px solid #333;
 
-    top:245px;
+    top:250px;
+
+    z-index:3;
 }
 
 .leftLeg{
-    left:52px;
+    left:67px;
 }
 
 .rightLeg{
-    right:52px;
+    right:67px;
 }
 
-/* KORBLOX STYLE */
+/* ================= KORBLOX ================= */
 
 .korblox{
+
     background:
         linear-gradient(
             90deg,
@@ -219,6 +273,7 @@ nav a:hover{
 }
 
 .korblox:after{
+
     content:"";
 
     position:absolute;
@@ -234,9 +289,7 @@ nav a:hover{
     opacity:.5;
 }
 
-/* =====================================================
-   CLASSIC CSS FACES
-===================================================== */
+/* ================= FACES ================= */
 
 .face{
     position:absolute;
@@ -247,10 +300,8 @@ nav a:hover{
     top:0;
     left:0;
 
-    z-index:8;
+    z-index:15;
 }
-
-/* EYES */
 
 .eye{
     position:absolute;
@@ -276,6 +327,7 @@ nav a:hover{
 /* SMILE */
 
 .classicSmile .mouth{
+
     position:absolute;
 
     width:42px;
@@ -283,7 +335,8 @@ nav a:hover{
 
     border-bottom:4px solid #111;
 
-    border-radius:0 0 50% 50%;
+    border-radius:
+        0 0 50% 50%;
 
     left:29px;
     top:53px;
@@ -292,6 +345,7 @@ nav a:hover{
 /* HAPPY */
 
 .classicHappy .mouth{
+
     position:absolute;
 
     width:40px;
@@ -299,13 +353,15 @@ nav a:hover{
 
     background:#111;
 
-    border-radius:5px 5px 50% 50%;
+    border-radius:
+        5px 5px 50% 50%;
 
     left:30px;
     top:52px;
 }
 
 .classicHappy .mouth:after{
+
     content:"";
 
     position:absolute;
@@ -322,6 +378,7 @@ nav a:hover{
 /* SERIOUS */
 
 .classicSerious .mouth{
+
     position:absolute;
 
     width:38px;
@@ -336,6 +393,7 @@ nav a:hover{
 /* SMIRK */
 
 .classicSmirk .mouth{
+
     position:absolute;
 
     width:38px;
@@ -343,7 +401,8 @@ nav a:hover{
 
     border-bottom:4px solid #111;
 
-    border-radius:0 0 60% 20%;
+    border-radius:
+        0 0 60% 20%;
 
     transform:rotate(-8deg);
 
@@ -362,6 +421,7 @@ nav a:hover{
 }
 
 .classicEvil .mouth{
+
     position:absolute;
 
     width:40px;
@@ -375,9 +435,10 @@ nav a:hover{
     top:57px;
 }
 
-/* ACCESSORIES */
+/* ================= ACCESSORIES ================= */
 
 .accessory{
+
     position:absolute;
 
     pointer-events:none;
@@ -388,12 +449,15 @@ nav a:hover{
 /* FROZEN HORNS */
 
 .frozenHorns{
-    width:160px;
-    height:90px;
 
-    top:-42px;
-    left:25px;
+    width:170px;
+    height:95px;
+
+    top:-45px;
+    left:35px;
 }
+
+/* HORNS */
 
 .frozenHorns:before,
 .frozenHorns:after{
@@ -402,8 +466,8 @@ nav a:hover{
 
     position:absolute;
 
-    width:38px;
-    height:82px;
+    width:40px;
+    height:90px;
 
     border:3px solid;
 
@@ -423,20 +487,11 @@ nav a:hover{
     );
 }
 
-.frozenHorns:before{
-    left:13px;
-    transform:rotate(-25deg);
-}
-
-.frozenHorns:after{
-    right:13px;
-    transform:rotate(25deg);
-}
-
-/* BLUE HORNS */
+/* BLUE */
 
 .blueHorns:before,
 .blueHorns:after{
+
     background:#b9f3ff;
 
     border-color:#42b8ed;
@@ -445,10 +500,27 @@ nav a:hover{
         0 0 12px #66dfff;
 }
 
-/* RED HORNS */
+.blueHorns:before{
+
+    left:15px;
+
+    transform:
+        rotate(-25deg);
+}
+
+.blueHorns:after{
+
+    right:15px;
+
+    transform:
+        rotate(25deg);
+}
+
+/* RED */
 
 .redHorns:before,
 .redHorns:after{
+
     background:#ff4b4b;
 
     border-color:#a00000;
@@ -457,10 +529,27 @@ nav a:hover{
         0 0 12px #ff3333;
 }
 
-/* GREEN HORNS */
+.redHorns:before{
+
+    left:15px;
+
+    transform:
+        rotate(-25deg);
+}
+
+.redHorns:after{
+
+    right:15px;
+
+    transform:
+        rotate(25deg);
+}
+
+/* GREEN */
 
 .greenHorns:before,
 .greenHorns:after{
+
     background:#53ff8b;
 
     border-color:#008c3c;
@@ -469,33 +558,55 @@ nav a:hover{
         0 0 12px #2dff75;
 }
 
+.greenHorns:before{
+
+    left:15px;
+
+    transform:
+        rotate(-25deg);
+}
+
+.greenHorns:after{
+
+    right:15px;
+
+    transform:
+        rotate(25deg);
+}
+
 /* FIRE */
 
 .fire{
-    top:-34px;
-    left:78px;
 
-    font-size:45px;
+    top:-38px;
+    left:98px;
+
+    font-size:42px;
 
     z-index:21;
 }
 
 .blueFire{
-    filter:hue-rotate(150deg) saturate(2);
+    filter:
+        hue-rotate(150deg)
+        saturate(2);
 }
 
 .greenFire{
-    filter:hue-rotate(65deg) saturate(2);
+    filter:
+        hue-rotate(65deg)
+        saturate(2);
 }
 
-/* VALKYRIE */
+/* ================= VALKYRIES ================= */
 
 .valk{
+
     top:-35px;
-    left:35px;
+    left:50px;
 
     width:140px;
-    height:55px;
+    height:60px;
 
     z-index:19;
 }
@@ -519,16 +630,22 @@ nav a:hover{
 }
 
 .valk:before{
+
     left:2px;
-    transform:rotate(-25deg);
+
+    transform:
+        rotate(-25deg);
 }
 
 .valk:after{
+
     right:2px;
-    transform:rotate(25deg);
+
+    transform:
+        rotate(25deg);
 }
 
-/* VALKYRIE COLORS */
+/* COLORS */
 
 .goldValk:before,
 .goldValk:after{
@@ -566,28 +683,48 @@ nav a:hover{
     border-color:#111;
 }
 
-/* GEAR */
+/* ================= GEAR ================= */
 
 .gear{
+
     position:absolute;
 
     z-index:30;
 
     font-size:45px;
 
-    top:145px;
-    right:-15px;
+    top:135px;
+    right:-5px;
 
-    transform:rotate(-15deg);
+    transform:
+        rotate(-15deg);
+
+    transition:
+        .3s ease;
 }
 
-/* CATEGORIES */
+/*
+   Gear moves with the hand.
+*/
+
+.avatar.holdingGear .gear{
+
+    top:172px;
+
+    right:-18px;
+
+    transform:
+        rotate(-35deg);
+}
+
+/* ================= CATEGORIES ================= */
 
 .category{
     margin-bottom:25px;
 }
 
 .category h2{
+
     background:#d0d0d0;
 
     border-bottom:2px solid #999;
@@ -598,15 +735,20 @@ nav a:hover{
 }
 
 .grid{
+
     display:grid;
 
     grid-template-columns:
-        repeat(auto-fill,minmax(145px,1fr));
+        repeat(
+            auto-fill,
+            minmax(145px,1fr)
+        );
 
     gap:10px;
 }
 
 .item{
+
     background:#f5f5f5;
 
     border:1px solid #aaa;
@@ -617,6 +759,7 @@ nav a:hover{
 }
 
 .preview{
+
     height:90px;
 
     background:#ddd;
@@ -629,18 +772,20 @@ nav a:hover{
 
     justify-content:center;
 
-    font-size:38px;
+    font-size:30px;
 
     margin-bottom:8px;
 }
 
 .item h3{
+
     font-size:14px;
 
     margin:5px 0;
 }
 
 .item p{
+
     font-size:11px;
 
     color:#666;
@@ -648,9 +793,10 @@ nav a:hover{
     min-height:25px;
 }
 
-/* BUTTONS */
+/* ================= BUTTONS ================= */
 
 button{
+
     border:0;
 
     background:#1683ff;
@@ -670,27 +816,40 @@ button:hover{
     background:#006bd6;
 }
 
-.wear{
-    background:#1683ff;
-}
-
-.wearing{
+button.gray{
     background:#777;
 }
 
-.remove{
-    background:#777;
+button.red{
+    background:#d33;
 }
 
-/* MESSAGE */
+/* ================= EQUIPPED ================= */
+
+.equippedList{
+
+    text-align:left;
+
+    background:#eee;
+
+    border:1px solid #aaa;
+
+    padding:10px;
+
+    min-height:45px;
+}
+
+/* ================= MESSAGE ================= */
 
 .message{
+
     position:fixed;
 
     left:50%;
     bottom:20px;
 
-    transform:translateX(-50%);
+    transform:
+        translateX(-50%);
 
     background:#333;
 
@@ -705,38 +864,16 @@ button:hover{
     z-index:100;
 }
 
-/* EQUIPPED */
-
-.equippedList{
-    text-align:left;
-
-    background:#eee;
-
-    border:1px solid #aaa;
-
-    padding:10px;
-
-    min-height:45px;
-}
-
-/* FOOTER */
-
-footer{
-    text-align:center;
-
-    padding:30px;
-
-    color:#666;
-}
-
-/* HEADLESS */
+/* ================= HEADLESS ================= */
 
 .headless{
+
     background:transparent !important;
+
     border-color:transparent !important;
 }
 
-/* MOBILE */
+/* ================= MOBILE ================= */
 
 @media(max-width:700px){
 
@@ -745,11 +882,15 @@ footer{
     }
 
     .coinbar{
+
         margin-left:15px;
         margin-right:15px;
+
+        flex-direction:column;
     }
 
     nav{
+
         display:grid;
 
         grid-template-columns:
@@ -764,7 +905,11 @@ footer{
 </style>
 </head>
 
+
 <body>
+
+
+<!-- ================= HEADER ================= -->
 
 <header>
 
@@ -773,38 +918,59 @@ MTB REVIVALS
 </div>
 
 <nav>
-<a href="index.html">Home</a>
-<a href="login.html">Account</a>
-<a href="avatar.html">Avatar</a>
-<a href="accessories.html">Accessories</a>
-<a href="clothes.html">Clothes</a>
-<a href="inventory.html">Inventory</a>
-<a href="games.html">Games</a>
-<a href="news.html">News</a>
+
+<a href="index.html">
+Home
+</a>
+
+<a href="avatar.html">
+Avatar
+</a>
+
+<a href="servers.html">
+Game Servers
+</a>
+
+<a href="inventory.html">
+Inventory
+</a>
+
+<a href="clothes.html">
+Clothes
+</a>
+
 </nav>
 
 </header>
 
 
-<!-- COINS -->
+<!-- ================= COINS ================= -->
 
 <div class="coinbar">
 
-<div class="coins">
+<div>
 
 <span class="coin"></span>
 
+<b>
 MTB Coins:
-<span id="coins">1000</span>
+</b>
+
+<span id="coins">
+1000
+</span>
 
 </div>
 
+
 <button onclick="earnCoins()">
-🎮 Earn 100 Coins
+Earn 100 Coins
 </button>
 
 </div>
 
+
+<!-- ================= MAIN ================= -->
 
 <div class="container">
 
@@ -820,7 +986,7 @@ Customize your MTB REVIVALS avatar.
 </p>
 
 <b>
-You can wear up to 3 accessories or gear items.
+Maximum 3 accessories or gear at once.
 </b>
 
 </div>
@@ -829,7 +995,7 @@ You can wear up to 3 accessories or gear items.
 <div class="avatarLayout">
 
 
-<!-- AVATAR -->
+<!-- ================= AVATAR ================= -->
 
 <div class="avatarBox">
 
@@ -838,65 +1004,104 @@ Your Avatar
 </h2>
 
 
-<div class="avatar">
+<div
+id="avatar"
+class="avatar"
+>
 
-<div id="headAccessory"
+
+<!-- ACCESSORY -->
+
+<div
+id="headAccessory"
 class="accessory">
 </div>
 
-<div id="fire"
+
+<!-- FIRE -->
+
+<div
+id="fire"
 class="accessory">
 </div>
 
-<div id="gear"
+
+<!-- GEAR -->
+
+<div
+id="gear"
 class="gear">
 </div>
 
 
-<div id="head"
-class="head">
+<!-- HEAD -->
 
-<div id="face"
-class="face classicSmile">
+<div
+id="head"
+class="head"
+>
 
-<span class="eye leftEye"></span>
+<div
+id="face"
+class="face classicSmile"
+>
 
-<span class="eye rightEye"></span>
+<span
+class="eye leftEye">
+</span>
 
-<span class="mouth"></span>
+<span
+class="eye rightEye">
+</span>
+
+<span
+class="mouth">
+</span>
 
 </div>
 
 </div>
 
+
+<!-- BODY -->
 
 <div class="body">
 </div>
 
 
-<div class="arm leftArm">
+<!-- ARMS -->
+
+<div
+class="arm leftArm">
 </div>
 
-<div class="arm rightArm">
+<div
+class="arm rightArm">
 </div>
 
 
-<div id="leftLeg"
+<!-- LEGS -->
+
+<div
+id="leftLeg"
 class="leg leftLeg">
 </div>
 
-<div class="leg rightLeg">
+<div
+class="leg rightLeg">
 </div>
+
 
 </div>
 
 
 <h3>
-Equipped
+Equipped Items
 </h3>
 
 
-<div id="equippedList"
+<div
+id="equippedList"
 class="equippedList">
 None
 </div>
@@ -906,17 +1111,19 @@ None
 
 
 <button
-class="remove"
-onclick="clearAccessories()">
+class="gray"
+onclick="clearAccessories()"
+>
 
-Remove Accessories
+Remove All Accessories/Gear
 
 </button>
+
 
 </div>
 
 
-<!-- ITEMS -->
+<!-- ================= ITEMS ================= -->
 
 <div class="items">
 
@@ -926,7 +1133,7 @@ Remove Accessories
 <div class="category">
 
 <h2>
-😀 Classic Faces
+Classic Faces
 </h2>
 
 
@@ -936,55 +1143,16 @@ Remove Accessories
 <div class="item">
 
 <div class="preview">
-
-<div style="
-width:55px;
-height:55px;
-background:#f1c27d;
-border:2px solid #333;
-border-radius:7px;
-position:relative;
-">
-
-<div style="
-position:absolute;
-width:6px;
-height:9px;
-background:#111;
-border-radius:50%;
-left:16px;
-top:19px;
-"></div>
-
-<div style="
-position:absolute;
-width:6px;
-height:9px;
-background:#111;
-border-radius:50%;
-right:16px;
-top:19px;
-"></div>
-
-<div style="
-position:absolute;
-width:25px;
-height:12px;
-border-bottom:3px solid #111;
-border-radius:0 0 50% 50%;
-left:13px;
-top:29px;
-"></div>
-
-</div>
-
+🙂
 </div>
 
 <h3>
 Classic Smile
 </h3>
 
-<button onclick="setFace('classicSmile')">
+<button
+onclick="setFace('classicSmile')"
+>
 Wear
 </button>
 
@@ -994,55 +1162,16 @@ Wear
 <div class="item">
 
 <div class="preview">
-
-<div style="
-width:55px;
-height:55px;
-background:#f1c27d;
-border:2px solid #333;
-border-radius:7px;
-position:relative;
-">
-
-<div style="
-position:absolute;
-width:6px;
-height:9px;
-background:#111;
-border-radius:50%;
-left:16px;
-top:19px;
-"></div>
-
-<div style="
-position:absolute;
-width:6px;
-height:9px;
-background:#111;
-border-radius:50%;
-right:16px;
-top:19px;
-"></div>
-
-<div style="
-position:absolute;
-width:27px;
-height:13px;
-background:#111;
-border-radius:3px 3px 50% 50%;
-left:12px;
-top:29px;
-"></div>
-
-</div>
-
+:D
 </div>
 
 <h3>
 Classic Happy
 </h3>
 
-<button onclick="setFace('classicHappy')">
+<button
+onclick="setFace('classicHappy')"
+>
 Wear
 </button>
 
@@ -1052,54 +1181,16 @@ Wear
 <div class="item">
 
 <div class="preview">
-
-<div style="
-width:55px;
-height:55px;
-background:#f1c27d;
-border:2px solid #333;
-border-radius:7px;
-position:relative;
-">
-
-<div style="
-position:absolute;
-width:6px;
-height:9px;
-background:#111;
-border-radius:50%;
-left:16px;
-top:19px;
-"></div>
-
-<div style="
-position:absolute;
-width:6px;
-height:9px;
-background:#111;
-border-radius:50%;
-right:16px;
-top:19px;
-"></div>
-
-<div style="
-position:absolute;
-width:26px;
-height:3px;
-background:#111;
-left:13px;
-top:34px;
-"></div>
-
-</div>
-
+—
 </div>
 
 <h3>
 Serious
 </h3>
 
-<button onclick="setFace('classicSerious')">
+<button
+onclick="setFace('classicSerious')"
+>
 Wear
 </button>
 
@@ -1109,56 +1200,16 @@ Wear
 <div class="item">
 
 <div class="preview">
-
-<div style="
-width:55px;
-height:55px;
-background:#f1c27d;
-border:2px solid #333;
-border-radius:7px;
-position:relative;
-">
-
-<div style="
-position:absolute;
-width:6px;
-height:9px;
-background:#111;
-border-radius:50%;
-left:16px;
-top:19px;
-"></div>
-
-<div style="
-position:absolute;
-width:6px;
-height:9px;
-background:#111;
-border-radius:50%;
-right:16px;
-top:19px;
-"></div>
-
-<div style="
-position:absolute;
-width:26px;
-height:12px;
-border-bottom:3px solid #111;
-border-radius:0 0 50% 20%;
-transform:rotate(-8deg);
-left:13px;
-top:29px;
-"></div>
-
-</div>
-
+;)
 </div>
 
 <h3>
 Smirk
 </h3>
 
-<button onclick="setFace('classicSmirk')">
+<button
+onclick="setFace('classicSmirk')"
+>
 Wear
 </button>
 
@@ -1168,57 +1219,16 @@ Wear
 <div class="item">
 
 <div class="preview">
-
-<div style="
-width:55px;
-height:55px;
-background:#f1c27d;
-border:2px solid #333;
-border-radius:7px;
-position:relative;
-">
-
-<div style="
-position:absolute;
-width:6px;
-height:9px;
-background:#111;
-border-radius:50%;
-left:16px;
-top:19px;
-transform:rotate(15deg);
-"></div>
-
-<div style="
-position:absolute;
-width:6px;
-height:9px;
-background:#111;
-border-radius:50%;
-right:16px;
-top:19px;
-transform:rotate(-15deg);
-"></div>
-
-<div style="
-position:absolute;
-width:27px;
-height:3px;
-border-top:3px solid #111;
-border-radius:50%;
-left:13px;
-top:34px;
-"></div>
-
-</div>
-
+>:)
 </div>
 
 <h3>
 Evil
 </h3>
 
-<button onclick="setFace('classicEvil')">
+<button
+onclick="setFace('classicEvil')"
+>
 Wear
 </button>
 
@@ -1226,396 +1236,7 @@ Wear
 
 
 </div>
-</div>
 
-
-<!-- MTB SHIRTS -->
-
-<div class="category">
-
-<h2>
-👕 MTB Shirts
-</h2>
-
-<div class="grid">
-
-
-<div class="item">
-
-<div class="preview">
-MTB
-</div>
-
-<h3>
-MTB Classic
-</h3>
-
-<p>
-MTB logo shirt
-</p>
-
-<button
-id="buy-mtbclassic"
-onclick="buyItem(
-'mtbclassic',
-'MTB Classic Shirt',
-100
-)">
-
-Buy - 100
-
-</button>
-
-</div>
-
-
-<div class="item">
-
-<div class="preview">
-MTB
-</div>
-
-<h3>
-MTB Black
-</h3>
-
-<p>
-Black MTB shirt
-</p>
-
-<button
-id="buy-mtbblack"
-onclick="buyItem(
-'mtbblack',
-'MTB Black Shirt',
-150
-)">
-
-Buy - 150
-
-</button>
-
-</div>
-
-
-<div class="item">
-
-<div class="preview">
-MTB
-</div>
-
-<h3>
-MTB Red
-</h3>
-
-<p>
-Red MTB shirt
-</p>
-
-<button
-id="buy-mtbred"
-onclick="buyItem(
-'mtbred',
-'MTB Red Shirt',
-150
-)">
-
-Buy - 150
-
-</button>
-
-</div>
-
-
-<div class="item">
-
-<div class="preview">
-MTB
-</div>
-
-<h3>
-MTB Blue
-</h3>
-
-<p>
-Blue MTB shirt
-</p>
-
-<button
-id="buy-mtbblue"
-onclick="buyItem(
-'mtbblue',
-'MTB Blue Shirt',
-150
-)">
-
-Buy - 150
-
-</button>
-
-</div>
-
-
-<div class="item">
-
-<div class="preview">
-★
-</div>
-
-<h3>
-MTB Street
-</h3>
-
-<p>
-Streetwear MTB design
-</p>
-
-<button
-id="buy-mtbstreet"
-onclick="buyItem(
-'mtbstreet',
-'MTB Street Shirt',
-200
-)">
-
-Buy - 200
-
-</button>
-
-</div>
-
-
-</div>
-</div>
-
-
-<!-- PANTS -->
-
-<div class="category">
-
-<h2>
-👖 MTB Pants
-</h2>
-
-<div class="grid">
-
-
-<div class="item">
-
-<div class="preview">
-MTB
-</div>
-
-<h3>
-MTB Black Pants
-</h3>
-
-<button
-id="buy-blackpants"
-onclick="buyItem(
-'blackpants',
-'MTB Black Pants',
-100
-)">
-
-Buy - 100
-
-</button>
-
-</div>
-
-
-<div class="item">
-
-<div class="preview">
-🔥
-</div>
-
-<h3>
-MTB Fire Pants
-</h3>
-
-<button
-id="buy-firepants"
-onclick="buyItem(
-'firepants',
-'MTB Fire Pants',
-150
-)">
-
-Buy - 150
-
-</button>
-
-</div>
-
-
-<div class="item">
-
-<div class="preview">
-❄
-</div>
-
-<h3>
-MTB Ice Pants
-</h3>
-
-<button
-id="buy-icepants"
-onclick="buyItem(
-'icepants',
-'MTB Ice Pants',
-150
-)">
-
-Buy - 150
-
-</button>
-
-</div>
-
-
-<div class="item">
-
-<div class="preview">
-★
-</div>
-
-<h3>
-MTB Street Pants
-</h3>
-
-<button
-id="buy-streetpants"
-onclick="buyItem(
-'streetpants',
-'MTB Street Pants',
-200
-)">
-
-Buy - 200
-
-</button>
-
-</div>
-
-
-</div>
-</div>
-
-
-<!-- SEASONS -->
-
-<div class="category">
-
-<h2>
-🌎 Seasonal Clothes
-</h2>
-
-<div class="grid">
-
-
-<div class="item">
-
-<div class="preview">
-SPRING
-</div>
-
-<h3>
-Spring MTB
-</h3>
-
-<button
-id="buy-spring"
-onclick="buyItem(
-'spring',
-'Spring MTB Outfit',
-150
-)">
-
-Buy - 150
-
-</button>
-
-</div>
-
-
-<div class="item">
-
-<div class="preview">
-SUMMER
-</div>
-
-<h3>
-Summer MTB
-</h3>
-
-<button
-id="buy-summer"
-onclick="buyItem(
-'summer',
-'Summer MTB Outfit',
-150
-)">
-
-Buy - 150
-
-</button>
-
-</div>
-
-
-<div class="item">
-
-<div class="preview">
-FALL
-</div>
-
-<h3>
-Fall MTB
-</h3>
-
-<button
-id="buy-fall"
-onclick="buyItem(
-'fall',
-'Fall MTB Outfit',
-150
-)">
-
-Buy - 150
-
-</button>
-
-</div>
-
-
-<div class="item">
-
-<div class="preview">
-WINTER
-</div>
-
-<h3>
-Winter MTB
-</h3>
-
-<button
-id="buy-winter"
-onclick="buyItem(
-'winter',
-'Winter MTB Outfit',
-150
-)">
-
-Buy - 150
-
-</button>
-
-</div>
-
-
-</div>
 </div>
 
 
@@ -1624,8 +1245,9 @@ Buy - 150
 <div class="category">
 
 <h2>
-❄ Frozen Horns
+Frozen Horns
 </h2>
+
 
 <div class="grid">
 
@@ -1644,11 +1266,13 @@ Frozen Horns
 Blue crystal + blue fire
 </p>
 
-<button onclick="
+<button
+onclick="
 equipAccessory(
 'Frozen Horns',
 'blue'
-)">
+)"
+>
 Equip
 </button>
 
@@ -1669,11 +1293,13 @@ Red Frozen Horns
 Red crystal + red fire
 </p>
 
-<button onclick="
+<button
+onclick="
 equipAccessory(
 'Red Frozen Horns',
 'red'
-)">
+)"
+>
 Equip
 </button>
 
@@ -1694,11 +1320,13 @@ Green Frozen Horns
 Green crystal + green fire
 </p>
 
-<button onclick="
+<button
+onclick="
 equipAccessory(
 'Green Frozen Horns',
 'green'
-)">
+)"
+>
 Equip
 </button>
 
@@ -1706,6 +1334,7 @@ Equip
 
 
 </div>
+
 </div>
 
 
@@ -1714,8 +1343,9 @@ Equip
 <div class="category">
 
 <h2>
-👑 Valkyries
+Valkyries
 </h2>
+
 
 <div class="grid">
 
@@ -1730,11 +1360,13 @@ V
 Sparkle Time Valkyrie
 </h3>
 
-<button onclick="
+<button
+onclick="
 equipAccessory(
 'Sparkle Time Valkyrie',
 'gold'
-)">
+)"
+>
 Equip
 </button>
 
@@ -1751,11 +1383,13 @@ V
 Red Valkyrie
 </h3>
 
-<button onclick="
+<button
+onclick="
 equipAccessory(
 'Red Valkyrie',
 'redValk'
-)">
+)"
+>
 Equip
 </button>
 
@@ -1772,11 +1406,13 @@ V
 Blue Valkyrie
 </h3>
 
-<button onclick="
+<button
+onclick="
 equipAccessory(
 'Blue Valkyrie',
 'blueValk'
-)">
+)"
+>
 Equip
 </button>
 
@@ -1793,11 +1429,13 @@ V
 Green Valkyrie
 </h3>
 
-<button onclick="
+<button
+onclick="
 equipAccessory(
 'Green Valkyrie',
 'greenValk'
-)">
+)"
+>
 Equip
 </button>
 
@@ -1814,11 +1452,13 @@ V
 Purple Valkyrie
 </h3>
 
-<button onclick="
+<button
+onclick="
 equipAccessory(
 'Purple Valkyrie',
 'purpleValk'
-)">
+)"
+>
 Equip
 </button>
 
@@ -1835,11 +1475,13 @@ V
 Black Valkyrie
 </h3>
 
-<button onclick="
+<button
+onclick="
 equipAccessory(
 'Black Valkyrie',
 'blackValk'
-)">
+)"
+>
 Equip
 </button>
 
@@ -1847,55 +1489,7 @@ Equip
 
 
 </div>
-</div>
 
-
-<!-- BODY -->
-
-<div class="category">
-
-<h2>
-🧍 Body
-</h2>
-
-<div class="grid">
-
-
-<div class="item">
-
-<div class="preview">
-LEG
-</div>
-
-<h3>
-Korblox-Style Leg
-</h3>
-
-<button onclick="toggleKorblox()">
-Equip
-</button>
-
-</div>
-
-
-<div class="item">
-
-<div class="preview">
-HEAD
-</div>
-
-<h3>
-Headless Style
-</h3>
-
-<button onclick="toggleHeadless()">
-Equip
-</button>
-
-</div>
-
-
-</div>
 </div>
 
 
@@ -1904,8 +1498,9 @@ Equip
 <div class="category">
 
 <h2>
-⚔ Gear
+Gear
 </h2>
+
 
 <div class="grid">
 
@@ -1920,11 +1515,13 @@ Equip
 Classic Sword
 </h3>
 
-<button onclick="
+<button
+onclick="
 equipGear(
 '⚔',
 'Classic Sword'
-)">
+)"
+>
 Equip
 </button>
 
@@ -1941,11 +1538,13 @@ Equip
 Dark Blade
 </h3>
 
-<button onclick="
+<button
+onclick="
 equipGear(
 '🗡',
 'Dark Blade'
-)">
+)"
+>
 Equip
 </button>
 
@@ -1962,11 +1561,13 @@ Equip
 Shield
 </h3>
 
-<button onclick="
+<button
+onclick="
 equipGear(
 '🛡',
 'Shield'
-)">
+)"
+>
 Equip
 </button>
 
@@ -1983,11 +1584,13 @@ Equip
 Builder Hammer
 </h3>
 
-<button onclick="
+<button
+onclick="
 equipGear(
 '🔨',
 'Builder Hammer'
-)">
+)"
+>
 Equip
 </button>
 
@@ -2004,11 +1607,13 @@ Equip
 Guitar
 </h3>
 
-<button onclick="
+<button
+onclick="
 equipGear(
 '🎸',
 'Guitar'
-)">
+)"
+>
 Equip
 </button>
 
@@ -2025,11 +1630,13 @@ Equip
 Classic Bow
 </h3>
 
-<button onclick="
+<button
+onclick="
 equipGear(
 '🏹',
 'Classic Bow'
-)">
+)"
+>
 Equip
 </button>
 
@@ -2046,11 +1653,13 @@ Equip
 Magic Staff
 </h3>
 
-<button onclick="
+<button
+onclick="
 equipGear(
 '🔮',
 'Magic Staff'
-)">
+)"
+>
 Equip
 </button>
 
@@ -2067,11 +1676,13 @@ $
 Money Bag
 </h3>
 
-<button onclick="
+<button
+onclick="
 equipGear(
 '$',
 'Money Bag'
-)">
+)"
+>
 Equip
 </button>
 
@@ -2079,32 +1690,91 @@ Equip
 
 
 </div>
+
+</div>
+
+
+<!-- BODY -->
+
+<div class="category">
+
+<h2>
+Body
+</h2>
+
+
+<div class="grid">
+
+
+<div class="item">
+
+<div class="preview">
+LEG
+</div>
+
+<h3>
+Korblox-Style Leg
+</h3>
+
+<button
+onclick="toggleKorblox()"
+>
+Equip
+</button>
+
+</div>
+
+
+<div class="item">
+
+<div class="preview">
+HEAD
+</div>
+
+<h3>
+Headless Style
+</h3>
+
+<button
+onclick="toggleHeadless()"
+>
+Equip
+</button>
+
 </div>
 
 
 </div>
-</div>
+
 </div>
 
 
-<div id="message"
+</div>
+
+</div>
+
+</div>
+
+
+<div
+id="message"
 class="message">
 </div>
 
 
-<footer>
-© 2026 MTB REVIVALS
-</footer>
-
-
 <script>
 
-/* =====================================
+/* =====================================================
    MTB COINS
-===================================== */
+===================================================== */
 
 let coins =
-Number(localStorage.getItem("mtbCoins"));
+Number(
+    localStorage.getItem(
+        "mtbCoins"
+    )
+);
+
 
 if(!coins){
 
@@ -2114,6 +1784,7 @@ if(!coins){
         "mtbCoins",
         coins
     );
+
 }
 
 
@@ -2121,7 +1792,9 @@ function updateCoins(){
 
     document.getElementById(
         "coins"
-    ).textContent = coins;
+    ).textContent =
+        coins;
+
 }
 
 
@@ -2137,216 +1810,32 @@ function earnCoins(){
     updateCoins();
 
     showMessage(
-        "+100 MTB Coins earned!"
+        "+100 MTB Coins!"
     );
+
 }
 
 
-/* =====================================
-   OWNED ITEMS
-===================================== */
-
-let ownedItems =
-JSON.parse(
-    localStorage.getItem(
-        "mtbOwnedItems"
-    ) || "[]"
-);
-
-
-/* =====================================
-   BUY
-===================================== */
-
-function buyItem(
-    id,
-    name,
-    price
-){
-
-    /* ALREADY OWNED */
-
-    if(
-        ownedItems.includes(id)
-    ){
-
-        wearPurchasedItem(
-            id,
-            name
-        );
-
-        return;
-    }
-
-
-    /* NOT ENOUGH */
-
-    if(coins < price){
-
-        showMessage(
-            "You don't have enough MTB Coins!"
-        );
-
-        return;
-    }
-
-
-    /* CONFIRM */
-
-    let confirmed =
-        confirm(
-            "Buy " +
-            name +
-            " for " +
-            price +
-            " MTB Coins?"
-        );
-
-
-    if(!confirmed){
-
-        showMessage(
-            "Purchase cancelled."
-        );
-
-        return;
-    }
-
-
-    /* PAY */
-
-    coins -= price;
-
-
-    /* SAVE */
-
-    ownedItems.push(id);
-
-
-    localStorage.setItem(
-        "mtbCoins",
-        coins
-    );
-
-
-    localStorage.setItem(
-        "mtbOwnedItems",
-        JSON.stringify(
-            ownedItems
-        )
-    );
-
-
-    updateCoins();
-
-    updateBuyButtons();
-
-
-    showMessage(
-        name +
-        " purchased! Press Wear to use it."
-    );
-}
-
-
-/* =====================================
-   WEAR PURCHASED ITEM
-===================================== */
-
-function wearPurchasedItem(
-    id,
-    name
-){
-
-    if(
-        !ownedItems.includes(id)
-    ){
-
-        showMessage(
-            "You need to buy this item first!"
-        );
-
-        return;
-    }
-
-
-    showMessage(
-        name +
-        " equipped!"
-    );
-}
-
-
-/* =====================================
-   BUY BUTTONS
-===================================== */
-
-function updateBuyButtons(){
-
-    let buttons = {
-
-        mtbclassic:"buy-mtbclassic",
-        mtbblack:"buy-mtbblack",
-        mtbred:"buy-mtbred",
-        mtbblue:"buy-mtbblue",
-        mtbstreet:"buy-mtbstreet",
-
-        blackpants:"buy-blackpants",
-        firepants:"buy-firepants",
-        icepants:"buy-icepants",
-        streetpants:"buy-streetpants",
-
-        spring:"buy-spring",
-        summer:"buy-summer",
-        fall:"buy-fall",
-        winter:"buy-winter"
-    };
-
-
-    for(
-        let id in buttons
-    ){
-
-        let button =
-            document.getElementById(
-                buttons[id]
-            );
-
-
-        if(!button){
-            continue;
-        }
-
-
-        if(
-            ownedItems.includes(id)
-        ){
-
-            button.textContent =
-                "Wear";
-
-            button.className =
-                "wear";
-
-        }else{
-
-            button.className = "";
-        }
-    }
-}
-
-
-/* =====================================
-   ACCESSORIES
-===================================== */
+/* =====================================================
+   EQUIPPED
+===================================================== */
 
 let equipped = [];
 
+
+/* =====================================================
+   ACCESSORIES
+===================================================== */
 
 function equipAccessory(
     name,
     type
 ){
+
+    /*
+       Clicking an equipped accessory
+       removes it.
+    */
 
     if(
         equipped.includes(name)
@@ -2354,7 +1843,8 @@ function equipAccessory(
 
         equipped =
             equipped.filter(
-                x => x !== name
+                item =>
+                    item !== name
             );
 
         updateAvatar();
@@ -2365,8 +1855,13 @@ function equipAccessory(
         );
 
         return;
+
     }
 
+
+    /*
+       Maximum 3.
+    */
 
     if(
         equipped.length >= 3
@@ -2377,6 +1872,7 @@ function equipAccessory(
         );
 
         return;
+
     }
 
 
@@ -2388,17 +1884,22 @@ function equipAccessory(
         name +
         " equipped!"
     );
+
 }
 
 
-/* =====================================
+/* =====================================================
    GEAR
-===================================== */
+===================================================== */
 
 function equipGear(
     icon,
     name
 ){
+
+    /*
+       Remove gear if already equipped.
+    */
 
     if(
         equipped.includes(name)
@@ -2406,14 +1907,37 @@ function equipGear(
 
         equipped =
             equipped.filter(
-                x => x !== name
+                item =>
+                    item !== name
             );
+
 
         document.getElementById(
             "gear"
-        ).textContent = "";
+        ).textContent =
+            "";
+
+
+        /*
+           If there is no gear left,
+           return arm to normal.
+        */
+
+        if(
+            !hasGear()
+        ){
+
+            document.getElementById(
+                "avatar"
+            ).classList.remove(
+                "holdingGear"
+            );
+
+        }
+
 
         updateList();
+
 
         showMessage(
             name +
@@ -2421,8 +1945,13 @@ function equipGear(
         );
 
         return;
+
     }
 
+
+    /*
+       Maximum 3 items.
+    */
 
     if(
         equipped.length >= 3
@@ -2433,15 +1962,32 @@ function equipGear(
         );
 
         return;
+
     }
 
 
     equipped.push(name);
 
 
+    /*
+       Show held item.
+    */
+
     document.getElementById(
         "gear"
-    ).textContent = icon;
+    ).textContent =
+        icon;
+
+
+    /*
+       Move arm outward.
+    */
+
+    document.getElementById(
+        "avatar"
+    ).classList.add(
+        "holdingGear"
+    );
 
 
     updateList();
@@ -2451,16 +1997,52 @@ function equipGear(
         name +
         " equipped!"
     );
+
 }
 
 
-/* =====================================
+/* =====================================================
+   CHECK GEAR
+===================================================== */
+
+function hasGear(){
+
+    const gearNames = [
+
+        "Classic Sword",
+
+        "Dark Blade",
+
+        "Shield",
+
+        "Builder Hammer",
+
+        "Guitar",
+
+        "Classic Bow",
+
+        "Magic Staff",
+
+        "Money Bag"
+
+    ];
+
+
+    return equipped.some(
+        item =>
+            gearNames.includes(item)
+    );
+
+}
+
+
+/* =====================================================
    FACE
-===================================== */
+===================================================== */
 
 function setFace(type){
 
-    let face =
+    const face =
         document.getElementById(
             "face"
         );
@@ -2471,19 +2053,41 @@ function setFace(type){
         type;
 
 
+    /*
+       Recreate the face parts.
+    */
+
+    face.innerHTML = `
+
+        <span
+        class="eye leftEye">
+        </span>
+
+        <span
+        class="eye rightEye">
+        </span>
+
+        <span
+        class="mouth">
+        </span>
+
+    `;
+
+
     showMessage(
         "Classic face equipped!"
     );
+
 }
 
 
-/* =====================================
+/* =====================================================
    KORBLOX
-===================================== */
+===================================================== */
 
 function toggleKorblox(){
 
-    let leg =
+    const leg =
         document.getElementById(
             "leftLeg"
         );
@@ -2509,25 +2113,28 @@ function toggleKorblox(){
         showMessage(
             "Korblox-style leg removed!"
         );
+
     }
+
 }
 
 
-/* =====================================
+/* =====================================================
    HEADLESS
-===================================== */
+===================================================== */
 
 let headless = false;
 
 
 function toggleHeadless(){
 
-    let head =
+    const head =
         document.getElementById(
             "head"
         );
 
-    let face =
+
+    const face =
         document.getElementById(
             "face"
         );
@@ -2546,6 +2153,7 @@ function toggleHeadless(){
         face.style.display =
             "none";
 
+
         showMessage(
             "Headless style equipped!"
         );
@@ -2559,26 +2167,29 @@ function toggleHeadless(){
         face.style.display =
             "block";
 
+
         showMessage(
             "Head restored!"
         );
+
     }
+
 }
 
 
-/* =====================================
+/* =====================================================
    UPDATE AVATAR
-===================================== */
+===================================================== */
 
 function updateAvatar(){
 
-    let accessory =
+    const accessory =
         document.getElementById(
             "headAccessory"
         );
 
 
-    let fire =
+    const fire =
         document.getElementById(
             "fire"
         );
@@ -2596,7 +2207,9 @@ function updateAvatar(){
         "";
 
 
-    /* BLUE FROZEN HORNS */
+    /*
+       BLUE FROZEN HORNS
+    */
 
     if(
         equipped.includes(
@@ -2614,10 +2227,13 @@ function updateAvatar(){
 
         fire.textContent =
             "🔥";
+
     }
 
 
-    /* RED FROZEN HORNS */
+    /*
+       RED FROZEN HORNS
+    */
 
     if(
         equipped.includes(
@@ -2635,10 +2251,13 @@ function updateAvatar(){
 
         fire.textContent =
             "🔥";
+
     }
 
 
-    /* GREEN FROZEN HORNS */
+    /*
+       GREEN FROZEN HORNS
+    */
 
     if(
         equipped.includes(
@@ -2656,10 +2275,13 @@ function updateAvatar(){
 
         fire.textContent =
             "🔥";
+
     }
 
 
-    /* VALKYRIES */
+    /*
+       VALKYRIES
+    */
 
     if(
         equipped.includes(
@@ -2669,6 +2291,7 @@ function updateAvatar(){
 
         accessory.className =
             "accessory valk goldValk";
+
     }
 
 
@@ -2680,6 +2303,7 @@ function updateAvatar(){
 
         accessory.className =
             "accessory valk redValk";
+
     }
 
 
@@ -2691,6 +2315,7 @@ function updateAvatar(){
 
         accessory.className =
             "accessory valk blueValk";
+
     }
 
 
@@ -2702,6 +2327,7 @@ function updateAvatar(){
 
         accessory.className =
             "accessory valk greenValk";
+
     }
 
 
@@ -2713,6 +2339,7 @@ function updateAvatar(){
 
         accessory.className =
             "accessory valk purpleValk";
+
     }
 
 
@@ -2724,20 +2351,55 @@ function updateAvatar(){
 
         accessory.className =
             "accessory valk blackValk";
+
+    }
+
+
+    /*
+       If gear exists, move arm out.
+       Otherwise return arm to normal.
+    */
+
+    const avatar =
+        document.getElementById(
+            "avatar"
+        );
+
+
+    if(
+        hasGear()
+    ){
+
+        avatar.classList.add(
+            "holdingGear"
+        );
+
+    }else{
+
+        avatar.classList.remove(
+            "holdingGear"
+        );
+
+        document.getElementById(
+            "gear"
+        ).textContent =
+            "";
+
     }
 
 
     updateList();
+
 }
 
 
-/* =====================================
+/* =====================================================
    EQUIPPED LIST
-===================================== */
+===================================================== */
 
 function updateList(){
 
-    let list =
+    const list =
         document.getElementById(
             "equippedList"
         );
@@ -2751,21 +2413,25 @@ function updateList(){
             "None";
 
         return;
+
     }
 
 
     list.innerHTML =
         equipped
-        .map(
-            item => "• " + item
-        )
-        .join("<br>");
+            .map(
+                item =>
+                    "• " +
+                    item
+            )
+            .join("<br>");
+
 }
 
 
-/* =====================================
+/* =====================================================
    CLEAR
-===================================== */
+===================================================== */
 
 function clearAccessories(){
 
@@ -2796,22 +2462,30 @@ function clearAccessories(){
         "";
 
 
+    document.getElementById(
+        "avatar"
+    ).classList.remove(
+        "holdingGear"
+    );
+
+
     updateList();
 
 
     showMessage(
-        "Accessories removed."
+        "All accessories and gear removed."
     );
+
 }
 
 
-/* =====================================
+/* =====================================================
    MESSAGE
-===================================== */
+===================================================== */
 
 function showMessage(text){
 
-    let box =
+    const box =
         document.getElementById(
             "message"
         );
@@ -2834,16 +2508,15 @@ function showMessage(text){
         },
         2000
     );
+
 }
 
 
-/* =====================================
+/* =====================================================
    START
-===================================== */
+===================================================== */
 
 updateCoins();
-
-updateBuyButtons();
 
 updateList();
 
