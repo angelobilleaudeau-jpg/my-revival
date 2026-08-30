@@ -11,46 +11,38 @@
 body{
     margin:0;
     font-family:Arial,sans-serif;
-    background:#e8e8e8;
-    color:#222;
+    background:#08080d;
+    color:#fff;
     position:relative;
 }
 
-/* =========================================
-   MTB REVIVALS BACKGROUND
-========================================= */
-
-body::before{
+/* MTB REVIVALS BACKGROUND */
+body:before{
     content:"MTB REVIVALS";
     position:fixed;
-    top:82px;
-    left:18px;
-    font-size:46px;
+    top:20px;
+    left:20px;
+    font-size:35px;
     font-weight:900;
-    letter-spacing:5px;
-    color:rgba(0,0,0,.08);
+    letter-spacing:4px;
+    color:rgba(255,255,255,.08);
     pointer-events:none;
     z-index:0;
-    white-space:nowrap;
 }
 
-/* =========================================
-   HEADER
-========================================= */
-
 header{
-    background:#c8c8c8;
+    background:#101016;
+    border-bottom:2px solid #333;
     padding:15px;
-    border-bottom:3px solid #888;
     position:relative;
-    z-index:10;
+    z-index:20;
 }
 
 .logo{
     text-align:center;
     font-size:30px;
     font-weight:900;
-    letter-spacing:3px;
+    letter-spacing:4px;
 }
 
 nav{
@@ -62,34 +54,29 @@ nav{
 }
 
 nav a{
+    color:white;
     text-decoration:none;
-    color:#111;
-    font-weight:bold;
-    padding:9px 13px;
+    padding:9px 14px;
     border-radius:5px;
+    background:#1d1d25;
 }
 
 nav a:hover{
-    background:#aaa;
+    background:#333;
 }
-
-/* =========================================
-   COINS
-========================================= */
 
 .coinbar{
     max-width:1200px;
     margin:15px auto;
     padding:12px 18px;
-    background:#fff;
-    border:1px solid #aaa;
+    background:#111117;
+    border:1px solid #333;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    flex-wrap:wrap;
     gap:10px;
     position:relative;
-    z-index:5;
+    z-index:10;
 }
 
 .coin{
@@ -97,8 +84,8 @@ nav a:hover{
     width:22px;
     height:22px;
     border-radius:50%;
-    background:#e5bd27;
-    border:2px solid #947300;
+    background:#e7c52d;
+    border:2px solid #8c7100;
     vertical-align:middle;
 }
 
@@ -117,53 +104,88 @@ nav a:hover{
 }
 
 .panel{
-    background:white;
-    border:1px solid #aaa;
+    background:#111117;
+    border:1px solid #333;
     padding:18px;
+    border-radius:8px;
 }
 
-h1,h2{
-    margin-top:0;
-}
+h1,h2{margin-top:0}
 
 button{
     border:0;
     border-radius:5px;
     padding:9px 12px;
-    background:#1683ff;
+    background:#197cff;
     color:white;
     font-weight:bold;
     cursor:pointer;
 }
 
-button:hover{
-    background:#006bd6;
-}
+button:hover{background:#005dcc}
 
-.gray{
-    background:#777;
-}
-
-/* =========================================
-   AVATAR STAGE
-========================================= */
+.gray{background:#555}
 
 .avatarStage{
     height:535px;
-    background:linear-gradient(#f5f5f5,#d5d5d5);
-    border:2px solid #aaa;
     position:relative;
     overflow:hidden;
+    border:2px solid #292934;
+    border-radius:8px;
+
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            #191934 0%,
+            #080812 45%,
+            #000 100%
+        );
 }
 
-.floor{
+/* STAR FIELD */
+.avatarStage:before{
+    content:"";
     position:absolute;
-    bottom:0;
-    left:-10%;
-    width:120%;
-    height:100px;
-    background:#bbb;
-    border-top:3px solid #999;
+    inset:0;
+
+    background-image:
+        radial-gradient(circle,rgba(255,255,255,.95) 1px,transparent 1.5px),
+        radial-gradient(circle,rgba(255,255,255,.65) 1px,transparent 1.5px),
+        radial-gradient(circle,rgba(100,170,255,.8) 1px,transparent 1.5px);
+
+    background-size:
+        73px 81px,
+        113px 127px,
+        157px 139px;
+
+    background-position:
+        10px 15px,
+        45px 70px,
+        80px 25px;
+
+    opacity:.8;
+    pointer-events:none;
+}
+
+/* SPACE GLOW */
+.avatarStage:after{
+    content:"";
+    position:absolute;
+    width:500px;
+    height:500px;
+    left:50%;
+    top:45%;
+    transform:translate(-50%,-50%);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(70,80,220,.2),
+            rgba(30,30,120,.08) 40%,
+            transparent 70%
+        );
+
+    pointer-events:none;
 }
 
 .avatar{
@@ -173,6 +195,7 @@ button:hover{
     left:50%;
     bottom:35px;
     transform:translateX(-50%);
+    z-index:10;
 }
 
 .head{
@@ -207,13 +230,8 @@ button:hover{
     border-radius:50%;
 }
 
-.eye.left{
-    left:32px;
-}
-
-.eye.right{
-    right:32px;
-}
+.eye.left{left:32px}
+.eye.right{right:32px}
 
 .faceMouth{
     position:absolute;
@@ -225,10 +243,7 @@ button:hover{
     border-radius:0 0 50% 50%;
 }
 
-/* =========================================
-   HEADLESS
-========================================= */
-
+/* HEADLESS */
 .headless .head{
     background:transparent;
     border-color:transparent;
@@ -240,10 +255,7 @@ button:hover{
     display:none;
 }
 
-/* =========================================
-   BODY
-========================================= */
-
+/* BODY */
 .torso{
     position:absolute;
     left:72px;
@@ -268,29 +280,12 @@ button:hover{
     letter-spacing:2px;
 }
 
-.mtb{
-    background:linear-gradient(135deg,#050505,#444,#080808);
-}
-
-.hellstar{
-    background:radial-gradient(circle,#555,#080808 65%);
-}
-
-.spring{
-    background:linear-gradient(135deg,#63cf71,#d9f8dc);
-}
-
-.summer{
-    background:linear-gradient(135deg,#1c9ee9,#f4d339);
-}
-
-.fall{
-    background:linear-gradient(135deg,#dd752d,#62230f);
-}
-
-.winter{
-    background:linear-gradient(135deg,#56a9ed,#e4f8ff);
-}
+.mtb{background:linear-gradient(135deg,#050505,#444,#080808)}
+.hellstar{background:radial-gradient(circle,#555,#080808 65%)}
+.spring{background:linear-gradient(135deg,#49c968,#d9f8dc)}
+.summer{background:linear-gradient(135deg,#168fe0,#f5d32e)}
+.fall{background:linear-gradient(135deg,#d76c28,#54200d)}
+.winter{background:linear-gradient(135deg,#438fd0,#e7faff)}
 
 .arm{
     position:absolute;
@@ -305,13 +300,8 @@ button:hover{
     transition:.35s;
 }
 
-.leftArm{
-    left:20px;
-}
-
-.rightArm{
-    right:20px;
-}
+.leftArm{left:20px}
+.rightArm{right:20px}
 
 .sleeve{
     position:absolute;
@@ -339,18 +329,10 @@ button:hover{
     z-index:5;
 }
 
-.leftLeg{
-    left:72px;
-}
+.leftLeg{left:72px}
+.rightLeg{right:72px}
 
-.rightLeg{
-    right:72px;
-}
-
-/* =========================================
-   KORBLOX STYLE LEG
-========================================= */
-
+/* KORBLOX STYLE */
 .korblox{
     left:88px;
     width:29px;
@@ -390,19 +372,13 @@ button:hover{
     border-radius:5px;
 }
 
-/* =========================================
-   ACCESSORIES
-========================================= */
-
+/* ACCESSORIES */
 .accessory{
     position:absolute;
     pointer-events:none;
 }
 
-/* =========================================
-   FROZEN HORNS
-========================================= */
-
+/* FROZEN HORNS */
 .horns{
     width:220px;
     height:125px;
@@ -417,18 +393,9 @@ button:hover{
     height:115px;
     background:#bdf7ff;
     clip-path:polygon(
-        50% 0,
-        77% 17%,
-        100% 31%,
-        78% 44%,
-        95% 60%,
-        67% 60%,
-        53% 100%,
-        39% 65%,
-        8% 78%,
-        21% 52%,
-        0 39%,
-        28% 20%
+        50% 0,77% 17%,100% 31%,78% 44%,
+        95% 60%,67% 60%,53% 100%,39% 65%,
+        8% 78%,21% 52%,0 39%,28% 20%
     );
     filter:drop-shadow(0 0 8px #4ddcff);
 }
@@ -458,7 +425,6 @@ button:hover{
     height:61px;
     background:#25cfff;
     border-radius:55% 45% 45% 45%;
-    transform:rotate(4deg);
     box-shadow:0 0 20px #25cfff;
 }
 
@@ -493,10 +459,7 @@ button:hover{
     filter:drop-shadow(0 0 9px #22ff6e);
 }
 
-/* =========================================
-   FEDORAS
-========================================= */
-
+/* FEDORAS */
 .fedora{
     width:170px;
     height:105px;
@@ -537,43 +500,27 @@ button:hover{
 .rainbow .fedoraTop{
     background:linear-gradient(
         135deg,
-        #e83d3d,
-        #f2d034,
-        #4dd477,
-        #459cf0,
-        #9a5bd9
+        #e83d3d,#f2d034,#4dd477,#459cf0,#9a5bd9
     );
 }
-
-.rainbow .fedoraBrim{
-    background:#cfa42b;
-}
+.rainbow .fedoraBrim{background:#cfa42b}
 
 .redFedora .fedoraTop{background:#d73535}
 .redFedora .fedoraBrim{background:#781414}
-
 .blueFedora .fedoraTop{background:#348df0}
 .blueFedora .fedoraBrim{background:#194c8f}
-
 .greenFedora .fedoraTop{background:#37d269}
 .greenFedora .fedoraBrim{background:#176d38}
-
 .purpleFedora .fedoraTop{background:#a15bdc}
 .purpleFedora .fedoraBrim{background:#592488}
-
 .blackFedora .fedoraTop{background:#252525}
 .blackFedora .fedoraBrim{background:#080808}
-
 .goldFedora .fedoraTop{background:#e0b62e}
 .goldFedora .fedoraBrim{background:#88670c}
-
 .pinkFedora .fedoraTop{background:#ef5d9d}
 .pinkFedora .fedoraBrim{background:#98255a}
 
-/* =========================================
-   VALKYRIES
-========================================= */
-
+/* VALKYRIES */
 .valk{
     width:210px;
     height:110px;
@@ -601,49 +548,21 @@ button:hover{
     transform:rotate(30deg);
 }
 
-.goldValk .valkWing{
-    background:#e7c24b;
-    border-color:#8d6a0b;
-}
+.goldValk .valkWing{background:#e7c24b;border-color:#8d6a0b}
+.redValk .valkWing{background:#dc3838;border-color:#781313}
+.blueValk .valkWing{background:#438ff0;border-color:#174d92}
+.greenValk .valkWing{background:#40d26a;border-color:#176a35}
+.purpleValk .valkWing{background:#9d5dd9;border-color:#592286}
+.blackValk .valkWing{background:#282828;border-color:#050505}
 
-.redValk .valkWing{
-    background:#dc3838;
-    border-color:#781313;
-}
-
-.blueValk .valkWing{
-    background:#438ff0;
-    border-color:#174d92;
-}
-
-.greenValk .valkWing{
-    background:#40d26a;
-    border-color:#176a35;
-}
-
-.purpleValk .valkWing{
-    background:#9d5dd9;
-    border-color:#592286;
-}
-
-.blackValk .valkWing{
-    background:#282828;
-    border-color:#050505;
-}
-
-/* =========================================
-   GEAR
-========================================= */
-
+/* GEAR */
 .gear{
     display:none;
     position:absolute;
     z-index:70;
 }
 
-.holding .gear{
-    display:block;
-}
+.holding .gear{display:block}
 
 .sword{
     width:65px;
@@ -660,13 +579,7 @@ button:hover{
     width:15px;
     height:91px;
     background:linear-gradient(90deg,#555,#fff,#aaa,#333);
-    clip-path:polygon(
-        50% 0,
-        100% 17%,
-        70% 100%,
-        30% 100%,
-        0 17%
-    );
+    clip-path:polygon(50% 0,100% 17%,70% 100%,30% 100%,0 17%);
 }
 
 .swordGuard{
@@ -677,7 +590,6 @@ button:hover{
     height:10px;
     background:#d2ad35;
     border:2px solid #674f0b;
-    border-radius:5px;
 }
 
 .swordHandle{
@@ -687,7 +599,6 @@ button:hover{
     width:11px;
     height:34px;
     background:#56331d;
-    border:2px solid #301b0e;
 }
 
 .swordPommel{
@@ -697,7 +608,6 @@ button:hover{
     width:17px;
     height:17px;
     background:#d2ad35;
-    border:2px solid #674f0b;
     border-radius:50%;
 }
 
@@ -715,13 +625,7 @@ button:hover{
     top:15px;
     width:25px;
     height:116px;
-    background:linear-gradient(
-        90deg,
-        #d78c14,
-        #ffd83d,
-        #f5bd22,
-        #d68b0e
-    );
+    background:linear-gradient(90deg,#d78c14,#ffd83d,#f5bd22,#d68b0e);
     border:3px solid #51370c;
 }
 
@@ -732,7 +636,6 @@ button:hover{
     width:25px;
     height:25px;
     background:#d9a46e;
-    border:3px solid #51370c;
     clip-path:polygon(0 0,100% 0,50% 100%);
 }
 
@@ -752,8 +655,7 @@ button:hover{
     top:120px;
     width:25px;
     height:13px;
-    background:linear-gradient(#ddd,#888,#ddd);
-    border:2px solid #555;
+    background:#aaa;
 }
 
 .pencilEraser{
@@ -763,7 +665,6 @@ button:hover{
     width:25px;
     height:23px;
     background:#ed7c93;
-    border:3px solid #783b49;
 }
 
 .hammer{
@@ -782,7 +683,6 @@ button:hover{
     height:34px;
     background:linear-gradient(#777,#ddd,#555);
     border:4px solid #292929;
-    border-radius:5px;
 }
 
 .hammerHandle{
@@ -792,134 +692,9 @@ button:hover{
     width:14px;
     height:115px;
     background:linear-gradient(90deg,#4c2b18,#99603a,#422514);
-    border:3px solid #2e190e;
 }
 
-.axe{
-    width:80px;
-    height:145px;
-    right:-5px;
-    top:205px;
-    transform:rotate(-20deg);
-}
-
-.axeHandle{
-    position:absolute;
-    left:36px;
-    top:12px;
-    width:12px;
-    height:125px;
-    background:linear-gradient(90deg,#4a2a17,#a06a3d,#412311);
-    border:3px solid #2b170c;
-}
-
-.axeBlade{
-    position:absolute;
-    left:7px;
-    top:2px;
-    width:53px;
-    height:62px;
-    background:linear-gradient(135deg,#ddd,#888,#333);
-    border:4px solid #292929;
-    clip-path:polygon(
-        0 0,
-        100% 0,
-        82% 100%,
-        35% 75%
-    );
-}
-
-.pickaxe{
-    width:95px;
-    height:145px;
-    right:-10px;
-    top:205px;
-    transform:rotate(-15deg);
-}
-
-.pickHandle{
-    position:absolute;
-    left:42px;
-    top:17px;
-    width:11px;
-    height:120px;
-    background:#70441f;
-    border:3px solid #321b0c;
-    transform:rotate(-10deg);
-}
-
-.pickHead{
-    position:absolute;
-    left:5px;
-    top:5px;
-    width:88px;
-    height:25px;
-    border:6px solid #444;
-    border-bottom:0;
-    border-radius:50% 50% 0 0;
-}
-
-.staff{
-    width:60px;
-    height:150px;
-    right:5px;
-    top:200px;
-    transform:rotate(-12deg);
-}
-
-.staffWood{
-    position:absolute;
-    left:25px;
-    top:20px;
-    width:11px;
-    height:125px;
-    background:linear-gradient(90deg,#482916,#98613a,#3d2111);
-    border:2px solid #281408;
-}
-
-.staffOrb{
-    position:absolute;
-    left:10px;
-    top:0;
-    width:42px;
-    height:42px;
-    border-radius:50%;
-    background:radial-gradient(
-        circle,
-        #fff,
-        #62d4ff 25%,
-        #355fff 55%,
-        #161675
-    );
-    box-shadow:0 0 20px #38bfff;
-}
-
-.shield{
-    width:78px;
-    height:105px;
-    right:-5px;
-    top:210px;
-    transform:rotate(-12deg);
-}
-
-.shieldShape{
-    width:72px;
-    height:92px;
-    background:linear-gradient(135deg,#ddd,#888,#333);
-    border:5px solid #292929;
-    clip-path:polygon(
-        0 0,
-        100% 0,
-        100% 65%,
-        50% 100%,
-        0 65%
-    );
-}
-
-/* =========================================
-   DEVELOPER SHIELD
-========================================= */
-
+/* DEV SHIELD */
 .developerShield{
     position:absolute;
     width:125px;
@@ -928,22 +703,15 @@ button:hover{
     top:235px;
     z-index:100;
     transform:rotate(-12deg);
-    filter:drop-shadow(0 6px 6px rgba(0,0,0,.45));
 }
 
 .devShape{
     position:absolute;
     width:115px;
     height:135px;
-    background:linear-gradient(135deg,#111,#666,#111);
+    background:linear-gradient(135deg,#111,#777,#111);
     border:6px solid #222;
-    clip-path:polygon(
-        0 0,
-        100% 0,
-        100% 68%,
-        50% 100%,
-        0 68%
-    );
+    clip-path:polygon(0 0,100% 0,100% 68%,50% 100%,0 68%);
 }
 
 .devInner{
@@ -953,13 +721,7 @@ button:hover{
     width:91px;
     height:108px;
     border:3px solid #ddd;
-    clip-path:polygon(
-        0 0,
-        100% 0,
-        100% 68%,
-        50% 100%,
-        0 68%
-    );
+    clip-path:polygon(0 0,100% 0,100% 68%,50% 100%,0 68%);
 }
 
 .devText{
@@ -969,24 +731,17 @@ button:hover{
     text-align:center;
     color:white;
     font-size:12px;
-    line-height:16px;
     font-weight:900;
     text-shadow:2px 2px 3px #000;
-    transform:rotate(12deg);
 }
 
-/* =========================================
-   SHOP
-========================================= */
-
-.category{
-    margin-bottom:25px;
-}
+/* SHOP */
+.category{margin-bottom:25px}
 
 .category h2{
-    background:#d0d0d0;
+    background:#191920;
     padding:10px;
-    border-bottom:2px solid #999;
+    border-bottom:2px solid #333;
 }
 
 .grid{
@@ -996,10 +751,11 @@ button:hover{
 }
 
 .item{
-    background:#f5f5f5;
-    border:1px solid #aaa;
+    background:#17171e;
+    border:1px solid #333;
     padding:12px;
     text-align:center;
+    border-radius:5px;
 }
 
 .item h3{
@@ -1007,13 +763,11 @@ button:hover{
     min-height:32px;
 }
 
-.item button{
-    width:100%;
-}
+.item button{width:100%}
 
 .equipped{
-    background:#eee;
-    border:1px solid #aaa;
+    background:#18181f;
+    border:1px solid #333;
     padding:12px;
     line-height:1.8;
 }
@@ -1024,7 +778,7 @@ button:hover{
     padding:9px;
     background:#222;
     color:#fff;
-    border:2px solid #888;
+    border:2px solid #777;
     border-radius:5px;
     text-align:center;
     font-weight:bold;
@@ -1043,14 +797,7 @@ button:hover{
     z-index:9999;
 }
 
-/* =========================================
-   USER SEARCH
-========================================= */
-
-.userSearch{
-    margin-bottom:25px;
-}
-
+/* USER SEARCH */
 .searchRow{
     display:flex;
     gap:8px;
@@ -1060,21 +807,21 @@ button:hover{
     flex:1;
     min-width:0;
     padding:11px;
-    border:1px solid #999;
+    border:1px solid #444;
+    background:#09090d;
+    color:white;
     border-radius:5px;
     font-size:16px;
 }
 
-.searchResults{
-    margin-top:12px;
-}
+.searchResults{margin-top:12px}
 
 .userResult{
     display:flex;
     align-items:center;
     gap:12px;
-    background:#f5f5f5;
-    border:1px solid #aaa;
+    background:#17171e;
+    border:1px solid #333;
     padding:12px;
     margin-bottom:8px;
 }
@@ -1083,14 +830,11 @@ button:hover{
     width:55px;
     height:55px;
     border-radius:7px;
-    background:#ddd;
-    object-fit:cover;
-    border:1px solid #999;
+    background:#222;
+    border:1px solid #555;
 }
 
-.userInfo{
-    flex:1;
-}
+.userInfo{flex:1}
 
 .userName{
     font-weight:bold;
@@ -1098,21 +842,15 @@ button:hover{
 }
 
 .userDisplay{
-    color:#666;
+    color:#aaa;
     font-size:13px;
     margin-top:3px;
-}
-
-.userButtons{
-    display:flex;
-    gap:6px;
-    flex-wrap:wrap;
 }
 
 .profileButton{
     text-decoration:none;
     display:inline-block;
-    background:#1683ff;
+    background:#197cff;
     color:#fff;
     padding:8px 10px;
     border-radius:5px;
@@ -1120,45 +858,25 @@ button:hover{
     font-size:13px;
 }
 
-.loading{
-    padding:12px;
-    text-align:center;
-    color:#555;
-}
-
 .noResults{
-    background:#eee;
-    border:1px solid #aaa;
+    background:#18181f;
+    border:1px solid #333;
     padding:12px;
 }
-
-/* =========================================
-   MOBILE
-========================================= */
 
 @media(max-width:800px){
+    .layout{grid-template-columns:1fr}
 
-    body::before{
-        font-size:28px;
-        top:80px;
-        left:10px;
+    body:before{
+        font-size:24px;
     }
 
-    .layout{
-        grid-template-columns:1fr;
+    .avatarStage{
+        height:520px;
     }
 
     .searchRow{
         flex-direction:column;
-    }
-
-    .avatarStage{
-        max-width:100%;
-    }
-
-    .userResult{
-        align-items:flex-start;
-        flex-wrap:wrap;
     }
 }
 </style>
@@ -1167,10 +885,7 @@ button:hover{
 <body>
 
 <header>
-
-<div class="logo">
-MTB REVIVALS
-</div>
+<div class="logo">MTB REVIVALS</div>
 
 <nav>
 <a href="index.html">HOME</a>
@@ -1178,38 +893,29 @@ MTB REVIVALS
 <a href="games.html">GAMES</a>
 <a href="inventory.html">INVENTORY</a>
 </nav>
-
 </header>
 
 <div class="coinbar">
-
 <div>
 <span class="coin"></span>
 <b>MTB Coins:</b>
 <span id="coins">1000</span>
 </div>
 
-<button onclick="earnCoins()">
-EARN 100 COINS
-</button>
-
+<button onclick="earnCoins()">EARN 100 COINS</button>
 </div>
 
 <div class="container">
 
 <div class="layout">
 
-<!-- =====================================
-     AVATAR
-===================================== -->
+<!-- AVATAR -->
 
 <div class="panel">
 
 <h2>My Avatar</h2>
 
 <div class="avatarStage">
-
-<div class="floor"></div>
 
 <div id="avatar" class="avatar">
 
@@ -1219,21 +925,17 @@ EARN 100 COINS
 
 <div id="gear" class="gear"></div>
 
-<div class="head" id="head">
+<div class="head">
 
 <div class="hair"></div>
-
 <div class="eye left"></div>
 <div class="eye right"></div>
-
 <div class="faceMouth"></div>
 
 </div>
 
 <div class="torso">
-<div id="shirt" class="shirtText mtb">
-MTB
-</div>
+<div id="shirt" class="shirtText mtb">MTB</div>
 </div>
 
 <div class="arm leftArm">
@@ -1245,7 +947,6 @@ MTB
 </div>
 
 <div id="leftLeg" class="leg leftLeg"></div>
-
 <div class="leg rightLeg"></div>
 
 </div>
@@ -1253,7 +954,7 @@ MTB
 </div>
 
 <div id="developerBadge" class="devBadge">
-🛡️ DEVELOPER MODE — FIRST 10
+🛡️ DEVELOPER MODE
 </div>
 
 <h3>Equipped</h3>
@@ -1264,55 +965,35 @@ None
 
 <br>
 
-<button onclick="toggleHeadless()">
-HEADLESS ON / OFF
-</button>
-
-<button class="gray" onclick="clearAccessories()">
-REMOVE ACCESSORIES
-</button>
-
-<button class="gray" onclick="resetAvatar()">
-RESET AVATAR
-</button>
+<button onclick="toggleHeadless()">HEADLESS ON/OFF</button>
+<button class="gray" onclick="clearAccessories()">REMOVE ITEMS</button>
+<button class="gray" onclick="resetAvatar()">RESET</button>
 
 </div>
 
 
-<!-- =====================================
-     SHOP
-===================================== -->
+<!-- SHOP -->
 
 <div class="panel">
 
-<!-- USER SEARCH -->
+<div class="category">
 
-<div class="category userSearch">
-
-<h2>🔎 Search Users</h2>
-
-<p>
-Search for a Roblox username.
-</p>
+<h2>🔎 Search Roblox Users</h2>
 
 <div class="searchRow">
 
 <input
 id="usernameSearch"
 class="searchInput"
-type="text"
-placeholder="Enter username..."
-autocomplete="off"
+placeholder="Username..."
 onkeydown="if(event.key==='Enter')searchUsers()"
 >
 
-<button onclick="searchUsers()">
-SEARCH
-</button>
+<button onclick="searchUsers()">SEARCH</button>
 
 </div>
 
-<div id="searchResults" class="searchResults"></div>
+<div id="searchResults"></div>
 
 </div>
 
@@ -1327,20 +1008,15 @@ SEARCH
 
 <div class="item">
 <h3>Classic Face</h3>
-<button onclick="setHeadless(false)">
-Wear
-</button>
+<button onclick="setHeadless(false)">WEAR</button>
 </div>
 
 <div class="item">
 <h3>Headless</h3>
-<button onclick="setHeadless(true)">
-Wear
-</button>
+<button onclick="setHeadless(true)">WEAR</button>
 </div>
 
 </div>
-
 </div>
 
 
@@ -1353,28 +1029,21 @@ Wear
 <div class="grid">
 
 <div class="item">
-<h3>Frozen Blue + Blue Fire</h3>
-<button onclick="toggleAccessory('Frozen Blue Horns','blueHorns')">
-Equip
-</button>
+<h3>Blue Frozen Horns</h3>
+<button onclick="toggleAccessory('Blue Frozen Horns','blueHorns')">EQUIP</button>
 </div>
 
 <div class="item">
-<h3>Frozen Red + Red Fire</h3>
-<button onclick="toggleAccessory('Frozen Red Horns','redHorns')">
-Equip
-</button>
+<h3>Red Frozen Horns</h3>
+<button onclick="toggleAccessory('Red Frozen Horns','redHorns')">EQUIP</button>
 </div>
 
 <div class="item">
-<h3>Frozen Green + Green Fire</h3>
-<button onclick="toggleAccessory('Frozen Green Horns','greenHorns')">
-Equip
-</button>
+<h3>Green Frozen Horns</h3>
+<button onclick="toggleAccessory('Green Frozen Horns','greenHorns')">EQUIP</button>
 </div>
 
 </div>
-
 </div>
 
 
@@ -1386,64 +1055,16 @@ Equip
 
 <div class="grid">
 
-<div class="item">
-<h3>Rainbow</h3>
-<button onclick="toggleAccessory('Rainbow Sparkle Time Fedora','rainbow')">
-Equip
-</button>
-</div>
-
-<div class="item">
-<h3>Red</h3>
-<button onclick="toggleAccessory('Red Sparkle Time Fedora','redFedora')">
-Equip
-</button>
-</div>
-
-<div class="item">
-<h3>Blue</h3>
-<button onclick="toggleAccessory('Blue Sparkle Time Fedora','blueFedora')">
-Equip
-</button>
-</div>
-
-<div class="item">
-<h3>Green</h3>
-<button onclick="toggleAccessory('Green Sparkle Time Fedora','greenFedora')">
-Equip
-</button>
-</div>
-
-<div class="item">
-<h3>Purple</h3>
-<button onclick="toggleAccessory('Purple Sparkle Time Fedora','purpleFedora')">
-Equip
-</button>
-</div>
-
-<div class="item">
-<h3>Black</h3>
-<button onclick="toggleAccessory('Black Sparkle Time Fedora','blackFedora')">
-Equip
-</button>
-</div>
-
-<div class="item">
-<h3>Gold</h3>
-<button onclick="toggleAccessory('Gold Sparkle Time Fedora','goldFedora')">
-Equip
-</button>
-</div>
-
-<div class="item">
-<h3>Pink</h3>
-<button onclick="toggleAccessory('Pink Sparkle Time Fedora','pinkFedora')">
-Equip
-</button>
-</div>
+<div class="item"><h3>Rainbow</h3><button onclick="toggleAccessory('Rainbow Fedora','rainbow')">EQUIP</button></div>
+<div class="item"><h3>Red</h3><button onclick="toggleAccessory('Red Fedora','redFedora')">EQUIP</button></div>
+<div class="item"><h3>Blue</h3><button onclick="toggleAccessory('Blue Fedora','blueFedora')">EQUIP</button></div>
+<div class="item"><h3>Green</h3><button onclick="toggleAccessory('Green Fedora','greenFedora')">EQUIP</button></div>
+<div class="item"><h3>Purple</h3><button onclick="toggleAccessory('Purple Fedora','purpleFedora')">EQUIP</button></div>
+<div class="item"><h3>Black</h3><button onclick="toggleAccessory('Black Fedora','blackFedora')">EQUIP</button></div>
+<div class="item"><h3>Gold</h3><button onclick="toggleAccessory('Gold Fedora','goldFedora')">EQUIP</button></div>
+<div class="item"><h3>Pink</h3><button onclick="toggleAccessory('Pink Fedora','pinkFedora')">EQUIP</button></div>
 
 </div>
-
 </div>
 
 
@@ -1455,50 +1076,14 @@ Equip
 
 <div class="grid">
 
-<div class="item">
-<h3>Sparkle Time Valkyrie</h3>
-<button onclick="toggleAccessory('Sparkle Time Valkyrie','goldValk')">
-Equip
-</button>
-</div>
-
-<div class="item">
-<h3>Red Valkyrie</h3>
-<button onclick="toggleAccessory('Red Valkyrie','redValk')">
-Equip
-</button>
-</div>
-
-<div class="item">
-<h3>Blue Valkyrie</h3>
-<button onclick="toggleAccessory('Blue Valkyrie','blueValk')">
-Equip
-</button>
-</div>
-
-<div class="item">
-<h3>Green Valkyrie</h3>
-<button onclick="toggleAccessory('Green Valkyrie','greenValk')">
-Equip
-</button>
-</div>
-
-<div class="item">
-<h3>Purple Valkyrie</h3>
-<button onclick="toggleAccessory('Purple Valkyrie','purpleValk')">
-Equip
-</button>
-</div>
-
-<div class="item">
-<h3>Black Valkyrie</h3>
-<button onclick="toggleAccessory('Black Valkyrie','blackValk')">
-Equip
-</button>
-</div>
+<div class="item"><h3>Sparkle Time</h3><button onclick="toggleAccessory('Sparkle Time Valkyrie','goldValk')">EQUIP</button></div>
+<div class="item"><h3>Red</h3><button onclick="toggleAccessory('Red Valkyrie','redValk')">EQUIP</button></div>
+<div class="item"><h3>Blue</h3><button onclick="toggleAccessory('Blue Valkyrie','blueValk')">EQUIP</button></div>
+<div class="item"><h3>Green</h3><button onclick="toggleAccessory('Green Valkyrie','greenValk')">EQUIP</button></div>
+<div class="item"><h3>Purple</h3><button onclick="toggleAccessory('Purple Valkyrie','purpleValk')">EQUIP</button></div>
+<div class="item"><h3>Black</h3><button onclick="toggleAccessory('Black Valkyrie','blackValk')">EQUIP</button></div>
 
 </div>
-
 </div>
 
 
@@ -1512,48 +1097,35 @@ Equip
 
 <div class="item">
 <h3>MTB Shirt</h3>
-<button onclick="setShirt('mtb','MTB Shirt')">
-Wear
-</button>
+<button onclick="setShirt('mtb','MTB Shirt')">WEAR</button>
 </div>
 
 <div class="item">
 <h3>Hellstar Style</h3>
-<button onclick="setShirt('hellstar','Hellstar Style')">
-Wear
-</button>
+<button onclick="setShirt('hellstar','Hellstar Style')">WEAR</button>
 </div>
 
 <div class="item">
 <h3>Spring</h3>
-<button onclick="setShirt('spring','Spring')">
-Wear
-</button>
+<button onclick="setShirt('spring','Spring')">WEAR</button>
 </div>
 
 <div class="item">
 <h3>Summer</h3>
-<button onclick="setShirt('summer','Summer')">
-Wear
-</button>
+<button onclick="setShirt('summer','Summer')">WEAR</button>
 </div>
 
 <div class="item">
 <h3>Fall</h3>
-<button onclick="setShirt('fall','Fall')">
-Wear
-</button>
+<button onclick="setShirt('fall','Fall')">WEAR</button>
 </div>
 
 <div class="item">
 <h3>Winter</h3>
-<button onclick="setShirt('winter','Winter')">
-Wear
-</button>
+<button onclick="setShirt('winter','Winter')">WEAR</button>
 </div>
 
 </div>
-
 </div>
 
 
@@ -1567,55 +1139,20 @@ Wear
 
 <div class="item">
 <h3>Classic Sword</h3>
-<button onclick="equipGear('sword','Classic Sword')">
-Hold
-</button>
+<button onclick="equipGear('sword','Classic Sword')">HOLD</button>
 </div>
 
 <div class="item">
 <h3>BIG Pencil</h3>
-<button onclick="equipGear('pencil','BIG Pencil')">
-Hold
-</button>
+<button onclick="equipGear('pencil','BIG Pencil')">HOLD</button>
 </div>
 
 <div class="item">
 <h3>Builder Hammer</h3>
-<button onclick="equipGear('hammer','Builder Hammer')">
-Hold
-</button>
-</div>
-
-<div class="item">
-<h3>Battle Axe</h3>
-<button onclick="equipGear('axe','Battle Axe')">
-Hold
-</button>
-</div>
-
-<div class="item">
-<h3>Pickaxe</h3>
-<button onclick="equipGear('pickaxe','Pickaxe')">
-Hold
-</button>
-</div>
-
-<div class="item">
-<h3>Magic Staff</h3>
-<button onclick="equipGear('staff','Magic Staff')">
-Hold
-</button>
-</div>
-
-<div class="item">
-<h3>Shield</h3>
-<button onclick="equipGear('shield','Shield')">
-Hold
-</button>
+<button onclick="equipGear('hammer','Builder Hammer')">HOLD</button>
 </div>
 
 </div>
-
 </div>
 
 
@@ -1625,16 +1162,12 @@ Hold
 
 <h2>🦵 Body</h2>
 
-<div class="grid">
-
 <div class="item">
 
-<h3>
-Blue Korblox Style Leg
-</h3>
+<h3>Blue Korblox Style Leg</h3>
 
 <button onclick="toggleKorblox()">
-Equip
+EQUIP
 </button>
 
 </div>
@@ -1642,989 +1175,466 @@ Equip
 </div>
 
 </div>
-
 </div>
-
 </div>
-
-</div>
-
 
 <div id="message" class="message"></div>
 
-
 <script>
 
-/* =========================================
-   SAVE DATA
-========================================= */
+const SAVE_KEY="MTB_AVATAR_SAVE_V14";
 
-const SAVE_KEY="MTB_AVATAR_SAVE_V13";
-
-let data=JSON.parse(
-    localStorage.getItem(SAVE_KEY)
-)||{
-    coins:1000,
-    shirt:"mtb",
-    shirtName:"MTB Shirt",
-    accessories:[],
-    gear:null,
-    korblox:false,
-    headless:false
+let data=JSON.parse(localStorage.getItem(SAVE_KEY))||{
+coins:1000,
+shirt:"mtb",
+shirtName:"MTB Shirt",
+accessories:[],
+gear:null,
+korblox:false,
+headless:false
 };
 
-
-/* =========================================
-   SAVE
-========================================= */
-
 function save(){
-
-    localStorage.setItem(
-        SAVE_KEY,
-        JSON.stringify(data)
-    );
-
+localStorage.setItem(SAVE_KEY,JSON.stringify(data));
 }
 
-
-/* =========================================
-   MESSAGE
-========================================= */
-
-function showMessage(text){
-
-    const box=
-        document.getElementById("message");
-
-    box.textContent=text;
-
-    box.style.display="block";
-
-    clearTimeout(window.msgTimer);
-
-    window.msgTimer=setTimeout(()=>{
-        box.style.display="none";
-    },1800);
-
+function message(text){
+const box=document.getElementById("message");
+box.textContent=text;
+box.style.display="block";
+clearTimeout(window.mt);
+window.mt=setTimeout(()=>box.style.display="none",1800);
 }
-
-
-/* =========================================
-   COINS
-========================================= */
-
-function earnCoins(){
-
-    data.coins+=100;
-
-    updateCoins();
-
-    save();
-
-    showMessage("+100 MTB Coins");
-
-}
-
 
 function updateCoins(){
-
-    document.getElementById("coins")
-        .textContent=data.coins;
-
+document.getElementById("coins").textContent=data.coins;
 }
 
-
-/* =========================================
-   HEADLESS
-========================================= */
-
-function setHeadless(enabled){
-
-    data.headless=enabled;
-
-    document.getElementById("avatar")
-        .classList.toggle(
-            "headless",
-            enabled
-        );
-
-    save();
-
-    showMessage(
-        enabled
-        ?"Headless equipped"
-        :"Classic face equipped"
-    );
-
+function earnCoins(){
+data.coins+=100;
+updateCoins();
+save();
+message("+100 MTB Coins");
 }
 
+function setHeadless(value){
+data.headless=value;
+document.getElementById("avatar").classList.toggle("headless",value);
+save();
+updateEquipped();
+message(value?"Headless equipped":"Classic face equipped");
+}
 
 function toggleHeadless(){
-
-    setHeadless(!data.headless);
-
+setHeadless(!data.headless);
 }
 
-
-/* =========================================
-   ACCESSORIES — MAX 3
-========================================= */
+/* MAX 3 ACCESSORIES */
 
 function toggleAccessory(name,type){
 
-    const index=
-        data.accessories.findIndex(
-            x=>x.name===name
-        );
+let index=data.accessories.findIndex(x=>x.name===name);
 
-    if(index!==-1){
+if(index!==-1){
 
-        data.accessories.splice(
-            index,
-            1
-        );
-
-        renderAccessories();
-
-        save();
-
-        showMessage(
-            name+" removed"
-        );
-
-        return;
-    }
-
-
-    if(data.accessories.length>=3){
-
-        showMessage(
-            "You can only wear 3 accessories!"
-        );
-
-        return;
-    }
-
-
-    data.accessories.push({
-        name:name,
-        type:type
-    });
-
-
-    renderAccessories();
-
-    save();
-
-    showMessage(
-        name+" equipped"
-    );
+data.accessories.splice(index,1);
+renderAccessories();
+save();
+message(name+" removed");
+return;
 
 }
 
+if(data.accessories.length>=3){
+message("You can only wear 3 accessories!");
+return;
+}
 
-/* =========================================
-   RENDER ACCESSORIES
-========================================= */
+data.accessories.push({
+name:name,
+type:type
+});
+
+renderAccessories();
+save();
+message(name+" equipped");
+}
 
 function renderAccessories(){
 
-    for(let i=1;i<=3;i++){
+for(let i=1;i<=3;i++){
+document.getElementById("accessory"+i).innerHTML="";
+}
 
-        document.getElementById(
-            "accessory"+i
-        ).innerHTML="";
+data.accessories.forEach((item,index)=>{
 
-    }
+if(index>=3)return;
 
+let html="";
 
-    data.accessories.forEach(
-        (item,index)=>{
+if(
+item.type==="blueHorns"||
+item.type==="redHorns"||
+item.type==="greenHorns"
+){
 
-            if(index>=3)return;
+let cls="accessory horns "+item.type;
 
-            let html="";
-
-
-            if(
-                item.type==="blueHorns"||
-                item.type==="redHorns"||
-                item.type==="greenHorns"
-            ){
-
-                let cls="horns";
-
-                if(item.type==="redHorns")
-                    cls+=" redHorns";
-
-                if(item.type==="greenHorns")
-                    cls+=" greenHorns";
-
-
-                html=`
-                <div class="accessory ${cls}">
-                    <div class="horn left"></div>
-                    <div class="horn right"></div>
-                    <div class="fire">
-                        <div class="flame"></div>
-                    </div>
-                </div>`;
-
-            }
-
-
-            if([
-                "rainbow",
-                "redFedora",
-                "blueFedora",
-                "greenFedora",
-                "purpleFedora",
-                "blackFedora",
-                "goldFedora",
-                "pinkFedora"
-            ].includes(item.type)){
-
-                html=`
-                <div class="accessory fedora ${item.type}">
-                    <div class="fedoraTop"></div>
-                    <div class="fedoraBand"></div>
-                    <div class="fedoraBrim"></div>
-                </div>`;
-
-            }
-
-
-            if([
-                "goldValk",
-                "redValk",
-                "blueValk",
-                "greenValk",
-                "purpleValk",
-                "blackValk"
-            ].includes(item.type)){
-
-                html=`
-                <div class="accessory valk ${item.type}">
-                    <div class="valkWing left"></div>
-                    <div class="valkWing right"></div>
-                </div>`;
-
-            }
-
-
-            document.getElementById(
-                "accessory"+(index+1)
-            ).innerHTML=html;
-
-        }
-    );
-
-
-    updateEquipped();
+html=`
+<div class="${cls}">
+<div class="horn left"></div>
+<div class="horn right"></div>
+<div class="fire">
+<div class="flame"></div>
+</div>
+</div>`;
 
 }
 
+if([
+"rainbow",
+"redFedora",
+"blueFedora",
+"greenFedora",
+"purpleFedora",
+"blackFedora",
+"goldFedora",
+"pinkFedora"
+].includes(item.type)){
 
-/* =========================================
-   GEAR
-========================================= */
+html=`
+<div class="accessory fedora ${item.type}">
+<div class="fedoraTop"></div>
+<div class="fedoraBand"></div>
+<div class="fedoraBrim"></div>
+</div>`;
+
+}
+
+if([
+"goldValk",
+"redValk",
+"blueValk",
+"greenValk",
+"purpleValk",
+"blackValk"
+].includes(item.type)){
+
+html=`
+<div class="accessory valk ${item.type}">
+<div class="valkWing left"></div>
+<div class="valkWing right"></div>
+</div>`;
+
+}
+
+document.getElementById(
+"accessory"+(index+1)
+).innerHTML=html;
+
+});
+
+updateEquipped();
+}
 
 function equipGear(type,name){
 
-    data.gear={
-        type:type,
-        name:name
-    };
+data.gear={type:type,name:name};
 
+const avatar=document.getElementById("avatar");
+avatar.classList.add("holding");
 
-    const avatar=
-        document.getElementById("avatar");
+const gear=document.getElementById("gear");
 
-    avatar.classList.add("holding");
+gear.className="gear "+type;
 
+if(type==="sword"){
 
-    const gear=
-        document.getElementById("gear");
-
-    gear.className=
-        "gear "+type;
-
-
-    let html="";
-
-
-    if(type==="sword"){
-
-        html=`
-        <div class="swordBlade"></div>
-        <div class="swordGuard"></div>
-        <div class="swordHandle"></div>
-        <div class="swordPommel"></div>`;
-
-    }
-
-
-    if(type==="pencil"){
-
-        html=`
-        <div class="pencilLead"></div>
-        <div class="pencilWood"></div>
-        <div class="pencilBody"></div>
-        <div class="pencilMetal"></div>
-        <div class="pencilEraser"></div>`;
-
-    }
-
-
-    if(type==="hammer"){
-
-        html=`
-        <div class="hammerHead"></div>
-        <div class="hammerHandle"></div>`;
-
-    }
-
-
-    if(type==="axe"){
-
-        html=`
-        <div class="axeBlade"></div>
-        <div class="axeHandle"></div>`;
-
-    }
-
-
-    if(type==="pickaxe"){
-
-        html=`
-        <div class="pickHead"></div>
-        <div class="pickHandle"></div>`;
-
-    }
-
-
-    if(type==="staff"){
-
-        html=`
-        <div class="staffOrb"></div>
-        <div class="staffWood"></div>`;
-
-    }
-
-
-    if(type==="shield"){
-
-        html=`
-        <div class="shieldShape"></div>`;
-
-    }
-
-
-    gear.innerHTML=html;
-
-    save();
-
-    updateEquipped();
-
-    showMessage(
-        name+" equipped"
-    );
+gear.innerHTML=`
+<div class="swordBlade"></div>
+<div class="swordGuard"></div>
+<div class="swordHandle"></div>
+<div class="swordPommel"></div>`;
 
 }
 
+if(type==="pencil"){
 
-/* =========================================
-   SHIRTS
-========================================= */
+gear.innerHTML=`
+<div class="pencilLead"></div>
+<div class="pencilWood"></div>
+<div class="pencilBody"></div>
+<div class="pencilMetal"></div>
+<div class="pencilEraser"></div>`;
+
+}
+
+if(type==="hammer"){
+
+gear.innerHTML=`
+<div class="hammerHead"></div>
+<div class="hammerHandle"></div>`;
+
+}
+
+save();
+updateEquipped();
+message(name+" equipped");
+}
 
 function setShirt(type,name){
 
-    data.shirt=type;
+data.shirt=type;
+data.shirtName=name;
 
-    data.shirtName=name;
+const shirt=document.getElementById("shirt");
 
+shirt.className="shirtText "+type;
+shirt.textContent="MTB";
 
-    const shirt=
-        document.getElementById("shirt");
-
-    shirt.className=
-        "shirtText "+type;
-
-    shirt.textContent="MTB";
-
-
-    save();
-
-    showMessage(
-        name+" equipped"
-    );
-
+save();
+updateEquipped();
+message(name+" equipped");
 }
-
-
-/* =========================================
-   KORBLOX
-========================================= */
 
 function toggleKorblox(){
 
-    data.korblox=
-        !data.korblox;
+data.korblox=!data.korblox;
 
+document.getElementById("leftLeg")
+.classList.toggle("korblox",data.korblox);
 
-    const leg=
-        document.getElementById("leftLeg");
+save();
+updateEquipped();
 
-    leg.classList.toggle(
-        "korblox",
-        data.korblox
-    );
-
-
-    save();
-
-    updateEquipped();
-
-    showMessage(
-        data.korblox
-        ?"Blue Korblox-style leg equipped"
-        :"Korblox-style leg removed"
-    );
-
+message(
+data.korblox?
+"Blue Korblox-style leg equipped":
+"Korblox-style leg removed"
+);
 }
-
-
-/* =========================================
-   EQUIPPED LIST
-========================================= */
-
-function updateEquipped(){
-
-    let text="";
-
-
-    text+=
-        "<b>Head:</b> "+
-        (data.headless
-        ?"Headless"
-        :"Classic Face")+
-        "<br>";
-
-
-    text+=
-        "<b>Shirt:</b> "+
-        data.shirtName+
-        "<br>";
-
-
-    data.accessories.forEach(
-        (item,i)=>{
-
-            text+=
-                "<b>Accessory "+
-                (i+1)+
-                ":</b> "+
-                item.name+
-                "<br>";
-
-        }
-    );
-
-
-    if(data.gear){
-
-        text+=
-            "<b>Held Gear:</b> "+
-            data.gear.name+
-            "<br>";
-
-    }
-
-
-    if(data.korblox){
-
-        text+=
-            "<b>Body:</b> Blue Korblox-style Leg<br>";
-
-    }
-
-
-    document.getElementById(
-        "equipped"
-    ).innerHTML=text;
-
-}
-
-
-/* =========================================
-   CLEAR
-========================================= */
 
 function clearAccessories(){
 
-    data.accessories=[];
-    data.gear=null;
+data.accessories=[];
+data.gear=null;
 
+document.getElementById("gear").innerHTML="";
+document.getElementById("avatar").classList.remove("holding");
 
-    document.getElementById(
-        "gear"
-    ).innerHTML="";
+renderAccessories();
 
+save();
 
-    document.getElementById(
-        "avatar"
-    ).classList.remove(
-        "holding"
-    );
-
-
-    renderAccessories();
-
-    save();
-
-    showMessage(
-        "Accessories and gear removed"
-    );
-
+message("Accessories and gear removed");
 }
 
+function updateEquipped(){
 
-/* =========================================
-   RESET
-========================================= */
+let text="<b>Head:</b> "+
+(data.headless?"Headless":"Classic Face")+"<br>";
+
+text+="<b>Shirt:</b> "+data.shirtName+"<br>";
+
+data.accessories.forEach((item,i)=>{
+text+="<b>Accessory "+(i+1)+":</b> "+item.name+"<br>";
+});
+
+if(data.gear){
+text+="<b>Gear:</b> "+data.gear.name+"<br>";
+}
+
+if(data.korblox){
+text+="<b>Body:</b> Blue Korblox-style Leg<br>";
+}
+
+document.getElementById("equipped").innerHTML=text;
+}
 
 function resetAvatar(){
 
-    if(!confirm(
-        "Reset your saved avatar?"
-    ))return;
+if(!confirm("Reset your saved avatar?"))return;
 
-
-    localStorage.removeItem(
-        SAVE_KEY
-    );
-
-
-    location.reload();
-
+localStorage.removeItem(SAVE_KEY);
+location.reload();
 }
 
+/* FIRST 10 DEVELOPER SHIELD */
 
-/* =========================================
-   FIRST 10 DEVELOPER SHIELD
-========================================= */
+const DEV_ID_KEY="MTB_DEV_ID";
+const DEV_USERS_KEY="MTB_FIRST_10";
 
-const DEV_USERS_KEY=
-    "MTB_FIRST_10_DEVELOPERS";
-
-const DEV_ID_KEY=
-    "MTB_DEVELOPER_ID";
-
-
-let devUsers=
-    JSON.parse(
-        localStorage.getItem(
-            DEV_USERS_KEY
-        )
-    )||[];
-
-
-let devID=
-    localStorage.getItem(
-        DEV_ID_KEY
-    );
-
+let devID=localStorage.getItem(DEV_ID_KEY);
 
 if(!devID){
 
-    devID=
-        "DEV-"+Date.now()+"-"+
-        Math.random()
-        .toString(36)
-        .slice(2,10);
+devID="DEV-"+Date.now()+"-"+
+Math.random().toString(36).slice(2,10);
 
+localStorage.setItem(DEV_ID_KEY,devID);
+}
 
-    localStorage.setItem(
-        DEV_ID_KEY,
-        devID
-    );
+let devUsers=
+JSON.parse(localStorage.getItem(DEV_USERS_KEY))||[];
+
+if(devUsers.length<10&&!devUsers.includes(devID)){
+
+devUsers.push(devID);
+
+localStorage.setItem(
+DEV_USERS_KEY,
+JSON.stringify(devUsers)
+);
+}
+
+if(devUsers.includes(devID)){
+
+document.getElementById("developerBadge")
+.style.display="block";
+
+const avatar=document.getElementById("avatar");
+
+avatar.insertAdjacentHTML(
+"beforeend",
+`
+<div class="developerShield">
+<div class="devShape"></div>
+<div class="devInner"></div>
+<div class="devText">
+DEVELOPER<br>MODE
+</div>
+</div>
+`
+);
 
 }
 
-
-if(
-    devUsers.length<10 &&
-    !devUsers.includes(devID)
-){
-
-    devUsers.push(devID);
-
-
-    localStorage.setItem(
-        DEV_USERS_KEY,
-        JSON.stringify(devUsers)
-    );
-
-}
-
-
-const isDeveloper=
-    devUsers.includes(devID);
-
-
-function createDeveloperShield(){
-
-    if(!isDeveloper)return;
-
-
-    const avatar=
-        document.getElementById(
-            "avatar"
-        );
-
-
-    const shield=
-        document.createElement(
-            "div"
-        );
-
-
-    shield.className=
-        "developerShield";
-
-
-    shield.innerHTML=`
-        <div class="devShape"></div>
-        <div class="devInner"></div>
-        <div class="devText">
-            DEVELOPER<br>
-            MODE
-        </div>
-    `;
-
-
-    avatar.appendChild(
-        shield
-    );
-
-
-    document.getElementById(
-        "developerBadge"
-    ).style.display="block";
-
-}
-
-
-/* =========================================
-   ROBLOX USER SEARCH
-========================================= */
+/* ROBLOX USER SEARCH */
 
 async function searchUsers(){
 
-    const input=
-        document.getElementById(
-            "usernameSearch"
-        );
+const username=
+document.getElementById("usernameSearch")
+.value.trim();
 
-    const results=
-        document.getElementById(
-            "searchResults"
-        );
+const results=
+document.getElementById("searchResults");
 
+if(!username){
 
-    const username=
-        input.value.trim();
+results.innerHTML=
+'<div class="noResults">Enter a username.</div>';
 
-
-    if(!username){
-
-        results.innerHTML=`
-            <div class="noResults">
-                Enter a username first.
-            </div>
-        `;
-
-        return;
-    }
-
-
-    results.innerHTML=`
-        <div class="loading">
-            Searching Roblox...
-        </div>
-    `;
-
-
-    try{
-
-        const response=
-            await fetch(
-                "https://users.roblox.com/v1/usernames/users",
-                {
-                    method:"POST",
-
-                    headers:{
-                        "Content-Type":
-                            "application/json"
-                    },
-
-                    body:JSON.stringify({
-
-                        usernames:[
-                            username
-                        ],
-
-                        excludeBannedUsers:false
-
-                    })
-                }
-            );
-
-
-        if(!response.ok){
-
-            throw new Error(
-                "Search request failed"
-            );
-
-        }
-
-
-        const result=
-            await response.json();
-
-
-        if(
-            !result.data||
-            result.data.length===0
-        ){
-
-            results.innerHTML=`
-                <div class="noResults">
-                    No Roblox user found for
-                    <b>${escapeHTML(username)}</b>.
-                </div>
-            `;
-
-            return;
-        }
-
-
-        results.innerHTML="";
-
-
-        result.data.forEach(
-            user=>{
-
-                const card=
-                    document.createElement(
-                        "div"
-                    );
-
-                card.className=
-                    "userResult";
-
-
-                const avatar=
-                    document.createElement(
-                        "img"
-                    );
-
-                avatar.className=
-                    "userAvatar";
-
-
-                avatar.src=
-                    "https://www.roblox.com/headshot-thumbnail/image?userId="+
-                    user.id+
-                    "&width=150&height=150&format=png";
-
-
-                avatar.alt=
-                    user.name;
-
-
-                const info=
-                    document.createElement(
-                        "div"
-                    );
-
-                info.className=
-                    "userInfo";
-
-
-                const name=
-                    document.createElement(
-                        "div"
-                    );
-
-                name.className=
-                    "userName";
-
-                name.textContent=
-                    user.name;
-
-
-                const display=
-                    document.createElement(
-                        "div"
-                    );
-
-                display.className=
-                    "userDisplay";
-
-                display.textContent=
-                    "@"+user.displayName;
-
-
-                info.appendChild(name);
-                info.appendChild(display);
-
-
-                const buttons=
-                    document.createElement(
-                        "div"
-                    );
-
-                buttons.className=
-                    "userButtons";
-
-
-                const profile=
-                    document.createElement(
-                        "a"
-                    );
-
-                profile.className=
-                    "profileButton";
-
-                profile.textContent=
-                    "VIEW PROFILE";
-
-                profile.target="_blank";
-
-                profile.rel=
-                    "noopener noreferrer";
-
-
-                profile.href=
-                    "https://www.roblox.com/users/"+
-                    user.id+
-                    "/profile";
-
-
-                buttons.appendChild(
-                    profile
-                );
-
-
-                card.appendChild(avatar);
-                card.appendChild(info);
-                card.appendChild(buttons);
-
-
-                results.appendChild(card);
-
-            }
-        );
-
-    }catch(error){
-
-        console.error(error);
-
-
-        results.innerHTML=`
-            <div class="noResults">
-                <b>Search couldn't connect.</b><br>
-                Roblox may be blocking the request
-                from GitHub Pages.
-            </div>
-        `;
-
-    }
-
+return;
 }
 
+results.innerHTML=
+'<div class="noResults">Searching Roblox...</div>';
 
-/* =========================================
-   ESCAPE HTML
-========================================= */
+try{
+
+const response=await fetch(
+"https://users.roblox.com/v1/usernames/users",
+{
+method:"POST",
+headers:{
+"Content-Type":"application/json"
+},
+body:JSON.stringify({
+usernames:[username],
+excludeBannedUsers:false
+})
+}
+);
+
+if(!response.ok)throw new Error();
+
+const result=await response.json();
+
+if(!result.data||!result.data.length){
+
+results.innerHTML=
+'<div class="noResults">User not found.</div>';
+
+return;
+}
+
+results.innerHTML="";
+
+result.data.forEach(user=>{
+
+const card=document.createElement("div");
+card.className="userResult";
+
+card.innerHTML=`
+<img class="userAvatar"
+src="https://www.roblox.com/headshot-thumbnail/image?userId=${user.id}&width=150&height=150&format=png">
+
+<div class="userInfo">
+<div class="userName">${escapeHTML(user.name)}</div>
+<div class="userDisplay">@${escapeHTML(user.displayName)}</div>
+</div>
+
+<a
+class="profileButton"
+target="_blank"
+href="https://www.roblox.com/users/${user.id}/profile">
+PROFILE
+</a>
+`;
+
+results.appendChild(card);
+
+});
+
+}catch(e){
+
+results.innerHTML=
+`
+<div class="noResults">
+Roblox search could not connect from this GitHub page.
+</div>
+`;
+
+}
+}
 
 function escapeHTML(value){
 
-    return String(value)
-        .replace(/&/g,"&amp;")
-        .replace(/</g,"&lt;")
-        .replace(/>/g,"&gt;")
-        .replace(/"/g,"&quot;")
-        .replace(/'/g,"&#039;");
+return String(value)
+.replace(/&/g,"&amp;")
+.replace(/</g,"&lt;")
+.replace(/>/g,"&gt;")
+.replace(/"/g,"&quot;")
+.replace(/'/g,"&#039;");
 
 }
 
+/* LOAD */
 
-/* =========================================
-   LOAD SAVED AVATAR
-========================================= */
+function load(){
 
-function loadAvatar(){
+updateCoins();
 
-    updateCoins();
+document.getElementById("shirt").className=
+"shirtText "+data.shirt;
 
+document.getElementById("avatar")
+.classList.toggle("headless",data.headless);
 
-    document.getElementById(
-        "shirt"
-    ).className=
-        "shirtText "+
-        data.shirt;
+document.getElementById("leftLeg")
+.classList.toggle("korblox",data.korblox);
 
+renderAccessories();
 
-    document.getElementById(
-        "shirt"
-    ).textContent="MTB";
-
-
-    document.getElementById(
-        "avatar"
-    ).classList.toggle(
-        "headless",
-        data.headless
-    );
-
-
-    document.getElementById(
-        "leftLeg"
-    ).classList.toggle(
-        "korblox",
-        data.korblox
-    );
-
-
-    renderAccessories();
-
-
-    if(data.gear){
-
-        equipGear(
-            data.gear.type,
-            data.gear.name
-        );
-
-    }
-
-
-    updateEquipped();
-
-    createDeveloperShield();
-
+if(data.gear){
+equipGear(data.gear.type,data.gear.name);
 }
 
+updateEquipped();
+}
 
-/* =========================================
-   START
-========================================= */
-
-loadAvatar();
+load();
 
 </script>
 
