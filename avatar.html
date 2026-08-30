@@ -4,35 +4,39 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MTB Avatar</title>
+
+<title>MTB Avatar Changer</title>
 
 <style>
-*{box-sizing:border-box}
+*{
+    box-sizing:border-box;
+}
 
 body{
     margin:0;
-    font-family:Arial,sans-serif;
-    background:#e8e8e8;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#e7e7e7;
     color:#222;
 }
 
 header{
-    background:#c8c8c8;
+    background:#c9c9c9;
     border-bottom:3px solid #888;
-    padding:15px;
+    padding:16px;
 }
 
 .logo{
     text-align:center;
-    font-size:28px;
+    font-size:29px;
     font-weight:900;
+    letter-spacing:2px;
 }
 
 nav{
     display:flex;
     justify-content:center;
     flex-wrap:wrap;
-    gap:5px;
+    gap:6px;
     margin-top:10px;
 }
 
@@ -40,7 +44,7 @@ nav a{
     color:#222;
     text-decoration:none;
     font-weight:bold;
-    padding:8px 12px;
+    padding:9px 13px;
     border-radius:5px;
 }
 
@@ -49,36 +53,37 @@ nav a:hover{
 }
 
 .coinbar{
-    max-width:1150px;
+    max-width:1200px;
     margin:15px auto;
     padding:12px 18px;
     background:white;
     border:1px solid #aaa;
     display:flex;
     justify-content:space-between;
+    align-items:center;
     flex-wrap:wrap;
     gap:10px;
 }
 
 .coin{
+    width:21px;
+    height:21px;
     display:inline-block;
-    width:20px;
-    height:20px;
-    background:#e8b600;
-    border:2px solid #8c6900;
-    border-radius:50%;
     vertical-align:middle;
+    border-radius:50%;
+    background:#e6bd28;
+    border:2px solid #987600;
 }
 
 .container{
-    max-width:1150px;
+    max-width:1200px;
     margin:auto;
-    padding:0 15px 30px;
+    padding:0 15px 35px;
 }
 
 .layout{
     display:grid;
-    grid-template-columns:340px 1fr;
+    grid-template-columns:390px 1fr;
     gap:20px;
 }
 
@@ -88,550 +93,666 @@ nav a:hover{
     padding:20px;
 }
 
-.avatar{
-    position:relative;
-    width:250px;
-    height:430px;
-    margin:20px auto;
+h1,h2{
+    margin-top:0;
 }
 
-/* ================= BODY ================= */
+/* =====================================================
+   NEW BLOCK AVATAR
+===================================================== */
+
+.avatarStage{
+    min-height:535px;
+    background:
+        linear-gradient(
+            #f4f4f4,
+            #d8d8d8
+        );
+    border:2px solid #aaa;
+    position:relative;
+    overflow:hidden;
+}
+
+.floor{
+    position:absolute;
+    left:-10%;
+    right:-10%;
+    bottom:0;
+    height:100px;
+    background:#c1c1c1;
+    border-top:3px solid #999;
+    transform:perspective(300px) rotateX(15deg);
+}
+
+.avatar{
+    position:absolute;
+    width:280px;
+    height:470px;
+    left:50%;
+    bottom:35px;
+    transform:translateX(-50%);
+}
+
+/* HEAD */
 
 .head{
     position:absolute;
-    width:105px;
-    height:105px;
+    width:116px;
+    height:116px;
+    left:82px;
     top:35px;
-    left:72px;
-    background:#f1c27d;
-    border:3px solid #333;
-    border-radius:12px;
+    background:#f0bd76;
+    border:4px solid #292929;
+    border-radius:7px;
     z-index:20;
+    box-shadow:
+        inset -8px -8px 0 rgba(0,0,0,.08);
 }
 
-.body{
+/* HAIR */
+
+.hair{
     position:absolute;
     width:120px;
-    height:125px;
-    top:140px;
-    left:65px;
-    background:#222;
-    border:3px solid #333;
-    overflow:hidden;
-    z-index:5;
+    height:35px;
+    left:-6px;
+    top:-8px;
+    background:#171717;
+    border:4px solid #292929;
+    border-radius:50% 50% 8px 8px;
+    z-index:25;
 }
 
-.shirt{
+/* FACE */
+
+.eye{
+    position:absolute;
+    width:11px;
+    height:16px;
+    top:47px;
+    background:#111;
+    border-radius:50%;
+}
+
+.eye.left{
+    left:33px;
+}
+
+.eye.right{
+    right:33px;
+}
+
+.mouth{
+    position:absolute;
+    left:35px;
+    top:75px;
+    width:45px;
+    height:17px;
+    border-bottom:4px solid #111;
+    border-radius:0 0 50% 50%;
+}
+
+/* TORSO */
+
+.torso{
+    position:absolute;
+    left:70px;
+    top:151px;
+    width:140px;
+    height:135px;
+    background:#171717;
+    border:4px solid #292929;
+    z-index:8;
+    border-radius:5px;
+    overflow:hidden;
+}
+
+.shirtText{
     position:absolute;
     inset:0;
     display:flex;
     align-items:center;
     justify-content:center;
-    font-weight:900;
-    font-size:25px;
     color:white;
+    font-weight:900;
+    font-size:30px;
     letter-spacing:2px;
 }
 
 .mtbShirt{
-    background:linear-gradient(135deg,#080808,#383838,#111);
-}
-
-.mtbShirt span{
-    background:white;
-    color:#111;
-    padding:5px 10px;
-    border-radius:4px;
-}
-
-.hellShirt{
     background:
-        linear-gradient(135deg,#090909,#333,#080808);
+        linear-gradient(
+            135deg,
+            #050505,
+            #3a3a3a,
+            #0c0c0c
+        );
 }
 
-.springShirt{
-    background:linear-gradient(135deg,#65ce76,#c7f5cd);
+.hellstar{
+    background:
+        radial-gradient(
+            circle at center,
+            #555,
+            #080808 65%
+        );
 }
 
-.summerShirt{
-    background:linear-gradient(135deg,#159be8,#f7d840);
+.spring{
+    background:linear-gradient(135deg,#61ce70,#d7f7d9);
 }
 
-.fallShirt{
-    background:linear-gradient(135deg,#d76b27,#713312);
+.summer{
+    background:linear-gradient(135deg,#1a9de8,#f4d33b);
 }
 
-.winterShirt{
-    background:linear-gradient(135deg,#4c9de8,#dff5ff);
+.fall{
+    background:linear-gradient(135deg,#db722e,#62220e);
 }
 
-/* ================= ARMS ================= */
+.winter{
+    background:linear-gradient(135deg,#55a8ed,#e3f8ff);
+}
+
+/* ARMS */
 
 .arm{
     position:absolute;
-    width:40px;
-    height:115px;
-    top:145px;
-    background:#f1c27d;
-    border:3px solid #333;
-    z-index:9;
+    width:47px;
+    height:125px;
+    top:157px;
+    background:#f0bd76;
+    border:4px solid #292929;
+    border-radius:5px;
+    z-index:12;
     transform-origin:top center;
-    transition:.4s;
+    transition:.35s;
 }
 
 .leftArm{
-    left:22px;
+    left:18px;
 }
 
 .rightArm{
-    right:22px;
+    right:18px;
 }
 
 .sleeve{
     position:absolute;
-    width:40px;
-    height:45px;
-    top:0;
-    left:-3px;
-    border:3px solid #333;
+    left:-4px;
+    top:-4px;
+    width:47px;
+    height:52px;
+    background:#171717;
+    border:4px solid #292929;
 }
 
-.mtbSleeve{
-    background:#111;
+/* HOLDING POSITION */
+
+.holding .rightArm{
+    top:151px;
+    right:0;
+    transform:rotate(-62deg);
 }
 
-/* ARM COMES OUT WHEN GEAR IS HELD */
-
-.avatar.holdingGear .rightArm{
-    top:135px;
-    right:3px;
-    transform:rotate(-58deg);
-}
-
-/* ================= LEGS ================= */
+/* LEGS */
 
 .leg{
     position:absolute;
-    top:265px;
-    width:52px;
-    height:125px;
-    background:#222;
-    border:3px solid #333;
-    z-index:4;
+    top:282px;
+    width:61px;
+    height:142px;
+    background:#191919;
+    border:4px solid #292929;
+    border-radius:4px;
+    z-index:5;
 }
 
 .leftLeg{
-    left:65px;
+    left:70px;
 }
 
 .rightLeg{
-    right:65px;
+    right:70px;
 }
 
 /* KORBLOX STYLE */
 
-.leftLeg.korblox{
-    width:25px;
-    height:82px;
-    left:79px;
-    top:308px;
+.korblox{
+    width:29px;
+    height:94px;
+    left:86px;
+    top:326px;
     background:
         linear-gradient(
             90deg,
-            #07101b,
-            #2d679d,
-            #9ce5ff,
-            #25517e,
-            #07101b
+            #07101a,
+            #397cae,
+            #b7f1ff,
+            #275d8d,
+            #07101a
         );
-    border-color:#101923;
-    border-radius:5px 5px 10px 10px;
+    border-color:#111c27;
     box-shadow:
-        inset 3px 0 5px rgba(255,255,255,.3),
-        inset -4px 0 5px rgba(0,0,0,.6);
+        inset 3px 0 5px rgba(255,255,255,.35),
+        inset -4px 0 5px rgba(0,0,0,.65);
 }
 
-.leftLeg.korblox:before{
+.korblox:before{
     content:"";
     position:absolute;
-    width:31px;
-    height:13px;
-    left:-6px;
-    top:-8px;
-    background:#172638;
-    border:2px solid #0c1420;
+    width:36px;
+    height:15px;
+    left:-8px;
+    top:-9px;
+    background:#192c40;
+    border:3px solid #0b121b;
     border-radius:5px;
 }
 
-.leftLeg.korblox:after{
+.korblox:after{
     content:"";
     position:absolute;
     width:5px;
-    height:55px;
-    left:5px;
-    top:10px;
-    background:rgba(190,240,255,.7);
+    height:60px;
+    left:6px;
+    top:12px;
+    background:rgba(210,250,255,.75);
     border-radius:5px;
 }
 
-/* ================= FACE ================= */
+/* =====================================================
+   ACCESSORY DISPLAY
+===================================================== */
 
-.eye{
+.accessory{
     position:absolute;
-    width:9px;
-    height:14px;
-    background:#111;
-    border-radius:50%;
-    top:40px;
-}
-
-.leftEye{left:34px}
-.rightEye{right:34px}
-
-.mouth{
-    position:absolute;
-}
-
-.classicSmile .mouth{
-    width:42px;
-    height:20px;
-    left:30px;
-    top:55px;
-    border-bottom:4px solid #111;
-    border-radius:0 0 50% 50%;
-}
-
-.classicHappy .mouth{
-    width:42px;
-    height:23px;
-    left:29px;
-    top:54px;
-    background:#111;
-    border-radius:5px 5px 50% 50%;
-}
-
-.classicHappy .mouth:after{
-    content:"";
-    position:absolute;
-    width:25px;
-    height:6px;
-    left:8px;
-    top:2px;
-    background:white;
-}
-
-.classicSerious .mouth{
-    width:40px;
-    height:4px;
-    left:31px;
-    top:63px;
-    background:#111;
-}
-
-/* ================= ACCESSORY SLOTS ================= */
-
-.accessorySlot{
-    position:absolute;
-    width:200px;
-    height:125px;
-    left:25px;
-    top:-35px;
     pointer-events:none;
 }
 
-.slot1{z-index:31}
-.slot2{z-index:32}
-.slot3{z-index:33}
+/* HORNS */
 
-/* ================= FROZEN HORNS ================= */
-
-.frozenHorns{
-    position:absolute;
-    width:190px;
-    height:110px;
-    left:5px;
+.horns{
+    width:220px;
+    height:125px;
+    left:30px;
     top:0;
+    z-index:40;
 }
 
 .horn{
     position:absolute;
-    width:44px;
-    height:105px;
-    background:#baf5ff;
+    width:50px;
+    height:115px;
+    background:#bdf7ff;
     clip-path:polygon(
-        50% 0%,
-        76% 17%,
-        100% 30%,
-        77% 44%,
-        95% 63%,
-        68% 61%,
-        52% 100%,
+        50% 0,
+        77% 17%,
+        100% 31%,
+        78% 44%,
+        95% 60%,
+        67% 60%,
+        53% 100%,
         39% 65%,
         8% 78%,
         21% 52%,
-        0% 39%,
+        0 39%,
         28% 20%
     );
-    filter:
-        drop-shadow(0 0 7px #55ddff);
+    filter:drop-shadow(0 0 8px #4ddcff);
 }
 
 .horn.left{
-    left:10px;
+    left:12px;
     transform:rotate(-24deg);
 }
 
 .horn.right{
-    right:10px;
+    right:12px;
     transform:rotate(24deg);
 }
 
 .redHorns .horn{
-    background:#ff4646;
-    filter:drop-shadow(0 0 7px #ff2020);
+    background:#ff4141;
+    filter:drop-shadow(0 0 9px #ff1d1d);
 }
 
 .greenHorns .horn{
-    background:#43e875;
-    filter:drop-shadow(0 0 7px #27df61);
+    background:#42e879;
+    filter:drop-shadow(0 0 9px #22ff6e);
 }
 
-/* REAL CSS FIRE */
+/* FIRE */
 
 .fire{
     position:absolute;
-    left:73px;
+    width:38px;
+    height:70px;
+    left:91px;
     top:-5px;
-    width:42px;
-    height:65px;
 }
 
-.flameOuter{
+.flame{
     position:absolute;
+    width:34px;
+    height:61px;
     bottom:0;
-    left:7px;
-    width:30px;
-    height:55px;
-    background:#24bfff;
-    border-radius:
-        50% 50% 45% 45% /
-        65% 65% 35% 35%;
-    transform:rotate(2deg);
-    box-shadow:0 0 18px #31d8ff;
+    background:#25cfff;
+    border-radius:55% 45% 45% 45%;
+    transform:rotate(4deg);
+    box-shadow:0 0 20px #25cfff;
 }
 
-.flameOuter:before{
+.flame:after{
     content:"";
     position:absolute;
-    width:19px;
-    height:38px;
-    left:6px;
-    bottom:5px;
-    background:#dffbff;
-    border-radius:60% 40% 55% 45%;
-    transform:rotate(-5deg);
+    width:17px;
+    height:35px;
+    left:8px;
+    bottom:7px;
+    background:#e9fdff;
+    border-radius:60% 40% 50% 50%;
 }
 
-.redHorns .flameOuter{
-    background:#ff2424;
-    box-shadow:0 0 18px #ff3030;
+.redHorns .flame{
+    background:#ff2525;
+    box-shadow:0 0 20px #ff2525;
 }
 
-.greenHorns .flameOuter{
-    background:#24e969;
-    box-shadow:0 0 18px #26ff73;
+.greenHorns .flame{
+    background:#22e96b;
+    box-shadow:0 0 20px #22e96b;
 }
 
-/* ================= FEDORA ================= */
+/* =====================================================
+   FEDORAS
+===================================================== */
 
 .fedora{
-    position:absolute;
-    width:150px;
-    height:85px;
-    left:20px;
+    width:170px;
+    height:105px;
+    left:55px;
     top:0;
+    z-index:42;
 }
 
 .fedoraTop{
     position:absolute;
-    width:108px;
-    height:48px;
-    left:21px;
+    width:120px;
+    height:60px;
+    left:25px;
     top:0;
-    border:5px solid #555;
-    border-radius:50% 50% 20% 20%;
+    border:5px solid #333;
+    border-radius:50% 50% 18% 18%;
 }
 
-.fedoraBottom{
+.fedoraBand{
     position:absolute;
-    width:150px;
-    height:23px;
+    width:120px;
+    height:13px;
+    left:25px;
+    top:42px;
+    background:#111;
+    z-index:2;
+}
+
+.fedoraBrim{
+    position:absolute;
+    width:170px;
+    height:28px;
     left:0;
-    top:44px;
-    border:4px solid #555;
+    top:53px;
+    border:5px solid #333;
     border-radius:50%;
 }
 
-.fedoraRainbow .fedoraTop{
+.rainbow .fedoraTop{
     background:linear-gradient(
         135deg,
-        #e83333,
-        #f3d13a,
-        #41d86c,
-        #3f9df2,
-        #9a5bd8
+        #e83d3d,
+        #f2d034,
+        #4dd477,
+        #459cf0,
+        #9a5bd9
     );
 }
 
-.fedoraRainbow .fedoraBottom{
-    background:#d4a52d;
+.rainbow .fedoraBrim{
+    background:#cfa42b;
 }
 
-.fedoraRed .fedoraTop{
-    background:#d83232;
+.redFedora .fedoraTop{
+    background:#d73535;
 }
 
-.fedoraRed .fedoraBottom{
-    background:#791414;
+.redFedora .fedoraBrim{
+    background:#781414;
 }
 
-.fedoraBlue .fedoraTop{
-    background:#328dff;
+.blueFedora .fedoraTop{
+    background:#348df0;
 }
 
-.fedoraBlue .fedoraBottom{
-    background:#194d98;
+.blueFedora .fedoraBrim{
+    background:#194c8f;
 }
 
-.fedoraGreen .fedoraTop{
-    background:#35d269;
+.greenFedora .fedoraTop{
+    background:#37d269;
 }
 
-.fedoraGreen .fedoraBottom{
-    background:#176d37;
+.greenFedora .fedoraBrim{
+    background:#176d38;
 }
 
-.fedoraPurple .fedoraTop{
+.purpleFedora .fedoraTop{
     background:#a15bdc;
 }
 
-.fedoraPurple .fedoraBottom{
-    background:#582287;
+.purpleFedora .fedoraBrim{
+    background:#592488;
 }
 
-.fedoraBlack .fedoraTop{
-    background:#222;
+.blackFedora .fedoraTop{
+    background:#252525;
 }
 
-.fedoraBlack .fedoraBottom{
-    background:#050505;
+.blackFedora .fedoraBrim{
+    background:#080808;
 }
 
-.fedoraWhite .fedoraTop{
-    background:#eee;
+.goldFedora .fedoraTop{
+    background:#e0b62e;
 }
 
-.fedoraWhite .fedoraBottom{
-    background:#999;
+.goldFedora .fedoraBrim{
+    background:#88670c;
 }
 
-.fedoraGold .fedoraTop{
-    background:#e4b62d;
+.pinkFedora .fedoraTop{
+    background:#ef5d9d;
 }
 
-.fedoraGold .fedoraBottom{
-    background:#8e6809;
+.pinkFedora .fedoraBrim{
+    background:#98255a;
 }
 
-.fedoraPink .fedoraTop{
-    background:#f05c9e;
-}
-
-.fedoraPink .fedoraBottom{
-    background:#9c255d;
-}
-
-/* ================= VALKYRIE ================= */
+/* =====================================================
+   VALKYRIE
+===================================================== */
 
 .valk{
-    position:absolute;
-    width:185px;
-    height:80px;
-    left:2px;
-    top:5px;
+    width:210px;
+    height:110px;
+    left:35px;
+    top:0;
+    z-index:41;
 }
 
 .valkWing{
     position:absolute;
-    width:65px;
-    height:75px;
-    border:5px solid #555;
+    width:72px;
+    height:85px;
+    top:5px;
+    border:6px solid #333;
     border-radius:50% 50% 15% 15%;
 }
 
 .valkWing.left{
     left:0;
-    transform:rotate(-28deg);
+    transform:rotate(-30deg);
 }
 
 .valkWing.right{
     right:0;
-    transform:rotate(28deg);
+    transform:rotate(30deg);
 }
 
 .goldValk .valkWing{
-    background:#e9c34c;
-    border-color:#95700c;
+    background:#e7c24b;
+    border-color:#8d6a0b;
 }
 
 .redValk .valkWing{
-    background:#df3939;
-    border-color:#801414;
+    background:#dc3838;
+    border-color:#781313;
 }
 
 .blueValk .valkWing{
-    background:#428ff0;
-    border-color:#174c91;
+    background:#438ff0;
+    border-color:#174d92;
 }
 
 .greenValk .valkWing{
-    background:#42d36a;
-    border-color:#176d35;
+    background:#40d26a;
+    border-color:#176a35;
 }
 
 .purpleValk .valkWing{
-    background:#9b5ed9;
-    border-color:#57208b;
+    background:#9d5dd9;
+    border-color:#592286;
 }
 
 .blackValk .valkWing{
-    background:#292929;
-    border-color:#080808;
+    background:#282828;
+    border-color:#050505;
 }
 
-/* =================================================
-   REAL CSS GEAR
-================================================= */
+/* =====================================================
+   GEAR
+===================================================== */
 
 .gear{
-    position:absolute;
-    right:-20px;
-    top:190px;
-    width:70px;
-    height:100px;
-    z-index:60;
     display:none;
-    transform:rotate(-35deg);
+    position:absolute;
+    z-index:70;
+    right:-20px;
+    top:205px;
+    width:100px;
+    height:145px;
+    transform:rotate(-25deg);
+}
+
+.avatar.holding .gear{
+    display:block;
+}
+
+/* BIG PENCIL */
+
+.pencil{
+    width:45px;
+    height:170px;
+    right:-4px;
+    top:190px;
+    transform:rotate(-20deg);
+}
+
+.pencilBody{
+    position:absolute;
+    left:10px;
+    top:15px;
+    width:25px;
+    height:116px;
+    background:
+        linear-gradient(
+            90deg,
+            #d78c14,
+            #ffd83d,
+            #f5bd22,
+            #d68b0e
+        );
+    border:3px solid #51370c;
+    border-radius:3px;
+}
+
+.pencilWood{
+    position:absolute;
+    left:10px;
+    top:0;
+    width:25px;
+    height:25px;
+    background:#d9a46e;
+    border:3px solid #51370c;
+    clip-path:polygon(
+        0 0,
+        100% 0,
+        50% 100%
+    );
+}
+
+.pencilLead{
+    position:absolute;
+    left:18px;
+    top:-8px;
+    width:10px;
+    height:14px;
+    background:#252525;
+    clip-path:polygon(
+        50% 0,
+        100% 100%,
+        0 100%
+    );
+}
+
+.pencilEraser{
+    position:absolute;
+    left:10px;
+    top:128px;
+    width:25px;
+    height:23px;
+    background:#ed7c93;
+    border:3px solid #783b49;
+    border-radius:3px 3px 7px 7px;
+}
+
+.pencilMetal{
+    position:absolute;
+    left:10px;
+    top:120px;
+    width:25px;
+    height:13px;
+    background:
+        linear-gradient(
+            #ddd,
+            #888,
+            #ddd
+        );
+    border:2px solid #555;
 }
 
 /* SWORD */
 
-.sword .blade{
+.sword{
+    width:65px;
+    height:145px;
+}
+
+.swordBlade{
     position:absolute;
-    width:13px;
-    height:72px;
-    left:29px;
+    left:27px;
     top:0;
+    width:15px;
+    height:91px;
     background:
         linear-gradient(
             90deg,
@@ -642,105 +763,107 @@ nav a:hover{
         );
     clip-path:polygon(
         50% 0,
-        100% 18%,
+        100% 17%,
         70% 100%,
         30% 100%,
-        0 18%
+        0 17%
     );
 }
 
-.sword .guard{
+.swordGuard{
     position:absolute;
-    width:48px;
-    height:9px;
-    left:12px;
-    top:66px;
-    background:#d0a72d;
-    border-radius:4px;
+    left:7px;
+    top:85px;
+    width:55px;
+    height:10px;
+    background:#d2ad35;
+    border:2px solid #674f0b;
+    border-radius:5px;
 }
 
-.sword .handle{
+.swordHandle{
     position:absolute;
+    left:29px;
+    top:94px;
     width:11px;
-    height:28px;
-    left:30px;
-    top:72px;
-    background:#55341f;
-    border-radius:3px;
+    height:34px;
+    background:#56331d;
+    border:2px solid #301b0e;
 }
 
-.sword .pommel{
+.swordPommel{
     position:absolute;
-    width:15px;
-    height:15px;
-    left:28px;
-    top:96px;
-    background:#d0a72d;
+    left:26px;
+    top:122px;
+    width:17px;
+    height:17px;
+    background:#d2ad35;
+    border:2px solid #674f0b;
     border-radius:50%;
 }
 
-/* DARK BLADE */
+/* HAMMER */
 
-.darkblade .blade{
+.hammer{
+    width:80px;
+    height:150px;
+}
+
+.hammerHead{
     position:absolute;
-    width:15px;
-    height:75px;
-    left:28px;
+    left:4px;
+    top:4px;
+    width:70px;
+    height:34px;
+    background:
+        linear-gradient(
+            #777,
+            #ddd,
+            #555
+        );
+    border:4px solid #292929;
+    border-radius:5px;
+}
+
+.hammerHandle{
+    position:absolute;
+    left:34px;
+    top:31px;
+    width:14px;
+    height:115px;
     background:
         linear-gradient(
             90deg,
-            #050505,
-            #777,
-            #151515
+            #4c2b18,
+            #99603a,
+            #422514
         );
-    clip-path:polygon(
-        50% 0,
-        100% 20%,
-        72% 100%,
-        28% 100%,
-        0 20%
-    );
-}
-
-.darkblade .guard{
-    position:absolute;
-    width:48px;
-    height:9px;
-    left:12px;
-    top:69px;
-    background:#9b2222;
-}
-
-.darkblade .handle{
-    position:absolute;
-    width:11px;
-    height:28px;
-    left:30px;
-    top:76px;
-    background:#161616;
+    border:3px solid #2e190e;
+    border-radius:4px;
 }
 
 /* SHIELD */
 
 .shield{
-    width:62px;
-    height:75px;
-    right:-10px;
-    top:185px;
+    width:78px;
+    height:105px;
+    right:-5px;
+    top:200px;
+    transform:rotate(-12deg);
 }
 
 .shieldShape{
     position:absolute;
-    width:58px;
-    height:70px;
+    width:72px;
+    height:92px;
     background:
         linear-gradient(
             135deg,
-            #d7d7d7,
-            #777,
+            #ddd,
+            #888,
             #333
         );
-    border:5px solid #333;
+    border:5px solid #292929;
     clip-path:polygon(
         0 0,
         100% 0,
@@ -753,198 +876,227 @@ nav a:hover{
 .shieldShape:after{
     content:"";
     position:absolute;
-    width:18px;
-    height:18px;
-    left:15px;
-    top:20px;
-    border:4px solid #b99322;
+    width:20px;
+    height:20px;
+    left:21px;
+    top:26px;
+    border:5px solid #c39b24;
     border-radius:50%;
 }
 
-/* HAMMER */
+/* STAFF */
 
-.hammer{
-    width:70px;
-    height:100px;
+.staff{
+    width:60px;
+    height:150px;
 }
 
-.hammerHead{
+.staffWood{
     position:absolute;
-    width:58px;
-    height:27px;
-    left:5px;
-    top:8px;
-    background:
-        linear-gradient(
-            #777,
-            #ccc,
-            #555
-        );
-    border:3px solid #333;
-    border-radius:5px;
-}
-
-.hammerHandle{
-    position:absolute;
-    width:12px;
-    height:78px;
-    left:29px;
-    top:31px;
+    left:25px;
+    top:20px;
+    width:11px;
+    height:125px;
     background:
         linear-gradient(
             90deg,
-            #58351f,
-            #9a633b,
-            #4a2a18
+            #482916,
+            #98613a,
+            #3d2111
         );
-    border:2px solid #3b2113;
-    border-radius:3px;
+    border:2px solid #281408;
+    border-radius:5px;
+}
+
+.staffOrb{
+    position:absolute;
+    left:10px;
+    top:0;
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            white,
+            #62d4ff 25%,
+            #355fff 55%,
+            #161675
+        );
+    box-shadow:0 0 20px #38bfff;
+}
+
+/* AXE */
+
+.axe{
+    width:80px;
+    height:145px;
+}
+
+.axeHandle{
+    position:absolute;
+    left:36px;
+    top:12px;
+    width:12px;
+    height:125px;
+    background:
+        linear-gradient(
+            90deg,
+            #4a2a17,
+            #a06a3d,
+            #412311
+        );
+    border:3px solid #2b170c;
+    border-radius:5px;
+}
+
+.axeBlade{
+    position:absolute;
+    left:7px;
+    top:2px;
+    width:53px;
+    height:62px;
+    background:
+        linear-gradient(
+            135deg,
+            #ddd,
+            #888,
+            #333
+        );
+    border:4px solid #292929;
+    clip-path:polygon(
+        0 0,
+        100% 0,
+        82% 100%,
+        35% 75%
+    );
+}
+
+/* PICKAXE */
+
+.pickaxe{
+    width:95px;
+    height:145px;
+}
+
+.pickHandle{
+    position:absolute;
+    left:42px;
+    top:17px;
+    width:11px;
+    height:120px;
+    background:#70441f;
+    border:3px solid #321b0c;
+    transform:rotate(-10deg);
+}
+
+.pickHead{
+    position:absolute;
+    left:5px;
+    top:5px;
+    width:88px;
+    height:25px;
+    border:6px solid #444;
+    border-bottom:0;
+    border-radius:50% 50% 0 0;
 }
 
 /* BOW */
 
 .bow{
-    width:65px;
-    height:105px;
+    width:75px;
+    height:145px;
 }
 
 .bowCurve{
     position:absolute;
-    width:45px;
-    height:100px;
-    left:8px;
-    top:0;
-    border:7px solid #7a4925;
+    left:15px;
+    top:4px;
+    width:50px;
+    height:125px;
+    border:8px solid #75451f;
     border-left:0;
     border-radius:50%;
 }
 
 .bowString{
     position:absolute;
-    width:85px;
-    height:100px;
-    left:-12px;
-    top:0;
+    left:15px;
+    top:5px;
+    width:50px;
+    height:125px;
     border-right:2px solid #eee;
     border-radius:50%;
-    transform:rotate(0deg);
 }
 
 .arrow{
     position:absolute;
-    width:5px;
-    height:90px;
+    left:35px;
+    top:14px;
+    width:4px;
+    height:115px;
     background:#aaa;
-    left:29px;
-    top:5px;
-    transform:rotate(-15deg);
 }
 
-.arrow:before{
-    content:"";
+/* CAMERA */
+
+.camera{
+    width:90px;
+    height:75px;
+    right:-5px;
+    top:220px;
+    transform:rotate(-5deg);
+}
+
+.cameraBody{
     position:absolute;
-    top:-5px;
-    left:-5px;
-    border-left:7px solid transparent;
-    border-right:7px solid transparent;
-    border-bottom:12px solid #ddd;
-}
-
-/* STAFF */
-
-.staff{
-    width:55px;
-    height:120px;
-}
-
-.staffWood{
-    position:absolute;
-    width:9px;
-    height:105px;
-    left:24px;
-    top:10px;
-    background:
-        linear-gradient(
-            90deg,
-            #4b2c19,
-            #98613b,
-            #422515
-        );
-    border-radius:5px;
-}
-
-.staffOrb{
-    position:absolute;
-    width:34px;
-    height:34px;
-    left:12px;
-    top:0;
-    border-radius:50%;
-    background:
-        radial-gradient(
-            circle at 35% 30%,
-            #fff,
-            #62cfff 25%,
-            #345cff 55%,
-            #18187a
-        );
-    box-shadow:
-        0 0 15px #42aaff;
-}
-
-/* GUITAR */
-
-.guitar{
-    width:70px;
-    height:110px;
-}
-
-.guitarBody{
-    position:absolute;
-    width:48px;
-    height:60px;
     left:10px;
-    top:43px;
+    top:15px;
+    width:70px;
+    height:52px;
+    background:#222;
+    border:4px solid #111;
+    border-radius:7px;
+}
+
+.cameraLens{
+    position:absolute;
+    left:31px;
+    top:24px;
+    width:30px;
+    height:30px;
+    border-radius:50%;
     background:
         radial-gradient(
             circle,
-            #8a351d,
-            #5a1d10
+            #6db7ff,
+            #153c69 45%,
+            #111 48%
         );
-    border:3px solid #32140c;
-    border-radius:45%;
+    border:4px solid #555;
 }
 
-.guitarNeck{
+.cameraFlash{
     position:absolute;
-    width:12px;
-    height:65px;
-    left:28px;
-    top:0;
-    background:#6b4428;
-    border:2px solid #332014;
+    left:17px;
+    top:6px;
+    width:18px;
+    height:10px;
+    background:#ddd;
+    border:2px solid #333;
 }
 
-.guitarHole{
-    position:absolute;
-    width:14px;
-    height:14px;
-    left:27px;
-    top:64px;
-    background:#111;
-    border-radius:50%;
-}
-
-/* ================= CONTROLS ================= */
+/* =====================================================
+   ITEM UI
+===================================================== */
 
 .category{
     margin-bottom:25px;
 }
 
 .category h2{
-    margin:0 0 12px;
     padding:10px;
-    background:#d0d0d0;
+    background:#d1d1d1;
     border-bottom:2px solid #999;
 }
 
@@ -956,40 +1108,37 @@ nav a:hover{
 }
 
 .item{
-    background:#f4f4f4;
+    background:#f5f5f5;
     border:1px solid #aaa;
-    padding:10px;
+    padding:12px;
     text-align:center;
-}
-
-.preview{
-    height:85px;
-    background:#ddd;
-    border:1px solid #aaa;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    margin-bottom:8px;
-}
-
-.previewGear{
-    position:relative;
-    width:60px;
-    height:65px;
-    transform:scale(.55);
 }
 
 .item h3{
     font-size:14px;
-    margin:5px 0;
+    min-height:32px;
+}
+
+.item button{
+    width:100%;
+}
+
+.preview{
+    height:90px;
+    background:#ddd;
+    border:1px solid #aaa;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
 }
 
 button{
     border:0;
     background:#1683ff;
     color:white;
-    padding:8px 12px;
-    border-radius:4px;
+    padding:9px 12px;
+    border-radius:5px;
     cursor:pointer;
     font-weight:bold;
 }
@@ -998,20 +1147,23 @@ button:hover{
     background:#006bd6;
 }
 
-.remove{
+.gray{
     background:#777;
 }
 
 .equipped{
     background:#eee;
     border:1px solid #aaa;
-    padding:10px;
-    text-align:left;
-    line-height:1.7;
+    padding:12px;
+    line-height:1.8;
+}
+
+.notice{
+    font-size:13px;
+    color:#666;
 }
 
 .message{
-    display:none;
     position:fixed;
     left:50%;
     bottom:20px;
@@ -1020,10 +1172,11 @@ button:hover{
     color:white;
     padding:12px 20px;
     border-radius:6px;
-    z-index:999;
+    display:none;
+    z-index:9999;
 }
 
-@media(max-width:750px){
+@media(max-width:800px){
     .layout{
         grid-template-columns:1fr;
     }
@@ -1069,81 +1222,117 @@ Earn 100 Coins
 <div class="layout">
 
 
-<!-- ================= AVATAR ================= -->
+<!-- ==================================================
+     AVATAR
+================================================== -->
 
 <div class="panel">
 
-<h2>Your Avatar</h2>
+<h2>My Avatar</h2>
+
+<div class="avatarStage">
+
+<div class="floor"></div>
 
 <div id="avatar" class="avatar">
 
-<!-- 3 ACCESSORY SLOTS -->
 
-<div id="slot1" class="accessorySlot"></div>
-<div id="slot2" class="accessorySlot"></div>
-<div id="slot3" class="accessorySlot"></div>
+<!-- ACCESSORY SLOTS -->
+
+<div id="slot1"></div>
+<div id="slot2"></div>
+<div id="slot3"></div>
+
 
 <!-- GEAR -->
 
-<div id="gear" class="gear"></div>
+<div id="gear"
+     class="gear">
+</div>
 
+
+<!-- HEAD -->
 
 <div id="head" class="head">
 
-<div id="face">
+<div class="hair"></div>
 
-<span class="eye leftEye"></span>
-<span class="eye rightEye"></span>
+<span class="eye left"></span>
+<span class="eye right"></span>
+
 <span class="mouth"></span>
 
 </div>
 
+
+<!-- BODY -->
+
+<div class="torso">
+
+<div
+id="shirt"
+class="shirtText mtbShirt">
+MTB
+</div>
+
 </div>
 
 
-<div class="body">
-
-<div id="shirt" class="shirt mtbShirt">
-<span>MTB</span>
-</div>
-
-</div>
-
+<!-- ARMS -->
 
 <div class="arm leftArm">
-<div class="sleeve mtbSleeve"></div>
-</div>
 
+<div class="sleeve"></div>
+
+</div>
 
 <div class="arm rightArm">
-<div class="sleeve mtbSleeve"></div>
-</div>
 
-
-<div id="leftLeg" class="leg leftLeg"></div>
-
-<div id="rightLeg" class="leg rightLeg"></div>
-
+<div class="sleeve"></div>
 
 </div>
 
 
-<h3>Equipped</h3>
+<!-- LEGS -->
 
-<div id="equipped" class="equipped">
+<div
+id="leftLeg"
+class="leg leftLeg">
+</div>
+
+<div
+class="leg rightLeg">
+</div>
+
+
+</div>
+
+</div>
+
+
+<h3>Currently Equipped</h3>
+
+<div
+id="equipped"
+class="equipped">
 None
 </div>
 
 <br>
 
-<button class="remove"
-onclick="removeAccessories()">
+<p class="notice">
+Maximum of 3 accessories at one time.
+Gear is separate and can be held in the avatar's hand.
+</p>
+
+<button
+class="gray"
+onclick="clearAccessories()">
 Remove Accessories
 </button>
 
-<br><br>
-
-<button class="remove"
+<button
+class="gray"
 onclick="resetAvatar()">
 Reset Avatar
 </button>
@@ -1151,29 +1340,32 @@ Reset Avatar
 </div>
 
 
-<!-- ================= ITEMS ================= -->
+<!-- ==================================================
+     ITEMS
+================================================== -->
 
 <div class="panel">
 
+<!-- GEAR -->
+
 <div class="category">
 
-<h2>Gear</h2>
+<h2>⚔ Gear</h2>
 
 <div class="grid">
 
-
-<!-- SWORD -->
 
 <div class="item">
 
 <div class="preview">
 
-<div class="previewGear sword">
+<div class="gear sword"
+style="display:block;position:relative;right:auto;top:auto;transform:scale(.55)">
 
-<div class="blade"></div>
-<div class="guard"></div>
-<div class="handle"></div>
-<div class="pommel"></div>
+<div class="swordBlade"></div>
+<div class="swordGuard"></div>
+<div class="swordHandle"></div>
+<div class="swordPommel"></div>
 
 </div>
 
@@ -1182,79 +1374,46 @@ Reset Avatar
 <h3>Classic Sword</h3>
 
 <button onclick="
-equipGear(
-'classicSword',
-'Classic Sword'
-)">
-Equip
-</button>
+equipGear('sword','Classic Sword')
+">
+Hold</button>
 
 </div>
 
-
-<!-- DARK BLADE -->
 
 <div class="item">
 
 <div class="preview">
 
-<div class="previewGear darkblade">
+<div class="gear pencil"
+style="display:block;position:relative;right:auto;top:auto;transform:scale(.45)">
 
-<div class="blade"></div>
-<div class="guard"></div>
-<div class="handle"></div>
+<div class="pencilLead"></div>
+<div class="pencilWood"></div>
+<div class="pencilBody"></div>
+<div class="pencilMetal"></div>
+<div class="pencilEraser"></div>
 
 </div>
 
 </div>
 
-<h3>Dark Blade</h3>
+<h3>BIG Pencil</h3>
 
 <button onclick="
-equipGear(
-'darkblade',
-'Dark Blade'
-)">
-Equip
-</button>
+equipGear('pencil','BIG Pencil')
+">
+Hold</button>
 
 </div>
 
-
-<!-- SHIELD -->
 
 <div class="item">
 
 <div class="preview">
 
-<div class="previewGear shield">
-
-<div class="shieldShape"></div>
-
-</div>
-
-</div>
-
-<h3>Shield</h3>
-
-<button onclick="
-equipGear(
-'shield',
-'Shield'
-)">
-Equip
-</button>
-
-</div>
-
-
-<!-- HAMMER -->
-
-<div class="item">
-
-<div class="preview">
-
-<div class="previewGear hammer">
+<div class="gear hammer"
+style="display:block;position:relative;right:auto;top:auto;transform:scale(.55)">
 
 <div class="hammerHead"></div>
 <div class="hammerHandle"></div>
@@ -1266,23 +1425,91 @@ Equip
 <h3>Builder Hammer</h3>
 
 <button onclick="
-equipGear(
-'hammer',
-'Builder Hammer'
-)">
-Equip
-</button>
+equipGear('hammer','Builder Hammer')
+">
+Hold</button>
 
 </div>
 
-
-<!-- BOW -->
 
 <div class="item">
 
 <div class="preview">
 
-<div class="previewGear bow">
+<div class="gear axe"
+style="display:block;position:relative;right:auto;top:auto;transform:scale(.55)">
+
+<div class="axeBlade"></div>
+<div class="axeHandle"></div>
+
+</div>
+
+</div>
+
+<h3>Battle Axe</h3>
+
+<button onclick="
+equipGear('axe','Battle Axe')
+">
+Hold</button>
+
+</div>
+
+
+<div class="item">
+
+<div class="preview">
+
+<div class="gear pickaxe"
+style="display:block;position:relative;right:auto;top:auto;transform:scale(.55)">
+
+<div class="pickHead"></div>
+<div class="pickHandle"></div>
+
+</div>
+
+</div>
+
+<h3>Pickaxe</h3>
+
+<button onclick="
+equipGear('pickaxe','Pickaxe')
+">
+Hold</button>
+
+</div>
+
+
+<div class="item">
+
+<div class="preview">
+
+<div class="gear staff"
+style="display:block;position:relative;right:auto;top:auto;transform:scale(.55)">
+
+<div class="staffOrb"></div>
+<div class="staffWood"></div>
+
+</div>
+
+</div>
+
+<h3>Magic Staff</h3>
+
+<button onclick="
+equipGear('staff','Magic Staff')
+">
+Hold</button>
+
+</div>
+
+
+<div class="item">
+
+<div class="preview">
+
+<div class="gear bow"
+style="display:block;position:relative;right:auto;top:auto;transform:scale(.55)">
 
 <div class="bowCurve"></div>
 <div class="bowString"></div>
@@ -1292,72 +1519,60 @@ Equip
 
 </div>
 
-<h3>Classic Bow</h3>
+<h3>Bow</h3>
 
 <button onclick="
-equipGear(
-'bow',
-'Classic Bow'
-)">
-Equip
-</button>
+equipGear('bow','Classic Bow')
+">
+Hold</button>
 
 </div>
 
-
-<!-- STAFF -->
 
 <div class="item">
 
 <div class="preview">
 
-<div class="previewGear staff">
+<div class="gear shield"
+style="display:block;position:relative;right:auto;top:auto;transform:scale(.55)">
 
-<div class="staffWood"></div>
-<div class="staffOrb"></div>
-
-</div>
+<div class="shieldShape"></div>
 
 </div>
 
-<h3>Magic Staff</h3>
+</div>
+
+<h3>Shield</h3>
 
 <button onclick="
-equipGear(
-'staff',
-'Magic Staff'
-)">
-Equip
-</button>
+equipGear('shield','Shield')
+">
+Hold</button>
 
 </div>
 
-
-<!-- GUITAR -->
 
 <div class="item">
 
 <div class="preview">
 
-<div class="previewGear guitar">
+<div class="gear camera"
+style="display:block;position:relative;right:auto;top:auto;transform:scale(.55)">
 
-<div class="guitarNeck"></div>
-<div class="guitarBody"></div>
-<div class="guitarHole"></div>
+<div class="cameraBody"></div>
+<div class="cameraLens"></div>
+<div class="cameraFlash"></div>
 
 </div>
 
 </div>
 
-<h3>Guitar</h3>
+<h3>Camera</h3>
 
 <button onclick="
-equipGear(
-'guitar',
-'Guitar'
-)">
-Equip
-</button>
+equipGear('camera','Camera')
+">
+Hold</button>
 
 </div>
 
@@ -1365,7 +1580,7 @@ Equip
 </div>
 
 
-<!-- ================= HORNS ================= -->
+<!-- HORNS -->
 
 <div class="category">
 
@@ -1375,45 +1590,42 @@ Equip
 
 <div class="item">
 
-<h3>Frozen Horns</h3>
+<h3>Frozen Blue</h3>
 
 <button onclick="
-equipAccessory(
-'Frozen Horns',
-'blueHorns'
+addAccessory(
+'Frozen Blue Horns',
+'horns'
 )">
-Equip
-</button>
+Equip</button>
 
 </div>
 
 
 <div class="item">
 
-<h3>Red Frozen Horns</h3>
+<h3>Frozen Red</h3>
 
 <button onclick="
-equipAccessory(
-'Red Frozen Horns',
+addAccessory(
+'Frozen Red Horns',
 'redHorns'
 )">
-Equip
-</button>
+Equip</button>
 
 </div>
 
 
 <div class="item">
 
-<h3>Green Frozen Horns</h3>
+<h3>Frozen Green</h3>
 
 <button onclick="
-equipAccessory(
-'Green Frozen Horns',
+addAccessory(
+'Frozen Green Horns',
 'greenHorns'
 )">
-Equip
-</button>
+Equip</button>
 
 </div>
 
@@ -1421,7 +1633,7 @@ Equip
 </div>
 
 
-<!-- ================= FEDORAS ================= -->
+<!-- FEDORAS -->
 
 <div class="category">
 
@@ -1429,39 +1641,91 @@ Equip
 
 <div class="grid">
 
-<script>
-const fedoras=[
-["Rainbow","fedoraRainbow"],
-["Red","fedoraRed"],
-["Blue","fedoraBlue"],
-["Green","fedoraGreen"],
-["Purple","fedoraPurple"],
-["Black","fedoraBlack"],
-["White","fedoraWhite"],
-["Gold","fedoraGold"],
-["Pink","fedoraPink"]
-];
-
-fedoras.forEach(f=>{
-document.write(`
 <div class="item">
-<h3>${f[0]} Fedora</h3>
-<button onclick="equipAccessory(
-'${f[0]} Sparkle Time Fedora',
-'${f[1]}'
+<h3>Rainbow Fedora</h3>
+<button onclick="
+addAccessory(
+'Rainbow Sparkle Time Fedora',
+'rainbow'
 )">
-Equip
-</button>
+Equip</button>
 </div>
-`);
-});
-</script>
+
+<div class="item">
+<h3>Red Fedora</h3>
+<button onclick="
+addAccessory(
+'Red Sparkle Time Fedora',
+'redFedora'
+)">
+Equip</button>
+</div>
+
+<div class="item">
+<h3>Blue Fedora</h3>
+<button onclick="
+addAccessory(
+'Blue Sparkle Time Fedora',
+'blueFedora'
+)">
+Equip</button>
+</div>
+
+<div class="item">
+<h3>Green Fedora</h3>
+<button onclick="
+addAccessory(
+'Green Sparkle Time Fedora',
+'greenFedora'
+)">
+Equip</button>
+</div>
+
+<div class="item">
+<h3>Purple Fedora</h3>
+<button onclick="
+addAccessory(
+'Purple Sparkle Time Fedora',
+'purpleFedora'
+)">
+Equip</button>
+</div>
+
+<div class="item">
+<h3>Black Fedora</h3>
+<button onclick="
+addAccessory(
+'Black Sparkle Time Fedora',
+'blackFedora'
+)">
+Equip</button>
+</div>
+
+<div class="item">
+<h3>Gold Fedora</h3>
+<button onclick="
+addAccessory(
+'Gold Sparkle Time Fedora',
+'goldFedora'
+)">
+Equip</button>
+</div>
+
+<div class="item">
+<h3>Pink Fedora</h3>
+<button onclick="
+addAccessory(
+'Pink Sparkle Time Fedora',
+'pinkFedora'
+)">
+Equip</button>
+</div>
 
 </div>
 </div>
 
 
-<!-- ================= VALKYRIES ================= -->
+<!-- VALKYRIES -->
 
 <div class="category">
 
@@ -1469,36 +1733,131 @@ Equip
 
 <div class="grid">
 
-<script>
-const valks=[
-["Sparkle Time","goldValk"],
-["Red","redValk"],
-["Blue","blueValk"],
-["Green","greenValk"],
-["Purple","purpleValk"],
-["Black","blackValk"]
-];
-
-valks.forEach(v=>{
-document.write(`
 <div class="item">
-<h3>${v[0]} Valkyrie</h3>
-<button onclick="equipAccessory(
-'${v[0]} Valkyrie',
-'${v[1]}'
+<h3>Sparkle Time</h3>
+<button onclick="
+addAccessory(
+'Sparkle Time Valkyrie',
+'goldValk'
 )">
-Equip
-</button>
+Equip</button>
 </div>
-`);
-});
-</script>
+
+<div class="item">
+<h3>Red Valkyrie</h3>
+<button onclick="
+addAccessory(
+'Red Valkyrie',
+'redValk'
+)">
+Equip</button>
+</div>
+
+<div class="item">
+<h3>Blue Valkyrie</h3>
+<button onclick="
+addAccessory(
+'Blue Valkyrie',
+'blueValk'
+)">
+Equip</button>
+</div>
+
+<div class="item">
+<h3>Green Valkyrie</h3>
+<button onclick="
+addAccessory(
+'Green Valkyrie',
+'greenValk'
+)">
+Equip</button>
+</div>
+
+<div class="item">
+<h3>Purple Valkyrie</h3>
+<button onclick="
+addAccessory(
+'Purple Valkyrie',
+'purpleValk'
+)">
+Equip</button>
+</div>
+
+<div class="item">
+<h3>Black Valkyrie</h3>
+<button onclick="
+addAccessory(
+'Black Valkyrie',
+'blackValk'
+)">
+Equip</button>
+</div>
 
 </div>
 </div>
 
 
-<!-- ================= BODY ================= -->
+<!-- CLOTHES -->
+
+<div class="category">
+
+<h2>Classic Clothes</h2>
+
+<div class="grid">
+
+<div class="item">
+<h3>MTB Shirt</h3>
+<button onclick="
+setShirt('mtbShirt','MTB Shirt')
+">
+Wear</button>
+</div>
+
+<div class="item">
+<h3>Hellstar Style</h3>
+<button onclick="
+setShirt('hellstar','Hellstar Style')
+">
+Wear</button>
+</div>
+
+<div class="item">
+<h3>Spring</h3>
+<button onclick="
+setShirt('spring','Spring')
+">
+Wear</button>
+</div>
+
+<div class="item">
+<h3>Summer</h3>
+<button onclick="
+setShirt('summer','Summer')
+">
+Wear</button>
+</div>
+
+<div class="item">
+<h3>Fall</h3>
+<button onclick="
+setShirt('fall','Fall')
+">
+Wear</button>
+</div>
+
+<div class="item">
+<h3>Winter</h3>
+<button onclick="
+setShirt('winter','Winter')
+">
+Wear</button>
+</div>
+
+</div>
+</div>
+
+
+<!-- BODY -->
 
 <div class="category">
 
@@ -1510,99 +1869,11 @@ Equip
 
 <h3>Blue Korblox Style</h3>
 
-<button onclick="toggleKorblox()">
-Equip
-</button>
-
-</div>
-
-
-<div class="item">
-
-<h3>Headless Style</h3>
-
-<button onclick="toggleHeadless()">
-Equip
-</button>
-
-</div>
-
-</div>
-</div>
-
-
-<!-- ================= CLOTHES ================= -->
-
-<div class="category">
-
-<h2>Clothes</h2>
-
-<div class="grid">
-
-<div class="item">
-<h3>MTB Shirt</h3>
 <button onclick="
-setShirt(
-'mtbShirt',
-'MTB Shirt'
-)">
-Wear
-</button>
-</div>
+toggleKorblox()
+">
+Equip</button>
 
-<div class="item">
-<h3>Hellstar Style</h3>
-<button onclick="
-setShirt(
-'hellShirt',
-'Hellstar Style'
-)">
-Wear
-</button>
-</div>
-
-<div class="item">
-<h3>Spring</h3>
-<button onclick="
-setShirt(
-'springShirt',
-'Spring Shirt'
-)">
-Wear
-</button>
-</div>
-
-<div class="item">
-<h3>Summer</h3>
-<button onclick="
-setShirt(
-'summerShirt',
-'Summer Shirt'
-)">
-Wear
-</button>
-</div>
-
-<div class="item">
-<h3>Fall</h3>
-<button onclick="
-setShirt(
-'fallShirt',
-'Fall Shirt'
-)">
-Wear
-</button>
-</div>
-
-<div class="item">
-<h3>Winter</h3>
-<button onclick="
-setShirt(
-'winterShirt',
-'Winter Shirt'
-)">
-Wear
-</button>
 </div>
 
 </div>
@@ -1615,58 +1886,63 @@ Wear
 </div>
 
 
-<div id="message" class="message"></div>
+<div
+id="message"
+class="message">
+</div>
 
 
 <script>
 
-/* =================================================
-   DATA
-================================================= */
+/* =====================================================
+   SAVE DATA
+===================================================== */
 
 const SAVE_KEY =
-"MTB_AVATAR_COMPLETE_V4";
+"MTB_BLOCK_AVATAR_V5";
 
-let data =
+let avatarData =
 JSON.parse(
 localStorage.getItem(SAVE_KEY)
 ) || {
 
 coins:1000,
 
-shirt:"mtbShirt",
+shirt:
+"mtbShirt",
 
-shirtName:"MTB Shirt",
+shirtName:
+"MTB Shirt",
 
 accessories:[],
 
 gear:null,
 
-korblox:false,
-
-headless:false
+korblox:false
 };
 
 
-/* =================================================
+/* =====================================================
    SAVE
-================================================= */
+===================================================== */
 
 function save(){
 
 localStorage.setItem(
 SAVE_KEY,
-JSON.stringify(data)
+JSON.stringify(
+avatarData
+)
 );
 
 }
 
 
-/* =================================================
+/* =====================================================
    MESSAGE
-================================================= */
+===================================================== */
 
-function msg(text){
+function message(text){
 
 const box =
 document.getElementById(
@@ -1677,69 +1953,83 @@ box.textContent=text;
 
 box.style.display="block";
 
-setTimeout(()=>{
+setTimeout(
+()=>{
 box.style.display="none";
-},1800);
+},
+1800
+);
 
 }
 
 
-/* =================================================
+/* =====================================================
    COINS
-================================================= */
+===================================================== */
 
 function earnCoins(){
 
-data.coins += 100;
+avatarData.coins += 100;
 
 document.getElementById(
 "coins"
-).textContent=data.coins;
+).textContent=
+avatarData.coins;
 
 save();
 
-msg("+100 MTB Coins");
+message(
+"+100 MTB Coins"
+);
 
 }
 
 
-/* =================================================
+/* =====================================================
    ACCESSORIES
-================================================= */
+===================================================== */
 
-function equipAccessory(name,type){
+function addAccessory(
+name,
+type
+){
 
-const index =
-data.accessories.findIndex(
-a=>a.name===name
+const existing =
+avatarData.accessories
+.findIndex(
+x=>x.name===name
 );
 
-if(index!==-1){
+if(existing !== -1){
 
-data.accessories.splice(
-index,
-1
-);
+avatarData.accessories
+.splice(existing,1);
 
 renderAccessories();
 
 save();
 
-msg(name+" removed");
+message(
+name+" removed"
+);
 
 return;
+
 }
 
-if(data.accessories.length>=3){
+if(
+avatarData.accessories.length >= 3
+){
 
-msg(
+message(
 "Maximum 3 accessories!"
 );
 
 return;
+
 }
 
-data.accessories.push({
+avatarData.accessories.push({
 name:name,
 type:type
 });
@@ -1748,18 +2038,24 @@ renderAccessories();
 
 save();
 
-msg(name+" equipped");
+message(
+name+" equipped"
+);
 
 }
 
 
-/* =================================================
+/* =====================================================
    RENDER ACCESSORIES
-================================================= */
+===================================================== */
 
 function renderAccessories(){
 
-for(let i=1;i<=3;i++){
+for(
+let i=1;
+i<=3;
+i++
+){
 
 document.getElementById(
 "slot"+i
@@ -1767,55 +2063,110 @@ document.getElementById(
 
 }
 
-data.accessories
+avatarData
+.accessories
 .slice(0,3)
-.forEach((item,index)=>{
+.forEach(
+(item,index)=>{
 
 const slot =
 document.getElementById(
 "slot"+(index+1)
 );
 
-if(item.type.includes("fedora")){
+if(
+item.type==="horns" ||
+item.type==="redHorns" ||
+item.type==="greenHorns"
+){
 
 slot.innerHTML=`
 
-<div class="fedora ${item.type}">
-<div class="fedoraTop"></div>
-<div class="fedoraBottom"></div>
-</div>
-
-`;
-
-}
-
-else if(item.type.includes("Valk")){
-
-slot.innerHTML=`
-
-<div class="valk ${item.type}">
-<div class="valkWing left"></div>
-<div class="valkWing right"></div>
-</div>
-
-`;
-
-}
-
-else if(item.type.includes("Horns")){
-
-slot.innerHTML=`
-
-<div class="frozenHorns ${item.type}">
+<div class="accessory horns ${item.type}">
 
 <div class="horn left"></div>
 <div class="horn right"></div>
 
 <div class="fire">
-
-<div class="flameOuter"></div>
+<div class="flame"></div>
+</div>
 
 </div>
+
+`;
+
+}
+
+
+if(
+item.type.includes("Fedora")
+){
+
+slot.innerHTML=`
+
+<div class="accessory fedora ${item.type}">
+
+<div class="fedoraTop"></div>
+<div class="fedoraBand"></div>
+<div class="fedoraBrim"></div>
+
+</div>
+
+`;
+
+}
+
+
+/*
+   The exact Fedora class is stored
+   in the type name for the styles.
+*/
+
+if(
+[
+"rainbow",
+"redFedora",
+"blueFedora",
+"greenFedora",
+"purpleFedora",
+"blackFedora",
+"goldFedora",
+"pinkFedora"
+].includes(item.type)
+){
+
+slot.innerHTML=`
+
+<div class="accessory fedora ${item.type}">
+
+<div class="fedoraTop"></div>
+<div class="fedoraBand"></div>
+<div class="fedoraBrim"></div>
+
+</div>
+
+`;
+
+}
+
+
+if(
+[
+"goldValk",
+"redValk",
+"blueValk",
+"greenValk",
+"purpleValk",
+"blackValk"
+].includes(item.type)
+){
+
+slot.innerHTML=`
+
+<div class="accessory valk ${item.type}">
+
+<div class="valkWing left"></div>
+<div class="valkWing right"></div>
 
 </div>
 
@@ -1830,13 +2181,16 @@ updateEquipped();
 }
 
 
-/* =================================================
+/* =====================================================
    GEAR
-================================================= */
+===================================================== */
 
-function equipGear(type,name){
+function equipGear(
+type,
+name
+){
 
-data.gear={
+avatarData.gear={
 type:type,
 name:name
 };
@@ -1849,40 +2203,37 @@ document.getElementById(
 gear.className=
 "gear "+type;
 
-if(type==="classicSword"){
+gear.innerHTML="";
+
+
+if(type==="pencil"){
 
 gear.innerHTML=`
 
-<div class="blade"></div>
-<div class="guard"></div>
-<div class="handle"></div>
-<div class="pommel"></div>
+<div class="pencilLead"></div>
+<div class="pencilWood"></div>
+<div class="pencilBody"></div>
+<div class="pencilMetal"></div>
+<div class="pencilEraser"></div>
 
 `;
 
 }
 
-if(type==="darkblade"){
+
+if(type==="sword"){
 
 gear.innerHTML=`
 
-<div class="blade"></div>
-<div class="guard"></div>
-<div class="handle"></div>
+<div class="swordBlade"></div>
+<div class="swordGuard"></div>
+<div class="swordHandle"></div>
+<div class="swordPommel"></div>
 
 `;
 
 }
 
-if(type==="shield"){
-
-gear.innerHTML=`
-
-<div class="shieldShape"></div>
-
-`;
-
-}
 
 if(type==="hammer"){
 
@@ -1894,6 +2245,43 @@ gear.innerHTML=`
 `;
 
 }
+
+
+if(type==="axe"){
+
+gear.innerHTML=`
+
+<div class="axeBlade"></div>
+<div class="axeHandle"></div>
+
+`;
+
+}
+
+
+if(type==="pickaxe"){
+
+gear.innerHTML=`
+
+<div class="pickHead"></div>
+<div class="pickHandle"></div>
+
+`;
+
+}
+
+
+if(type==="staff"){
+
+gear.innerHTML=`
+
+<div class="staffOrb"></div>
+<div class="staffWood"></div>
+
+`;
+
+}
+
 
 if(type==="bow"){
 
@@ -1907,90 +2295,64 @@ gear.innerHTML=`
 
 }
 
-if(type==="staff"){
+
+if(type==="shield"){
 
 gear.innerHTML=`
 
-<div class="staffWood"></div>
-<div class="staffOrb"></div>
+<div class="shieldShape"></div>
 
 `;
 
 }
 
-if(type==="guitar"){
+
+if(type==="camera"){
 
 gear.innerHTML=`
 
-<div class="guitarNeck"></div>
-<div class="guitarBody"></div>
-<div class="guitarHole"></div>
+<div class="cameraBody"></div>
+<div class="cameraLens"></div>
+<div class="cameraFlash"></div>
 
 `;
 
 }
 
-gear.style.display="block";
 
-document.getElementById(
+document
+.getElementById(
 "avatar"
-).classList.add(
-"holdingGear"
+)
+.classList.add(
+"holding"
 );
 
 save();
 
 updateEquipped();
 
-msg(name+" equipped");
-
-}
-
-
-/* =================================================
-   REMOVE ACCESSORIES
-================================================= */
-
-function removeAccessories(){
-
-data.accessories=[];
-
-data.gear=null;
-
-document.getElementById(
-"gear"
-).innerHTML="";
-
-document.getElementById(
-"gear"
-).style.display="none";
-
-document.getElementById(
-"avatar"
-).classList.remove(
-"holdingGear"
-);
-
-renderAccessories();
-
-save();
-
-msg(
-"Accessories removed"
+message(
+name+" equipped"
 );
 
 }
 
 
-/* =================================================
+/* =====================================================
    CLOTHES
-================================================= */
+===================================================== */
 
-function setShirt(type,name){
+function setShirt(
+type,
+name
+){
 
-data.shirt=type;
+avatarData.shirt=
+type;
 
-data.shirtName=name;
+avatarData.shirtName=
+name;
 
 const shirt =
 document.getElementById(
@@ -1998,39 +2360,43 @@ document.getElementById(
 );
 
 shirt.className=
-"shirt "+type;
+"shirtText "+type;
 
-shirt.innerHTML=
-"<span>MTB</span>";
+shirt.textContent=
+"MTB";
 
 save();
 
-msg(name+" equipped");
+message(
+name+" equipped"
+);
 
 }
 
 
-/* =================================================
+/* =====================================================
    KORBLOX
-================================================= */
+===================================================== */
 
 function toggleKorblox(){
 
-data.korblox=
-!data.korblox;
+avatarData.korblox=
+!avatarData.korblox;
 
 const leg =
 document.getElementById(
 "leftLeg"
 );
 
-if(data.korblox){
+if(
+avatarData.korblox
+){
 
 leg.classList.add(
 "korblox"
 );
 
-msg(
+message(
 "Blue Korblox-style leg equipped"
 );
 
@@ -2040,7 +2406,7 @@ leg.classList.remove(
 "korblox"
 );
 
-msg(
+message(
 "Korblox-style leg removed"
 );
 
@@ -2048,132 +2414,108 @@ msg(
 
 save();
 
+updateEquipped();
+
 }
 
 
-/* =================================================
-   HEADLESS
-================================================= */
+/* =====================================================
+   CLEAR
+===================================================== */
 
-function toggleHeadless(){
+function clearAccessories(){
 
-data.headless=
-!data.headless;
+avatarData.accessories=[];
 
-const head =
+avatarData.gear=null;
+
 document.getElementById(
-"head"
+"gear"
+).innerHTML="";
+
+document.getElementById(
+"avatar"
+).classList.remove(
+"holding"
 );
 
-if(data.headless){
-
-head.style.background=
-"transparent";
-
-head.style.borderColor=
-"transparent";
-
-head.querySelectorAll(
-".eye,.mouth"
-).forEach(
-x=>x.style.display="none"
-);
-
-msg(
-"Headless style equipped"
-);
-
-}else{
-
-head.style.background=
-"#f1c27d";
-
-head.style.borderColor=
-"#333";
-
-head.querySelectorAll(
-".eye,.mouth"
-).forEach(
-x=>x.style.display="block"
-);
-
-msg(
-"Head restored"
-);
-
-}
+renderAccessories();
 
 save();
 
+message(
+"Accessories removed"
+);
+
 }
 
 
-/* =================================================
-   EQUIPPED LIST
-================================================= */
+/* =====================================================
+   EQUIPPED
+===================================================== */
 
 function updateEquipped(){
 
-const box =
-document.getElementById(
-"equipped"
-);
-
 let html="";
 
-data.accessories
-.forEach((item,i)=>{
+avatarData
+.accessories
+.forEach(
+(item,index)=>{
 
 html +=
-(i+1)+". "+
+"<b>Accessory "+
+(index+1)+":</b> "+
 item.name+
 "<br>";
 
 });
 
-if(data.gear){
+if(
+avatarData.gear
+){
 
 html +=
-"⚔ Gear: "+
-data.gear.name+
+"<b>Held Gear:</b> "+
+avatarData.gear.name+
 "<br>";
 
 }
 
-if(data.korblox){
+if(
+avatarData.korblox
+){
 
 html +=
-"🦿 Blue Korblox-style Leg<br>";
+"<b>Body:</b> Blue Korblox-style Leg<br>";
 
 }
 
-if(data.headless){
-
-html +=
-"Headless Style<br>";
-
-}
-
-if(!html){
+if(
+!html
+){
 
 html="None";
 
 }
 
-box.innerHTML=html;
+document.getElementById(
+"equipped"
+).innerHTML=
+html;
 
 }
 
 
-/* =================================================
+/* =====================================================
    RESET
-================================================= */
+===================================================== */
 
 function resetAvatar(){
 
 if(
 !confirm(
-"Reset your avatar?"
+"Reset your avatar and saved items?"
 )
 ){
 
@@ -2190,26 +2532,37 @@ location.reload();
 }
 
 
-/* =================================================
+/* =====================================================
    LOAD
-================================================= */
+===================================================== */
 
 function load(){
 
 document.getElementById(
 "coins"
-).textContent=data.coins;
+).textContent=
+avatarData.coins;
 
-setShirt(
-data.shirt,
-data.shirtName
-);
 
-renderAccessories();
+/* Shirt */
 
-updateEquipped();
+document.getElementById(
+"shirt"
+).className=
+"shirtText "+
+avatarData.shirt;
 
-if(data.korblox){
+document.getElementById(
+"shirt"
+).textContent=
+"MTB";
+
+
+/* Korblox */
+
+if(
+avatarData.korblox
+){
 
 document.getElementById(
 "leftLeg"
@@ -2219,37 +2572,29 @@ document.getElementById(
 
 }
 
-if(data.headless){
 
-const head =
-document.getElementById(
-"head"
-);
+/* Accessories */
 
-head.style.background=
-"transparent";
+renderAccessories();
 
-head.style.borderColor=
-"transparent";
 
-head.querySelectorAll(
-".eye,.mouth"
-).forEach(
-x=>x.style.display="none"
-);
+/* Gear */
 
-}
-
-if(data.gear){
+if(
+avatarData.gear
+){
 
 equipGear(
-data.gear.type,
-data.gear.name
+avatarData.gear.type,
+avatarData.gear.name
 );
 
 }
 
 }
+
+
+/* START */
 
 load();
 
