@@ -2,451 +2,1786 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>MTB REVIVALS</title>
+<title>MTB REVIVALS</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+<style>
+*{
+    box-sizing:border-box;
+}
 
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #eeeeee;
-            color: #222;
-        }
+html,body{
+    margin:0;
+    padding:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#fff;
+    color:#333;
+}
 
-        /* HEADER */
+/* =========================
+   HEADER
+========================= */
 
-        header {
-            background: #c9c9c9;
-            border-bottom: 3px solid #999;
-            padding: 14px;
-        }
+.header{
+    height:172px;
+    background:#4382dc;
+    color:white;
+    position:relative;
+    z-index:1000;
+    border-bottom:4px solid #ef8a2c;
+}
 
-        .top {
-            max-width: 1100px;
-            margin: auto;
-        }
+.logo{
+    position:absolute;
+    left:26px;
+    top:68px;
+    font-size:64px;
+    font-weight:bold;
+    letter-spacing:1px;
+}
 
-        .logo {
-            text-align: center;
-            font-size: 30px;
-            font-weight: bold;
-            margin-bottom: 12px;
-        }
+.menuButton{
+    position:absolute;
+    right:24px;
+    top:64px;
+    width:112px;
+    height:81px;
+    border:2px solid rgba(255,255,255,.35);
+    background:rgba(255,255,255,.05);
+    cursor:pointer;
+}
 
-        /* NAV */
+.menuButton span{
+    display:block;
+    width:48px;
+    height:4px;
+    background:#163e78;
+    margin:10px auto;
+    border-radius:3px;
+}
 
-        nav {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 4px;
-        }
+/* =========================
+   MENU
+========================= */
 
-        nav a {
-            color: #222;
-            text-decoration: none;
-            font-weight: bold;
-            padding: 10px 14px;
-            border-radius: 5px;
-        }
+.menu{
+    position:absolute;
+    right:24px;
+    top:150px;
+    width:250px;
+    background:white;
+    border:1px solid #ccc;
+    box-shadow:0 5px 20px rgba(0,0,0,.25);
+    display:none;
+    z-index:3000;
+}
 
-        nav a:hover,
-        nav a.active {
-            background: #aaa;
-        }
+.menu.open{
+    display:block;
+}
 
-        /* SEARCH */
+.menu a{
+    display:block;
+    padding:18px;
+    color:#333;
+    text-decoration:none;
+    border-bottom:1px solid #ddd;
+    font-size:18px;
+}
 
-        .search-area {
-            max-width: 900px;
-            margin: 20px auto 0;
-            padding: 0 15px;
-        }
+.menu a:hover{
+    background:#eee;
+}
 
-        .search {
-            width: 100%;
-            padding: 13px;
-            border: 1px solid #aaa;
-            border-radius: 5px;
-            font-size: 16px;
-        }
+/* =========================
+   ANNOUNCEMENT
+========================= */
 
-        /* HERO */
+.announcement{
+    background:#f58b2c;
+    color:white;
+    text-align:center;
+    font-size:30px;
+    line-height:1.6;
+    padding:10px 15px 12px;
+}
 
-        .hero {
-            max-width: 900px;
-            margin: 25px auto;
-            background: white;
-            border: 1px solid #bbb;
-            padding: 40px 25px;
-            text-align: center;
-        }
+/* =========================
+   MAIN
+========================= */
 
-        .hero h1 {
-            margin-top: 0;
-            font-size: 32px;
-        }
+.page{
+    max-width:1160px;
+    margin:0 auto;
+    padding:32px 42px 180px;
+    background:#fff;
+    min-height:100vh;
+}
 
-        .hero p {
-            color: #555;
-            font-size: 17px;
-        }
+.pageTitle{
+    font-size:42px;
+    margin:5px 0 25px;
+    font-weight:bold;
+}
 
-        /* BUTTON */
+/* =========================
+   SEARCH
+========================= */
 
-        button {
-            background: #1683ff;
-            color: white;
-            border: 0;
-            padding: 11px 22px;
-            border-radius: 5px;
-            font-size: 15px;
-            font-weight: bold;
-            cursor: pointer;
-        }
+.searchBox{
+    display:flex;
+    width:100%;
+    height:76px;
+    margin-bottom:45px;
+}
 
-        button:hover {
-            background: #006bd6;
-        }
+.searchBox input{
+    flex:1;
+    border:2px solid #ccc;
+    padding:0 25px;
+    font-size:28px;
+    outline:none;
+}
 
-        /* SECTIONS */
+.searchBox button{
+    width:84px;
+    border:0;
+    background:#3478bd;
+    cursor:pointer;
+    position:relative;
+}
 
-        .section {
-            max-width: 1100px;
-            margin: 35px auto;
-            padding: 0 15px;
-        }
+.searchIcon{
+    width:30px;
+    height:30px;
+    border:3px solid white;
+    border-radius:50%;
+    position:absolute;
+    left:25px;
+    top:19px;
+}
 
-        .section-title {
-            margin-bottom: 15px;
-        }
+.searchIcon:after{
+    content:"";
+    position:absolute;
+    width:15px;
+    height:3px;
+    background:white;
+    transform:rotate(45deg);
+    right:-11px;
+    bottom:-6px;
+}
 
-        /* GAMES */
+/* =========================
+   CATEGORIES
+========================= */
 
-        .games {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 15px;
-        }
+.categories{
+    border:2px solid #ddd;
+    padding:30px;
+    margin-bottom:35px;
+}
 
-        .game {
-            background: white;
-            border: 1px solid #bbb;
-            padding: 12px;
-        }
+.categoryTitle{
+    font-size:31px;
+    font-weight:bold;
+    padding-bottom:30px;
+    border-bottom:2px solid #ccc;
+    margin-bottom:25px;
+}
 
-        .thumbnail {
-            height: 130px;
-            background: #555;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            font-weight: bold;
-            margin-bottom: 12px;
-        }
+.categoryTitle:before{
+    content:"";
+    display:inline-block;
+    width:28px;
+    height:28px;
+    margin-right:20px;
+    vertical-align:-3px;
+    background:
+        linear-gradient(90deg,#4382dc 45%,transparent 45% 55%,#4382dc 55%),
+        linear-gradient(#4382dc 45%,transparent 45% 55%,#4382dc 55%);
+}
 
-        .game h3 {
-            margin: 5px 0;
-        }
+/* =========================
+   ITEM GRID
+========================= */
 
-        .game p {
-            color: #666;
-            margin-top: 5px;
-        }
+.itemGrid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:30px 20px;
+}
 
-        /* INFO CARDS */
+.item{
+    border:2px solid #ddd;
+    border-radius:10px;
+    padding:16px;
+    background:#fff;
+}
 
-        .info {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-        }
+.itemImage{
+    height:225px;
+    border:2px solid #ddd;
+    border-radius:10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:white;
+    overflow:hidden;
+}
 
-        .info-card {
-            background: white;
-            border: 1px solid #bbb;
-            padding: 20px;
-            text-align: center;
-        }
+.itemImage .fakeItem{
+    width:130px;
+    height:130px;
+    border-radius:25px;
+    position:relative;
+}
 
-        .info-card h3 {
-            margin-top: 0;
-        }
+/* Fake marketplace thumbnails */
 
-        /* FOOTER */
+.blueValk{
+    background:linear-gradient(135deg,#2748bd,#7f9dff);
+    clip-path:polygon(50% 0,63% 30%,90% 12%,78% 48%,100% 65%,66% 63%,50% 100%,34% 63%,0 65%,22% 48%,10% 12%,37% 30%);
+}
 
-        footer {
-            background: #c9c9c9;
-            border-top: 2px solid #999;
-            text-align: center;
-            margin-top: 50px;
-            padding: 25px;
-            color: #555;
-        }
+.redValk{
+    background:linear-gradient(135deg,#a61e1e,#ff5555);
+    clip-path:polygon(50% 0,63% 30%,90% 12%,78% 48%,100% 65%,66% 63%,50% 100%,34% 63%,0 65%,22% 48%,10% 12%,37% 30%);
+}
 
-        footer a {
-            color: #333;
-            text-decoration: none;
-            margin: 0 8px;
-        }
+.frost{
+    background:linear-gradient(135deg,#123dd2,#70b7ff);
+    clip-path:polygon(50% 0,65% 25%,100% 10%,78% 45%,100% 70%,65% 65%,50% 100%,35% 65%,0 70%,22% 45%,0 10%,35% 25%);
+}
 
-        /* MOBILE */
+.ninja{
+    background:linear-gradient(135deg,#111,#555);
+    border:8px solid #222;
+}
 
-        @media (max-width: 650px) {
+.pencil{
+    width:35px!important;
+    height:155px!important;
+    background:linear-gradient(90deg,#d99a20,#ffe05a,#d18a0e);
+    transform:rotate(-25deg);
+    border:3px solid #8c6511;
+}
 
-            .logo {
-                font-size: 25px;
-            }
+.hornsBlue{
+    width:130px!important;
+    height:110px!important;
+    background:#a9edff;
+    clip-path:polygon(
+        50% 0,
+        64% 35%,
+        92% 12%,
+        78% 52%,
+        100% 72%,
+        62% 66%,
+        50% 100%,
+        38% 66%,
+        0 72%,
+        22% 52%,
+        8% 12%,
+        36% 35%
+    );
+}
 
-            nav {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-            }
+.itemName{
+    font-size:25px;
+    font-weight:bold;
+    margin-top:20px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
 
-            nav a {
-                text-align: center;
-                font-size: 14px;
-                padding: 11px 4px;
-            }
+.itemPrice{
+    margin-top:15px;
+    font-size:25px;
+    font-weight:bold;
+    color:#51c96d;
+}
 
-            .hero {
-                margin: 15px;
-                padding: 30px 18px;
-            }
+.itemPrice.free{
+    color:#d8d83e;
+}
 
-            .hero h1 {
-                font-size: 25px;
-            }
+.itemButton{
+    margin-top:15px;
+    width:100%;
+    padding:13px;
+    border:0;
+    border-radius:4px;
+    background:#4382dc;
+    color:white;
+    font-weight:bold;
+    font-size:17px;
+    cursor:pointer;
+}
 
-            .info {
-                grid-template-columns: 1fr;
-            }
+.itemButton:hover{
+    background:#2868c0;
+}
 
-            .games {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+/* =========================
+   LIMITED LABEL
+========================= */
+
+.limited{
+    display:inline-block;
+    margin-top:10px;
+    background:#3c8d48;
+    color:white;
+    padding:5px 9px;
+    font-weight:bold;
+}
+
+.remaining{
+    color:#c52c26;
+    font-weight:bold;
+    margin-top:8px;
+}
+
+/* =========================
+   AVATAR
+========================= */
+
+.avatarPanel{
+    border:2px solid #ddd;
+    padding:25px;
+    margin-top:35px;
+}
+
+.avatarStage{
+    height:500px;
+    position:relative;
+    overflow:hidden;
+    border:2px solid #ddd;
+    border-radius:9px;
+
+    /* YOUR VOID / STARS BACKGROUND */
+    background-color:#02030b;
+
+    background-image:
+        radial-gradient(circle,#fff 1px,transparent 2px),
+        radial-gradient(circle,#8fbfff 1px,transparent 2px),
+        radial-gradient(circle,#fff 1px,transparent 2px),
+        radial-gradient(circle,#5d7cff 1px,transparent 2px);
+
+    background-size:
+        90px 90px,
+        150px 150px,
+        210px 210px,
+        270px 270px;
+
+    background-position:
+        10px 20px,
+        40px 60px,
+        100px 30px,
+        20px 120px;
+}
+
+.avatar{
+    position:absolute;
+    left:50%;
+    bottom:25px;
+    transform:translateX(-50%);
+    width:250px;
+    height:410px;
+}
+
+.avatarHead{
+    position:absolute;
+    width:95px;
+    height:95px;
+    left:78px;
+    top:5px;
+    background:#efbd76;
+    border:4px solid #222;
+    border-radius:8px;
+}
+
+.avatarHead:before,
+.avatarHead:after{
+    content:"";
+    position:absolute;
+    top:40px;
+    width:9px;
+    height:14px;
+    background:#111;
+    border-radius:50%;
+}
+
+.avatarHead:before{
+    left:25px;
+}
+
+.avatarHead:after{
+    right:25px;
+}
+
+.avatarBody{
+    position:absolute;
+    left:58px;
+    top:105px;
+    width:135px;
+    height:130px;
+    background:#222;
+    border:4px solid #222;
+    border-radius:5px;
+}
+
+.avatarBody:after{
+    content:"MTB";
+    position:absolute;
+    left:0;
+    right:0;
+    top:43px;
+    text-align:center;
+    font-size:28px;
+    font-weight:bold;
+    color:white;
+}
+
+.avatarArm{
+    position:absolute;
+    width:43px;
+    height:120px;
+    background:#efbd76;
+    border:4px solid #222;
+    top:112px;
+    border-radius:5px;
+    transition:.3s;
+}
+
+.leftArm{
+    left:12px;
+}
+
+.rightArm{
+    right:12px;
+}
+
+.holding .rightArm{
+    transform:rotate(-60deg);
+    transform-origin:top center;
+    right:-3px;
+}
+
+.avatarLeg{
+    position:absolute;
+    width:58px;
+    height:130px;
+    background:#222;
+    border:4px solid #222;
+    top:235px;
+    border-radius:4px;
+}
+
+.leftLeg{
+    left:58px;
+}
+
+.rightLeg{
+    right:58px;
+}
+
+/* =========================
+   GEAR
+========================= */
+
+.gear{
+    display:none;
+    position:absolute;
+    z-index:20;
+}
+
+.holding .gear{
+    display:block;
+}
+
+.gearSword{
+    right:-25px;
+    top:170px;
+    width:30px;
+    height:140px;
+    transform:rotate(-25deg);
+    background:linear-gradient(90deg,#555,#fff,#777);
+    clip-path:polygon(50% 0,100% 15%,65% 100%,35% 100%,0 15%);
+}
+
+.gearPencil{
+    right:-20px;
+    top:165px;
+    width:25px;
+    height:155px;
+    transform:rotate(-25deg);
+    background:linear-gradient(90deg,#d08a12,#ffe24d,#d08a12);
+    border:3px solid #7c5b0e;
+}
+
+.gearHammer{
+    right:-25px;
+    top:190px;
+    width:20px;
+    height:120px;
+    background:#75482b;
+    transform:rotate(-20deg);
+}
+
+.gearHammer:before{
+    content:"";
+    position:absolute;
+    width:75px;
+    height:30px;
+    top:-10px;
+    left:-27px;
+    background:#888;
+    border:4px solid #333;
+}
+
+/* =========================
+   ACCESSORY STATUS
+========================= */
+
+.equipped{
+    margin-top:20px;
+    padding:18px;
+    border:2px solid #ddd;
+    background:#fafafa;
+    line-height:1.8;
+}
+
+.accessorySlots{
+    display:flex;
+    gap:10px;
+    margin-top:15px;
+}
+
+.slot{
+    width:90px;
+    height:70px;
+    border:2px dashed #aaa;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#888;
+    font-size:13px;
+}
+
+/* =========================
+   SEARCH USERS
+========================= */
+
+.userSearch{
+    margin-top:35px;
+    border:2px solid #ddd;
+    padding:25px;
+}
+
+.userSearch input{
+    width:100%;
+    height:55px;
+    padding:10px;
+    border:2px solid #ccc;
+    font-size:20px;
+}
+
+.userSearch button{
+    margin-top:10px;
+    padding:12px 25px;
+    background:#4382dc;
+    color:white;
+    border:0;
+    font-weight:bold;
+}
+
+/* =========================
+   BOTTOM CHAT
+========================= */
+
+.chat{
+    position:fixed;
+    left:30px;
+    right:30px;
+    bottom:0;
+    height:79px;
+    background:#4382dc;
+    color:white;
+    border-radius:15px 15px 0 0;
+    z-index:5000;
+    box-shadow:0 -3px 15px rgba(0,0,0,.15);
+}
+
+.chatTitle{
+    font-size:31px;
+    font-weight:bold;
+    padding:20px 25px;
+}
+
+.chatTitle:before{
+    content:"";
+    display:inline-block;
+    width:27px;
+    height:22px;
+    background:white;
+    border-radius:50%;
+    margin-right:15px;
+    vertical-align:-1px;
+}
+
+/* =========================
+   MODAL
+========================= */
+
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.55);
+    z-index:10000;
+    justify-content:center;
+    align-items:center;
+}
+
+.modal.show{
+    display:flex;
+}
+
+.modalBox{
+    background:white;
+    width:90%;
+    max-width:430px;
+    padding:28px;
+    border-radius:8px;
+    box-shadow:0 10px 40px rgba(0,0,0,.4);
+}
+
+.modalBox h2{
+    margin-top:0;
+}
+
+.modalButtons{
+    display:flex;
+    gap:10px;
+    margin-top:20px;
+}
+
+.modalButtons button{
+    flex:1;
+    padding:13px;
+    border:0;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.confirm{
+    background:#4382dc;
+    color:white;
+}
+
+.cancel{
+    background:#ddd;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:650px){
+
+    .header{
+        height:172px;
+    }
+
+    .logo{
+        font-size:44px;
+        left:25px;
+        top:76px;
+    }
+
+    .menuButton{
+        width:112px;
+        height:80px;
+    }
+
+    .announcement{
+        font-size:30px;
+        line-height:1.6;
+    }
+
+    .page{
+        padding:28px 42px 150px;
+    }
+
+    .itemGrid{
+        grid-template-columns:repeat(2,1fr);
+        gap:18px;
+    }
+
+    .item{
+        padding:16px;
+    }
+
+    .itemImage{
+        height:180px;
+    }
+
+    .itemName{
+        font-size:22px;
+    }
+
+    .itemPrice{
+        font-size:23px;
+    }
+
+    .chat{
+        left:30px;
+        right:30px;
+    }
+}
+
+@media(max-width:430px){
+
+    .logo{
+        font-size:40px;
+    }
+
+    .menuButton{
+        right:15px;
+    }
+
+    .page{
+        padding-left:42px;
+        padding-right:42px;
+    }
+
+    .itemGrid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .itemImage{
+        height:145px;
+    }
+
+    .itemName{
+        font-size:18px;
+    }
+
+    .itemPrice{
+        font-size:19px;
+    }
+}
+</style>
 </head>
 
 <body>
 
-<header>
-    <div class="top">
+<!-- ================= HEADER ================= -->
 
-        <div class="logo">
-            MTB REVIVALS
-        </div>
+<header class="header">
 
-        <nav>
-            <a href="index.html" class="active">Home</a>
-            <a href="login.html">Account</a>
-            <a href="avatar.html">Avatar</a>
-            <a href="accessories.html">Accessories</a>
-            <a href="clothes.html">Clothes</a>
-            <a href="inventory.html">Inventory</a>
-            <a href="games.html">Games</a>
-            <a href="news.html">News</a>
-        </nav>
-
+    <div class="logo">
+        MTB REVIVALS
     </div>
-</header>
 
-<!-- SEARCH -->
-
-<div class="search-area">
-    <input
-        class="search"
-        type="text"
-        id="search"
-        placeholder="Search MTB REVIVALS..."
-        onkeyup="searchGames()"
-    >
-</div>
-
-<!-- HERO -->
-
-<section class="hero">
-
-    <h1>Welcome to MTB REVIVALS!</h1>
-
-    <p>
-        A community-made revival inspired by classic online gaming.
-    </p>
-
-    <button onclick="playGame()">
-        PLAY NOW
+    <button class="menuButton" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
     </button>
 
-</section>
+    <div id="menu" class="menu">
 
-<!-- FEATURED GAMES -->
-
-<section class="section">
-
-    <h2 class="section-title">
-        Featured Games
-    </h2>
-
-    <div class="games" id="gameList">
-
-        <div class="game">
-            <div class="thumbnail">
-                CLASSIC OBBY
-            </div>
-
-            <h3>Classic Obby</h3>
-
-            <p>By Builder</p>
-
-            <button onclick="launchGame('Classic Obby')">
-                Play
-            </button>
-        </div>
-
-        <div class="game">
-            <div class="thumbnail">
-                BRICK BATTLE
-            </div>
-
-            <h3>Brick Battle</h3>
-
-            <p>By Admin</p>
-
-            <button onclick="launchGame('Brick Battle')">
-                Play
-            </button>
-        </div>
-
-        <div class="game">
-            <div class="thumbnail">
-                MTB TOWN
-            </div>
-
-            <h3>MTB Town</h3>
-
-            <p>By Player</p>
-
-            <button onclick="launchGame('MTB Town')">
-                Play
-            </button>
-        </div>
-
-        <div class="game">
-            <div class="thumbnail">
-                MTB RACING
-            </div>
-
-            <h3>MTB Racing</h3>
-
-            <p>By MTB Studios</p>
-
-            <button onclick="launchGame('MTB Racing')">
-                Play
-            </button>
-        </div>
+        <a href="index.html">Home</a>
+        <a href="avatar.html">Avatar</a>
+        <a href="inventory.html">Inventory</a>
+        <a href="games.html">Games</a>
+        <a href="#">Accessories</a>
+        <a href="#">Clothes</a>
+        <a href="#">News</a>
 
     </div>
 
-</section>
+</header>
 
-<!-- INFORMATION -->
 
-<section class="section">
+<!-- ================= ANNOUNCEMENT ================= -->
 
-    <h2 class="section-title">
-        MTB REVIVALS
-    </h2>
+<div class="announcement">
 
-    <div class="info">
-
-        <div class="info-card">
-            <h3>🎮 Games</h3>
-            <p>
-                Discover and play community-made games.
-            </p>
-        </div>
-
-        <div class="info-card">
-            <h3>👤 Avatar</h3>
-            <p>
-                Customize your character with clothes and accessories.
-            </p>
-        </div>
-
-        <div class="info-card">
-            <h3>📰 News</h3>
-            <p>
-                Stay up to date with MTB REVIVALS.
-            </p>
-        </div>
-
-    </div>
-
-</section>
-
-<footer>
-
-    <div>
-        © 2026 MTB REVIVALS
-    </div>
-
+    Welcome to MTB REVIVALS!
     <br>
+    Everything is FREE right now!
 
-    <a href="index.html">Home</a>
-    <a href="games.html">Games</a>
-    <a href="news.html">News</a>
-    <a href="login.html">Account</a>
+</div>
 
-</footer>
+
+<!-- ================= PAGE ================= -->
+
+<main class="page">
+
+    <h1 class="pageTitle">
+        Catalog
+    </h1>
+
+
+    <!-- SEARCH -->
+
+    <div class="searchBox">
+
+        <input
+            id="assetSearch"
+            type="text"
+            placeholder="Search assets..."
+            oninput="searchAssets()"
+        >
+
+        <button onclick="searchAssets()">
+            <span class="searchIcon"></span>
+        </button>
+
+    </div>
+
+
+    <!-- CATEGORIES -->
+
+    <section class="categories">
+
+        <div class="categoryTitle">
+            Categories
+        </div>
+
+        <h2 style="color:#4382dc;text-decoration:underline;">
+            Featured
+        </h2>
+
+        <p style="font-size:24px;color:#666;">
+            Featured MTB REVIVALS items
+        </p>
+
+    </section>
+
+
+    <!-- ITEMS -->
+
+    <section>
+
+        <div id="itemGrid" class="itemGrid">
+
+
+            <!-- VALKYRIE -->
+
+            <div class="item" data-name="Sparkle Time Valkyrie">
+
+                <div class="itemImage">
+                    <div class="fakeItem blueValk"></div>
+                </div>
+
+                <div class="itemName">
+                    Sparkle Time Valkyrie
+                </div>
+
+                <div class="itemPrice free">
+                    FREE
+                </div>
+
+                <button
+                    class="itemButton"
+                    onclick="buyItem('valk-gold','Sparkle Time Valkyrie','accessory')">
+                    CLAIM
+                </button>
+
+            </div>
+
+
+            <!-- RED VALKYRIE -->
+
+            <div class="item" data-name="Red Valkyrie">
+
+                <div class="itemImage">
+                    <div class="fakeItem redValk"></div>
+                </div>
+
+                <div class="itemName">
+                    Red Valkyrie
+                </div>
+
+                <div class="itemPrice free">
+                    FREE
+                </div>
+
+                <button
+                    class="itemButton"
+                    onclick="buyItem('valk-red','Red Valkyrie','accessory')">
+                    CLAIM
+                </button>
+
+            </div>
+
+
+            <!-- FROST -->
+
+            <div class="item" data-name="Frozen Horns">
+
+                <div class="itemImage">
+                    <div class="fakeItem hornsBlue"></div>
+                </div>
+
+                <div class="itemName">
+                    Blue Frozen Horns
+                </div>
+
+                <div class="itemPrice free">
+                    FREE
+                </div>
+
+                <button
+                    class="itemButton"
+                    onclick="buyItem('horns-blue','Blue Frozen Horns','accessory')">
+                    CLAIM
+                </button>
+
+            </div>
+
+
+            <!-- NINJA -->
+
+            <div class="item" data-name="Ninja Master">
+
+                <div class="itemImage">
+                    <div class="fakeItem ninja"></div>
+                </div>
+
+                <div class="itemName">
+                    Ninja Master
+                </div>
+
+                <div class="itemPrice free">
+                    FREE
+                </div>
+
+                <button
+                    class="itemButton"
+                    onclick="buyItem('ninja','Ninja Master','accessory')">
+                    CLAIM
+                </button>
+
+            </div>
+
+
+            <!-- PENCIL -->
+
+            <div class="item" data-name="Big Pencil">
+
+                <div class="itemImage">
+                    <div class="fakeItem pencil"></div>
+                </div>
+
+                <div class="itemName">
+                    BIG Pencil
+                </div>
+
+                <div class="itemPrice free">
+                    FREE
+                </div>
+
+                <button
+                    class="itemButton"
+                    onclick="buyItem('big-pencil','BIG Pencil','gear')">
+                    CLAIM
+                </button>
+
+            </div>
+
+
+            <!-- FEDORA -->
+
+            <div class="item" data-name="Sparkle Time Fedora">
+
+                <div class="itemImage">
+                    <div
+                        class="fakeItem"
+                        style="
+                        background:linear-gradient(
+                        135deg,
+                        #e33131,
+                        #f3d63c,
+                        #45d46e,
+                        #4d9ff2,
+                        #a356df
+                        );
+                        border-radius:50% 50% 20% 20%;
+                        "
+                    ></div>
+                </div>
+
+                <div class="itemName">
+                    Sparkle Time Fedora
+                </div>
+
+                <div class="itemPrice free">
+                    FREE
+                </div>
+
+                <button
+                    class="itemButton"
+                    onclick="buyItem('fedora-rainbow','Sparkle Time Fedora','accessory')">
+                    CLAIM
+                </button>
+
+            </div>
+
+
+            <!-- MTB SHIRT -->
+
+            <div class="item" data-name="MTB Shirt">
+
+                <div class="itemImage">
+
+                    <div
+                        class="fakeItem"
+                        style="
+                        background:#111;
+                        border-radius:10px;
+                        "
+                    >
+                        <span
+                            style="
+                            display:flex;
+                            height:100%;
+                            justify-content:center;
+                            align-items:center;
+                            color:white;
+                            font-size:25px;
+                            font-weight:bold;
+                            "
+                        >
+                            MTB
+                        </span>
+                    </div>
+
+                </div>
+
+                <div class="itemName">
+                    MTB Shirt
+                </div>
+
+                <div class="itemPrice free">
+                    FREE
+                </div>
+
+                <button
+                    class="itemButton"
+                    onclick="buyItem('mtb-shirt','MTB Shirt','shirt')">
+                    CLAIM
+                </button>
+
+            </div>
+
+
+            <!-- MTB LONG SHIRT -->
+
+            <div class="item" data-name="MTB Very Long Shirt">
+
+                <div class="itemImage">
+
+                    <div
+                        class="fakeItem"
+                        style="
+                        width:105px;
+                        height:155px;
+                        background:#222;
+                        "
+                    >
+                        <span
+                            style="
+                            display:flex;
+                            height:100%;
+                            justify-content:center;
+                            align-items:center;
+                            color:white;
+                            font-size:20px;
+                            font-weight:bold;
+                            "
+                        >
+                            MTB
+                        </span>
+                    </div>
+
+                </div>
+
+                <div class="itemName">
+                    MTB VERY Long Shirt
+                </div>
+
+                <div class="itemPrice free">
+                    FREE
+                </div>
+
+                <button
+                    class="itemButton"
+                    onclick="buyItem('mtb-long','MTB VERY Long Shirt','shirt')">
+                    CLAIM
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- AVATAR -->
+
+    <section class="avatarPanel">
+
+        <h1>
+            Avatar
+        </h1>
+
+        <div class="avatarStage">
+
+            <div id="avatar" class="avatar">
+
+                <div class="avatarHead"></div>
+
+                <div class="avatarBody"></div>
+
+                <div class="avatarArm leftArm"></div>
+
+                <div class="avatarArm rightArm"></div>
+
+                <div class="avatarLeg leftLeg"></div>
+
+                <div class="avatarLeg rightLeg"></div>
+
+                <div id="gear" class="gear"></div>
+
+            </div>
+
+        </div>
+
+
+        <div class="equipped">
+
+            <strong>Equipped Items</strong>
+
+            <div id="equippedText">
+                Nothing equipped.
+            </div>
+
+            <div class="accessorySlots">
+
+                <div class="slot" id="slot1">
+                    Accessory 1
+                </div>
+
+                <div class="slot" id="slot2">
+                    Accessory 2
+                </div>
+
+                <div class="slot" id="slot3">
+                    Accessory 3
+                </div>
+
+            </div>
+
+            <p>
+                Maximum 3 accessories equipped at once.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- USER SEARCH -->
+
+    <section class="userSearch">
+
+        <h1>
+            Search Users
+        </h1>
+
+        <input
+            id="username"
+            placeholder="Search username..."
+        >
+
+        <button onclick="searchUser()">
+            SEARCH
+        </button>
+
+        <div id="userResult"></div>
+
+    </section>
+
+</main>
+
+
+<!-- ================= CHAT ================= -->
+
+<div class="chat">
+
+    <div class="chatTitle">
+        Chat (0)
+    </div>
+
+</div>
+
+
+<!-- ================= CONFIRM MODAL ================= -->
+
+<div id="modal" class="modal">
+
+    <div class="modalBox">
+
+        <h2>
+            Confirm Order
+        </h2>
+
+        <p id="modalText">
+            Are you sure?
+        </p>
+
+        <div class="modalButtons">
+
+            <button
+                class="cancel"
+                onclick="closeModal()">
+                CANCEL
+            </button>
+
+            <button
+                class="confirm"
+                onclick="confirmPurchase()">
+                CONFIRM
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
 
 <script>
 
-    function playGame() {
-        alert("The MTB REVIVALS game launcher is coming soon!");
+/* ==========================================
+   MTB REVIVALS
+   SAVED INVENTORY
+========================================== */
+
+const SAVE_KEY =
+    "MTB_REVIVALS_RBLX16_STYLE";
+
+let player =
+    JSON.parse(
+        localStorage.getItem(SAVE_KEY)
+    ) || {
+
+        coins:1000,
+
+        owned:[],
+
+        equipped:{
+            shirt:null,
+            pants:null,
+            accessories:[],
+            gear:null
+        }
+    };
+
+
+let pendingItem=null;
+
+
+/* ==============================
+   SAVE
+============================== */
+
+function save(){
+
+    localStorage.setItem(
+        SAVE_KEY,
+        JSON.stringify(player)
+    );
+}
+
+
+/* ==============================
+   MENU
+============================== */
+
+function toggleMenu(){
+
+    document
+        .getElementById("menu")
+        .classList.toggle("open");
+}
+
+
+/* ==============================
+   BUY
+============================== */
+
+function buyItem(id,name,type){
+
+    if(
+        player.owned.some(
+            item=>item.id===id
+        )
+    ){
+
+        equipItem(id,name,type);
+
+        return;
     }
 
-    function launchGame(gameName) {
-        alert(gameName + " launcher coming soon!");
+    pendingItem={
+        id:id,
+        name:name,
+        type:type
+    };
+
+    document.getElementById(
+        "modalText"
+    ).innerHTML=
+        "<strong>"+name+
+        "</strong><br><br>"+
+        "Price: <strong>FREE</strong><br><br>"+
+        "Do you want to claim this item?";
+
+    document
+        .getElementById("modal")
+        .classList.add("show");
+}
+
+
+/* ==============================
+   CONFIRM
+============================== */
+
+function confirmPurchase(){
+
+    if(!pendingItem){
+        return;
     }
 
-    function searchGames() {
+    player.owned.push({
 
-        let search =
-            document.getElementById("search")
-            .value
-            .toLowerCase();
+        id:pendingItem.id,
 
-        let games =
-            document.querySelectorAll(".game");
+        name:pendingItem.name,
 
-        games.forEach(function(game) {
+        type:pendingItem.type,
 
-            let name =
-                game.querySelector("h3")
-                .textContent
-                .toLowerCase();
+        price:0
+    });
 
-            if (name.includes(search)) {
-                game.style.display = "";
-            } else {
-                game.style.display = "none";
+    save();
+
+    equipItem(
+        pendingItem.id,
+        pendingItem.name,
+        pendingItem.type
+    );
+
+    closeModal();
+}
+
+
+/* ==============================
+   CANCEL
+============================== */
+
+function closeModal(){
+
+    pendingItem=null;
+
+    document
+        .getElementById("modal")
+        .classList.remove("show");
+}
+
+
+/* ==============================
+   EQUIP
+============================== */
+
+function equipItem(id,name,type){
+
+    if(type==="accessory"){
+
+        const existing =
+            player.equipped
+                .accessories
+                .indexOf(id);
+
+        if(existing!==-1){
+
+            player.equipped
+                .accessories
+                .splice(existing,1);
+
+        }else{
+
+            if(
+                player.equipped
+                    .accessories
+                    .length>=3
+            ){
+
+                alert(
+                    "You can only wear 3 accessories at once."
+                );
+
+                return;
             }
 
-        });
+            player.equipped
+                .accessories
+                .push(id);
+        }
 
+        updateAccessories();
     }
+
+
+    if(type==="shirt"){
+
+        player.equipped.shirt=id;
+
+        const body =
+            document.querySelector(
+                ".avatarBody"
+            );
+
+        body.style.background=
+            id==="mtb-long"
+            ? "#333"
+            : "#111";
+    }
+
+
+    if(type==="gear"){
+
+        player.equipped.gear=id;
+
+        const avatar =
+            document.getElementById(
+                "avatar"
+            );
+
+        const gear =
+            document.getElementById(
+                "gear"
+            );
+
+        avatar.classList.add("holding");
+
+        if(id==="big-pencil"){
+
+            gear.className=
+                "gear gearPencil";
+
+        }else{
+
+            gear.className=
+                "gear gearSword";
+        }
+    }
+
+    save();
+
+    updateEquipped();
+}
+
+
+/* ==============================
+   ACCESSORIES
+============================== */
+
+function updateAccessories(){
+
+    const slots=[
+        document.getElementById("slot1"),
+        document.getElementById("slot2"),
+        document.getElementById("slot3")
+    ];
+
+    slots.forEach(
+        (slot,index)=>{
+
+            slot.textContent=
+                player.equipped
+                    .accessories[index]
+                || "Empty";
+        }
+    );
+}
+
+
+/* ==============================
+   EQUIPPED
+============================== */
+
+function updateEquipped(){
+
+    let text="";
+
+    text+="Shirt: "+
+        (
+            player.equipped.shirt
+            ||"None"
+        )+
+        "<br>";
+
+    text+="Accessories: "+
+        player.equipped
+            .accessories
+            .length+
+        "/3"+
+        "<br>";
+
+    text+="Gear: "+
+        (
+            player.equipped.gear
+            ||"None"
+        );
+
+    document.getElementById(
+        "equippedText"
+    ).innerHTML=text;
+
+    updateAccessories();
+}
+
+
+/* ==============================
+   SEARCH ASSETS
+============================== */
+
+function searchAssets(){
+
+    const query =
+        document
+        .getElementById(
+            "assetSearch"
+        )
+        .value
+        .toLowerCase();
+
+    document
+        .querySelectorAll(".item")
+        .forEach(item=>{
+
+            const name =
+                item.dataset.name
+                .toLowerCase();
+
+            item.style.display=
+                name.includes(query)
+                ? ""
+                : "none";
+        });
+}
+
+
+/* ==============================
+   ROBLOX USER SEARCH
+============================== */
+
+async function searchUser(){
+
+    const username=
+        document
+        .getElementById("username")
+        .value
+        .trim();
+
+    const result=
+        document.getElementById(
+            "userResult"
+        );
+
+    if(!username){
+
+        result.innerHTML=
+            "<p>Enter a username.</p>";
+
+        return;
+    }
+
+    result.innerHTML=
+        "<p>Searching...</p>";
+
+    try{
+
+        const response=
+            await fetch(
+                "https://users.roblox.com/v1/usernames/users",
+                {
+                    method:"POST",
+
+                    headers:{
+                        "Content-Type":
+                        "application/json"
+                    },
+
+                    body:JSON.stringify({
+
+                        usernames:[username],
+
+                        excludeBannedUsers:false
+                    })
+                }
+            );
+
+        const data=
+            await response.json();
+
+        if(
+            !data.data ||
+            data.data.length===0
+        ){
+
+            result.innerHTML=
+                "<p>User not found.</p>";
+
+            return;
+        }
+
+        const user=data.data[0];
+
+        result.innerHTML=`
+
+            <div
+                style="
+                margin-top:20px;
+                border:2px solid #ddd;
+                padding:20px;
+                "
+            >
+
+                <h2>
+                    ${escapeHTML(user.name)}
+                </h2>
+
+                <p>
+                    @${escapeHTML(user.displayName)}
+                </p>
+
+                <a
+                    href="https://www.roblox.com/users/${user.id}/profile"
+                    target="_blank"
+                    style="
+                    display:inline-block;
+                    padding:12px 20px;
+                    background:#4382dc;
+                    color:white;
+                    text-decoration:none;
+                    "
+                >
+                    VIEW PROFILE
+                </a>
+
+            </div>
+        `;
+
+    }catch(error){
+
+        result.innerHTML=
+            "<p>Could not connect to Roblox user search.</p>";
+    }
+}
+
+
+/* ==============================
+   ESCAPE HTML
+============================== */
+
+function escapeHTML(text){
+
+    return String(text)
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
+}
+
+
+/* ==============================
+   LOAD SAVED DATA
+============================== */
+
+function loadSaved(){
+
+    if(
+        player.equipped.gear
+    ){
+
+        const avatar=
+            document.getElementById(
+                "avatar"
+            );
+
+        const gear=
+            document.getElementById(
+                "gear"
+            );
+
+        avatar.classList.add(
+            "holding"
+        );
+
+        if(
+            player.equipped.gear
+            ==="big-pencil"
+        ){
+
+            gear.className=
+                "gear gearPencil";
+
+        }else{
+
+            gear.className=
+                "gear gearSword";
+        }
+    }
+
+    if(
+        player.equipped.shirt
+    ){
+
+        const body=
+            document.querySelector(
+                ".avatarBody"
+            );
+
+        body.style.background=
+            player.equipped.shirt
+            ==="mtb-long"
+            ? "#333"
+            : "#111";
+    }
+
+    updateEquipped();
+}
+
+
+/* ==============================
+   START
+============================== */
+
+loadSaved();
 
 </script>
 
 </body>
 </html>
-```
