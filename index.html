@@ -2,680 +2,698 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>MTB REVIVALS</title>
 
 <style>
-*{box-sizing:border-box}
+*{
+    box-sizing:border-box;
+}
 
 html,body{
     margin:0;
     padding:0;
     font-family:Arial,Helvetica,sans-serif;
     background:#f2f2f2;
-    color:#333;
+    color:#222;
 }
 
-button,input{font-family:inherit}
-
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 
 .header{
-    height:96px;
+    height:145px;
     background:#4382dc;
-    border-bottom:4px solid #ef8a2c;
     color:white;
-    display:flex;
-    align-items:center;
-    position:sticky;
-    top:0;
-    z-index:5000;
+    position:relative;
+    border-bottom:4px solid #ef8a2c;
+    z-index:1000;
 }
 
 .logo{
-    font-size:34px;
-    font-weight:900;
-    margin-left:28px;
-    white-space:nowrap;
-}
-
-.topNav{
-    display:flex;
-    margin-left:35px;
-    height:100%;
-}
-
-.topNav a{
-    display:flex;
-    align-items:center;
-    padding:0 15px;
-    color:white;
-    text-decoration:none;
-    font-size:15px;
+    position:absolute;
+    left:28px;
+    top:42px;
+    font-size:50px;
     font-weight:bold;
-}
-
-.topNav a:hover{
-    background:rgba(0,0,0,.15);
+    letter-spacing:1px;
 }
 
 .currency{
-    margin-left:auto;
-    margin-right:15px;
+    position:absolute;
+    right:165px;
+    top:25px;
     display:flex;
-    gap:8px;
+    gap:10px;
 }
 
-.currencyBox{
-    padding:10px 12px;
-    background:rgba(0,0,0,.15);
+.money{
+    background:rgba(0,0,0,.18);
     border:1px solid rgba(255,255,255,.3);
+    padding:10px 14px;
     border-radius:4px;
     font-weight:bold;
-    font-size:14px;
 }
 
-.robuxIcon{color:#55d66d}
-.tixIcon{color:#f2c94c}
-
-.mobileMenu{
-    display:none;
-    width:45px;
-    height:40px;
-    margin-right:15px;
-    background:transparent;
-    border:1px solid rgba(255,255,255,.5);
+.robuxIcon{
+    color:#58c878;
 }
 
-.mobileMenu span{
+.tixIcon{
+    color:#f4c84c;
+}
+
+.menuButton{
+    position:absolute;
+    right:25px;
+    top:45px;
+    width:82px;
+    height:65px;
+    border:2px solid rgba(255,255,255,.35);
+    background:rgba(255,255,255,.08);
+    cursor:pointer;
+}
+
+.menuButton span{
     display:block;
-    width:25px;
-    height:3px;
-    background:white;
-    margin:5px auto;
+    width:40px;
+    height:4px;
+    background:#173e78;
+    margin:8px auto;
+    border-radius:3px;
 }
 
-/* MOBILE NAV */
+/* =========================
+   MENU
+========================= */
 
-.mobileNav{
+.menu{
+    position:absolute;
+    right:25px;
+    top:110px;
+    width:250px;
+    background:white;
+    border:1px solid #bbb;
+    box-shadow:0 5px 20px rgba(0,0,0,.3);
     display:none;
-    position:fixed;
-    top:96px;
-    left:0;
-    right:0;
-    background:white;
-    z-index:4999;
-    box-shadow:0 5px 15px rgba(0,0,0,.2);
+    z-index:5000;
 }
 
-.mobileNav.open{display:block}
-
-.mobileNav a{
+.menu.open{
     display:block;
-    padding:17px;
-    border-bottom:1px solid #ddd;
-    text-decoration:none;
+}
+
+.menu a,
+.menu button{
+    display:block;
+    width:100%;
+    padding:16px;
     color:#333;
-    font-weight:bold;
+    text-decoration:none;
+    border:0;
+    border-bottom:1px solid #ddd;
+    background:white;
+    text-align:left;
+    font-size:17px;
+    cursor:pointer;
 }
 
-/* ANNOUNCEMENT */
+.menu a:hover,
+.menu button:hover{
+    background:#eee;
+}
+
+/* =========================
+   ANNOUNCEMENT
+========================= */
 
 .announcement{
-    background:#ef8a2c;
+    background:#f58b2c;
     color:white;
     text-align:center;
-    padding:13px;
-    font-weight:bold;
+    font-size:22px;
+    padding:10px;
 }
 
-/* PAGE */
+/* =========================
+   PAGE
+========================= */
 
 .page{
-    max-width:1250px;
+    max-width:1200px;
     margin:auto;
-    padding:30px 25px 120px;
+    padding:30px 35px 130px;
 }
 
-.section{
+.pageTitle{
+    font-size:42px;
+    margin:5px 0 25px;
+}
+
+/* =========================
+   ACCOUNT
+========================= */
+
+.accountBar{
     background:white;
-    border:1px solid #d2d2d2;
+    border:1px solid #ccc;
+    padding:18px;
     margin-bottom:25px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+}
+
+.accountName{
+    font-size:23px;
+    font-weight:bold;
+}
+
+.firstBadge{
+    display:inline-block;
+    background:#e8b927;
+    color:white;
+    padding:7px 12px;
     border-radius:4px;
-}
-
-.sectionHeader{
-    padding:17px 20px;
-    border-bottom:1px solid #ddd;
-    font-size:21px;
     font-weight:bold;
+    margin-left:10px;
 }
 
-/* HOME */
+/* =========================
+   SEARCH
+========================= */
 
-.hero{
-    background:white;
-    border:1px solid #d2d2d2;
-    padding:30px;
+.searchBox{
     display:flex;
-    align-items:center;
-    gap:30px;
-    margin-bottom:25px;
+    width:100%;
+    height:60px;
+    margin-bottom:35px;
 }
 
-.heroText{flex:1}
-
-.heroText h1{
-    margin:0 0 12px;
-    font-size:38px;
-}
-
-.heroText p{
-    color:#666;
-    line-height:1.6;
-}
-
-.heroLogo{
-    width:210px;
-    height:160px;
-    background:#02030b;
-    border:2px solid #222;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    color:white;
-    font-size:27px;
-    font-weight:bold;
-}
-
-.primaryButton{
-    border:0;
-    padding:13px 22px;
-    background:#4382dc;
-    color:white;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-/* SEARCH */
-
-.search{
-    display:flex;
-    padding:20px 20px 0;
-}
-
-.search input{
+.searchBox input{
     flex:1;
-    height:48px;
-    border:1px solid #bbb;
-    padding:0 15px;
-    font-size:16px;
+    border:2px solid #ccc;
+    padding:0 20px;
+    font-size:21px;
+    outline:none;
 }
 
-.search button{
-    width:55px;
+.searchBox button{
+    width:70px;
     border:0;
-    background:#4382dc;
+    background:#3478bd;
     color:white;
-    font-size:19px;
-}
-
-/* FILTERS */
-
-.filters{
-    display:flex;
-    gap:8px;
-    padding:15px 20px 0;
-    flex-wrap:wrap;
-}
-
-.filter{
-    border:1px solid #bbb;
-    background:#f5f5f5;
-    padding:9px 15px;
     cursor:pointer;
+}
+
+/* =========================
+   CATEGORIES
+========================= */
+
+.categories{
+    background:white;
+    border:2px solid #ddd;
+    padding:25px;
+    margin-bottom:30px;
+}
+
+.categoryTitle{
+    font-size:28px;
     font-weight:bold;
+    padding-bottom:18px;
+    border-bottom:2px solid #ccc;
 }
 
-.filter.active{
-    background:#4382dc;
-    color:white;
-}
-
-/* ITEMS */
+/* =========================
+   ITEM GRID
+========================= */
 
 .itemGrid{
-    padding:20px;
     display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:18px;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
 }
 
 .item{
-    border:1px solid #ccc;
     background:white;
-    overflow:hidden;
-}
-
-.itemImage{
-    height:185px;
-    background:#eee;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    border-bottom:1px solid #ddd;
-}
-
-.fakeItem{
-    width:115px;
-    height:115px;
-}
-
-.blueValk{
-    background:linear-gradient(135deg,#2748bd,#8ea7ff);
-    clip-path:polygon(
-    50% 0,63% 28%,90% 10%,78% 47%,
-    100% 66%,66% 63%,50% 100%,
-    34% 63%,0 66%,22% 47%,10% 10%,37% 28%);
-}
-
-.redValk{
-    background:linear-gradient(135deg,#9d1717,#ff5555);
-    clip-path:polygon(
-    50% 0,63% 28%,90% 10%,78% 47%,
-    100% 66%,66% 63%,50% 100%,
-    34% 63%,0 66%,22% 47%,10% 10%,37% 28%);
-}
-
-.hornsBlue{
-    width:130px;
-    height:105px;
-    background:linear-gradient(#dffcff,#54c8ff);
-    clip-path:polygon(
-    50% 0,65% 28%,100% 7%,78% 48%,
-    100% 72%,65% 65%,50% 100%,
-    35% 65%,0 72%,22% 48%,0 7%,35% 28%);
-}
-
-.ninja{
-    background:#171717;
-    border:12px solid #333;
-    border-radius:50%;
-}
-
-.pencil{
-    width:31px;
-    height:145px;
-    background:linear-gradient(90deg,#c88412,#ffe14f,#c88412);
-    transform:rotate(-25deg);
-    border:3px solid #7d5b0e;
-}
-
-.fedora{
-    width:125px;
-    height:70px;
-    border-radius:60% 60% 20% 20%;
-    background:linear-gradient(
-    135deg,#df3333,#e8d03b,#45ce6a,#559cf2,#a94cdd);
-}
-
-.shirtPreview{
-    width:110px;
-    height:130px;
-    background:#151515;
-    color:white;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:25px;
-    font-weight:bold;
-}
-
-.longShirtPreview{
-    width:90px;
-    height:155px;
-    background:#252525;
-    color:white;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-weight:bold;
-}
-
-.itemInfo{
+    border:2px solid #ddd;
+    border-radius:5px;
     padding:14px;
 }
 
-.itemName{
-    font-size:17px;
+.itemImage{
+    height:220px;
+    border:2px solid #ddd;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#fafafa;
+    overflow:hidden;
+}
+
+.fakeItem{
+    width:125px;
+    height:125px;
+}
+
+.blueValk{
+    background:linear-gradient(135deg,#2748bd,#7f9dff);
+    clip-path:polygon(
+        50% 0,63% 30%,90% 12%,78% 48%,
+        100% 65%,66% 63%,50% 100%,
+        34% 63%,0 65%,22% 48%,10% 12%,37% 30%
+    );
+}
+
+.redValk{
+    background:linear-gradient(135deg,#a61e1e,#ff5555);
+    clip-path:polygon(
+        50% 0,63% 30%,90% 12%,78% 48%,
+        100% 65%,66% 63%,50% 100%,
+        34% 63%,0 65%,22% 48%,10% 12%,37% 30%
+    );
+}
+
+.hornsBlue{
+    background:#a9edff;
+    clip-path:polygon(
+        50% 0,65% 25%,100% 10%,78% 45%,
+        100% 70%,65% 65%,50% 100%,
+        35% 65%,0 70%,22% 45%,0 10%,35% 25%
+    );
+}
+
+.ninja{
+    background:#222;
+    border:12px solid #111;
+}
+
+.pencil{
+    width:30px;
+    height:155px;
+    background:linear-gradient(
+        90deg,
+        #d99a20,
+        #ffe05a,
+        #d18a0e
+    );
+    transform:rotate(-25deg);
+}
+
+.fedora{
+    width:145px;
+    height:85px;
+    border-radius:50% 50% 20% 20%;
+    background:linear-gradient(
+        135deg,
+        #e33131,
+        #f3d63c,
+        #45d46e,
+        #4d9ff2,
+        #a356df
+    );
+}
+
+.shirtPreview{
+    width:120px;
+    height:145px;
+    background:#111;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    font-size:24px;
     font-weight:bold;
-    min-height:40px;
 }
 
-.itemType{
-    color:#888;
-    font-size:13px;
+.itemName{
+    font-size:21px;
+    font-weight:bold;
+    margin-top:15px;
 }
 
-.price{
+.itemPrice{
     margin-top:10px;
     font-weight:bold;
 }
 
-.price.free{color:#50b961}
-.price.robux{color:#42a85b}
-.price.tix{color:#c59b20}
+.free{
+    color:#d0bd29;
+}
 
-.itemActions{
-    display:flex;
-    gap:6px;
+.itemButton{
+    width:100%;
     margin-top:12px;
-}
-
-.itemActions button{
-    flex:1;
+    padding:12px;
     border:0;
-    padding:10px 5px;
-    cursor:pointer;
-    font-weight:bold;
-}
-
-.claim{
     background:#4382dc;
     color:white;
-}
-
-.equip{
-    background:#ddd;
-}
-
-.ownedBadge{
-    display:inline-block;
-    margin-top:8px;
-    padding:4px 7px;
-    background:#3c8d48;
-    color:white;
-    font-size:11px;
     font-weight:bold;
+    cursor:pointer;
 }
 
-/* AVATAR */
+.itemButton:hover{
+    background:#2868c0;
+}
 
-.avatarLayout{
+/* =========================
+   AVATAR EDITOR
+========================= */
+
+.avatarPanel{
+    margin-top:40px;
+    background:white;
+    border:2px solid #ccc;
+    padding:25px;
+}
+
+.avatarEditor{
     display:grid;
     grid-template-columns:1fr 300px;
-    gap:20px;
-    padding:20px;
+    gap:25px;
 }
 
 .avatarStage{
-    height:570px;
-    border:1px solid #222;
-    background-color:#02030b;
-    background-image:
-    radial-gradient(circle,#fff 1px,transparent 2px),
-    radial-gradient(circle,#8fbfff 1px,transparent 2px),
-    radial-gradient(circle,#fff 1px,transparent 2px),
-    radial-gradient(circle,#5d7cff 1px,transparent 2px);
-    background-size:
-    90px 90px,150px 150px,210px 210px,270px 270px;
+    height:560px;
     position:relative;
     overflow:hidden;
+    border:2px solid #aaa;
+    background:#02030b;
+
+    background-image:
+        radial-gradient(circle,#fff 1px,transparent 2px),
+        radial-gradient(circle,#8fbfff 1px,transparent 2px),
+        radial-gradient(circle,#fff 1px,transparent 2px);
+
+    background-size:
+        90px 90px,
+        150px 150px,
+        210px 210px;
 }
 
 .avatar{
     position:absolute;
     left:50%;
-    bottom:40px;
+    bottom:35px;
     transform:translateX(-50%);
     width:250px;
     height:450px;
 }
 
+/* Head */
+
 .avatarHead{
     position:absolute;
-    width:100px;
-    height:100px;
-    left:75px;
+    width:105px;
+    height:105px;
+    left:72px;
     top:0;
-    background:#efbd76;
-    border:4px solid #111;
-    border-radius:8px;
-    z-index:5;
+    background:#f0bd76;
+    border:4px solid #222;
 }
 
-.avatarHead:before,
+/* Face */
+
+.avatarHead:before{
+    content:"";
+    position:absolute;
+    left:27px;
+    top:42px;
+    width:10px;
+    height:14px;
+    background:#111;
+}
+
 .avatarHead:after{
     content:"";
     position:absolute;
-    top:40px;
-    width:9px;
+    right:27px;
+    top:42px;
+    width:10px;
     height:14px;
     background:#111;
-    border-radius:50%;
 }
 
-.avatarHead:before{left:25px}
-.avatarHead:after{right:25px}
+/* Body */
 
 .avatarBody{
     position:absolute;
     left:55px;
-    top:105px;
+    top:108px;
     width:140px;
-    height:135px;
-    background:#171717;
-    border:4px solid #111;
-    z-index:3;
-}
-
-.avatarBody:after{
-    content:"MTB";
-    position:absolute;
-    left:0;
-    right:0;
-    top:45px;
-    text-align:center;
+    height:140px;
+    background:#111;
+    border:4px solid #222;
+    display:flex;
+    justify-content:center;
+    align-items:center;
     color:white;
     font-size:30px;
     font-weight:bold;
 }
 
+/* Arms */
+
 .avatarArm{
     position:absolute;
-    top:110px;
-    width:45px;
-    height:125px;
-    background:#efbd76;
-    border:4px solid #111;
-    border-radius:5px;
-    transition:.25s;
+    top:112px;
+    width:48px;
+    height:130px;
+    background:#f0bd76;
+    border:4px solid #222;
+    transition:.3s;
 }
 
-.leftArm{left:10px}
-.rightArm{right:10px}
+.leftArm{
+    left:7px;
+}
+
+.rightArm{
+    right:7px;
+}
 
 .holding .rightArm{
-    transform:rotate(-55deg);
+    transform:rotate(-60deg);
     transform-origin:top center;
-    right:-2px;
 }
+
+/* Legs */
 
 .avatarLeg{
     position:absolute;
-    top:240px;
-    width:61px;
-    height:150px;
-    background:#171717;
-    border:4px solid #111;
+    top:248px;
+    width:60px;
+    height:145px;
+    background:#111;
+    border:4px solid #222;
 }
 
-.leftLeg{left:55px}
-.rightLeg{right:55px}
+.leftLeg{
+    left:55px;
+}
+
+.rightLeg{
+    right:55px;
+}
+
+/* Korblox */
 
 .korblox .rightLeg{
     width:28px;
-    height:125px;
-    right:72px;
+    height:145px;
+    right:71px;
     background:#4382dc;
 }
 
-.headless .avatarHead{
+/* =========================
+   GEAR
+========================= */
+
+.gear{
     display:none;
-}
-
-.headless .avatarBody{top:25px}
-.headless .avatarArm{top:30px}
-.headless .avatarLeg{top:165px}
-
-.accessoryVisual{
     position:absolute;
     z-index:20;
-    pointer-events:none;
 }
 
-.visualHorns{
-    width:130px;
-    height:100px;
-    left:60px;
-    top:-20px;
-    background:linear-gradient(#dffcff,#54c8ff);
-    clip-path:polygon(
-    50% 0,65% 30%,100% 8%,78% 50%,
-    100% 72%,65% 66%,50% 100%,
-    35% 66%,0 72%,22% 50%,0 8%,35% 30%);
+.holding .gear{
+    display:block;
 }
-
-.visualValk{
-    width:120px;
-    height:75px;
-    left:65px;
-    top:-15px;
-    background:linear-gradient(135deg,#3658dc,#a8b9ff);
-    clip-path:polygon(
-    50% 0,62% 35%,90% 12%,76% 55%,
-    100% 72%,65% 65%,50% 100%,
-    35% 65%,0 72%,24% 55%,10% 12%,38% 35%);
-}
-
-.visualFedora{
-    width:125px;
-    height:55px;
-    left:62px;
-    top:-20px;
-    border-radius:50% 50% 20% 20%;
-    background:linear-gradient(
-    135deg,#df3333,#e8d03b,#45ce6a,#559cf2,#a94cdd);
-}
-
-.gearVisual{
-    display:none;
-    position:absolute;
-    right:-20px;
-    top:165px;
-    z-index:30;
-}
-
-.holding .gearVisual{display:block}
 
 .gearPencil{
-    width:26px;
-    height:150px;
-    background:linear-gradient(90deg,#c88412,#ffe14f,#c88412);
+    right:-25px;
+    top:170px;
+    width:27px;
+    height:155px;
+    background:linear-gradient(
+        90deg,
+        #d08a12,
+        #ffe24d,
+        #d08a12
+    );
     transform:rotate(-25deg);
-    border:3px solid #76570d;
 }
 
-/* AVATAR CONTROLS */
+.gearSword{
+    right:-25px;
+    top:160px;
+    width:28px;
+    height:155px;
+    background:linear-gradient(
+        90deg,
+        #555,
+        #fff,
+        #777
+    );
+    transform:rotate(-25deg);
+}
+
+/* =========================
+   AVATAR CONTROLS
+========================= */
 
 .avatarControls{
-    border:1px solid #ddd;
-    background:#fafafa;
-    padding:18px;
+    border:1px solid #ccc;
+    padding:20px;
+}
+
+.avatarControls h2{
+    margin-top:0;
 }
 
 .controlButton{
     width:100%;
-    margin-bottom:8px;
-    padding:11px;
-    border:1px solid #bbb;
-    background:white;
-    cursor:pointer;
-    text-align:left;
-    font-weight:bold;
-}
-
-.equippedItem{
-    background:white;
-    border:1px solid #ddd;
-    padding:8px;
-    margin-top:6px;
-    font-size:13px;
-}
-
-/* INVENTORY */
-
-.inventoryGrid{
-    padding:20px;
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:15px;
-}
-
-.inventoryItem{
-    border:1px solid #ccc;
-    padding:15px;
-    background:white;
-}
-
-.inventoryItem h3{
-    margin:0 0 7px;
-}
-
-.inventoryItem small{color:#888}
-
-.inventoryItem button{
-    width:100%;
-    margin-top:12px;
-    padding:9px;
+    padding:12px;
+    margin-top:8px;
     border:0;
     background:#4382dc;
     color:white;
     font-weight:bold;
+    cursor:pointer;
 }
 
-/* GAMES */
+.controlButton:hover{
+    background:#2868c0;
+}
 
-.gamesGrid{
-    padding:20px;
+.equipped{
+    margin-top:20px;
+    border-top:1px solid #ccc;
+    padding-top:15px;
+}
+
+.slot{
+    border:2px dashed #aaa;
+    padding:10px;
+    margin-top:8px;
+    background:#fafafa;
+}
+
+/* =========================
+   PLAY / EARN
+========================= */
+
+.playSection{
+    margin-top:40px;
+    background:white;
+    border:2px solid #ccc;
+    padding:25px;
+}
+
+.gameGrid{
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    gap:18px;
+    gap:20px;
 }
 
 .game{
-    border:1px solid #ccc;
+    border:2px solid #ddd;
+    padding:20px;
+    text-align:center;
 }
 
 .gameImage{
-    height:150px;
-    background:#ddd;
+    height:140px;
+    background:#4382dc;
     display:flex;
     justify-content:center;
     align-items:center;
-    font-size:24px;
+    color:white;
+    font-size:35px;
     font-weight:bold;
 }
-
-.gameInfo{padding:15px}
-
-.gameInfo h3{margin-top:0}
 
 .playButton{
     width:100%;
     margin-top:12px;
-    padding:11px;
+    padding:12px;
+    border:0;
+    background:#4caf50;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+/* =========================
+   INVENTORY
+========================= */
+
+.inventory{
+    margin-top:40px;
+    background:white;
+    border:2px solid #ccc;
+    padding:25px;
+}
+
+.inventoryItem{
+    padding:13px;
+    border-bottom:1px solid #ddd;
+}
+
+/* =========================
+   SIGNUP / LOGIN
+========================= */
+
+.authModal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.65);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    z-index:10000;
+}
+
+.authModal.show{
+    display:flex;
+}
+
+.authBox{
+    width:92%;
+    max-width:430px;
+    background:white;
+    padding:30px;
+    border-radius:6px;
+}
+
+.authBox h1{
+    margin-top:0;
+}
+
+.authBox input{
+    width:100%;
+    padding:14px;
+    margin-top:10px;
+    border:2px solid #ccc;
+    font-size:17px;
+}
+
+.authBox button{
+    width:100%;
+    margin-top:12px;
+    padding:14px;
     border:0;
     background:#4382dc;
     color:white;
@@ -683,166 +701,148 @@ button,input{font-family:inherit}
     cursor:pointer;
 }
 
-/* NEWS */
-
-.news{
-    padding:20px;
+.closeAuth{
+    background:#ddd!important;
+    color:#222!important;
 }
 
-.newsCard{
-    padding:15px 0;
-    border-bottom:1px solid #ddd;
-}
-
-/* USER SEARCH */
-
-.userSearch{
-    padding:20px;
-}
-
-.userSearchRow{
-    display:flex;
-    gap:8px;
-}
-
-.userSearchRow input{
-    flex:1;
-    height:45px;
-    border:1px solid #bbb;
-    padding:0 12px;
-}
-
-.userSearchRow button{
-    padding:0 20px;
-    border:0;
-    background:#4382dc;
-    color:white;
-    font-weight:bold;
-}
-
-/* MODAL */
+/* =========================
+   CONFIRM
+========================= */
 
 .modal{
     display:none;
     position:fixed;
     inset:0;
-    background:rgba(0,0,0,.58);
-    z-index:10000;
-    justify-content:center;
+    background:rgba(0,0,0,.55);
+    z-index:11000;
     align-items:center;
-    padding:20px;
+    justify-content:center;
 }
 
-.modal.show{display:flex}
+.modal.show{
+    display:flex;
+}
 
 .modalBox{
-    width:100%;
+    width:90%;
     max-width:430px;
     background:white;
-    padding:25px;
-    border-radius:4px;
+    padding:28px;
+    border-radius:7px;
 }
 
 .modalButtons{
     display:flex;
     gap:10px;
-    margin-top:20px;
 }
 
 .modalButtons button{
     flex:1;
-    padding:12px;
+    padding:13px;
     border:0;
-    cursor:pointer;
     font-weight:bold;
+    cursor:pointer;
 }
-
-.cancel{background:#ddd}
 
 .confirm{
     background:#4382dc;
     color:white;
 }
 
-/* FOOTER */
-
-.footer{
-    background:#222;
-    color:#aaa;
-    text-align:center;
-    padding:25px;
+.cancel{
+    background:#ddd;
 }
 
-/* RESPONSIVE */
+/* =========================
+   CHAT
+========================= */
 
-@media(max-width:950px){
+.chat{
+    position:fixed;
+    left:25px;
+    right:25px;
+    bottom:0;
+    height:62px;
+    background:#4382dc;
+    color:white;
+    border-radius:12px 12px 0 0;
+    z-index:9000;
+}
 
-    .topNav{display:none}
+.chatTitle{
+    padding:17px 22px;
+    font-size:22px;
+    font-weight:bold;
+}
 
-    .mobileMenu{display:block}
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:800px){
 
     .logo{
-        font-size:25px;
-        margin-left:18px;
+        font-size:34px;
+        top:52px;
     }
 
     .currency{
-        margin-left:auto;
+        right:100px;
+        top:10px;
+        transform:scale(.8);
+        transform-origin:right top;
+    }
+
+    .avatarEditor{
+        grid-template-columns:1fr;
     }
 
     .itemGrid{
         grid-template-columns:repeat(2,1fr);
     }
 
-    .inventoryGrid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .gamesGrid{
-        grid-template-columns:1fr;
-    }
-
-    .avatarLayout{
+    .gameGrid{
         grid-template-columns:1fr;
     }
 }
 
-@media(max-width:550px){
+@media(max-width:500px){
 
-    .header{height:75px}
-
-    .mobileNav{top:75px}
+    .header{
+        height:145px;
+    }
 
     .logo{
-        font-size:18px;
+        left:15px;
+        font-size:27px;
+        top:60px;
     }
 
     .currency{
-        gap:3px;
+        right:75px;
     }
 
-    .currencyBox{
-        padding:7px;
-        font-size:11px;
+    .menuButton{
+        right:10px;
+        width:58px;
     }
 
-    .hero{
-        flex-direction:column;
-        align-items:stretch;
-    }
-
-    .heroLogo{
-        width:100%;
+    .menuButton span{
+        width:30px;
     }
 
     .page{
-        padding:18px 10px 100px;
+        padding:20px 15px 110px;
     }
 
     .itemGrid{
         grid-template-columns:1fr 1fr;
-        padding:10px;
         gap:10px;
+    }
+
+    .item{
+        padding:8px;
     }
 
     .itemImage{
@@ -850,24 +850,11 @@ button,input{font-family:inherit}
     }
 
     .itemName{
-        font-size:14px;
+        font-size:16px;
     }
 
-    .itemActions{
-        flex-direction:column;
-    }
-
-    .inventoryGrid{
-        grid-template-columns:1fr 1fr;
-        padding:10px;
-    }
-
-    .userSearchRow{
-        flex-direction:column;
-    }
-
-    .userSearchRow button{
-        height:43px;
+    .avatarStage{
+        height:500px;
     }
 }
 </style>
@@ -881,775 +868,457 @@ button,input{font-family:inherit}
         MTB REVIVALS
     </div>
 
-    <nav class="topNav">
-        <a href="#home">Home</a>
-        <a href="#catalog">Catalog</a>
-        <a href="#avatar">Avatar</a>
-        <a href="#inventory">Inventory</a>
-        <a href="#games">Games</a>
-        <a href="#news">News</a>
-    </nav>
-
     <div class="currency">
 
-        <div class="currencyBox">
+        <div class="money">
             <span class="robuxIcon">●</span>
-            <span id="robuxAmount">1,000</span>
-            Robux
+            <span id="robux">0</span> R$
         </div>
 
-        <div class="currencyBox">
-            <span class="tixIcon">●</span>
-            <span id="tixAmount">0</span>
-            Tix
+        <div class="money">
+            <span class="tixIcon">◆</span>
+            <span id="tix">0</span> Tix
         </div>
 
     </div>
 
-    <button
-        class="mobileMenu"
-        onclick="toggleMobileMenu()"
-    >
+    <button class="menuButton" onclick="toggleMenu()">
         <span></span>
         <span></span>
         <span></span>
     </button>
 
+    <div id="menu" class="menu">
+
+        <a href="#catalog">Catalog</a>
+        <a href="#avatar">Avatar</a>
+        <a href="#games">Games</a>
+        <a href="#inventory">Inventory</a>
+
+        <button onclick="openAuth()">
+            Sign Up / Login
+        </button>
+
+        <button onclick="logout()">
+            Logout
+        </button>
+
+    </div>
+
 </header>
 
-<nav id="mobileNav" class="mobileNav">
-    <a href="#home">Home</a>
-    <a href="#catalog">Catalog</a>
-    <a href="#avatar">Avatar</a>
-    <a href="#inventory">Inventory</a>
-    <a href="#games">Games</a>
-    <a href="#news">News</a>
-</nav>
-
 <div class="announcement">
-    Welcome to MTB REVIVALS — Play games to earn Tix!
+    Welcome to MTB REVIVALS!
+    <br>
+    Play games and earn Robux + Tix!
 </div>
 
 <main class="page">
 
-<!-- HOME -->
+    <div class="accountBar">
 
-<section id="home">
+        <div>
+            <span class="accountName" id="accountName">
+                Guest
+            </span>
 
-    <div class="hero">
+            <span id="badgeArea"></span>
+        </div>
 
-        <div class="heroText">
+        <div>
+            <strong id="playerStatus">
+                Not signed in
+            </strong>
+        </div>
 
-            <h1>
-                Welcome to MTB REVIVALS
-            </h1>
+    </div>
 
-            <p>
-                Explore the catalog, customize your avatar,
-                collect items and play games to earn Tix.
-            </p>
+    <!-- ================= CATALOG ================= -->
 
-            <button
-                class="primaryButton"
-                onclick="goTo('catalog')"
+    <section id="catalog">
+
+        <h1 class="pageTitle">
+            Catalog
+        </h1>
+
+        <div class="searchBox">
+
+            <input
+                id="assetSearch"
+                placeholder="Search assets..."
+                oninput="searchAssets()"
             >
-                Browse Catalog
+
+            <button onclick="searchAssets()">
+                🔍
             </button>
 
         </div>
 
-        <div class="heroLogo">
-            MTB<br>REVIVALS
-        </div>
+        <section class="categories">
 
-    </div>
-
-</section>
-
-<!-- CATALOG -->
-
-<section id="catalog" class="section">
-
-    <div class="sectionHeader">
-        Catalog
-    </div>
-
-    <div class="filters">
-
-        <button
-            class="filter active"
-            onclick="filterItems('all',this)"
-        >
-            All
-        </button>
-
-        <button
-            class="filter"
-            onclick="filterItems('accessory',this)"
-        >
-            Accessories
-        </button>
-
-        <button
-            class="filter"
-            onclick="filterItems('shirt',this)"
-        >
-            Clothes
-        </button>
-
-        <button
-            class="filter"
-            onclick="filterItems('gear',this)"
-        >
-            Gear
-        </button>
-
-    </div>
-
-    <div class="search">
-
-        <input
-            id="assetSearch"
-            placeholder="Search catalog..."
-            oninput="searchAssets()"
-        >
-
-        <button onclick="searchAssets()">🔍</button>
-
-    </div>
-
-    <div id="itemGrid" class="itemGrid">
-
-        <!-- VALK -->
-
-        <div
-            class="item"
-            data-name="Sparkle Time Valkyrie"
-            data-type="accessory"
-        >
-
-            <div class="itemImage">
-                <div class="fakeItem blueValk"></div>
+            <div class="categoryTitle">
+                Featured
             </div>
 
-            <div class="itemInfo">
+            <p>
+                Classic MTB REVIVALS items
+            </p>
+
+        </section>
+
+        <div class="itemGrid" id="itemGrid">
+
+            <div class="item" data-name="Sparkle Time Valkyrie">
+
+                <div class="itemImage">
+                    <div class="fakeItem blueValk"></div>
+                </div>
 
                 <div class="itemName">
                     Sparkle Time Valkyrie
                 </div>
 
-                <div class="itemType">
-                    Accessory
-                </div>
-
-                <div class="price free">
+                <div class="itemPrice free">
                     FREE
                 </div>
 
-                <div id="badge-valk"></div>
+                <button class="itemButton"
+                    onclick="buyItem('valk-gold','Sparkle Time Valkyrie','accessory')">
+                    CLAIM
+                </button>
 
-                <div class="itemActions">
+            </div>
 
-                    <button
-                        class="claim"
-                        onclick="buyItem(
-                        'valk',
-                        'Sparkle Time Valkyrie',
-                        'accessory',
-                        0,
-                        'free'
-                        )"
-                    >
-                        CLAIM
-                    </button>
+            <div class="item" data-name="Red Valkyrie">
 
-                    <button
-                        class="equip"
-                        onclick="equipOwned(
-                        'valk',
-                        'Sparkle Time Valkyrie',
-                        'accessory'
-                        )"
-                    >
-                        EQUIP
-                    </button>
-
+                <div class="itemImage">
+                    <div class="fakeItem redValk"></div>
                 </div>
-
-            </div>
-
-        </div>
-
-        <!-- RED VALK -->
-
-        <div
-            class="item"
-            data-name="Red Valkyrie"
-            data-type="accessory"
-        >
-
-            <div class="itemImage">
-                <div class="fakeItem redValk"></div>
-            </div>
-
-            <div class="itemInfo">
 
                 <div class="itemName">
                     Red Valkyrie
                 </div>
 
-                <div class="itemType">
-                    Accessory
+                <div class="itemPrice free">
+                    FREE
                 </div>
 
-                <div class="price tix">
-                    250 Tix
-                </div>
-
-                <div id="badge-redvalk"></div>
-
-                <div class="itemActions">
-
-                    <button
-                        class="claim"
-                        onclick="buyItem(
-                        'redvalk',
-                        'Red Valkyrie',
-                        'accessory',
-                        250,
-                        'tix'
-                        )"
-                    >
-                        BUY
-                    </button>
-
-                    <button
-                        class="equip"
-                        onclick="equipOwned(
-                        'redvalk',
-                        'Red Valkyrie',
-                        'accessory'
-                        )"
-                    >
-                        EQUIP
-                    </button>
-
-                </div>
+                <button class="itemButton"
+                    onclick="buyItem('valk-red','Red Valkyrie','accessory')">
+                    CLAIM
+                </button>
 
             </div>
 
-        </div>
+            <div class="item" data-name="Blue Frozen Horns">
 
-        <!-- HORNS -->
-
-        <div
-            class="item"
-            data-name="Blue Frozen Horns"
-            data-type="accessory"
-        >
-
-            <div class="itemImage">
-                <div class="fakeItem hornsBlue"></div>
-            </div>
-
-            <div class="itemInfo">
+                <div class="itemImage">
+                    <div class="fakeItem hornsBlue"></div>
+                </div>
 
                 <div class="itemName">
                     Blue Frozen Horns
                 </div>
 
-                <div class="itemType">
-                    Accessory
-                </div>
-
-                <div class="price free">
+                <div class="itemPrice free">
                     FREE
                 </div>
 
-                <div id="badge-horns"></div>
+                <button class="itemButton"
+                    onclick="buyItem('horns-blue','Blue Frozen Horns','accessory')">
+                    CLAIM
+                </button>
 
-                <div class="itemActions">
+            </div>
 
-                    <button
-                        class="claim"
-                        onclick="buyItem(
-                        'horns',
-                        'Blue Frozen Horns',
-                        'accessory',
-                        0,
-                        'free'
-                        )"
-                    >
-                        CLAIM
-                    </button>
+            <div class="item" data-name="Ninja Master">
 
-                    <button
-                        class="equip"
-                        onclick="equipOwned(
-                        'horns',
-                        'Blue Frozen Horns',
-                        'accessory'
-                        )"
-                    >
-                        EQUIP
-                    </button>
-
+                <div class="itemImage">
+                    <div class="fakeItem ninja"></div>
                 </div>
-
-            </div>
-
-        </div>
-
-        <!-- NINJA -->
-
-        <div
-            class="item"
-            data-name="Ninja Master"
-            data-type="accessory"
-        >
-
-            <div class="itemImage">
-                <div class="fakeItem ninja"></div>
-            </div>
-
-            <div class="itemInfo">
 
                 <div class="itemName">
                     Ninja Master
                 </div>
 
-                <div class="itemType">
-                    Accessory
+                <div class="itemPrice free">
+                    FREE
                 </div>
 
-                <div class="price robux">
-                    100 Robux
-                </div>
-
-                <div id="badge-ninja"></div>
-
-                <div class="itemActions">
-
-                    <button
-                        class="claim"
-                        onclick="buyItem(
-                        'ninja',
-                        'Ninja Master',
-                        'accessory',
-                        100,
-                        'robux'
-                        )"
-                    >
-                        BUY
-                    </button>
-
-                    <button
-                        class="equip"
-                        onclick="equipOwned(
-                        'ninja',
-                        'Ninja Master',
-                        'accessory'
-                        )"
-                    >
-                        EQUIP
-                    </button>
-
-                </div>
+                <button class="itemButton"
+                    onclick="buyItem('ninja','Ninja Master','accessory')">
+                    CLAIM
+                </button>
 
             </div>
 
-        </div>
+            <div class="item" data-name="Big Pencil">
 
-        <!-- PENCIL -->
-
-        <div
-            class="item"
-            data-name="BIG Pencil"
-            data-type="gear"
-        >
-
-            <div class="itemImage">
-                <div class="fakeItem pencil"></div>
-            </div>
-
-            <div class="itemInfo">
+                <div class="itemImage">
+                    <div class="fakeItem pencil"></div>
+                </div>
 
                 <div class="itemName">
                     BIG Pencil
                 </div>
 
-                <div class="itemType">
-                    Gear
-                </div>
-
-                <div class="price free">
+                <div class="itemPrice free">
                     FREE
                 </div>
 
-                <div id="badge-pencil"></div>
+                <button class="itemButton"
+                    onclick="buyItem('big-pencil','BIG Pencil','gear')">
+                    CLAIM
+                </button>
 
-                <div class="itemActions">
+            </div>
 
-                    <button
-                        class="claim"
-                        onclick="buyItem(
-                        'pencil',
-                        'BIG Pencil',
-                        'gear',
-                        0,
-                        'free'
-                        )"
-                    >
-                        CLAIM
-                    </button>
+            <div class="item" data-name="Sparkle Time Fedora">
 
-                    <button
-                        class="equip"
-                        onclick="equipOwned(
-                        'pencil',
-                        'BIG Pencil',
-                        'gear'
-                        )"
-                    >
-                        EQUIP
-                    </button>
-
+                <div class="itemImage">
+                    <div class="fakeItem fedora"></div>
                 </div>
-
-            </div>
-
-        </div>
-
-        <!-- FEDORA -->
-
-        <div
-            class="item"
-            data-name="Sparkle Time Fedora"
-            data-type="accessory"
-        >
-
-            <div class="itemImage">
-                <div class="fakeItem fedora"></div>
-            </div>
-
-            <div class="itemInfo">
 
                 <div class="itemName">
                     Sparkle Time Fedora
                 </div>
 
-                <div class="itemType">
-                    Accessory
+                <div class="itemPrice free">
+                    FREE
                 </div>
 
-                <div class="price robux">
-                    500 Robux
-                </div>
-
-                <div id="badge-fedora"></div>
-
-                <div class="itemActions">
-
-                    <button
-                        class="claim"
-                        onclick="buyItem(
-                        'fedora',
-                        'Sparkle Time Fedora',
-                        'accessory',
-                        500,
-                        'robux'
-                        )"
-                    >
-                        BUY
-                    </button>
-
-                    <button
-                        class="equip"
-                        onclick="equipOwned(
-                        'fedora',
-                        'Sparkle Time Fedora',
-                        'accessory'
-                        )"
-                    >
-                        EQUIP
-                    </button>
-
-                </div>
+                <button class="itemButton"
+                    onclick="buyItem('fedora','Sparkle Time Fedora','accessory')">
+                    CLAIM
+                </button>
 
             </div>
 
-        </div>
+            <div class="item" data-name="Korblox Leg">
 
-        <!-- SHIRT -->
+                <div class="itemImage">
+                    <div class="fakeItem"
+                         style="width:55px;height:125px;background:#4382dc;border:5px solid #222;">
+                    </div>
+                </div>
 
-        <div
-            class="item"
-            data-name="MTB Shirt"
-            data-type="shirt"
-        >
+                <div class="itemName">
+                    Korblox Leg
+                </div>
 
-            <div class="itemImage">
-                <div class="shirtPreview">MTB</div>
+                <div class="itemPrice free">
+                    FREE
+                </div>
+
+                <button class="itemButton"
+                    onclick="buyItem('korblox','Korblox Leg','accessory')">
+                    CLAIM
+                </button>
+
             </div>
 
-            <div class="itemInfo">
+            <div class="item" data-name="MTB Shirt">
+
+                <div class="itemImage">
+                    <div class="shirtPreview">
+                        MTB
+                    </div>
+                </div>
 
                 <div class="itemName">
                     MTB Shirt
                 </div>
 
-                <div class="itemType">
-                    Shirt
-                </div>
-
-                <div class="price free">
+                <div class="itemPrice free">
                     FREE
                 </div>
 
-                <div id="badge-shirt"></div>
+                <button class="itemButton"
+                    onclick="buyItem('mtb-shirt','MTB Shirt','shirt')">
+                    CLAIM
+                </button>
 
-                <div class="itemActions">
+            </div>
 
-                    <button
-                        class="claim"
-                        onclick="buyItem(
-                        'shirt',
-                        'MTB Shirt',
-                        'shirt',
-                        0,
-                        'free'
-                        )"
-                    >
-                        CLAIM
-                    </button>
+            <div class="item" data-name="MTB Long Shirt">
 
-                    <button
-                        class="equip"
-                        onclick="equipOwned(
-                        'shirt',
-                        'MTB Shirt',
-                        'shirt'
-                        )"
-                    >
-                        EQUIP
-                    </button>
-
+                <div class="itemImage">
+                    <div class="shirtPreview"
+                         style="height:175px;">
+                        MTB
+                    </div>
                 </div>
-
-            </div>
-
-        </div>
-
-        <!-- LONG SHIRT -->
-
-        <div
-            class="item"
-            data-name="MTB VERY Long Shirt"
-            data-type="shirt"
-        >
-
-            <div class="itemImage">
-                <div class="longShirtPreview">MTB</div>
-            </div>
-
-            <div class="itemInfo">
 
                 <div class="itemName">
-                    MTB VERY Long Shirt
+                    MTB Long Shirt
                 </div>
 
-                <div class="itemType">
-                    Shirt
+                <div class="itemPrice free">
+                    FREE
                 </div>
 
-                <div class="price tix">
-                    75 Tix
-                </div>
-
-                <div id="badge-longshirt"></div>
-
-                <div class="itemActions">
-
-                    <button
-                        class="claim"
-                        onclick="buyItem(
-                        'longshirt',
-                        'MTB VERY Long Shirt',
-                        'shirt',
-                        75,
-                        'tix'
-                        )"
-                    >
-                        BUY
-                    </button>
-
-                    <button
-                        class="equip"
-                        onclick="equipOwned(
-                        'longshirt',
-                        'MTB VERY Long Shirt',
-                        'shirt'
-                        )"
-                    >
-                        EQUIP
-                    </button>
-
-                </div>
+                <button class="itemButton"
+                    onclick="buyItem('mtb-long','MTB Long Shirt','shirt')">
+                    CLAIM
+                </button>
 
             </div>
 
         </div>
 
-    </div>
+    </section>
 
-</section>
+    <!-- ================= AVATAR ================= -->
 
-<!-- AVATAR -->
+    <section class="avatarPanel" id="avatar">
 
-<section id="avatar" class="section">
+        <h1>
+            Avatar
+        </h1>
 
-    <div class="sectionHeader">
-        Avatar
-    </div>
+        <div class="avatarEditor">
 
-    <div class="avatarLayout">
+            <div class="avatarStage">
 
-        <div class="avatarStage">
+                <div id="avatarCharacter" class="avatar">
 
-            <div id="avatar" class="avatar">
+                    <div class="avatarHead"></div>
 
-                <div
-                    id="visual1"
-                    class="accessoryVisual"
-                ></div>
+                    <div class="avatarBody">
+                        MTB
+                    </div>
 
-                <div
-                    id="visual2"
-                    class="accessoryVisual"
-                ></div>
+                    <div class="avatarArm leftArm"></div>
 
-                <div
-                    id="visual3"
-                    class="accessoryVisual"
-                ></div>
+                    <div class="avatarArm rightArm"></div>
 
-                <div class="avatarHead"></div>
+                    <div class="avatarLeg leftLeg"></div>
 
-                <div class="avatarBody"></div>
+                    <div class="avatarLeg rightLeg"></div>
 
-                <div class="avatarArm leftArm"></div>
-                <div class="avatarArm rightArm"></div>
+                    <div id="gear" class="gear"></div>
 
-                <div class="avatarLeg leftLeg"></div>
-                <div class="avatarLeg rightLeg"></div>
-
-                <div
-                    id="gearVisual"
-                    class="gearVisual"
-                ></div>
+                </div>
 
             </div>
 
-        </div>
+            <div class="avatarControls">
 
-        <div class="avatarControls">
-
-            <h3>Avatar Controls</h3>
-
-            <button
-                class="controlButton"
-                onclick="toggleHeadless()"
-            >
-                Toggle Headless
-            </button>
-
-            <button
-                class="controlButton"
-                onclick="toggleKorblox()"
-            >
-                Toggle Korblox Leg
-            </button>
-
-            <button
-                class="controlButton"
-                onclick="clearAccessories()"
-            >
-                Remove Accessories
-            </button>
-
-            <button
-                class="controlButton"
-                onclick="removeGear()"
-            >
-                Remove Gear
-            </button>
-
-            <hr>
-
-            <strong>Equipped Items</strong>
-
-            <div id="equippedList">
-                Nothing equipped.
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- INVENTORY -->
-
-<section id="inventory" class="section">
-
-    <div class="sectionHeader">
-        Inventory
-    </div>
-
-    <div
-        id="inventoryGrid"
-        class="inventoryGrid"
-    ></div>
-
-</section>
-
-<!-- GAMES -->
-
-<section id="games" class="section">
-
-    <div class="sectionHeader">
-        Games
-    </div>
-
-    <div style="
-        padding:15px 20px;
-        background:#fff8dc;
-        border-bottom:1px solid #ddd;
-    ">
-        🎮 Play games to earn <strong>Tix</strong>!
-        Each game gives you <strong>25 Tix</strong>.
-    </div>
-
-    <div class="gamesGrid">
-
-        <div class="game">
-
-            <div class="gameImage">
-                MTB CITY
-            </div>
-
-            <div class="gameInfo">
-
-                <h3>MTB City</h3>
-
-                <span>
-                    0 Players
-                </span>
+                <h2>
+                    Avatar Editor
+                </h2>
 
                 <button
-                    class="playButton"
-                    onclick="playGame('MTB City')"
-                >
+                    class="controlButton"
+                    onclick="toggleAccessory('korblox','Korblox Leg')">
+                    Toggle Korblox Leg
+                </button>
+
+                <button
+                    class="controlButton"
+                    onclick="toggleGear('big-pencil','BIG Pencil')">
+                    Hold BIG Pencil
+                </button>
+
+                <button
+                    class="controlButton"
+                    onclick="removeGear()">
+                    Remove Gear
+                </button>
+
+                <div class="equipped">
+
+                    <strong>
+                        Equipped
+                    </strong>
+
+                    <div id="equippedText">
+                        Nothing equipped.
+                    </div>
+
+                    <div id="slots"></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= GAMES ================= -->
+
+    <section class="playSection" id="games">
+
+        <h1>
+            Games
+        </h1>
+
+        <p>
+            Play games to earn Robux and Tix!
+        </p>
+
+        <div class="gameGrid">
+
+            <div class="game">
+
+                <div class="gameImage">
+                    MTB OBBY
+                </div>
+
+                <h2>
+                    MTB Obby
+                </h2>
+
+                <p>
+                    Complete the obby.
+                </p>
+
+                <button class="playButton"
+                    onclick="playGame('MTB Obby',10,25)">
+                    PLAY
+                </button>
+
+            </div>
+
+            <div class="game">
+
+                <div class="gameImage">
+                    SWORD
+                </div>
+
+                <h2>
+                    Sword Fight
+                </h2>
+
+                <p>
+                    Win a sword battle.
+                </p>
+
+                <button class="playButton"
+                    onclick="playGame('Sword Fight',15,35)">
+                    PLAY
+                </button>
+
+            </div>
+
+            <div class="game">
+
+                <div class="gameImage">
+                    TIX
+                </div>
+
+                <h2>
+                    Tix Hunt
+                </h2>
+
+                <p>
+                    Find hidden Tix.
+                </p>
+
+                <button class="playButton"
+                    onclick="playGame('Tix Hunt',5,50)">
                     PLAY
                 </button>
 
@@ -1657,141 +1326,82 @@ button,input{font-family:inherit}
 
         </div>
 
-        <div class="game">
+    </section>
 
-            <div class="gameImage">
-                VOID
-            </div>
+    <!-- ================= INVENTORY ================= -->
 
-            <div class="gameInfo">
+    <section class="inventory" id="inventory">
 
-                <h3>Void Hangout</h3>
+        <h1>
+            Inventory
+        </h1>
 
-                <span>
-                    0 Players
-                </span>
-
-                <button
-                    class="playButton"
-                    onclick="playGame('Void Hangout')"
-                >
-                    PLAY
-                </button>
-
-            </div>
-
+        <div id="inventoryList">
+            No items yet.
         </div>
 
-        <div class="game">
-
-            <div class="gameImage">
-                CLASSIC
-            </div>
-
-            <div class="gameInfo">
-
-                <h3>Classic Roblox</h3>
-
-                <span>
-                    0 Players
-                </span>
-
-                <button
-                    class="playButton"
-                    onclick="playGame('Classic Roblox')"
-                >
-                    PLAY
-                </button>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- USER SEARCH -->
-
-<section class="section">
-
-    <div class="sectionHeader">
-        Search Users
-    </div>
-
-    <div class="userSearch">
-
-        <div class="userSearchRow">
-
-            <input
-                id="username"
-                placeholder="Enter Roblox username..."
-            >
-
-            <button onclick="searchUser()">
-                SEARCH
-            </button>
-
-        </div>
-
-        <div id="userResult"></div>
-
-    </div>
-
-</section>
-
-<!-- NEWS -->
-
-<section id="news" class="section">
-
-    <div class="sectionHeader">
-        News
-    </div>
-
-    <div class="news">
-
-        <div class="newsCard">
-            <strong>
-                MTB REVIVALS is live!
-            </strong>
-            <br>
-            Welcome to the revival.
-        </div>
-
-        <div class="newsCard">
-            <strong>
-                Tix are back!
-            </strong>
-            <br>
-            Play games to earn Tix.
-        </div>
-
-        <div class="newsCard">
-            <strong>
-                New catalog
-            </strong>
-            <br>
-            More accessories and clothes coming soon.
-        </div>
-
-    </div>
-
-</section>
+    </section>
 
 </main>
 
-<footer class="footer">
-    MTB REVIVALS © 2026
-</footer>
+<div class="chat">
+    <div class="chatTitle">
+        Chat (0)
+    </div>
+</div>
 
-<!-- MODAL -->
+<!-- ================= AUTH ================= -->
+
+<div id="authModal" class="authModal">
+
+    <div class="authBox">
+
+        <h1>
+            MTB REVIVALS
+        </h1>
+
+        <p>
+            Create an account or login.
+        </p>
+
+        <input
+            id="authUsername"
+            placeholder="Username"
+        >
+
+        <input
+            id="authPassword"
+            type="password"
+            placeholder="Password"
+        >
+
+        <button onclick="signup()">
+            SIGN UP
+        </button>
+
+        <button onclick="login()">
+            LOGIN
+        </button>
+
+        <button class="closeAuth"
+            onclick="closeAuth()">
+            CANCEL
+        </button>
+
+        <p id="authMessage"></p>
+
+    </div>
+
+</div>
+
+<!-- ================= CONFIRM ================= -->
 
 <div id="modal" class="modal">
 
     <div class="modalBox">
 
-        <h2 id="modalTitle">
-            Confirm Purchase
+        <h2>
+            Confirm Claim
         </h2>
 
         <p id="modalText">
@@ -1800,17 +1410,13 @@ button,input{font-family:inherit}
 
         <div class="modalButtons">
 
-            <button
-                class="cancel"
-                onclick="closeModal()"
-            >
+            <button class="cancel"
+                onclick="closeModal()">
                 CANCEL
             </button>
 
-            <button
-                class="confirm"
-                onclick="confirmPurchase()"
-            >
+            <button class="confirm"
+                onclick="confirmPurchase()">
                 CONFIRM
             </button>
 
@@ -1823,117 +1429,369 @@ button,input{font-family:inherit}
 <script>
 
 /* =====================================================
-   PLAYER DATA
+   MTB REVIVALS
 ===================================================== */
 
-const SAVE_KEY = "MTB_REVIVALS_ROBUX_TIX_V3";
+const ACCOUNT_KEY =
+    "MTB_REVIVALS_ACCOUNTS";
 
-const DEFAULT_PLAYER = {
+const CURRENT_KEY =
+    "MTB_REVIVALS_CURRENT";
 
-    robux:1000,
+const FIRST10_KEY =
+    "MTB_REVIVALS_FIRST_10";
 
-    tix:0,
-
-    owned:[],
-
-    equipped:{
-        shirt:null,
-        pants:null,
-        accessories:[],
-        gear:null,
-        headless:false,
-        korblox:false
-    }
-
-};
-
-let player =
+let accounts =
     JSON.parse(
-        localStorage.getItem(SAVE_KEY)
-    ) || structuredClone(DEFAULT_PLAYER);
+        localStorage.getItem(ACCOUNT_KEY)
+    ) || {};
 
-let pendingItem=null;
+let first10 =
+    JSON.parse(
+        localStorage.getItem(FIRST10_KEY)
+    ) || [];
 
+let currentUser =
+    localStorage.getItem(CURRENT_KEY);
 
-/* =====================================================
-   FIX OLD DATA
-===================================================== */
+let player = null;
 
-if(typeof player.robux !== "number"){
-    player.robux=1000;
-}
-
-if(typeof player.tix !== "number"){
-    player.tix=0;
-}
-
-if(!Array.isArray(player.owned)){
-    player.owned=[];
-}
-
-if(!player.equipped){
-    player.equipped=
-        structuredClone(DEFAULT_PLAYER.equipped);
-}
-
-if(!Array.isArray(player.equipped.accessories)){
-    player.equipped.accessories=[];
-}
+let pendingItem = null;
 
 
 /* =====================================================
-   SAVE
+   SAVE ACCOUNTS
 ===================================================== */
 
-function save(){
+function saveAccounts(){
 
     localStorage.setItem(
-        SAVE_KEY,
-        JSON.stringify(player)
+        ACCOUNT_KEY,
+        JSON.stringify(accounts)
     );
 
+    localStorage.setItem(
+        FIRST10_KEY,
+        JSON.stringify(first10)
+    );
 }
 
 
 /* =====================================================
-   UPDATE CURRENCY
+   GET PLAYER
 ===================================================== */
 
-function updateCurrency(){
+function loadPlayer(){
 
-    document.getElementById(
-        "robuxAmount"
-    ).textContent =
-        Number(player.robux).toLocaleString();
+    if(
+        currentUser &&
+        accounts[currentUser]
+    ){
 
-    document.getElementById(
-        "tixAmount"
-    ).textContent =
-        Number(player.tix).toLocaleString();
+        player =
+            accounts[currentUser];
 
+    }else{
+
+        player = null;
+    }
+
+    updateUI();
 }
 
 
 /* =====================================================
-   NAVIGATION
+   SAVE PLAYER
 ===================================================== */
 
-function goTo(id){
+function savePlayer(){
 
-    document
-        .getElementById(id)
-        .scrollIntoView({
-            behavior:"smooth"
-        });
+    if(!player){
+        return;
+    }
 
+    accounts[player.username] =
+        player;
+
+    saveAccounts();
+
+    updateUI();
 }
 
-function toggleMobileMenu(){
+
+/* =====================================================
+   MENU
+===================================================== */
+
+function toggleMenu(){
 
     document
-        .getElementById("mobileNav")
+        .getElementById("menu")
         .classList.toggle("open");
+}
 
+
+/* =====================================================
+   AUTH
+===================================================== */
+
+function openAuth(){
+
+    document
+        .getElementById("authModal")
+        .classList.add("show");
+
+    document
+        .getElementById("menu")
+        .classList.remove("open");
+}
+
+function closeAuth(){
+
+    document
+        .getElementById("authModal")
+        .classList.remove("show");
+}
+
+function signup(){
+
+    const username =
+        document
+        .getElementById("authUsername")
+        .value
+        .trim();
+
+    const password =
+        document
+        .getElementById("authPassword")
+        .value;
+
+    const message =
+        document
+        .getElementById("authMessage");
+
+    if(username.length < 3){
+
+        message.textContent =
+            "Username must be at least 3 characters.";
+
+        return;
+    }
+
+    if(password.length < 4){
+
+        message.textContent =
+            "Password must be at least 4 characters.";
+
+        return;
+    }
+
+    if(accounts[username]){
+
+        message.textContent =
+            "That username already exists.";
+
+        return;
+    }
+
+    const isFirst10 =
+        first10.length < 10;
+
+    player = {
+
+        username:username,
+
+        password:password,
+
+        robux:100,
+
+        tix:1000,
+
+        owned:[],
+
+        equipped:{
+            shirt:null,
+            pants:null,
+            accessories:[],
+            gear:null
+        },
+
+        first10:isFirst10,
+
+        gamesPlayed:0
+
+    };
+
+    accounts[username] =
+        player;
+
+    if(isFirst10){
+
+        first10.push(username);
+    }
+
+    saveAccounts();
+
+    currentUser =
+        username;
+
+    localStorage.setItem(
+        CURRENT_KEY,
+        currentUser
+    );
+
+    closeAuth();
+
+    updateUI();
+
+    alert(
+        isFirst10
+        ? "Welcome! You are one of the FIRST 10 players! You received the First 10 badge!"
+        : "Account created!"
+    );
+}
+
+
+/* =====================================================
+   LOGIN
+===================================================== */
+
+function login(){
+
+    const username =
+        document
+        .getElementById("authUsername")
+        .value
+        .trim();
+
+    const password =
+        document
+        .getElementById("authPassword")
+        .value;
+
+    const message =
+        document
+        .getElementById("authMessage");
+
+    if(
+        !accounts[username] ||
+        accounts[username].password !== password
+    ){
+
+        message.textContent =
+            "Incorrect username or password.";
+
+        return;
+    }
+
+    player =
+        accounts[username];
+
+    currentUser =
+        username;
+
+    localStorage.setItem(
+        CURRENT_KEY,
+        currentUser
+    );
+
+    closeAuth();
+
+    updateUI();
+}
+
+
+/* =====================================================
+   LOGOUT
+===================================================== */
+
+function logout(){
+
+    player = null;
+
+    currentUser = null;
+
+    localStorage.removeItem(
+        CURRENT_KEY
+    );
+
+    updateUI();
+}
+
+
+/* =====================================================
+   UPDATE UI
+===================================================== */
+
+function updateUI(){
+
+    const name =
+        document.getElementById(
+            "accountName"
+        );
+
+    const status =
+        document.getElementById(
+            "playerStatus"
+        );
+
+    const badge =
+        document.getElementById(
+            "badgeArea"
+        );
+
+    if(!player){
+
+        name.textContent =
+            "Guest";
+
+        status.textContent =
+            "Not signed in";
+
+        badge.innerHTML = "";
+
+        document.getElementById(
+            "robux"
+        ).textContent = "0";
+
+        document.getElementById(
+            "tix"
+        ).textContent = "0";
+
+        renderInventory();
+
+        return;
+    }
+
+    name.textContent =
+        player.username;
+
+    status.textContent =
+        "Signed in";
+
+    if(player.first10){
+
+        badge.innerHTML =
+            '<span class="firstBadge">🏆 FIRST 10</span>';
+
+    }else{
+
+        badge.innerHTML = "";
+    }
+
+    document.getElementById(
+        "robux"
+    ).textContent =
+        player.robux;
+
+    document.getElementById(
+        "tix"
+    ).textContent =
+        player.tix;
+
+    renderInventory();
+
+    loadAvatar();
 }
 
 
@@ -1941,155 +1799,91 @@ function toggleMobileMenu(){
    BUY
 ===================================================== */
 
-function buyItem(
-    id,
-    name,
-    type,
-    price,
-    currency
-){
+function buyItem(id,name,type){
+
+    if(!player){
+
+        alert(
+            "Please sign up or login first."
+        );
+
+        openAuth();
+
+        return;
+    }
 
     if(
         player.owned.some(
-            item=>item.id===id
+            item => item.id === id
         )
     ){
 
-        equipOwned(
+        equipItem(
             id,
             name,
             type
         );
 
         return;
-
     }
 
-    pendingItem={
-        id,
-        name,
-        type,
-        price,
-        currency
+    pendingItem = {
+        id:id,
+        name:name,
+        type:type
     };
 
-    if(currency==="free"){
-
-        document.getElementById(
-            "modalTitle"
-        ).textContent="Confirm Claim";
-
-        document.getElementById(
-            "modalText"
-        ).innerHTML =
-            "<strong>"+
-            escapeHTML(name)+
-            "</strong><br><br>"+
-            "Price: <strong>FREE</strong>"+
-            "<br><br>"+
-            "Do you want to claim this item?";
-
-    }else{
-
-        const currencyName =
-            currency==="robux"
-            ? "Robux"
-            : "Tix";
-
-        document.getElementById(
-            "modalTitle"
-        ).textContent="Confirm Purchase";
-
-        document.getElementById(
-            "modalText"
-        ).innerHTML =
-            "<strong>"+
-            escapeHTML(name)+
-            "</strong><br><br>"+
-            "Price: <strong>"+
-            Number(price).toLocaleString()+
-            " "+
-            currencyName+
-            "</strong><br><br>"+
-            "Do you want to purchase this item?";
-
-    }
+    document.getElementById(
+        "modalText"
+    ).innerHTML =
+        "<strong>"+escapeHTML(name)+
+        "</strong><br><br>"+
+        "Price: <strong>FREE</strong>"+
+        "<br><br>"+
+        "Do you want to claim this item?";
 
     document
         .getElementById("modal")
         .classList.add("show");
-
 }
 
 
 /* =====================================================
-   CONFIRM PURCHASE
+   CONFIRM
 ===================================================== */
 
 function confirmPurchase(){
 
-    if(!pendingItem){
+    if(!player || !pendingItem){
         return;
-    }
-
-    const item=pendingItem;
-
-    if(item.currency==="robux"){
-
-        if(player.robux < item.price){
-
-            alert(
-                "You do not have enough Robux."
-            );
-
-            return;
-
-        }
-
-        player.robux -= item.price;
-
-    }
-
-    if(item.currency==="tix"){
-
-        if(player.tix < item.price){
-
-            alert(
-                "You do not have enough Tix. Play games to earn more!"
-            );
-
-            return;
-
-        }
-
-        player.tix -= item.price;
-
     }
 
     player.owned.push({
 
-        id:item.id,
+        id:pendingItem.id,
 
-        name:item.name,
+        name:pendingItem.name,
 
-        type:item.type,
+        type:pendingItem.type,
 
-        price:item.price,
-
-        currency:item.currency
+        price:0
 
     });
 
-    save();
+    const item =
+        pendingItem;
 
-    updateCurrency();
+    pendingItem = null;
 
-    updateInventory();
-
-    updateBadges();
+    savePlayer();
 
     closeModal();
 
+    equipItem(
+        item.id,
+        item.name,
+        item.type
+    );
 }
 
 
@@ -2099,239 +1893,160 @@ function confirmPurchase(){
 
 function closeModal(){
 
-    pendingItem=null;
+    pendingItem = null;
 
     document
         .getElementById("modal")
         .classList.remove("show");
-
 }
 
 
 /* =====================================================
-   EQUIP
+   EQUIP ITEM
 ===================================================== */
 
-function equipOwned(
-    id,
-    name,
-    type
-){
+function equipItem(id,name,type){
 
-    const owned =
-        player.owned.some(
-            item=>item.id===id
-        );
+    if(!player){
+        return;
+    }
 
-    if(!owned){
+    if(type === "accessory"){
 
-        alert(
-            "You need to own this item first."
+        toggleAccessory(
+            id,
+            name
         );
 
         return;
-
     }
 
-    if(type==="accessory"){
+    if(type === "shirt"){
 
-        const index =
-            player.equipped
-                .accessories
-                .indexOf(id);
+        player.equipped.shirt =
+            id;
 
-        if(index!==-1){
+        savePlayer();
 
-            player.equipped
-                .accessories
-                .splice(index,1);
-
-        }else{
-
-            if(
-                player.equipped
-                    .accessories
-                    .length>=3
-            ){
-
-                alert(
-                    "You can only wear 3 accessories."
-                );
-
-                return;
-
-            }
-
-            player.equipped
-                .accessories
-                .push(id);
-
-        }
-
-    }
-
-    if(type==="shirt"){
-
-        if(
-            player.equipped.shirt===id
-        ){
-
-            player.equipped.shirt=null;
-
-        }else{
-
-            player.equipped.shirt=id;
-
-        }
-
-    }
-
-    if(type==="gear"){
-
-        if(
-            player.equipped.gear===id
-        ){
-
-            player.equipped.gear=null;
-
-        }else{
-
-            player.equipped.gear=id;
-
-        }
-
-    }
-
-    save();
-
-    renderAvatar();
-
-    updateInventory();
-
-}
-
-
-/* =====================================================
-   INVENTORY
-===================================================== */
-
-function updateInventory(){
-
-    const grid =
-        document.getElementById(
-            "inventoryGrid"
-        );
-
-    if(player.owned.length===0){
-
-        grid.innerHTML=
-            "<p>Your inventory is empty.</p>";
+        loadAvatar();
 
         return;
-
     }
 
-    grid.innerHTML =
-        player.owned
-        .map(item=>{
+    if(type === "gear"){
 
-            let equipped=false;
+        toggleGear(
+            id,
+            name
+        );
 
-            if(item.type==="accessory"){
-
-                equipped =
-                    player.equipped
-                        .accessories
-                        .includes(item.id);
-
-            }
-
-            if(item.type==="shirt"){
-
-                equipped =
-                    player.equipped.shirt===
-                    item.id;
-
-            }
-
-            if(item.type==="gear"){
-
-                equipped =
-                    player.equipped.gear===
-                    item.id;
-
-            }
-
-            return `
-
-                <div class="inventoryItem">
-
-                    <h3>
-                        ${escapeHTML(item.name)}
-                    </h3>
-
-                    <small>
-                        ${escapeHTML(item.type)}
-                    </small>
-
-                    <br>
-
-                    <small>
-                        ${item.currency==="free"
-                            ? "FREE"
-                            : Number(item.price).toLocaleString()
-                              +" "+
-                              (item.currency==="robux"
-                                ? "Robux"
-                                : "Tix")}
-                    </small>
-
-                    <button
-                        onclick="equipOwned(
-                            '${escapeJS(item.id)}',
-                            '${escapeJS(item.name)}',
-                            '${escapeJS(item.type)}'
-                        )"
-                    >
-                        ${equipped
-                            ? "UNEQUIP"
-                            : "EQUIP"}
-                    </button>
-
-                </div>
-
-            `;
-
-        })
-        .join("");
-
+        return;
+    }
 }
 
 
 /* =====================================================
-   AVATAR
+   ACCESSORIES
 ===================================================== */
 
-function renderAvatar(){
+function toggleAccessory(id,name){
+
+    if(!player){
+        return;
+    }
+
+    const list =
+        player.equipped.accessories;
+
+    const index =
+        list.indexOf(id);
+
+    if(index !== -1){
+
+        list.splice(index,1);
+
+    }else{
+
+        if(list.length >= 3){
+
+            alert(
+                "You can only wear 3 accessories at once."
+            );
+
+            return;
+        }
+
+        list.push(id);
+    }
+
+    savePlayer();
+
+    loadAvatar();
+}
+
+
+/* =====================================================
+   GEAR
+===================================================== */
+
+function toggleGear(id,name){
+
+    if(!player){
+        return;
+    }
+
+    if(
+        player.equipped.gear === id
+    ){
+
+        player.equipped.gear = null;
+
+    }else{
+
+        player.equipped.gear = id;
+    }
+
+    savePlayer();
+
+    loadAvatar();
+}
+
+function removeGear(){
+
+    if(!player){
+        return;
+    }
+
+    player.equipped.gear =
+        null;
+
+    savePlayer();
+
+    loadAvatar();
+}
+
+
+/* =====================================================
+   LOAD AVATAR
+===================================================== */
+
+function loadAvatar(){
+
+    if(!player){
+        return;
+    }
 
     const avatar =
         document.getElementById(
-            "avatar"
+            "avatarCharacter"
         );
 
-    avatar.classList.toggle(
-        "headless",
-        player.equipped.headless
+    avatar.classList.remove(
+        "holding"
     );
 
-    avatar.classList.toggle(
-        "korblox",
-        player.equipped.korblox
-    );
-
-    avatar.classList.toggle(
-        "holding",
-        !!player.equipped.gear
+    avatar.classList.remove(
+        "korblox"
     );
 
     const body =
@@ -2340,290 +2055,178 @@ function renderAvatar(){
         );
 
     body.style.background =
-        player.equipped.shirt==="longshirt"
-        ? "#333"
-        : "#171717";
-
-    const visuals=[
-        document.getElementById("visual1"),
-        document.getElementById("visual2"),
-        document.getElementById("visual3")
-    ];
-
-    visuals.forEach(
-        visual=>{
-            visual.className="accessoryVisual";
-        }
-    );
-
-    player.equipped
-        .accessories
-        .forEach(
-            (id,index)=>{
-
-                if(!visuals[index]){
-                    return;
-                }
-
-                if(id==="horns"){
-                    visuals[index]
-                        .classList.add("visualHorns");
-                }
-
-                if(
-                    id==="valk" ||
-                    id==="redvalk"
-                ){
-                    visuals[index]
-                        .classList.add("visualValk");
-                }
-
-                if(id==="fedora"){
-                    visuals[index]
-                        .classList.add("visualFedora");
-                }
-
-            }
-        );
-
-    const gear =
-        document.getElementById(
-            "gearVisual"
-        );
-
-    gear.className="gearVisual";
+        "#111";
 
     if(
-        player.equipped.gear==="pencil"
+        player.equipped.shirt ===
+        "mtb-long"
     ){
 
-        gear.classList.add(
-            "gearPencil"
-        );
+        body.style.background =
+            "#333";
 
     }
 
-    updateEquipped();
+    if(
+        player.equipped.accessories
+        .includes("korblox")
+    ){
 
+        avatar.classList.add(
+            "korblox"
+        );
+    }
+
+    const gear =
+        document.getElementById(
+            "gear"
+        );
+
+    gear.className =
+        "gear";
+
+    if(
+        player.equipped.gear
+    ){
+
+        avatar.classList.add(
+            "holding"
+        );
+
+        if(
+            player.equipped.gear ===
+            "big-pencil"
+        ){
+
+            gear.className =
+                "gear gearPencil";
+
+        }else{
+
+            gear.className =
+                "gear gearSword";
+        }
+    }
+
+    updateEquipped();
 }
 
 
 /* =====================================================
-   EQUIPPED
+   EQUIPPED DISPLAY
 ===================================================== */
 
 function updateEquipped(){
 
-    const list =
-        document.getElementById(
-            "equippedList"
+    if(!player){
+        return;
+    }
+
+    let text =
+        "Shirt: " +
+        (
+            player.equipped.shirt ||
+            "None"
         );
 
-    let html="";
+    text +=
+        "<br>Accessories: " +
+        player.equipped
+        .accessories
+        .length +
+        "/3";
 
-    if(player.equipped.shirt){
+    text +=
+        "<br>Gear: " +
+        (
+            player.equipped.gear ||
+            "None"
+        );
 
-        html+=`
-            <div class="equippedItem">
-                Shirt: ${escapeHTML(
-                    player.equipped.shirt
-                )}
-            </div>
-        `;
+    document.getElementById(
+        "equippedText"
+    ).innerHTML = text;
 
-    }
+    const slots =
+        document.getElementById(
+            "slots"
+        );
+
+    slots.innerHTML = "";
 
     player.equipped
         .accessories
-        .forEach(id=>{
+        .forEach((id,index)=>{
 
-            html+=`
-                <div class="equippedItem">
-                    Accessory: ${escapeHTML(id)}
-                </div>
-            `;
+            const div =
+                document.createElement(
+                    "div"
+                );
 
+            div.className =
+                "slot";
+
+            div.textContent =
+                "Accessory " +
+                (index+1) +
+                ": " +
+                id;
+
+            slots.appendChild(div);
         });
-
-    if(player.equipped.gear){
-
-        html+=`
-            <div class="equippedItem">
-                Gear: ${escapeHTML(
-                    player.equipped.gear
-                )}
-            </div>
-        `;
-
-    }
-
-    if(player.equipped.headless){
-
-        html+=`
-            <div class="equippedItem">
-                Headless
-            </div>
-        `;
-
-    }
-
-    if(player.equipped.korblox){
-
-        html+=`
-            <div class="equippedItem">
-                Korblox Leg
-            </div>
-        `;
-
-    }
-
-    if(!html){
-
-        html="<p>Nothing equipped.</p>";
-
-    }
-
-    list.innerHTML=html;
-
 }
 
 
 /* =====================================================
-   HEADLESS
+   INVENTORY
 ===================================================== */
 
-function toggleHeadless(){
+function renderInventory(){
 
-    player.equipped.headless =
-        !player.equipped.headless;
-
-    save();
-    renderAvatar();
-
-}
-
-
-/* =====================================================
-   KORBLOX
-===================================================== */
-
-function toggleKorblox(){
-
-    player.equipped.korblox =
-        !player.equipped.korblox;
-
-    save();
-    renderAvatar();
-
-}
-
-
-/* =====================================================
-   CLEAR ACCESSORIES
-===================================================== */
-
-function clearAccessories(){
-
-    player.equipped.accessories=[];
-
-    save();
-
-    renderAvatar();
-
-    updateInventory();
-
-}
-
-
-/* =====================================================
-   REMOVE GEAR
-===================================================== */
-
-function removeGear(){
-
-    player.equipped.gear=null;
-
-    save();
-
-    renderAvatar();
-
-    updateInventory();
-
-}
-
-
-/* =====================================================
-   BADGES
-===================================================== */
-
-function updateBadges(){
-
-    const ids=[
-        "valk",
-        "redvalk",
-        "horns",
-        "ninja",
-        "pencil",
-        "fedora",
-        "shirt",
-        "longshirt"
-    ];
-
-    ids.forEach(id=>{
-
-        const element =
-            document.getElementById(
-                "badge-"+id
-            );
-
-        if(!element){
-            return;
-        }
-
-        const owned =
-            player.owned.some(
-                item=>item.id===id
-            );
-
-        element.innerHTML =
-            owned
-            ? '<span class="ownedBadge">OWNED</span>'
-            : "";
-
-    });
-
-}
-
-
-/* =====================================================
-   FILTER
-===================================================== */
-
-function filterItems(
-    type,
-    button
-){
-
-    document
-        .querySelectorAll(".filter")
-        .forEach(
-            b=>b.classList.remove("active")
+    const list =
+        document.getElementById(
+            "inventoryList"
         );
 
-    button.classList.add("active");
+    list.innerHTML = "";
 
-    document
-        .querySelectorAll(".item")
-        .forEach(item=>{
+    if(!player){
 
-            item.style.display =
-                type==="all" ||
-                item.dataset.type===type
-                ? ""
-                : "none";
+        list.innerHTML =
+            "Login to view your inventory.";
 
-        });
+        return;
+    }
 
+    if(
+        player.owned.length === 0
+    ){
+
+        list.innerHTML =
+            "Your inventory is empty.";
+
+        return;
+    }
+
+    player.owned.forEach(item=>{
+
+        const div =
+            document.createElement(
+                "div"
+            );
+
+        div.className =
+            "inventoryItem";
+
+        div.innerHTML =
+            "<strong>" +
+            escapeHTML(item.name) +
+            "</strong>" +
+            " — " +
+            escapeHTML(item.type);
+
+        list.appendChild(div);
+    });
 }
 
 
@@ -2653,153 +2256,69 @@ function searchAssets(){
                 name.includes(query)
                 ? ""
                 : "none";
-
         });
-
 }
 
 
 /* =====================================================
-   PLAY GAME / EARN TIX
+   PLAY GAMES / EARN
 ===================================================== */
 
-function playGame(name){
+function playGame(game,robuxReward,tixReward){
 
-    const TIX_REWARD=25;
+    if(!player){
 
-    player.tix += TIX_REWARD;
-
-    save();
-
-    updateCurrency();
-
-    alert(
-        "You played "+name+"!\n\n"+
-        "+25 Tix earned!"
-    );
-
-}
-
-
-/* =====================================================
-   ROBLOX USER SEARCH
-===================================================== */
-
-async function searchUser(){
-
-    const username =
-        document
-        .getElementById(
-            "username"
-        )
-        .value
-        .trim();
-
-    const result =
-        document.getElementById(
-            "userResult"
+        alert(
+            "Create an account first so your rewards can be saved."
         );
 
-    if(!username){
-
-        result.innerHTML=
-            "<p>Enter a username.</p>";
+        openAuth();
 
         return;
-
     }
 
-    result.innerHTML=
-        "<p>Searching Roblox...</p>";
+    const button =
+        event.target;
 
-    try{
+    button.disabled = true;
 
-        const response =
-            await fetch(
-                "https://users.roblox.com/v1/usernames/users",
-                {
-                    method:"POST",
+    button.textContent =
+        "PLAYING...";
 
-                    headers:{
-                        "Content-Type":
-                        "application/json"
-                    },
+    setTimeout(()=>{
 
-                    body:JSON.stringify({
+        player.robux +=
+            robuxReward;
 
-                        usernames:[username],
+        player.tix +=
+            tixReward;
 
-                        excludeBannedUsers:false
+        player.gamesPlayed++;
 
-                    })
-                }
-            );
+        savePlayer();
 
-        const data =
-            await response.json();
+        button.disabled = false;
 
-        if(
-            !data.data ||
-            data.data.length===0
-        ){
+        button.textContent =
+            "PLAY";
 
-            result.innerHTML=
-                "<p>User not found.</p>";
+        alert(
+            "You completed " +
+            game +
+            "!\n\n" +
+            "+" +
+            robuxReward +
+            " Robux\n+" +
+            tixReward +
+            " Tix"
+        );
 
-            return;
-
-        }
-
-        const user=data.data[0];
-
-        result.innerHTML=`
-
-            <div style="
-                border:1px solid #ccc;
-                padding:15px;
-                background:white;
-                margin-top:15px;
-            ">
-
-                <h3>
-                    ${escapeHTML(user.name)}
-                </h3>
-
-                <p>
-                    @${escapeHTML(user.displayName)}
-                </p>
-
-                <a
-                    href="https://www.roblox.com/users/${user.id}/profile"
-                    target="_blank"
-                    style="
-                    display:inline-block;
-                    padding:10px 15px;
-                    background:#4382dc;
-                    color:white;
-                    text-decoration:none;
-                    font-weight:bold;
-                    "
-                >
-                    VIEW PROFILE
-                </a>
-
-            </div>
-
-        `;
-
-    }catch(error){
-
-        result.innerHTML=
-            "<p>Could not connect to Roblox.</p>";
-
-    }
-
+    },1500);
 }
 
 
 /* =====================================================
-   SECURITY
+   ESCAPE HTML
 ===================================================== */
 
 function escapeHTML(text){
@@ -2810,15 +2329,6 @@ function escapeHTML(text){
         .replace(/>/g,"&gt;")
         .replace(/"/g,"&quot;")
         .replace(/'/g,"&#039;");
-
-}
-
-function escapeJS(text){
-
-    return String(text)
-        .replace(/\\/g,"\\\\")
-        .replace(/'/g,"\\'");
-
 }
 
 
@@ -2826,21 +2336,7 @@ function escapeJS(text){
    START
 ===================================================== */
 
-function load(){
-
-    updateCurrency();
-
-    updateInventory();
-
-    updateBadges();
-
-    renderAvatar();
-
-    save();
-
-}
-
-load();
+loadPlayer();
 
 </script>
 
