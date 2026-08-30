@@ -3,878 +3,619 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>MTB REVIVALS</title>
 
 <style>
-*{
-    box-sizing:border-box;
-}
+*{box-sizing:border-box}
 
-html,body{
+body{
     margin:0;
-    padding:0;
     font-family:Arial,Helvetica,sans-serif;
-    background:#eee;
+    background:#f2f2f2;
     color:#222;
 }
 
-/* =========================
-   HEADER
-========================= */
+button,input{
+    font-family:inherit;
+}
 
 .header{
-    height:130px;
+    height:92px;
     background:#4382dc;
-    border-bottom:5px solid #ef8a2c;
-    position:relative;
     color:white;
+    display:flex;
+    align-items:center;
+    padding:0 25px;
+    position:sticky;
+    top:0;
     z-index:5000;
+    border-bottom:4px solid #ef8a2c;
 }
 
 .logo{
-    position:absolute;
-    left:25px;
-    top:37px;
-    font-size:46px;
-    font-weight:bold;
+    font-size:34px;
+    font-weight:900;
 }
 
-.headerUser{
-    position:absolute;
-    right:85px;
-    top:28px;
-    text-align:right;
-    font-size:15px;
+.headerRight{
+    margin-left:auto;
+    display:flex;
+    align-items:center;
+    gap:12px;
 }
 
 .currency{
-    margin-top:8px;
+    background:#2868c0;
+    border:1px solid rgba(255,255,255,.3);
+    padding:12px 15px;
+    border-radius:5px;
     font-weight:bold;
 }
 
-.robux{
-    color:#fff;
-}
-
-.tix{
-    color:#ffe16b;
-}
-
 .menuButton{
-    position:absolute;
-    right:20px;
-    top:30px;
-    width:52px;
-    height:55px;
-    border:2px solid rgba(255,255,255,.5);
-    background:rgba(0,0,0,.08);
+    width:48px;
+    height:45px;
+    border:0;
+    background:#2868c0;
     cursor:pointer;
+    border-radius:4px;
 }
 
 .menuButton span{
     display:block;
-    width:28px;
-    height:4px;
-    background:#fff;
-    margin:6px auto;
+    height:3px;
+    width:26px;
+    margin:5px auto;
+    background:white;
 }
-
-/* =========================
-   MENU
-========================= */
 
 .menu{
-    position:absolute;
-    right:20px;
-    top:90px;
-    width:230px;
-    background:#fff;
-    border:1px solid #aaa;
-    box-shadow:0 7px 25px rgba(0,0,0,.3);
     display:none;
-    z-index:9000;
+    position:fixed;
+    right:15px;
+    top:82px;
+    width:240px;
+    background:white;
+    box-shadow:0 6px 25px #0004;
+    border:1px solid #ccc;
+    z-index:6000;
 }
 
-.menu.open{
-    display:block;
-}
+.menu.open{display:block}
 
-.menu a,
 .menu button{
-    display:block;
     width:100%;
-    text-align:left;
-    padding:15px;
-    background:#fff;
+    padding:16px;
+    background:white;
     border:0;
     border-bottom:1px solid #ddd;
-    color:#222;
-    text-decoration:none;
+    text-align:left;
     font-size:17px;
     cursor:pointer;
 }
 
-.menu a:hover,
 .menu button:hover{
     background:#eee;
 }
 
-/* =========================
-   ANNOUNCEMENT
-========================= */
-
 .announcement{
-    background:#ef8a2c;
-    color:#fff;
+    background:#f58b2c;
+    color:white;
     text-align:center;
-    padding:12px;
-    font-size:20px;
+    padding:10px;
     font-weight:bold;
 }
 
-/* =========================
-   PAGE
-========================= */
-
 .page{
-    max-width:1250px;
+    max-width:1200px;
     margin:auto;
-    padding:30px 25px 150px;
+    padding:30px 25px 120px;
 }
+
+.hidden{display:none!important}
 
 .pageTitle{
     font-size:38px;
-    margin:0 0 25px;
+    margin:5px 0 25px;
 }
 
-/* =========================
-   ACCOUNT BAR
-========================= */
-
-.accountBar{
-    background:#fff;
-    border:1px solid #ccc;
-    padding:18px;
+.search{
     display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:15px;
     margin-bottom:25px;
 }
 
-.accountInfo{
+.search input{
+    flex:1;
+    height:55px;
+    border:2px solid #ccc;
+    padding:0 15px;
     font-size:18px;
 }
 
-.currencyBox{
+.search button{
+    width:65px;
+    border:0;
+    background:#3478bd;
+    color:white;
+    font-size:24px;
+    cursor:pointer;
+}
+
+.tabs{
     display:flex;
-    gap:10px;
+    gap:8px;
     flex-wrap:wrap;
-}
-
-.money{
-    border:1px solid #bbb;
-    padding:10px 15px;
-    background:#f8f8f8;
-    font-weight:bold;
-}
-
-.money:first-child{
-    color:#159447;
-}
-
-.money:last-child{
-    color:#c99700;
-}
-
-/* =========================
-   SEARCH
-========================= */
-
-.searchBox{
-    display:flex;
-    height:58px;
     margin-bottom:25px;
 }
 
-.searchBox input{
-    flex:1;
-    border:1px solid #aaa;
-    padding:10px 18px;
-    font-size:20px;
-}
-
-.searchBox button{
-    width:70px;
-    background:#3478bd;
-    border:0;
-    color:white;
+.tabs button{
+    border:1px solid #bbb;
+    background:white;
+    padding:12px 20px;
     cursor:pointer;
-    font-size:25px;
+    font-weight:bold;
 }
 
-/* =========================
-   CATALOG
-========================= */
+.tabs button.active{
+    background:#4382dc;
+    color:white;
+}
 
-.catalog{
+.itemGrid{
     display:grid;
     grid-template-columns:repeat(4,1fr);
     gap:18px;
 }
 
 .item{
-    background:#fff;
-    border:1px solid #bbb;
+    background:white;
+    border:1px solid #ccc;
     padding:12px;
-    transition:.15s;
-}
-
-.item:hover{
-    transform:translateY(-2px);
-    box-shadow:0 5px 15px rgba(0,0,0,.15);
+    border-radius:5px;
 }
 
 .itemImage{
     height:210px;
-    background:#ddd;
-    border:1px solid #aaa;
+    background:#eee;
+    border:1px solid #ccc;
     display:flex;
-    align-items:center;
     justify-content:center;
+    align-items:center;
     overflow:hidden;
 }
 
 .itemName{
     font-size:18px;
     font-weight:bold;
-    margin-top:12px;
+    margin-top:13px;
 }
 
-.itemType{
-    color:#777;
-    font-size:13px;
-    margin-top:5px;
-}
-
-.price{
-    margin-top:10px;
+.itemPrice{
+    margin-top:8px;
     font-weight:bold;
 }
 
-.price.free{
-    color:#d4a900;
-}
+.robux{color:#39a94b}
+.tix{color:#d59a16}
+.free{color:#39a94b}
 
-.price.robux{
-    color:#159447;
-}
-
-.price.tix{
-    color:#bd8d00;
-}
-
-.claim{
+.itemButton{
     width:100%;
-    margin-top:10px;
     border:0;
-    padding:11px;
     background:#4382dc;
-    color:#fff;
-    font-weight:bold;
+    color:white;
+    padding:11px;
+    margin-top:12px;
     cursor:pointer;
+    font-weight:bold;
+    border-radius:3px;
 }
 
-.claim:hover{
+.itemButton:hover{
     background:#2868c0;
 }
 
-/* =========================
-   CLASSIC AVATAR EDITOR
-========================= */
+/* CLASSIC AVATAR */
 
-.avatarEditor{
-    margin-top:35px;
-    background:#fff;
-    border:1px solid #aaa;
+.avatarBox{
+    background:white;
+    border:1px solid #ccc;
+    padding:20px;
 }
-
-.editorHeader{
-    background:#4382dc;
-    color:#fff;
-    padding:15px 20px;
-    font-size:25px;
-    font-weight:bold;
-}
-
-.editorBody{
-    display:grid;
-    grid-template-columns:1fr 330px;
-    min-height:650px;
-}
-
-/* =========================
-   AVATAR STAGE
-========================= */
 
 .avatarStage{
+    height:570px;
     position:relative;
-    min-height:650px;
     overflow:hidden;
-
-    background-color:#02030b;
+    background:#02030b;
 
     background-image:
-        radial-gradient(circle,#fff 1px,transparent 2px),
-        radial-gradient(circle,#8fbfff 1px,transparent 2px),
-        radial-gradient(circle,#fff 1px,transparent 2px),
-        radial-gradient(circle,#5d7cff 1px,transparent 2px);
+      radial-gradient(circle,#fff 1px,transparent 2px),
+      radial-gradient(circle,#7da4ff 1px,transparent 2px),
+      radial-gradient(circle,#fff 1px,transparent 2px);
 
-    background-size:
-        90px 90px,
-        150px 150px,
-        210px 210px,
-        270px 270px;
-
-    background-position:
-        10px 20px,
-        40px 60px,
-        100px 30px,
-        20px 120px;
+    background-size:90px 90px,150px 150px,230px 230px;
 }
-
-/* subtle classic grid */
-.avatarStage:after{
-    content:"";
-    position:absolute;
-    left:0;
-    right:0;
-    bottom:0;
-    height:130px;
-    background:
-        linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),
-        linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);
-    background-size:30px 30px;
-}
-
-/* =========================
-   BLOCKY AVATAR
-========================= */
 
 .avatar{
     position:absolute;
-    width:300px;
-    height:540px;
+    width:260px;
+    height:475px;
     left:50%;
-    bottom:45px;
+    bottom:25px;
     transform:translateX(-50%);
 }
 
-/* head */
+/* classic R6 proportions */
 
-.avatarHead{
+.head{
     position:absolute;
-    left:100px;
-    top:5px;
     width:100px;
     height:100px;
-    background:#f2c078;
-    border:4px solid #111;
+    left:80px;
+    top:0;
+    background:#f2bd7b;
+    border:3px solid #222;
     border-radius:3px;
     z-index:5;
 }
-
-/* classic face */
 
 .face{
     position:absolute;
     inset:0;
 }
 
-.faceClassic:before,
-.faceClassic:after{
+.face:before,
+.face:after{
     content:"";
     position:absolute;
-    top:42px;
     width:10px;
-    height:14px;
+    height:15px;
     background:#111;
     border-radius:50%;
+    top:40px;
 }
 
-.faceClassic:before{
-    left:27px;
-}
+.face:before{left:27px}
+.face:after{right:27px}
 
-.faceClassic:after{
-    right:27px;
-}
-
-.faceSmile{
+.smile{
     position:absolute;
-    width:35px;
-    height:17px;
-    left:29px;
-    top:61px;
-    border-bottom:4px solid #111;
-    border-radius:0 0 50px 50px;
-}
-
-/* hair */
-
-.hair{
-    position:absolute;
-    z-index:8;
-    pointer-events:none;
-}
-
-.hairClassic{
-    left:91px;
-    top:-5px;
-    width:118px;
-    height:48px;
-    background:#171717;
-    border-radius:50% 50% 20% 20%;
-    border:4px solid #111;
-}
-
-.hairSpiky{
-    left:87px;
-    top:-12px;
-    width:126px;
-    height:65px;
-    background:#111;
-    clip-path:polygon(
-        0 50%,
-        15% 25%,
-        25% 45%,
-        40% 10%,
-        52% 42%,
-        70% 5%,
-        78% 45%,
-        100% 20%,
-        90% 80%,
-        10% 80%
-    );
-}
-
-/* torso */
-
-.avatarBody{
-    position:absolute;
-    left:70px;
-    top:112px;
-    width:160px;
-    height:145px;
-    background:#111;
-    border:4px solid #111;
-    border-radius:2px;
-    z-index:3;
-}
-
-.shirtLogo{
-    position:absolute;
-    inset:0;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    color:#fff;
-    font-size:34px;
-    font-weight:bold;
-}
-
-/* arms */
-
-.avatarArm{
-    position:absolute;
-    top:115px;
-    width:52px;
-    height:145px;
-    background:#f2c078;
-    border:4px solid #111;
-    border-radius:2px;
-    z-index:2;
-}
-
-.leftArm{
-    left:15px;
-}
-
-.rightArm{
-    right:15px;
-}
-
-.holding .rightArm{
-    transform:rotate(-42deg);
-    transform-origin:top center;
-}
-
-/* legs */
-
-.avatarLeg{
-    position:absolute;
-    top:260px;
-    width:75px;
-    height:175px;
-    background:#1e1e1e;
-    border:4px solid #111;
-    z-index:2;
-}
-
-.leftLeg{
-    left:70px;
-}
-
-.rightLeg{
-    right:70px;
-}
-
-/* korblox */
-
-.korblox .rightLeg{
     width:38px;
-    right:88px;
-    background:#2f72d6;
+    height:18px;
+    border-bottom:3px solid #111;
+    border-radius:50%;
+    left:28px;
+    top:58px;
 }
 
-.korblox .leftLeg{
-    width:82px;
-}
-
-/* =========================
-   ACCESSORIES
-========================= */
-
-.accessory{
-    display:none;
+.torso{
     position:absolute;
-    z-index:20;
+    width:130px;
+    height:135px;
+    left:65px;
+    top:105px;
+    background:#111;
+    border:3px solid #222;
+    z-index:2;
+}
+
+.shirtText{
+    position:absolute;
+    width:100%;
+    text-align:center;
+    top:45px;
+    color:white;
+    font-size:27px;
+    font-weight:900;
+}
+
+.arm{
+    position:absolute;
+    width:55px;
+    height:135px;
+    top:105px;
+    background:#f2bd7b;
+    border:3px solid #222;
+    z-index:1;
+}
+
+.leftArm{left:10px}
+.rightArm{right:10px}
+
+.leg{
+    position:absolute;
+    width:62px;
+    height:145px;
+    top:240px;
+    background:#222;
+    border:3px solid #222;
+}
+
+.leftLeg{left:65px}
+.rightLeg{right:65px}
+
+/* clothing */
+
+.clothing{
+    position:absolute;
+    z-index:4;
     pointer-events:none;
 }
 
-/* hat */
+.pantsOverlay{
+    top:240px;
+    left:65px;
+    width:130px;
+    height:145px;
+}
+
+.longShirt{
+    top:105px;
+    left:65px;
+    width:130px;
+    height:180px;
+    background:#333;
+}
+
+/* accessories */
+
+.hat{
+    position:absolute;
+    z-index:10;
+    display:none;
+}
 
 .hatFedora{
-    left:74px;
-    top:-45px;
-    width:155px;
-    height:70px;
-    background:linear-gradient(135deg,#e33838,#f3d63c,#45d46e,#4d9ff2,#a356df);
-    border:4px solid #222;
-    border-radius:65% 65% 20% 20%;
+    width:125px;
+    height:52px;
+    left:68px;
+    top:-28px;
+    background:linear-gradient(135deg,#e62d2d,#f1d237,#38c96a,#4382dc,#9d42d1);
+    border-radius:50% 50% 15% 15%;
+    border:3px solid #222;
 }
 
 .hatFedora:after{
     content:"";
     position:absolute;
-    left:-15px;
-    bottom:-10px;
-    width:180px;
-    height:20px;
-    background:#333;
+    width:155px;
+    height:22px;
+    left:-18px;
+    bottom:-8px;
+    background:#444;
+    border:3px solid #222;
     border-radius:50%;
-    border:3px solid #111;
 }
 
-/* horns */
-
 .horns{
-    left:75px;
-    top:-75px;
-    width:150px;
-    height:90px;
+    width:160px;
+    height:100px;
+    left:50px;
+    top:-65px;
+    display:none;
 }
 
 .horns:before,
 .horns:after{
     content:"";
     position:absolute;
-    width:48px;
-    height:100px;
-    background:#a9edff;
-    border:4px solid #2878b9;
-    clip-path:polygon(
-        50% 0,
-        100% 100%,
-        65% 78%,
-        50% 100%,
-        35% 78%,
-        0 100%
-    );
+    width:55px;
+    height:105px;
+    background:linear-gradient(#bff6ff,#4e91ff);
+    border:3px solid #222;
+    clip-path:polygon(50% 0,100% 100%,55% 80%,0 100%);
 }
 
 .horns:before{
     left:8px;
-    transform:rotate(-18deg);
+    transform:rotate(-28deg);
 }
 
 .horns:after{
     right:8px;
-    transform:rotate(18deg);
+    transform:rotate(28deg);
 }
 
-/* valk */
-
 .valk{
-    left:58px;
+    width:150px;
+    height:90px;
+    left:55px;
     top:-45px;
-    width:185px;
-    height:85px;
-    background:linear-gradient(135deg,#2748bd,#7f9dff);
+    display:none;
+}
+
+.valk:before,
+.valk:after{
+    content:"";
+    position:absolute;
+    width:65px;
+    height:95px;
+    background:linear-gradient(135deg,#294bd0,#91aaff);
+    border:3px solid #222;
     clip-path:polygon(
-        50% 0,
-        63% 30%,
-        90% 12%,
-        78% 48%,
-        100% 65%,
-        66% 63%,
-        50% 100%,
-        34% 63%,
-        0 65%,
-        22% 48%,
-        10% 12%,
-        37% 30%
+        50% 0,65% 35%,100% 15%,78% 53%,
+        100% 75%,65% 65%,50% 100%,
+        35% 65%,0 75%,22% 53%,0 15%,35% 35%
     );
 }
 
-/* shoulder accessory */
-
-.shoulderGold{
-    left:53px;
-    top:105px;
-    width:195px;
-    height:45px;
-    border-radius:50%;
-    background:linear-gradient(#ffe16b,#b88616);
-    border:4px solid #6c4c00;
-}
-
-/* gear */
+.valk:before{left:0}
+.valk:after{right:0}
 
 .gear{
     display:none;
     position:absolute;
-    z-index:30;
+    z-index:20;
 }
 
-.gearSword{
-    right:-50px;
-    top:180px;
-    width:32px;
-    height:170px;
-    transform:rotate(-35deg);
+.sword{
+    width:24px;
+    height:145px;
+    right:-28px;
+    top:165px;
     background:linear-gradient(90deg,#555,#fff,#888);
     border:3px solid #222;
-    clip-path:polygon(
-        50% 0,
-        100% 15%,
-        65% 100%,
-        35% 100%,
-        0 15%
-    );
-}
-
-.gearPencil{
-    right:-45px;
-    top:170px;
-    width:27px;
-    height:175px;
-    transform:rotate(-30deg);
-    background:linear-gradient(90deg,#d08a12,#ffe24d,#d08a12);
-    border:3px solid #654600;
-}
-
-.gearHammer{
-    right:-50px;
-    top:190px;
-    width:22px;
-    height:135px;
-    background:#704525;
     transform:rotate(-25deg);
 }
 
-.gearHammer:before{
+.pencil{
+    width:24px;
+    height:150px;
+    right:-25px;
+    top:165px;
+    background:linear-gradient(90deg,#c88818,#ffe55b,#c88818);
+    border:3px solid #222;
+    transform:rotate(-25deg);
+}
+
+.hammer{
+    width:20px;
+    height:120px;
+    right:-25px;
+    top:180px;
+    background:#75452a;
+    transform:rotate(-20deg);
+}
+
+.hammer:before{
     content:"";
     position:absolute;
-    width:85px;
-    height:35px;
-    top:-15px;
-    left:-31px;
+    width:75px;
+    height:30px;
+    left:-28px;
+    top:-10px;
     background:#888;
-    border:4px solid #333;
+    border:3px solid #222;
 }
 
-/* =========================
-   EDITOR SIDEBAR
-========================= */
-
-.editorSide{
-    border-left:1px solid #aaa;
-    background:#f5f5f5;
-    padding:18px;
-    overflow:auto;
-}
-
-.editorSide h2{
-    margin-top:0;
-}
-
-.tabButtons{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:7px;
-}
-
-.tabButtons button{
-    border:1px solid #aaa;
-    background:#fff;
-    padding:10px 5px;
-    cursor:pointer;
-    font-weight:bold;
-}
-
-.tabButtons button.active{
-    background:#4382dc;
-    color:#fff;
-}
-
-.editorTab{
-    display:none;
-    margin-top:18px;
-}
-
-.editorTab.active{
-    display:block;
-}
-
-.editorItem{
-    background:#fff;
-    border:1px solid #bbb;
-    padding:10px;
-    margin-bottom:9px;
-    cursor:pointer;
-}
-
-.editorItem:hover{
-    background:#eee;
-}
-
-.editorItem strong{
-    display:block;
-}
-
-.equippedList{
+.avatarControls{
     margin-top:20px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
+}
+
+.avatarControls button{
     padding:12px;
-    background:#fff;
-    border:1px solid #aaa;
-}
-
-.slot{
-    padding:8px;
-    border-bottom:1px solid #ddd;
-    font-size:14px;
-}
-
-.resetButton{
-    margin-top:12px;
-    width:100%;
-    padding:11px;
-    background:#d84b42;
-    color:#fff;
-    border:0;
+    border:1px solid #bbb;
+    background:#eee;
     cursor:pointer;
 }
 
-/* =========================
-   PROFILE
-========================= */
+.equipped{
+    margin-top:20px;
+    border:1px solid #ccc;
+    padding:15px;
+    background:#fafafa;
+}
+
+/* PROFILE */
 
 .profile{
-    margin-top:30px;
-    background:#fff;
-    border:1px solid #aaa;
+    background:white;
+    border:1px solid #ccc;
     padding:25px;
 }
 
 .profileHeader{
     display:flex;
-    gap:20px;
     align-items:center;
+    gap:20px;
+    border-bottom:1px solid #ddd;
+    padding-bottom:20px;
 }
 
 .profileAvatar{
     width:100px;
     height:100px;
-    background:#ddd;
-    border:2px solid #888;
+    background:#4382dc;
+    border:3px solid #222;
     display:flex;
-    align-items:center;
     justify-content:center;
-    font-size:45px;
+    align-items:center;
+    font-size:40px;
+    font-weight:bold;
+    color:white;
+}
+
+.badges{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-top:20px;
 }
 
 .badge{
-    display:inline-block;
-    margin-top:10px;
-    padding:7px 12px;
-    background:#4382dc;
-    color:#fff;
+    padding:10px 14px;
+    background:#f5c542;
+    border:2px solid #b58c13;
+    border-radius:5px;
     font-weight:bold;
 }
 
-/* =========================
-   USERS
-========================= */
-
-.userSearch{
-    margin-top:30px;
-    background:#fff;
-    border:1px solid #aaa;
-    padding:20px;
+.badge.owner{
+    background:#4382dc;
+    color:white;
+    border-color:#2868c0;
 }
 
-.userSearch input{
+/* LOGIN */
+
+.auth{
+    max-width:500px;
+    margin:30px auto;
+    background:white;
+    border:1px solid #ccc;
+    padding:25px;
+}
+
+.auth input{
     width:100%;
-    padding:13px;
-    border:1px solid #aaa;
-    font-size:18px;
+    height:50px;
+    border:2px solid #ccc;
+    margin-bottom:12px;
+    padding:10px;
+    font-size:17px;
 }
 
-.userSearch button{
-    margin-top:10px;
-    padding:12px 25px;
-    border:0;
+.auth button{
+    width:100%;
+    padding:14px;
     background:#4382dc;
-    color:#fff;
+    color:white;
+    border:0;
     font-weight:bold;
+    cursor:pointer;
 }
 
-/* =========================
-   MODAL
-========================= */
+.authSwitch{
+    text-align:center;
+    margin-top:15px;
+    color:#4382dc;
+    cursor:pointer;
+}
+
+/* MODAL */
 
 .modal{
     position:fixed;
     inset:0;
-    background:rgba(0,0,0,.6);
+    background:#0008;
     display:none;
-    justify-content:center;
     align-items:center;
-    z-index:10000;
+    justify-content:center;
+    z-index:9000;
 }
 
-.modal.show{
-    display:flex;
-}
+.modal.show{display:flex}
 
 .modalBox{
     width:90%;
     max-width:430px;
-    background:#fff;
+    background:white;
     padding:25px;
-    border:1px solid #888;
+    border-radius:6px;
 }
 
 .modalButtons{
@@ -887,127 +628,92 @@ html,body{
     flex:1;
     padding:13px;
     border:0;
-    font-weight:bold;
     cursor:pointer;
+    font-weight:bold;
 }
 
 .confirm{
     background:#4382dc;
-    color:#fff;
+    color:white;
 }
 
 .cancel{
     background:#ddd;
 }
 
-/* =========================
-   AUTH
-========================= */
-
-.authBox{
-    max-width:500px;
-    margin:40px auto;
-    background:#fff;
-    border:1px solid #aaa;
-    padding:25px;
+.userSearch{
+    background:white;
+    border:1px solid #ccc;
+    padding:20px;
+    margin-top:25px;
 }
 
-.authBox input{
+.userSearch input{
     width:100%;
-    padding:13px;
-    margin-bottom:10px;
-    border:1px solid #aaa;
-    font-size:17px;
+    height:50px;
+    padding:10px;
+    border:2px solid #ccc;
 }
 
-.authBox button{
-    width:100%;
-    padding:13px;
-    border:0;
+.userSearch button{
+    margin-top:10px;
+    padding:12px 25px;
     background:#4382dc;
-    color:#fff;
-    font-weight:bold;
-    cursor:pointer;
+    color:white;
+    border:0;
 }
 
-.authMessage{
-    margin-top:15px;
-    font-weight:bold;
-}
-
-/* =========================
-   CHAT
-========================= */
-
-.chat{
+.footer{
     position:fixed;
-    left:20px;
-    right:20px;
     bottom:0;
+    left:0;
+    right:0;
     height:55px;
     background:#4382dc;
-    color:#fff;
-    z-index:6000;
-    border-radius:10px 10px 0 0;
-    padding:16px 20px;
-    font-weight:bold;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index:4000;
 }
 
-/* =========================
-   MOBILE
-========================= */
-
-@media(max-width:900px){
-
-    .catalog{
+@media(max-width:850px){
+    .itemGrid{
         grid-template-columns:repeat(2,1fr);
     }
-
-    .editorBody{
-        grid-template-columns:1fr;
-    }
-
-    .editorSide{
-        border-left:0;
-        border-top:1px solid #aaa;
-    }
-
 }
 
-@media(max-width:600px){
+@media(max-width:550px){
 
     .header{
-        height:115px;
+        height:75px;
+        padding:0 12px;
     }
 
     .logo{
-        left:15px;
-        top:30px;
-        font-size:28px;
+        font-size:22px;
     }
 
-    .headerUser{
-        right:70px;
-        top:20px;
-        font-size:11px;
+    .currency{
+        padding:8px;
+        font-size:12px;
     }
 
-    .menuButton{
-        right:10px;
-        top:25px;
-    }
-
-    .announcement{
-        font-size:15px;
+    .menu{
+        top:68px;
     }
 
     .page{
-        padding:20px 12px 100px;
+        padding:20px 12px 90px;
     }
 
-    .catalog{
-        grid-template-columns:1fr 1fr;
+    .itemGrid{
+        grid-template-columns:repeat(2,1fr);
         gap:10px;
+    }
+
+    .item{
+        padding:8px;
     }
 
     .itemImage{
@@ -1018,21 +724,12 @@ html,body{
         font-size:15px;
     }
 
-    .avatarStage{
-        min-height:560px;
+    .itemButton{
+        font-size:12px;
     }
 
-    .avatar{
-        transform:translateX(-50%) scale(.78);
-        transform-origin:bottom center;
-    }
-
-    .accountBar{
-        display:block;
-    }
-
-    .currencyBox{
-        margin-top:15px;
+    .avatarControls{
+        grid-template-columns:1fr 1fr;
     }
 }
 </style>
@@ -1042,531 +739,410 @@ html,body{
 
 <header class="header">
 
-    <div class="logo">
-        MTB REVIVALS
-    </div>
+    <div class="logo">MTB REVIVALS</div>
 
-    <div class="headerUser">
-        <div id="headerUsername">
-            Guest
+    <div class="headerRight">
+
+        <div class="currency">
+            💰 <span id="robux">0</span>
         </div>
 
         <div class="currency">
-            <span class="robux">
-                R$ <span id="headerRobux">0</span>
-            </span>
-
-            &nbsp; | &nbsp;
-
-            <span class="tix">
-                TIX <span id="headerTix">0</span>
-            </span>
+            🪙 <span id="tix">0</span>
         </div>
-    </div>
 
-    <button class="menuButton" onclick="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
+        <button class="menuButton" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
 
-    <div id="menu" class="menu">
-        <a href="#catalog">Catalog</a>
-        <a href="#avatarEditor">Avatar</a>
-        <a href="#profile">My Profile</a>
-        <a href="#userSearch">Search Users</a>
-        <a href="#auth">Sign Up / Login</a>
-        <button onclick="logout()">Logout</button>
     </div>
 
 </header>
 
+<div id="menu" class="menu">
+
+    <button onclick="showPage('home')">🏠 Home</button>
+    <button onclick="showPage('catalog')">🛒 Catalog</button>
+    <button onclick="showPage('avatar')">👤 Avatar</button>
+    <button onclick="showPage('profile')">📋 My Profile</button>
+    <button onclick="showPage('inventory')">🎒 Inventory</button>
+    <button onclick="showPage('games')">🎮 Games</button>
+    <button onclick="showPage('news')">📰 News</button>
+    <button onclick="logout()">🚪 Logout</button>
+
+</div>
+
 <div class="announcement">
-    Welcome to MTB REVIVALS! &nbsp; • &nbsp; Play games to earn Robux & Tix!
+    Welcome to MTB REVIVALS! Everything is FREE right now!
 </div>
 
 <main class="page">
 
-    <!-- ACCOUNT -->
+<!-- LOGIN -->
 
-    <section class="accountBar">
+<section id="loginPage">
 
-        <div class="accountInfo">
-            <strong id="welcomeText">
-                Welcome, Guest!
-            </strong>
+    <div class="auth">
 
-            <div id="badgeArea"></div>
+        <h1>Sign In</h1>
+
+        <input id="loginUsername" placeholder="Username">
+
+        <input id="loginPassword" type="password" placeholder="Password">
+
+        <button onclick="login()">SIGN IN</button>
+
+        <div class="authSwitch" onclick="showRegister()">
+            Don't have an account? Sign up
         </div>
 
-        <div class="currencyBox">
+        <p id="loginMessage"></p>
 
-            <div class="money">
-                R$ <span id="robux">0</span>
-            </div>
+    </div>
 
-            <div class="money">
-                TIX <span id="tix">0</span>
-            </div>
+</section>
 
+
+<!-- REGISTER -->
+
+<section id="registerPage" class="hidden">
+
+    <div class="auth">
+
+        <h1>Create Account</h1>
+
+        <input id="registerUsername" placeholder="Username">
+
+        <input id="registerPassword" type="password" placeholder="Password">
+
+        <button onclick="register()">CREATE ACCOUNT</button>
+
+        <div class="authSwitch" onclick="showLogin()">
+            Already have an account? Sign in
         </div>
 
-    </section>
+        <p id="registerMessage"></p>
 
-    <!-- CATALOG -->
+    </div>
 
-    <h1 class="pageTitle" id="catalog">
-        Catalog
-    </h1>
+</section>
 
-    <div class="searchBox">
 
-        <input
-            id="assetSearch"
-            placeholder="Search clothes, hats, faces, accessories..."
-            oninput="searchAssets()"
-        >
+<!-- HOME -->
 
-        <button onclick="searchAssets()">
-            🔍
+<section id="homePage" class="hidden">
+
+    <h1 class="pageTitle">Home</h1>
+
+    <div class="profile">
+
+        <h2 id="welcomeText">Welcome!</h2>
+
+        <p>
+            Welcome to MTB REVIVALS — a classic Roblox-inspired revival project.
+        </p>
+
+        <p>
+            Play games to earn <b>Robux</b> and <b>Tix</b>.
+        </p>
+
+        <button class="itemButton" onclick="showPage('catalog')">
+            VISIT CATALOG
         </button>
 
     </div>
 
-    <section id="catalogGrid" class="catalog">
+</section>
 
-        <!-- ITEMS GENERATED BY JAVASCRIPT -->
 
-    </section>
+<!-- CATALOG -->
 
-    <!-- AVATAR EDITOR -->
+<section id="catalogPage" class="hidden">
 
-    <section class="avatarEditor" id="avatarEditor">
+    <h1 class="pageTitle">Catalog</h1>
 
-        <div class="editorHeader">
-            Avatar
-        </div>
+    <div class="search">
 
-        <div class="editorBody">
+        <input
+            id="assetSearch"
+            placeholder="Search catalog..."
+            oninput="searchAssets()"
+        >
 
-            <div class="avatarStage">
+        <button onclick="searchAssets()">⌕</button>
 
-                <div id="avatar" class="avatar">
+    </div>
 
-                    <div id="avatarHead" class="avatarHead">
+    <div class="tabs">
 
-                        <div id="face" class="face faceClassic">
+        <button class="active" onclick="filterItems('all',this)">
+            All
+        </button>
 
-                            <div class="faceSmile"></div>
+        <button onclick="filterItems('hat',this)">
+            Hats
+        </button>
 
-                        </div>
+        <button onclick="filterItems('accessory',this)">
+            Accessories
+        </button>
 
+        <button onclick="filterItems('shirt',this)">
+            Shirts
+        </button>
+
+        <button onclick="filterItems('pants',this)">
+            Pants
+        </button>
+
+        <button onclick="filterItems('gear',this)">
+            Gear
+        </button>
+
+    </div>
+
+    <div id="itemGrid" class="itemGrid"></div>
+
+</section>
+
+
+<!-- AVATAR -->
+
+<section id="avatarPage" class="hidden">
+
+    <h1 class="pageTitle">Avatar</h1>
+
+    <div class="avatarBox">
+
+        <div class="avatarStage">
+
+            <div id="avatar" class="avatar">
+
+                <div id="hatFedora" class="hat hatFedora"></div>
+                <div id="horns" class="horns"></div>
+                <div id="valk" class="valk"></div>
+
+                <div class="head">
+                    <div class="face">
+                        <div class="smile"></div>
                     </div>
-
-                    <div id="hair" class="hair hairClassic"></div>
-
-                    <div id="hat" class="accessory"></div>
-
-                    <div id="horns" class="accessory"></div>
-
-                    <div id="valk" class="accessory"></div>
-
-                    <div id="shoulder" class="accessory"></div>
-
-                    <div class="avatarBody">
-
-                        <div id="shirtLogo" class="shirtLogo">
-                            MTB
-                        </div>
-
-                    </div>
-
-                    <div class="avatarArm leftArm"></div>
-
-                    <div class="avatarArm rightArm"></div>
-
-                    <div class="avatarLeg leftLeg"></div>
-
-                    <div class="avatarLeg rightLeg"></div>
-
-                    <div id="gear" class="gear"></div>
-
                 </div>
+
+                <div id="leftArm" class="arm leftArm"></div>
+                <div id="rightArm" class="arm rightArm"></div>
+
+                <div id="torso" class="torso">
+                    <div class="shirtText">MTB</div>
+                </div>
+
+                <div id="leftLeg" class="leg leftLeg"></div>
+                <div id="rightLeg" class="leg rightLeg"></div>
+
+                <div id="gear" class="gear"></div>
 
             </div>
 
-            <aside class="editorSide">
+        </div>
 
-                <h2>
-                    Customize
-                </h2>
+        <div class="avatarControls">
 
-                <div class="tabButtons">
+            <button onclick="toggleAccessory('fedora')">
+                Fedora
+            </button>
 
-                    <button
-                        class="active"
-                        onclick="openTab('hats',this)">
-                        Hats
-                    </button>
+            <button onclick="toggleAccessory('horns')">
+                Frozen Horns
+            </button>
 
-                    <button onclick="openTab('accessories',this)">
-                        Accessories
-                    </button>
+            <button onclick="toggleAccessory('valk')">
+                Valkyrie
+            </button>
 
-                    <button onclick="openTab('clothes',this)">
-                        Clothes
-                    </button>
+            <button onclick="toggleGear('sword')">
+                Sword
+            </button>
 
-                    <button onclick="openTab('faces',this)">
-                        Faces
-                    </button>
+            <button onclick="toggleGear('pencil')">
+                Big Pencil
+            </button>
 
-                    <button onclick="openTab('body',this)">
-                        Body
-                    </button>
-
-                    <button onclick="openTab('gear',this)">
-                        Gear
-                    </button>
-
-                </div>
-
-                <div id="hats" class="editorTab active">
-
-                    <div class="editorItem"
-                         onclick="wearHat('fedora')">
-                        <strong>Sparkle Time Fedora</strong>
-                        Rainbow Fedora
-                    </div>
-
-                    <div class="editorItem"
-                         onclick="wearHat('valk')">
-                        <strong>Sparkle Time Valkyrie</strong>
-                        Classic Valk
-                    </div>
-
-                    <div class="editorItem"
-                         onclick="wearHat('horns')">
-                        <strong>Frozen Horns</strong>
-                        Icy horns
-                    </div>
-
-                    <div class="editorItem"
-                         onclick="removeHat()">
-                        <strong>Remove Hat</strong>
-                        Take off head accessory
-                    </div>
-
-                </div>
-
-                <div id="accessories" class="editorTab">
-
-                    <div class="editorItem"
-                         onclick="toggleShoulder()">
-                        <strong>Golden Shoulder Accessory</strong>
-                        Shoulder item
-                    </div>
-
-                    <div class="editorItem"
-                         onclick="wearHat('horns')">
-                        <strong>Blue Frozen Horns</strong>
-                        Crystal accessory
-                    </div>
-
-                    <div class="editorItem"
-                         onclick="wearHat('valk')">
-                        <strong>Classic Valkyrie</strong>
-                        Large head accessory
-                    </div>
-
-                </div>
-
-                <div id="clothes" class="editorTab">
-
-                    <div class="editorItem"
-                         onclick="wearShirt('black')">
-                        <strong>MTB Classic Shirt</strong>
-                        Black MTB shirt
-                    </div>
-
-                    <div class="editorItem"
-                         onclick="wearShirt('blue')">
-                        <strong>MTB Blue Shirt</strong>
-                        Blue classic shirt
-                    </div>
-
-                    <div class="editorItem"
-                         onclick="wearShirt('red')">
-                        <strong>MTB Red Shirt</strong>
-                        Red classic shirt
-                    </div>
-
-                    <div class="editorItem"
-                         onclick="wearShirt('green')">
-                        <strong>MTB Green Shirt</strong>
-                        Green classic shirt
-                    </div>
-
-                </div>
-
-                <div id="faces" class="editorTab">
-
-                    <div class="editorItem"
-                         onclick="wearFace('classic')">
-                        <strong>Classic Smile</strong>
-                        Classic Roblox-style face
-                    </div>
-
-                    <div class="editorItem"
-                         onclick="wearFace('happy')">
-                        <strong>Happy Face</strong>
-                        Happy expression
-                    </div>
-
-                    <div class="editorItem"
-                         onclick="wearFace('angry')">
-                        <strong>Angry Face</strong>
-                        Angry expression
-                    </div>
-
-                </div>
-
-                <div id="body" class="editorTab">
-
-                    <div class="editorItem"
-                         onclick="setBody('normal')">
-                        <strong>Classic Body</strong>
-                        Normal blocky body
-                    </div>
-
-                    <div class="editorItem"
-                         onclick="setBody('korblox')">
-                        <strong>Korblox Style</strong>
-                        Small blue right leg
-                    </div>
-
-                </div>
-
-                <div id="gear" class="editorTab">
-
-                    <div class="editorItem"
-                         onclick="wearGear('pencil')">
-                        <strong>BIG Pencil</strong>
-                        Hold the giant pencil
-                    </div>
-
-                    <div class="editorItem"
-                         onclick="wearGear('sword')">
-                        <strong>Classic Sword</strong>
-                        Hold a sword
-                    </div>
-
-                    <div class="editorItem"
-                         onclick="wearGear('hammer')">
-                        <strong>Hammer</strong>
-                        Hold a hammer
-                    </div>
-
-                    <div class="editorItem"
-                         onclick="removeGear()">
-                        <strong>Remove Gear</strong>
-                        Put gear away
-                    </div>
-
-                </div>
-
-                <div class="equippedList">
-
-                    <strong>
-                        Equipped
-                    </strong>
-
-                    <div class="slot" id="slotHat">
-                        Hat: None
-                    </div>
-
-                    <div class="slot" id="slotAccessory">
-                        Accessory: None
-                    </div>
-
-                    <div class="slot" id="slotShirt">
-                        Shirt: MTB Classic Shirt
-                    </div>
-
-                    <div class="slot" id="slotFace">
-                        Face: Classic Smile
-                    </div>
-
-                    <div class="slot" id="slotBody">
-                        Body: Classic
-                    </div>
-
-                    <div class="slot" id="slotGear">
-                        Gear: None
-                    </div>
-
-                    <button
-                        class="resetButton"
-                        onclick="resetAvatar()">
-                        RESET AVATAR
-                    </button>
-
-                </div>
-
-            </aside>
+            <button onclick="toggleGear('hammer')">
+                Hammer
+            </button>
 
         </div>
 
-    </section>
+        <div class="equipped">
 
-    <!-- PROFILE -->
+            <b>Equipped Items</b>
 
-    <section class="profile" id="profile">
+            <div id="equippedText">
+                Nothing equipped.
+            </div>
 
-        <h1>
-            My Profile
-        </h1>
+            <p>
+                Maximum 3 accessories.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PROFILE -->
+
+<section id="profilePage" class="hidden">
+
+    <h1 class="pageTitle">My Profile</h1>
+
+    <div class="profile">
 
         <div class="profileHeader">
 
-            <div class="profileAvatar">
-                👤
+            <div class="profileAvatar" id="profileAvatar">
+                ?
             </div>
 
             <div>
 
-                <h2 id="profileUsername">
-                    Guest
-                </h2>
+                <h1 id="profileName">Username</h1>
 
-                <p id="profileJoined">
-                    Not signed in
+                <p id="profileJoined"></p>
+
+                <p>
+                    💰 <b id="profileRobux">0</b>
+                    &nbsp;&nbsp;
+                    🪙 <b id="profileTix">0</b>
                 </p>
-
-                <div id="profileBadge"></div>
 
             </div>
 
         </div>
 
-        <hr>
+        <h2>Badges</h2>
 
-        <h2>
-            Inventory
-        </h2>
+        <div id="badges" class="badges"></div>
 
-        <p>
-            Owned items:
-            <strong id="ownedCount">0</strong>
-        </p>
-
-    </section>
-
-    <!-- USER SEARCH -->
-
-    <section class="userSearch" id="userSearch">
-
-        <h1>
-            Search Users
-        </h1>
-
-        <input
-            id="usernameSearch"
-            placeholder="Search a Roblox username..."
-        >
-
-        <button onclick="searchRobloxUser()">
-            SEARCH
-        </button>
-
-        <div id="userResult"></div>
-
-    </section>
-
-    <!-- AUTH -->
-
-    <section class="authBox" id="auth">
-
-        <h1>
-            MTB REVIVALS Account
-        </h1>
+        <h2>Statistics</h2>
 
         <p>
-            Create an account to save your avatar and inventory.
+            Items owned:
+            <b id="ownedCount">0</b>
         </p>
 
-        <input
-            id="signupUsername"
-            placeholder="Username"
-            maxlength="20"
-        >
+    </div>
 
-        <input
-            id="signupPassword"
-            type="password"
-            placeholder="Password"
-        >
+</section>
 
-        <button onclick="signup()">
-            SIGN UP
+
+<!-- INVENTORY -->
+
+<section id="inventoryPage" class="hidden">
+
+    <h1 class="pageTitle">Inventory</h1>
+
+    <div id="inventoryGrid" class="itemGrid"></div>
+
+</section>
+
+
+<!-- GAMES -->
+
+<section id="gamesPage" class="hidden">
+
+    <h1 class="pageTitle">Games</h1>
+
+    <div class="profile">
+
+        <h2>MTB Games</h2>
+
+        <p>
+            Play games to earn Robux and Tix.
+        </p>
+
+        <button class="itemButton" onclick="playGame()">
+            ▶ PLAY MTB TEST GAME
         </button>
 
-        <br><br>
+        <p id="gameMessage"></p>
 
-        <input
-            id="loginUsername"
-            placeholder="Username"
-            maxlength="20"
-        >
+    </div>
 
-        <input
-            id="loginPassword"
-            type="password"
-            placeholder="Password"
-        >
+</section>
 
-        <button onclick="login()">
-            LOGIN
-        </button>
 
-        <div
-            id="authMessage"
-            class="authMessage">
-        </div>
+<!-- NEWS -->
 
-    </section>
+<section id="newsPage" class="hidden">
+
+    <h1 class="pageTitle">News</h1>
+
+    <div class="profile">
+
+        <h2>MTB REVIVALS</h2>
+
+        <p>
+            Welcome to the new MTB REVIVALS website!
+        </p>
+
+        <p>
+            Classic avatars, catalog items, profiles, badges,
+            Robux and Tix are now available.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- USER SEARCH -->
+
+<section class="userSearch">
+
+    <h2>Search Roblox Users</h2>
+
+    <input
+        id="usernameSearch"
+        placeholder="Enter Roblox username..."
+    >
+
+    <button onclick="searchRobloxUser()">
+        SEARCH
+    </button>
+
+    <div id="userResult"></div>
+
+</section>
 
 </main>
 
-<div class="chat">
-    Chat (coming soon)
-</div>
 
-<!-- PURCHASE MODAL -->
+<footer class="footer">
+    MTB REVIVALS © 2026
+</footer>
+
+
+<!-- MODAL -->
 
 <div id="modal" class="modal">
 
     <div class="modalBox">
 
-        <h2>
-            Confirm Purchase
-        </h2>
+        <h2>Confirm Claim</h2>
 
-        <p id="modalText">
-            Are you sure?
-        </p>
+        <p id="modalText"></p>
 
         <div class="modalButtons">
 
-            <button
-                class="cancel"
-                onclick="closeModal()">
+            <button class="cancel" onclick="closeModal()">
                 CANCEL
             </button>
 
-            <button
-                class="confirm"
-                onclick="confirmPurchase()">
+            <button class="confirm" onclick="confirmPurchase()">
                 CONFIRM
             </button>
 
@@ -1576,328 +1152,330 @@ html,body{
 
 </div>
 
+
 <script>
 
-/* =========================================================
-   MTB REVIVALS NEXT VERSION
-========================================================= */
+/* =========================================
+   MTB REVIVALS DATABASE
+   ========================================= */
 
-const PLAYER_KEY =
-    "MTB_REVIVALS_PLAYER_V3";
+const ACCOUNT_KEY = "MTB_REVIVALS_ACCOUNTS_V2";
+const CURRENT_KEY = "MTB_REVIVALS_CURRENT_V2";
 
-const USERS_KEY =
-    "MTB_REVIVALS_USERS_V3";
+let accounts =
+    JSON.parse(localStorage.getItem(ACCOUNT_KEY)) || {};
 
-const FIRST10_KEY =
-    "MTB_REVIVALS_FIRST_10_V3";
+let currentUsername =
+    localStorage.getItem(CURRENT_KEY);
+
+let pendingItem = null;
 
 
-/* =========================================================
-   ITEMS
-========================================================= */
+/* =========================================
+   CATALOG
+   ========================================= */
 
-const items = [
+const catalog = [
 
-    {
-        id:"fedora",
-        name:"Sparkle Time Fedora",
-        type:"Hat",
-        price:0,
-        currency:"free"
-    },
+{
+ id:"blue-valk",
+ name:"Blue Sparkle Valkyrie",
+ type:"hat",
+ price:0,
+ currency:"FREE",
+ icon:"💎"
+},
 
-    {
-        id:"valk",
-        name:"Sparkle Time Valkyrie",
-        type:"Hat",
-        price:0,
-        currency:"free"
-    },
+{
+ id:"red-valk",
+ name:"Red Sparkle Valkyrie",
+ type:"hat",
+ price:0,
+ currency:"FREE",
+ icon:"🔴"
+},
 
-    {
-        id:"red-valk",
-        name:"Red Valkyrie",
-        type:"Hat",
-        price:0,
-        currency:"free"
-    },
+{
+ id:"fedora",
+ name:"Sparkle Time Fedora",
+ type:"hat",
+ price:0,
+ currency:"FREE",
+ icon:"🎩"
+},
 
-    {
-        id:"frozen-horns",
-        name:"Blue Frozen Horns",
-        type:"Accessory",
-        price:0,
-        currency:"free"
-    },
+{
+ id:"frozen-horns",
+ name:"Frozen Horns",
+ type:"accessory",
+ price:0,
+ currency:"FREE",
+ icon:"❄️"
+},
 
-    {
-        id:"gold-shoulder",
-        name:"Golden Shoulder Accessory",
-        type:"Accessory",
-        price:25,
-        currency:"tix"
-    },
+{
+ id:"gold-horns",
+ name:"Golden Frozen Horns",
+ type:"accessory",
+ price:0,
+ currency:"FREE",
+ icon:"👑"
+},
 
-    {
-        id:"classic-shirt",
-        name:"MTB Classic Shirt",
-        type:"Shirt",
-        price:0,
-        currency:"free"
-    },
+{
+ id:"big-pencil",
+ name:"BIG Pencil",
+ type:"gear",
+ price:0,
+ currency:"FREE",
+ icon:"✏️"
+},
 
-    {
-        id:"blue-shirt",
-        name:"MTB Blue Shirt",
-        type:"Shirt",
-        price:10,
-        currency:"tix"
-    },
+{
+ id:"classic-sword",
+ name:"Classic Sword",
+ type:"gear",
+ price:0,
+ currency:"FREE",
+ icon:"⚔️"
+},
 
-    {
-        id:"red-shirt",
-        name:"MTB Red Shirt",
-        type:"Shirt",
-        price:15,
-        currency:"tix"
-    },
+{
+ id:"classic-hammer",
+ name:"Classic Hammer",
+ type:"gear",
+ price:0,
+ currency:"FREE",
+ icon:"🔨"
+},
 
-    {
-        id:"green-shirt",
-        name:"MTB Green Shirt",
-        type:"Shirt",
-        price:20,
-        currency:"tix"
-    },
+{
+ id:"mtb-shirt",
+ name:"MTB Classic Shirt",
+ type:"shirt",
+ price:0,
+ currency:"FREE",
+ icon:"👕"
+},
 
-    {
-        id:"long-shirt",
-        name:"MTB Very Long Shirt",
-        type:"Shirt",
-        price:30,
-        currency:"tix"
-    },
+{
+ id:"mtb-red-shirt",
+ name:"MTB Red Shirt",
+ type:"shirt",
+ price:0,
+ currency:"FREE",
+ icon:"🟥"
+},
 
-    {
-        id:"classic-face",
-        name:"Classic Smile",
-        type:"Face",
-        price:0,
-        currency:"free"
-    },
+{
+ id:"mtb-blue-shirt",
+ name:"MTB Blue Shirt",
+ type:"shirt",
+ price:0,
+ currency:"FREE",
+ icon:"🟦"
+},
 
-    {
-        id:"happy-face",
-        name:"Happy Face",
-        type:"Face",
-        price:25,
-        currency:"tix"
-    },
+{
+ id:"mtb-black-pants",
+ name:"MTB Black Pants",
+ type:"pants",
+ price:0,
+ currency:"FREE",
+ icon:"⬛"
+},
 
-    {
-        id:"angry-face",
-        name:"Angry Face",
-        type:"Face",
-        price:40,
-        currency:"tix"
-    },
+{
+ id:"classic-jeans",
+ name:"Classic Jeans",
+ type:"pants",
+ price:0,
+ currency:"FREE",
+ icon:"👖"
+},
 
-    {
-        id:"big-pencil",
-        name:"BIG Pencil",
-        type:"Gear",
-        price:50,
-        currency:"tix"
-    },
+{
+ id:"ninja-mask",
+ name:"Ninja Mask",
+ type:"accessory",
+ price:0,
+ currency:"FREE",
+ icon:"🥷"
+},
 
-    {
-        id:"classic-sword",
-        name:"Classic Sword",
-        type:"Gear",
-        price:100,
-        currency:"tix"
-    },
+{
+ id:"classic-wings",
+ name:"Classic Wings",
+ type:"accessory",
+ price:0,
+ currency:"FREE",
+ icon:"🪽"
+},
 
-    {
-        id:"hammer",
-        name:"Classic Hammer",
-        type:"Gear",
-        price:75,
-        currency:"tix"
-    },
+{
+ id:"blue-crown",
+ name:"Blue Classic Crown",
+ type:"hat",
+ price:0,
+ currency:"FREE",
+ icon:"👑"
+},
 
-    {
-        id:"blue-crown",
-        name:"Blue Classic Crown",
-        type:"Hat",
-        price:50,
-        currency:"tix"
-    },
+{
+ id:"winter-hat",
+ name:"Winter Hat",
+ type:"hat",
+ price:0,
+ currency:"FREE",
+ icon:"🧢"
+},
 
-    {
-        id:"black-horns",
-        name:"Dark Frozen Horns",
-        type:"Accessory",
-        price:60,
-        currency:"tix"
-    },
+{
+ id:"summer-cap",
+ name:"Summer Cap",
+ type:"hat",
+ price:0,
+ currency:"FREE",
+ icon:"🧢"
+},
 
-    {
-        id:"red-horns",
-        name:"Red Frozen Horns",
-        type:"Accessory",
-        price:60,
-        currency:"tix"
-    },
+{
+ id:"gold-chain",
+ name:"Gold Chain",
+ type:"accessory",
+ price:0,
+ currency:"FREE",
+ icon:"📿"
+},
 
-    {
-        id:"green-horns",
-        name:"Green Frozen Horns",
-        type:"Accessory",
-        price:60,
-        currency:"tix"
-    }
+{
+ id:"classic-shades",
+ name:"Classic Shades",
+ type:"accessory",
+ price:0,
+ currency:"FREE",
+ icon:"🕶️"
+}
 
 ];
 
 
-/* =========================================================
-   DEFAULT PLAYER
-========================================================= */
+/* =========================================
+   DEFAULT ACCOUNT
+   ========================================= */
 
-let player =
-JSON.parse(
-    localStorage.getItem(PLAYER_KEY)
-) || {
+function createPlayer(username,password){
 
-    username:"Guest",
+    return {
 
-    loggedIn:false,
+        username:username,
 
-    robux:1000,
+        password:password,
 
-    tix:1000,
+        robux:0,
 
-    owned:[],
+        tix:0,
 
-    avatar:{
+        owned:[],
 
-        hat:null,
+        equipped:{
+            accessories:[],
+            hats:[],
+            shirt:null,
+            pants:null,
+            gear:null
+        },
 
-        accessory:null,
+        badges:[],
 
-        shirt:"classic-shirt",
+        joined:Date.now()
 
-        face:"classic-face",
+    };
 
-        body:"normal",
-
-        gear:null
-
-    },
-
-    joined:null,
-
-    first10:false
-
-};
+}
 
 
-/* =========================================================
+/* =========================================
    SAVE
-========================================================= */
+   ========================================= */
 
-function save(){
+function saveAccounts(){
 
     localStorage.setItem(
-        PLAYER_KEY,
-        JSON.stringify(player)
+        ACCOUNT_KEY,
+        JSON.stringify(accounts)
     );
-
 }
 
 
-/* =========================================================
-   MENU
-========================================================= */
+/* =========================================
+   FIRST 10 BADGE
+   ========================================= */
 
-function toggleMenu(){
+function awardFirstTen(player){
 
-    document
-        .getElementById("menu")
-        .classList.toggle("open");
-
-}
-
-
-/* =========================================================
-   FIRST 10 PLAYER BADGE
-========================================================= */
-
-function checkFirst10(){
-
-    if(!player.loggedIn){
-        return;
-    }
-
-    let first10 =
-        JSON.parse(
-            localStorage.getItem(FIRST10_KEY)
-        ) || [];
+    const count =
+        Object.keys(accounts).length;
 
     if(
-        !first10.includes(
-            player.username
-        ) &&
-        first10.length < 10
+        count <= 10 &&
+        !player.badges.includes("first10")
     ){
 
-        first10.push(
-            player.username
-        );
-
-        player.first10=true;
-
-        localStorage.setItem(
-            FIRST10_KEY,
-            JSON.stringify(first10)
-        );
-
-        save();
-
-        alert(
-            "Congratulations! You are one of the FIRST 10 PLAYERS on this browser!"
-        );
+        player.badges.push("first10");
     }
 
 }
 
 
-/* =========================================================
-   SIGN UP
-========================================================= */
+/* =========================================
+   MTB OWNER
+   ========================================= */
 
-function signup(){
+function checkOwner(player){
+
+    if(
+        player.username.toLowerCase()
+        ==="mtb"
+    ){
+
+        if(
+            !player.badges.includes("owner")
+        ){
+
+            player.badges.push("owner");
+
+        }
+
+    }
+
+}
+
+
+/* =========================================
+   REGISTER
+   ========================================= */
+
+function register(){
 
     const username =
         document
-        .getElementById("signupUsername")
+        .getElementById("registerUsername")
         .value
         .trim();
 
     const password =
         document
-        .getElementById("signupPassword")
+        .getElementById("registerPassword")
         .value;
 
-    const message =
+    const msg =
         document
-        .getElementById("authMessage");
-
+        .getElementById("registerMessage");
 
     if(username.length < 3){
 
-        message.textContent =
+        msg.textContent =
             "Username must be at least 3 characters.";
 
         return;
@@ -1905,73 +1483,45 @@ function signup(){
 
     if(password.length < 4){
 
-        message.textContent =
+        msg.textContent =
             "Password must be at least 4 characters.";
 
         return;
     }
 
+    if(accounts[username]){
 
-    let users =
-        JSON.parse(
-            localStorage.getItem(USERS_KEY)
-        ) || [];
-
-
-    if(
-        users.some(
-            u =>
-            u.username.toLowerCase()
-            ===
-            username.toLowerCase()
-        )
-    ){
-
-        message.textContent =
+        msg.textContent =
             "That username already exists.";
 
         return;
     }
 
+    const player =
+        createPlayer(username,password);
 
-    users.push({
+    accounts[username]=player;
 
-        username:username,
+    awardFirstTen(player);
+    checkOwner(player);
 
-        password:password,
+    saveAccounts();
 
-        joined:new Date()
-            .toLocaleDateString()
-
-    });
-
+    currentUsername=username;
 
     localStorage.setItem(
-        USERS_KEY,
-        JSON.stringify(users)
+        CURRENT_KEY,
+        username
     );
 
-
-    player.username=username;
-    player.loggedIn=true;
-    player.joined=
-        new Date().toLocaleDateString();
-
-    save();
-
-    checkFirst10();
-
-    message.textContent =
-        "Account created successfully!";
-
-    updateUI();
+    loadApp();
 
 }
 
 
-/* =========================================================
+/* =========================================
    LOGIN
-========================================================= */
+   ========================================= */
 
 function login(){
 
@@ -1986,196 +1536,214 @@ function login(){
         .getElementById("loginPassword")
         .value;
 
-    const message =
+    const msg =
         document
-        .getElementById("authMessage");
+        .getElementById("loginMessage");
 
+    if(
+        !accounts[username] ||
+        accounts[username].password!==password
+    ){
 
-    let users =
-        JSON.parse(
-            localStorage.getItem(USERS_KEY)
-        ) || [];
-
-
-    const user =
-        users.find(
-            u =>
-            u.username.toLowerCase()
-            ===
-            username.toLowerCase()
-            &&
-            u.password===password
-        );
-
-
-    if(!user){
-
-        message.textContent =
+        msg.textContent =
             "Incorrect username or password.";
 
         return;
     }
 
+    currentUsername=username;
 
-    player.username =
-        user.username;
+    localStorage.setItem(
+        CURRENT_KEY,
+        username
+    );
 
-    player.loggedIn=true;
-
-    player.joined =
-        user.joined;
-
-
-    save();
-
-    checkFirst10();
-
-    message.textContent =
-        "Logged in successfully!";
-
-    updateUI();
+    loadApp();
 
 }
 
 
-/* =========================================================
+/* =========================================
    LOGOUT
-========================================================= */
+   ========================================= */
 
 function logout(){
 
-    player.loggedIn=false;
+    localStorage.removeItem(
+        CURRENT_KEY
+    );
 
-    player.username="Guest";
+    currentUsername=null;
 
-    save();
-
-    updateUI();
+    location.reload();
 
 }
 
 
-/* =========================================================
-   FIRST 10 BADGE UI
-========================================================= */
+/* =========================================
+   AUTH PAGES
+   ========================================= */
 
-function badgeHTML(){
+function showLogin(){
 
-    if(!player.first10){
-        return "";
+    document
+    .getElementById("loginPage")
+    .classList.remove("hidden");
+
+    document
+    .getElementById("registerPage")
+    .classList.add("hidden");
+
+}
+
+function showRegister(){
+
+    document
+    .getElementById("loginPage")
+    .classList.add("hidden");
+
+    document
+    .getElementById("registerPage")
+    .classList.remove("hidden");
+
+}
+
+
+/* =========================================
+   APP LOAD
+   ========================================= */
+
+function loadApp(){
+
+    document
+    .getElementById("loginPage")
+    .classList.add("hidden");
+
+    document
+    .getElementById("registerPage")
+    .classList.add("hidden");
+
+    renderCatalog();
+    updateCurrency();
+    updateProfile();
+    updateInventory();
+    loadAvatar();
+
+    showPage("home");
+
+}
+
+
+/* =========================================
+   CURRENT PLAYER
+   ========================================= */
+
+function player(){
+
+    return accounts[currentUsername];
+
+}
+
+
+/* =========================================
+   NAVIGATION
+   ========================================= */
+
+function showPage(page){
+
+    if(!currentUsername){
+
+        showLogin();
+
+        return;
     }
 
-    return `
-        <span class="badge">
-            🏅 FIRST 10 PLAYER
-        </span>
-    `;
+    const pages=[
+        "home",
+        "catalog",
+        "avatar",
+        "profile",
+        "inventory",
+        "games",
+        "news"
+    ];
+
+    pages.forEach(p=>{
+
+        document
+        .getElementById(p+"Page")
+        .classList.add("hidden");
+
+    });
+
+    document
+    .getElementById(page+"Page")
+    .classList.remove("hidden");
+
+    document
+    .getElementById("menu")
+    .classList.remove("open");
+
+    if(page==="profile"){
+        updateProfile();
+    }
+
+    if(page==="inventory"){
+        updateInventory();
+    }
 
 }
 
 
-/* =========================================================
-   UI
-========================================================= */
+/* =========================================
+   MENU
+   ========================================= */
 
-function updateUI(){
-
-    document
-        .getElementById("robux")
-        .textContent=player.robux;
+function toggleMenu(){
 
     document
-        .getElementById("tix")
-        .textContent=player.tix;
-
-    document
-        .getElementById("headerRobux")
-        .textContent=player.robux;
-
-    document
-        .getElementById("headerTix")
-        .textContent=player.tix;
-
-
-    document
-        .getElementById("headerUsername")
-        .textContent=
-        player.username;
-
-
-    document
-        .getElementById("welcomeText")
-        .textContent=
-        "Welcome, "+player.username+"!";
-
-
-    document
-        .getElementById("badgeArea")
-        .innerHTML=
-        badgeHTML();
-
-
-    document
-        .getElementById("profileUsername")
-        .textContent=
-        player.username;
-
-
-    document
-        .getElementById("profileJoined")
-        .textContent=
-        player.joined
-        ?
-        "Joined "+player.joined
-        :
-        "Not signed in";
-
-
-    document
-        .getElementById("profileBadge")
-        .innerHTML=
-        badgeHTML();
-
-
-    document
-        .getElementById("ownedCount")
-        .textContent=
-        player.owned.length;
-
-
-    updateEquipped();
+    .getElementById("menu")
+    .classList.toggle("open");
 
 }
 
 
-/* =========================================================
-   CATALOG
-========================================================= */
+/* =========================================
+   CURRENCY
+   ========================================= */
 
-function renderCatalog(){
+function updateCurrency(){
+
+    const p=player();
+
+    document
+    .getElementById("robux")
+    .textContent=p.robux;
+
+    document
+    .getElementById("tix")
+    .textContent=p.tix;
+
+}
+
+
+/* =========================================
+   CATALOG RENDER
+   ========================================= */
+
+function renderCatalog(filter="all"){
 
     const grid =
-        document
-        .getElementById("catalogGrid");
-
+        document.getElementById("itemGrid");
 
     grid.innerHTML="";
 
-
-    items.forEach(item=>{
-
-        let priceText="FREE";
-
-        if(item.currency==="tix"){
-            priceText=
-                item.price+" TIX";
-        }
-
-        if(item.currency==="robux"){
-            priceText=
-                "R$ "+item.price;
-        }
-
+    catalog
+    .filter(item =>
+        filter==="all" ||
+        item.type===filter
+    )
+    .forEach(item=>{
 
         const div =
             document.createElement("div");
@@ -2185,37 +1753,36 @@ function renderCatalog(){
         div.dataset.name =
             item.name.toLowerCase();
 
+        div.dataset.type =
+            item.type;
 
         div.innerHTML=`
 
             <div class="itemImage">
-                ${catalogImage(item)}
+
+                <div style="
+                    font-size:70px;
+                ">
+                    ${item.icon}
+                </div>
+
             </div>
 
             <div class="itemName">
                 ${escapeHTML(item.name)}
             </div>
 
-            <div class="itemType">
-                ${escapeHTML(item.type)}
-            </div>
-
-            <div class="price ${item.currency}">
-                ${priceText}
+            <div class="itemPrice free">
+                FREE
             </div>
 
             <button
-                class="claim"
-                onclick="buyItem('${item.id}')">
-                ${player.owned.includes(item.id)
-                    ? "EQUIP"
-                    : item.price===0
-                    ? "CLAIM"
-                    : "BUY"}
+                class="itemButton"
+                onclick="buyItem('${item.id}')"
+            >
+                CLAIM
             </button>
-
         `;
-
 
         grid.appendChild(div);
 
@@ -2224,182 +1791,43 @@ function renderCatalog(){
 }
 
 
-/* =========================================================
-   CATALOG IMAGES
-========================================================= */
+/* =========================================
+   FILTER
+   ========================================= */
 
-function catalogImage(item){
+function filterItems(type,button){
 
-    if(item.id==="valk"){
+    document
+    .querySelectorAll(".tabs button")
+    .forEach(b =>
+        b.classList.remove("active")
+    );
 
-        return `
-            <div style="
-                width:140px;
-                height:100px;
-                background:linear-gradient(135deg,#2748bd,#7f9dff);
-                clip-path:polygon(
-                    50% 0,
-                    63% 30%,
-                    90% 12%,
-                    78% 48%,
-                    100% 65%,
-                    66% 63%,
-                    50% 100%,
-                    34% 63%,
-                    0 65%,
-                    22% 48%,
-                    10% 12%,
-                    37% 30%
-                );
-            "></div>
-        `;
+    button.classList.add("active");
 
-    }
-
-
-    if(
-        item.id==="frozen-horns" ||
-        item.id==="red-horns" ||
-        item.id==="green-horns"
-    ){
-
-        let bg="#a9edff";
-
-        if(item.id==="red-horns")
-            bg="#ff4848";
-
-        if(item.id==="green-horns")
-            bg="#48df72";
-
-
-        return `
-            <div style="
-                width:120px;
-                height:100px;
-                background:${bg};
-                clip-path:polygon(
-                    50% 0,
-                    65% 35%,
-                    100% 10%,
-                    78% 50%,
-                    100% 75%,
-                    62% 65%,
-                    50% 100%,
-                    38% 65%,
-                    0 75%,
-                    22% 50%,
-                    0 10%,
-                    35% 35%
-                );
-            "></div>
-        `;
-
-    }
-
-
-    if(item.type==="Shirt"){
-
-        return `
-            <div style="
-                width:105px;
-                height:130px;
-                background:#111;
-                border:3px solid #222;
-                display:flex;
-                align-items:center;
-                justify-content:center;
-                color:white;
-                font-weight:bold;
-                font-size:25px;
-            ">
-                MTB
-            </div>
-        `;
-
-    }
-
-
-    if(item.type==="Face"){
-
-        return `
-            <div style="
-                width:100px;
-                height:100px;
-                background:#f2c078;
-                border:3px solid #222;
-                position:relative;
-            ">
-                <span style="
-                    position:absolute;
-                    left:25px;
-                    top:38px;
-                    width:9px;
-                    height:13px;
-                    background:#111;
-                    border-radius:50%;
-                "></span>
-
-                <span style="
-                    position:absolute;
-                    right:25px;
-                    top:38px;
-                    width:9px;
-                    height:13px;
-                    background:#111;
-                    border-radius:50%;
-                "></span>
-            </div>
-        `;
-
-    }
-
-
-    if(item.type==="Gear"){
-
-        return `
-            <div style="
-                width:30px;
-                height:150px;
-                background:linear-gradient(90deg,#777,#fff,#777);
-                transform:rotate(-25deg);
-            "></div>
-        `;
-
-    }
-
-
-    return `
-        <div style="
-            width:120px;
-            height:120px;
-            border-radius:20px;
-            background:linear-gradient(135deg,#4382dc,#8bb5ff);
-        "></div>
-    `;
+    renderCatalog(type);
 
 }
 
 
-/* =========================================================
+/* =========================================
    SEARCH
-========================================================= */
+   ========================================= */
 
 function searchAssets(){
 
-    const query =
+    const q =
         document
         .getElementById("assetSearch")
         .value
         .toLowerCase();
 
-
     document
-    .querySelectorAll(".item")
+    .querySelectorAll("#itemGrid .item")
     .forEach(item=>{
 
         item.style.display =
-            item.dataset.name
-            .includes(query)
+            item.dataset.name.includes(q)
             ? ""
             : "none";
 
@@ -2408,255 +1836,279 @@ function searchAssets(){
 }
 
 
-/* =========================================================
-   PURCHASE
-========================================================= */
-
-let pendingItem=null;
-
+/* =========================================
+   BUY
+   ========================================= */
 
 function buyItem(id){
 
     const item =
-        items.find(
-            i=>i.id===id
-        );
+        catalog.find(x=>x.id===id);
 
-    if(!item){
-        return;
-    }
+    if(!item)return;
 
+    const p=player();
 
-    if(
-        player.owned.includes(id)
-    ){
+    if(p.owned.includes(id)){
 
         equipCatalogItem(item);
 
         return;
     }
 
-
     pendingItem=item;
 
-
-    let price =
-        item.price===0
-        ?
-        "FREE"
-        :
-        item.price+" "+item.currency.toUpperCase();
-
-
     document
-        .getElementById("modalText")
-        .innerHTML=
-        `
-        <strong>
-            ${escapeHTML(item.name)}
-        </strong>
+    .getElementById("modalText")
+    .innerHTML=`
+
+        <b>${escapeHTML(item.name)}</b>
+
         <br><br>
+
         Price:
-        <strong>
-            ${price}
-        </strong>
-        <br><br>
-        Do you want to get this item?
-        `;
+        <b>FREE</b>
 
+        <br><br>
+
+        Do you want to claim this item?
+
+    `;
 
     document
-        .getElementById("modal")
-        .classList.add("show");
+    .getElementById("modal")
+    .classList.add("show");
 
 }
 
 
-/* =========================================================
-   CONFIRM PURCHASE
-========================================================= */
+/* =========================================
+   CONFIRM
+   ========================================= */
 
 function confirmPurchase(){
 
-    if(!pendingItem){
-        return;
-    }
+    if(!pendingItem)return;
 
+    const p=player();
 
-    const item =
-        pendingItem;
+    if(!p.owned.includes(pendingItem.id)){
 
-
-    if(item.price>0){
-
-        if(item.currency==="tix"){
-
-            if(player.tix<item.price){
-
-                alert(
-                    "You do not have enough Tix."
-                );
-
-                return;
-            }
-
-            player.tix -=
-                item.price;
-
-        }
-
-
-        if(item.currency==="robux"){
-
-            if(player.robux<item.price){
-
-                alert(
-                    "You do not have enough Robux."
-                );
-
-                return;
-            }
-
-            player.robux -=
-                item.price;
-
-        }
+        p.owned.push(
+            pendingItem.id
+        );
 
     }
 
+    equipCatalogItem(pendingItem);
 
-    player.owned.push(
-        item.id
-    );
-
-
-    equipCatalogItem(item);
-
-
-    save();
+    saveAccounts();
 
     closeModal();
 
-    renderCatalog();
-
-    updateUI();
+    updateProfile();
+    updateInventory();
 
 }
 
 
-/* =========================================================
-   CLOSE MODAL
-========================================================= */
+/* =========================================
+   CLOSE
+   ========================================= */
 
 function closeModal(){
 
     pendingItem=null;
 
     document
-        .getElementById("modal")
-        .classList.remove("show");
+    .getElementById("modal")
+    .classList.remove("show");
 
 }
 
 
-/* =========================================================
+/* =========================================
    EQUIP CATALOG ITEM
-========================================================= */
+   ========================================= */
 
 function equipCatalogItem(item){
 
-    if(item.type==="Hat"){
+    const p=player();
 
-        if(item.id==="fedora")
-            wearHat("fedora");
-
-        if(item.id==="valk" ||
-           item.id==="red-valk")
-            wearHat("valk");
-
-        if(item.id==="blue-crown")
-            wearHat("fedora");
-
-    }
-
-
-    if(item.type==="Accessory"){
+    if(item.type==="accessory"){
 
         if(
-            item.id==="frozen-horns" ||
-            item.id==="red-horns" ||
-            item.id==="green-horns"
+            !p.equipped.accessories
+            .includes(item.id)
         ){
 
-            wearHat("horns");
+            if(
+                p.equipped.accessories.length>=3
+            ){
+
+                alert(
+                    "You can only wear 3 accessories."
+                );
+
+                return;
+            }
+
+            p.equipped.accessories.push(
+                item.id
+            );
 
         }else{
 
-            toggleShoulder();
+            p.equipped.accessories =
+                p.equipped.accessories
+                .filter(x=>x!==item.id);
 
         }
 
     }
 
+    if(item.type==="hat"){
 
-    if(item.type==="Shirt"){
+        if(
+            p.equipped.hats
+            .includes(item.id)
+        ){
 
-        if(item.id==="classic-shirt")
-            wearShirt("black");
+            p.equipped.hats =
+                p.equipped.hats
+                .filter(x=>x!==item.id);
 
-        if(item.id==="blue-shirt")
-            wearShirt("blue");
+        }else{
 
-        if(item.id==="red-shirt")
-            wearShirt("red");
+            p.equipped.hats.push(item.id);
 
-        if(item.id==="green-shirt")
-            wearShirt("green");
-
-        if(item.id==="long-shirt")
-            wearShirt("blue");
-
-    }
-
-
-    if(item.type==="Face"){
-
-        if(item.id==="classic-face")
-            wearFace("classic");
-
-        if(item.id==="happy-face")
-            wearFace("happy");
-
-        if(item.id==="angry-face")
-            wearFace("angry");
+        }
 
     }
 
+    if(item.type==="shirt"){
 
-    if(item.type==="Gear"){
-
-        if(item.id==="big-pencil")
-            wearGear("pencil");
-
-        if(item.id==="classic-sword")
-            wearGear("sword");
-
-        if(item.id==="hammer")
-            wearGear("hammer");
+        p.equipped.shirt=item.id;
 
     }
+
+    if(item.type==="pants"){
+
+        p.equipped.pants=item.id;
+
+    }
+
+    if(item.type==="gear"){
+
+        p.equipped.gear =
+            p.equipped.gear===item.id
+            ? null
+            : item.id;
+
+    }
+
+    saveAccounts();
+
+    loadAvatar();
+    updateProfile();
 
 }
 
 
-/* =========================================================
-   AVATAR HATS
-========================================================= */
+/* =========================================
+   AVATAR ACCESSORIES
+   ========================================= */
 
-function wearHat(type){
+function toggleAccessory(type){
 
-    const hat =
-        document.getElementById("hat");
+    const p=player();
+
+    let id;
+
+    if(type==="fedora")id="fedora";
+    if(type==="horns")id="frozen-horns";
+    if(type==="valk")id="blue-valk";
+
+    const element =
+        document.getElementById(
+            type==="fedora"
+            ?"hatFedora"
+            :type==="horns"
+            ?"horns"
+            :"valk"
+        );
+
+    if(
+        p.equipped.accessories
+        .includes(id)
+    ){
+
+        p.equipped.accessories =
+            p.equipped.accessories
+            .filter(x=>x!==id);
+
+    }else{
+
+        if(
+            p.equipped.accessories.length>=3
+        ){
+
+            alert(
+                "You can only wear 3 accessories."
+            );
+
+            return;
+        }
+
+        p.equipped.accessories.push(id);
+
+    }
+
+    saveAccounts();
+    loadAvatar();
+
+}
+
+
+/* =========================================
+   GEAR
+   ========================================= */
+
+function toggleGear(type){
+
+    const p=player();
+
+    let id =
+        type==="sword"
+        ?"classic-sword"
+        :type==="pencil"
+        ?"big-pencil"
+        :"classic-hammer";
+
+    p.equipped.gear =
+        p.equipped.gear===id
+        ?null
+        :id;
+
+    saveAccounts();
+
+    loadAvatar();
+
+}
+
+
+/* =========================================
+   LOAD AVATAR
+   ========================================= */
+
+function loadAvatar(){
+
+    if(!currentUsername)return;
+
+    const p=player();
+
+    const fedora =
+        document.getElementById("hatFedora");
 
     const horns =
         document.getElementById("horns");
@@ -2664,703 +2116,326 @@ function wearHat(type){
     const valk =
         document.getElementById("valk");
 
+    fedora.style.display =
+        p.equipped.accessories
+        .includes("fedora")
+        ? "block"
+        : "none";
 
-    hat.style.display="none";
-    horns.style.display="none";
-    valk.style.display="none";
+    horns.style.display =
+        p.equipped.accessories
+        .includes("frozen-horns")
+        ? "block"
+        : "none";
 
+    valk.style.display =
+        p.equipped.accessories
+        .includes("blue-valk")
+        ? "block"
+        : "none";
 
-    if(type==="fedora"){
+    const gear =
+        document.getElementById("gear");
 
-        hat.className =
-            "accessory hatFedora";
+    gear.style.display =
+        p.equipped.gear
+        ? "block"
+        : "none";
 
-        hat.style.display="block";
+    gear.className="gear";
 
-        player.avatar.hat="fedora";
+    if(p.equipped.gear==="big-pencil")
+        gear.classList.add("pencil");
 
-    }
+    if(p.equipped.gear==="classic-sword")
+        gear.classList.add("sword");
 
+    if(p.equipped.gear==="classic-hammer")
+        gear.classList.add("hammer");
 
-    if(type==="horns"){
-
-        horns.className =
-            "accessory horns";
-
-        horns.style.display="block";
-
-        player.avatar.hat="horns";
-
-    }
-
-
-    if(type==="valk"){
-
-        valk.className =
-            "accessory valk";
-
-        valk.style.display="block";
-
-        player.avatar.hat="valk";
-
-    }
-
-
-    save();
-
-    updateEquipped();
-
-}
-
-
-/* =========================================================
-   REMOVE HAT
-========================================================= */
-
-function removeHat(){
-
-    document
-        .getElementById("hat")
-        .style.display="none";
-
-    document
-        .getElementById("horns")
-        .style.display="none";
-
-    document
-        .getElementById("valk")
-        .style.display="none";
-
-
-    player.avatar.hat=null;
-
-    save();
-
-    updateEquipped();
-
-}
-
-
-/* =========================================================
-   SHOULDER ACCESSORY
-========================================================= */
-
-function toggleShoulder(){
-
-    const shoulder =
-        document
-        .getElementById("shoulder");
-
+    const torso =
+        document.getElementById("torso");
 
     if(
-        player.avatar.accessory
-        ===
-        "gold"
+        p.equipped.shirt==="mtb-red-shirt"
     ){
 
-        shoulder.style.display="none";
+        torso.style.background="#b51f2a";
 
-        player.avatar.accessory=null;
+    }else if(
+        p.equipped.shirt==="mtb-blue-shirt"
+    ){
+
+        torso.style.background="#2469c9";
 
     }else{
 
-        shoulder.className =
-            "accessory shoulderGold";
-
-        shoulder.style.display="block";
-
-        player.avatar.accessory="gold";
+        torso.style.background="#111";
 
     }
-
-
-    save();
 
     updateEquipped();
 
 }
 
 
-/* =========================================================
-   SHIRTS
-========================================================= */
-
-function wearShirt(type){
-
-    const body =
-        document
-        .querySelector(".avatarBody");
-
-
-    const logo =
-        document
-        .getElementById("shirtLogo");
-
-
-    if(type==="black"){
-
-        body.style.background="#111";
-
-        logo.textContent="MTB";
-
-        player.avatar.shirt=
-            "classic-shirt";
-
-    }
-
-
-    if(type==="blue"){
-
-        body.style.background="#245bb5";
-
-        logo.textContent="MTB";
-
-        player.avatar.shirt=
-            "blue-shirt";
-
-    }
-
-
-    if(type==="red"){
-
-        body.style.background="#b83232";
-
-        logo.textContent="MTB";
-
-        player.avatar.shirt=
-            "red-shirt";
-
-    }
-
-
-    if(type==="green"){
-
-        body.style.background="#279447";
-
-        logo.textContent="MTB";
-
-        player.avatar.shirt=
-            "green-shirt";
-
-    }
-
-
-    save();
-
-    updateEquipped();
-
-}
-
-
-/* =========================================================
-   FACES
-========================================================= */
-
-function wearFace(type){
-
-    const face =
-        document
-        .getElementById("face");
-
-
-    face.className="face";
-
-
-    if(type==="classic"){
-
-        face.classList.add(
-            "faceClassic"
-        );
-
-        face.innerHTML =
-            `<div class="faceSmile"></div>`;
-
-        player.avatar.face=
-            "classic-face";
-
-    }
-
-
-    if(type==="happy"){
-
-        face.classList.add(
-            "faceClassic"
-        );
-
-        face.innerHTML =
-            `
-            <div style="
-                position:absolute;
-                left:25px;
-                top:62px;
-                width:50px;
-                height:20px;
-                border-bottom:5px solid #111;
-                border-radius:0 0 50px 50px;
-            "></div>
-            `;
-
-        player.avatar.face=
-            "happy-face";
-
-    }
-
-
-    if(type==="angry"){
-
-        face.classList.add(
-            "faceClassic"
-        );
-
-        face.innerHTML =
-            `
-            <div style="
-                position:absolute;
-                left:20px;
-                top:63px;
-                width:60px;
-                height:5px;
-                background:#111;
-                transform:rotate(-8deg);
-            "></div>
-            `;
-
-        player.avatar.face=
-            "angry-face";
-
-    }
-
-
-    save();
-
-    updateEquipped();
-
-}
-
-
-/* =========================================================
-   BODY
-========================================================= */
-
-function setBody(type){
-
-    const avatar =
-        document
-        .getElementById("avatar");
-
-
-    if(type==="korblox"){
-
-        avatar.classList.add(
-            "korblox"
-        );
-
-        player.avatar.body=
-            "korblox";
-
-    }else{
-
-        avatar.classList.remove(
-            "korblox"
-        );
-
-        player.avatar.body=
-            "normal";
-
-    }
-
-
-    save();
-
-    updateEquipped();
-
-}
-
-
-/* =========================================================
-   GEAR
-========================================================= */
-
-function wearGear(type){
-
-    const gear =
-        document
-        .getElementById("gear");
-
-    const avatar =
-        document
-        .getElementById("avatar");
-
-
-    avatar.classList.add(
-        "holding"
-    );
-
-
-    if(type==="pencil"){
-
-        gear.className=
-            "gear gearPencil";
-
-        gear.style.display="block";
-
-        player.avatar.gear=
-            "pencil";
-
-    }
-
-
-    if(type==="sword"){
-
-        gear.className=
-            "gear gearSword";
-
-        gear.style.display="block";
-
-        player.avatar.gear=
-            "sword";
-
-    }
-
-
-    if(type==="hammer"){
-
-        gear.className=
-            "gear gearHammer";
-
-        gear.style.display="block";
-
-        player.avatar.gear=
-            "hammer";
-
-    }
-
-
-    save();
-
-    updateEquipped();
-
-}
-
-
-/* =========================================================
-   REMOVE GEAR
-========================================================= */
-
-function removeGear(){
-
-    const gear =
-        document
-        .getElementById("gear");
-
-    const avatar =
-        document
-        .getElementById("avatar");
-
-
-    gear.style.display="none";
-
-    avatar.classList.remove(
-        "holding"
-    );
-
-
-    player.avatar.gear=null;
-
-    save();
-
-    updateEquipped();
-
-}
-
-
-/* =========================================================
-   RESET AVATAR
-========================================================= */
-
-function resetAvatar(){
-
-    player.avatar={
-
-        hat:null,
-
-        accessory:null,
-
-        shirt:"classic-shirt",
-
-        face:"classic-face",
-
-        body:"normal",
-
-        gear:null
-
-    };
-
-
-    loadAvatar();
-
-    save();
-
-    updateEquipped();
-
-}
-
-
-/* =========================================================
-   LOAD AVATAR
-========================================================= */
-
-function loadAvatar(){
-
-    removeHat();
-
-    removeGear();
-
-
-    if(
-        player.avatar.hat
-    ){
-
-        wearHat(
-            player.avatar.hat
-        );
-
-    }
-
-
-    if(
-        player.avatar.accessory
-    ){
-
-        toggleShoulder();
-
-    }
-
-
-    if(
-        player.avatar.shirt
-    ){
-
-        if(
-            player.avatar.shirt
-            ==="blue-shirt"
-        )
-            wearShirt("blue");
-
-        else if(
-            player.avatar.shirt
-            ==="red-shirt"
-        )
-            wearShirt("red");
-
-        else if(
-            player.avatar.shirt
-            ==="green-shirt"
-        )
-            wearShirt("green");
-
-        else
-            wearShirt("black");
-
-    }
-
-
-    if(
-        player.avatar.face
-        ==="happy-face"
-    )
-        wearFace("happy");
-
-    else if(
-        player.avatar.face
-        ==="angry-face"
-    )
-        wearFace("angry");
-
-    else
-        wearFace("classic");
-
-
-    setBody(
-        player.avatar.body
-        ||"normal"
-    );
-
-
-    if(
-        player.avatar.gear
-    ){
-
-        wearGear(
-            player.avatar.gear
-        );
-
-    }
-
-}
-
-
-/* =========================================================
+/* =========================================
    EQUIPPED TEXT
-========================================================= */
+   ========================================= */
 
 function updateEquipped(){
 
-    document
-        .getElementById("slotHat")
-        .textContent=
-        "Hat: "+
+    if(!currentUsername)return;
+
+    const p=player();
+
+    const names =
+        p.equipped.accessories
+        .map(id=>{
+
+            const item =
+                catalog.find(x=>x.id===id);
+
+            return item
+                ?item.name
+                :id;
+
+        });
+
+    let text="";
+
+    text +=
+        "Accessories: "+
         (
-            player.avatar.hat
-            ||"None"
+            names.length
+            ?names.join(", ")
+            :"None"
         );
 
+    text += "<br>";
 
-    document
-        .getElementById("slotAccessory")
-        .textContent=
-        "Accessory: "+
-        (
-            player.avatar.accessory
-            ||"None"
-        );
-
-
-    document
-        .getElementById("slotShirt")
-        .textContent=
-        "Shirt: "+
-        (
-            player.avatar.shirt
-            ||"None"
-        );
-
-
-    document
-        .getElementById("slotFace")
-        .textContent=
-        "Face: "+
-        (
-            player.avatar.face
-            ||"None"
-        );
-
-
-    document
-        .getElementById("slotBody")
-        .textContent=
-        "Body: "+
-        (
-            player.avatar.body
-            ||"Normal"
-        );
-
-
-    document
-        .getElementById("slotGear")
-        .textContent=
+    text +=
         "Gear: "+
         (
-            player.avatar.gear
+            p.equipped.gear
             ||"None"
         );
 
-}
+    text += "<br>";
 
-
-/* =========================================================
-   TABS
-========================================================= */
-
-function openTab(id,button){
-
-    document
-        .querySelectorAll(".editorTab")
-        .forEach(tab=>{
-            tab.classList.remove(
-                "active"
-            );
-        });
-
+    text +=
+        "Shirt: "+
+        (
+            p.equipped.shirt
+            ||"None"
+        );
 
     document
-        .querySelectorAll(".tabButtons button")
-        .forEach(btn=>{
-            btn.classList.remove(
-                "active"
-            );
-        });
-
-
-    document
-        .getElementById(id)
-        .classList.add("active");
-
-
-    button.classList.add("active");
+    .getElementById("equippedText")
+    .innerHTML=text;
 
 }
 
 
-/* =========================================================
-   PLAY REWARD SYSTEM
-========================================================= */
+/* =========================================
+   PROFILE
+   ========================================= */
 
-function rewardForPlaying(){
+function updateProfile(){
 
-    /*
-       Demo reward system.
+    if(!currentUsername)return;
 
-       Call rewardForPlaying() from
-       your future game page after
-       a player finishes a game.
-    */
+    const p=player();
 
-    player.robux += 5;
+    document
+    .getElementById("welcomeText")
+    .textContent=
+        "Welcome, "+p.username+"!";
 
-    player.tix += 25;
+    document
+    .getElementById("profileName")
+    .textContent=p.username;
 
-    save();
+    document
+    .getElementById("profileAvatar")
+    .textContent=
+        p.username
+        .charAt(0)
+        .toUpperCase();
 
-    updateUI();
+    document
+    .getElementById("profileRobux")
+    .textContent=p.robux;
+
+    document
+    .getElementById("profileTix")
+    .textContent=p.tix;
+
+    document
+    .getElementById("ownedCount")
+    .textContent=p.owned.length;
+
+    document
+    .getElementById("profileJoined")
+    .textContent=
+        "Joined "+
+        new Date(p.joined)
+        .toLocaleDateString();
+
+    const badges =
+        document.getElementById("badges");
+
+    badges.innerHTML="";
+
+    if(p.badges.includes("owner")){
+
+        badges.innerHTML +=
+            `<div class="badge owner">
+                👑 MTB Owner
+            </div>`;
+
+    }
+
+    if(p.badges.includes("first10")){
+
+        badges.innerHTML +=
+            `<div class="badge">
+                🏆 First 10 Members
+            </div>`;
+
+    }
+
+    if(!p.badges.length){
+
+        badges.innerHTML =
+            "<p>No badges yet.</p>";
+
+    }
+
+    updateCurrency();
 
 }
 
 
-/* =========================================================
+/* =========================================
+   INVENTORY
+   ========================================= */
+
+function updateInventory(){
+
+    if(!currentUsername)return;
+
+    const grid =
+        document.getElementById(
+            "inventoryGrid"
+        );
+
+    grid.innerHTML="";
+
+    const p=player();
+
+    p.owned.forEach(id=>{
+
+        const item =
+            catalog.find(x=>x.id===id);
+
+        if(!item)return;
+
+        const div =
+            document.createElement("div");
+
+        div.className="item";
+
+        div.innerHTML=`
+
+            <div class="itemImage">
+                <div style="font-size:70px">
+                    ${item.icon}
+                </div>
+            </div>
+
+            <div class="itemName">
+                ${escapeHTML(item.name)}
+            </div>
+
+            <button
+                class="itemButton"
+                onclick="equipCatalogItemById('${item.id}')"
+            >
+                EQUIP / UNEQUIP
+            </button>
+        `;
+
+        grid.appendChild(div);
+
+    });
+
+}
+
+function equipCatalogItemById(id){
+
+    const item =
+        catalog.find(x=>x.id===id);
+
+    if(item){
+
+        equipCatalogItem(item);
+
+    }
+
+}
+
+
+/* =========================================
+   PLAY GAME
+   ========================================= */
+
+function playGame(){
+
+    const p=player();
+
+    p.robux += 25;
+    p.tix += 100;
+
+    saveAccounts();
+
+    updateCurrency();
+    updateProfile();
+
+    document
+    .getElementById("gameMessage")
+    .innerHTML=
+        "<b>Game complete!</b> You earned 25 Robux and 100 Tix.";
+
+}
+
+
+/* =========================================
    ROBLOX USER SEARCH
-========================================================= */
+   ========================================= */
 
 async function searchRobloxUser(){
 
     const username =
         document
-        .getElementById(
-            "usernameSearch"
-        )
+        .getElementById("usernameSearch")
         .value
         .trim();
 
-
     const result =
         document
-        .getElementById(
-            "userResult"
-        );
-
+        .getElementById("userResult");
 
     if(!username){
 
-        result.innerHTML =
+        result.innerHTML=
             "<p>Enter a username.</p>";
 
         return;
     }
 
-
-    result.innerHTML =
+    result.innerHTML=
         "<p>Searching Roblox...</p>";
-
 
     try{
 
@@ -3376,46 +2451,34 @@ async function searchRobloxUser(){
                     },
 
                     body:JSON.stringify({
-
-                        usernames:[
-                            username
-                        ],
-
+                        usernames:[username],
                         excludeBannedUsers:false
-
                     })
                 }
             );
 
-
         const data =
             await response.json();
 
-
         if(
             !data.data ||
-            data.data.length===0
+            !data.data.length
         ){
 
-            result.innerHTML =
+            result.innerHTML=
                 "<p>User not found.</p>";
 
             return;
-
         }
 
-
-        const user =
-            data.data[0];
-
+        const user=data.data[0];
 
         result.innerHTML=`
 
             <div style="
                 margin-top:15px;
-                background:#fff;
-                border:1px solid #aaa;
-                padding:20px;
+                border:1px solid #ccc;
+                padding:15px;
             ">
 
                 <h2>
@@ -3427,27 +2490,19 @@ async function searchRobloxUser(){
                 </p>
 
                 <a
-                    href="https://www.roblox.com/users/${user.id}/profile"
                     target="_blank"
-                    style="
-                    display:inline-block;
-                    padding:12px 20px;
-                    background:#4382dc;
-                    color:#fff;
-                    text-decoration:none;
-                    font-weight:bold;
-                    "
+                    href="https://www.roblox.com/users/${user.id}/profile"
                 >
-                    VIEW ROBLOX PROFILE
+                    View Roblox Profile
                 </a>
 
             </div>
 
         `;
 
-    }catch(error){
+    }catch(e){
 
-        result.innerHTML =
+        result.innerHTML=
             "<p>Could not connect to Roblox.</p>";
 
     }
@@ -3455,9 +2510,9 @@ async function searchRobloxUser(){
 }
 
 
-/* =========================================================
+/* =========================================
    ESCAPE HTML
-========================================================= */
+   ========================================= */
 
 function escapeHTML(text){
 
@@ -3471,15 +2526,19 @@ function escapeHTML(text){
 }
 
 
-/* =========================================================
+/* =========================================
    START
-========================================================= */
+   ========================================= */
 
-renderCatalog();
+if(currentUsername && accounts[currentUsername]){
 
-updateUI();
+    loadApp();
 
-loadAvatar();
+}else{
+
+    showLogin();
+
+}
 
 </script>
 
