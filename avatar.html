@@ -8,19 +8,16 @@
 <title>MTB REVIVALS - Avatar</title>
 
 <style>
-
 *{
     box-sizing:border-box;
 }
 
 body{
     margin:0;
-    font-family:Arial,Helvetica,sans-serif;
+    font-family:Arial,sans-serif;
     background:#e8e8e8;
     color:#222;
 }
-
-/* ================= HEADER ================= */
 
 header{
     background:#c7c7c7;
@@ -54,8 +51,6 @@ nav a:hover{
     background:#aaa;
 }
 
-/* ================= COINS ================= */
-
 .coinbar{
     max-width:1100px;
     margin:15px auto;
@@ -66,7 +61,6 @@ nav a:hover{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    gap:10px;
 }
 
 .coin{
@@ -78,8 +72,6 @@ nav a:hover{
     border-radius:50%;
     vertical-align:middle;
 }
-
-/* ================= MAIN ================= */
 
 .container{
     max-width:1100px;
@@ -121,40 +113,26 @@ nav a:hover{
     margin:15px auto;
 }
 
-/* HEAD */
-
 .head{
     position:absolute;
-
     width:100px;
     height:100px;
-
     background:#f1c27d;
-
     border:3px solid #333;
     border-radius:10px;
-
     top:25px;
     left:70px;
-
     z-index:10;
 }
 
-/* BODY */
-
 .body{
     position:absolute;
-
     width:115px;
     height:125px;
-
     background:#1683ff;
-
     border:3px solid #333;
-
     top:125px;
     left:62px;
-
     z-index:2;
 }
 
@@ -162,72 +140,43 @@ nav a:hover{
 
 .arm{
     position:absolute;
-
     width:38px;
     height:115px;
-
     background:#f1c27d;
-
     border:3px solid #333;
-
     top:130px;
 
     transition:
         transform .3s ease,
         top .3s ease,
-        right .3s ease,
-        left .3s ease;
-
-    z-index:5;
+        right .3s ease;
 }
 
 .leftArm{
     left:20px;
+    z-index:5;
 }
-
-/* NORMAL RIGHT ARM */
 
 .rightArm{
     right:20px;
-
-    transform-origin:
-        50% 5%;
+    transform-origin:50% 5%;
+    z-index:5;
 }
-
-/* ================= HOLDING GEAR ================= */
-
-/*
-   The arm moves outward and rotates
-   when the avatar has gear equipped.
-*/
 
 .avatar.holdingGear .rightArm{
-
     right:0;
-
     top:112px;
-
-    transform:
-        rotate(-58deg);
+    transform:rotate(-58deg);
 }
 
-/* HAND */
-
 .rightArm:after{
-
     content:"";
-
     position:absolute;
-
     width:32px;
     height:32px;
-
     background:#f1c27d;
-
     border:3px solid #333;
-
     border-radius:50%;
-
     bottom:-18px;
     left:0;
 }
@@ -236,16 +185,11 @@ nav a:hover{
 
 .leg{
     position:absolute;
-
     width:50px;
     height:120px;
-
     background:#222;
-
     border:3px solid #333;
-
     top:250px;
-
     z-index:3;
 }
 
@@ -257,62 +201,34 @@ nav a:hover{
     right:67px;
 }
 
-/* ================= KORBLOX ================= */
-
 .korblox{
-
-    background:
-        linear-gradient(
-            90deg,
-            #111,
-            #555,
-            #181818
-        ) !important;
+    background:linear-gradient(
+        90deg,
+        #111,
+        #555,
+        #181818
+    ) !important;
 
     border-color:#111 !important;
 }
 
-.korblox:after{
-
-    content:"";
-
-    position:absolute;
-
-    width:8px;
-    height:100%;
-
-    background:#777;
-
-    left:15px;
-    top:0;
-
-    opacity:.5;
-}
-
-/* ================= FACES ================= */
+/* ================= FACE ================= */
 
 .face{
     position:absolute;
-
     width:100%;
     height:100%;
-
     top:0;
     left:0;
-
     z-index:15;
 }
 
 .eye{
     position:absolute;
-
     width:9px;
     height:13px;
-
     background:#111;
-
     border-radius:50%;
-
     top:38px;
 }
 
@@ -324,20 +240,17 @@ nav a:hover{
     right:32px;
 }
 
+.mouth{
+    position:absolute;
+}
+
 /* SMILE */
 
 .classicSmile .mouth{
-
-    position:absolute;
-
     width:42px;
     height:20px;
-
     border-bottom:4px solid #111;
-
-    border-radius:
-        0 0 50% 50%;
-
+    border-radius:0 0 50% 50%;
     left:29px;
     top:53px;
 }
@@ -345,32 +258,20 @@ nav a:hover{
 /* HAPPY */
 
 .classicHappy .mouth{
-
-    position:absolute;
-
     width:40px;
     height:22px;
-
     background:#111;
-
-    border-radius:
-        5px 5px 50% 50%;
-
+    border-radius:5px 5px 50% 50%;
     left:30px;
     top:52px;
 }
 
 .classicHappy .mouth:after{
-
     content:"";
-
     position:absolute;
-
     width:25px;
     height:6px;
-
     background:white;
-
     left:8px;
     top:2px;
 }
@@ -378,14 +279,9 @@ nav a:hover{
 /* SERIOUS */
 
 .classicSerious .mouth{
-
-    position:absolute;
-
     width:38px;
     height:4px;
-
     background:#111;
-
     left:31px;
     top:60px;
 }
@@ -393,19 +289,11 @@ nav a:hover{
 /* SMIRK */
 
 .classicSmirk .mouth{
-
-    position:absolute;
-
     width:38px;
     height:16px;
-
     border-bottom:4px solid #111;
-
-    border-radius:
-        0 0 60% 20%;
-
+    border-radius:0 0 60% 20%;
     transform:rotate(-8deg);
-
     left:31px;
     top:52px;
 }
@@ -421,56 +309,36 @@ nav a:hover{
 }
 
 .classicEvil .mouth{
-
-    position:absolute;
-
     width:40px;
     height:18px;
-
     border-top:4px solid #111;
-
     border-radius:50%;
-
     left:30px;
     top:57px;
 }
 
-/* ================= ACCESSORIES ================= */
+/* ================= HORNS ================= */
 
 .accessory{
-
     position:absolute;
-
     pointer-events:none;
-
     z-index:20;
 }
 
-/* FROZEN HORNS */
-
 .frozenHorns{
-
     width:170px;
     height:95px;
-
     top:-45px;
     left:35px;
 }
 
-/* HORNS */
-
 .frozenHorns:before,
 .frozenHorns:after{
-
     content:"";
-
     position:absolute;
-
     width:40px;
     height:90px;
-
     border:3px solid;
-
     clip-path:polygon(
         50% 0%,
         72% 17%,
@@ -487,165 +355,78 @@ nav a:hover{
     );
 }
 
-/* BLUE */
-
 .blueHorns:before,
 .blueHorns:after{
-
     background:#b9f3ff;
-
     border-color:#42b8ed;
-
-    box-shadow:
-        0 0 12px #66dfff;
+    box-shadow:0 0 12px #66dfff;
 }
 
-.blueHorns:before{
-
+.blueHorns:before,
+.redHorns:before,
+.greenHorns:before{
     left:15px;
-
-    transform:
-        rotate(-25deg);
+    transform:rotate(-25deg);
 }
 
-.blueHorns:after{
-
+.blueHorns:after,
+.redHorns:after,
+.greenHorns:after{
     right:15px;
-
-    transform:
-        rotate(25deg);
+    transform:rotate(25deg);
 }
-
-/* RED */
 
 .redHorns:before,
 .redHorns:after{
-
     background:#ff4b4b;
-
     border-color:#a00000;
-
-    box-shadow:
-        0 0 12px #ff3333;
+    box-shadow:0 0 12px #ff3333;
 }
-
-.redHorns:before{
-
-    left:15px;
-
-    transform:
-        rotate(-25deg);
-}
-
-.redHorns:after{
-
-    right:15px;
-
-    transform:
-        rotate(25deg);
-}
-
-/* GREEN */
 
 .greenHorns:before,
 .greenHorns:after{
-
     background:#53ff8b;
-
     border-color:#008c3c;
-
-    box-shadow:
-        0 0 12px #2dff75;
+    box-shadow:0 0 12px #2dff75;
 }
-
-.greenHorns:before{
-
-    left:15px;
-
-    transform:
-        rotate(-25deg);
-}
-
-.greenHorns:after{
-
-    right:15px;
-
-    transform:
-        rotate(25deg);
-}
-
-/* FIRE */
 
 .fire{
-
     top:-38px;
     left:98px;
-
     font-size:42px;
-
     z-index:21;
 }
 
-.blueFire{
-    filter:
-        hue-rotate(150deg)
-        saturate(2);
-}
-
-.greenFire{
-    filter:
-        hue-rotate(65deg)
-        saturate(2);
-}
-
-/* ================= VALKYRIES ================= */
+/* ================= VALKYRIE ================= */
 
 .valk{
-
     top:-35px;
     left:50px;
-
     width:140px;
     height:60px;
-
     z-index:19;
 }
 
 .valk:before,
 .valk:after{
-
     content:"";
-
     position:absolute;
-
     width:48px;
     height:60px;
-
     border:4px solid #777;
-
-    border-radius:
-        45% 45% 10% 10%;
-
+    border-radius:45% 45% 10% 10%;
     background:#ddd;
 }
 
 .valk:before{
-
     left:2px;
-
-    transform:
-        rotate(-25deg);
+    transform:rotate(-25deg);
 }
 
 .valk:after{
-
     right:2px;
-
-    transform:
-        rotate(25deg);
+    transform:rotate(25deg);
 }
-
-/* COLORS */
 
 .goldValk:before,
 .goldValk:after{
@@ -683,132 +464,240 @@ nav a:hover{
     border-color:#111;
 }
 
-/* ================= GEAR ================= */
+/* ================= FEDORA ================= */
 
-.gear{
+.fedora{
+    position:absolute;
+
+    width:125px;
+    height:55px;
+
+    left:58px;
+    top:-8px;
+
+    z-index:18;
+}
+
+.fedora:before{
+    content:"";
 
     position:absolute;
 
+    width:92px;
+    height:42px;
+
+    left:16px;
+    top:0;
+
+    border-radius:
+        50% 50% 20% 20%;
+
+    border:5px solid;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff,
+            #999
+        );
+}
+
+.fedora:after{
+    content:"";
+
+    position:absolute;
+
+    width:125px;
+    height:18px;
+
+    left:0;
+    top:35px;
+
+    border-radius:50%;
+
+    border:4px solid;
+
+    background:#777;
+}
+
+/* FEDORA COLORS */
+
+.fedoraRainbow:before{
+    background:
+        linear-gradient(
+            135deg,
+            #ff3b3b,
+            #ffd43b,
+            #45e06f,
+            #4ba3ff,
+            #a66cff
+        );
+    border-color:#fff;
+}
+
+.fedoraRainbow:after{
+    background:#d7a93c;
+    border-color:#fff;
+}
+
+.fedoraRed:before{
+    background:#d93434;
+    border-color:#ffaaaa;
+}
+
+.fedoraRed:after{
+    background:#8b1111;
+    border-color:#ffaaaa;
+}
+
+.fedoraBlue:before{
+    background:#348cff;
+    border-color:#a9d5ff;
+}
+
+.fedoraBlue:after{
+    background:#174d9c;
+    border-color:#a9d5ff;
+}
+
+.fedoraGreen:before{
+    background:#39d46a;
+    border-color:#a8ffbd;
+}
+
+.fedoraGreen:after{
+    background:#16753a;
+    border-color:#a8ffbd;
+}
+
+.fedoraPurple:before{
+    background:#a05be8;
+    border-color:#dfbaff;
+}
+
+.fedoraPurple:after{
+    background:#57228e;
+    border-color:#dfbaff;
+}
+
+.fedoraBlack:before{
+    background:#222;
+    border-color:#888;
+}
+
+.fedoraBlack:after{
+    background:#050505;
+    border-color:#888;
+}
+
+.fedoraWhite:before{
+    background:#fff;
+    border-color:#ddd;
+}
+
+.fedoraWhite:after{
+    background:#aaa;
+    border-color:#eee;
+}
+
+.fedoraGold:before{
+    background:#e5b934;
+    border-color:#fff0a8;
+}
+
+.fedoraGold:after{
+    background:#916d08;
+    border-color:#fff0a8;
+}
+
+.fedoraPink:before{
+    background:#ff6fae;
+    border-color:#ffc4df;
+}
+
+.fedoraPink:after{
+    background:#b42d69;
+    border-color:#ffc4df;
+}
+
+/* ================= GEAR ================= */
+
+.gear{
+    position:absolute;
     z-index:30;
-
     font-size:45px;
-
     top:135px;
     right:-5px;
+    transform:rotate(-15deg);
 
-    transform:
-        rotate(-15deg);
-
-    transition:
-        .3s ease;
+    transition:.3s ease;
 }
-
-/*
-   Gear moves with the hand.
-*/
 
 .avatar.holdingGear .gear{
-
     top:172px;
-
     right:-18px;
-
-    transform:
-        rotate(-35deg);
+    transform:rotate(-35deg);
 }
 
-/* ================= CATEGORIES ================= */
+/* ================= ITEMS ================= */
 
 .category{
     margin-bottom:25px;
 }
 
 .category h2{
-
     background:#d0d0d0;
-
     border-bottom:2px solid #999;
-
     padding:10px;
-
     margin:0 0 12px;
 }
 
 .grid{
-
     display:grid;
-
     grid-template-columns:
         repeat(
             auto-fill,
             minmax(145px,1fr)
         );
-
     gap:10px;
 }
 
 .item{
-
     background:#f5f5f5;
-
     border:1px solid #aaa;
-
     padding:10px;
-
     text-align:center;
 }
 
 .preview{
-
     height:90px;
-
     background:#ddd;
-
     border:1px solid #aaa;
-
     display:flex;
-
     align-items:center;
-
     justify-content:center;
-
     font-size:30px;
-
     margin-bottom:8px;
 }
 
 .item h3{
-
     font-size:14px;
-
     margin:5px 0;
 }
 
 .item p{
-
     font-size:11px;
-
     color:#666;
-
     min-height:25px;
 }
 
-/* ================= BUTTONS ================= */
-
 button{
-
     border:0;
-
     background:#1683ff;
-
     color:white;
-
     padding:8px 12px;
-
     border-radius:4px;
-
     cursor:pointer;
-
     font-weight:bold;
 }
 
@@ -824,56 +713,37 @@ button.red{
     background:#d33;
 }
 
-/* ================= EQUIPPED ================= */
-
 .equippedList{
-
     text-align:left;
-
     background:#eee;
-
     border:1px solid #aaa;
-
     padding:10px;
-
     min-height:45px;
 }
 
-/* ================= MESSAGE ================= */
-
 .message{
-
     position:fixed;
-
     left:50%;
     bottom:20px;
-
-    transform:
-        translateX(-50%);
-
+    transform:translateX(-50%);
     background:#333;
-
     color:white;
-
     padding:12px 20px;
-
     border-radius:5px;
-
     display:none;
-
     z-index:100;
 }
 
-/* ================= HEADLESS ================= */
-
 .headless{
-
     background:transparent !important;
-
     border-color:transparent !important;
 }
 
-/* ================= MOBILE ================= */
+.saveStatus{
+    font-size:12px;
+    color:#238636;
+    font-weight:bold;
+}
 
 @media(max-width:700px){
 
@@ -882,19 +752,14 @@ button.red{
     }
 
     .coinbar{
-
         margin-left:15px;
         margin-right:15px;
-
         flex-direction:column;
     }
 
     nav{
-
         display:grid;
-
-        grid-template-columns:
-            repeat(2,1fr);
+        grid-template-columns:repeat(2,1fr);
     }
 
     nav a{
@@ -908,9 +773,6 @@ button.red{
 
 <body>
 
-
-<!-- ================= HEADER ================= -->
-
 <header>
 
 <div class="logo">
@@ -918,33 +780,15 @@ MTB REVIVALS
 </div>
 
 <nav>
-
-<a href="index.html">
-Home
-</a>
-
-<a href="avatar.html">
-Avatar
-</a>
-
-<a href="servers.html">
-Game Servers
-</a>
-
-<a href="inventory.html">
-Inventory
-</a>
-
-<a href="clothes.html">
-Clothes
-</a>
-
+<a href="index.html">Home</a>
+<a href="avatar.html">Avatar</a>
+<a href="servers.html">Game Servers</a>
+<a href="inventory.html">Inventory</a>
+<a href="clothes.html">Clothes</a>
 </nav>
 
 </header>
 
-
-<!-- ================= COINS ================= -->
 
 <div class="coinbar">
 
@@ -952,16 +796,15 @@ Clothes
 
 <span class="coin"></span>
 
-<b>
-MTB Coins:
-</b>
+<b>MTB Coins:</b>
 
-<span id="coins">
-1000
-</span>
+<span id="coins">1000</span>
 
 </div>
 
+<div class="saveStatus">
+✓ Avatar saves automatically
+</div>
 
 <button onclick="earnCoins()">
 Earn 100 Coins
@@ -969,8 +812,6 @@ Earn 100 Coins
 
 </div>
 
-
-<!-- ================= MAIN ================= -->
 
 <div class="container">
 
@@ -999,18 +840,11 @@ Maximum 3 accessories or gear at once.
 
 <div class="avatarBox">
 
-<h2>
-Your Avatar
-</h2>
+<h2>Your Avatar</h2>
 
 
-<div
-id="avatar"
-class="avatar"
->
+<div id="avatar" class="avatar">
 
-
-<!-- ACCESSORY -->
 
 <div
 id="headAccessory"
@@ -1018,15 +852,11 @@ class="accessory">
 </div>
 
 
-<!-- FIRE -->
-
 <div
 id="fire"
 class="accessory">
 </div>
 
-
-<!-- GEAR -->
 
 <div
 id="gear"
@@ -1034,53 +864,27 @@ class="gear">
 </div>
 
 
-<!-- HEAD -->
-
 <div
 id="head"
-class="head"
->
+class="head">
 
 <div
 id="face"
-class="face classicSmile"
->
+class="face classicSmile">
 
-<span
-class="eye leftEye">
-</span>
-
-<span
-class="eye rightEye">
-</span>
-
-<span
-class="mouth">
-</span>
+<span class="eye leftEye"></span>
+<span class="eye rightEye"></span>
+<span class="mouth"></span>
 
 </div>
 
 </div>
 
 
-<!-- BODY -->
+<div class="body"></div>
 
-<div class="body">
-</div>
-
-
-<!-- ARMS -->
-
-<div
-class="arm leftArm">
-</div>
-
-<div
-class="arm rightArm">
-</div>
-
-
-<!-- LEGS -->
+<div class="arm leftArm"></div>
+<div class="arm rightArm"></div>
 
 <div
 id="leftLeg"
@@ -1099,26 +903,31 @@ class="leg rightLeg">
 Equipped Items
 </h3>
 
-
 <div
 id="equippedList"
 class="equippedList">
 None
 </div>
 
-
 <br>
-
 
 <button
 class="gray"
-onclick="clearAccessories()"
->
+onclick="clearAccessories()">
 
 Remove All Accessories/Gear
 
 </button>
 
+<br><br>
+
+<button
+class="red"
+onclick="resetAvatar()">
+
+Reset Saved Avatar
+
+</button>
 
 </div>
 
@@ -1136,111 +945,152 @@ Remove All Accessories/Gear
 Classic Faces
 </h2>
 
+<div class="grid">
+
+<div class="item">
+<div class="preview">🙂</div>
+<h3>Classic Smile</h3>
+<button onclick="setFace('classicSmile')">
+Wear
+</button>
+</div>
+
+<div class="item">
+<div class="preview">:D</div>
+<h3>Classic Happy</h3>
+<button onclick="setFace('classicHappy')">
+Wear
+</button>
+</div>
+
+<div class="item">
+<div class="preview">—</div>
+<h3>Serious</h3>
+<button onclick="setFace('classicSerious')">
+Wear
+</button>
+</div>
+
+<div class="item">
+<div class="preview">;)</div>
+<h3>Smirk</h3>
+<button onclick="setFace('classicSmirk')">
+Wear
+</button>
+</div>
+
+<div class="item">
+<div class="preview">>:)</div>
+<h3>Evil</h3>
+<button onclick="setFace('classicEvil')">
+Wear
+</button>
+</div>
+
+</div>
+</div>
+
+
+<!-- ================= FEDORAS ================= -->
+
+<div class="category">
+
+<h2>
+Sparkle Time Fedora Collection
+</h2>
+
+<p>
+All colors are saved to your avatar automatically.
+</p>
 
 <div class="grid">
 
 
 <div class="item">
-
-<div class="preview">
-🙂
-</div>
-
-<h3>
-Classic Smile
-</h3>
-
-<button
-onclick="setFace('classicSmile')"
->
-Wear
+<div class="preview">🌈</div>
+<h3>Sparkle Time Fedora</h3>
+<button onclick="equipAccessory('Sparkle Time Fedora','fedoraRainbow')">
+Equip
 </button>
-
 </div>
 
 
 <div class="item">
-
-<div class="preview">
-:D
-</div>
-
-<h3>
-Classic Happy
-</h3>
-
-<button
-onclick="setFace('classicHappy')"
->
-Wear
+<div class="preview">🔴</div>
+<h3>Red Fedora</h3>
+<button onclick="equipAccessory('Red Sparkle Time Fedora','fedoraRed')">
+Equip
 </button>
-
 </div>
 
 
 <div class="item">
-
-<div class="preview">
-—
-</div>
-
-<h3>
-Serious
-</h3>
-
-<button
-onclick="setFace('classicSerious')"
->
-Wear
+<div class="preview">🔵</div>
+<h3>Blue Fedora</h3>
+<button onclick="equipAccessory('Blue Sparkle Time Fedora','fedoraBlue')">
+Equip
 </button>
-
 </div>
 
 
 <div class="item">
-
-<div class="preview">
-;)
-</div>
-
-<h3>
-Smirk
-</h3>
-
-<button
-onclick="setFace('classicSmirk')"
->
-Wear
+<div class="preview">🟢</div>
+<h3>Green Fedora</h3>
+<button onclick="equipAccessory('Green Sparkle Time Fedora','fedoraGreen')">
+Equip
 </button>
-
 </div>
 
 
 <div class="item">
-
-<div class="preview">
->:)
-</div>
-
-<h3>
-Evil
-</h3>
-
-<button
-onclick="setFace('classicEvil')"
->
-Wear
+<div class="preview">🟣</div>
+<h3>Purple Fedora</h3>
+<button onclick="equipAccessory('Purple Sparkle Time Fedora','fedoraPurple')">
+Equip
 </button>
-
 </div>
 
 
+<div class="item">
+<div class="preview">⚫</div>
+<h3>Black Fedora</h3>
+<button onclick="equipAccessory('Black Sparkle Time Fedora','fedoraBlack')">
+Equip
+</button>
+</div>
+
+
+<div class="item">
+<div class="preview">⚪</div>
+<h3>White Fedora</h3>
+<button onclick="equipAccessory('White Sparkle Time Fedora','fedoraWhite')">
+Equip
+</button>
+</div>
+
+
+<div class="item">
+<div class="preview">🟡</div>
+<h3>Gold Fedora</h3>
+<button onclick="equipAccessory('Gold Sparkle Time Fedora','fedoraGold')">
+Equip
+</button>
+</div>
+
+
+<div class="item">
+<div class="preview">🩷</div>
+<h3>Pink Fedora</h3>
+<button onclick="equipAccessory('Pink Sparkle Time Fedora','fedoraPink')">
+Equip
+</button>
 </div>
 
 </div>
+</div>
 
 
-<!-- FROZEN HORNS -->
+<!-- ================= HORNS ================= -->
 
 <div class="category">
 
@@ -1248,97 +1098,42 @@ Wear
 Frozen Horns
 </h2>
 
-
 <div class="grid">
 
-
 <div class="item">
-
-<div class="preview">
-❄
-</div>
-
-<h3>
-Frozen Horns
-</h3>
-
-<p>
-Blue crystal + blue fire
-</p>
-
-<button
-onclick="
-equipAccessory(
-'Frozen Horns',
-'blue'
-)"
->
+<div class="preview">❄️</div>
+<h3>Frozen Horns</h3>
+<p>Blue crystal + blue fire</p>
+<button onclick="equipAccessory('Frozen Horns','blue')">
 Equip
 </button>
-
 </div>
 
 
 <div class="item">
-
-<div class="preview">
-RED
-</div>
-
-<h3>
-Red Frozen Horns
-</h3>
-
-<p>
-Red crystal + red fire
-</p>
-
-<button
-onclick="
-equipAccessory(
-'Red Frozen Horns',
-'red'
-)"
->
+<div class="preview">🔴</div>
+<h3>Red Frozen Horns</h3>
+<p>Red crystal + red fire</p>
+<button onclick="equipAccessory('Red Frozen Horns','red')">
 Equip
 </button>
-
 </div>
 
 
 <div class="item">
-
-<div class="preview">
-GREEN
-</div>
-
-<h3>
-Green Frozen Horns
-</h3>
-
-<p>
-Green crystal + green fire
-</p>
-
-<button
-onclick="
-equipAccessory(
-'Green Frozen Horns',
-'green'
-)"
->
+<div class="preview">🟢</div>
+<h3>Green Frozen Horns</h3>
+<p>Green crystal + green fire</p>
+<button onclick="equipAccessory('Green Frozen Horns','green')">
 Equip
 </button>
-
-</div>
-
-
 </div>
 
 </div>
+</div>
 
 
-<!-- VALKYRIES -->
+<!-- ================= VALKYRIES ================= -->
 
 <div class="category">
 
@@ -1346,154 +1141,61 @@ Equip
 Valkyries
 </h2>
 
-
 <div class="grid">
 
-
 <div class="item">
-
-<div class="preview">
-V
-</div>
-
-<h3>
-Sparkle Time Valkyrie
-</h3>
-
-<button
-onclick="
-equipAccessory(
-'Sparkle Time Valkyrie',
-'gold'
-)"
->
+<div class="preview">V</div>
+<h3>Sparkle Time Valkyrie</h3>
+<button onclick="equipAccessory('Sparkle Time Valkyrie','goldValk')">
 Equip
 </button>
-
 </div>
-
 
 <div class="item">
-
-<div class="preview">
-V
-</div>
-
-<h3>
-Red Valkyrie
-</h3>
-
-<button
-onclick="
-equipAccessory(
-'Red Valkyrie',
-'redValk'
-)"
->
+<div class="preview">🔴</div>
+<h3>Red Valkyrie</h3>
+<button onclick="equipAccessory('Red Valkyrie','redValk')">
 Equip
 </button>
-
 </div>
-
 
 <div class="item">
-
-<div class="preview">
-V
-</div>
-
-<h3>
-Blue Valkyrie
-</h3>
-
-<button
-onclick="
-equipAccessory(
-'Blue Valkyrie',
-'blueValk'
-)"
->
+<div class="preview">🔵</div>
+<h3>Blue Valkyrie</h3>
+<button onclick="equipAccessory('Blue Valkyrie','blueValk')">
 Equip
 </button>
-
 </div>
-
 
 <div class="item">
-
-<div class="preview">
-V
-</div>
-
-<h3>
-Green Valkyrie
-</h3>
-
-<button
-onclick="
-equipAccessory(
-'Green Valkyrie',
-'greenValk'
-)"
->
+<div class="preview">🟢</div>
+<h3>Green Valkyrie</h3>
+<button onclick="equipAccessory('Green Valkyrie','greenValk')">
 Equip
 </button>
-
 </div>
-
 
 <div class="item">
-
-<div class="preview">
-V
-</div>
-
-<h3>
-Purple Valkyrie
-</h3>
-
-<button
-onclick="
-equipAccessory(
-'Purple Valkyrie',
-'purpleValk'
-)"
->
+<div class="preview">🟣</div>
+<h3>Purple Valkyrie</h3>
+<button onclick="equipAccessory('Purple Valkyrie','purpleValk')">
 Equip
 </button>
-
 </div>
-
 
 <div class="item">
-
-<div class="preview">
-V
-</div>
-
-<h3>
-Black Valkyrie
-</h3>
-
-<button
-onclick="
-equipAccessory(
-'Black Valkyrie',
-'blackValk'
-)"
->
+<div class="preview">⚫</div>
+<h3>Black Valkyrie</h3>
+<button onclick="equipAccessory('Black Valkyrie','blackValk')">
 Equip
 </button>
-
-</div>
-
-
 </div>
 
 </div>
+</div>
 
 
-<!-- GEAR -->
+<!-- ================= GEAR ================= -->
 
 <div class="category">
 
@@ -1501,200 +1203,69 @@ Equip
 Gear
 </h2>
 
-
 <div class="grid">
 
-
 <div class="item">
-
-<div class="preview">
-⚔
-</div>
-
-<h3>
-Classic Sword
-</h3>
-
-<button
-onclick="
-equipGear(
-'⚔',
-'Classic Sword'
-)"
->
+<div class="preview">⚔️</div>
+<h3>Classic Sword</h3>
+<button onclick="equipGear('⚔️','Classic Sword')">
 Equip
 </button>
-
 </div>
-
 
 <div class="item">
-
-<div class="preview">
-🗡
-</div>
-
-<h3>
-Dark Blade
-</h3>
-
-<button
-onclick="
-equipGear(
-'🗡',
-'Dark Blade'
-)"
->
+<div class="preview">🗡️</div>
+<h3>Dark Blade</h3>
+<button onclick="equipGear('🗡️','Dark Blade')">
 Equip
 </button>
-
 </div>
-
 
 <div class="item">
-
-<div class="preview">
-🛡
-</div>
-
-<h3>
-Shield
-</h3>
-
-<button
-onclick="
-equipGear(
-'🛡',
-'Shield'
-)"
->
+<div class="preview">🛡️</div>
+<h3>Shield</h3>
+<button onclick="equipGear('🛡️','Shield')">
 Equip
 </button>
-
 </div>
-
 
 <div class="item">
-
-<div class="preview">
-🔨
-</div>
-
-<h3>
-Builder Hammer
-</h3>
-
-<button
-onclick="
-equipGear(
-'🔨',
-'Builder Hammer'
-)"
->
+<div class="preview">🔨</div>
+<h3>Builder Hammer</h3>
+<button onclick="equipGear('🔨','Builder Hammer')">
 Equip
 </button>
-
 </div>
-
 
 <div class="item">
-
-<div class="preview">
-🎸
-</div>
-
-<h3>
-Guitar
-</h3>
-
-<button
-onclick="
-equipGear(
-'🎸',
-'Guitar'
-)"
->
+<div class="preview">🎸</div>
+<h3>Guitar</h3>
+<button onclick="equipGear('🎸','Guitar')">
 Equip
 </button>
-
 </div>
-
 
 <div class="item">
-
-<div class="preview">
-🏹
-</div>
-
-<h3>
-Classic Bow
-</h3>
-
-<button
-onclick="
-equipGear(
-'🏹',
-'Classic Bow'
-)"
->
+<div class="preview">🏹</div>
+<h3>Classic Bow</h3>
+<button onclick="equipGear('🏹','Classic Bow')">
 Equip
 </button>
-
 </div>
-
 
 <div class="item">
-
-<div class="preview">
-🔮
-</div>
-
-<h3>
-Magic Staff
-</h3>
-
-<button
-onclick="
-equipGear(
-'🔮',
-'Magic Staff'
-)"
->
+<div class="preview">🔮</div>
+<h3>Magic Staff</h3>
+<button onclick="equipGear('🔮','Magic Staff')">
 Equip
 </button>
-
-</div>
-
-
-<div class="item">
-
-<div class="preview">
-$
-</div>
-
-<h3>
-Money Bag
-</h3>
-
-<button
-onclick="
-equipGear(
-'$',
-'Money Bag'
-)"
->
-Equip
-</button>
-
-</div>
-
-
 </div>
 
 </div>
+</div>
 
 
-<!-- BODY -->
+<!-- ================= BODY ================= -->
 
 <div class="category">
 
@@ -1702,9 +1273,7 @@ Equip
 Body
 </h2>
 
-
 <div class="grid">
-
 
 <div class="item">
 
@@ -1716,9 +1285,7 @@ LEG
 Korblox-Style Leg
 </h3>
 
-<button
-onclick="toggleKorblox()"
->
+<button onclick="toggleKorblox()">
 Equip
 </button>
 
@@ -1735,24 +1302,19 @@ HEAD
 Headless Style
 </h3>
 
-<button
-onclick="toggleHeadless()"
->
+<button onclick="toggleHeadless()">
 Equip
 </button>
 
 </div>
 
-
 </div>
 
 </div>
 
 
 </div>
-
 </div>
-
 </div>
 
 
@@ -1765,49 +1327,161 @@ class="message">
 <script>
 
 /* =====================================================
-   MTB COINS
+   SAVE SYSTEM
 ===================================================== */
 
-let coins =
-Number(
-    localStorage.getItem(
-        "mtbCoins"
-    )
-);
+const SAVE_KEY =
+    "MTB_REVIVALS_AVATAR";
 
 
-if(!coins){
+let saved =
+    JSON.parse(
+        localStorage.getItem(
+            SAVE_KEY
+        ) || "null"
+    );
 
-    coins = 1000;
+
+/* DEFAULT DATA */
+
+let avatarData = saved || {
+
+    coins:1000,
+
+    face:"classicSmile",
+
+    accessories:[],
+
+    gear:null,
+
+    korblox:false,
+
+    headless:false
+
+};
+
+
+/* =====================================================
+   SAVE
+===================================================== */
+
+function saveAvatar(){
 
     localStorage.setItem(
-        "mtbCoins",
-        coins
+        SAVE_KEY,
+        JSON.stringify(
+            avatarData
+        )
     );
 
 }
 
 
-function updateCoins(){
+/* =====================================================
+   LOAD
+===================================================== */
+
+function loadAvatar(){
+
+    coins =
+        avatarData.coins;
+
+    equipped =
+        avatarData.accessories || [];
+
 
     document.getElementById(
         "coins"
     ).textContent =
         coins;
 
+
+    setFace(
+        avatarData.face ||
+        "classicSmile",
+        false
+    );
+
+
+    if(
+        avatarData.korblox
+    ){
+
+        document.getElementById(
+            "leftLeg"
+        ).classList.add(
+            "korblox"
+        );
+
+    }
+
+
+    if(
+        avatarData.headless
+    ){
+
+        headless = true;
+
+        document.getElementById(
+            "head"
+        ).classList.add(
+            "headless"
+        );
+
+        document.getElementById(
+            "face"
+        ).style.display =
+            "none";
+
+    }
+
+
+    if(
+        avatarData.gear
+    ){
+
+        document.getElementById(
+            "gear"
+        ).textContent =
+            avatarData.gear.icon;
+
+        document.getElementById(
+            "avatar"
+        ).classList.add(
+            "holdingGear"
+        );
+
+    }
+
+
+    updateAvatar();
+
+    updateList();
+
 }
+
+
+/* =====================================================
+   COINS
+===================================================== */
+
+let coins =
+    avatarData.coins;
 
 
 function earnCoins(){
 
     coins += 100;
 
-    localStorage.setItem(
-        "mtbCoins",
-        coins
-    );
+    avatarData.coins =
+        coins;
 
-    updateCoins();
+    saveAvatar();
+
+    document.getElementById(
+        "coins"
+    ).textContent =
+        coins;
 
     showMessage(
         "+100 MTB Coins!"
@@ -1817,25 +1491,17 @@ function earnCoins(){
 
 
 /* =====================================================
-   EQUIPPED
-===================================================== */
-
-let equipped = [];
-
-
-/* =====================================================
    ACCESSORIES
 ===================================================== */
+
+let equipped =
+    avatarData.accessories || [];
+
 
 function equipAccessory(
     name,
     type
 ){
-
-    /*
-       Clicking an equipped accessory
-       removes it.
-    */
 
     if(
         equipped.includes(name)
@@ -1846,6 +1512,11 @@ function equipAccessory(
                 item =>
                     item !== name
             );
+
+        avatarData.accessories =
+            equipped;
+
+        saveAvatar();
 
         updateAvatar();
 
@@ -1859,10 +1530,6 @@ function equipAccessory(
     }
 
 
-    /*
-       Maximum 3.
-    */
-
     if(
         equipped.length >= 3
     ){
@@ -1878,11 +1545,16 @@ function equipAccessory(
 
     equipped.push(name);
 
+    avatarData.accessories =
+        equipped;
+
+    saveAvatar();
+
     updateAvatar();
 
     showMessage(
         name +
-        " equipped!"
+        " equipped and saved!"
     );
 
 }
@@ -1892,14 +1564,23 @@ function equipAccessory(
    GEAR
 ===================================================== */
 
+const gearNames = [
+
+    "Classic Sword",
+    "Dark Blade",
+    "Shield",
+    "Builder Hammer",
+    "Guitar",
+    "Classic Bow",
+    "Magic Staff"
+
+];
+
+
 function equipGear(
     icon,
     name
 ){
-
-    /*
-       Remove gear if already equipped.
-    */
 
     if(
         equipped.includes(name)
@@ -1911,17 +1592,16 @@ function equipGear(
                     item !== name
             );
 
+        avatarData.accessories =
+            equipped;
+
+        avatarData.gear =
+            null;
 
         document.getElementById(
             "gear"
         ).textContent =
             "";
-
-
-        /*
-           If there is no gear left,
-           return arm to normal.
-        */
 
         if(
             !hasGear()
@@ -1935,9 +1615,9 @@ function equipGear(
 
         }
 
+        saveAvatar();
 
         updateList();
-
 
         showMessage(
             name +
@@ -1948,10 +1628,6 @@ function equipGear(
 
     }
 
-
-    /*
-       Maximum 3 items.
-    */
 
     if(
         equipped.length >= 3
@@ -1968,20 +1644,23 @@ function equipGear(
 
     equipped.push(name);
 
+    avatarData.accessories =
+        equipped;
 
-    /*
-       Show held item.
-    */
+    avatarData.gear = {
+
+        name:name,
+
+        icon:icon
+
+    };
+
 
     document.getElementById(
         "gear"
     ).textContent =
         icon;
 
-
-    /*
-       Move arm outward.
-    */
 
     document.getElementById(
         "avatar"
@@ -1990,43 +1669,23 @@ function equipGear(
     );
 
 
-    updateList();
+    saveAvatar();
 
+    updateList();
 
     showMessage(
         name +
-        " equipped!"
+        " equipped and saved!"
     );
 
 }
 
 
 /* =====================================================
-   CHECK GEAR
+   HAS GEAR
 ===================================================== */
 
 function hasGear(){
-
-    const gearNames = [
-
-        "Classic Sword",
-
-        "Dark Blade",
-
-        "Shield",
-
-        "Builder Hammer",
-
-        "Guitar",
-
-        "Classic Bow",
-
-        "Magic Staff",
-
-        "Money Bag"
-
-    ];
-
 
     return equipped.some(
         item =>
@@ -2040,7 +1699,10 @@ function hasGear(){
    FACE
 ===================================================== */
 
-function setFace(type){
+function setFace(
+    type,
+    notify=true
+){
 
     const face =
         document.getElementById(
@@ -2053,30 +1715,31 @@ function setFace(type){
         type;
 
 
-    /*
-       Recreate the face parts.
-    */
-
     face.innerHTML = `
 
-        <span
-        class="eye leftEye">
-        </span>
+        <span class="eye leftEye"></span>
 
-        <span
-        class="eye rightEye">
-        </span>
+        <span class="eye rightEye"></span>
 
-        <span
-        class="mouth">
-        </span>
+        <span class="mouth"></span>
 
     `;
 
 
-    showMessage(
-        "Classic face equipped!"
-    );
+    avatarData.face =
+        type;
+
+
+    saveAvatar();
+
+
+    if(notify){
+
+        showMessage(
+            "Face saved!"
+        );
+
+    }
 
 }
 
@@ -2098,23 +1761,20 @@ function toggleKorblox(){
     );
 
 
-    if(
+    avatarData.korblox =
         leg.classList.contains(
             "korblox"
-        )
-    ){
-
-        showMessage(
-            "Korblox-style leg equipped!"
         );
 
-    }else{
 
-        showMessage(
-            "Korblox-style leg removed!"
-        );
+    saveAvatar();
 
-    }
+
+    showMessage(
+        avatarData.korblox
+            ? "Korblox style saved!"
+            : "Korblox style removed!"
+    );
 
 }
 
@@ -2123,7 +1783,8 @@ function toggleKorblox(){
    HEADLESS
 ===================================================== */
 
-let headless = false;
+let headless =
+    avatarData.headless || false;
 
 
 function toggleHeadless(){
@@ -2132,7 +1793,6 @@ function toggleHeadless(){
         document.getElementById(
             "head"
         );
-
 
     const face =
         document.getElementById(
@@ -2144,6 +1804,10 @@ function toggleHeadless(){
         !headless;
 
 
+    avatarData.headless =
+        headless;
+
+
     if(headless){
 
         head.classList.add(
@@ -2153,9 +1817,8 @@ function toggleHeadless(){
         face.style.display =
             "none";
 
-
         showMessage(
-            "Headless style equipped!"
+            "Headless style saved!"
         );
 
     }else{
@@ -2167,12 +1830,14 @@ function toggleHeadless(){
         face.style.display =
             "block";
 
-
         showMessage(
             "Head restored!"
         );
 
     }
+
+
+    saveAvatar();
 
 }
 
@@ -2188,7 +1853,6 @@ function updateAvatar(){
             "headAccessory"
         );
 
-
     const fire =
         document.getElementById(
             "fire"
@@ -2198,17 +1862,15 @@ function updateAvatar(){
     accessory.className =
         "accessory";
 
-
     fire.className =
         "accessory";
-
 
     fire.textContent =
         "";
 
 
     /*
-       BLUE FROZEN HORNS
+       FROZEN HORNS
     */
 
     if(
@@ -2220,20 +1882,14 @@ function updateAvatar(){
         accessory.className =
             "accessory frozenHorns blueHorns";
 
-
         fire.className =
-            "accessory fire blueFire";
-
+            "accessory fire";
 
         fire.textContent =
             "🔥";
 
     }
 
-
-    /*
-       RED FROZEN HORNS
-    */
 
     if(
         equipped.includes(
@@ -2244,20 +1900,14 @@ function updateAvatar(){
         accessory.className =
             "accessory frozenHorns redHorns";
 
-
         fire.className =
             "accessory fire";
-
 
         fire.textContent =
             "🔥";
 
     }
 
-
-    /*
-       GREEN FROZEN HORNS
-    */
 
     if(
         equipped.includes(
@@ -2268,10 +1918,8 @@ function updateAvatar(){
         accessory.className =
             "accessory frozenHorns greenHorns";
 
-
         fire.className =
-            "accessory fire greenFire";
-
+            "accessory fire";
 
         fire.textContent =
             "🔥";
@@ -2283,81 +1931,101 @@ function updateAvatar(){
        VALKYRIES
     */
 
-    if(
-        equipped.includes(
-            "Sparkle Time Valkyrie"
-        )
+    const valkMap = {
+
+        "Sparkle Time Valkyrie":
+            "goldValk",
+
+        "Red Valkyrie":
+            "redValk",
+
+        "Blue Valkyrie":
+            "blueValk",
+
+        "Green Valkyrie":
+            "greenValk",
+
+        "Purple Valkyrie":
+            "purpleValk",
+
+        "Black Valkyrie":
+            "blackValk"
+
+    };
+
+
+    for(
+        const name in valkMap
     ){
 
-        accessory.className =
-            "accessory valk goldValk";
+        if(
+            equipped.includes(name)
+        ){
 
-    }
+            accessory.className =
+                "accessory valk " +
+                valkMap[name];
 
-
-    if(
-        equipped.includes(
-            "Red Valkyrie"
-        )
-    ){
-
-        accessory.className =
-            "accessory valk redValk";
-
-    }
-
-
-    if(
-        equipped.includes(
-            "Blue Valkyrie"
-        )
-    ){
-
-        accessory.className =
-            "accessory valk blueValk";
-
-    }
-
-
-    if(
-        equipped.includes(
-            "Green Valkyrie"
-        )
-    ){
-
-        accessory.className =
-            "accessory valk greenValk";
-
-    }
-
-
-    if(
-        equipped.includes(
-            "Purple Valkyrie"
-        )
-    ){
-
-        accessory.className =
-            "accessory valk purpleValk";
-
-    }
-
-
-    if(
-        equipped.includes(
-            "Black Valkyrie"
-        )
-    ){
-
-        accessory.className =
-            "accessory valk blackValk";
+        }
 
     }
 
 
     /*
-       If gear exists, move arm out.
-       Otherwise return arm to normal.
+       FEDORAS
+    */
+
+    const fedoraMap = {
+
+        "Sparkle Time Fedora":
+            "fedoraRainbow",
+
+        "Red Sparkle Time Fedora":
+            "fedoraRed",
+
+        "Blue Sparkle Time Fedora":
+            "fedoraBlue",
+
+        "Green Sparkle Time Fedora":
+            "fedoraGreen",
+
+        "Purple Sparkle Time Fedora":
+            "fedoraPurple",
+
+        "Black Sparkle Time Fedora":
+            "fedoraBlack",
+
+        "White Sparkle Time Fedora":
+            "fedoraWhite",
+
+        "Gold Sparkle Time Fedora":
+            "fedoraGold",
+
+        "Pink Sparkle Time Fedora":
+            "fedoraPink"
+
+    };
+
+
+    for(
+        const name in fedoraMap
+    ){
+
+        if(
+            equipped.includes(name)
+        ){
+
+            accessory.className =
+                "accessory fedora " +
+                fedoraMap[name];
+
+        }
+
+    }
+
+
+    /*
+       GEAR ARM
     */
 
     const avatar =
@@ -2390,11 +2058,13 @@ function updateAvatar(){
 
     updateList();
 
+    saveAvatar();
+
 }
 
 
 /* =====================================================
-   EQUIPPED LIST
+   LIST
 ===================================================== */
 
 function updateList(){
@@ -2437,6 +2107,12 @@ function clearAccessories(){
 
     equipped = [];
 
+    avatarData.accessories =
+        [];
+
+    avatarData.gear =
+        null;
+
 
     document.getElementById(
         "headAccessory"
@@ -2469,12 +2145,39 @@ function clearAccessories(){
     );
 
 
+    saveAvatar();
+
     updateList();
 
-
     showMessage(
-        "All accessories and gear removed."
+        "Accessories and gear cleared."
     );
+
+}
+
+
+/* =====================================================
+   RESET
+===================================================== */
+
+function resetAvatar(){
+
+    if(
+        !confirm(
+            "Reset your saved avatar?"
+        )
+    ){
+
+        return;
+
+    }
+
+
+    localStorage.removeItem(
+        SAVE_KEY
+    );
+
+    location.reload();
 
 }
 
@@ -2516,9 +2219,7 @@ function showMessage(text){
    START
 ===================================================== */
 
-updateCoins();
-
-updateList();
+loadAvatar();
 
 </script>
 
