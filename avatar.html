@@ -55,7 +55,6 @@ nav a:hover{background:#aaa}
     display:flex;
     justify-content:space-between;
     align-items:center;
-    gap:10px;
     flex-wrap:wrap;
 }
 
@@ -130,7 +129,7 @@ button:hover{background:#006bd6}
     transform:translateX(-50%);
 }
 
-/* ================= BODY ================= */
+/* ================= HEAD ================= */
 
 .head{
     position:absolute;
@@ -142,6 +141,7 @@ button:hover{background:#006bd6}
     border:4px solid #292929;
     border-radius:7px;
     z-index:20;
+    transition:.25s;
 }
 
 .hair{
@@ -178,6 +178,36 @@ button:hover{background:#006bd6}
     border-bottom:4px solid #111;
     border-radius:0 0 50% 50%;
 }
+
+/* ================= HEADLESS ================= */
+
+.headless .head{
+    width:116px;
+    height:116px;
+    background:transparent;
+    border-color:transparent;
+}
+
+.headless .hair,
+.headless .eye,
+.headless .faceMouth{
+    display:none;
+}
+
+/* subtle neck shadow so it looks connected */
+
+.headless .head:after{
+    content:"";
+    position:absolute;
+    left:39px;
+    top:98px;
+    width:38px;
+    height:18px;
+    background:#292929;
+    border-radius:0 0 8px 8px;
+}
+
+/* ================= BODY ================= */
 
 .torso{
     position:absolute;
@@ -272,7 +302,7 @@ button:hover{background:#006bd6}
 .leftLeg{left:72px}
 .rightLeg{right:72px}
 
-/* KORBLOX STYLE */
+/* ================= KORBLOX ================= */
 
 .korblox{
     left:88px;
@@ -348,16 +378,6 @@ button:hover{background:#006bd6}
     transform:rotate(24deg);
 }
 
-.redHorns .horn{
-    background:#ff4141;
-    filter:drop-shadow(0 0 9px #ff1d1d);
-}
-
-.greenHorns .horn{
-    background:#42e879;
-    filter:drop-shadow(0 0 9px #22ff6e);
-}
-
 .fire{
     position:absolute;
     width:38px;
@@ -396,6 +416,16 @@ button:hover{background:#006bd6}
 .greenHorns .flame{
     background:#22e96b;
     box-shadow:0 0 20px #22e96b;
+}
+
+.redHorns .horn{
+    background:#ff4141;
+    filter:drop-shadow(0 0 9px #ff1d1d);
+}
+
+.greenHorns .horn{
+    background:#42e879;
+    filter:drop-shadow(0 0 9px #22ff6e);
 }
 
 /* ================= FEDORAS ================= */
@@ -909,7 +939,7 @@ button:hover{background:#006bd6}
 
 <div id="gear"></div>
 
-<div class="head">
+<div class="head" id="head">
 
 <div class="hair"></div>
 
@@ -920,7 +950,7 @@ button:hover{background:#006bd6}
 
 </div>
 
-<div id="torso" class="torso">
+<div class="torso">
 <div id="shirt" class="shirtText mtb">MTB</div>
 </div>
 
@@ -950,6 +980,8 @@ None
 
 <br>
 
+<button onclick="toggleHeadless()">HEADLESS ON / OFF</button>
+
 <button class="gray" onclick="clearAccessories()">
 REMOVE ACCESSORIES
 </button>
@@ -963,6 +995,29 @@ RESET AVATAR
 <!-- SHOP -->
 
 <div class="panel">
+
+<div class="category">
+
+<h2>💀 Head & Faces</h2>
+
+<div class="grid">
+
+<div class="item">
+<h3>Classic Face</h3>
+<button onclick="setHeadless(false)">
+Wear
+</button>
+</div>
+
+<div class="item">
+<h3>Headless</h3>
+<button onclick="setHeadless(true)">
+Wear
+</button>
+</div>
+
+</div>
+</div>
 
 <div class="category">
 
@@ -1134,10 +1189,10 @@ Equip
 <script>
 
 /* =========================================
-   SAVE SYSTEM
+   SAVE DATA
 ========================================= */
 
-const SAVE_KEY="MTB_AVATAR_SAVE_V10";
+const SAVE_KEY="MTB_AVATAR_SAVE_V11";
 
 let data=JSON.parse(
     localStorage.getItem(SAVE_KEY)
@@ -1147,8 +1202,13 @@ let data=JSON.parse(
     shirtName:"MTB Shirt",
     accessories:[],
     gear:null,
-    korblox:false
+    korblox:false,
+    headless:false
 };
+
+/* =========================================
+   SAVE
+========================================= */
 
 function save(){
     localStorage.setItem(
@@ -1196,6 +1256,34 @@ function updateCoins(){
 }
 
 /* =========================================
+   HEADLESS
+========================================= */
+
+function setHeadless(enabled){
+
+    data.headless=enabled;
+
+    document.getElementById("avatar")
+        .classList.toggle(
+            "headless",
+            enabled
+        );
+
+    save();
+
+    showMessage(
+        enabled
+        ?"Headless equipped"
+        :"Classic face equipped"
+    );
+}
+
+function toggleHeadless(){
+
+    setHeadless(!data.headless);
+}
+
+/* =========================================
    ACCESSORIES
 ========================================= */
 
@@ -1219,7 +1307,9 @@ function toggleAccessory(name,type){
 
     if(data.accessories.length>=3){
 
-        showMessage("You can only wear 3 accessories!");
+        showMessage(
+            "You can only wear 3 accessories!"
+        );
 
         return;
     }
@@ -1405,7 +1495,7 @@ function equipGear(type,name){
 }
 
 /* =========================================
-   CLOTHES
+   SHIRTS
 ========================================= */
 
 function setShirt(type,name){
@@ -1453,26 +1543,36 @@ function toggleKorblox(){
 }
 
 /* =========================================
-   EQUIPPED
+   EQUIPPED LIST
 ========================================= */
 
 function updateEquipped(){
 
     let text="";
 
-    if(data.accessories.length){
-
-        data.accessories.forEach(
-            (item,i)=>{
-                text+=
-                "<b>Accessory "+
-                (i+1)+
-                ":</b> "+
-                item.name+
-                "<br>";
-            }
-        );
+    if(data.headless){
+        text+="<b>Head:</b> Headless<br>";
+    }else{
+        text+="<b>Head:</b> Classic Face<br>";
     }
+
+    if(data.shirtName){
+        text+=
+        "<b>Shirt:</b> "+
+        data.shirtName+
+        "<br>";
+    }
+
+    data.accessories.forEach(
+        (item,i)=>{
+            text+=
+            "<b>Accessory "+
+            (i+1)+
+            ":</b> "+
+            item.name+
+            "<br>";
+        }
+    );
 
     if(data.gear){
 
@@ -1488,15 +1588,13 @@ function updateEquipped(){
         "<b>Body:</b> Blue Korblox-style Leg<br>";
     }
 
-    if(!text)text="None";
-
     document.getElementById(
         "equipped"
     ).innerHTML=text;
 }
 
 /* =========================================
-   CLEAR ACCESSORIES
+   CLEAR
 ========================================= */
 
 function clearAccessories(){
@@ -1514,7 +1612,26 @@ function clearAccessories(){
 
     save();
 
-    showMessage("Accessories and gear removed");
+    showMessage(
+        "Accessories and gear removed"
+    );
+}
+
+/* =========================================
+   RESET
+========================================= */
+
+function resetAvatar(){
+
+    if(!confirm(
+        "Reset your saved avatar?"
+    ))return;
+
+    localStorage.removeItem(
+        SAVE_KEY
+    );
+
+    location.reload();
 }
 
 /* =========================================
@@ -1595,44 +1712,31 @@ function createDeveloperShield(){
 }
 
 /* =========================================
-   RESET
-========================================= */
-
-function resetAvatar(){
-
-    if(!confirm(
-        "Reset your saved avatar?"
-    ))return;
-
-    localStorage.removeItem(
-        SAVE_KEY
-    );
-
-    location.reload();
-}
-
-/* =========================================
-   LOAD EVERYTHING
+   LOAD SAVED AVATAR
 ========================================= */
 
 function loadAvatar(){
 
     updateCoins();
 
-    const shirt=
-        document.getElementById("shirt");
-
-    shirt.className=
+    document.getElementById("shirt")
+        .className=
         "shirtText "+data.shirt;
 
-    shirt.textContent="MTB";
+    document.getElementById("shirt")
+        .textContent="MTB";
 
-    document.getElementById(
-        "leftLeg"
-    ).classList.toggle(
-        "korblox",
-        data.korblox
-    );
+    document.getElementById("avatar")
+        .classList.toggle(
+            "headless",
+            data.headless
+        );
+
+    document.getElementById("leftLeg")
+        .classList.toggle(
+            "korblox",
+            data.korblox
+        );
 
     renderAccessories();
 
@@ -1643,6 +1747,8 @@ function loadAvatar(){
             data.gear.name
         );
     }
+
+    updateEquipped();
 
     createDeveloperShield();
 }
