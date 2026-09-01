@@ -3,673 +3,554 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>MTB REVIVALS</title>
 
 <style>
-/* =========================================================
-   MTB REVIVALS
-   SINGLE-FILE WEBSITE
-   2019-ERA ROBLOX-INSPIRED DESIGN
-   ========================================================= */
+*{box-sizing:border-box}
 
-* {
-    box-sizing: border-box;
+html,body{
+    margin:0;
+    padding:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#eee;
+    color:#333;
 }
 
-html {
-    scroll-behavior: smooth;
+button,input,select{
+    font-family:Arial,Helvetica,sans-serif;
 }
 
-body {
-    margin: 0;
-    background: #eeeeee;
-    color: #333;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 14px;
+button{
+    cursor:pointer;
 }
 
-/* =========================
-   HEADER
-   ========================= */
-
-.header {
-    height: 52px;
-    background: #f7f7f7;
-    border-bottom: 1px solid #c7c7c7;
-    box-shadow: 0 1px 3px rgba(0,0,0,.18);
-
-    display: flex;
-    align-items: center;
-
-    padding: 0 16px;
-
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+.topbar{
+    height:50px;
+    background:#232527;
+    border-bottom:1px solid #111;
+    display:flex;
+    align-items:center;
+    padding:0 14px;
+    color:white;
+    position:sticky;
+    top:0;
+    z-index:100;
 }
 
-.logo {
-    color: #222;
-    text-decoration: none;
-    font-size: 20px;
-    font-weight: bold;
-
-    margin-right: 25px;
-
-    white-space: nowrap;
+.logo{
+    font-size:19px;
+    font-weight:bold;
+    white-space:nowrap;
+    margin-right:10px;
 }
 
-.logo:hover {
-    color: #1682c4;
+.logo span{
+    color:#00a2ff;
 }
 
-.nav {
-    display: flex;
-    align-items: center;
-    gap: 17px;
+.nav{
+    display:flex;
+    height:100%;
+    overflow-x:auto;
 }
 
-.nav button {
-    border: 0;
-    background: transparent;
-
-    color: #1682c4;
-
-    font-size: 14px;
-
-    cursor: pointer;
-
-    padding: 5px 0;
+.nav button{
+    background:transparent;
+    color:#ddd;
+    border:0;
+    padding:0 10px;
+    font-size:13px;
 }
 
-.nav button:hover {
-    text-decoration: underline;
+.nav button:hover{
+    background:#333638;
+    color:white;
 }
 
-.account-area {
-    margin-left: auto;
-
-    display: flex;
-    align-items: center;
-    gap: 10px;
-
-    white-space: nowrap;
+.search{
+    display:flex;
+    margin-left:auto;
 }
 
-.account-area button {
-    border: 0;
-    background: transparent;
-
-    color: #1682c4;
-
-    cursor: pointer;
+.search input{
+    width:190px;
+    height:31px;
+    border:1px solid #888;
+    padding:0 9px;
+    outline:none;
 }
 
-.account-area button:hover {
-    text-decoration: underline;
+.search button{
+    width:38px;
+    height:31px;
+    border:0;
+    background:#00a2ff;
+    color:white;
+    font-size:17px;
 }
 
-/* =========================
-   MAIN
-   ========================= */
-
-.container {
-    width: 100%;
-    max-width: 1150px;
-
-    margin: auto;
-
-    padding: 25px 16px 50px;
+.user-area{
+    margin-left:10px;
+    white-space:nowrap;
+    font-size:12px;
 }
 
-.page {
-    display: none;
+.container{
+    width:min(1180px,100%);
+    margin:auto;
+    padding:18px;
 }
 
-.page.active {
-    display: block;
+.page{
+    display:none;
 }
 
-/* =========================
-   TYPOGRAPHY
-   ========================= */
-
-h1 {
-    font-size: 26px;
-    font-weight: normal;
-
-    margin: 0 0 18px;
+.page.active{
+    display:block;
 }
 
-h2 {
-    font-size: 20px;
-    font-weight: normal;
-
-    margin: 25px 0 12px;
+h1{
+    font-size:25px;
+    font-weight:normal;
+    margin:4px 0 18px;
 }
 
-h3 {
-    font-size: 16px;
-
-    margin: 8px 0;
+h2{
+    font-size:19px;
+    font-weight:normal;
 }
 
-a {
-    color: #1682c4;
+.panel{
+    background:#fff;
+    border:1px solid #ccc;
+    box-shadow:0 1px 2px #ddd;
+    margin-bottom:18px;
 }
 
-/* =========================
-   HERO
-   ========================= */
-
-.hero {
-    background: #fff;
-
-    border: 1px solid #ccc;
-
-    padding: 35px;
-
-    margin-bottom: 25px;
+.panel-title{
+    background:#f8f8f8;
+    border-bottom:1px solid #ddd;
+    padding:12px 14px;
+    font-weight:bold;
 }
 
-.hero h1 {
-    margin-top: 0;
-
-    font-size: 30px;
+.panel-body{
+    padding:14px;
 }
 
-.hero p {
-    color: #666;
-
-    font-size: 15px;
-
-    margin-bottom: 20px;
+.hero{
+    min-height:225px;
+    border:1px solid #c8c8c8;
+    background:linear-gradient(125deg,#d5d5d5,#fff);
+    padding:30px;
+    margin-bottom:18px;
 }
 
-/* =========================
-   BUTTONS
-   ========================= */
-
-.button {
-    display: inline-block;
-
-    background: #1682c4;
-
-    border: 1px solid #126b9e;
-
-    border-radius: 3px;
-
-    color: white;
-
-    padding: 8px 17px;
-
-    font-weight: bold;
-
-    cursor: pointer;
-
-    text-decoration: none;
+.hero h1{
+    font-size:34px;
+    margin:0 0 8px;
 }
 
-.button:hover {
-    background: #126fa8;
+.hero p{
+    max-width:650px;
+    line-height:1.5;
+    color:#666;
 }
 
-.button.gray {
-    background: #ddd;
-
-    border-color: #aaa;
-
-    color: #333;
+.btn{
+    background:#00a2ff;
+    border:1px solid #0085cf;
+    color:white;
+    padding:9px 15px;
+    font-weight:bold;
 }
 
-.button.gray:hover {
-    background: #ccc;
+.btn:hover{
+    background:#008fdc;
 }
 
-/* =========================
-   PANELS
-   ========================= */
-
-.panel {
-    background: #fff;
-
-    border: 1px solid #ccc;
-
-    padding: 16px;
-
-    margin-bottom: 15px;
+.btn.green{
+    background:#6cbd3b;
+    border-color:#579b2d;
 }
 
-/* =========================
-   GAME GRID
-   ========================= */
-
-.grid {
-    display: grid;
-
-    grid-template-columns:
-        repeat(auto-fill, minmax(200px, 1fr));
-
-    gap: 14px;
+.btn.red{
+    background:#e44d4d;
+    border-color:#c43737;
 }
 
-.card {
-    background: #fff;
-
-    border: 1px solid #ccc;
-
-    padding: 10px;
-
-    transition: box-shadow .15s;
+.btn.gray{
+    background:#eee;
+    border-color:#bbb;
+    color:#444;
 }
 
-.card:hover {
-    box-shadow: 0 2px 5px rgba(0,0,0,.15);
+.grid{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:12px;
 }
 
-.thumbnail {
-    height: 125px;
-
-    background: #d7d7d7;
-
-    border: 1px solid #bbb;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    font-size: 45px;
+.card{
+    background:white;
+    border:1px solid #ccc;
+    padding:9px;
+    min-width:0;
 }
 
-.card p {
-    color: #666;
-
-    line-height: 1.4;
+.card:hover{
+    border-color:#888;
 }
 
-.small {
-    color: #777;
-
-    font-size: 12px;
+.thumbnail{
+    height:125px;
+    background:linear-gradient(135deg,#ddd,#bbb);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:48px;
+    margin-bottom:9px;
 }
 
-/* =========================
-   CATALOG
-   ========================= */
-
-.tabs {
-    display: flex;
-
-    gap: 5px;
-
-    flex-wrap: wrap;
-
-    margin-bottom: 16px;
+.card h3{
+    font-size:13px;
+    margin:0 0 6px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
 }
 
-.tabs button {
-    background: #fff;
-
-    border: 1px solid #bbb;
-
-    padding: 7px 14px;
-
-    cursor: pointer;
+.muted{
+    color:#777;
+    font-size:12px;
 }
 
-.tabs button:hover,
-.tabs button.selected {
-    background: #ddd;
+.price{
+    margin:8px 0;
+    color:#777;
+    font-size:12px;
 }
 
-/* =========================
-   LOGIN / SIGNUP
-   ========================= */
-
-.form-box {
-    width: 100%;
-
-    max-width: 410px;
-
-    margin: 50px auto;
+.bar{
+    display:flex;
+    gap:8px;
+    margin-bottom:15px;
 }
 
-.form-box label {
-    display: block;
-
-    font-weight: bold;
-
-    margin: 13px 0;
+.bar input,
+.bar select{
+    height:36px;
+    background:white;
+    border:1px solid #bbb;
+    padding:0 9px;
 }
 
-.form-box input {
-    width: 100%;
-
-    padding: 10px;
-
-    margin-top: 5px;
-
-    border: 1px solid #aaa;
-
-    background: white;
+.bar input{
+    flex:1;
 }
 
-.message {
-    margin-top: 12px;
-
-    font-weight: bold;
+.tabs{
+    display:flex;
+    flex-wrap:wrap;
+    border-bottom:1px solid #ccc;
+    margin-bottom:14px;
 }
 
-.error {
-    color: #b00000;
+.tabs button{
+    padding:10px 14px;
+    background:transparent;
+    border:1px solid transparent;
 }
 
-.success {
-    color: green;
+.tabs button.active{
+    background:#fff;
+    border-color:#ccc;
+    border-bottom-color:#fff;
+    margin-bottom:-1px;
+    font-weight:bold;
 }
 
-/* =========================
-   AVATAR
-   ========================= */
-
-.avatar-layout {
-    display: grid;
-
-    grid-template-columns: 390px 1fr;
-
-    gap: 20px;
+.profile-layout{
+    display:grid;
+    grid-template-columns:250px 1fr;
+    gap:18px;
 }
 
-.avatar-stage {
-    min-height: 460px;
+.avatar-panel{
+    text-align:center;
+}
 
+.avatar-preview{
+    height:260px;
     background:
-        radial-gradient(circle at center, #292929 0%, #101010 70%);
-
-    border: 1px solid #444;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    overflow: hidden;
+        radial-gradient(circle at center,#26303a 0,#111 48%,#030303 100%);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+    position:relative;
 }
 
-.avatar {
-    position: relative;
-
-    width: 180px;
-
-    height: 350px;
+.stars{
+    position:absolute;
+    inset:0;
+    background-image:
+        radial-gradient(circle,#fff 1px,transparent 1px),
+        radial-gradient(circle,#aaa 1px,transparent 1px);
+    background-size:43px 43px,67px 67px;
+    opacity:.25;
 }
 
-/* Head */
-
-.avatar-head {
-    position: absolute;
-
-    width: 110px;
-    height: 110px;
-
-    top: 0;
-    left: 35px;
-
-    background: #f2bd82;
-
-    border: 2px solid #555;
-
-    z-index: 3;
+.character{
+    width:115px;
+    height:190px;
+    position:relative;
+    z-index:2;
 }
 
-.avatar-face {
-    position: absolute;
-
-    top: 35px;
-    left: 27px;
-
-    font-size: 25px;
-
-    letter-spacing: 13px;
-
-    color: #333;
+.character-head{
+    width:70px;
+    height:70px;
+    background:#e8b68b;
+    border:1px solid #bd8863;
+    border-radius:50%;
+    position:absolute;
+    top:0;
+    left:22px;
 }
 
-/* Body */
-
-.avatar-torso {
-    position: absolute;
-
-    width: 135px;
-    height: 135px;
-
-    top: 108px;
-    left: 23px;
-
-    background: #1682c4;
-
-    border: 2px solid #555;
-
-    z-index: 2;
+.character-face{
+    position:absolute;
+    top:25px;
+    left:27px;
+    font-size:18px;
 }
 
-/* Arms */
-
-.avatar-arm {
-    position: absolute;
-
-    width: 45px;
-    height: 130px;
-
-    top: 110px;
-
-    background: #f2bd82;
-
-    border: 2px solid #555;
+.character-body{
+    width:80px;
+    height:78px;
+    background:#168dcc;
+    border:1px solid #116993;
+    position:absolute;
+    top:64px;
+    left:17px;
 }
 
-.avatar-arm.left {
-    left: -22px;
+.character-leg{
+    width:37px;
+    height:63px;
+    background:#555;
+    border:1px solid #444;
+    position:absolute;
+    top:141px;
 }
 
-.avatar-arm.right {
-    right: -22px;
+.character-leg.left{
+    left:17px;
 }
 
-/* Legs */
-
-.avatar-leg {
-    position: absolute;
-
-    width: 61px;
-    height: 110px;
-
-    top: 241px;
-
-    background: #555;
-
-    border: 2px solid #444;
+.character-leg.right{
+    right:17px;
 }
 
-.avatar-leg.left {
-    left: 27px;
+.horn{
+    width:13px;
+    height:46px;
+    background:#c5f2ff;
+    border-radius:10px;
+    position:absolute;
+    top:-34px;
+    box-shadow:0 0 8px #69dfff;
 }
 
-.avatar-leg.right {
-    right: 27px;
+.horn.left{
+    left:12px;
+    transform:rotate(-20deg);
 }
 
-/* =========================
-   AVATAR ITEM LIST
-   ========================= */
-
-.equipped-list {
-    display: flex;
-
-    flex-wrap: wrap;
-
-    gap: 5px;
-
-    margin-bottom: 15px;
+.horn.right{
+    right:12px;
+    transform:rotate(20deg);
 }
 
-.item-button {
-    border: 1px solid #aaa;
-
-    background: #eee;
-
-    padding: 8px;
-
-    cursor: pointer;
+.stats{
+    display:flex;
+    gap:35px;
 }
 
-.item-button:hover {
-    background: #ddd;
+.stats b{
+    display:block;
+    font-size:19px;
 }
 
-/* =========================
-   SEARCH
-   ========================= */
-
-.search {
-    display: flex;
-
-    margin-bottom: 20px;
+.pill{
+    display:inline-block;
+    padding:8px 10px;
+    border:1px solid #ccc;
+    background:#fafafa;
+    margin:3px;
+    font-size:12px;
 }
 
-.search input {
-    flex: 1;
-
-    padding: 9px;
-
-    border: 1px solid #aaa;
+.game-layout{
+    display:grid;
+    grid-template-columns:230px 1fr;
+    gap:18px;
 }
 
-.search button {
-    margin-left: 5px;
+.game-icon{
+    height:180px;
+    background:linear-gradient(135deg,#555,#111);
+    color:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:65px;
 }
 
-/* =========================
-   PROFILE
-   ========================= */
-
-.profile-header {
-    background: #fff;
-
-    border: 1px solid #ccc;
-
-    padding: 20px;
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 20px;
+.form{
+    width:min(430px,100%);
+    margin:35px auto;
 }
 
-.profile-avatar {
-    width: 100px;
-    height: 100px;
-
-    background: #ddd;
-
-    border: 1px solid #aaa;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    font-size: 50px;
+.form input{
+    display:block;
+    width:100%;
+    height:39px;
+    border:1px solid #aaa;
+    margin:6px 0 14px;
+    padding:0 10px;
 }
 
-/* =========================
-   FOOTER
-   ========================= */
-
-.footer {
-    border-top: 1px solid #ccc;
-
-    background: #f7f7f7;
-
-    padding: 25px;
-
-    text-align: center;
-
-    color: #777;
-
-    margin-top: 30px;
+.form label{
+    font-weight:bold;
+    font-size:13px;
 }
 
-/* =========================
-   MOBILE
-   ========================= */
+.notice{
+    padding:10px;
+    background:#fff5d5;
+    border:1px solid #e5d08b;
+    margin-bottom:14px;
+}
 
-@media(max-width: 750px) {
+.modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.55);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    z-index:500;
+}
 
-    .header {
-        height: auto;
+.modal.open{
+    display:flex;
+}
 
-        min-height: 52px;
+.modal-box{
+    width:min(430px,92%);
+    background:white;
+    border:1px solid #aaa;
+    box-shadow:0 5px 25px rgba(0,0,0,.4);
+}
 
-        flex-wrap: wrap;
+.modal-footer{
+    padding:12px;
+    border-top:1px solid #ddd;
+    text-align:right;
+}
 
-        padding: 10px;
+.toast{
+    display:none;
+    position:fixed;
+    right:18px;
+    bottom:18px;
+    background:#252729;
+    color:white;
+    padding:12px 16px;
+    z-index:600;
+}
+
+.toast.show{
+    display:block;
+}
+
+footer{
+    background:#242628;
+    color:#aaa;
+    padding:28px;
+    text-align:center;
+    font-size:12px;
+    margin-top:30px;
+}
+
+.link{
+    color:#0077b5;
+    cursor:pointer;
+}
+
+@media(max-width:900px){
+    .grid{
+        grid-template-columns:repeat(3,1fr);
     }
 
-    .logo {
-        width: 100%;
-
-        margin-bottom: 8px;
-    }
-
-    .nav {
-        width: 100%;
-
-        overflow-x: auto;
-
-        gap: 14px;
-
-        padding-bottom: 4px;
-    }
-
-    .account-area {
-        margin-left: 0;
-
-        margin-top: 8px;
-    }
-
-    .avatar-layout {
-        grid-template-columns: 1fr;
-    }
-
-    .avatar-stage {
-        min-height: 370px;
-    }
-
-    .grid {
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
+    .search input{
+        width:140px;
     }
 }
 
-@media(max-width: 450px) {
-
-    .grid {
-        grid-template-columns: 1fr;
+@media(max-width:650px){
+    .topbar{
+        height:auto;
+        min-height:50px;
+        flex-wrap:wrap;
+        padding:7px;
     }
 
-    .hero {
-        padding: 22px;
+    .nav{
+        width:100%;
+        order:3;
+        height:40px;
     }
 
-    h1 {
-        font-size: 23px;
+    .nav button{
+        height:40px;
+        padding:0 8px;
+    }
+
+    .search{
+        margin-left:auto;
+    }
+
+    .grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .profile-layout,
+    .game-layout{
+        grid-template-columns:1fr;
+    }
+
+    .avatar-preview{
+        max-width:310px;
+        margin:auto;
+    }
+
+    .hero{
+        padding:20px;
+    }
+
+    .hero h1{
+        font-size:27px;
+    }
+
+    .bar{
+        flex-wrap:wrap;
+    }
+
+    .bar input{
+        min-width:100%;
     }
 }
 </style>
@@ -677,448 +558,612 @@ a {
 
 <body>
 
-<!-- =========================================================
-     HEADER
-     ========================================================= -->
+<header class="topbar">
 
-<header class="header">
+<div class="logo">
+MTB <span>REVIVALS</span>
+</div>
 
-    <a class="logo" href="#" onclick="showPage('home')">
-        MTB REVIVALS
-    </a>
+<nav class="nav">
+<button onclick="showPage('home')">Home</button>
+<button onclick="showPage('games')">Games</button>
+<button onclick="showPage('catalog')">Catalog</button>
+<button onclick="showPage('avatar')">Avatar</button>
+<button onclick="showPage('inventory')">Inventory</button>
+<button onclick="showPage('profile')">Profile</button>
+<button onclick="showPage('news')">News</button>
+</nav>
 
-    <nav class="nav">
+<div class="search">
+<input id="globalSearch" placeholder="Search">
+<button onclick="globalSearch()">⌕</button>
+</div>
 
-        <button onclick="showPage('home')">
-            Home
-        </button>
-
-        <button onclick="showPage('games')">
-            Games
-        </button>
-
-        <button onclick="showPage('catalog')">
-            Catalog
-        </button>
-
-        <button onclick="showPage('avatar')">
-            Avatar
-        </button>
-
-        <button onclick="showPage('inventory')">
-            Inventory
-        </button>
-
-        <button onclick="showPage('news')">
-            News
-        </button>
-
-        <button onclick="showPage('profile')">
-            Profile
-        </button>
-
-    </nav>
-
-    <div class="account-area" id="accountArea"></div>
+<div class="user-area" id="userArea"></div>
 
 </header>
 
 
-<!-- =========================================================
-     MAIN
-     ========================================================= -->
-
 <main class="container">
 
 
-<!-- ================= HOME ================= -->
+<!-- HOME -->
 
 <section id="home" class="page active">
 
-    <div class="hero">
+<div class="hero">
 
-        <h1>
-            Welcome to MTB REVIVALS
-        </h1>
+<h1>MTB REVIVALS</h1>
 
-        <p>
-            Experience a classic blocky gaming website inspired by
-            the look and feel of Roblox around 2019.
-        </p>
+<p>
+Welcome to MTB REVIVALS — an independent classic Roblox-inspired
+social and gaming website with an old-school 2019-era interface.
+</p>
 
-        <button
-            class="button"
-            onclick="showPage('games')">
+<button class="btn" onclick="showPage('games')">
+Play Games
+</button>
 
-            Play Games
-
-        </button>
-
-    </div>
+</div>
 
 
-    <h2>
-        Featured Games
-    </h2>
+<div class="panel">
 
-    <div
-        class="grid"
-        id="featuredGames">
-    </div>
+<div class="panel-title">
+Featured Games
+</div>
+
+<div class="panel-body">
+
+<div class="grid" id="featuredGames"></div>
+
+</div>
+
+</div>
 
 
-    <h2>
-        What's New
-    </h2>
+<div class="panel">
 
-    <div class="panel">
+<div class="panel-title">
+Recommended Catalog
+</div>
 
-        <h3>
-            MTB REVIVALS
-        </h3>
+<div class="panel-body">
 
-        <p>
-            Welcome to the revival. Explore games, customize
-            your avatar, collect items and spend MTB Coins.
-        </p>
+<div class="grid" id="recommendedItems"></div>
 
-    </div>
+</div>
+
+</div>
 
 </section>
 
 
-<!-- ================= GAMES ================= -->
+
+<!-- GAMES -->
 
 <section id="games" class="page">
 
-    <h1>
-        Games
-    </h1>
+<h1>Games</h1>
 
-    <div
-        class="grid"
-        id="gamesGrid">
-    </div>
+<div class="bar">
+
+<input
+id="gameSearch"
+placeholder="Search games..."
+oninput="renderGames()"
+>
+
+<select id="gameSort" onchange="renderGames()">
+
+<option value="popular">Popular</option>
+<option value="newest">Newest</option>
+
+</select>
+
+</div>
+
+<div class="grid" id="gamesGrid"></div>
 
 </section>
 
 
-<!-- ================= CATALOG ================= -->
+
+<!-- GAME -->
+
+<section id="game" class="page">
+
+<div class="panel">
+
+<div class="game-layout">
+
+<div class="game-icon" id="gameIcon">
+🎮
+</div>
+
+<div class="panel-body">
+
+<h1 id="gameTitle"></h1>
+
+<p id="gameDescription"></p>
+
+<p class="muted" id="gameStats"></p>
+
+<button class="btn green" onclick="playCurrentGame()">
+▶ Play
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="panel">
+
+<div class="panel-title">
+About
+</div>
+
+<div class="panel-body">
+
+This is a browser-based MTB REVIVALS game launcher.
+
+Playing a game rewards your account with MTB Coins.
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- CATALOG -->
 
 <section id="catalog" class="page">
 
-    <h1>
-        Catalog
-    </h1>
+<h1>Catalog</h1>
 
-    <div class="tabs">
+<div class="tabs">
 
-        <button
-            class="selected"
-            onclick="filterCatalog('All', this)">
-            All
-        </button>
+<button class="active"
+onclick="setCatalog('all',this)">
+Featured
+</button>
 
-        <button
-            onclick="filterCatalog('Hats', this)">
-            Hats
-        </button>
+<button onclick="setCatalog('accessory',this)">
+Accessories
+</button>
 
-        <button
-            onclick="filterCatalog('Faces', this)">
-            Faces
-        </button>
+<button onclick="setCatalog('clothes',this)">
+Clothes
+</button>
 
-        <button
-            onclick="filterCatalog('Clothes', this)">
-            Clothes
-        </button>
+<button onclick="setCatalog('face',this)">
+Faces
+</button>
 
-        <button
-            onclick="filterCatalog('Gear', this)">
-            Gear
-        </button>
+</div>
 
-    </div>
 
-    <div
-        class="grid"
-        id="catalogGrid">
-    </div>
+<div class="bar">
+
+<input
+id="itemSearch"
+placeholder="Search catalog..."
+oninput="renderCatalog()"
+>
+
+<select id="itemSort" onchange="renderCatalog()">
+
+<option value="featured">
+Featured
+</option>
+
+<option value="low">
+Price Low
+</option>
+
+<option value="high">
+Price High
+</option>
+
+</select>
+
+</div>
+
+
+<div class="grid" id="catalogGrid"></div>
 
 </section>
 
 
-<!-- ================= AVATAR ================= -->
+
+<!-- AVATAR -->
 
 <section id="avatar" class="page">
 
-    <h1>
-        Avatar
-    </h1>
+<h1>Avatar</h1>
 
-    <div class="avatar-layout">
+<div class="profile-layout">
 
-        <div class="avatar-stage">
+<div class="panel avatar-panel">
 
-            <div class="avatar">
+<div class="panel-title">
+Avatar
+</div>
 
-                <div class="avatar-head">
+<div class="panel-body">
 
-                    <div class="avatar-face">
-                        • •
-                    </div>
+<div class="avatar-preview">
 
-                </div>
+<div class="stars"></div>
 
-                <div class="avatar-arm left"></div>
+<div class="character">
 
-                <div class="avatar-arm right"></div>
+<div class="horn left"></div>
+<div class="horn right"></div>
 
-                <div class="avatar-torso"></div>
+<div class="character-head">
 
-                <div class="avatar-leg left"></div>
+<span class="character-face">
+•ᴗ•
+</span>
 
-                <div class="avatar-leg right"></div>
+</div>
 
-            </div>
+<div class="character-body"></div>
 
-        </div>
+<div class="character-leg left"></div>
+<div class="character-leg right"></div>
+
+</div>
+
+</div>
+
+<br>
+
+<button class="btn" onclick="saveAvatar()">
+Save Avatar
+</button>
+
+</div>
+
+</div>
 
 
-        <div class="panel">
+<div class="panel">
 
-            <h2>
-                Customize
-            </h2>
+<div class="panel-title">
+Currently Wearing
+</div>
 
-            <p>
-                Equipped accessories:
-                <b id="equippedCount">0</b>/3
-            </p>
+<div class="panel-body" id="wearing"></div>
 
-            <div
-                class="equipped-list"
-                id="avatarItems">
-            </div>
+</div>
 
-            <button
-                class="button"
-                onclick="saveAvatar()">
-
-                Save Avatar
-
-            </button>
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
 
-<!-- ================= INVENTORY ================= -->
+
+<!-- INVENTORY -->
 
 <section id="inventory" class="page">
 
-    <h1>
-        Inventory
-    </h1>
+<h1>Inventory</h1>
 
-    <div class="panel">
+<div class="tabs">
 
-        <h3>
-            Your MTB Coins
-        </h3>
+<button class="active"
+onclick="setInventory('all',this)">
+All
+</button>
 
-        <p>
-            <b
-                id="inventoryCoins">
-                0
-            </b>
-            MTB Coins
-        </p>
+<button onclick="setInventory('accessory',this)">
+Accessories
+</button>
 
-    </div>
+<button onclick="setInventory('clothes',this)">
+Clothes
+</button>
 
-    <div
-        class="grid"
-        id="inventoryGrid">
-    </div>
+<button onclick="setInventory('face',this)">
+Faces
+</button>
+
+</div>
+
+<br>
+
+<div class="grid" id="inventoryGrid"></div>
 
 </section>
 
 
-<!-- ================= PROFILE ================= -->
+
+<!-- PROFILE -->
 
 <section id="profile" class="page">
 
-    <h1>
-        Profile
-    </h1>
+<h1>Profile</h1>
 
-    <div
-        class="profile-header"
-        id="profileBox">
+<div class="profile-layout">
 
-    </div>
+<div class="panel avatar-panel">
+
+<div class="panel-title" id="profileUsername">
+Player
+</div>
+
+<div class="panel-body">
+
+<div class="avatar-preview">
+
+<div class="stars"></div>
+
+<div class="character">
+
+<div class="character-head">
+
+<span class="character-face">
+•ᴗ•
+</span>
+
+</div>
+
+<div class="character-body"></div>
+
+<div class="character-leg left"></div>
+<div class="character-leg right"></div>
+
+</div>
+
+</div>
+
+<br>
+
+<span class="muted">
+Developer Mode
+</span>
+
+</div>
+
+</div>
+
+
+<div>
+
+<div class="panel">
+
+<div class="panel-title">
+About
+</div>
+
+<div class="panel-body">
+
+<p>
+Welcome to my MTB REVIVALS profile!
+</p>
+
+<div class="stats">
+
+<span>
+<b>0</b>
+Friends
+</span>
+
+<span>
+<b>0</b>
+Followers
+</span>
+
+<span>
+<b>0</b>
+Following
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="panel">
+
+<div class="panel-title">
+Friends
+</div>
+
+<div class="panel-body">
+
+<span class="pill">
+No friends yet
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
 
-<!-- ================= NEWS ================= -->
+
+<!-- ACCOUNT -->
+
+<section id="account" class="page">
+
+<h1>Account Settings</h1>
+
+<div class="panel">
+
+<div class="panel-title">
+Account
+</div>
+
+<div class="panel-body">
+
+<label>
+Username
+</label>
+
+<input
+id="newUsername"
+style="display:block;width:100%;max-width:430px;height:38px;border:1px solid #aaa;padding:0 9px;margin:7px 0 14px"
+>
+
+<button class="btn" onclick="changeUsername()">
+Save Changes
+</button>
+
+<button class="btn red" onclick="logout()">
+Log Out
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- NEWS -->
 
 <section id="news" class="page">
 
-    <h1>
-        News
-    </h1>
+<h1>News</h1>
 
-    <article class="panel">
+<div class="panel">
 
-        <h2>
-            MTB REVIVALS Launch
-        </h2>
+<div class="panel-title">
+Welcome to MTB REVIVALS
+</div>
 
-        <p>
-            Welcome to MTB REVIVALS.
-            This project brings back a classic-era website
-            experience with a blocky design.
-        </p>
+<div class="panel-body">
 
-    </article>
+<p>
+Welcome to MTB REVIVALS.
+</p>
 
+<p>
+This project recreates the feel of the classic Roblox web era
+using original HTML, CSS and JavaScript.
+</p>
 
-    <article class="panel">
+</div>
 
-        <h2>
-            Avatar Update
-        </h2>
-
-        <p>
-            Avatar customization, inventory and item
-            equipment are now available.
-        </p>
-
-    </article>
+</div>
 
 
-    <article class="panel">
+<div class="panel">
 
-        <h2>
-            Catalog Update
-        </h2>
+<div class="panel-title">
+Latest Update
+</div>
 
-        <p>
-            Browse hats, faces, clothes and gear.
-        </p>
+<div class="panel-body">
 
-    </article>
+Games, catalog, avatar, inventory, profiles,
+accounts and browser saving are enabled.
+
+</div>
+
+</div>
 
 </section>
 
 
-<!-- ================= LOGIN ================= -->
+
+<!-- LOGIN -->
 
 <section id="login" class="page">
 
-    <div class="form-box panel">
+<div class="panel form">
 
-        <h1>
-            Login
-        </h1>
+<div class="panel-title">
+Log In
+</div>
 
-        <label>
-            Username
+<div class="panel-body">
 
-            <input
-                id="loginUsername"
-                type="text"
-                autocomplete="username">
-        </label>
+<div class="notice">
+Your demo account is stored in this browser.
+</div>
 
+<label>
+Username
+</label>
 
-        <label>
-            Password
+<input id="loginUsername">
 
-            <input
-                id="loginPassword"
-                type="password"
-                autocomplete="current-password">
-        </label>
+<label>
+Password
+</label>
 
+<input
+id="loginPassword"
+type="password"
+>
 
-        <button
-            class="button"
-            onclick="login()">
+<button class="btn" onclick="login()">
+Log In
+</button>
 
-            Login
+<button class="btn gray" onclick="showPage('signup')">
+Sign Up
+</button>
 
-        </button>
+</div>
 
-
-        <p id="loginMessage"></p>
-
-
-        <p>
-            Don't have an account?
-
-            <button
-                class="button gray"
-                onclick="showPage('signup')">
-
-                Sign Up
-
-            </button>
-
-        </p>
-
-    </div>
+</div>
 
 </section>
 
 
-<!-- ================= SIGNUP ================= -->
+
+<!-- SIGNUP -->
 
 <section id="signup" class="page">
 
-    <div class="form-box panel">
+<div class="panel form">
 
-        <h1>
-            Create Account
-        </h1>
+<div class="panel-title">
+Create Account
+</div>
 
-        <label>
-            Username
+<div class="panel-body">
 
-            <input
-                id="signupUsername"
-                type="text"
-                maxlength="20">
-        </label>
+<label>
+Username
+</label>
 
+<input id="signupUsername">
 
-        <label>
-            Password
+<label>
+Password
+</label>
 
-            <input
-                id="signupPassword"
-                type="password">
-        </label>
+<input
+id="signupPassword"
+type="password"
+>
 
+<button class="btn green" onclick="signup()">
+Create Account
+</button>
 
-        <button
-            class="button"
-            onclick="signup()">
+</div>
 
-            Sign Up
-
-        </button>
-
-
-        <p id="signupMessage"></p>
-
-    </div>
+</div>
 
 </section>
 
@@ -1126,1285 +1171,1132 @@ a {
 </main>
 
 
-<footer class="footer">
+<footer>
 
-    MTB REVIVALS © 2026
-
-    <br>
-
-    Independent fan-made revival project.
+MTB REVIVALS • Independent project • Classic web experience
 
 </footer>
 
 
+
+<!-- CONFIRMATION MODAL -->
+
+<div class="modal" id="modal">
+
+<div class="modal-box">
+
+<div class="panel-title" id="modalTitle">
+Confirm
+</div>
+
+<div class="panel-body" id="modalBody">
+</div>
+
+<div class="modal-footer">
+
+<button class="btn gray" onclick="closeModal()">
+Cancel
+</button>
+
+<button class="btn" id="modalConfirm">
+Confirm
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="toast" id="toast"></div>
+
+
+
 <script>
 
-/* =========================================================
+/* =========================
    DATA
-   ========================================================= */
+========================= */
 
-const ITEMS = [
+const games = [
 
-    {
-        id: "frozen-horns",
-        name: "Frozen Horns",
-        category: "Hats",
-        price: 250,
-        icon: "❄️"
-    },
+{
+id:1,
+name:"MTB Town",
+description:"Explore the city, hang out with friends and discover secrets.",
+players:1284,
+icon:"🏙️"
+},
 
-    {
-        id: "sparkle-fedora",
-        name: "Sparkle Fedora",
-        category: "Hats",
-        price: 500,
-        icon: "🎩"
-    },
+{
+id:2,
+name:"Classic Obby",
+description:"A classic obstacle course filled with challenging stages.",
+players:941,
+icon:"🧱"
+},
 
-    {
-        id: "classic-face",
-        name: "Classic Face",
-        category: "Faces",
-        price: 0,
-        icon: "🙂"
-    },
+{
+id:3,
+name:"Natural Disaster",
+description:"Survive dangerous disasters and stay alive.",
+players:812,
+icon:"🌪️"
+},
 
-    {
-        id: "mtb-shirt",
-        name: "MTB Classic Shirt",
-        category: "Clothes",
-        price: 100,
-        icon: "👕"
-    },
+{
+id:4,
+name:"Work at MTB",
+description:"Choose a job and earn MTB Coins.",
+players:637,
+icon:"💼"
+},
 
-    {
-        id: "mtb-pants",
-        name: "MTB Classic Pants",
-        category: "Clothes",
-        price: 100,
-        icon: "👖"
-    },
-
-    {
-        id: "big-pencil",
-        name: "Big Pencil Gear",
-        category: "Gear",
-        price: 150,
-        icon: "✏️"
-    },
-
-    {
-        id: "red-horns",
-        name: "Red Fire Horns",
-        category: "Hats",
-        price: 350,
-        icon: "🔥"
-    },
-
-    {
-        id: "green-horns",
-        name: "Green Fire Horns",
-        category: "Hats",
-        price: 350,
-        icon: "💚"
-    },
-
-    {
-        id: "classic-cap",
-        name: "Classic Cap",
-        category: "Hats",
-        price: 75,
-        icon: "🧢"
-    }
+{
+id:5,
+name:"Sword Arena",
+description:"Fight other players in a classic arena.",
+players:521,
+icon:"⚔️"
+}
 
 ];
 
 
-const GAMES = [
+const items = [
 
-    {
-        id: "brick-city",
-        name: "Brick City",
-        description:
-            "Explore a classic blocky city.",
-        players: 12,
-        icon: "🏙️"
-    },
+{
+id:1,
+name:"Frozen Horns",
+type:"accessory",
+price:250,
+icon:"❄️"
+},
 
-    {
-        id: "classic-obby",
-        name: "Classic Obby",
-        description:
-            "Jump through a classic obstacle course.",
-        players: 8,
-        icon: "🧱"
-    },
+{
+id:2,
+name:"Sparkle Fedora",
+type:"accessory",
+price:750,
+icon:"🎩"
+},
 
-    {
-        id: "baseplate",
-        name: "Classic Baseplate",
-        description:
-            "Build and hang out on a classic baseplate.",
-        players: 4,
-        icon: "🟩"
-    },
+{
+id:3,
+name:"Sparkle Valkyrie",
+type:"accessory",
+price:900,
+icon:"👑"
+},
 
-    {
-        id: "town",
-        name: "MTB Town",
-        description:
-            "Hang out with other players in MTB Town.",
-        players: 6,
-        icon: "🏠"
-    }
+{
+id:4,
+name:"Big Pencil",
+type:"accessory",
+price:100,
+icon:"✏️"
+},
+
+{
+id:5,
+name:"MTB Shirt",
+type:"clothes",
+price:0,
+icon:"👕"
+},
+
+{
+id:6,
+name:"MTB Pants",
+type:"clothes",
+price:0,
+icon:"👖"
+},
+
+{
+id:7,
+name:"Classic Face",
+type:"face",
+price:0,
+icon:"🙂"
+},
+
+{
+id:8,
+name:"Cool Face",
+type:"face",
+price:50,
+icon:"😎"
+},
+
+{
+id:9,
+name:"Red Frozen Horns",
+type:"accessory",
+price:400,
+icon:"🔺"
+},
+
+{
+id:10,
+name:"Green Frozen Horns",
+type:"accessory",
+price:400,
+icon:"🟢"
+},
+
+{
+id:11,
+name:"Classic Blue Shirt",
+type:"clothes",
+price:75,
+icon:"👔"
+},
+
+{
+id:12,
+name:"Classic Jeans",
+type:"clothes",
+price:75,
+icon:"👖"
+}
 
 ];
 
 
-/* =========================================================
-   STORAGE
-   ========================================================= */
-
-const ACCOUNT_KEY =
-    "MTB_REVIVALS_ACCOUNTS";
-
-const SESSION_KEY =
-    "MTB_REVIVALS_SESSION";
-
-
-function getAccounts() {
-
-    return JSON.parse(
-        localStorage.getItem(ACCOUNT_KEY)
-        || "{}"
-    );
-
-}
-
-
-function saveAccounts(accounts) {
-
-    localStorage.setItem(
-        ACCOUNT_KEY,
-        JSON.stringify(accounts)
-    );
-
-}
-
-
-function getCurrentUser() {
-
-    const username =
-        localStorage.getItem(SESSION_KEY);
-
-    if (!username) {
-        return null;
-    }
-
-    const accounts =
-        getAccounts();
-
-    return accounts[username] || null;
-
-}
-
-
-/* =========================================================
-   PAGE NAVIGATION
-   ========================================================= */
-
-function showPage(page) {
-
-    document
-        .querySelectorAll(".page")
-        .forEach(section => {
-
-            section.classList.remove("active");
-
-        });
-
-
-    const target =
-        document.getElementById(page);
-
-    if (target) {
-
-        target.classList.add("active");
-
-    }
-
-
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
-
-
-    renderEverything();
-
-}
-
-
-/* =========================================================
-   ACCOUNT AREA
-   ========================================================= */
-
-function renderAccount() {
-
-    const area =
-        document.getElementById("accountArea");
-
-    const user =
-        getCurrentUser();
-
-
-    if (!user) {
-
-        area.innerHTML = `
-
-            <button onclick="showPage('login')">
-                Login
-            </button>
-
-            <button onclick="showPage('signup')">
-                Sign Up
-            </button>
-
-        `;
-
-        return;
-    }
-
-
-    area.innerHTML = `
-
-        <span>
-            ${escapeHTML(user.username)}
-            ·
-            ${user.coins} Coins
-        </span>
-
-        <button onclick="logout()">
-            Logout
-        </button>
-
-    `;
-
-}
-
-
-/* =========================================================
-   SIGNUP
-   ========================================================= */
-
-function signup() {
-
-    const username =
-        document
-        .getElementById("signupUsername")
-        .value
-        .trim();
-
-
-    const password =
-        document
-        .getElementById("signupPassword")
-        .value;
-
-
-    const message =
-        document
-        .getElementById("signupMessage");
-
-
-    if (username.length < 3) {
-
-        message.className = "message error";
-
-        message.textContent =
-            "Username must be at least 3 characters.";
-
-        return;
-
-    }
-
-
-    if (password.length < 6) {
-
-        message.className = "message error";
-
-        message.textContent =
-            "Password must be at least 6 characters.";
-
-        return;
-
-    }
-
-
-    const accounts =
-        getAccounts();
-
-
-    if (accounts[username]) {
-
-        message.className = "message error";
-
-        message.textContent =
-            "That username already exists.";
-
-        return;
-
-    }
-
-
-    accounts[username] = {
-
-        username: username,
-
-        password: password,
-
-        coins: 1000,
-
-        inventory: [],
-
-        equipped: []
-
-    };
-
-
-    saveAccounts(accounts);
-
-
-    localStorage.setItem(
-        SESSION_KEY,
-        username
-    );
-
-
-    message.className =
-        "message success";
-
-    message.textContent =
-        "Account created!";
-
-
-    setTimeout(() => {
-
-        showPage("home");
-
-    }, 500);
-
-}
-
-
-/* =========================================================
-   LOGIN
-   ========================================================= */
-
-function login() {
-
-    const username =
-        document
-        .getElementById("loginUsername")
-        .value
-        .trim();
-
-
-    const password =
-        document
-        .getElementById("loginPassword")
-        .value;
-
-
-    const message =
-        document
-        .getElementById("loginMessage");
-
-
-    const accounts =
-        getAccounts();
-
-
-    if (
-        !accounts[username]
-        ||
-        accounts[username].password !== password
-    ) {
-
-        message.className =
-            "message error";
-
-        message.textContent =
-            "Invalid username or password.";
-
-        return;
-
-    }
-
-
-    localStorage.setItem(
-        SESSION_KEY,
-        username
-    );
-
-
-    message.className =
-        "message success";
-
-    message.textContent =
-        "Logged in!";
-
-
-    setTimeout(() => {
-
-        showPage("home");
-
-    }, 400);
-
-}
-
-
-/* =========================================================
-   LOGOUT
-   ========================================================= */
-
-function logout() {
-
-    localStorage.removeItem(
-        SESSION_KEY
-    );
-
-    showPage("home");
-
-}
-
-
-/* =========================================================
-   GAME CARDS
-   ========================================================= */
-
-function renderGames() {
-
-    const grid =
-        document.getElementById("gamesGrid");
-
-    const featured =
-        document.getElementById("featuredGames");
-
-
-    const html =
-        GAMES.map(game => `
-
-            <div class="card">
-
-                <div class="thumbnail">
-                    ${game.icon}
-                </div>
-
-                <h3>
-                    ${game.name}
-                </h3>
-
-                <p>
-                    ${game.description}
-                </p>
-
-                <span class="small">
-                    ${game.players} playing
-                </span>
-
-                <br><br>
-
-                <button
-                    class="button"
-                    onclick="playGame('${game.id}')">
-
-                    Play
-
-                </button>
-
-            </div>
-
-        `).join("");
-
-
-    if (grid) {
-        grid.innerHTML = html;
-    }
-
-
-    if (featured) {
-
-        featured.innerHTML =
-            GAMES.slice(0, 3)
-            .map(game => `
-
-                <div class="card">
-
-                    <div class="thumbnail">
-                        ${game.icon}
-                    </div>
-
-                    <h3>
-                        ${game.name}
-                    </h3>
-
-                    <p>
-                        ${game.description}
-                    </p>
-
-                    <button
-                        class="button"
-                        onclick="playGame('${game.id}')">
-
-                        Play
-
-                    </button>
-
-                </div>
-
-            `)
-            .join("");
-
-    }
-
-}
-
-
-/* =========================================================
-   PLAY GAME
-   ========================================================= */
-
-function playGame(id) {
-
-    const game =
-        GAMES.find(
-            x => x.id === id
-        );
-
-
-    if (!game) {
-        return;
-    }
-
-
-    alert(
-        game.name
-        +
-        "\\n\\nDemo server ready."
-        +
-        "\\n\\nTo make this launch a real multiplayer game, "
-        +
-        "connect this button to your own game-server/backend."
-    );
-
-}
-
-
-/* =========================================================
-   CATALOG
-   ========================================================= */
-
-function renderCatalog(category = "All") {
-
-    const grid =
-        document.getElementById("catalogGrid");
-
-
-    if (!grid) {
-        return;
-    }
-
-
-    const filtered =
-        category === "All"
-        ? ITEMS
-        : ITEMS.filter(
-            item =>
-                item.category === category
-        );
-
-
-    grid.innerHTML =
-        filtered.map(item => {
-
-            const user =
-                getCurrentUser();
-
-
-            const owned =
-                user &&
-                user.inventory.includes(
-                    item.id
-                );
-
-
-            return `
-
-                <div class="card">
-
-                    <div class="thumbnail">
-                        ${item.icon}
-                    </div>
-
-                    <h3>
-                        ${item.name}
-                    </h3>
-
-                    <div>
-                        ${item.category}
-                    </div>
-
-                    <p>
-                        ${
-                            item.price === 0
-                            ? "FREE"
-                            : item.price + " MTB Coins"
-                        }
-                    </p>
-
-                    <button
-                        class="button"
-                        onclick="buyItem('${item.id}')">
-
-                        ${owned ? "Owned" : "Buy"}
-
-                    </button>
-
-                </div>
-
-            `;
-
-        }).join("");
-
-}
-
-
-/* =========================================================
-   CATALOG FILTER
-   ========================================================= */
-
-function filterCatalog(
-    category,
-    button
-) {
-
-    document
-        .querySelectorAll(".tabs button")
-        .forEach(btn => {
-
-            btn.classList.remove(
-                "selected"
-            );
-
-        });
-
-
-    button.classList.add(
-        "selected"
-    );
-
-
-    renderCatalog(category);
-
-}
-
-
-/* =========================================================
-   BUY ITEM
-   ========================================================= */
-
-function buyItem(id) {
-
-    const user =
-        getCurrentUser();
-
-
-    if (!user) {
-
-        alert(
-            "You need to login before buying items."
-        );
-
-        showPage("login");
-
-        return;
-
-    }
-
-
-    const item =
-        ITEMS.find(
-            x => x.id === id
-        );
-
-
-    if (!item) {
-        return;
-    }
-
-
-    if (
-        user.inventory.includes(
-            item.id
-        )
-    ) {
-
-        alert(
-            "You already own this item."
-        );
-
-        return;
-
-    }
-
-
-    const priceText =
-        item.price === 0
-        ? "FREE"
-        : item.price + " MTB Coins";
-
-
-    const confirmed =
-        confirm(
-            "Are you sure you want to buy "
-            +
-            item.name
-            +
-            " for "
-            +
-            priceText
-            +
-            "?"
-        );
-
-
-    if (!confirmed) {
-        return;
-    }
-
-
-    if (
-        user.coins <
-        item.price
-    ) {
-
-        alert(
-            "You don't have enough MTB Coins."
-        );
-
-        return;
-
-    }
-
-
-    user.coins -=
-        item.price;
-
-
-    user.inventory.push(
-        item.id
-    );
-
-
-    const accounts =
-        getAccounts();
-
-
-    accounts[user.username] =
-        user;
-
-
-    saveAccounts(
-        accounts
-    );
-
-
-    alert(
-        item.name
-        +
-        " was added to your inventory!"
-    );
-
-
-    renderEverything();
-
-}
-
-
-/* =========================================================
-   INVENTORY
-   ========================================================= */
-
-function renderInventory() {
-
-    const grid =
-        document.getElementById(
-            "inventoryGrid"
-        );
-
-
-    const coins =
-        document.getElementById(
-            "inventoryCoins"
-        );
-
-
-    if (!grid) {
-        return;
-    }
-
-
-    const user =
-        getCurrentUser();
-
-
-    if (!user) {
-
-        coins.textContent =
-            "0";
-
-        grid.innerHTML = `
-
-            <div class="panel">
-
-                You must
-                <a href="#"
-                   onclick="showPage('login')">
-
-                    login
-
-                </a>
-
-                to view your inventory.
-
-            </div>
-
-        `;
-
-        return;
-
-    }
-
-
-    coins.textContent =
-        user.coins;
-
-
-    if (
-        user.inventory.length === 0
-    ) {
-
-        grid.innerHTML = `
-
-            <div class="panel">
-
-                Your inventory is empty.
-
-            </div>
-
-        `;
-
-        return;
-
-    }
-
-
-    grid.innerHTML =
-        user.inventory
-        .map(id => {
-
-            const item =
-                ITEMS.find(
-                    x => x.id === id
-                );
-
-
-            if (!item) {
-                return "";
-            }
-
-
-            return `
-
-                <div class="card">
-
-                    <div class="thumbnail">
-                        ${item.icon}
-                    </div>
-
-                    <h3>
-                        ${item.name}
-                    </h3>
-
-                    <p>
-                        ${item.category}
-                    </p>
-
-                </div>
-
-            `;
-
-        })
-        .join("");
-
-}
-
-
-/* =========================================================
-   AVATAR
-   ========================================================= */
-
-function renderAvatar() {
-
-    const list =
-        document.getElementById(
-            "avatarItems"
-        );
-
-
-    const count =
-        document.getElementById(
-            "equippedCount"
-        );
-
-
-    if (!list) {
-        return;
-    }
-
-
-    const user =
-        getCurrentUser();
-
-
-    if (!user) {
-
-        list.innerHTML = `
-
-            <p>
-                Login to customize your avatar.
-            </p>
-
-            <button
-                class="button"
-                onclick="showPage('login')">
-
-                Login
-
-            </button>
-
-        `;
-
-        count.textContent =
-            "0";
-
-        return;
-
-    }
-
-
-    count.textContent =
-        user.equipped.length;
-
-
-    if (
-        user.inventory.length === 0
-    ) {
-
-        list.innerHTML = `
-
-            <p>
-                Buy items from the Catalog first.
-            </p>
-
-        `;
-
-        return;
-
-    }
-
-
-    list.innerHTML =
-        user.inventory
-        .map(id => {
-
-            const item =
-                ITEMS.find(
-                    x => x.id === id
-                );
-
-
-            if (!item) {
-                return "";
-            }
-
-
-            const equipped =
-                user.equipped.includes(
-                    item.id
-                );
-
-
-            return `
-
-                <button
-                    class="item-button"
-                    onclick="toggleEquip('${item.id}')">
-
-                    ${equipped ? "Unequip" : "Equip"}
-                    ${item.icon}
-                    ${item.name}
-
-                </button>
-
-            `;
-
-        })
-        .join("");
-
-}
-
-
-/* =========================================================
-   EQUIP / UNEQUIP
-   ========================================================= */
-
-function toggleEquip(id) {
-
-    const user =
-        getCurrentUser();
-
-
-    if (!user) {
-        return;
-    }
-
-
-    if (
-        user.equipped.includes(id)
-    ) {
-
-        user.equipped =
-            user.equipped.filter(
-                itemId =>
-                    itemId !== id
-            );
-
-    } else {
-
-        if (
-            user.equipped.length >= 3
-        ) {
-
-            alert(
-                "You can equip a maximum of 3 accessories."
-            );
-
-            return;
-
-        }
-
-
-        user.equipped.push(id);
-
-    }
-
-
-    const accounts =
-        getAccounts();
-
-
-    accounts[user.username] =
-        user;
-
-
-    saveAccounts(
-        accounts
-    );
-
-
-    renderAvatar();
-
-}
-
-
-/* =========================================================
-   SAVE AVATAR
-   ========================================================= */
-
-function saveAvatar() {
-
-    const user =
-        getCurrentUser();
-
-
-    if (!user) {
-
-        alert(
-            "Login before saving your avatar."
-        );
-
-        return;
-
-    }
-
-
-    const accounts =
-        getAccounts();
-
-
-    accounts[user.username] =
-        user;
-
-
-    saveAccounts(
-        accounts
-    );
-
-
-    alert(
-        "Your avatar has been saved!"
-    );
-
-}
-
-
-/* =========================================================
-   PROFILE
-   ========================================================= */
-
-function renderProfile() {
-
-    const box =
-        document.getElementById(
-            "profileBox"
-        );
-
-
-    if (!box) {
-        return;
-    }
-
-
-    const user =
-        getCurrentUser();
-
-
-    if (!user) {
-
-        box.innerHTML = `
-
-            <div>
-
-                <h2>
-                    Guest
-                </h2>
-
-                <p>
-                    Login to view your profile.
-                </p>
-
-                <button
-                    class="button"
-                    onclick="showPage('login')">
-
-                    Login
-
-                </button>
-
-            </div>
-
-        `;
-
-        return;
-
-    }
-
-
-    box.innerHTML = `
-
-        <div class="profile-avatar">
-            🧍
-        </div>
-
-        <div>
-
-            <h2>
-                ${escapeHTML(user.username)}
-            </h2>
-
-            <p>
-                MTB Coins:
-                <b>${user.coins}</b>
-            </p>
-
-            <p>
-                Items:
-                <b>${user.inventory.length}</b>
-            </p>
-
-            <p>
-                Equipped:
-                <b>${user.equipped.length}/3</b>
-            </p>
-
-        </div>
-
-    `;
-
-}
-
-
-/* =========================================================
-   ESCAPE HTML
-   ========================================================= */
-
-function escapeHTML(text) {
-
-    return text
-        .replaceAll("&", "&amp;")
-        .replaceAll("<", "&lt;")
-        .replaceAll(">", "&gt;")
-        .replaceAll('"', "&quot;")
-        .replaceAll("'", "&#039;");
-
-}
-
-
-/* =========================================================
-   RENDER EVERYTHING
-   ========================================================= */
-
-function renderEverything() {
-
-    renderAccount();
-
-    renderGames();
-
-    renderCatalog();
-
-    renderInventory();
-
-    renderAvatar();
-
-    renderProfile();
-
-}
-
-
-/* =========================================================
-   START
-   ========================================================= */
-
-document.addEventListener(
-    "DOMContentLoaded",
-    () => {
-
-        renderEverything();
-
-    }
+/* =========================
+   STATE
+========================= */
+
+let state =
+JSON.parse(localStorage.getItem("MTB_REVIVALS_STATE"))
+||
+{
+    username:"Guest",
+    logged:false,
+    coins:1000,
+    owned:[5,6,7],
+    wearing:[]
+};
+
+let catalogCategory="all";
+let inventoryCategory="all";
+let currentGame=null;
+
+
+/* =========================
+   SAVE
+========================= */
+
+function saveState(){
+
+localStorage.setItem(
+"MTB_REVIVALS_STATE",
+JSON.stringify(state)
 );
+
+updateUserArea();
+
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+function showPage(page){
+
+document
+.querySelectorAll(".page")
+.forEach(p=>p.classList.remove("active"));
+
+document
+.getElementById(page)
+.classList.add("active");
+
+if(page==="games"){
+renderGames();
+}
+
+if(page==="catalog"){
+renderCatalog();
+}
+
+if(page==="inventory"){
+renderInventory();
+}
+
+if(page==="avatar"){
+renderWearing();
+}
+
+if(page==="profile"){
+updateProfile();
+}
+
+if(page==="account"){
+document.getElementById("newUsername").value=state.username;
+}
+
+window.scrollTo(0,0);
+
+}
+
+
+/* =========================
+   USER AREA
+========================= */
+
+function updateUserArea(){
+
+const area =
+document.getElementById("userArea");
+
+if(state.logged){
+
+area.innerHTML = `
+${escapeHTML(state.username)}
+ •
+ <span style="color:#f2b01e">
+ ${state.coins} Coins
+ </span>
+ •
+ <button
+ style="background:none;border:0;color:#fff"
+ onclick="showPage('account')">
+ ⚙
+ </button>
+`;
+
+}else{
+
+area.innerHTML=`
+<button
+style="background:none;border:0;color:white"
+onclick="showPage('login')">
+Log In
+</button>
+`;
+
+}
+
+}
+
+
+/* =========================
+   HOME
+========================= */
+
+function renderHome(){
+
+document.getElementById("featuredGames").innerHTML =
+games
+.map(gameCard)
+.join("");
+
+document.getElementById("recommendedItems").innerHTML =
+items
+.slice(0,5)
+.map(itemCard)
+.join("");
+
+}
+
+
+/* =========================
+   GAME CARDS
+========================= */
+
+function gameCard(game){
+
+return `
+
+<div class="card">
+
+<div class="thumbnail">
+${game.icon}
+</div>
+
+<h3>
+${escapeHTML(game.name)}
+</h3>
+
+<div class="muted">
+${game.players} players
+</div>
+
+<div class="price">
+${escapeHTML(game.description)}
+</div>
+
+<button
+class="btn"
+onclick="openGame(${game.id})">
+
+Play
+
+</button>
+
+</div>
+
+`;
+
+}
+
+
+/* =========================
+   GAMES
+========================= */
+
+function renderGames(){
+
+const query =
+(document.getElementById("gameSearch")?.value||"")
+.toLowerCase();
+
+let result =
+games.filter(game =>
+game.name.toLowerCase().includes(query)
+);
+
+const sort =
+document.getElementById("gameSort")?.value;
+
+if(sort==="popular"){
+
+result.sort((a,b)=>b.players-a.players);
+
+}
+
+if(sort==="newest"){
+
+result.reverse();
+
+}
+
+document.getElementById("gamesGrid").innerHTML =
+result.map(gameCard).join("");
+
+}
+
+
+function openGame(id){
+
+currentGame =
+games.find(game=>game.id===id);
+
+document.getElementById("gameIcon").textContent =
+currentGame.icon;
+
+document.getElementById("gameTitle").textContent =
+currentGame.name;
+
+document.getElementById("gameDescription").textContent =
+currentGame.description;
+
+document.getElementById("gameStats").textContent =
+currentGame.players+" players online";
+
+showPage("game");
+
+}
+
+
+function playCurrentGame(){
+
+if(!currentGame)return;
+
+confirmBox(
+"Join Game",
+`Join <b>${escapeHTML(currentGame.name)}</b>?<br><br>
+Playing this demo game gives you <b>25 MTB Coins</b>.`,
+()=>{
+
+state.coins += 25;
+
+saveState();
+
+toast(
+"Game launched! +25 MTB Coins"
+);
+
+});
+
+}
+
+
+/* =========================
+   CATALOG
+========================= */
+
+function setCatalog(category,button){
+
+catalogCategory=category;
+
+button
+.parentElement
+.querySelectorAll("button")
+.forEach(b=>b.classList.remove("active"));
+
+button.classList.add("active");
+
+renderCatalog();
+
+}
+
+
+function itemCard(item){
+
+const owned =
+state.owned.includes(item.id);
+
+return `
+
+<div class="card">
+
+<div class="thumbnail">
+${item.icon}
+</div>
+
+<h3>
+${escapeHTML(item.name)}
+</h3>
+
+<div class="muted">
+${escapeHTML(item.type)}
+</div>
+
+<div class="price">
+
+${
+item.price===0
+? "FREE"
+: item.price+" MTB Coins"
+}
+
+</div>
+
+<button
+class="btn ${owned?"gray":""}"
+onclick="purchaseItem(${item.id})">
+
+${owned?"Owned":"Buy"}
+
+</button>
+
+</div>
+
+`;
+
+}
+
+
+function renderCatalog(){
+
+let query =
+(document.getElementById("itemSearch")?.value||"")
+.toLowerCase();
+
+let result =
+items.filter(item=>{
+
+const categoryMatch =
+catalogCategory==="all"
+||
+item.type===catalogCategory;
+
+const searchMatch =
+item.name.toLowerCase().includes(query);
+
+return categoryMatch && searchMatch;
+
+});
+
+
+const sort =
+document.getElementById("itemSort")?.value;
+
+if(sort==="low"){
+
+result.sort((a,b)=>a.price-b.price);
+
+}
+
+if(sort==="high"){
+
+result.sort((a,b)=>b.price-a.price);
+
+}
+
+document.getElementById("catalogGrid").innerHTML =
+result.map(itemCard).join("");
+
+}
+
+
+/* =========================
+   PURCHASE
+========================= */
+
+function purchaseItem(id){
+
+const item =
+items.find(x=>x.id===id);
+
+if(state.owned.includes(id)){
+
+toast("You already own this item.");
+
+return;
+
+}
+
+confirmBox(
+
+"Purchase Item",
+
+`
+
+<b>${escapeHTML(item.name)}</b>
+
+<br><br>
+
+Price:
+<b>
+${
+item.price===0
+? "FREE"
+: item.price+" MTB Coins"
+}
+</b>
+
+<br><br>
+
+Would you like to buy this item?
+
+`,
+
+()=>{
+
+if(state.coins<item.price){
+
+toast("You do not have enough MTB Coins.");
+
+return;
+
+}
+
+state.coins -= item.price;
+
+state.owned.push(item.id);
+
+saveState();
+
+renderCatalog();
+renderInventory();
+
+toast(
+item.name+" added to your inventory!"
+);
+
+}
+
+);
+
+}
+
+
+/* =========================
+   INVENTORY
+========================= */
+
+function setInventory(category,button){
+
+inventoryCategory=category;
+
+button
+.parentElement
+.querySelectorAll("button")
+.forEach(b=>b.classList.remove("active"));
+
+button.classList.add("active");
+
+renderInventory();
+
+}
+
+
+function renderInventory(){
+
+const result =
+items.filter(item=>
+
+state.owned.includes(item.id)
+&&
+(
+inventoryCategory==="all"
+||
+item.type===inventoryCategory
+)
+
+);
+
+
+if(result.length===0){
+
+document.getElementById("inventoryGrid").innerHTML=
+"<p class='muted'>Your inventory is empty.</p>";
+
+return;
+
+}
+
+
+document.getElementById("inventoryGrid").innerHTML =
+result.map(item=>`
+
+<div class="card">
+
+<div class="thumbnail">
+${item.icon}
+</div>
+
+<h3>
+${escapeHTML(item.name)}
+</h3>
+
+<button
+class="btn"
+onclick="toggleWear(${item.id})">
+
+${
+state.wearing.includes(item.id)
+? "Unequip"
+: "Wear"
+}
+
+</button>
+
+</div>
+
+`).join("");
+
+}
+
+
+/* =========================
+   AVATAR
+========================= */
+
+function toggleWear(id){
+
+if(!state.owned.includes(id)){
+
+toast("Buy the item before wearing it.");
+
+return;
+
+}
+
+if(state.wearing.includes(id)){
+
+state.wearing =
+state.wearing.filter(x=>x!==id);
+
+}else{
+
+if(state.wearing.length>=3){
+
+toast(
+"Maximum 3 accessories can be equipped."
+);
+
+return;
+
+}
+
+state.wearing.push(id);
+
+}
+
+saveState();
+
+renderInventory();
+renderWearing();
+
+}
+
+
+function renderWearing(){
+
+const element =
+document.getElementById("wearing");
+
+if(state.wearing.length===0){
+
+element.innerHTML=
+"<span class='muted'>Nothing equipped.</span>";
+
+return;
+
+}
+
+element.innerHTML =
+state.wearing.map(id=>{
+
+const item =
+items.find(x=>x.id===id);
+
+return `
+
+<span class="pill">
+
+${item.icon}
+${escapeHTML(item.name)}
+
+<button
+onclick="toggleWear(${id})">
+×
+</button>
+
+</span>
+
+`;
+
+}).join("");
+
+}
+
+
+function saveAvatar(){
+
+localStorage.setItem(
+"MTB_REVIVALS_AVATAR",
+JSON.stringify(state.wearing)
+);
+
+toast("Avatar saved!");
+
+}
+
+
+/* =========================
+   PROFILE
+========================= */
+
+function updateProfile(){
+
+document.getElementById("profileUsername")
+.textContent=state.username;
+
+}
+
+
+/* =========================
+   SIGN UP
+========================= */
+
+function signup(){
+
+const username =
+document
+.getElementById("signupUsername")
+.value
+.trim();
+
+const password =
+document
+.getElementById("signupPassword")
+.value;
+
+if(username.length<3){
+
+toast("Username must be at least 3 characters.");
+
+return;
+
+}
+
+if(password.length<4){
+
+toast("Password must be at least 4 characters.");
+
+return;
+
+}
+
+const users =
+JSON.parse(
+localStorage.getItem("MTB_REVIVALS_USERS")
+||"{}"
+);
+
+if(users[username]){
+
+toast("That username already exists.");
+
+return;
+
+}
+
+users[username]=password;
+
+localStorage.setItem(
+"MTB_REVIVALS_USERS",
+JSON.stringify(users)
+);
+
+state={
+username:username,
+logged:true,
+coins:1000,
+owned:[5,6,7],
+wearing:[]
+};
+
+saveState();
+
+showPage("home");
+
+toast("Account created!");
+
+}
+
+
+/* =========================
+   LOGIN
+========================= */
+
+function login(){
+
+const username =
+document
+.getElementById("loginUsername")
+.value
+.trim();
+
+const password =
+document
+.getElementById("loginPassword")
+.value;
+
+const users =
+JSON.parse(
+localStorage.getItem("MTB_REVIVALS_USERS")
+||"{}"
+);
+
+if(
+!users[username]
+||
+users[username]!==password
+){
+
+toast("Invalid username or password.");
+
+return;
+
+}
+
+state.username=username;
+state.logged=true;
+
+saveState();
+
+showPage("home");
+
+toast("Welcome back!");
+
+}
+
+
+/* =========================
+   LOGOUT
+========================= */
+
+function logout(){
+
+state.logged=false;
+state.username="Guest";
+
+saveState();
+
+showPage("home");
+
+toast("Logged out.");
+
+}
+
+
+/* =========================
+   USERNAME
+========================= */
+
+function changeUsername(){
+
+if(!state.logged){
+
+showPage("login");
+
+return;
+
+}
+
+const newName =
+document
+.getElementById("newUsername")
+.value
+.trim();
+
+if(newName.length<3){
+
+toast("Username is too short.");
+
+return;
+
+}
+
+state.username=newName;
+
+saveState();
+
+updateProfile();
+
+toast("Username changed.");
+
+}
+
+
+/* =========================
+   GLOBAL SEARCH
+========================= */
+
+function globalSearch(){
+
+const query =
+document
+.getElementById("globalSearch")
+.value
+.trim()
+.toLowerCase();
+
+if(!query)return;
+
+const itemMatch =
+items.some(item=>
+item.name.toLowerCase().includes(query)
+);
+
+if(itemMatch){
+
+document.getElementById("itemSearch").value=query;
+
+catalogCategory="all";
+
+showPage("catalog");
+
+renderCatalog();
+
+return;
+
+}
+
+document.getElementById("gameSearch").value=query;
+
+showPage("games");
+
+renderGames();
+
+}
+
+
+/* =========================
+   MODAL
+========================= */
+
+function confirmBox(title,body,callback){
+
+document.getElementById("modalTitle")
+.textContent=title;
+
+document.getElementById("modalBody")
+.innerHTML=body;
+
+document.getElementById("modalConfirm")
+.onclick=()=>{
+
+closeModal();
+
+callback();
+
+};
+
+document
+.getElementById("modal")
+.classList.add("open");
+
+}
+
+
+function closeModal(){
+
+document
+.getElementById("modal")
+.classList.remove("open");
+
+}
+
+
+/* =========================
+   TOAST
+========================= */
+
+function toast(message){
+
+const element =
+document.getElementById("toast");
+
+element.textContent=message;
+
+element.classList.add("show");
+
+setTimeout(()=>{
+
+element.classList.remove("show");
+
+},2200);
+
+}
+
+
+/* =========================
+   SECURITY / TEXT
+========================= */
+
+function escapeHTML(value){
+
+return String(value)
+.replace(/&/g,"&amp;")
+.replace(/</g,"&lt;")
+.replace(/>/g,"&gt;")
+.replace(/"/g,"&quot;")
+.replace(/'/g,"&#039;");
+
+}
+
+
+/* =========================
+   INITIALIZE
+========================= */
+
+renderHome();
+renderGames();
+renderCatalog();
+renderInventory();
+renderWearing();
+updateProfile();
+updateUserArea();
 
 </script>
 
