@@ -1,274 +1,675 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MTB REVIVALS - Account</title>
+
+<title>MTB REVIVALS</title>
 
 <style>
+/* =========================================================
+   MTB REVIVALS
+   SINGLE-FILE WEBSITE
+   2019-ERA ROBLOX-INSPIRED DESIGN
+   ========================================================= */
+
 * {
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f2f2f2;
+    background: #eeeeee;
     color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
 }
 
-/* HEADER */
+/* =========================
+   HEADER
+   ========================= */
 
 .header {
-    height: 120px;
-    background: #4382dc;
-    border-bottom: 4px solid #ef8a2c;
-    color: white;
+    height: 52px;
+    background: #f7f7f7;
+    border-bottom: 1px solid #c7c7c7;
+    box-shadow: 0 1px 3px rgba(0,0,0,.18);
+
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 30px;
-}
 
-.logo {
-    font-size: 42px;
-    font-weight: bold;
-}
+    padding: 0 16px;
 
-.menuButton {
-    background: rgba(255,255,255,.12);
-    border: 2px solid rgba(255,255,255,.35);
-    width: 70px;
-    height: 60px;
-    cursor: pointer;
-}
-
-.menuButton span {
-    display: block;
-    width: 35px;
-    height: 4px;
-    background: #163e78;
-    margin: 7px auto;
-}
-
-.menu {
-    display: none;
-    position: absolute;
-    right: 30px;
-    top: 100px;
-    width: 240px;
-    background: white;
-    border: 1px solid #ccc;
-    box-shadow: 0 5px 20px rgba(0,0,0,.25);
+    position: sticky;
+    top: 0;
     z-index: 1000;
 }
 
-.menu.open {
-    display: block;
-}
-
-.menu a {
-    display: block;
-    padding: 16px;
-    color: #333;
+.logo {
+    color: #222;
     text-decoration: none;
-    border-bottom: 1px solid #ddd;
+    font-size: 20px;
+    font-weight: bold;
+
+    margin-right: 25px;
+
+    white-space: nowrap;
 }
 
-.menu a:hover {
-    background: #eee;
+.logo:hover {
+    color: #1682c4;
 }
 
-/* PAGE */
-
-.page {
-    max-width: 900px;
-    margin: auto;
-    padding: 35px 20px 120px;
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 17px;
 }
 
-.card {
-    background: white;
-    border: 2px solid #ddd;
-    padding: 30px;
-    margin-bottom: 25px;
+.nav button {
+    border: 0;
+    background: transparent;
+
+    color: #1682c4;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    padding: 5px 0;
 }
 
-.card h1,
-.card h2 {
-    margin-top: 0;
+.nav button:hover {
+    text-decoration: underline;
 }
 
-/* AUTH */
+.account-area {
+    margin-left: auto;
 
-input {
-    width: 100%;
-    height: 52px;
-    margin: 8px 0;
-    border: 2px solid #ccc;
-    padding: 10px 14px;
-    font-size: 17px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    white-space: nowrap;
 }
 
-button {
+.account-area button {
+    border: 0;
+    background: transparent;
+
+    color: #1682c4;
+
     cursor: pointer;
 }
 
-.primary {
+.account-area button:hover {
+    text-decoration: underline;
+}
+
+/* =========================
+   MAIN
+   ========================= */
+
+.container {
     width: 100%;
-    background: #4382dc;
+    max-width: 1150px;
+
+    margin: auto;
+
+    padding: 25px 16px 50px;
+}
+
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+/* =========================
+   TYPOGRAPHY
+   ========================= */
+
+h1 {
+    font-size: 26px;
+    font-weight: normal;
+
+    margin: 0 0 18px;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: normal;
+
+    margin: 25px 0 12px;
+}
+
+h3 {
+    font-size: 16px;
+
+    margin: 8px 0;
+}
+
+a {
+    color: #1682c4;
+}
+
+/* =========================
+   HERO
+   ========================= */
+
+.hero {
+    background: #fff;
+
+    border: 1px solid #ccc;
+
+    padding: 35px;
+
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    margin-top: 0;
+
+    font-size: 30px;
+}
+
+.hero p {
+    color: #666;
+
+    font-size: 15px;
+
+    margin-bottom: 20px;
+}
+
+/* =========================
+   BUTTONS
+   ========================= */
+
+.button {
+    display: inline-block;
+
+    background: #1682c4;
+
+    border: 1px solid #126b9e;
+
+    border-radius: 3px;
+
     color: white;
-    border: 0;
-    padding: 15px;
-    margin-top: 10px;
-    font-size: 17px;
+
+    padding: 8px 17px;
+
     font-weight: bold;
+
+    cursor: pointer;
+
+    text-decoration: none;
 }
 
-.primary:hover {
-    background: #2868c0;
+.button:hover {
+    background: #126fa8;
 }
 
-.secondary {
+.button.gray {
     background: #ddd;
-    border: 0;
-    padding: 12px 18px;
-    font-weight: bold;
+
+    border-color: #aaa;
+
+    color: #333;
 }
 
-.logout {
-    background: #d64545;
-    color: white;
-    border: 0;
-    padding: 12px 20px;
-    font-weight: bold;
+.button.gray:hover {
+    background: #ccc;
 }
 
-/* PROFILE */
+/* =========================
+   PANELS
+   ========================= */
 
-.profileTop {
+.panel {
+    background: #fff;
+
+    border: 1px solid #ccc;
+
+    padding: 16px;
+
+    margin-bottom: 15px;
+}
+
+/* =========================
+   GAME GRID
+   ========================= */
+
+.grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fill, minmax(200px, 1fr));
+
+    gap: 14px;
+}
+
+.card {
+    background: #fff;
+
+    border: 1px solid #ccc;
+
+    padding: 10px;
+
+    transition: box-shadow .15s;
+}
+
+.card:hover {
+    box-shadow: 0 2px 5px rgba(0,0,0,.15);
+}
+
+.thumbnail {
+    height: 125px;
+
+    background: #d7d7d7;
+
+    border: 1px solid #bbb;
+
     display: flex;
-    gap: 25px;
+
     align-items: center;
+
+    justify-content: center;
+
+    font-size: 45px;
+}
+
+.card p {
+    color: #666;
+
+    line-height: 1.4;
+}
+
+.small {
+    color: #777;
+
+    font-size: 12px;
+}
+
+/* =========================
+   CATALOG
+   ========================= */
+
+.tabs {
+    display: flex;
+
+    gap: 5px;
+
     flex-wrap: wrap;
+
+    margin-bottom: 16px;
+}
+
+.tabs button {
+    background: #fff;
+
+    border: 1px solid #bbb;
+
+    padding: 7px 14px;
+
+    cursor: pointer;
+}
+
+.tabs button:hover,
+.tabs button.selected {
+    background: #ddd;
+}
+
+/* =========================
+   LOGIN / SIGNUP
+   ========================= */
+
+.form-box {
+    width: 100%;
+
+    max-width: 410px;
+
+    margin: 50px auto;
+}
+
+.form-box label {
+    display: block;
+
+    font-weight: bold;
+
+    margin: 13px 0;
+}
+
+.form-box input {
+    width: 100%;
+
+    padding: 10px;
+
+    margin-top: 5px;
+
+    border: 1px solid #aaa;
+
+    background: white;
+}
+
+.message {
+    margin-top: 12px;
+
+    font-weight: bold;
+}
+
+.error {
+    color: #b00000;
+}
+
+.success {
+    color: green;
+}
+
+/* =========================
+   AVATAR
+   ========================= */
+
+.avatar-layout {
+    display: grid;
+
+    grid-template-columns: 390px 1fr;
+
+    gap: 20px;
+}
+
+.avatar-stage {
+    min-height: 460px;
+
+    background:
+        radial-gradient(circle at center, #292929 0%, #101010 70%);
+
+    border: 1px solid #444;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    overflow: hidden;
 }
 
 .avatar {
-    width: 150px;
-    height: 150px;
-    background: #4382dc;
-    border: 5px solid #222;
     position: relative;
+
+    width: 180px;
+
+    height: 350px;
 }
 
-.avatarHead {
-    position: absolute;
-    width: 55px;
-    height: 55px;
-    background: #efbd76;
-    border: 3px solid #222;
-    left: 45px;
-    top: 12px;
-}
+/* Head */
 
-.avatarBody {
+.avatar-head {
     position: absolute;
-    width: 75px;
-    height: 65px;
-    background: #222;
-    border: 3px solid #222;
+
+    width: 110px;
+    height: 110px;
+
+    top: 0;
     left: 35px;
-    top: 68px;
+
+    background: #f2bd82;
+
+    border: 2px solid #555;
+
+    z-index: 3;
 }
 
-.avatarBody:after {
-    content: "MTB";
+.avatar-face {
     position: absolute;
-    color: white;
-    font-weight: bold;
-    left: 0;
-    right: 0;
-    text-align: center;
-    top: 22px;
+
+    top: 35px;
+    left: 27px;
+
+    font-size: 25px;
+
+    letter-spacing: 13px;
+
+    color: #333;
 }
 
-.username {
-    font-size: 32px;
-    font-weight: bold;
+/* Body */
+
+.avatar-torso {
+    position: absolute;
+
+    width: 135px;
+    height: 135px;
+
+    top: 108px;
+    left: 23px;
+
+    background: #1682c4;
+
+    border: 2px solid #555;
+
+    z-index: 2;
 }
 
-.ownerBadge {
-    display: inline-block;
-    background: #4382dc;
-    color: white;
-    padding: 7px 12px;
-    margin-top: 8px;
-    font-weight: bold;
-    border-radius: 4px;
+/* Arms */
+
+.avatar-arm {
+    position: absolute;
+
+    width: 45px;
+    height: 130px;
+
+    top: 110px;
+
+    background: #f2bd82;
+
+    border: 2px solid #555;
 }
 
-.badge {
-    display: inline-block;
-    background: #ef8a2c;
-    color: white;
-    padding: 7px 12px;
-    margin: 5px 5px 0 0;
-    font-weight: bold;
-    border-radius: 4px;
+.avatar-arm.left {
+    left: -22px;
 }
 
-/* CURRENCY */
-
-.currencyGrid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
+.avatar-arm.right {
+    right: -22px;
 }
 
-.currency {
-    border: 2px solid #ddd;
+/* Legs */
+
+.avatar-leg {
+    position: absolute;
+
+    width: 61px;
+    height: 110px;
+
+    top: 241px;
+
+    background: #555;
+
+    border: 2px solid #444;
+}
+
+.avatar-leg.left {
+    left: 27px;
+}
+
+.avatar-leg.right {
+    right: 27px;
+}
+
+/* =========================
+   AVATAR ITEM LIST
+   ========================= */
+
+.equipped-list {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 5px;
+
+    margin-bottom: 15px;
+}
+
+.item-button {
+    border: 1px solid #aaa;
+
+    background: #eee;
+
+    padding: 8px;
+
+    cursor: pointer;
+}
+
+.item-button:hover {
+    background: #ddd;
+}
+
+/* =========================
+   SEARCH
+   ========================= */
+
+.search {
+    display: flex;
+
+    margin-bottom: 20px;
+}
+
+.search input {
+    flex: 1;
+
+    padding: 9px;
+
+    border: 1px solid #aaa;
+}
+
+.search button {
+    margin-left: 5px;
+}
+
+/* =========================
+   PROFILE
+   ========================= */
+
+.profile-header {
+    background: #fff;
+
+    border: 1px solid #ccc;
+
     padding: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+}
+
+.profile-avatar {
+    width: 100px;
+    height: 100px;
+
+    background: #ddd;
+
+    border: 1px solid #aaa;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 50px;
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+
+.footer {
+    border-top: 1px solid #ccc;
+
+    background: #f7f7f7;
+
+    padding: 25px;
+
     text-align: center;
+
+    color: #777;
+
+    margin-top: 30px;
 }
 
-.currencyNumber {
-    font-size: 32px;
-    font-weight: bold;
-}
+/* =========================
+   MOBILE
+   ========================= */
 
-.robux {
-    color: #51a84f;
-}
-
-.tix {
-    color: #d89d27;
-}
-
-/* STATUS */
-
-#message {
-    margin-top: 15px;
-    font-weight: bold;
-}
-
-/* MOBILE */
-
-@media(max-width:600px) {
-    .logo {
-        font-size: 27px;
-    }
+@media(max-width: 750px) {
 
     .header {
-        padding: 0 15px;
+        height: auto;
+
+        min-height: 52px;
+
+        flex-wrap: wrap;
+
+        padding: 10px;
     }
 
-    .menu {
-        right: 15px;
+    .logo {
+        width: 100%;
+
+        margin-bottom: 8px;
     }
 
-    .currencyGrid {
+    .nav {
+        width: 100%;
+
+        overflow-x: auto;
+
+        gap: 14px;
+
+        padding-bottom: 4px;
+    }
+
+    .account-area {
+        margin-left: 0;
+
+        margin-top: 8px;
+    }
+
+    .avatar-layout {
         grid-template-columns: 1fr;
+    }
+
+    .avatar-stage {
+        min-height: 370px;
+    }
+
+    .grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media(max-width: 450px) {
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding: 22px;
+    }
+
+    h1 {
+        font-size: 23px;
     }
 }
 </style>
@@ -276,444 +677,725 @@ button {
 
 <body>
 
+<!-- =========================================================
+     HEADER
+     ========================================================= -->
+
 <header class="header">
 
-    <div class="logo">
+    <a class="logo" href="#" onclick="showPage('home')">
         MTB REVIVALS
-    </div>
+    </a>
 
-    <button class="menuButton" onclick="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
+    <nav class="nav">
 
-    <div id="menu" class="menu">
-        <a href="index.html">Home</a>
-        <a href="avatar.html">Avatar</a>
-        <a href="inventory.html">Inventory</a>
-        <a href="games.html">Games</a>
-        <a href="accessories.html">Accessories</a>
-        <a href="clothes.html">Clothes</a>
-        <a href="profile.html">My Profile</a>
-        <a href="news.html">News</a>
-    </div>
+        <button onclick="showPage('home')">
+            Home
+        </button>
+
+        <button onclick="showPage('games')">
+            Games
+        </button>
+
+        <button onclick="showPage('catalog')">
+            Catalog
+        </button>
+
+        <button onclick="showPage('avatar')">
+            Avatar
+        </button>
+
+        <button onclick="showPage('inventory')">
+            Inventory
+        </button>
+
+        <button onclick="showPage('news')">
+            News
+        </button>
+
+        <button onclick="showPage('profile')">
+            Profile
+        </button>
+
+    </nav>
+
+    <div class="account-area" id="accountArea"></div>
 
 </header>
 
-<main class="page">
 
-    <!-- LOGIN -->
+<!-- =========================================================
+     MAIN
+     ========================================================= -->
 
-    <section class="card" id="loginSection">
+<main class="container">
 
-        <h1>Login</h1>
 
-        <p>Log into your MTB REVIVALS account.</p>
+<!-- ================= HOME ================= -->
 
-        <input
-            id="loginUsername"
-            placeholder="Username"
-            autocomplete="username"
-        >
+<section id="home" class="page active">
 
-        <input
-            id="loginPassword"
-            type="password"
-            placeholder="Password"
-            autocomplete="current-password"
-        >
+    <div class="hero">
 
-        <button class="primary" onclick="login()">
-            LOGIN
+        <h1>
+            Welcome to MTB REVIVALS
+        </h1>
+
+        <p>
+            Experience a classic blocky gaming website inspired by
+            the look and feel of Roblox around 2019.
+        </p>
+
+        <button
+            class="button"
+            onclick="showPage('games')">
+
+            Play Games
+
         </button>
 
-        <p id="loginMessage"></p>
+    </div>
 
-        <hr>
 
-        <p>Don't have an account?</p>
+    <h2>
+        Featured Games
+    </h2>
 
-        <button class="secondary" onclick="showSignup()">
-            CREATE ACCOUNT
+    <div
+        class="grid"
+        id="featuredGames">
+    </div>
+
+
+    <h2>
+        What's New
+    </h2>
+
+    <div class="panel">
+
+        <h3>
+            MTB REVIVALS
+        </h3>
+
+        <p>
+            Welcome to the revival. Explore games, customize
+            your avatar, collect items and spend MTB Coins.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= GAMES ================= -->
+
+<section id="games" class="page">
+
+    <h1>
+        Games
+    </h1>
+
+    <div
+        class="grid"
+        id="gamesGrid">
+    </div>
+
+</section>
+
+
+<!-- ================= CATALOG ================= -->
+
+<section id="catalog" class="page">
+
+    <h1>
+        Catalog
+    </h1>
+
+    <div class="tabs">
+
+        <button
+            class="selected"
+            onclick="filterCatalog('All', this)">
+            All
         </button>
 
-    </section>
-
-
-    <!-- SIGNUP -->
-
-    <section class="card" id="signupSection" style="display:none">
-
-        <h1>Create Account</h1>
-
-        <input
-            id="signupUsername"
-            placeholder="Username"
-            maxlength="20"
-        >
-
-        <input
-            id="signupPassword"
-            type="password"
-            placeholder="Password"
-            minlength="6"
-        >
-
-        <input
-            id="signupPassword2"
-            type="password"
-            placeholder="Confirm password"
-        >
-
-        <button class="primary" onclick="signup()">
-            SIGN UP
+        <button
+            onclick="filterCatalog('Hats', this)">
+            Hats
         </button>
 
-        <p id="signupMessage"></p>
-
-        <button class="secondary" onclick="showLogin()">
-            BACK TO LOGIN
+        <button
+            onclick="filterCatalog('Faces', this)">
+            Faces
         </button>
 
-    </section>
+        <button
+            onclick="filterCatalog('Clothes', this)">
+            Clothes
+        </button>
+
+        <button
+            onclick="filterCatalog('Gear', this)">
+            Gear
+        </button>
+
+    </div>
+
+    <div
+        class="grid"
+        id="catalogGrid">
+    </div>
+
+</section>
 
 
-    <!-- PROFILE -->
+<!-- ================= AVATAR ================= -->
 
-    <section class="card" id="profileSection" style="display:none">
+<section id="avatar" class="page">
 
-        <div class="profileTop">
+    <h1>
+        Avatar
+    </h1>
+
+    <div class="avatar-layout">
+
+        <div class="avatar-stage">
 
             <div class="avatar">
 
-                <div class="avatarHead"></div>
+                <div class="avatar-head">
 
-                <div class="avatarBody"></div>
+                    <div class="avatar-face">
+                        • •
+                    </div>
 
-            </div>
-
-            <div>
-
-                <div class="username" id="profileUsername">
-                    Mtb
                 </div>
 
-                <div id="profileBadges"></div>
+                <div class="avatar-arm left"></div>
 
-                <p>
-                    Welcome to your MTB REVIVALS profile.
-                </p>
+                <div class="avatar-arm right"></div>
+
+                <div class="avatar-torso"></div>
+
+                <div class="avatar-leg left"></div>
+
+                <div class="avatar-leg right"></div>
 
             </div>
 
         </div>
 
-    </section>
 
+        <div class="panel">
 
-    <!-- CURRENCY -->
+            <h2>
+                Customize
+            </h2>
 
-    <section class="card" id="currencySection" style="display:none">
+            <p>
+                Equipped accessories:
+                <b id="equippedCount">0</b>/3
+            </p>
 
-        <h2>Your Currency</h2>
-
-        <div class="currencyGrid">
-
-            <div class="currency">
-
-                <div>Robux</div>
-
-                <div
-                    id="robuxAmount"
-                    class="currencyNumber robux"
-                >
-                    0
-                </div>
-
+            <div
+                class="equipped-list"
+                id="avatarItems">
             </div>
 
-            <div class="currency">
+            <button
+                class="button"
+                onclick="saveAvatar()">
 
-                <div>Tix</div>
+                Save Avatar
 
-                <div
-                    id="tixAmount"
-                    class="currencyNumber tix"
-                >
-                    0
-                </div>
-
-            </div>
+            </button>
 
         </div>
 
+    </div>
+
+</section>
+
+
+<!-- ================= INVENTORY ================= -->
+
+<section id="inventory" class="page">
+
+    <h1>
+        Inventory
+    </h1>
+
+    <div class="panel">
+
+        <h3>
+            Your MTB Coins
+        </h3>
+
         <p>
-            Earn Robux and Tix by playing MTB REVIVALS games.
+            <b
+                id="inventoryCoins">
+                0
+            </b>
+            MTB Coins
         </p>
 
-    </section>
+    </div>
+
+    <div
+        class="grid"
+        id="inventoryGrid">
+    </div>
+
+</section>
 
 
-    <!-- ACCOUNT -->
+<!-- ================= PROFILE ================= -->
 
-    <section class="card" id="accountSection" style="display:none">
+<section id="profile" class="page">
 
-        <h2>Account</h2>
+    <h1>
+        Profile
+    </h1>
+
+    <div
+        class="profile-header"
+        id="profileBox">
+
+    </div>
+
+</section>
+
+
+<!-- ================= NEWS ================= -->
+
+<section id="news" class="page">
+
+    <h1>
+        News
+    </h1>
+
+    <article class="panel">
+
+        <h2>
+            MTB REVIVALS Launch
+        </h2>
 
         <p>
-            Username:
-            <strong id="accountUsername"></strong>
+            Welcome to MTB REVIVALS.
+            This project brings back a classic-era website
+            experience with a blocky design.
         </p>
+
+    </article>
+
+
+    <article class="panel">
+
+        <h2>
+            Avatar Update
+        </h2>
 
         <p>
-            Account status:
-            <strong>Active</strong>
+            Avatar customization, inventory and item
+            equipment are now available.
         </p>
 
-        <button class="logout" onclick="logout()">
-            LOG OUT
+    </article>
+
+
+    <article class="panel">
+
+        <h2>
+            Catalog Update
+        </h2>
+
+        <p>
+            Browse hats, faces, clothes and gear.
+        </p>
+
+    </article>
+
+</section>
+
+
+<!-- ================= LOGIN ================= -->
+
+<section id="login" class="page">
+
+    <div class="form-box panel">
+
+        <h1>
+            Login
+        </h1>
+
+        <label>
+            Username
+
+            <input
+                id="loginUsername"
+                type="text"
+                autocomplete="username">
+        </label>
+
+
+        <label>
+            Password
+
+            <input
+                id="loginPassword"
+                type="password"
+                autocomplete="current-password">
+        </label>
+
+
+        <button
+            class="button"
+            onclick="login()">
+
+            Login
+
         </button>
 
-    </section>
+
+        <p id="loginMessage"></p>
+
+
+        <p>
+            Don't have an account?
+
+            <button
+                class="button gray"
+                onclick="showPage('signup')">
+
+                Sign Up
+
+            </button>
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SIGNUP ================= -->
+
+<section id="signup" class="page">
+
+    <div class="form-box panel">
+
+        <h1>
+            Create Account
+        </h1>
+
+        <label>
+            Username
+
+            <input
+                id="signupUsername"
+                type="text"
+                maxlength="20">
+        </label>
+
+
+        <label>
+            Password
+
+            <input
+                id="signupPassword"
+                type="password">
+        </label>
+
+
+        <button
+            class="button"
+            onclick="signup()">
+
+            Sign Up
+
+        </button>
+
+
+        <p id="signupMessage"></p>
+
+    </div>
+
+</section>
+
 
 </main>
 
 
+<footer class="footer">
+
+    MTB REVIVALS © 2026
+
+    <br>
+
+    Independent fan-made revival project.
+
+</footer>
+
+
 <script>
 
-/*
-==================================================
-MTB REVIVALS ACCOUNT SYSTEM
-==================================================
-*/
+/* =========================================================
+   DATA
+   ========================================================= */
 
-const ACCOUNTS_KEY = "MTB_REVIVALS_ACCOUNTS";
-const SESSION_KEY = "MTB_REVIVALS_SESSION";
+const ITEMS = [
+
+    {
+        id: "frozen-horns",
+        name: "Frozen Horns",
+        category: "Hats",
+        price: 250,
+        icon: "❄️"
+    },
+
+    {
+        id: "sparkle-fedora",
+        name: "Sparkle Fedora",
+        category: "Hats",
+        price: 500,
+        icon: "🎩"
+    },
+
+    {
+        id: "classic-face",
+        name: "Classic Face",
+        category: "Faces",
+        price: 0,
+        icon: "🙂"
+    },
+
+    {
+        id: "mtb-shirt",
+        name: "MTB Classic Shirt",
+        category: "Clothes",
+        price: 100,
+        icon: "👕"
+    },
+
+    {
+        id: "mtb-pants",
+        name: "MTB Classic Pants",
+        category: "Clothes",
+        price: 100,
+        icon: "👖"
+    },
+
+    {
+        id: "big-pencil",
+        name: "Big Pencil Gear",
+        category: "Gear",
+        price: 150,
+        icon: "✏️"
+    },
+
+    {
+        id: "red-horns",
+        name: "Red Fire Horns",
+        category: "Hats",
+        price: 350,
+        icon: "🔥"
+    },
+
+    {
+        id: "green-horns",
+        name: "Green Fire Horns",
+        category: "Hats",
+        price: 350,
+        icon: "💚"
+    },
+
+    {
+        id: "classic-cap",
+        name: "Classic Cap",
+        category: "Hats",
+        price: 75,
+        icon: "🧢"
+    }
+
+];
 
 
-/*
-==================================================
-GET ACCOUNTS
-==================================================
-*/
+const GAMES = [
+
+    {
+        id: "brick-city",
+        name: "Brick City",
+        description:
+            "Explore a classic blocky city.",
+        players: 12,
+        icon: "🏙️"
+    },
+
+    {
+        id: "classic-obby",
+        name: "Classic Obby",
+        description:
+            "Jump through a classic obstacle course.",
+        players: 8,
+        icon: "🧱"
+    },
+
+    {
+        id: "baseplate",
+        name: "Classic Baseplate",
+        description:
+            "Build and hang out on a classic baseplate.",
+        players: 4,
+        icon: "🟩"
+    },
+
+    {
+        id: "town",
+        name: "MTB Town",
+        description:
+            "Hang out with other players in MTB Town.",
+        players: 6,
+        icon: "🏠"
+    }
+
+];
+
+
+/* =========================================================
+   STORAGE
+   ========================================================= */
+
+const ACCOUNT_KEY =
+    "MTB_REVIVALS_ACCOUNTS";
+
+const SESSION_KEY =
+    "MTB_REVIVALS_SESSION";
+
 
 function getAccounts() {
 
-    try {
+    return JSON.parse(
+        localStorage.getItem(ACCOUNT_KEY)
+        || "{}"
+    );
 
-        return JSON.parse(
-            localStorage.getItem(ACCOUNTS_KEY)
-        ) || {};
-
-    } catch {
-
-        return {};
-
-    }
 }
 
-
-/*
-==================================================
-SAVE ACCOUNTS
-==================================================
-*/
 
 function saveAccounts(accounts) {
 
     localStorage.setItem(
-        ACCOUNTS_KEY,
+        ACCOUNT_KEY,
         JSON.stringify(accounts)
     );
 
 }
 
 
-/*
-==================================================
-CREATE OWNER ACCOUNT
-==================================================
-*/
-
-function createOwnerAccount() {
-
-    const accounts = getAccounts();
-
-    /*
-       YOUR OWNER ACCOUNT
-    */
-
-    if (!accounts["Mtb"]) {
-
-        accounts["Mtb"] = {
-
-            username: "Mtb",
-
-            password: "6A1e!!??",
-
-            robux: 1000,
-
-            tix: 1000,
-
-            badges: [
-                "Mtb Owner"
-            ],
-
-            owner: true,
-
-            inventory: [],
-
-            avatar: {
-
-                shirt: null,
-
-                pants: null,
-
-                accessories: [],
-
-                gear: null
-
-            },
-
-            createdAt:
-                new Date().toISOString()
-
-        };
-
-        saveAccounts(accounts);
-
-    } else {
-
-        /*
-           Make sure the owner account
-           keeps owner permissions.
-        */
-
-        accounts["Mtb"].password =
-            "6A1e!!??";
-
-        accounts["Mtb"].owner = true;
-
-        if (
-            !Array.isArray(
-                accounts["Mtb"].badges
-            )
-        ) {
-
-            accounts["Mtb"].badges = [];
-
-        }
-
-        if (
-            !accounts["Mtb"]
-                .badges
-                .includes("Mtb Owner")
-        ) {
-
-            accounts["Mtb"]
-                .badges
-                .push("Mtb Owner");
-
-        }
-
-        saveAccounts(accounts);
-
-    }
-
-}
-
-
-/*
-==================================================
-LOGIN
-==================================================
-*/
-
-function login() {
+function getCurrentUser() {
 
     const username =
-        document
-        .getElementById("loginUsername")
-        .value
-        .trim();
+        localStorage.getItem(SESSION_KEY);
 
-    const password =
-        document
-        .getElementById("loginPassword")
-        .value;
-
-    const message =
-        document
-        .getElementById("loginMessage");
-
-
-    if (!username || !password) {
-
-        message.textContent =
-            "Enter your username and password.";
-
-        message.style.color = "red";
-
-        return;
-
+    if (!username) {
+        return null;
     }
 
+    const accounts =
+        getAccounts();
 
-    const accounts = getAccounts();
-
-    const account =
-        accounts[username];
-
-
-    if (!account) {
-
-        message.textContent =
-            "Account not found.";
-
-        message.style.color = "red";
-
-        return;
-
-    }
-
-
-    if (
-        account.password !== password
-    ) {
-
-        message.textContent =
-            "Incorrect password.";
-
-        message.style.color = "red";
-
-        return;
-
-    }
-
-
-    localStorage.setItem(
-        SESSION_KEY,
-        username
-    );
-
-
-    message.textContent =
-        "Login successful!";
-
-    message.style.color = "green";
-
-
-    showProfile();
+    return accounts[username] || null;
 
 }
 
 
-/*
-==================================================
-SIGNUP
-==================================================
-*/
+/* =========================================================
+   PAGE NAVIGATION
+   ========================================================= */
+
+function showPage(page) {
+
+    document
+        .querySelectorAll(".page")
+        .forEach(section => {
+
+            section.classList.remove("active");
+
+        });
+
+
+    const target =
+        document.getElementById(page);
+
+    if (target) {
+
+        target.classList.add("active");
+
+    }
+
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+
+    renderEverything();
+
+}
+
+
+/* =========================================================
+   ACCOUNT AREA
+   ========================================================= */
+
+function renderAccount() {
+
+    const area =
+        document.getElementById("accountArea");
+
+    const user =
+        getCurrentUser();
+
+
+    if (!user) {
+
+        area.innerHTML = `
+
+            <button onclick="showPage('login')">
+                Login
+            </button>
+
+            <button onclick="showPage('signup')">
+                Sign Up
+            </button>
+
+        `;
+
+        return;
+    }
+
+
+    area.innerHTML = `
+
+        <span>
+            ${escapeHTML(user.username)}
+            ·
+            ${user.coins} Coins
+        </span>
+
+        <button onclick="logout()">
+            Logout
+        </button>
+
+    `;
+
+}
+
+
+/* =========================================================
+   SIGNUP
+   ========================================================= */
 
 function signup() {
 
@@ -723,87 +1405,52 @@ function signup() {
         .value
         .trim();
 
+
     const password =
         document
         .getElementById("signupPassword")
         .value;
 
-    const password2 =
-        document
-        .getElementById("signupPassword2")
-        .value;
 
     const message =
         document
         .getElementById("signupMessage");
 
 
-    if (
-        username.length < 3
-    ) {
+    if (username.length < 3) {
+
+        message.className = "message error";
 
         message.textContent =
             "Username must be at least 3 characters.";
 
-        message.style.color = "red";
-
         return;
 
     }
 
 
-    if (
-        password.length < 6
-    ) {
+    if (password.length < 6) {
+
+        message.className = "message error";
 
         message.textContent =
             "Password must be at least 6 characters.";
 
-        message.style.color = "red";
-
         return;
 
     }
 
 
-    if (
-        password !== password2
-    ) {
+    const accounts =
+        getAccounts();
+
+
+    if (accounts[username]) {
+
+        message.className = "message error";
 
         message.textContent =
-            "Passwords do not match.";
-
-        message.style.color = "red";
-
-        return;
-
-    }
-
-
-    const accounts = getAccounts();
-
-
-    /*
-       Case-insensitive username checking
-       prevents Mtb and mtb becoming
-       separate accounts.
-    */
-
-    const usernameExists =
-        Object.keys(accounts)
-        .some(
-            name =>
-                name.toLowerCase()
-                === username.toLowerCase()
-        );
-
-
-    if (usernameExists) {
-
-        message.textContent =
-            "That username already exists. Try logging in instead.";
-
-        message.style.color = "red";
+            "That username already exists.";
 
         return;
 
@@ -816,30 +1463,11 @@ function signup() {
 
         password: password,
 
-        robux: 0,
-
-        tix: 0,
-
-        badges: [],
-
-        owner: false,
+        coins: 1000,
 
         inventory: [],
 
-        avatar: {
-
-            shirt: null,
-
-            pants: null,
-
-            accessories: [],
-
-            gear: null
-
-        },
-
-        createdAt:
-            new Date().toISOString()
+        equipped: []
 
     };
 
@@ -847,9 +1475,72 @@ function signup() {
     saveAccounts(accounts);
 
 
-    /*
-       Automatically log the new user in.
-    */
+    localStorage.setItem(
+        SESSION_KEY,
+        username
+    );
+
+
+    message.className =
+        "message success";
+
+    message.textContent =
+        "Account created!";
+
+
+    setTimeout(() => {
+
+        showPage("home");
+
+    }, 500);
+
+}
+
+
+/* =========================================================
+   LOGIN
+   ========================================================= */
+
+function login() {
+
+    const username =
+        document
+        .getElementById("loginUsername")
+        .value
+        .trim();
+
+
+    const password =
+        document
+        .getElementById("loginPassword")
+        .value;
+
+
+    const message =
+        document
+        .getElementById("loginMessage");
+
+
+    const accounts =
+        getAccounts();
+
+
+    if (
+        !accounts[username]
+        ||
+        accounts[username].password !== password
+    ) {
+
+        message.className =
+            "message error";
+
+        message.textContent =
+            "Invalid username or password.";
+
+        return;
+
+    }
+
 
     localStorage.setItem(
         SESSION_KEY,
@@ -857,194 +1548,25 @@ function signup() {
     );
 
 
-    showProfile();
+    message.className =
+        "message success";
+
+    message.textContent =
+        "Logged in!";
+
+
+    setTimeout(() => {
+
+        showPage("home");
+
+    }, 400);
 
 }
 
 
-/*
-==================================================
-SHOW LOGIN
-==================================================
-*/
-
-function showLogin() {
-
-    document
-        .getElementById("loginSection")
-        .style.display = "block";
-
-    document
-        .getElementById("signupSection")
-        .style.display = "none";
-
-    document
-        .getElementById("profileSection")
-        .style.display = "none";
-
-    document
-        .getElementById("currencySection")
-        .style.display = "none";
-
-    document
-        .getElementById("accountSection")
-        .style.display = "none";
-
-}
-
-
-/*
-==================================================
-SHOW SIGNUP
-==================================================
-*/
-
-function showSignup() {
-
-    document
-        .getElementById("loginSection")
-        .style.display = "none";
-
-    document
-        .getElementById("signupSection")
-        .style.display = "block";
-
-}
-
-
-/*
-==================================================
-SHOW PROFILE
-==================================================
-*/
-
-function showProfile() {
-
-    const username =
-        localStorage.getItem(
-            SESSION_KEY
-        );
-
-
-    if (!username) {
-
-        showLogin();
-
-        return;
-
-    }
-
-
-    const accounts = getAccounts();
-
-    const account =
-        accounts[username];
-
-
-    if (!account) {
-
-        localStorage.removeItem(
-            SESSION_KEY
-        );
-
-        showLogin();
-
-        return;
-
-    }
-
-
-    document
-        .getElementById("loginSection")
-        .style.display = "none";
-
-    document
-        .getElementById("signupSection")
-        .style.display = "none";
-
-    document
-        .getElementById("profileSection")
-        .style.display = "block";
-
-    document
-        .getElementById("currencySection")
-        .style.display = "block";
-
-    document
-        .getElementById("accountSection")
-        .style.display = "block";
-
-
-    document
-        .getElementById("profileUsername")
-        .textContent =
-        account.username;
-
-
-    document
-        .getElementById("accountUsername")
-        .textContent =
-        account.username;
-
-
-    document
-        .getElementById("robuxAmount")
-        .textContent =
-        account.robux || 0;
-
-
-    document
-        .getElementById("tixAmount")
-        .textContent =
-        account.tix || 0;
-
-
-    const badges =
-        document.getElementById(
-            "profileBadges"
-        );
-
-    badges.innerHTML = "";
-
-
-    if (
-        Array.isArray(account.badges)
-    ) {
-
-        account.badges.forEach(
-            badgeName => {
-
-                const badge =
-                    document.createElement(
-                        "span"
-                    );
-
-                badge.className =
-                    badgeName ===
-                    "Mtb Owner"
-                    ? "ownerBadge"
-                    : "badge";
-
-                badge.textContent =
-                    badgeName;
-
-                badges.appendChild(
-                    badge
-                );
-
-            }
-        );
-
-    }
-
-}
-
-
-/*
-==================================================
-LOGOUT
-==================================================
-*/
+/* =========================================================
+   LOGOUT
+   ========================================================= */
 
 function logout() {
 
@@ -1052,38 +1574,839 @@ function logout() {
         SESSION_KEY
     );
 
-    showLogin();
+    showPage("home");
 
 }
 
 
-/*
-==================================================
-MENU
-==================================================
-*/
+/* =========================================================
+   GAME CARDS
+   ========================================================= */
 
-function toggleMenu() {
+function renderGames() {
+
+    const grid =
+        document.getElementById("gamesGrid");
+
+    const featured =
+        document.getElementById("featuredGames");
+
+
+    const html =
+        GAMES.map(game => `
+
+            <div class="card">
+
+                <div class="thumbnail">
+                    ${game.icon}
+                </div>
+
+                <h3>
+                    ${game.name}
+                </h3>
+
+                <p>
+                    ${game.description}
+                </p>
+
+                <span class="small">
+                    ${game.players} playing
+                </span>
+
+                <br><br>
+
+                <button
+                    class="button"
+                    onclick="playGame('${game.id}')">
+
+                    Play
+
+                </button>
+
+            </div>
+
+        `).join("");
+
+
+    if (grid) {
+        grid.innerHTML = html;
+    }
+
+
+    if (featured) {
+
+        featured.innerHTML =
+            GAMES.slice(0, 3)
+            .map(game => `
+
+                <div class="card">
+
+                    <div class="thumbnail">
+                        ${game.icon}
+                    </div>
+
+                    <h3>
+                        ${game.name}
+                    </h3>
+
+                    <p>
+                        ${game.description}
+                    </p>
+
+                    <button
+                        class="button"
+                        onclick="playGame('${game.id}')">
+
+                        Play
+
+                    </button>
+
+                </div>
+
+            `)
+            .join("");
+
+    }
+
+}
+
+
+/* =========================================================
+   PLAY GAME
+   ========================================================= */
+
+function playGame(id) {
+
+    const game =
+        GAMES.find(
+            x => x.id === id
+        );
+
+
+    if (!game) {
+        return;
+    }
+
+
+    alert(
+        game.name
+        +
+        "\\n\\nDemo server ready."
+        +
+        "\\n\\nTo make this launch a real multiplayer game, "
+        +
+        "connect this button to your own game-server/backend."
+    );
+
+}
+
+
+/* =========================================================
+   CATALOG
+   ========================================================= */
+
+function renderCatalog(category = "All") {
+
+    const grid =
+        document.getElementById("catalogGrid");
+
+
+    if (!grid) {
+        return;
+    }
+
+
+    const filtered =
+        category === "All"
+        ? ITEMS
+        : ITEMS.filter(
+            item =>
+                item.category === category
+        );
+
+
+    grid.innerHTML =
+        filtered.map(item => {
+
+            const user =
+                getCurrentUser();
+
+
+            const owned =
+                user &&
+                user.inventory.includes(
+                    item.id
+                );
+
+
+            return `
+
+                <div class="card">
+
+                    <div class="thumbnail">
+                        ${item.icon}
+                    </div>
+
+                    <h3>
+                        ${item.name}
+                    </h3>
+
+                    <div>
+                        ${item.category}
+                    </div>
+
+                    <p>
+                        ${
+                            item.price === 0
+                            ? "FREE"
+                            : item.price + " MTB Coins"
+                        }
+                    </p>
+
+                    <button
+                        class="button"
+                        onclick="buyItem('${item.id}')">
+
+                        ${owned ? "Owned" : "Buy"}
+
+                    </button>
+
+                </div>
+
+            `;
+
+        }).join("");
+
+}
+
+
+/* =========================================================
+   CATALOG FILTER
+   ========================================================= */
+
+function filterCatalog(
+    category,
+    button
+) {
 
     document
-        .getElementById("menu")
-        .classList.toggle("open");
+        .querySelectorAll(".tabs button")
+        .forEach(btn => {
+
+            btn.classList.remove(
+                "selected"
+            );
+
+        });
+
+
+    button.classList.add(
+        "selected"
+    );
+
+
+    renderCatalog(category);
 
 }
 
 
-/*
-==================================================
-STARTUP
-==================================================
-*/
+/* =========================================================
+   BUY ITEM
+   ========================================================= */
 
-createOwnerAccount();
+function buyItem(id) {
 
-showProfile();
+    const user =
+        getCurrentUser();
+
+
+    if (!user) {
+
+        alert(
+            "You need to login before buying items."
+        );
+
+        showPage("login");
+
+        return;
+
+    }
+
+
+    const item =
+        ITEMS.find(
+            x => x.id === id
+        );
+
+
+    if (!item) {
+        return;
+    }
+
+
+    if (
+        user.inventory.includes(
+            item.id
+        )
+    ) {
+
+        alert(
+            "You already own this item."
+        );
+
+        return;
+
+    }
+
+
+    const priceText =
+        item.price === 0
+        ? "FREE"
+        : item.price + " MTB Coins";
+
+
+    const confirmed =
+        confirm(
+            "Are you sure you want to buy "
+            +
+            item.name
+            +
+            " for "
+            +
+            priceText
+            +
+            "?"
+        );
+
+
+    if (!confirmed) {
+        return;
+    }
+
+
+    if (
+        user.coins <
+        item.price
+    ) {
+
+        alert(
+            "You don't have enough MTB Coins."
+        );
+
+        return;
+
+    }
+
+
+    user.coins -=
+        item.price;
+
+
+    user.inventory.push(
+        item.id
+    );
+
+
+    const accounts =
+        getAccounts();
+
+
+    accounts[user.username] =
+        user;
+
+
+    saveAccounts(
+        accounts
+    );
+
+
+    alert(
+        item.name
+        +
+        " was added to your inventory!"
+    );
+
+
+    renderEverything();
+
+}
+
+
+/* =========================================================
+   INVENTORY
+   ========================================================= */
+
+function renderInventory() {
+
+    const grid =
+        document.getElementById(
+            "inventoryGrid"
+        );
+
+
+    const coins =
+        document.getElementById(
+            "inventoryCoins"
+        );
+
+
+    if (!grid) {
+        return;
+    }
+
+
+    const user =
+        getCurrentUser();
+
+
+    if (!user) {
+
+        coins.textContent =
+            "0";
+
+        grid.innerHTML = `
+
+            <div class="panel">
+
+                You must
+                <a href="#"
+                   onclick="showPage('login')">
+
+                    login
+
+                </a>
+
+                to view your inventory.
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    coins.textContent =
+        user.coins;
+
+
+    if (
+        user.inventory.length === 0
+    ) {
+
+        grid.innerHTML = `
+
+            <div class="panel">
+
+                Your inventory is empty.
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    grid.innerHTML =
+        user.inventory
+        .map(id => {
+
+            const item =
+                ITEMS.find(
+                    x => x.id === id
+                );
+
+
+            if (!item) {
+                return "";
+            }
+
+
+            return `
+
+                <div class="card">
+
+                    <div class="thumbnail">
+                        ${item.icon}
+                    </div>
+
+                    <h3>
+                        ${item.name}
+                    </h3>
+
+                    <p>
+                        ${item.category}
+                    </p>
+
+                </div>
+
+            `;
+
+        })
+        .join("");
+
+}
+
+
+/* =========================================================
+   AVATAR
+   ========================================================= */
+
+function renderAvatar() {
+
+    const list =
+        document.getElementById(
+            "avatarItems"
+        );
+
+
+    const count =
+        document.getElementById(
+            "equippedCount"
+        );
+
+
+    if (!list) {
+        return;
+    }
+
+
+    const user =
+        getCurrentUser();
+
+
+    if (!user) {
+
+        list.innerHTML = `
+
+            <p>
+                Login to customize your avatar.
+            </p>
+
+            <button
+                class="button"
+                onclick="showPage('login')">
+
+                Login
+
+            </button>
+
+        `;
+
+        count.textContent =
+            "0";
+
+        return;
+
+    }
+
+
+    count.textContent =
+        user.equipped.length;
+
+
+    if (
+        user.inventory.length === 0
+    ) {
+
+        list.innerHTML = `
+
+            <p>
+                Buy items from the Catalog first.
+            </p>
+
+        `;
+
+        return;
+
+    }
+
+
+    list.innerHTML =
+        user.inventory
+        .map(id => {
+
+            const item =
+                ITEMS.find(
+                    x => x.id === id
+                );
+
+
+            if (!item) {
+                return "";
+            }
+
+
+            const equipped =
+                user.equipped.includes(
+                    item.id
+                );
+
+
+            return `
+
+                <button
+                    class="item-button"
+                    onclick="toggleEquip('${item.id}')">
+
+                    ${equipped ? "Unequip" : "Equip"}
+                    ${item.icon}
+                    ${item.name}
+
+                </button>
+
+            `;
+
+        })
+        .join("");
+
+}
+
+
+/* =========================================================
+   EQUIP / UNEQUIP
+   ========================================================= */
+
+function toggleEquip(id) {
+
+    const user =
+        getCurrentUser();
+
+
+    if (!user) {
+        return;
+    }
+
+
+    if (
+        user.equipped.includes(id)
+    ) {
+
+        user.equipped =
+            user.equipped.filter(
+                itemId =>
+                    itemId !== id
+            );
+
+    } else {
+
+        if (
+            user.equipped.length >= 3
+        ) {
+
+            alert(
+                "You can equip a maximum of 3 accessories."
+            );
+
+            return;
+
+        }
+
+
+        user.equipped.push(id);
+
+    }
+
+
+    const accounts =
+        getAccounts();
+
+
+    accounts[user.username] =
+        user;
+
+
+    saveAccounts(
+        accounts
+    );
+
+
+    renderAvatar();
+
+}
+
+
+/* =========================================================
+   SAVE AVATAR
+   ========================================================= */
+
+function saveAvatar() {
+
+    const user =
+        getCurrentUser();
+
+
+    if (!user) {
+
+        alert(
+            "Login before saving your avatar."
+        );
+
+        return;
+
+    }
+
+
+    const accounts =
+        getAccounts();
+
+
+    accounts[user.username] =
+        user;
+
+
+    saveAccounts(
+        accounts
+    );
+
+
+    alert(
+        "Your avatar has been saved!"
+    );
+
+}
+
+
+/* =========================================================
+   PROFILE
+   ========================================================= */
+
+function renderProfile() {
+
+    const box =
+        document.getElementById(
+            "profileBox"
+        );
+
+
+    if (!box) {
+        return;
+    }
+
+
+    const user =
+        getCurrentUser();
+
+
+    if (!user) {
+
+        box.innerHTML = `
+
+            <div>
+
+                <h2>
+                    Guest
+                </h2>
+
+                <p>
+                    Login to view your profile.
+                </p>
+
+                <button
+                    class="button"
+                    onclick="showPage('login')">
+
+                    Login
+
+                </button>
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    box.innerHTML = `
+
+        <div class="profile-avatar">
+            🧍
+        </div>
+
+        <div>
+
+            <h2>
+                ${escapeHTML(user.username)}
+            </h2>
+
+            <p>
+                MTB Coins:
+                <b>${user.coins}</b>
+            </p>
+
+            <p>
+                Items:
+                <b>${user.inventory.length}</b>
+            </p>
+
+            <p>
+                Equipped:
+                <b>${user.equipped.length}/3</b>
+            </p>
+
+        </div>
+
+    `;
+
+}
+
+
+/* =========================================================
+   ESCAPE HTML
+   ========================================================= */
+
+function escapeHTML(text) {
+
+    return text
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+
+}
+
+
+/* =========================================================
+   RENDER EVERYTHING
+   ========================================================= */
+
+function renderEverything() {
+
+    renderAccount();
+
+    renderGames();
+
+    renderCatalog();
+
+    renderInventory();
+
+    renderAvatar();
+
+    renderProfile();
+
+}
+
+
+/* =========================================================
+   START
+   ========================================================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
+
+        renderEverything();
+
+    }
+);
 
 </script>
 
 </body>
 </html>
-```
