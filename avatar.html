@@ -2,873 +2,1051 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>MTB REVIVALS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MTB REVIVALS - Avatar</title>
 
 <style>
-*{box-sizing:border-box}
-
-body{
-    margin:0;
-    font-family:Arial,sans-serif;
-    background:#05050a;
-    color:white;
+* {
+    box-sizing: border-box;
 }
 
-/* VOID / STARS */
-
-body:before{
-    content:"";
-    position:fixed;
-    inset:0;
-    pointer-events:none;
-    background-image:
-        radial-gradient(circle,#fff 1px,transparent 1.5px),
-        radial-gradient(circle,#aaa 1px,transparent 1.5px),
-        radial-gradient(circle,#6bbcff 1px,transparent 1.5px);
-    background-size:80px 90px,130px 120px,190px 170px;
-    background-position:10px 20px,50px 70px,100px 30px;
-    opacity:.45;
-    z-index:-1;
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f2f2f2;
+    color: #222;
 }
 
-header{
-    background:rgba(10,10,18,.95);
-    border-bottom:2px solid #30303a;
-    padding:16px;
-    position:sticky;
-    top:0;
-    z-index:500;
+/* =========================
+   TOP NAVIGATION
+========================= */
+
+.topbar {
+    height: 52px;
+    background: #0878c9;
+    display: flex;
+    align-items: center;
+    color: white;
+    padding: 0 18px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.25);
 }
 
-.logo{
-    text-align:center;
-    font-size:30px;
-    font-weight:900;
-    letter-spacing:5px;
+.logo {
+    font-size: 27px;
+    font-weight: bold;
+    margin-right: 40px;
+    letter-spacing: -1px;
 }
 
-nav{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:8px;
-    margin-top:12px;
+.logo span {
+    color: white;
 }
 
-nav a{
-    text-decoration:none;
-    color:white;
-    background:#191922;
-    padding:9px 15px;
-    border-radius:6px;
+.top-links {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    gap: 0;
 }
 
-nav a:hover{
-    background:#30303a;
+.top-links a {
+    color: white;
+    text-decoration: none;
+    padding: 17px 20px;
+    font-size: 15px;
 }
 
-.coinbar{
-    max-width:1250px;
-    margin:15px auto;
-    padding:13px 18px;
-    background:rgba(15,15,23,.95);
-    border:1px solid #33333d;
-    border-radius:8px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:10px;
+.top-links a:hover {
+    background: rgba(0,0,0,.15);
 }
 
-.coin{
-    display:inline-block;
-    width:23px;
-    height:23px;
-    background:#e8c62d;
-    border:2px solid #876f09;
-    border-radius:50%;
-    vertical-align:middle;
+.search {
+    margin-left: 20px;
+    width: 335px;
+    height: 34px;
+    background: white;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
 }
 
-.container{
-    max-width:1250px;
-    margin:auto;
-    padding:0 15px 50px;
+.search input {
+    border: 0;
+    outline: none;
+    width: 100%;
+    padding: 8px 12px;
+    font-size: 14px;
 }
 
-.layout{
-    display:grid;
-    grid-template-columns:400px 1fr;
-    gap:20px;
+.search button {
+    border: 0;
+    background: white;
+    font-size: 19px;
+    cursor: pointer;
+    padding-right: 10px;
 }
 
-.panel{
-    background:rgba(14,14,21,.95);
-    border:1px solid #34343e;
-    border-radius:9px;
-    padding:18px;
+.top-right {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    font-size: 14px;
 }
 
-button{
-    border:0;
-    border-radius:5px;
-    padding:10px 13px;
-    background:#197cff;
-    color:white;
-    font-weight:bold;
-    cursor:pointer;
+.top-icon {
+    font-size: 20px;
+    cursor: pointer;
 }
 
-button:hover{
-    background:#075dcc;
+.coin {
+    font-weight: bold;
 }
 
-.gray{
-    background:#555;
+/* =========================
+   LAYOUT
+========================= */
+
+.layout {
+    display: flex;
+    min-height: calc(100vh - 52px);
 }
 
-.category{
-    margin-bottom:25px;
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+    width: 180px;
+    background: white;
+    border-right: 1px solid #ddd;
+    padding: 14px 12px;
+    flex-shrink: 0;
 }
 
-.category h2{
-    margin:0 0 12px;
-    padding:11px;
-    background:#191920;
-    border-bottom:2px solid #333;
-    border-radius:5px;
+.sidebar-user {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 0 3px 12px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
 }
 
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fill,minmax(145px,1fr));
-    gap:10px;
+.side-link {
+    height: 38px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 0 8px;
+    color: #222;
+    text-decoration: none;
+    border-radius: 3px;
+    font-size: 14px;
+    cursor: pointer;
 }
 
-.item{
-    background:#17171f;
-    border:1px solid #35353e;
-    padding:12px;
-    border-radius:6px;
-    text-align:center;
+.side-link:hover {
+    background: #e8e8e8;
 }
 
-.item h3{
-    min-height:35px;
-    font-size:14px;
-    margin:5px 0 12px;
+.side-icon {
+    width: 24px;
+    text-align: center;
+    font-size: 19px;
 }
 
-.item button{
-    width:100%;
+.badge {
+    margin-left: auto;
+    background: #168de2;
+    color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 20px;
+    font-size: 11px;
 }
 
-/* AVATAR */
+.upgrade {
+    margin-top: 12px;
+    width: 100%;
+    border: 0;
+    background: #0878c9;
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
 
-.avatarStage{
-    height:540px;
-    position:relative;
-    overflow:hidden;
-    border:2px solid #30303d;
-    border-radius:8px;
+.events {
+    margin-top: 18px;
+    font-size: 14px;
+}
+
+.events-title {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+/* =========================
+   MAIN
+========================= */
+
+.main {
+    flex: 1;
+    padding: 32px 22px 60px;
+    min-width: 0;
+}
+
+.page-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1160px;
+    margin: auto;
+    margin-bottom: 25px;
+}
+
+.page-title h1 {
+    font-size: 29px;
+    font-weight: normal;
+    margin: 0;
+}
+
+.get-more {
+    background: #14a84a;
+    color: white;
+    border: 0;
+    padding: 11px 17px;
+    border-radius: 3px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* =========================
+   AVATAR EDITOR
+========================= */
+
+.editor {
+    max-width: 1160px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: minmax(500px, 1fr) 390px;
+    gap: 10px;
+}
+
+/* =========================
+   CATALOG AREA
+========================= */
+
+.catalog {
+    background: white;
+    border: 1px solid #ddd;
+}
+
+.main-tabs {
+    height: 56px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    overflow-x: auto;
+}
+
+.main-tab {
+    height: 56px;
+    padding: 0 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 15px;
+    white-space: nowrap;
+}
+
+.main-tab:hover {
+    background: #f3f3f3;
+}
+
+.main-tab.active {
+    border-bottom: 2px solid #555;
+    font-weight: bold;
+}
+
+.sub-tabs {
+    height: 48px;
+    display: flex;
+    align-items: center;
+    gap: 0;
+    border-bottom: 1px solid #ddd;
+    overflow-x: auto;
+}
+
+.sub-tab {
+    padding: 14px 17px;
+    font-size: 14px;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.sub-tab:hover {
+    background: #f4f4f4;
+}
+
+.sub-tab.active {
+    border-bottom: 2px solid #333;
+    font-weight: bold;
+}
+
+/* =========================
+   ITEMS
+========================= */
+
+.items {
+    padding: 20px 15px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 13px;
+}
+
+.item {
+    min-width: 0;
+    cursor: pointer;
+}
+
+.item-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background: #e3e6e8;
+    border-radius: 5px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border: 1px solid transparent;
+}
+
+.item:hover .item-image {
+    border: 2px solid #1593e5;
+}
+
+.item.selected .item-image {
+    border: 2px solid #0878c9;
+}
+
+.check {
+    display: none;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    width: 25px;
+    height: 25px;
+    border-radius: 3px;
+    background: #0878c9;
+    color: white;
+    font-size: 17px;
+    text-align: center;
+    line-height: 25px;
+}
+
+.item.selected .check {
+    display: block;
+}
+
+.item-name {
+    margin-top: 7px;
+    font-size: 13px;
+    line-height: 17px;
+    min-height: 34px;
+}
+
+.item-price {
+    color: #777;
+    font-size: 12px;
+    margin-top: 3px;
+}
+
+/* =========================
+   SIMPLE ROBLOX CLOTHING PREVIEW
+========================= */
+
+.shirt-preview {
+    width: 55%;
+    height: 48%;
+    position: relative;
+}
+
+.shirt-body {
+    position: absolute;
+    left: 25%;
+    top: 28%;
+    width: 50%;
+    height: 55%;
+    background: #174e76;
+    border-radius: 3px;
+}
+
+.shirt-left,
+.shirt-right {
+    position: absolute;
+    top: 30%;
+    width: 25%;
+    height: 48%;
+    background: #174e76;
+}
+
+.shirt-left {
+    left: 0;
+}
+
+.shirt-right {
+    right: 0;
+}
+
+.shirt-head {
+    position: absolute;
+    top: 0;
+    left: 34%;
+    width: 32%;
+    height: 34%;
+    background: #ddd;
+    border-radius: 5px;
+}
+
+.face-eyes {
+    position: absolute;
+    top: 43%;
+    left: 25%;
+    width: 50%;
+    height: 8px;
+    font-size: 9px;
+}
+
+.pants-preview {
+    width: 55%;
+    height: 48%;
+    position: relative;
+}
+
+.pants-body {
+    position: absolute;
+    left: 26%;
+    top: 30%;
+    width: 48%;
+    height: 25%;
+    background: #222;
+}
+
+.leg1,
+.leg2 {
+    position: absolute;
+    top: 53%;
+    width: 23%;
+    height: 35%;
+    background: #222;
+}
+
+.leg1 {
+    left: 26%;
+}
+
+.leg2 {
+    right: 26%;
+}
+
+.hat-preview {
+    width: 70px;
+    height: 70px;
+    position: relative;
+}
+
+.hat-top {
+    position: absolute;
+    top: 18px;
+    left: 10px;
+    width: 50px;
+    height: 28px;
+    background: #222;
+    border-radius: 25px 25px 5px 5px;
+}
+
+.hat-brim {
+    position: absolute;
+    top: 42px;
+    left: 0;
+    width: 70px;
+    height: 10px;
+    background: #222;
+    border-radius: 8px;
+}
+
+/* FROZEN HORNS */
+
+.horns-preview {
+    width: 85px;
+    height: 85px;
+    position: relative;
+}
+
+.horn-left,
+.horn-right {
+    position: absolute;
+    width: 22px;
+    height: 65px;
+    background: linear-gradient(
+        160deg,
+        #dfffff,
+        #6bdcff,
+        #198bd1
+    );
+    clip-path: polygon(
+        50% 0,
+        78% 16%,
+        61% 25%,
+        88% 39%,
+        63% 48%,
+        82% 64%,
+        58% 72%,
+        70% 100%,
+        39% 77%,
+        28% 100%,
+        31% 69%,
+        10% 59%,
+        36% 46%,
+        13% 34%,
+        38% 23%
+    );
+}
+
+.horn-left {
+    left: 13px;
+    top: 8px;
+    transform: rotate(-25deg);
+}
+
+.horn-right {
+    right: 13px;
+    top: 8px;
+    transform: rotate(25deg);
+}
+
+.ice-flame {
+    position: absolute;
+    left: 34px;
+    top: 26px;
+    width: 17px;
+    height: 36px;
+    background: #6eeaff;
+    clip-path: polygon(
+        50% 0,
+        75% 28%,
+        100% 45%,
+        68% 48%,
+        82% 100%,
+        48% 68%,
+        20% 100%,
+        31% 55%,
+        0 51%,
+        34% 27%
+    );
+}
+
+/* =========================
+   RECOMMENDATIONS
+========================= */
+
+.recommend {
+    border-top: 1px solid #ddd;
+    padding: 15px;
+}
+
+.recommend h2 {
+    font-size: 18px;
+    font-weight: normal;
+    margin: 0 0 15px;
+}
+
+.recommend-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 13px;
+}
+
+/* =========================
+   AVATAR PANEL
+========================= */
+
+.avatar-panel {
+    background: white;
+    min-height: 660px;
+}
+
+.avatar-view {
+    height: 445px;
+    position: relative;
+    overflow: hidden;
     background:
-        radial-gradient(circle at 50% 45%,#1b1b4a 0%,#0b0b19 45%,#000 100%);
-}
-
-.avatarStage:after{
-    content:"";
-    position:absolute;
-    width:500px;
-    height:500px;
-    left:50%;
-    top:45%;
-    transform:translate(-50%,-50%);
-    background:radial-gradient(circle,rgba(70,80,255,.2),transparent 68%);
-    pointer-events:none;
-}
-
-.avatar{
-    position:absolute;
-    width:310px;
-    height:490px;
-    left:50%;
-    bottom:25px;
-    transform:translateX(-50%);
-    z-index:10;
-}
-
-.head{
-    position:absolute;
-    left:97px;
-    top:35px;
-    width:116px;
-    height:116px;
-    background:#f0bd76;
-    border:4px solid #292929;
-    border-radius:7px;
-    z-index:30;
-}
-
-.hair{
-    position:absolute;
-    left:-5px;
-    top:-9px;
-    width:118px;
-    height:36px;
-    background:#171717;
-    border:4px solid #292929;
-    border-radius:50% 50% 8px 8px;
-}
-
-.eye{
-    position:absolute;
-    top:46px;
-    width:11px;
-    height:17px;
-    background:#111;
-    border-radius:50%;
-}
-
-.eye.left{left:32px}
-.eye.right{right:32px}
-
-.faceMouth{
-    position:absolute;
-    left:35px;
-    top:75px;
-    width:45px;
-    height:17px;
-    border-bottom:4px solid #111;
-    border-radius:0 0 50% 50%;
-}
-
-.headless .head{
-    background:transparent;
-    border-color:transparent;
-}
-
-.headless .hair,
-.headless .eye,
-.headless .faceMouth{
-    display:none;
-}
-
-/* BODY */
-
-.torso{
-    position:absolute;
-    left:72px;
-    top:151px;
-    width:140px;
-    height:135px;
-    background:#151515;
-    border:4px solid #292929;
-    border-radius:5px;
-    z-index:10;
-    transition:.2s;
-}
-
-.shirtText{
-    position:absolute;
-    inset:0;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:white;
-    font-size:27px;
-    font-weight:900;
-    letter-spacing:2px;
-}
-
-.mtb{background:linear-gradient(135deg,#050505,#555,#080808)}
-.mtbLong{background:linear-gradient(135deg,#090909,#444,#080808);height:155px}
-.mtbVeryLong{background:linear-gradient(135deg,#030303,#666,#050505);height:180px}
-.mtbOversized{background:linear-gradient(135deg,#111,#777,#111);height:160px;width:155px;left:65px}
-.mtbBlack{background:#080808}
-.mtbWhite{background:#eee;color:#111}
-.mtbRed{background:linear-gradient(135deg,#720b0b,#ee3636,#610808)}
-.mtbBlue{background:linear-gradient(135deg,#09295c,#287fe5,#071c40)}
-.mtbGreen{background:linear-gradient(135deg,#073b1b,#32c969,#062515)}
-.mtbPurple{background:linear-gradient(135deg,#35105d,#a64de0,#24103e)}
-.spring{background:linear-gradient(135deg,#42bd5e,#dfffe5)}
-.summer{background:linear-gradient(135deg,#178fe0,#f4d52c)}
-.fall{background:linear-gradient(135deg,#d86b28,#55200c)}
-.winter{background:linear-gradient(135deg,#438fd0,#e9fbff)}
-.hellstar{background:radial-gradient(circle,#555,#080808 65%)}
-
-.arm{
-    position:absolute;
-    top:158px;
-    width:47px;
-    height:125px;
-    background:#f0bd76;
-    border:4px solid #292929;
-    border-radius:5px;
-    z-index:15;
-    transform-origin:top center;
-    transition:.3s;
-}
-
-.leftArm{left:20px}
-.rightArm{right:20px}
-
-.sleeve{
-    position:absolute;
-    top:-4px;
-    left:-4px;
-    width:47px;
-    height:52px;
-    background:#171717;
-    border:4px solid #292929;
-}
-
-.holding .rightArm{
-    right:-5px;
-    transform:rotate(-62deg);
-}
-
-/* PANTS */
-
-.leg{
-    position:absolute;
-    top:285px;
-    width:62px;
-    height:142px;
-    background:#191919;
-    border:4px solid #292929;
-    border-radius:4px;
-    z-index:5;
-}
-
-.leftLeg{left:72px}
-.rightLeg{right:72px}
-
-.baggy{
-    width:78px;
-    height:165px;
-    left:64px;
-    background:#202020;
-}
-
-.veryBaggy{
-    width:88px;
-    height:175px;
-    left:59px;
-    background:#111;
-}
-
-.cargo{
-    width:76px;
-    height:165px;
-    left:64px;
-    background:#35402f;
-}
-
-.blackPants{background:#080808}
-.whitePants{background:#ddd}
-.redPants{background:#941919}
-.bluePants{background:#194f91}
-.greenPants{background:#176b36}
-.purplePants{background:#63308b}
-.winterPants{background:#dcebf5}
-.jeans{background:linear-gradient(90deg,#173c67,#4279b4,#173c67)}
-.sweats{background:#777}
-
-/* KORBLOX */
-
-.korblox{
-    left:88px!important;
-    width:29px!important;
-    height:96px!important;
-    top:326px!important;
-    background:linear-gradient(90deg,#07101a,#397cae,#c6f7ff,#275d8d,#07101a)!important;
-    border-color:#101923!important;
-}
-
-.korblox:before{
-    content:"";
-    position:absolute;
-    left:-8px;
-    top:-9px;
-    width:36px;
-    height:15px;
-    background:#192c40;
-    border:3px solid #0b121b;
-    border-radius:5px;
-}
-
-.korblox:after{
-    content:"";
-    position:absolute;
-    left:6px;
-    top:12px;
-    width:5px;
-    height:60px;
-    background:rgba(220,250,255,.75);
-    border-radius:5px;
-}
-
-/* HORNS */
-
-.horns{
-    position:absolute;
-    width:220px;
-    height:125px;
-    left:45px;
-    top:0;
-    z-index:50;
-}
-
-.horn{
-    position:absolute;
-    width:50px;
-    height:115px;
-    background:#bdf7ff;
-    clip-path:polygon(50% 0,77% 17%,100% 31%,78% 44%,95% 60%,67% 60%,53% 100%,39% 65%,8% 78%,21% 52%,0 39%,28% 20%);
-    filter:drop-shadow(0 0 8px #4ddcff);
-}
-
-.horn.left{left:12px;transform:rotate(-24deg)}
-.horn.right{right:12px;transform:rotate(24deg)}
-
-.fire{
-    position:absolute;
-    width:38px;
-    height:70px;
-    left:91px;
-    top:-5px;
-}
-
-.flame{
-    position:absolute;
-    bottom:0;
-    width:34px;
-    height:61px;
-    background:#25cfff;
-    border-radius:55% 45% 45% 45%;
-    box-shadow:0 0 20px #25cfff;
-}
-
-.flame:after{
-    content:"";
-    position:absolute;
-    left:8px;
-    bottom:7px;
-    width:17px;
-    height:35px;
-    background:#efffff;
-    border-radius:60% 40% 50% 50%;
-}
-
-.redHorns .flame{
-    background:#ff2525;
-    box-shadow:0 0 20px #ff2525;
-}
-
-.greenHorns .flame{
-    background:#22e96b;
-    box-shadow:0 0 20px #22e96b;
-}
-
-.redHorns .horn{
-    background:#ff4141;
-    filter:drop-shadow(0 0 9px #ff1d1d);
-}
-
-.greenHorns .horn{
-    background:#42e879;
-    filter:drop-shadow(0 0 9px #22ff6e);
-}
-
-/* FEDORAS */
-
-.fedora{
-    position:absolute;
-    width:170px;
-    height:105px;
-    left:65px;
-    top:0;
-    z-index:48;
-}
-
-.fedoraTop{
-    position:absolute;
-    left:25px;
-    top:0;
-    width:120px;
-    height:60px;
-    border:5px solid #333;
-    border-radius:50% 50% 18% 18%;
-}
-
-.fedoraBand{
-    position:absolute;
-    left:25px;
-    top:42px;
-    width:120px;
-    height:13px;
-    background:#111;
-}
-
-.fedoraBrim{
-    position:absolute;
-    left:0;
-    top:53px;
-    width:170px;
-    height:28px;
-    border:5px solid #333;
-    border-radius:50%;
-}
-
-.rainbow .fedoraTop{background:linear-gradient(135deg,#e83d3d,#f2d034,#4dd477,#459cf0,#9a5bd9)}
-.rainbow .fedoraBrim{background:#cfa42b}
-.redFedora .fedoraTop{background:#d73535}
-.redFedora .fedoraBrim{background:#781414}
-.blueFedora .fedoraTop{background:#348df0}
-.blueFedora .fedoraBrim{background:#194c8f}
-.greenFedora .fedoraTop{background:#37d269}
-.greenFedora .fedoraBrim{background:#176d38}
-.purpleFedora .fedoraTop{background:#a15bdc}
-.purpleFedora .fedoraBrim{background:#592488}
-.blackFedora .fedoraTop{background:#252525}
-.blackFedora .fedoraBrim{background:#080808}
-.goldFedora .fedoraTop{background:#e0b62e}
-.goldFedora .fedoraBrim{background:#88670c}
-.pinkFedora .fedoraTop{background:#ef5d9d}
-.pinkFedora .fedoraBrim{background:#98255a}
-
-/* VALKYRIES */
-
-.valk{
-    position:absolute;
-    width:210px;
-    height:110px;
-    left:45px;
-    top:0;
-    z-index:47;
-}
-
-.valkWing{
-    position:absolute;
-    top:5px;
-    width:72px;
-    height:85px;
-    border:6px solid #333;
-    border-radius:50% 50% 15% 15%;
-}
-
-.valkWing.left{left:0;transform:rotate(-30deg)}
-.valkWing.right{right:0;transform:rotate(30deg)}
-
-.goldValk .valkWing{background:#e7c24b;border-color:#8d6a0b}
-.redValk .valkWing{background:#dc3838;border-color:#781313}
-.blueValk .valkWing{background:#438ff0;border-color:#174d92}
-.greenValk .valkWing{background:#40d26a;border-color:#176a35}
-.purpleValk .valkWing{background:#9d5dd9;border-color:#592286}
-.blackValk .valkWing{background:#282828;border-color:#050505}
-
-/* GEAR */
-
-.gear{
-    display:none;
-    position:absolute;
-    z-index:100;
-}
-
-.holding .gear{display:block}
-
-.sword{
-    width:65px;
-    height:145px;
-    right:-10px;
-    top:205px;
-    transform:rotate(-20deg);
-}
-
-.swordBlade{
-    position:absolute;
-    left:27px;
-    top:0;
-    width:15px;
-    height:91px;
-    background:linear-gradient(90deg,#555,#fff,#aaa,#333);
-    clip-path:polygon(50% 0,100% 17%,70% 100%,30% 100%,0 17%);
-}
-
-.swordGuard{
-    position:absolute;
-    left:7px;
-    top:85px;
-    width:55px;
-    height:10px;
-    background:#d2ad35;
-    border:2px solid #674f0b;
-}
-
-.swordHandle{
-    position:absolute;
-    left:29px;
-    top:94px;
-    width:11px;
-    height:34px;
-    background:#56331d;
-}
-
-.swordPommel{
-    position:absolute;
-    left:26px;
-    top:122px;
-    width:17px;
-    height:17px;
-    background:#d2ad35;
-    border-radius:50%;
-}
-
-.pencil{
-    width:45px;
-    height:170px;
-    right:-5px;
-    top:190px;
-    transform:rotate(-20deg);
-}
-
-.pencilBody{
-    position:absolute;
-    left:10px;
-    top:15px;
-    width:25px;
-    height:116px;
-    background:linear-gradient(90deg,#d78c14,#ffd83d,#f5bd22,#d68b0e);
-    border:3px solid #51370c;
-}
-
-.pencilWood{
-    position:absolute;
-    left:10px;
-    top:0;
-    width:25px;
-    height:25px;
-    background:#d9a46e;
-    clip-path:polygon(0 0,100% 0,50% 100%);
-}
-
-.pencilLead{
-    position:absolute;
-    left:18px;
-    top:-8px;
-    width:10px;
-    height:14px;
-    background:#252525;
-    clip-path:polygon(50% 0,100% 100%,0 100%);
-}
-
-.pencilMetal{
-    position:absolute;
-    left:10px;
-    top:120px;
-    width:25px;
-    height:13px;
-    background:#aaa;
-}
-
-.pencilEraser{
-    position:absolute;
-    left:10px;
-    top:128px;
-    width:25px;
-    height:23px;
-    background:#ed7c93;
-}
-
-.hammer{
-    width:80px;
-    height:150px;
-    right:-5px;
-    top:205px;
-    transform:rotate(-15deg);
-}
-
-.hammerHead{
-    position:absolute;
-    left:4px;
-    top:4px;
-    width:70px;
-    height:34px;
-    background:linear-gradient(#777,#ddd,#555);
-    border:4px solid #292929;
-}
-
-.hammerHandle{
-    position:absolute;
-    left:34px;
-    top:31px;
-    width:14px;
-    height:115px;
-    background:linear-gradient(90deg,#4c2b18,#99603a,#422514);
-}
-
-/* DEVELOPER */
-
-.developerShield{
-    position:absolute;
-    width:125px;
-    height:145px;
-    right:-55px;
-    top:235px;
-    z-index:200;
-    transform:rotate(-12deg);
-}
-
-.devShape{
-    position:absolute;
-    width:115px;
-    height:135px;
-    background:linear-gradient(135deg,#111,#777,#111);
-    border:6px solid #222;
-    clip-path:polygon(0 0,100% 0,100% 68%,50% 100%,0 68%);
-}
-
-.devInner{
-    position:absolute;
-    left:10px;
-    top:10px;
-    width:91px;
-    height:108px;
-    border:3px solid #ddd;
-    clip-path:polygon(0 0,100% 0,100% 68%,50% 100%,0 68%);
-}
-
-.devText{
-    position:absolute;
-    width:115px;
-    top:45px;
-    text-align:center;
-    color:white;
-    font-size:12px;
-    font-weight:900;
-    text-shadow:2px 2px 3px #000;
-}
-
-/* SEARCH */
-
-.searchRow{
-    display:flex;
-    gap:8px;
-}
-
-.searchInput{
-    flex:1;
-    min-width:0;
-    padding:11px;
-    border:1px solid #444;
-    background:#08080d;
-    color:white;
-    border-radius:5px;
-    font-size:16px;
-}
-
-.searchResults{
-    margin-top:12px;
-}
-
-.userResult{
-    display:flex;
-    align-items:center;
-    gap:12px;
-    background:#17171e;
-    border:1px solid #333;
-    padding:12px;
-    margin-bottom:8px;
-}
-
-.userAvatar{
-    width:55px;
-    height:55px;
-    border-radius:7px;
-    background:#222;
-}
-
-.userInfo{
-    flex:1;
-}
-
-.userName{
-    font-weight:bold;
-}
-
-.userDisplay{
-    color:#aaa;
-    font-size:13px;
-    margin-top:3px;
-}
-
-.profileButton{
-    color:white;
-    background:#197cff;
-    padding:8px;
-    border-radius:5px;
-    text-decoration:none;
-    font-weight:bold;
-    font-size:13px;
-}
-
-.noResults{
-    background:#18181f;
-    border:1px solid #333;
-    padding:12px;
-}
-
-/* INVENTORY */
-
-.equipped{
-    background:#17171f;
-    border:1px solid #333;
-    padding:12px;
-    line-height:1.8;
-    border-radius:5px;
-}
-
-.inventoryBox{
-    max-height:250px;
-    overflow:auto;
-}
-
-.ownedItem{
-    display:flex;
-    justify-content:space-between;
-    gap:8px;
-    padding:8px;
-    border-bottom:1px solid #333;
-}
-
-.message{
-    position:fixed;
-    bottom:20px;
-    left:50%;
-    transform:translateX(-50%);
-    background:#202028;
-    border:1px solid #555;
-    color:white;
-    padding:13px 20px;
-    border-radius:7px;
-    display:none;
-    z-index:9999;
-    box-shadow:0 5px 25px #000;
-}
-
-@media(max-width:850px){
-    .layout{
-        grid-template-columns:1fr;
+        linear-gradient(
+            140deg,
+            #e7e7e7 0%,
+            #f8f8f8 55%,
+            #e1e1e1 100%
+        );
+}
+
+.background-block {
+    position: absolute;
+    background: rgba(190,190,190,.45);
+    transform: rotate(-12deg);
+}
+
+.block1 {
+    width: 170px;
+    height: 90px;
+    right: 5px;
+    top: 45px;
+}
+
+.block2 {
+    width: 110px;
+    height: 150px;
+    right: 120px;
+    top: 0;
+}
+
+.block3 {
+    width: 170px;
+    height: 70px;
+    left: -35px;
+    bottom: 80px;
+}
+
+.avatar-stage {
+    position: absolute;
+    left: 50%;
+    top: 48%;
+    transform: translate(-50%, -50%);
+    width: 190px;
+    height: 360px;
+}
+
+/* avatar */
+
+.avatar-head {
+    position: absolute;
+    width: 78px;
+    height: 78px;
+    left: 56px;
+    top: 12px;
+    background: #f0b37e;
+    border-radius: 17px;
+    border: 1px solid #a97853;
+    z-index: 5;
+}
+
+.eye {
+    position: absolute;
+    width: 8px;
+    height: 11px;
+    background: #222;
+    border-radius: 50%;
+    top: 30px;
+}
+
+.eye.left {
+    left: 20px;
+}
+
+.eye.right {
+    right: 20px;
+}
+
+.mouth {
+    position: absolute;
+    width: 26px;
+    height: 11px;
+    border-bottom: 2px solid #333;
+    border-radius: 50%;
+    left: 25px;
+    top: 48px;
+}
+
+.hair {
+    position: absolute;
+    left: 50px;
+    top: 3px;
+    width: 90px;
+    height: 34px;
+    background: #4b2318;
+    border-radius: 45px 45px 10px 10px;
+    z-index: 6;
+}
+
+.avatar-torso {
+    position: absolute;
+    width: 91px;
+    height: 125px;
+    left: 50px;
+    top: 84px;
+    background: #17679a;
+    border-radius: 6px;
+    z-index: 3;
+}
+
+.avatar-arm {
+    position: absolute;
+    width: 38px;
+    height: 119px;
+    top: 88px;
+    background: #f0b37e;
+    border-radius: 16px;
+    z-index: 2;
+}
+
+.avatar-arm.left {
+    left: 12px;
+    transform: rotate(7deg);
+}
+
+.avatar-arm.right {
+    right: 12px;
+    transform: rotate(-7deg);
+}
+
+.avatar-leg {
+    position: absolute;
+    width: 42px;
+    height: 130px;
+    top: 201px;
+    background: #292929;
+    border-radius: 5px;
+}
+
+.avatar-leg.left {
+    left: 51px;
+}
+
+.avatar-leg.right {
+    right: 51px;
+}
+
+.avatar-shoe {
+    position: absolute;
+    width: 47px;
+    height: 22px;
+    top: 322px;
+    background: #eee;
+    border-radius: 8px 8px 5px 5px;
+}
+
+.avatar-shoe.left {
+    left: 46px;
+}
+
+.avatar-shoe.right {
+    right: 46px;
+}
+
+/* worn frozen horns */
+
+.worn-horns {
+    display: none;
+    position: absolute;
+    width: 100px;
+    height: 80px;
+    left: 45px;
+    top: -2px;
+    z-index: 10;
+}
+
+.worn-horns.show {
+    display: block;
+}
+
+.worn-horns:before,
+.worn-horns:after {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 70px;
+    background: linear-gradient(
+        160deg,
+        #f2ffff,
+        #71dcff,
+        #147fc3
+    );
+    clip-path: polygon(
+        50% 0,
+        80% 15%,
+        62% 28%,
+        90% 40%,
+        65% 52%,
+        80% 65%,
+        55% 76%,
+        70% 100%,
+        38% 78%,
+        25% 100%,
+        30% 70%,
+        8% 58%,
+        35% 47%,
+        10% 33%,
+        38% 22%
+    );
+}
+
+.worn-horns:before {
+    left: 4px;
+    transform: rotate(-20deg);
+}
+
+.worn-horns:after {
+    right: 4px;
+    transform: rotate(20deg);
+}
+
+/* =========================
+   CONTROLS
+========================= */
+
+.avatar-controls {
+    padding: 15px;
+}
+
+.controls-top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.adjust {
+    border: 0;
+    background: white;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.view-button {
+    margin-left: auto;
+    border: 1px solid #bbb;
+    background: white;
+    padding: 8px 13px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.scaling {
+    border-top: 1px solid #ddd;
+    padding-top: 13px;
+}
+
+.scaling h3 {
+    margin: 0 0 13px;
+    font-size: 16px;
+}
+
+.slider-row {
+    display: grid;
+    grid-template-columns: 70px 1fr 45px;
+    gap: 8px;
+    align-items: center;
+    margin: 13px 0;
+    font-size: 13px;
+}
+
+.slider-row input {
+    width: 100%;
+}
+
+.redraw {
+    border-top: 1px solid #ddd;
+    margin-top: 14px;
+    padding-top: 15px;
+    font-size: 13px;
+}
+
+.redraw a {
+    float: right;
+    color: #0878c9;
+    cursor: pointer;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    text-align: center;
+    padding: 45px 20px 25px;
+    background: white;
+    margin-top: 25px;
+    border-top: 1px solid #ddd;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 45px;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: #0878c9;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.copyright {
+    color: #999;
+    margin-top: 35px;
+    font-size: 12px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 1000px) {
+
+    .top-links {
+        display: none;
     }
 
-    .avatarStage{
-        height:520px;
+    .search {
+        margin-left: 15px;
+        width: 240px;
     }
 
-    .coinbar{
-        margin-left:10px;
-        margin-right:10px;
+    .editor {
+        grid-template-columns: 1fr;
+    }
+
+    .avatar-panel {
+        order: -1;
+    }
+
+    .avatar-view {
+        height: 420px;
+    }
+
+    .sidebar {
+        width: 150px;
+    }
+
+    .items,
+    .recommend-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+
+    .topbar {
+        padding: 0 10px;
+    }
+
+    .logo {
+        margin-right: 10px;
+        font-size: 23px;
+    }
+
+    .search {
+        width: 150px;
+        margin-left: 5px;
+    }
+
+    .top-right {
+        gap: 7px;
+    }
+
+    .top-right .hide-mobile {
+        display: none;
+    }
+
+    .layout {
+        display: block;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        display: flex;
+        overflow-x: auto;
+        padding: 5px;
+        border-right: 0;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .sidebar-user,
+    .upgrade,
+    .events {
+        display: none;
+    }
+
+    .side-link {
+        min-width: 75px;
+        justify-content: center;
+        flex-direction: column;
+        height: 62px;
+        gap: 2px;
+        font-size: 10px;
+    }
+
+    .badge {
+        display: none;
+    }
+
+    .main {
+        padding: 20px 8px 40px;
+    }
+
+    .page-title {
+        margin-bottom: 15px;
+    }
+
+    .page-title h1 {
+        font-size: 23px;
+    }
+
+    .get-more {
+        padding: 8px 10px;
+    }
+
+    .main-tabs {
+        overflow-x: auto;
+    }
+
+    .main-tab {
+        padding: 0 15px;
+        font-size: 13px;
+    }
+
+    .sub-tabs {
+        overflow-x: auto;
+    }
+
+    .sub-tab {
+        padding: 13px 12px;
+        font-size: 12px;
+    }
+
+    .items,
+    .recommend-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 9px;
+    }
+
+    .item-name {
+        font-size: 11px;
+    }
+
+    .avatar-view {
+        height: 390px;
+    }
+
+    .footer-links {
+        gap: 20px;
     }
 }
 </style>
@@ -876,1312 +1054,1109 @@ button:hover{
 
 <body>
 
-<header>
-    <div class="logo">MTB REVIVALS</div>
+<!-- =========================
+     TOP BAR
+========================= -->
 
-    <nav>
-        <a href="index.html">HOME</a>
-        <a href="avatar.html">AVATAR</a>
-        <a href="games.html">GAMES</a>
-        <a href="inventory.html">INVENTORY</a>
+<header class="topbar">
+
+    <div class="logo">MTB</div>
+
+    <nav class="top-links">
+        <a href="#">Games</a>
+        <a href="#">Catalog</a>
+        <a href="#">Develop</a>
+        <a href="#">Upgrade</a>
     </nav>
-</header>
 
-<div class="coinbar">
-    <div>
-        <span class="coin"></span>
-        <b>MTB Coins:</b>
-        <span id="coins">1000</span>
+    <div class="search">
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search"
+        >
+        <button onclick="searchItems()">⌕</button>
     </div>
 
-    <button onclick="earnCoins()">EARN 100 COINS</button>
-</div>
+    <div class="top-right">
+        <span class="top-icon">▤</span>
+        <span class="coin">◉ 88975</span>
+        <span class="top-icon">◇</span>
+        <span class="top-icon">⚙</span>
+    </div>
 
-<div class="container">
+</header>
+
 
 <div class="layout">
 
-<!-- ================= AVATAR ================= -->
+<!-- =========================
+     SIDEBAR
+========================= -->
 
-<div class="panel">
+<aside class="sidebar">
 
-<h2>My Avatar</h2>
+    <div class="sidebar-user">MTB</div>
 
-<div class="avatarStage">
-
-<div id="avatar" class="avatar">
-
-    <div id="accessory1"></div>
-    <div id="accessory2"></div>
-    <div id="accessory3"></div>
-
-    <div id="gear" class="gear"></div>
-
-    <div class="head">
-        <div class="hair"></div>
-        <div class="eye left"></div>
-        <div class="eye right"></div>
-        <div class="faceMouth"></div>
+    <div class="side-link">
+        <span class="side-icon">⌂</span>
+        <span>Home</span>
     </div>
 
-    <div id="torso" class="torso">
-        <div id="shirt" class="shirtText mtb">MTB</div>
+    <div class="side-link">
+        <span class="side-icon">♙</span>
+        <span>Profile</span>
     </div>
 
-    <div class="arm leftArm">
-        <div class="sleeve"></div>
+    <div class="side-link">
+        <span class="side-icon">✉</span>
+        <span>Messages</span>
+        <span class="badge">0</span>
     </div>
 
-    <div class="arm rightArm">
-        <div class="sleeve"></div>
+    <div class="side-link">
+        <span class="side-icon">♧</span>
+        <span>Friends</span>
+        <span class="badge">0</span>
     </div>
 
-    <div id="leftLeg" class="leg leftLeg"></div>
-    <div id="rightLeg" class="leg rightLeg"></div>
-
-</div>
-
-</div>
-
-<div class="developerShield">
-    <div class="devShape"></div>
-    <div class="devInner"></div>
-    <div class="devText">
-        DEVELOPER<br>MODE
+    <div class="side-link">
+        <span class="side-icon">♙</span>
+        <span>Avatar</span>
     </div>
-</div>
 
-<h3>Equipped</h3>
+    <div class="side-link">
+        <span class="side-icon">▣</span>
+        <span>Inventory</span>
+    </div>
 
-<div id="equipped" class="equipped">
-    Nothing equipped.
-</div>
+    <div class="side-link">
+        <span class="side-icon">⇄</span>
+        <span>Trade</span>
+    </div>
 
-<br>
+    <div class="side-link">
+        <span class="side-icon">♕</span>
+        <span>Groups</span>
+    </div>
 
-<button onclick="removeAccessories()">REMOVE ACCESSORIES</button>
-<button class="gray" onclick="removeGear()">REMOVE GEAR</button>
-<button class="gray" onclick="resetAvatar()">RESET</button>
+    <div class="side-link">
+        <span class="side-icon">▣</span>
+        <span>Forum</span>
+    </div>
 
-<h3>My Inventory</h3>
+    <div class="side-link">
+        <span class="side-icon">⚑</span>
+        <span>Blog</span>
+    </div>
 
-<div id="inventory" class="equipped inventoryBox">
-    Nothing owned yet.
-</div>
+    <div class="side-link">
+        <span class="side-icon">▢</span>
+        <span>Shop</span>
+    </div>
 
-</div>
+    <button class="upgrade">
+        Upgrade Now
+    </button>
 
+    <div class="events">
+        <div class="events-title">Events</div>
+        <div style="color:#777;">No events.</div>
+    </div>
 
-<!-- ================= SHOP ================= -->
+</aside>
 
-<div class="panel">
 
-<!-- SEARCH -->
+<!-- =========================
+     MAIN
+========================= -->
 
-<div class="category">
+<main class="main">
 
-<h2>🔎 Search Roblox Users</h2>
+    <div class="page-title">
+        <h1>Avatar Editor</h1>
 
-<div class="searchRow">
+        <button
+            class="get-more"
+            onclick="location.href='#'"
+        >
+            Get More
+        </button>
+    </div>
 
-<input
-    id="usernameSearch"
-    class="searchInput"
-    placeholder="Roblox username..."
-    onkeydown="if(event.key==='Enter')searchUsers()"
->
 
-<button onclick="searchUsers()">SEARCH</button>
+    <div class="editor">
 
-</div>
+        <!-- =====================
+             CATALOG
+        ====================== -->
 
-<div id="searchResults"></div>
+        <section class="catalog">
 
-</div>
+            <div class="main-tabs">
 
+                <div class="main-tab active"
+                     onclick="changeMainTab(this,'Characters')">
+                    Characters
+                </div>
 
-<!-- FACES -->
+                <div class="main-tab"
+                     onclick="changeMainTab(this,'Clothing')">
+                    Clothing
+                </div>
 
-<div class="category">
+                <div class="main-tab"
+                     onclick="changeMainTab(this,'Accessories')">
+                    Accessories
+                </div>
 
-<h2>🙂 Faces</h2>
+                <div class="main-tab"
+                     onclick="changeMainTab(this,'Body')">
+                    Body
+                </div>
 
-<div class="grid">
+                <div class="main-tab"
+                     onclick="changeMainTab(this,'Animation')">
+                    Animation
+                </div>
 
-<div class="item">
-<h3>Classic Face</h3>
-<button onclick="claimFace('Classic Face')">CLAIM FREE</button>
-</div>
+                <div class="main-tab"
+                     onclick="changeMainTab(this,'Emotes')">
+                    Emotes
+                </div>
 
-<div class="item">
-<h3>Headless</h3>
-<button onclick="claimFace('Headless')">CLAIM FREE</button>
-</div>
+            </div>
 
-</div>
-</div>
 
+            <div class="sub-tabs">
 
-<!-- SHIRTS -->
+                <div class="sub-tab">Tops</div>
 
-<div class="category">
+                <div class="sub-tab">Outerwear</div>
 
-<h2>👕 MTB Shirts</h2>
+                <div class="sub-tab">Bottoms</div>
 
-<div class="grid">
+                <div class="sub-tab">Left Shoes</div>
 
-<div class="item">
-<h3>MTB Shirt</h3>
-<button onclick="claimShirt('mtb','MTB Shirt')">CLAIM FREE</button>
-</div>
+                <div class="sub-tab">Right Shoes</div>
 
-<div class="item">
-<h3>MTB Long Shirt</h3>
-<button onclick="claimShirt('mtbLong','MTB Long Shirt')">CLAIM FREE</button>
-</div>
+                <div class="sub-tab active">
+                    Classic Shirts
+                </div>
 
-<div class="item">
-<h3>MTB VERY Long Shirt</h3>
-<button onclick="claimShirt('mtbVeryLong','MTB VERY Long Shirt')">CLAIM FREE</button>
-</div>
+                <div class="sub-tab">
+                    Classic T-Shirts
+                </div>
 
-<div class="item">
-<h3>MTB Oversized</h3>
-<button onclick="claimShirt('mtbOversized','MTB Oversized')">CLAIM FREE</button>
-</div>
+            </div>
 
-<div class="item">
-<h3>MTB Black</h3>
-<button onclick="claimShirt('mtbBlack','MTB Black')">CLAIM FREE</button>
-</div>
 
-<div class="item">
-<h3>MTB White</h3>
-<button onclick="claimShirt('mtbWhite','MTB White')">CLAIM FREE</button>
-</div>
+            <div class="items" id="items">
 
-<div class="item">
-<h3>MTB Red</h3>
-<button onclick="claimShirt('mtbRed','MTB Red')">CLAIM FREE</button>
-</div>
+                <!-- ITEM 1 -->
 
-<div class="item">
-<h3>MTB Blue</h3>
-<button onclick="claimShirt('mtbBlue','MTB Blue')">CLAIM FREE</button>
-</div>
+                <div class="item"
+                     onclick="wearItem(this,'pizza')">
 
-<div class="item">
-<h3>MTB Green</h3>
-<button onclick="claimShirt('mtbGreen','MTB Green')">CLAIM FREE</button>
-</div>
+                    <div class="item-image">
 
-<div class="item">
-<h3>MTB Purple</h3>
-<button onclick="claimShirt('mtbPurple','MTB Purple')">CLAIM FREE</button>
-</div>
+                        <div class="shirt-preview">
 
-<div class="item">
-<h3>MTB Spring</h3>
-<button onclick="claimShirt('spring','MTB Spring')">CLAIM FREE</button>
-</div>
+                            <div class="shirt-head"></div>
 
-<div class="item">
-<h3>MTB Summer</h3>
-<button onclick="claimShirt('summer','MTB Summer')">CLAIM FREE</button>
-</div>
+                            <div class="shirt-left"></div>
+                            <div class="shirt-body"></div>
+                            <div class="shirt-right"></div>
 
-<div class="item">
-<h3>MTB Fall</h3>
-<button onclick="claimShirt('fall','MTB Fall')">CLAIM FREE</button>
-</div>
+                        </div>
 
-<div class="item">
-<h3>MTB Winter</h3>
-<button onclick="claimShirt('winter','MTB Winter')">CLAIM FREE</button>
-</div>
+                        <div class="check">✓</div>
 
-<div class="item">
-<h3>Hellstar Style</h3>
-<button onclick="claimShirt('hellstar','Hellstar Style')">CLAIM FREE</button>
-</div>
+                    </div>
 
-</div>
-</div>
+                    <div class="item-name">
+                        I &lt;3 Pizza Shirt
+                    </div>
 
+                </div>
 
-<!-- PANTS -->
 
-<div class="category">
+                <!-- ITEM 2 -->
 
-<h2>👖 MTB Pants</h2>
+                <div class="item"
+                     onclick="wearItem(this,'teal')">
 
-<div class="grid">
+                    <div class="item-image">
 
-<div class="item">
-<h3>MTB Baggy Pants</h3>
-<button onclick="claimPants('baggy','MTB Baggy Pants')">CLAIM FREE</button>
-</div>
+                        <div class="shirt-preview">
 
-<div class="item">
-<h3>MTB VERY Baggy</h3>
-<button onclick="claimPants('veryBaggy','MTB VERY Baggy')">CLAIM FREE</button>
-</div>
+                            <div class="shirt-head"></div>
 
-<div class="item">
-<h3>MTB Cargo Pants</h3>
-<button onclick="claimPants('cargo','MTB Cargo Pants')">CLAIM FREE</button>
-</div>
+                            <div
+                                class="shirt-left"
+                                style="background:#18caa3">
+                            </div>
 
-<div class="item">
-<h3>MTB Black Pants</h3>
-<button onclick="claimPants('blackPants','MTB Black Pants')">CLAIM FREE</button>
-</div>
+                            <div
+                                class="shirt-body"
+                                style="background:#18caa3">
+                            </div>
 
-<div class="item">
-<h3>MTB White Pants</h3>
-<button onclick="claimPants('whitePants','MTB White Pants')">CLAIM FREE</button>
-</div>
+                            <div
+                                class="shirt-right"
+                                style="background:#18caa3">
+                            </div>
 
-<div class="item">
-<h3>MTB Red Pants</h3>
-<button onclick="claimPants('redPants','MTB Red Pants')">CLAIM FREE</button>
-</div>
+                        </div>
 
-<div class="item">
-<h3>MTB Blue Pants</h3>
-<button onclick="claimPants('bluePants','MTB Blue Pants')">CLAIM FREE</button>
-</div>
+                        <div class="check">✓</div>
 
-<div class="item">
-<h3>MTB Green Pants</h3>
-<button onclick="claimPants('greenPants','MTB Green Pants')">CLAIM FREE</button>
-</div>
+                    </div>
 
-<div class="item">
-<h3>MTB Purple Pants</h3>
-<button onclick="claimPants('purplePants','MTB Purple Pants')">CLAIM FREE</button>
-</div>
+                    <div class="item-name">
+                        Teal Shirt
+                    </div>
 
-<div class="item">
-<h3>MTB Winter Pants</h3>
-<button onclick="claimPants('winterPants','MTB Winter Pants')">CLAIM FREE</button>
-</div>
+                </div>
 
-<div class="item">
-<h3>MTB Jeans</h3>
-<button onclick="claimPants('jeans','MTB Jeans')">CLAIM FREE</button>
-</div>
 
-<div class="item">
-<h3>MTB Sweatpants</h3>
-<button onclick="claimPants('sweats','MTB Sweatpants')">CLAIM FREE</button>
-</div>
+                <!-- ITEM 3 -->
 
-</div>
-</div>
+                <div class="item selected"
+                     onclick="wearItem(this,'striped')">
 
+                    <div class="item-image">
 
-<!-- FROZEN HORNS -->
+                        <div class="shirt-preview">
 
-<div class="category">
+                            <div class="shirt-head"></div>
 
-<h2>🔥 Frozen Horns</h2>
+                            <div
+                                class="shirt-left"
+                                style="background:#174e76">
+                            </div>
 
-<div class="grid">
+                            <div
+                                class="shirt-body"
+                                style="background:#174e76">
+                            </div>
 
-<div class="item">
-<h3>Blue Frozen Horns</h3>
-<button onclick="claimAccessory('blueHorns','Blue Frozen Horns')">CLAIM FREE</button>
-</div>
+                            <div
+                                class="shirt-right"
+                                style="background:#174e76">
+                            </div>
 
-<div class="item">
-<h3>Red Frozen Horns</h3>
-<button onclick="claimAccessory('redHorns','Red Frozen Horns')">CLAIM FREE</button>
-</div>
+                        </div>
 
-<div class="item">
-<h3>Green Frozen Horns</h3>
-<button onclick="claimAccessory('greenHorns','Green Frozen Horns')">CLAIM FREE</button>
-</div>
+                        <div class="check">✓</div>
 
-</div>
-</div>
+                    </div>
 
+                    <div class="item-name">
+                        Grey Striped Shirt with...
+                    </div>
 
-<!-- FEDORAS -->
+                </div>
 
-<div class="category">
 
-<h2>✨ Sparkle Time Fedoras</h2>
+                <!-- BLOCKHEAD -->
 
-<div class="grid">
+                <div class="item"
+                     onclick="wearItem(this,'blockhead')">
 
-<div class="item">
-<h3>Sparkle Time Fedora</h3>
-<button onclick="claimAccessory('rainbow','Sparkle Time Fedora')">CLAIM FREE</button>
-</div>
+                    <div class="item-image">
 
-<div class="item">
-<h3>Red Fedora</h3>
-<button onclick="claimAccessory('redFedora','Red Fedora')">CLAIM FREE</button>
-</div>
+                        <div style="
+                            width:65px;
+                            height:65px;
+                            background:#aaa;
+                            display:flex;
+                            justify-content:center;
+                            align-items:center;
+                            font-size:24px;
+                        ">
+                            :)
+                        </div>
 
-<div class="item">
-<h3>Blue Fedora</h3>
-<button onclick="claimAccessory('blueFedora','Blue Fedora')">CLAIM FREE</button>
-</div>
+                        <div class="check">✓</div>
 
-<div class="item">
-<h3>Green Fedora</h3>
-<button onclick="claimAccessory('greenFedora','Green Fedora')">CLAIM FREE</button>
-</div>
+                    </div>
 
-<div class="item">
-<h3>Purple Fedora</h3>
-<button onclick="claimAccessory('purpleFedora','Purple Fedora')">CLAIM FREE</button>
-</div>
+                    <div class="item-name">
+                        Blockhead
+                    </div>
 
-<div class="item">
-<h3>Black Fedora</h3>
-<button onclick="claimAccessory('blackFedora','Black Fedora')">CLAIM FREE</button>
-</div>
+                </div>
 
-<div class="item">
-<h3>Gold Fedora</h3>
-<button onclick="claimAccessory('goldFedora','Gold Fedora')">CLAIM FREE</button>
-</div>
 
-<div class="item">
-<h3>Pink Fedora</h3>
-<button onclick="claimAccessory('pinkFedora','Pink Fedora')">CLAIM FREE</button>
-</div>
+                <!-- GUITAR -->
 
-</div>
-</div>
+                <div class="item"
+                     onclick="wearItem(this,'guitar')">
 
+                    <div class="item-image">
 
-<!-- VALKYRIES -->
+                        <div class="shirt-preview">
 
-<div class="category">
+                            <div class="shirt-head"></div>
 
-<h2>👑 Valkyries</h2>
+                            <div
+                                class="shirt-left"
+                                style="background:#333">
+                            </div>
 
-<div class="grid">
+                            <div
+                                class="shirt-body"
+                                style="background:#222">
+                            </div>
 
-<div class="item">
-<h3>Sparkle Time Valkyrie</h3>
-<button onclick="claimAccessory('goldValk','Sparkle Time Valkyrie')">CLAIM FREE</button>
-</div>
+                            <div
+                                class="shirt-right"
+                                style="background:#333">
+                            </div>
 
-<div class="item">
-<h3>Red Valkyrie</h3>
-<button onclick="claimAccessory('redValk','Red Valkyrie')">CLAIM FREE</button>
-</div>
+                        </div>
 
-<div class="item">
-<h3>Blue Valkyrie</h3>
-<button onclick="claimAccessory('blueValk','Blue Valkyrie')">CLAIM FREE</button>
-</div>
+                        <div class="check">✓</div>
 
-<div class="item">
-<h3>Green Valkyrie</h3>
-<button onclick="claimAccessory('greenValk','Green Valkyrie')">CLAIM FREE</button>
-</div>
+                    </div>
 
-<div class="item">
-<h3>Purple Valkyrie</h3>
-<button onclick="claimAccessory('purpleValk','Purple Valkyrie')">CLAIM FREE</button>
-</div>
+                    <div class="item-name">
+                        Guitar Tee with Black Jacket
+                    </div>
 
-<div class="item">
-<h3>Black Valkyrie</h3>
-<button onclick="claimAccessory('blackValk','Black Valkyrie')">CLAIM FREE</button>
-</div>
+                </div>
 
-</div>
-</div>
 
+                <!-- PINK -->
 
-<!-- GEAR -->
+                <div class="item"
+                     onclick="wearItem(this,'pink')">
 
-<div class="category">
+                    <div class="item-image">
 
-<h2>⚔ Gear</h2>
+                        <div class="shirt-preview">
 
-<div class="grid">
+                            <div class="shirt-head"></div>
 
-<div class="item">
-<h3>Classic Sword</h3>
-<button onclick="claimGear('sword','Classic Sword')">CLAIM FREE</button>
-</div>
+                            <div
+                                class="shirt-left"
+                                style="background:#f3a3bd">
+                            </div>
 
-<div class="item">
-<h3>BIG Pencil</h3>
-<button onclick="claimGear('pencil','BIG Pencil')">CLAIM FREE</button>
-</div>
+                            <div
+                                class="shirt-body"
+                                style="background:#f3a3bd">
+                            </div>
 
-<div class="item">
-<h3>Builder Hammer</h3>
-<button onclick="claimGear('hammer','Builder Hammer')">CLAIM FREE</button>
-</div>
+                            <div
+                                class="shirt-right"
+                                style="background:#f3a3bd">
+                            </div>
 
-</div>
-</div>
+                        </div>
 
+                        <div class="check">✓</div>
 
-<!-- BODY -->
+                    </div>
 
-<div class="category">
+                    <div class="item-name">
+                        Sleepy Pajama Top - Zara...
+                    </div>
 
-<h2>🦵 Body</h2>
+                </div>
 
-<div class="grid">
 
-<div class="item">
-<h3>Blue Korblox-style Leg</h3>
-<button onclick="claimBody('korblox','Blue Korblox-style Leg')">CLAIM FREE</button>
-</div>
+                <!-- DENIM -->
 
-</div>
-</div>
+                <div class="item"
+                     onclick="wearItem(this,'denim')">
 
-</div>
-</div>
+                    <div class="item-image">
+
+                        <div class="shirt-preview">
+
+                            <div class="shirt-head"></div>
+
+                            <div
+                                class="shirt-left"
+                                style="background:#6d9bc0">
+                            </div>
+
+                            <div
+                                class="shirt-body"
+                                style="background:#6d9bc0">
+                            </div>
+
+                            <div
+                                class="shirt-right"
+                                style="background:#6d9bc0">
+                            </div>
+
+                        </div>
+
+                        <div class="check">✓</div>
+
+                    </div>
+
+                    <div class="item-name">
+                        Denim Jacket with White...
+                    </div>
+
+                </div>
+
+
+                <!-- PASTEL -->
+
+                <div class="item"
+                     onclick="wearItem(this,'pastel')">
+
+                    <div class="item-image">
+
+                        <div class="shirt-preview">
+
+                            <div class="shirt-head"></div>
+
+                            <div
+                                class="shirt-left"
+                                style="background:#777">
+                            </div>
+
+                            <div
+                                class="shirt-body"
+                                style="background:#888">
+                            </div>
+
+                            <div
+                                class="shirt-right"
+                                style="background:#777">
+                            </div>
+
+                        </div>
+
+                        <div class="check">✓</div>
+
+                    </div>
+
+                    <div class="item-name">
+                        Pastel Starburst Top
+                    </div>
+
+                </div>
+
+
+                <!-- FROZEN HORNS -->
+
+                <div class="item"
+                     onclick="wearItem(this,'frozen-horns')">
+
+                    <div class="item-image">
+
+                        <div class="horns-preview">
+
+                            <div class="horn-left"></div>
+                            <div class="horn-right"></div>
+                            <div class="ice-flame"></div>
+
+                        </div>
+
+                        <div class="check">✓</div>
+
+                    </div>
+
+                    <div class="item-name">
+                        Frozen Horns of the Frigid Planes
+                    </div>
+
+                    <div class="item-price">
+                        MTB 150
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =====================
+                 RECOMMENDATIONS
+            ====================== -->
+
+            <div class="recommend">
+
+                <h2>You May Also Like</h2>
+
+                <div class="recommend-grid">
+
+                    <div class="item">
+                        <div class="item-image">
+                            <div class="shirt-preview">
+                                <div class="shirt-head"></div>
+                                <div class="shirt-left"
+                                     style="background:#57c7bd"></div>
+                                <div class="shirt-body"
+                                     style="background:#57c7bd"></div>
+                                <div class="shirt-right"
+                                     style="background:#57c7bd"></div>
+                            </div>
+                        </div>
+                        <div class="item-name">Dennis Daily</div>
+                    </div>
+
+
+                    <div class="item">
+                        <div class="item-image">
+                            <div class="shirt-preview">
+                                <div class="shirt-head"></div>
+                                <div class="shirt-left"
+                                     style="background:#111"></div>
+                                <div class="shirt-body"
+                                     style="background:#111"></div>
+                                <div class="shirt-right"
+                                     style="background:#111"></div>
+                            </div>
+                        </div>
+                        <div class="item-name">[ROOK] Black</div>
+                    </div>
+
+
+                    <div class="item">
+                        <div class="item-image">
+                            <div class="shirt-preview">
+                                <div class="shirt-head"></div>
+                                <div class="shirt-left"
+                                     style="background:#222"></div>
+                                <div class="shirt-body"
+                                     style="background:#222"></div>
+                                <div class="shirt-right"
+                                     style="background:#222"></div>
+                            </div>
+                        </div>
+                        <div class="item-name">Black T-Shirt</div>
+                    </div>
+
+
+                    <div class="item">
+                        <div class="item-image">
+                            <div class="shirt-preview">
+                                <div class="shirt-head"></div>
+                                <div class="shirt-left"
+                                     style="background:#12548a"></div>
+                                <div class="shirt-body"
+                                     style="background:#12548a"></div>
+                                <div class="shirt-right"
+                                     style="background:#12548a"></div>
+                            </div>
+                        </div>
+                        <div class="item-name">Super Man</div>
+                    </div>
+
+
+                    <div class="item">
+                        <div class="item-image">
+                            <div class="shirt-preview">
+                                <div class="shirt-head"></div>
+                                <div class="shirt-left"
+                                     style="background:#e8ca67"></div>
+                                <div class="shirt-body"
+                                     style="background:#e8ca67"></div>
+                                <div class="shirt-right"
+                                     style="background:#e8ca67"></div>
+                            </div>
+                        </div>
+                        <div class="item-name">Cute Pikachu</div>
+                    </div>
+
+
+                    <div class="item">
+                        <div class="item-image">
+                            <div class="shirt-preview">
+                                <div class="shirt-head"></div>
+                                <div class="shirt-left"
+                                     style="background:#9b2020"></div>
+                                <div class="shirt-body"
+                                     style="background:#9b2020"></div>
+                                <div class="shirt-right"
+                                     style="background:#9b2020"></div>
+                            </div>
+                        </div>
+                        <div class="item-name">Iron Man (Mark 43)</div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================
+             AVATAR PREVIEW
+        ====================== -->
+
+        <section class="avatar-panel">
+
+            <div class="avatar-view">
+
+                <div class="background-block block1"></div>
+                <div class="background-block block2"></div>
+                <div class="background-block block3"></div>
+
+                <div class="avatar-stage">
+
+                    <div
+                        id="wornHorns"
+                        class="worn-horns"
+                    ></div>
+
+                    <div class="hair"></div>
+
+                    <div class="avatar-head">
+
+                        <div class="eye left"></div>
+                        <div class="eye right"></div>
+
+                        <div class="mouth"></div>
+
+                    </div>
+
+                    <div class="avatar-arm left"></div>
+                    <div class="avatar-arm right"></div>
+
+                    <div
+                        id="avatarTorso"
+                        class="avatar-torso"
+                    ></div>
+
+                    <div class="avatar-leg left"></div>
+                    <div class="avatar-leg right"></div>
+
+                    <div class="avatar-shoe left"></div>
+                    <div class="avatar-shoe right"></div>
+
+                </div>
+
+            </div>
+
+
+            <div class="avatar-controls">
+
+                <div class="controls-top">
+
+                    <button class="adjust">
+                        ☷ &nbsp; Adjust clothing order
+                    </button>
+
+                    <button class="view-button">
+                        2D
+                    </button>
+
+                </div>
+
+
+                <div class="scaling">
+
+                    <h3>Scaling ⓘ</h3>
+
+
+                    <div class="slider-row">
+
+                        <span>Height</span>
+
+                        <input
+                            type="range"
+                            min="50"
+                            max="150"
+                            value="100"
+                            oninput="scaleAvatar()"
+                        >
+
+                        <span class="heightValue">
+                            100%
+                        </span>
+
+                    </div>
+
+
+                    <div class="slider-row">
+
+                        <span>Width</span>
+
+                        <input
+                            type="range"
+                            min="50"
+                            max="150"
+                            value="100"
+                            oninput="scaleAvatar()"
+                        >
+
+                        <span class="widthValue">
+                            100%
+                        </span>
+
+                    </div>
+
+
+                    <div class="slider-row">
+
+                        <span>Head</span>
+
+                        <input
+                            type="range"
+                            min="50"
+                            max="150"
+                            value="100"
+                            oninput="scaleAvatar()"
+                        >
+
+                        <span class="headValue">
+                            100%
+                        </span>
+
+                    </div>
+
+
+                    <div class="slider-row">
+
+                        <span>Body Type</span>
+
+                        <input
+                            type="range"
+                            min="0"
+                            max="100"
+                            value="0"
+                            oninput="scaleAvatar()"
+                        >
+
+                        <span class="bodyValue">
+                            0%
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="redraw">
+
+                    Avatar isn't loading correctly?
+
+                    <a onclick="redrawAvatar()">
+                        Redraw
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+</main>
+
 </div>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="footer-links">
+        <a href="#">About Us</a>
+        <a href="#">Jobs</a>
+        <a href="#">Blog</a>
+        <a href="#">Parents</a>
+        <a href="#">Help</a>
+        <a href="#">Terms</a>
+        <a href="#">Privacy</a>
+    </div>
+
+    <div class="copyright">
+        ©2019 MTB REVIVALS. MTB, the MTB logo, Roblox, the Roblox logo,
+        Powering Imagination, and our characters are trademarks of MTB Corporation.
+    </div>
 
-<div id="message" class="message"></div>
+</footer>
 
 
 <script>
 
-/* =====================================================
-   MTB REVIVALS
-   FREE SHOP + CONFIRMATION + SAVED INVENTORY
-   ===================================================== */
+/* =========================
+   SAVE AVATAR
+========================= */
 
-const SAVE_KEY = "MTB_REVIVALS_COMPLETE_V1";
-
-let player = JSON.parse(localStorage.getItem(SAVE_KEY)) || {
-
-    coins:1000,
-
-    owned:[],
-
-    equipped:{
-        shirt:null,
-        shirtName:null,
-
-        pants:null,
-        pantsName:null,
-
-        accessories:[],
-
-        gear:null,
-        gearName:null,
-
-        face:"Classic Face",
-
-        body:null,
-        bodyName:null
-    }
+let avatarData = JSON.parse(
+    localStorage.getItem("mtbAvatar")
+) || {
+    item: "striped",
+    frozenHorns: false,
+    height: 100,
+    width: 100,
+    head: 100,
+    body: 0
 };
 
 
-/* ================= SAVE ================= */
+/* =========================
+   WEAR ITEM
+========================= */
 
-function save(){
-    localStorage.setItem(
-        SAVE_KEY,
-        JSON.stringify(player)
-    );
-}
+function wearItem(element, item) {
 
+    document
+        .querySelectorAll(".item")
+        .forEach(x => x.classList.remove("selected"));
 
-/* ================= MESSAGE ================= */
+    element.classList.add("selected");
 
-function showMessage(text){
+    avatarData.item = item;
 
-    const box =
-        document.getElementById("message");
+    if (item === "frozen-horns") {
 
-    box.textContent=text;
-    box.style.display="block";
+        avatarData.frozenHorns = !avatarData.frozenHorns;
 
-    clearTimeout(window.mtbMessage);
-
-    window.mtbMessage=setTimeout(()=>{
-        box.style.display="none";
-    },2000);
-}
-
-
-/* ================= COINS ================= */
-
-function updateCoins(){
-
-    document.getElementById("coins")
-        .textContent=player.coins;
-}
-
-function earnCoins(){
-
-    player.coins+=100;
-
-    save();
-    updateCoins();
-
-    showMessage("+100 MTB Coins earned!");
-}
-
-
-/* ================= FREE ORDER ================= */
-
-function confirmFreeOrder(name){
-
-    return confirm(
-        "CONFIRM ORDER\n\n"+
-        "Item: "+name+"\n"+
-        "Price: FREE\n"+
-        "MTB Coins charged: 0\n\n"+
-        "Do you want to claim this item?"
-    );
-}
-
-
-/* ================= OWN ITEM ================= */
-
-function ownItem(id,name,type){
-
-    return player.owned.some(
-        item=>item.id===id
-    );
-}
-
-function addOwned(id,name,type){
-
-    if(ownItem(id,name,type)){
-        return false;
-    }
-
-    player.owned.push({
-        id:id,
-        name:name,
-        type:type,
-        price:0
-    });
-
-    save();
-
-    return true;
-}
-
-
-/* ================= SHIRTS ================= */
-
-function claimShirt(id,name){
-
-    if(ownItem(id,name,"shirt")){
-
-        equipShirt(id,name);
-        showMessage(name+" equipped.");
-        return;
-    }
-
-    if(!confirmFreeOrder(name)){
-        showMessage("Order cancelled.");
-        return;
-    }
-
-    addOwned(id,name,"shirt");
-
-    equipShirt(id,name);
-
-    showMessage(name+" claimed for FREE!");
-}
-
-
-function equipShirt(id,name){
-
-    player.equipped.shirt=id;
-    player.equipped.shirtName=name;
-
-    const shirt =
-        document.getElementById("shirt");
-
-    shirt.className=
-        "shirtText "+id;
-
-    shirt.textContent="MTB";
-
-    save();
-    updateEquipped();
-    updateInventory();
-}
-
-
-/* ================= PANTS ================= */
-
-function claimPants(id,name){
-
-    if(ownItem(id,name,"pants")){
-
-        equipPants(id,name);
-        showMessage(name+" equipped.");
-        return;
-    }
-
-    if(!confirmFreeOrder(name)){
-        showMessage("Order cancelled.");
-        return;
-    }
-
-    addOwned(id,name,"pants");
-
-    equipPants(id,name);
-
-    showMessage(name+" claimed for FREE!");
-}
-
-
-function equipPants(id,name){
-
-    player.equipped.pants=id;
-    player.equipped.pantsName=name;
-
-    document.getElementById("leftLeg")
-        .className="leg leftLeg "+id;
-
-    document.getElementById("rightLeg")
-        .className="leg rightLeg "+id;
-
-    save();
-    updateEquipped();
-    updateInventory();
-}
-
-
-/* ================= ACCESSORIES ================= */
-
-function claimAccessory(id,name){
-
-    if(!ownItem(id,name,"accessory")){
-
-        if(!confirmFreeOrder(name)){
-            showMessage("Order cancelled.");
-            return;
-        }
-
-        addOwned(id,name,"accessory");
-
-        showMessage(name+" claimed for FREE!");
-    }
-
-    toggleAccessory(id,name);
-}
-
-
-function toggleAccessory(id,name){
-
-    const index =
-        player.equipped.accessories.indexOf(id);
-
-    if(index!==-1){
-
-        player.equipped.accessories.splice(
-            index,
-            1
-        );
-
-        renderAccessories();
-        save();
-        updateEquipped();
-
-        showMessage(name+" removed.");
-        return;
-    }
-
-    if(player.equipped.accessories.length>=3){
-
-        showMessage(
-            "Maximum 3 accessories at once!"
-        );
-
-        return;
-    }
-
-    player.equipped.accessories.push(id);
-
-    renderAccessories();
-
-    save();
-    updateEquipped();
-
-    showMessage(name+" equipped.");
-}
-
-
-/* ================= RENDER ACCESSORIES ================= */
-
-function renderAccessories(){
-
-    for(let i=1;i<=3;i++){
-
-        document.getElementById(
-            "accessory"+i
-        ).innerHTML="";
-    }
-
-    player.equipped.accessories
-    .slice(0,3)
-    .forEach((id,index)=>{
-
-        let html="";
-
-        if(
-            id==="blueHorns" ||
-            id==="redHorns" ||
-            id==="greenHorns"
-        ){
-
-            html=`
-            <div class="horns ${id}">
-                <div class="horn left"></div>
-                <div class="horn right"></div>
-
-                <div class="fire">
-                    <div class="flame"></div>
-                </div>
-            </div>
-            `;
-        }
-
-        else if([
-            "rainbow",
-            "redFedora",
-            "blueFedora",
-            "greenFedora",
-            "purpleFedora",
-            "blackFedora",
-            "goldFedora",
-            "pinkFedora"
-        ].includes(id)){
-
-            html=`
-            <div class="fedora ${id}">
-                <div class="fedoraTop"></div>
-                <div class="fedoraBand"></div>
-                <div class="fedoraBrim"></div>
-            </div>
-            `;
-        }
-
-        else if([
-            "goldValk",
-            "redValk",
-            "blueValk",
-            "greenValk",
-            "purpleValk",
-            "blackValk"
-        ].includes(id)){
-
-            html=`
-            <div class="valk ${id}">
-                <div class="valkWing left"></div>
-                <div class="valkWing right"></div>
-            </div>
-            `;
-        }
-
-        document.getElementById(
-            "accessory"+(index+1)
-        ).innerHTML=html;
-    });
-}
-
-
-/* ================= GEAR ================= */
-
-function claimGear(id,name){
-
-    if(player.equipped.gear===id){
-
-        removeGear();
-        return;
-    }
-
-    if(!ownItem(id,name,"gear")){
-
-        if(!confirmFreeOrder(name)){
-            showMessage("Order cancelled.");
-            return;
-        }
-
-        addOwned(id,name,"gear");
-
-        showMessage(name+" claimed for FREE!");
-    }
-
-    equipGear(id,name);
-}
-
-
-function equipGear(id,name){
-
-    player.equipped.gear=id;
-    player.equipped.gearName=name;
-
-    const avatar =
-        document.getElementById("avatar");
-
-    const gear =
-        document.getElementById("gear");
-
-    avatar.classList.add("holding");
-
-    gear.className="gear "+id;
-
-    if(id==="sword"){
-
-        gear.innerHTML=`
-            <div class="swordBlade"></div>
-            <div class="swordGuard"></div>
-            <div class="swordHandle"></div>
-            <div class="swordPommel"></div>
-        `;
-    }
-
-    if(id==="pencil"){
-
-        gear.innerHTML=`
-            <div class="pencilLead"></div>
-            <div class="pencilWood"></div>
-            <div class="pencilBody"></div>
-            <div class="pencilMetal"></div>
-            <div class="pencilEraser"></div>
-        `;
-    }
-
-    if(id==="hammer"){
-
-        gear.innerHTML=`
-            <div class="hammerHead"></div>
-            <div class="hammerHandle"></div>
-        `;
-    }
-
-    save();
-    updateEquipped();
-    updateInventory();
-}
-
-
-/* ================= REMOVE GEAR ================= */
-
-function removeGear(){
-
-    player.equipped.gear=null;
-    player.equipped.gearName=null;
-
-    document.getElementById("gear").innerHTML="";
-
-    document.getElementById("avatar")
-        .classList.remove("holding");
-
-    save();
-
-    updateEquipped();
-
-    showMessage("Gear removed.");
-}
-
-
-/* ================= FACES ================= */
-
-function claimFace(name){
-
-    const id=name;
-
-    if(!ownItem(id,name,"face")){
-
-        if(!confirmFreeOrder(name)){
-            showMessage("Order cancelled.");
-            return;
-        }
-
-        addOwned(id,name,"face");
-
-        showMessage(name+" claimed for FREE!");
-    }
-
-    player.equipped.face=id;
-
-    const avatar =
-        document.getElementById("avatar");
-
-    if(name==="Headless"){
-
-        avatar.classList.add("headless");
-
-    }else{
-
-        avatar.classList.remove("headless");
-    }
-
-    save();
-    updateEquipped();
-    updateInventory();
-}
-
-
-/* ================= BODY ================= */
-
-function claimBody(id,name){
-
-    if(!ownItem(id,name,"body")){
-
-        if(!confirmFreeOrder(name)){
-            showMessage("Order cancelled.");
-            return;
-        }
-
-        addOwned(id,name,"body");
-
-        showMessage(name+" claimed for FREE!");
-    }
-
-    player.equipped.body=id;
-    player.equipped.bodyName=name;
-
-    document.getElementById("leftLeg")
-        .classList.toggle(
-            "korblox",
-            id==="korblox"
-        );
-
-    save();
-    updateEquipped();
-    updateInventory();
-}
-
-
-/* ================= REMOVE ACCESSORIES ================= */
-
-function removeAccessories(){
-
-    player.equipped.accessories=[];
-
-    renderAccessories();
-
-    save();
-
-    updateEquipped();
-
-    showMessage("Accessories removed.");
-}
-
-
-/* ================= EQUIPPED ================= */
-
-function updateEquipped(){
-
-    const box =
-        document.getElementById("equipped");
-
-    let html="";
-
-    html+="<b>Face:</b> "+
-        (player.equipped.face||"Classic Face")+
-        "<br>";
-
-    html+="<b>Shirt:</b> "+
-        (player.equipped.shirtName||"None")+
-        "<br>";
-
-    html+="<b>Pants:</b> "+
-        (player.equipped.pantsName||"None")+
-        "<br>";
-
-    if(player.equipped.accessories.length){
-
-        player.equipped.accessories
-        .forEach((id,index)=>{
-
-            const item=
-                player.owned.find(x=>x.id===id);
-
-            if(item){
-
-                html+=
-                    "<b>Accessory "+
-                    (index+1)+
-                    ":</b> "+
-                    item.name+
-                    "<br>";
-            }
-        });
-
-    }else{
-
-        html+="<b>Accessories:</b> None<br>";
-    }
-
-    html+="<b>Gear:</b> "+
-        (player.equipped.gearName||"None")+
-        "<br>";
-
-    html+="<b>Body:</b> "+
-        (player.equipped.bodyName||"Default")+
-        "<br>";
-
-    box.innerHTML=html;
-}
-
-
-/* ================= INVENTORY ================= */
-
-function updateInventory(){
-
-    const box =
-        document.getElementById("inventory");
-
-    if(!player.owned.length){
-
-        box.innerHTML=
-            "Nothing owned yet.";
-
-        return;
-    }
-
-    box.innerHTML="";
-
-    player.owned.forEach(item=>{
-
-        const row=
-            document.createElement("div");
-
-        row.className="ownedItem";
-
-        row.innerHTML=`
-            <span>
-                ${escapeHTML(item.name)}
-                <small style="color:#62e6ff">
-                    — FREE
-                </small>
-            </span>
-
-            <span>
-                ${escapeHTML(item.type)}
-            </span>
-        `;
-
-        box.appendChild(row);
-    });
-}
-
-
-/* ================= RESET ================= */
-
-function resetAvatar(){
-
-    if(!confirm(
-        "Reset your MTB REVIVALS avatar?\n\n"+
-        "This removes your saved local inventory too."
-    )){
-        return;
-    }
-
-    localStorage.removeItem(SAVE_KEY);
-
-    location.reload();
-}
-
-
-/* ================= USER SEARCH ================= */
-
-async function searchUsers(){
-
-    const username=
-        document.getElementById(
-            "usernameSearch"
-        ).value.trim();
-
-    const results=
-        document.getElementById(
-            "searchResults"
-        );
-
-    if(!username){
-
-        results.innerHTML=
-            '<div class="noResults">Enter a username.</div>';
-
-        return;
-    }
-
-    results.innerHTML=
-        '<div class="noResults">Searching Roblox...</div>';
-
-    try{
-
-        const response=
-            await fetch(
-                "https://users.roblox.com/v1/usernames/users",
-                {
-                    method:"POST",
-
-                    headers:{
-                        "Content-Type":
-                        "application/json"
-                    },
-
-                    body:JSON.stringify({
-                        usernames:[username],
-                        excludeBannedUsers:false
-                    })
-                }
-            );
-
-        if(!response.ok){
-            throw new Error("Search failed");
-        }
-
-        const result=
-            await response.json();
-
-        if(
-            !result.data ||
-            !result.data.length
-        ){
-
-            results.innerHTML=
-                '<div class="noResults">User not found.</div>';
-
-            return;
-        }
-
-        results.innerHTML="";
-
-        result.data.forEach(user=>{
-
-            const card=
-                document.createElement("div");
-
-            card.className="userResult";
-
-            card.innerHTML=`
-
-                <img
-                    class="userAvatar"
-                    src="https://www.roblox.com/headshot-thumbnail/image?userId=${user.id}&width=150&height=150&format=png"
-                >
-
-                <div class="userInfo">
-
-                    <div class="userName">
-                        ${escapeHTML(user.name)}
-                    </div>
-
-                    <div class="userDisplay">
-                        @${escapeHTML(user.displayName)}
-                    </div>
-
-                </div>
-
-                <a
-                    class="profileButton"
-                    target="_blank"
-                    href="https://www.roblox.com/users/${user.id}/profile">
-                    PROFILE
-                </a>
-            `;
-
-            results.appendChild(card);
-        });
-
-    }catch(error){
-
-        results.innerHTML=
-            `<div class="noResults">
-                Roblox user search could not connect.
-            </div>`;
-    }
-}
-
-
-/* ================= SECURITY ================= */
-
-function escapeHTML(value){
-
-    return String(value)
-        .replace(/&/g,"&amp;")
-        .replace(/</g,"&lt;")
-        .replace(/>/g,"&gt;")
-        .replace(/"/g,"&quot;")
-        .replace(/'/g,"&#039;");
-}
-
-
-/* ================= LOAD SAVED DATA ================= */
-
-function loadSaved(){
-
-    updateCoins();
-
-    if(player.equipped.shirt){
-
-        equipShirt(
-            player.equipped.shirt,
-            player.equipped.shirtName
-        );
-    }
-
-    if(player.equipped.pants){
-
-        equipPants(
-            player.equipped.pants,
-            player.equipped.pantsName
-        );
-    }
-
-    if(player.equipped.face){
-
-        const avatar=
-            document.getElementById("avatar");
-
-        if(player.equipped.face==="Headless"){
-            avatar.classList.add("headless");
-        }else{
-            avatar.classList.remove("headless");
-        }
-    }
-
-    if(player.equipped.body){
-
-        document.getElementById("leftLeg")
+        document
+            .getElementById("wornHorns")
             .classList.toggle(
-                "korblox",
-                player.equipped.body==="korblox"
+                "show",
+                avatarData.frozenHorns
             );
+
+    } else {
+
+        document
+            .getElementById("wornHorns")
+            .classList.remove("show");
+
+        avatarData.frozenHorns = false;
+
+        changeShirt(item);
     }
 
-    renderAccessories();
-
-    if(player.equipped.gear){
-
-        equipGear(
-            player.equipped.gear,
-            player.equipped.gearName
-        );
-    }
-
-    updateEquipped();
-    updateInventory();
+    saveAvatar();
 }
 
 
-/* ================= START ================= */
+/* =========================
+   CHANGE SHIRT
+========================= */
 
-loadSaved();
+function changeShirt(type) {
+
+    const torso =
+        document.getElementById("avatarTorso");
+
+    let shirtColor = "#17679a";
+
+    if (type === "pizza") {
+        shirtColor = "#294c68";
+    }
+
+    if (type === "teal") {
+        shirtColor = "#18caa3";
+    }
+
+    if (type === "striped") {
+        shirtColor = "#174e76";
+    }
+
+    if (type === "guitar") {
+        shirtColor = "#222";
+    }
+
+    if (type === "pink") {
+        shirtColor = "#efa5bc";
+    }
+
+    if (type === "denim") {
+        shirtColor = "#6d9bc0";
+    }
+
+    if (type === "pastel") {
+        shirtColor = "#777";
+    }
+
+    if (type === "blockhead") {
+        shirtColor = "#aaa";
+    }
+
+    torso.style.background = shirtColor;
+}
+
+
+/* =========================
+   SCALING
+========================= */
+
+function scaleAvatar() {
+
+    const sliders =
+        document.querySelectorAll(
+            ".slider-row input"
+        );
+
+    const height = sliders[0].value;
+    const width = sliders[1].value;
+    const head = sliders[2].value;
+    const body = sliders[3].value;
+
+    avatarData.height = height;
+    avatarData.width = width;
+    avatarData.head = head;
+    avatarData.body = body;
+
+    document.querySelector(".heightValue")
+        .textContent = height + "%";
+
+    document.querySelector(".widthValue")
+        .textContent = width + "%";
+
+    document.querySelector(".headValue")
+        .textContent = head + "%";
+
+    document.querySelector(".bodyValue")
+        .textContent = body + "%";
+
+    const stage =
+        document.querySelector(".avatar-stage");
+
+    stage.style.transform =
+        `translate(-50%, -50%)
+         scaleX(${width / 100})
+         scaleY(${height / 100})`;
+
+    document.querySelector(".avatar-head")
+        .style.transform =
+        `scale(${head / 100})`;
+
+    saveAvatar();
+}
+
+
+/* =========================
+   REDRAW
+========================= */
+
+function redrawAvatar() {
+
+    const stage =
+        document.querySelector(".avatar-stage");
+
+    stage.style.display = "none";
+
+    setTimeout(() => {
+
+        stage.style.display = "block";
+
+        scaleAvatar();
+
+    }, 250);
+}
+
+
+/* =========================
+   MAIN CATEGORY TABS
+========================= */
+
+function changeMainTab(element, category) {
+
+    document
+        .querySelectorAll(".main-tab")
+        .forEach(tab =>
+            tab.classList.remove("active")
+        );
+
+    element.classList.add("active");
+
+    console.log(
+        "Opened category:",
+        category
+    );
+}
+
+
+/* =========================
+   SEARCH
+========================= */
+
+function searchItems() {
+
+    const query =
+        document
+            .getElementById("searchInput")
+            .value
+            .toLowerCase();
+
+    document
+        .querySelectorAll("#items .item")
+        .forEach(item => {
+
+            const name =
+                item
+                    .querySelector(".item-name")
+                    .textContent
+                    .toLowerCase();
+
+            item.style.display =
+                name.includes(query)
+                    ? ""
+                    : "none";
+        });
+}
+
+
+/* =========================
+   SAVE
+========================= */
+
+function saveAvatar() {
+
+    localStorage.setItem(
+        "mtbAvatar",
+        JSON.stringify(avatarData)
+    );
+}
+
+
+/* =========================
+   LOAD
+========================= */
+
+function loadAvatar() {
+
+    if (avatarData.frozenHorns) {
+
+        document
+            .getElementById("wornHorns")
+            .classList.add("show");
+
+    }
+
+    changeShirt(
+        avatarData.item
+    );
+
+    const sliders =
+        document.querySelectorAll(
+            ".slider-row input"
+        );
+
+    sliders[0].value = avatarData.height;
+    sliders[1].value = avatarData.width;
+    sliders[2].value = avatarData.head;
+    sliders[3].value = avatarData.body;
+
+    scaleAvatar();
+}
+
+
+/* =========================
+   START
+========================= */
+
+loadAvatar();
 
 </script>
 
