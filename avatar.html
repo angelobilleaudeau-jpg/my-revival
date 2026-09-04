@@ -3,1050 +3,786 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>MTB REVIVALS - Avatar</title>
 
 <style>
-* {
-    box-sizing: border-box;
+*{
+    box-sizing:border-box;
 }
 
-body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f2f2f2;
-    color: #222;
-}
-
-/* =========================
-   TOP NAVIGATION
-========================= */
-
-.topbar {
-    height: 52px;
-    background: #0878c9;
-    display: flex;
-    align-items: center;
-    color: white;
-    padding: 0 18px;
-    box-shadow: 0 1px 3px rgba(0,0,0,.25);
-}
-
-.logo {
-    font-size: 27px;
-    font-weight: bold;
-    margin-right: 40px;
-    letter-spacing: -1px;
-}
-
-.logo span {
-    color: white;
-}
-
-.top-links {
-    display: flex;
-    height: 100%;
-    align-items: center;
-    gap: 0;
-}
-
-.top-links a {
-    color: white;
-    text-decoration: none;
-    padding: 17px 20px;
-    font-size: 15px;
-}
-
-.top-links a:hover {
-    background: rgba(0,0,0,.15);
-}
-
-.search {
-    margin-left: 20px;
-    width: 335px;
-    height: 34px;
-    background: white;
-    border-radius: 3px;
-    display: flex;
-    align-items: center;
-}
-
-.search input {
-    border: 0;
-    outline: none;
-    width: 100%;
-    padding: 8px 12px;
-    font-size: 14px;
-}
-
-.search button {
-    border: 0;
-    background: white;
-    font-size: 19px;
-    cursor: pointer;
-    padding-right: 10px;
-}
-
-.top-right {
-    margin-left: auto;
-    display: flex;
-    align-items: center;
-    gap: 18px;
-    font-size: 14px;
-}
-
-.top-icon {
-    font-size: 20px;
-    cursor: pointer;
-}
-
-.coin {
-    font-weight: bold;
+html,body{
+    margin:0;
+    padding:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f2f2f2;
+    color:#222;
 }
 
 /* =========================
-   LAYOUT
+   TOP BAR
 ========================= */
 
-.layout {
-    display: flex;
-    min-height: calc(100vh - 52px);
+.topbar{
+    height:64px;
+    background:#ef5350;
+    color:white;
+    display:flex;
+    align-items:center;
+    padding:0 18px;
+    gap:24px;
+    position:sticky;
+    top:0;
+    z-index:9999;
+    box-shadow:0 2px 5px rgba(0,0,0,.25);
+}
+
+.hamburger{
+    font-size:31px;
+    cursor:pointer;
+    width:38px;
+}
+
+.rlogo{
+    font-size:39px;
+    font-weight:900;
+}
+
+.toplink{
+    font-size:22px;
+    font-weight:bold;
+    cursor:pointer;
+    white-space:nowrap;
+}
+
+.search{
+    flex:1;
+    max-width:410px;
+    height:40px;
+    background:white;
+    border-radius:4px;
+    display:flex;
+    align-items:center;
+}
+
+.search input{
+    border:0;
+    outline:0;
+    flex:1;
+    height:100%;
+    padding:0 13px;
+    font-size:17px;
+}
+
+.searchButton{
+    width:45px;
+    height:100%;
+    border:0;
+    background:white;
+    font-size:25px;
+    cursor:pointer;
+}
+
+.currency{
+    display:flex;
+    align-items:center;
+    gap:7px;
+    font-size:21px;
+    font-weight:bold;
+    white-space:nowrap;
+}
+
+.robuxIcon,
+.tixIcon{
+    width:36px;
+    height:36px;
+    border:3px solid white;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:18px;
+}
+
+.tixIcon{
+    border-radius:4px;
+    transform:rotate(-15deg);
+}
+
+.settings{
+    font-size:31px;
+    cursor:pointer;
 }
 
 /* =========================
-   SIDEBAR
+   SIDE MENU
 ========================= */
 
-.sidebar {
-    width: 180px;
-    background: white;
-    border-right: 1px solid #ddd;
-    padding: 14px 12px;
-    flex-shrink: 0;
+.sideMenu{
+    position:fixed;
+    left:0;
+    top:64px;
+    bottom:0;
+    width:260px;
+    background:white;
+    border-right:1px solid #ccc;
+    z-index:9000;
+    padding:20px;
+    transition:.25s;
 }
 
-.sidebar-user {
-    font-size: 16px;
-    font-weight: bold;
-    padding: 0 3px 12px;
-    border-bottom: 1px solid #ccc;
-    margin-bottom: 10px;
+.sideMenu.closed{
+    transform:translateX(-100%);
 }
 
-.side-link {
-    height: 38px;
-    display: flex;
-    align-items: center;
-    gap: 9px;
-    padding: 0 8px;
-    color: #222;
-    text-decoration: none;
-    border-radius: 3px;
-    font-size: 14px;
-    cursor: pointer;
+.profileMini{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding-bottom:17px;
+    border-bottom:3px solid #ccc;
+    margin-bottom:12px;
 }
 
-.side-link:hover {
-    background: #e8e8e8;
+.miniAvatar{
+    width:43px;
+    height:43px;
+    border-radius:50%;
+    background:#aaa;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
 }
 
-.side-icon {
-    width: 24px;
-    text-align: center;
-    font-size: 19px;
+.miniName{
+    font-size:22px;
+    font-weight:bold;
 }
 
-.badge {
-    margin-left: auto;
-    background: #168de2;
-    color: white;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 20px;
-    font-size: 11px;
+.verify{
+    display:inline-flex;
+    width:22px;
+    height:22px;
+    border-radius:50%;
+    background:#3279e8;
+    color:white;
+    align-items:center;
+    justify-content:center;
+    font-size:14px;
+    margin-left:4px;
 }
 
-.upgrade {
-    margin-top: 12px;
-    width: 100%;
-    border: 0;
-    background: #0878c9;
-    color: white;
-    padding: 10px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
+.navItem{
+    display:flex;
+    align-items:center;
+    gap:16px;
+    padding:13px 4px;
+    font-size:21px;
+    font-weight:bold;
+    cursor:pointer;
+    border-radius:5px;
 }
 
-.events {
-    margin-top: 18px;
-    font-size: 14px;
+.navItem:hover{
+    background:#eee;
 }
 
-.events-title {
-    font-size: 16px;
-    margin-bottom: 8px;
+.navIcon{
+    width:34px;
+    text-align:center;
+    font-size:27px;
+}
+
+.ownerBadge{
+    margin-top:20px;
+    padding:12px;
+    background:#ef5350;
+    color:white;
+    text-align:center;
+    font-weight:bold;
+    border-radius:4px;
 }
 
 /* =========================
    MAIN
 ========================= */
 
-.main {
-    flex: 1;
-    padding: 32px 22px 60px;
-    min-width: 0;
+.main{
+    margin-left:260px;
+    padding:35px;
+    min-height:calc(100vh - 64px);
+    transition:.25s;
 }
 
-.page-title {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 1160px;
-    margin: auto;
-    margin-bottom: 25px;
+.main.full{
+    margin-left:0;
 }
 
-.page-title h1 {
-    font-size: 29px;
-    font-weight: normal;
-    margin: 0;
+.titleRow{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:20px;
 }
 
-.get-more {
-    background: #14a84a;
-    color: white;
-    border: 0;
-    padding: 11px 17px;
-    border-radius: 3px;
-    font-size: 14px;
-    cursor: pointer;
+.titleRow h1{
+    margin:0;
+    font-size:38px;
+}
+
+.moreButton{
+    background:#333;
+    color:white;
+    border:0;
+    padding:13px 23px;
+    border-radius:4px;
+    font-size:17px;
+    font-weight:bold;
 }
 
 /* =========================
    AVATAR EDITOR
 ========================= */
 
-.editor {
-    max-width: 1160px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: minmax(500px, 1fr) 390px;
-    gap: 10px;
+.editor{
+    display:grid;
+    grid-template-columns:350px 1fr;
+    gap:20px;
 }
 
 /* =========================
-   CATALOG AREA
+   AVATAR PREVIEW
 ========================= */
 
-.catalog {
-    background: white;
-    border: 1px solid #ddd;
+.previewPanel{
+    background:white;
+    border:1px solid #ddd;
+    padding:18px;
 }
 
-.main-tabs {
-    height: 56px;
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid #ddd;
-    overflow-x: auto;
+.preview{
+    height:470px;
+    background:linear-gradient(#d8c19a,#f0dfbd);
+    position:relative;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:flex-end;
 }
 
-.main-tab {
-    height: 56px;
-    padding: 0 26px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    font-size: 15px;
-    white-space: nowrap;
-}
-
-.main-tab:hover {
-    background: #f3f3f3;
-}
-
-.main-tab.active {
-    border-bottom: 2px solid #555;
-    font-weight: bold;
-}
-
-.sub-tabs {
-    height: 48px;
-    display: flex;
-    align-items: center;
-    gap: 0;
-    border-bottom: 1px solid #ddd;
-    overflow-x: auto;
-}
-
-.sub-tab {
-    padding: 14px 17px;
-    font-size: 14px;
-    white-space: nowrap;
-    cursor: pointer;
-}
-
-.sub-tab:hover {
-    background: #f4f4f4;
-}
-
-.sub-tab.active {
-    border-bottom: 2px solid #333;
-    font-weight: bold;
-}
-
-/* =========================
-   ITEMS
-========================= */
-
-.items {
-    padding: 20px 15px;
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 13px;
-}
-
-.item {
-    min-width: 0;
-    cursor: pointer;
-}
-
-.item-image {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    background: #e3e6e8;
-    border-radius: 5px;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    border: 1px solid transparent;
-}
-
-.item:hover .item-image {
-    border: 2px solid #1593e5;
-}
-
-.item.selected .item-image {
-    border: 2px solid #0878c9;
-}
-
-.check {
-    display: none;
-    position: absolute;
-    right: 5px;
-    top: 5px;
-    width: 25px;
-    height: 25px;
-    border-radius: 3px;
-    background: #0878c9;
-    color: white;
-    font-size: 17px;
-    text-align: center;
-    line-height: 25px;
-}
-
-.item.selected .check {
-    display: block;
-}
-
-.item-name {
-    margin-top: 7px;
-    font-size: 13px;
-    line-height: 17px;
-    min-height: 34px;
-}
-
-.item-price {
-    color: #777;
-    font-size: 12px;
-    margin-top: 3px;
-}
-
-/* =========================
-   SIMPLE ROBLOX CLOTHING PREVIEW
-========================= */
-
-.shirt-preview {
-    width: 55%;
-    height: 48%;
-    position: relative;
-}
-
-.shirt-body {
-    position: absolute;
-    left: 25%;
-    top: 28%;
-    width: 50%;
-    height: 55%;
-    background: #174e76;
-    border-radius: 3px;
-}
-
-.shirt-left,
-.shirt-right {
-    position: absolute;
-    top: 30%;
-    width: 25%;
-    height: 48%;
-    background: #174e76;
-}
-
-.shirt-left {
-    left: 0;
-}
-
-.shirt-right {
-    right: 0;
-}
-
-.shirt-head {
-    position: absolute;
-    top: 0;
-    left: 34%;
-    width: 32%;
-    height: 34%;
-    background: #ddd;
-    border-radius: 5px;
-}
-
-.face-eyes {
-    position: absolute;
-    top: 43%;
-    left: 25%;
-    width: 50%;
-    height: 8px;
-    font-size: 9px;
-}
-
-.pants-preview {
-    width: 55%;
-    height: 48%;
-    position: relative;
-}
-
-.pants-body {
-    position: absolute;
-    left: 26%;
-    top: 30%;
-    width: 48%;
-    height: 25%;
-    background: #222;
-}
-
-.leg1,
-.leg2 {
-    position: absolute;
-    top: 53%;
-    width: 23%;
-    height: 35%;
-    background: #222;
-}
-
-.leg1 {
-    left: 26%;
-}
-
-.leg2 {
-    right: 26%;
-}
-
-.hat-preview {
-    width: 70px;
-    height: 70px;
-    position: relative;
-}
-
-.hat-top {
-    position: absolute;
-    top: 18px;
-    left: 10px;
-    width: 50px;
-    height: 28px;
-    background: #222;
-    border-radius: 25px 25px 5px 5px;
-}
-
-.hat-brim {
-    position: absolute;
-    top: 42px;
-    left: 0;
-    width: 70px;
-    height: 10px;
-    background: #222;
-    border-radius: 8px;
-}
-
-/* FROZEN HORNS */
-
-.horns-preview {
-    width: 85px;
-    height: 85px;
-    position: relative;
-}
-
-.horn-left,
-.horn-right {
-    position: absolute;
-    width: 22px;
-    height: 65px;
-    background: linear-gradient(
-        160deg,
-        #dfffff,
-        #6bdcff,
-        #198bd1
-    );
-    clip-path: polygon(
-        50% 0,
-        78% 16%,
-        61% 25%,
-        88% 39%,
-        63% 48%,
-        82% 64%,
-        58% 72%,
-        70% 100%,
-        39% 77%,
-        28% 100%,
-        31% 69%,
-        10% 59%,
-        36% 46%,
-        13% 34%,
-        38% 23%
-    );
-}
-
-.horn-left {
-    left: 13px;
-    top: 8px;
-    transform: rotate(-25deg);
-}
-
-.horn-right {
-    right: 13px;
-    top: 8px;
-    transform: rotate(25deg);
-}
-
-.ice-flame {
-    position: absolute;
-    left: 34px;
-    top: 26px;
-    width: 17px;
-    height: 36px;
-    background: #6eeaff;
-    clip-path: polygon(
-        50% 0,
-        75% 28%,
-        100% 45%,
-        68% 48%,
-        82% 100%,
-        48% 68%,
-        20% 100%,
-        31% 55%,
-        0 51%,
-        34% 27%
-    );
-}
-
-/* =========================
-   RECOMMENDATIONS
-========================= */
-
-.recommend {
-    border-top: 1px solid #ddd;
-    padding: 15px;
-}
-
-.recommend h2 {
-    font-size: 18px;
-    font-weight: normal;
-    margin: 0 0 15px;
-}
-
-.recommend-grid {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 13px;
-}
-
-/* =========================
-   AVATAR PANEL
-========================= */
-
-.avatar-panel {
-    background: white;
-    min-height: 660px;
-}
-
-.avatar-view {
-    height: 445px;
-    position: relative;
-    overflow: hidden;
-    background:
-        linear-gradient(
-            140deg,
-            #e7e7e7 0%,
-            #f8f8f8 55%,
-            #e1e1e1 100%
-        );
-}
-
-.background-block {
-    position: absolute;
-    background: rgba(190,190,190,.45);
-    transform: rotate(-12deg);
-}
-
-.block1 {
-    width: 170px;
-    height: 90px;
-    right: 5px;
-    top: 45px;
-}
-
-.block2 {
-    width: 110px;
-    height: 150px;
-    right: 120px;
-    top: 0;
-}
-
-.block3 {
-    width: 170px;
-    height: 70px;
-    left: -35px;
-    bottom: 80px;
-}
-
-.avatar-stage {
-    position: absolute;
-    left: 50%;
-    top: 48%;
-    transform: translate(-50%, -50%);
-    width: 190px;
-    height: 360px;
+.preview3d{
+    position:absolute;
+    right:10px;
+    top:10px;
+    background:white;
+    border:1px solid #bbb;
+    padding:9px 13px;
+    font-weight:bold;
 }
 
 /* avatar */
 
-.avatar-head {
-    position: absolute;
-    width: 78px;
-    height: 78px;
-    left: 56px;
-    top: 12px;
-    background: #f0b37e;
-    border-radius: 17px;
-    border: 1px solid #a97853;
-    z-index: 5;
+.character{
+    width:190px;
+    height:380px;
+    position:relative;
 }
 
-.eye {
-    position: absolute;
-    width: 8px;
-    height: 11px;
-    background: #222;
-    border-radius: 50%;
-    top: 30px;
+.head{
+    width:92px;
+    height:92px;
+    background:#ddd;
+    border:3px solid #999;
+    border-radius:14px;
+    position:absolute;
+    top:0;
+    left:49px;
+    z-index:5;
 }
 
-.eye.left {
-    left: 20px;
+.faceEyes:before,
+.faceEyes:after{
+    content:"";
+    position:absolute;
+    width:9px;
+    height:16px;
+    background:#111;
+    border-radius:50%;
+    top:35px;
 }
 
-.eye.right {
-    right: 20px;
+.faceEyes:before{
+    left:25px;
 }
 
-.mouth {
-    position: absolute;
-    width: 26px;
-    height: 11px;
-    border-bottom: 2px solid #333;
-    border-radius: 50%;
-    left: 25px;
-    top: 48px;
+.faceEyes:after{
+    right:25px;
 }
 
-.hair {
-    position: absolute;
-    left: 50px;
-    top: 3px;
-    width: 90px;
-    height: 34px;
-    background: #4b2318;
-    border-radius: 45px 45px 10px 10px;
-    z-index: 6;
+.smile{
+    position:absolute;
+    left:29px;
+    top:53px;
+    width:34px;
+    height:17px;
+    border-bottom:4px solid #111;
+    border-radius:50%;
 }
 
-.avatar-torso {
-    position: absolute;
-    width: 91px;
-    height: 125px;
-    left: 50px;
-    top: 84px;
-    background: #17679a;
-    border-radius: 6px;
-    z-index: 3;
+.torso{
+    width:118px;
+    height:125px;
+    position:absolute;
+    left:36px;
+    top:92px;
+    background:#111;
+    border:3px solid #222;
 }
 
-.avatar-arm {
-    position: absolute;
-    width: 38px;
-    height: 119px;
-    top: 88px;
-    background: #f0b37e;
-    border-radius: 16px;
-    z-index: 2;
+.arm{
+    width:38px;
+    height:118px;
+    background:#ddd;
+    border:3px solid #999;
+    position:absolute;
+    top:97px;
 }
 
-.avatar-arm.left {
-    left: 12px;
-    transform: rotate(7deg);
+.arm.left{
+    left:0;
 }
 
-.avatar-arm.right {
-    right: 12px;
-    transform: rotate(-7deg);
+.arm.right{
+    right:0;
 }
 
-.avatar-leg {
-    position: absolute;
-    width: 42px;
-    height: 130px;
-    top: 201px;
-    background: #292929;
-    border-radius: 5px;
+.leg{
+    width:52px;
+    height:135px;
+    background:#222;
+    position:absolute;
+    top:217px;
+    border:3px solid #111;
 }
 
-.avatar-leg.left {
-    left: 51px;
+.leg.left{
+    left:36px;
 }
 
-.avatar-leg.right {
-    right: 51px;
+.leg.right{
+    right:36px;
 }
 
-.avatar-shoe {
-    position: absolute;
-    width: 47px;
-    height: 22px;
-    top: 322px;
-    background: #eee;
-    border-radius: 8px 8px 5px 5px;
+/* MTB shirt */
+
+.mtbLogo{
+    position:absolute;
+    color:white;
+    font-weight:900;
+    font-size:25px;
+    left:0;
+    right:0;
+    top:43px;
+    text-align:center;
 }
 
-.avatar-shoe.left {
-    left: 46px;
+/* accessories */
+
+.avatarAccessory{
+    position:absolute;
+    z-index:20;
+    display:none;
 }
 
-.avatar-shoe.right {
-    right: 46px;
+.frozenHorns{
+    width:190px;
+    height:100px;
+    top:-43px;
+    left:0;
 }
 
-/* worn frozen horns */
-
-.worn-horns {
-    display: none;
-    position: absolute;
-    width: 100px;
-    height: 80px;
-    left: 45px;
-    top: -2px;
-    z-index: 10;
+.frozenHorns:before,
+.frozenHorns:after{
+    content:"";
+    position:absolute;
+    width:72px;
+    height:105px;
+    border:12px solid #26394d;
+    border-bottom:0;
+    border-radius:60px 60px 0 0;
 }
 
-.worn-horns.show {
-    display: block;
+.frozenHorns:before{
+    left:5px;
+    transform:rotate(-20deg);
 }
 
-.worn-horns:before,
-.worn-horns:after {
-    content: "";
-    position: absolute;
-    width: 25px;
-    height: 70px;
-    background: linear-gradient(
-        160deg,
-        #f2ffff,
-        #71dcff,
-        #147fc3
-    );
-    clip-path: polygon(
-        50% 0,
-        80% 15%,
-        62% 28%,
-        90% 40%,
-        65% 52%,
-        80% 65%,
-        55% 76%,
-        70% 100%,
-        38% 78%,
-        25% 100%,
-        30% 70%,
-        8% 58%,
-        35% 47%,
-        10% 33%,
-        38% 22%
-    );
+.frozenHorns:after{
+    right:5px;
+    transform:rotate(20deg);
 }
 
-.worn-horns:before {
-    left: 4px;
-    transform: rotate(-20deg);
+.blueHair{
+    width:100px;
+    height:48px;
+    background:#2453bd;
+    position:absolute;
+    top:-4px;
+    left:45px;
+    border-radius:60% 60% 15% 15%;
+    z-index:10;
 }
 
-.worn-horns:after {
-    right: 4px;
-    transform: rotate(20deg);
+.fedora{
+    width:125px;
+    height:45px;
+    position:absolute;
+    top:-25px;
+    left:32px;
+    background:linear-gradient(90deg,#e73535,#f0d632,#3fd46d,#478ce9,#9d50db);
+    border-radius:50% 50% 20% 20%;
+    z-index:30;
 }
 
-/* =========================
-   CONTROLS
-========================= */
-
-.avatar-controls {
-    padding: 15px;
-}
-
-.controls-top {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 15px;
-}
-
-.adjust {
-    border: 0;
-    background: white;
-    font-size: 13px;
-    cursor: pointer;
-}
-
-.view-button {
-    margin-left: auto;
-    border: 1px solid #bbb;
-    background: white;
-    padding: 8px 13px;
-    border-radius: 3px;
-    cursor: pointer;
-}
-
-.scaling {
-    border-top: 1px solid #ddd;
-    padding-top: 13px;
-}
-
-.scaling h3 {
-    margin: 0 0 13px;
-    font-size: 16px;
-}
-
-.slider-row {
-    display: grid;
-    grid-template-columns: 70px 1fr 45px;
-    gap: 8px;
-    align-items: center;
-    margin: 13px 0;
-    font-size: 13px;
-}
-
-.slider-row input {
-    width: 100%;
-}
-
-.redraw {
-    border-top: 1px solid #ddd;
-    margin-top: 14px;
-    padding-top: 15px;
-    font-size: 13px;
-}
-
-.redraw a {
-    float: right;
-    color: #0878c9;
-    cursor: pointer;
+.pencil{
+    width:18px;
+    height:110px;
+    position:absolute;
+    right:-13px;
+    top:145px;
+    background:linear-gradient(90deg,#c98610,#ffe34d,#c98610);
+    transform:rotate(-25deg);
+    border:2px solid #80600e;
+    z-index:50;
 }
 
 /* =========================
-   FOOTER
+   BODY OPTIONS
 ========================= */
 
-footer {
-    text-align: center;
-    padding: 45px 20px 25px;
-    background: white;
-    margin-top: 25px;
-    border-top: 1px solid #ddd;
+.bodyControls{
+    margin-top:20px;
 }
 
-.footer-links {
-    display: flex;
-    justify-content: center;
-    gap: 45px;
-    flex-wrap: wrap;
+.bodyControls strong{
+    font-size:18px;
 }
 
-.footer-links a {
-    color: #0878c9;
-    text-decoration: none;
-    font-size: 14px;
+.bodyButtons{
+    display:flex;
+    gap:15px;
+    margin-top:10px;
 }
 
-.copyright {
-    color: #999;
-    margin-top: 35px;
-    font-size: 12px;
+.bodyButton{
+    flex:1;
+    padding:10px;
+    background:white;
+    border:1px solid #aaa;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.bodyButton.active{
+    color:#ef5350;
+    border-bottom:4px solid #ef5350;
+}
+
+/* =========================
+   ITEMS PANEL
+========================= */
+
+.itemsPanel{
+    background:white;
+    border:1px solid #ddd;
+    min-width:0;
+}
+
+.tabs{
+    display:flex;
+    border-bottom:1px solid #ddd;
+    overflow-x:auto;
+}
+
+.tab{
+    flex:1;
+    min-width:115px;
+    padding:19px 13px;
+    text-align:center;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.tab:hover{
+    background:#eee;
+}
+
+.tab.active{
+    border-bottom:4px solid #ef5350;
+}
+
+/* =========================
+   ITEM GRID
+========================= */
+
+.itemGrid{
+    padding:20px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+    max-height:650px;
+    overflow-y:auto;
+}
+
+.item{
+    background:#eee;
+    border:1px solid #ccc;
+    cursor:pointer;
+    position:relative;
+    transition:.15s;
+}
+
+.item:hover{
+    transform:translateY(-2px);
+    box-shadow:0 3px 10px rgba(0,0,0,.18);
+}
+
+.item.selected{
+    outline:4px solid #ef5350;
+}
+
+.check{
+    position:absolute;
+    right:7px;
+    top:7px;
+    width:27px;
+    height:27px;
+    background:white;
+    border:1px solid #aaa;
+    border-radius:3px;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.item.selected .check{
+    display:flex;
+}
+
+.itemImage{
+    height:130px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#ddd;
+    overflow:hidden;
+}
+
+/* catalog item graphics */
+
+.itemHorns{
+    width:105px;
+    height:60px;
+    border:9px solid #27394a;
+    border-bottom:0;
+    border-radius:70px 70px 0 0;
+}
+
+.itemHair{
+    width:85px;
+    height:85px;
+    background:#2352c2;
+    border-radius:55% 55% 20% 20%;
+}
+
+.itemShirt{
+    width:80px;
+    height:95px;
+    background:#111;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    font-weight:bold;
+}
+
+.itemJeans{
+    width:78px;
+    height:100px;
+    background:#273b61;
+    border-radius:5px;
+}
+
+.itemFedora{
+    width:105px;
+    height:55px;
+    background:linear-gradient(90deg,#e73535,#f0d632,#42c86d,#428be8,#9950d6);
+    border-radius:50%;
+}
+
+.itemPencil{
+    width:16px;
+    height:105px;
+    background:#e3b51c;
+    transform:rotate(-25deg);
+}
+
+.itemBody{
+    width:70px;
+    height:105px;
+    background:#ccc;
+    border:2px solid #999;
+    border-radius:9px;
+}
+
+.itemFace{
+    width:85px;
+    height:85px;
+    background:#ddd;
+    border-radius:14px;
+    position:relative;
+}
+
+.itemFace:before{
+    content:"";
+    position:absolute;
+    left:22px;
+    top:27px;
+    width:8px;
+    height:15px;
+    background:#111;
+    box-shadow:32px 0 #111;
+    border-radius:50%;
+}
+
+.itemFace:after{
+    content:"";
+    position:absolute;
+    width:35px;
+    height:15px;
+    border-bottom:4px solid #111;
+    border-radius:50%;
+    left:24px;
+    top:45px;
+}
+
+.itemName{
+    padding:10px;
+    font-weight:bold;
+    font-size:15px;
+    background:white;
+    min-height:54px;
+}
+
+/* =========================
+   REDRAW
+========================= */
+
+.redraw{
+    margin-top:20px;
+    padding:13px;
+    width:100%;
+    border:0;
+    background:#eee;
+    font-weight:bold;
+    cursor:pointer;
 }
 
 /* =========================
    MOBILE
 ========================= */
 
-@media (max-width: 1000px) {
+@media(max-width:900px){
 
-    .top-links {
-        display: none;
+    .topbar{
+        gap:12px;
+        padding:0 10px;
     }
 
-    .search {
-        margin-left: 15px;
-        width: 240px;
+    .toplink{
+        display:none;
     }
 
-    .editor {
-        grid-template-columns: 1fr;
+    .rlogo{
+        font-size:34px;
     }
 
-    .avatar-panel {
-        order: -1;
+    .currency{
+        font-size:17px;
     }
 
-    .avatar-view {
-        height: 420px;
+    .editor{
+        grid-template-columns:1fr;
     }
 
-    .sidebar {
-        width: 150px;
+    .previewPanel{
+        max-width:500px;
+        width:100%;
+        margin:auto;
     }
 
-    .items,
-    .recommend-grid {
-        grid-template-columns: repeat(4, 1fr);
+    .itemGrid{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .main{
+        margin-left:0;
+        padding:20px 12px 50px;
+    }
+
+    .sideMenu{
+        box-shadow:4px 0 15px rgba(0,0,0,.25);
     }
 }
 
-@media (max-width: 650px) {
+@media(max-width:550px){
 
-    .topbar {
-        padding: 0 10px;
+    .topbar{
+        height:58px;
     }
 
-    .logo {
-        margin-right: 10px;
-        font-size: 23px;
+    .sideMenu{
+        top:58px;
+        width:275px;
     }
 
-    .search {
-        width: 150px;
-        margin-left: 5px;
+    .search{
+        display:none;
     }
 
-    .top-right {
-        gap: 7px;
+    .settings{
+        font-size:25px;
     }
 
-    .top-right .hide-mobile {
-        display: none;
+    .titleRow h1{
+        font-size:30px;
     }
 
-    .layout {
-        display: block;
+    .preview{
+        height:400px;
     }
 
-    .sidebar {
-        width: 100%;
-        height: auto;
-        display: flex;
-        overflow-x: auto;
-        padding: 5px;
-        border-right: 0;
-        border-bottom: 1px solid #ddd;
+    .itemGrid{
+        grid-template-columns:repeat(2,1fr);
+        padding:10px;
     }
 
-    .sidebar-user,
-    .upgrade,
-    .events {
-        display: none;
+    .itemImage{
+        height:115px;
     }
 
-    .side-link {
-        min-width: 75px;
-        justify-content: center;
-        flex-direction: column;
-        height: 62px;
-        gap: 2px;
-        font-size: 10px;
+    .currency{
+        gap:3px;
     }
 
-    .badge {
-        display: none;
-    }
-
-    .main {
-        padding: 20px 8px 40px;
-    }
-
-    .page-title {
-        margin-bottom: 15px;
-    }
-
-    .page-title h1 {
-        font-size: 23px;
-    }
-
-    .get-more {
-        padding: 8px 10px;
-    }
-
-    .main-tabs {
-        overflow-x: auto;
-    }
-
-    .main-tab {
-        padding: 0 15px;
-        font-size: 13px;
-    }
-
-    .sub-tabs {
-        overflow-x: auto;
-    }
-
-    .sub-tab {
-        padding: 13px 12px;
-        font-size: 12px;
-    }
-
-    .items,
-    .recommend-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 9px;
-    }
-
-    .item-name {
-        font-size: 11px;
-    }
-
-    .avatar-view {
-        height: 390px;
-    }
-
-    .footer-links {
-        gap: 20px;
+    .robuxIcon,
+    .tixIcon{
+        width:30px;
+        height:30px;
     }
 }
 </style>
@@ -1055,113 +791,110 @@ footer {
 <body>
 
 <!-- =========================
-     TOP BAR
+     HEADER
 ========================= -->
 
 <header class="topbar">
 
-    <div class="logo">MTB</div>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
 
-    <nav class="top-links">
-        <a href="#">Games</a>
-        <a href="#">Catalog</a>
-        <a href="#">Develop</a>
-        <a href="#">Upgrade</a>
-    </nav>
+    <div class="rlogo">R</div>
+
+    <div class="toplink">Games</div>
+    <div class="toplink">Catalog</div>
+    <div class="toplink">Create</div>
 
     <div class="search">
-        <input
-            type="text"
-            id="searchInput"
-            placeholder="Search"
-        >
-        <button onclick="searchItems()">⌕</button>
+        <input id="globalSearch" placeholder="Search">
+        <button class="searchButton">⌕</button>
     </div>
 
-    <div class="top-right">
-        <span class="top-icon">▤</span>
-        <span class="coin">◉ 88975</span>
-        <span class="top-icon">◇</span>
-        <span class="top-icon">⚙</span>
+    <div class="currency">
+        <div class="robuxIcon">R$</div>
+        <span id="robux">100</span>
     </div>
+
+    <div class="currency">
+        <div class="tixIcon">◆</div>
+        <span id="tix">0</span>
+    </div>
+
+    <div class="settings">⚙</div>
 
 </header>
 
 
-<div class="layout">
-
 <!-- =========================
-     SIDEBAR
+     SIDE MENU
 ========================= -->
 
-<aside class="sidebar">
+<aside id="sideMenu" class="sideMenu">
 
-    <div class="sidebar-user">MTB</div>
+    <div class="profileMini">
 
-    <div class="side-link">
-        <span class="side-icon">⌂</span>
-        <span>Home</span>
+        <div class="miniAvatar">
+            M
+        </div>
+
+        <div class="miniName">
+            mtb
+            <span class="verify">✓</span>
+        </div>
+
     </div>
 
-    <div class="side-link">
-        <span class="side-icon">♙</span>
-        <span>Profile</span>
+    <div class="navItem">
+        <span class="navIcon">⌂</span>
+        Home
     </div>
 
-    <div class="side-link">
-        <span class="side-icon">✉</span>
-        <span>Messages</span>
-        <span class="badge">0</span>
+    <div class="navItem">
+        <span class="navIcon">♙</span>
+        Profile
     </div>
 
-    <div class="side-link">
-        <span class="side-icon">♧</span>
-        <span>Friends</span>
-        <span class="badge">0</span>
+    <div class="navItem">
+        <span class="navIcon">▤</span>
+        Messages
     </div>
 
-    <div class="side-link">
-        <span class="side-icon">♙</span>
-        <span>Avatar</span>
+    <div class="navItem">
+        <span class="navIcon">♧</span>
+        Friends
     </div>
 
-    <div class="side-link">
-        <span class="side-icon">▣</span>
-        <span>Inventory</span>
+    <div class="navItem">
+        <span class="navIcon">♙</span>
+        Avatar
     </div>
 
-    <div class="side-link">
-        <span class="side-icon">⇄</span>
-        <span>Trade</span>
+    <div class="navItem">
+        <span class="navIcon">▣</span>
+        Inventory
     </div>
 
-    <div class="side-link">
-        <span class="side-icon">♕</span>
-        <span>Groups</span>
+    <div class="navItem">
+        <span class="navIcon">⇄</span>
+        Trade
     </div>
 
-    <div class="side-link">
-        <span class="side-icon">▣</span>
-        <span>Forum</span>
+    <div class="navItem">
+        <span class="navIcon">♧</span>
+        Groups
     </div>
 
-    <div class="side-link">
-        <span class="side-icon">⚑</span>
-        <span>Blog</span>
+    <div class="navItem">
+        <span class="navIcon">▱</span>
+        Forums
     </div>
 
-    <div class="side-link">
-        <span class="side-icon">▢</span>
-        <span>Shop</span>
+    <div class="navItem">
+        <span class="navIcon">♧</span>
+        Redeem
     </div>
 
-    <button class="upgrade">
-        Upgrade Now
-    </button>
-
-    <div class="events">
-        <div class="events-title">Events</div>
-        <div style="color:#777;">No events.</div>
+    <div class="ownerBadge">
+        🛡 MTB OWNER
     </div>
 
 </aside>
@@ -1171,680 +904,451 @@ footer {
      MAIN
 ========================= -->
 
-<main class="main">
+<main id="main" class="main">
 
-    <div class="page-title">
+    <div class="titleRow">
+
         <h1>Avatar Editor</h1>
 
-        <button
-            class="get-more"
-            onclick="location.href='#'"
-        >
+        <button class="moreButton">
             Get More
         </button>
+
     </div>
 
 
     <div class="editor">
 
+
         <!-- =====================
-             CATALOG
+             PREVIEW
         ====================== -->
 
-        <section class="catalog">
+        <section class="previewPanel">
 
-            <div class="main-tabs">
+            <div class="preview">
 
-                <div class="main-tab active"
-                     onclick="changeMainTab(this,'Characters')">
-                    Characters
-                </div>
+                <button class="preview3d">
+                    3D
+                </button>
 
-                <div class="main-tab"
-                     onclick="changeMainTab(this,'Clothing')">
-                    Clothing
-                </div>
+                <div id="character" class="character">
 
-                <div class="main-tab"
-                     onclick="changeMainTab(this,'Accessories')">
-                    Accessories
-                </div>
+                    <div
+                        id="hornsPreview"
+                        class="avatarAccessory frozenHorns">
+                    </div>
 
-                <div class="main-tab"
-                     onclick="changeMainTab(this,'Body')">
-                    Body
-                </div>
+                    <div
+                        id="hairPreview"
+                        class="avatarAccessory blueHair">
+                    </div>
 
-                <div class="main-tab"
-                     onclick="changeMainTab(this,'Animation')">
-                    Animation
-                </div>
+                    <div
+                        id="fedoraPreview"
+                        class="avatarAccessory fedora">
+                    </div>
 
-                <div class="main-tab"
-                     onclick="changeMainTab(this,'Emotes')">
-                    Emotes
-                </div>
+                    <div
+                        id="pencilPreview"
+                        class="avatarAccessory pencil">
+                    </div>
 
-            </div>
+                    <div class="head">
 
+                        <div class="faceEyes"></div>
 
-            <div class="sub-tabs">
+                        <div class="smile"></div>
 
-                <div class="sub-tab">Tops</div>
+                    </div>
 
-                <div class="sub-tab">Outerwear</div>
+                    <div class="torso">
 
-                <div class="sub-tab">Bottoms</div>
-
-                <div class="sub-tab">Left Shoes</div>
-
-                <div class="sub-tab">Right Shoes</div>
-
-                <div class="sub-tab active">
-                    Classic Shirts
-                </div>
-
-                <div class="sub-tab">
-                    Classic T-Shirts
-                </div>
-
-            </div>
-
-
-            <div class="items" id="items">
-
-                <!-- ITEM 1 -->
-
-                <div class="item"
-                     onclick="wearItem(this,'pizza')">
-
-                    <div class="item-image">
-
-                        <div class="shirt-preview">
-
-                            <div class="shirt-head"></div>
-
-                            <div class="shirt-left"></div>
-                            <div class="shirt-body"></div>
-                            <div class="shirt-right"></div>
-
+                        <div class="mtbLogo">
+                            MTB
                         </div>
 
-                        <div class="check">✓</div>
-
                     </div>
 
-                    <div class="item-name">
-                        I &lt;3 Pizza Shirt
-                    </div>
-
-                </div>
-
-
-                <!-- ITEM 2 -->
-
-                <div class="item"
-                     onclick="wearItem(this,'teal')">
-
-                    <div class="item-image">
-
-                        <div class="shirt-preview">
-
-                            <div class="shirt-head"></div>
-
-                            <div
-                                class="shirt-left"
-                                style="background:#18caa3">
-                            </div>
-
-                            <div
-                                class="shirt-body"
-                                style="background:#18caa3">
-                            </div>
-
-                            <div
-                                class="shirt-right"
-                                style="background:#18caa3">
-                            </div>
-
-                        </div>
-
-                        <div class="check">✓</div>
-
-                    </div>
-
-                    <div class="item-name">
-                        Teal Shirt
-                    </div>
-
-                </div>
-
-
-                <!-- ITEM 3 -->
-
-                <div class="item selected"
-                     onclick="wearItem(this,'striped')">
-
-                    <div class="item-image">
-
-                        <div class="shirt-preview">
-
-                            <div class="shirt-head"></div>
-
-                            <div
-                                class="shirt-left"
-                                style="background:#174e76">
-                            </div>
-
-                            <div
-                                class="shirt-body"
-                                style="background:#174e76">
-                            </div>
-
-                            <div
-                                class="shirt-right"
-                                style="background:#174e76">
-                            </div>
-
-                        </div>
-
-                        <div class="check">✓</div>
-
-                    </div>
-
-                    <div class="item-name">
-                        Grey Striped Shirt with...
-                    </div>
-
-                </div>
-
-
-                <!-- BLOCKHEAD -->
-
-                <div class="item"
-                     onclick="wearItem(this,'blockhead')">
-
-                    <div class="item-image">
-
-                        <div style="
-                            width:65px;
-                            height:65px;
-                            background:#aaa;
-                            display:flex;
-                            justify-content:center;
-                            align-items:center;
-                            font-size:24px;
-                        ">
-                            :)
-                        </div>
-
-                        <div class="check">✓</div>
-
-                    </div>
-
-                    <div class="item-name">
-                        Blockhead
-                    </div>
-
-                </div>
-
-
-                <!-- GUITAR -->
-
-                <div class="item"
-                     onclick="wearItem(this,'guitar')">
-
-                    <div class="item-image">
-
-                        <div class="shirt-preview">
-
-                            <div class="shirt-head"></div>
-
-                            <div
-                                class="shirt-left"
-                                style="background:#333">
-                            </div>
-
-                            <div
-                                class="shirt-body"
-                                style="background:#222">
-                            </div>
-
-                            <div
-                                class="shirt-right"
-                                style="background:#333">
-                            </div>
-
-                        </div>
-
-                        <div class="check">✓</div>
-
-                    </div>
-
-                    <div class="item-name">
-                        Guitar Tee with Black Jacket
-                    </div>
-
-                </div>
-
-
-                <!-- PINK -->
-
-                <div class="item"
-                     onclick="wearItem(this,'pink')">
-
-                    <div class="item-image">
-
-                        <div class="shirt-preview">
-
-                            <div class="shirt-head"></div>
-
-                            <div
-                                class="shirt-left"
-                                style="background:#f3a3bd">
-                            </div>
-
-                            <div
-                                class="shirt-body"
-                                style="background:#f3a3bd">
-                            </div>
-
-                            <div
-                                class="shirt-right"
-                                style="background:#f3a3bd">
-                            </div>
-
-                        </div>
-
-                        <div class="check">✓</div>
-
-                    </div>
-
-                    <div class="item-name">
-                        Sleepy Pajama Top - Zara...
-                    </div>
-
-                </div>
-
-
-                <!-- DENIM -->
-
-                <div class="item"
-                     onclick="wearItem(this,'denim')">
-
-                    <div class="item-image">
-
-                        <div class="shirt-preview">
-
-                            <div class="shirt-head"></div>
-
-                            <div
-                                class="shirt-left"
-                                style="background:#6d9bc0">
-                            </div>
-
-                            <div
-                                class="shirt-body"
-                                style="background:#6d9bc0">
-                            </div>
-
-                            <div
-                                class="shirt-right"
-                                style="background:#6d9bc0">
-                            </div>
-
-                        </div>
-
-                        <div class="check">✓</div>
-
-                    </div>
-
-                    <div class="item-name">
-                        Denim Jacket with White...
-                    </div>
-
-                </div>
-
-
-                <!-- PASTEL -->
-
-                <div class="item"
-                     onclick="wearItem(this,'pastel')">
-
-                    <div class="item-image">
-
-                        <div class="shirt-preview">
-
-                            <div class="shirt-head"></div>
-
-                            <div
-                                class="shirt-left"
-                                style="background:#777">
-                            </div>
-
-                            <div
-                                class="shirt-body"
-                                style="background:#888">
-                            </div>
-
-                            <div
-                                class="shirt-right"
-                                style="background:#777">
-                            </div>
-
-                        </div>
-
-                        <div class="check">✓</div>
-
-                    </div>
-
-                    <div class="item-name">
-                        Pastel Starburst Top
-                    </div>
-
-                </div>
-
-
-                <!-- FROZEN HORNS -->
-
-                <div class="item"
-                     onclick="wearItem(this,'frozen-horns')">
-
-                    <div class="item-image">
-
-                        <div class="horns-preview">
-
-                            <div class="horn-left"></div>
-                            <div class="horn-right"></div>
-                            <div class="ice-flame"></div>
-
-                        </div>
-
-                        <div class="check">✓</div>
-
-                    </div>
-
-                    <div class="item-name">
-                        Frozen Horns of the Frigid Planes
-                    </div>
-
-                    <div class="item-price">
-                        MTB 150
-                    </div>
+                    <div class="arm left"></div>
+                    <div class="arm right"></div>
+
+                    <div class="leg left"></div>
+                    <div class="leg right"></div>
 
                 </div>
 
             </div>
 
 
-            <!-- =====================
-                 RECOMMENDATIONS
-            ====================== -->
+            <div class="bodyControls">
 
-            <div class="recommend">
+                <strong>Body Type</strong>
 
-                <h2>You May Also Like</h2>
+                <div class="bodyButtons">
 
-                <div class="recommend-grid">
+                    <button
+                        id="r6"
+                        class="bodyButton active"
+                        onclick="setBody('R6')">
+                        R6
+                    </button>
 
-                    <div class="item">
-                        <div class="item-image">
-                            <div class="shirt-preview">
-                                <div class="shirt-head"></div>
-                                <div class="shirt-left"
-                                     style="background:#57c7bd"></div>
-                                <div class="shirt-body"
-                                     style="background:#57c7bd"></div>
-                                <div class="shirt-right"
-                                     style="background:#57c7bd"></div>
-                            </div>
-                        </div>
-                        <div class="item-name">Dennis Daily</div>
-                    </div>
-
-
-                    <div class="item">
-                        <div class="item-image">
-                            <div class="shirt-preview">
-                                <div class="shirt-head"></div>
-                                <div class="shirt-left"
-                                     style="background:#111"></div>
-                                <div class="shirt-body"
-                                     style="background:#111"></div>
-                                <div class="shirt-right"
-                                     style="background:#111"></div>
-                            </div>
-                        </div>
-                        <div class="item-name">[ROOK] Black</div>
-                    </div>
-
-
-                    <div class="item">
-                        <div class="item-image">
-                            <div class="shirt-preview">
-                                <div class="shirt-head"></div>
-                                <div class="shirt-left"
-                                     style="background:#222"></div>
-                                <div class="shirt-body"
-                                     style="background:#222"></div>
-                                <div class="shirt-right"
-                                     style="background:#222"></div>
-                            </div>
-                        </div>
-                        <div class="item-name">Black T-Shirt</div>
-                    </div>
-
-
-                    <div class="item">
-                        <div class="item-image">
-                            <div class="shirt-preview">
-                                <div class="shirt-head"></div>
-                                <div class="shirt-left"
-                                     style="background:#12548a"></div>
-                                <div class="shirt-body"
-                                     style="background:#12548a"></div>
-                                <div class="shirt-right"
-                                     style="background:#12548a"></div>
-                            </div>
-                        </div>
-                        <div class="item-name">Super Man</div>
-                    </div>
-
-
-                    <div class="item">
-                        <div class="item-image">
-                            <div class="shirt-preview">
-                                <div class="shirt-head"></div>
-                                <div class="shirt-left"
-                                     style="background:#e8ca67"></div>
-                                <div class="shirt-body"
-                                     style="background:#e8ca67"></div>
-                                <div class="shirt-right"
-                                     style="background:#e8ca67"></div>
-                            </div>
-                        </div>
-                        <div class="item-name">Cute Pikachu</div>
-                    </div>
-
-
-                    <div class="item">
-                        <div class="item-image">
-                            <div class="shirt-preview">
-                                <div class="shirt-head"></div>
-                                <div class="shirt-left"
-                                     style="background:#9b2020"></div>
-                                <div class="shirt-body"
-                                     style="background:#9b2020"></div>
-                                <div class="shirt-right"
-                                     style="background:#9b2020"></div>
-                            </div>
-                        </div>
-                        <div class="item-name">Iron Man (Mark 43)</div>
-                    </div>
+                    <button
+                        id="r15"
+                        class="bodyButton"
+                        onclick="setBody('R15')">
+                        R15
+                    </button>
 
                 </div>
 
             </div>
+
+            <button
+                class="redraw"
+                onclick="redrawAvatar()">
+                Avatar isn't loading correctly? &nbsp;
+                <b>Redraw</b>
+            </button>
 
         </section>
 
 
         <!-- =====================
-             AVATAR PREVIEW
+             ITEMS
         ====================== -->
 
-        <section class="avatar-panel">
+        <section class="itemsPanel">
 
-            <div class="avatar-view">
+            <div class="tabs">
 
-                <div class="background-block block1"></div>
-                <div class="background-block block2"></div>
-                <div class="background-block block3"></div>
+                <div
+                    class="tab active"
+                    onclick="showCategory('all',this)">
+                    Recent
+                </div>
 
-                <div class="avatar-stage">
+                <div
+                    class="tab"
+                    onclick="showCategory('clothing',this)">
+                    Clothing
+                </div>
 
-                    <div
-                        id="wornHorns"
-                        class="worn-horns"
-                    ></div>
+                <div
+                    class="tab"
+                    onclick="showCategory('body',this)">
+                    Body
+                </div>
 
-                    <div class="hair"></div>
+                <div
+                    class="tab"
+                    onclick="showCategory('animations',this)">
+                    Animations
+                </div>
 
-                    <div class="avatar-head">
-
-                        <div class="eye left"></div>
-                        <div class="eye right"></div>
-
-                        <div class="mouth"></div>
-
-                    </div>
-
-                    <div class="avatar-arm left"></div>
-                    <div class="avatar-arm right"></div>
-
-                    <div
-                        id="avatarTorso"
-                        class="avatar-torso"
-                    ></div>
-
-                    <div class="avatar-leg left"></div>
-                    <div class="avatar-leg right"></div>
-
-                    <div class="avatar-shoe left"></div>
-                    <div class="avatar-shoe right"></div>
-
+                <div
+                    class="tab"
+                    onclick="showCategory('accessories',this)">
+                    Accessories
                 </div>
 
             </div>
 
 
-            <div class="avatar-controls">
-
-                <div class="controls-top">
-
-                    <button class="adjust">
-                        ☷ &nbsp; Adjust clothing order
-                    </button>
-
-                    <button class="view-button">
-                        2D
-                    </button>
-
-                </div>
+            <div
+                style="
+                padding:15px 20px 0;
+                font-weight:bold;
+                color:#555;
+                ">
+                Recent &nbsp;›&nbsp; All
+            </div>
 
 
-                <div class="scaling">
-
-                    <h3>Scaling ⓘ</h3>
+            <div id="itemGrid" class="itemGrid">
 
 
-                    <div class="slider-row">
+                <!-- HORNS -->
 
-                        <span>Height</span>
+                <div
+                    class="item"
+                    data-category="accessories"
+                    onclick="equip('horns')">
 
-                        <input
-                            type="range"
-                            min="50"
-                            max="150"
-                            value="100"
-                            oninput="scaleAvatar()"
-                        >
+                    <div class="check">✓</div>
 
-                        <span class="heightValue">
-                            100%
-                        </span>
-
+                    <div class="itemImage">
+                        <div class="itemHorns"></div>
                     </div>
 
-
-                    <div class="slider-row">
-
-                        <span>Width</span>
-
-                        <input
-                            type="range"
-                            min="50"
-                            max="150"
-                            value="100"
-                            oninput="scaleAvatar()"
-                        >
-
-                        <span class="widthValue">
-                            100%
-                        </span>
-
-                    </div>
-
-
-                    <div class="slider-row">
-
-                        <span>Head</span>
-
-                        <input
-                            type="range"
-                            min="50"
-                            max="150"
-                            value="100"
-                            oninput="scaleAvatar()"
-                        >
-
-                        <span class="headValue">
-                            100%
-                        </span>
-
-                    </div>
-
-
-                    <div class="slider-row">
-
-                        <span>Body Type</span>
-
-                        <input
-                            type="range"
-                            min="0"
-                            max="100"
-                            value="0"
-                            oninput="scaleAvatar()"
-                        >
-
-                        <span class="bodyValue">
-                            0%
-                        </span>
-
+                    <div class="itemName">
+                        Frozen Horns
                     </div>
 
                 </div>
 
 
-                <div class="redraw">
+                <!-- HAIR -->
 
-                    Avatar isn't loading correctly?
+                <div
+                    class="item"
+                    data-category="accessories"
+                    onclick="equip('hair')">
 
-                    <a onclick="redrawAvatar()">
-                        Redraw
-                    </a>
+                    <div class="check">✓</div>
+
+                    <div class="itemImage">
+                        <div class="itemHair"></div>
+                    </div>
+
+                    <div class="itemName">
+                        Blue Hair
+                    </div>
 
                 </div>
+
+
+                <!-- SHIRT -->
+
+                <div
+                    class="item"
+                    data-category="clothing"
+                    onclick="equip('shirt')">
+
+                    <div class="check">✓</div>
+
+                    <div class="itemImage">
+                        <div class="itemShirt">
+                            MTB
+                        </div>
+                    </div>
+
+                    <div class="itemName">
+                        MTB Shirt
+                    </div>
+
+                </div>
+
+
+                <!-- JEANS -->
+
+                <div
+                    class="item"
+                    data-category="clothing"
+                    onclick="equip('jeans')">
+
+                    <div class="check">✓</div>
+
+                    <div class="itemImage">
+                        <div class="itemJeans"></div>
+                    </div>
+
+                    <div class="itemName">
+                        Dark Jeans
+                    </div>
+
+                </div>
+
+
+                <!-- FACE -->
+
+                <div
+                    class="item"
+                    data-category="body"
+                    onclick="equip('face')">
+
+                    <div class="check">✓</div>
+
+                    <div class="itemImage">
+                        <div class="itemFace"></div>
+                    </div>
+
+                    <div class="itemName">
+                        Classic Smile
+                    </div>
+
+                </div>
+
+
+                <!-- FEDORA -->
+
+                <div
+                    class="item"
+                    data-category="accessories"
+                    onclick="equip('fedora')">
+
+                    <div class="check">✓</div>
+
+                    <div class="itemImage">
+                        <div class="itemFedora"></div>
+                    </div>
+
+                    <div class="itemName">
+                        Sparkle Time Fedora
+                    </div>
+
+                </div>
+
+
+                <!-- PENCIL -->
+
+                <div
+                    class="item"
+                    data-category="accessories"
+                    onclick="equip('pencil')">
+
+                    <div class="check">✓</div>
+
+                    <div class="itemImage">
+                        <div class="itemPencil"></div>
+                    </div>
+
+                    <div class="itemName">
+                        BIG Pencil
+                    </div>
+
+                </div>
+
+
+                <!-- RED VALK -->
+
+                <div
+                    class="item"
+                    data-category="accessories"
+                    onclick="equip('redhorns')">
+
+                    <div class="check">✓</div>
+
+                    <div
+                        class="itemImage"
+                        style="
+                        background:#ddd;
+                        ">
+
+                        <div
+                            style="
+                            width:100px;
+                            height:65px;
+                            border:9px solid #9d2424;
+                            border-bottom:0;
+                            border-radius:70px 70px 0 0;
+                            ">
+                        </div>
+
+                    </div>
+
+                    <div class="itemName">
+                        Red Valkyrie
+                    </div>
+
+                </div>
+
+
+                <!-- ROBLOX BODY -->
+
+                <div
+                    class="item"
+                    data-category="body"
+                    onclick="equip('body')">
+
+                    <div class="check">✓</div>
+
+                    <div class="itemImage">
+                        <div class="itemBody"></div>
+                    </div>
+
+                    <div class="itemName">
+                        Roblox Boy
+                    </div>
+
+                </div>
+
+
+                <!-- ARM -->
+
+                <div
+                    class="item"
+                    data-category="body"
+                    onclick="equip('arm')">
+
+                    <div class="check">✓</div>
+
+                    <div class="itemImage">
+                        <div
+                            style="
+                            width:35px;
+                            height:105px;
+                            background:#ccc;
+                            border:2px solid #999;
+                            border-radius:8px;
+                            ">
+                        </div>
+                    </div>
+
+                    <div class="itemName">
+                        Man Right Arm
+                    </div>
+
+                </div>
+
+
+                <!-- ANIMATION -->
+
+                <div
+                    class="item"
+                    data-category="animations"
+                    onclick="equip('animation')">
+
+                    <div class="check">✓</div>
+
+                    <div class="itemImage">
+                        <div
+                            style="
+                            font-size:55px;
+                            ">
+                            🕺
+                        </div>
+                    </div>
+
+                    <div class="itemName">
+                        Oldschool Animation
+                    </div>
+
+                </div>
+
+
+                <!-- LONG SHIRT -->
+
+                <div
+                    class="item"
+                    data-category="clothing"
+                    onclick="equip('longshirt')">
+
+                    <div class="check">✓</div>
+
+                    <div class="itemImage">
+                        <div
+                            style="
+                            width:72px;
+                            height:115px;
+                            background:#222;
+                            color:white;
+                            display:flex;
+                            align-items:center;
+                            justify-content:center;
+                            font-weight:bold;
+                            ">
+                            MTB
+                        </div>
+                    </div>
+
+                    <div class="itemName">
+                        MTB Long Shirt
+                    </div>
+
+                </div>
+
 
             </div>
 
@@ -1854,184 +1358,282 @@ footer {
 
 </main>
 
-</div>
-
-
-<!-- =========================
-     FOOTER
-========================= -->
-
-<footer>
-
-    <div class="footer-links">
-        <a href="#">About Us</a>
-        <a href="#">Jobs</a>
-        <a href="#">Blog</a>
-        <a href="#">Parents</a>
-        <a href="#">Help</a>
-        <a href="#">Terms</a>
-        <a href="#">Privacy</a>
-    </div>
-
-    <div class="copyright">
-        ©2019 MTB REVIVALS. MTB, the MTB logo, Roblox, the Roblox logo,
-        Powering Imagination, and our characters are trademarks of MTB Corporation.
-    </div>
-
-</footer>
-
 
 <script>
 
 /* =========================
-   SAVE AVATAR
+   STORAGE
 ========================= */
 
-let avatarData = JSON.parse(
-    localStorage.getItem("mtbAvatar")
-) || {
-    item: "striped",
-    frozenHorns: false,
-    height: 100,
-    width: 100,
-    head: 100,
-    body: 0
-};
+const KEY = "MTB_REVIVALS_AVATAR";
+
+let saved =
+    JSON.parse(localStorage.getItem(KEY)) || {
+
+        robux:100,
+        tix:0,
+
+        equipped:[]
+
+    };
 
 
 /* =========================
-   WEAR ITEM
+   SAVE
 ========================= */
 
-function wearItem(element, item) {
+function save(){
+
+    localStorage.setItem(
+        KEY,
+        JSON.stringify(saved)
+    );
+
+}
+
+
+/* =========================
+   MENU
+========================= */
+
+function toggleMenu(){
+
+    document
+        .getElementById("sideMenu")
+        .classList.toggle("closed");
+
+}
+
+
+/* =========================
+   BODY
+========================= */
+
+function setBody(type){
+
+    document
+        .getElementById("r6")
+        .classList.remove("active");
+
+    document
+        .getElementById("r15")
+        .classList.remove("active");
+
+    document
+        .getElementById(
+            type==="R6" ? "r6":"r15"
+        )
+        .classList.add("active");
+
+}
+
+
+/* =========================
+   EQUIP
+========================= */
+
+function equip(item){
+
+    const character =
+        document.getElementById("character");
+
+    const itemElements =
+        document.querySelectorAll(".item");
+
+    let clickedItem=null;
+
+    itemElements.forEach(el=>{
+
+        const name =
+            el.querySelector(".itemName")
+                .textContent
+                .toLowerCase();
+
+        let match=false;
+
+        if(item==="horns" && name.includes("frozen"))
+            match=true;
+
+        if(item==="hair" && name.includes("blue hair"))
+            match=true;
+
+        if(item==="shirt" && name==="mtb shirt")
+            match=true;
+
+        if(item==="jeans" && name.includes("dark jeans"))
+            match=true;
+
+        if(item==="face" && name.includes("classic"))
+            match=true;
+
+        if(item==="fedora" && name.includes("fedora"))
+            match=true;
+
+        if(item==="pencil" && name.includes("pencil"))
+            match=true;
+
+        if(item==="redhorns" && name.includes("red valkyrie"))
+            match=true;
+
+        if(item==="body" && name==="roblox boy")
+            match=true;
+
+        if(item==="arm" && name.includes("right arm"))
+            match=true;
+
+        if(item==="animation" && name.includes("animation"))
+            match=true;
+
+        if(item==="longshirt" && name.includes("long shirt"))
+            match=true;
+
+        if(match)
+            clickedItem=el;
+
+    });
+
+
+    if(clickedItem){
+
+        clickedItem.classList.toggle("selected");
+
+    }
+
+
+    /* accessory */
+
+    if(item==="horns"){
+
+        togglePreview(
+            "hornsPreview"
+        );
+
+    }
+
+
+    if(item==="hair"){
+
+        togglePreview(
+            "hairPreview"
+        );
+
+    }
+
+
+    if(item==="fedora"){
+
+        togglePreview(
+            "fedoraPreview"
+        );
+
+    }
+
+
+    if(item==="pencil"){
+
+        togglePreview(
+            "pencilPreview"
+        );
+
+    }
+
+
+    /* shirt */
+
+    if(item==="shirt"){
+
+        document.querySelector(".torso")
+            .style.background="#111";
+
+    }
+
+
+    if(item==="longshirt"){
+
+        document.querySelector(".torso")
+            .style.background="#333";
+
+    }
+
+
+    /* save */
+
+    if(!saved.equipped.includes(item)){
+
+        saved.equipped.push(item);
+
+    }else{
+
+        saved.equipped =
+            saved.equipped.filter(
+                x=>x!==item
+            );
+
+    }
+
+    save();
+
+}
+
+
+/* =========================
+   PREVIEW
+========================= */
+
+function togglePreview(id){
+
+    const el =
+        document.getElementById(id);
+
+    if(
+        el.style.display==="block"
+    ){
+
+        el.style.display="none";
+
+    }else{
+
+        el.style.display="block";
+
+    }
+
+}
+
+
+/* =========================
+   CATEGORY
+========================= */
+
+function showCategory(category,button){
+
+    document
+        .querySelectorAll(".tab")
+        .forEach(tab=>{
+            tab.classList.remove("active");
+        });
+
+    button.classList.add("active");
+
 
     document
         .querySelectorAll(".item")
-        .forEach(x => x.classList.remove("selected"));
+        .forEach(item=>{
 
-    element.classList.add("selected");
+            if(category==="all"){
 
-    avatarData.item = item;
+                item.style.display="block";
 
-    if (item === "frozen-horns") {
+            }else{
 
-        avatarData.frozenHorns = !avatarData.frozenHorns;
+                item.style.display =
+                    item.dataset.category===category
+                    ? "block"
+                    : "none";
 
-        document
-            .getElementById("wornHorns")
-            .classList.toggle(
-                "show",
-                avatarData.frozenHorns
-            );
+            }
 
-    } else {
+        });
 
-        document
-            .getElementById("wornHorns")
-            .classList.remove("show");
-
-        avatarData.frozenHorns = false;
-
-        changeShirt(item);
-    }
-
-    saveAvatar();
-}
-
-
-/* =========================
-   CHANGE SHIRT
-========================= */
-
-function changeShirt(type) {
-
-    const torso =
-        document.getElementById("avatarTorso");
-
-    let shirtColor = "#17679a";
-
-    if (type === "pizza") {
-        shirtColor = "#294c68";
-    }
-
-    if (type === "teal") {
-        shirtColor = "#18caa3";
-    }
-
-    if (type === "striped") {
-        shirtColor = "#174e76";
-    }
-
-    if (type === "guitar") {
-        shirtColor = "#222";
-    }
-
-    if (type === "pink") {
-        shirtColor = "#efa5bc";
-    }
-
-    if (type === "denim") {
-        shirtColor = "#6d9bc0";
-    }
-
-    if (type === "pastel") {
-        shirtColor = "#777";
-    }
-
-    if (type === "blockhead") {
-        shirtColor = "#aaa";
-    }
-
-    torso.style.background = shirtColor;
-}
-
-
-/* =========================
-   SCALING
-========================= */
-
-function scaleAvatar() {
-
-    const sliders =
-        document.querySelectorAll(
-            ".slider-row input"
-        );
-
-    const height = sliders[0].value;
-    const width = sliders[1].value;
-    const head = sliders[2].value;
-    const body = sliders[3].value;
-
-    avatarData.height = height;
-    avatarData.width = width;
-    avatarData.head = head;
-    avatarData.body = body;
-
-    document.querySelector(".heightValue")
-        .textContent = height + "%";
-
-    document.querySelector(".widthValue")
-        .textContent = width + "%";
-
-    document.querySelector(".headValue")
-        .textContent = head + "%";
-
-    document.querySelector(".bodyValue")
-        .textContent = body + "%";
-
-    const stage =
-        document.querySelector(".avatar-stage");
-
-    stage.style.transform =
-        `translate(-50%, -50%)
-         scaleX(${width / 100})
-         scaleY(${height / 100})`;
-
-    document.querySelector(".avatar-head")
-        .style.transform =
-        `scale(${head / 100})`;
-
-    saveAvatar();
 }
 
 
@@ -2039,84 +1641,21 @@ function scaleAvatar() {
    REDRAW
 ========================= */
 
-function redrawAvatar() {
+function redrawAvatar(){
 
-    const stage =
-        document.querySelector(".avatar-stage");
-
-    stage.style.display = "none";
-
-    setTimeout(() => {
-
-        stage.style.display = "block";
-
-        scaleAvatar();
-
-    }, 250);
-}
-
-
-/* =========================
-   MAIN CATEGORY TABS
-========================= */
-
-function changeMainTab(element, category) {
-
-    document
-        .querySelectorAll(".main-tab")
-        .forEach(tab =>
-            tab.classList.remove("active")
+    const character =
+        document.getElementById(
+            "character"
         );
 
-    element.classList.add("active");
+    character.style.opacity="0";
 
-    console.log(
-        "Opened category:",
-        category
-    );
-}
+    setTimeout(()=>{
 
+        character.style.opacity="1";
 
-/* =========================
-   SEARCH
-========================= */
+    },250);
 
-function searchItems() {
-
-    const query =
-        document
-            .getElementById("searchInput")
-            .value
-            .toLowerCase();
-
-    document
-        .querySelectorAll("#items .item")
-        .forEach(item => {
-
-            const name =
-                item
-                    .querySelector(".item-name")
-                    .textContent
-                    .toLowerCase();
-
-            item.style.display =
-                name.includes(query)
-                    ? ""
-                    : "none";
-        });
-}
-
-
-/* =========================
-   SAVE
-========================= */
-
-function saveAvatar() {
-
-    localStorage.setItem(
-        "mtbAvatar",
-        JSON.stringify(avatarData)
-    );
 }
 
 
@@ -2124,39 +1663,58 @@ function saveAvatar() {
    LOAD
 ========================= */
 
-function loadAvatar() {
+function loadSaved(){
 
-    if (avatarData.frozenHorns) {
+    if(saved.equipped){
 
-        document
-            .getElementById("wornHorns")
-            .classList.add("show");
+        saved.equipped.forEach(item=>{
+
+            if(item==="horns")
+                document.getElementById(
+                    "hornsPreview"
+                ).style.display="block";
+
+            if(item==="hair")
+                document.getElementById(
+                    "hairPreview"
+                ).style.display="block";
+
+            if(item==="fedora")
+                document.getElementById(
+                    "fedoraPreview"
+                ).style.display="block";
+
+            if(item==="pencil")
+                document.getElementById(
+                    "pencilPreview"
+                ).style.display="block";
+
+            if(item==="shirt")
+                document.querySelector(
+                    ".torso"
+                ).style.background="#111";
+
+            if(item==="longshirt")
+                document.querySelector(
+                    ".torso"
+                ).style.background="#333";
+
+        });
 
     }
 
-    changeShirt(
-        avatarData.item
-    );
+    document.getElementById("robux")
+        .textContent=saved.robux;
 
-    const sliders =
-        document.querySelectorAll(
-            ".slider-row input"
-        );
+    document.getElementById("tix")
+        .textContent=saved.tix;
 
-    sliders[0].value = avatarData.height;
-    sliders[1].value = avatarData.width;
-    sliders[2].value = avatarData.head;
-    sliders[3].value = avatarData.body;
-
-    scaleAvatar();
 }
 
 
-/* =========================
-   START
-========================= */
+/* START */
 
-loadAvatar();
+loadSaved();
 
 </script>
 
