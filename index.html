@@ -2,803 +2,1155 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0,
+               maximum-scale=1.0,user-scalable=no">
 
 <title>MTB REVIVALS</title>
 
 <style>
+
+/* =========================================================
+   RESET
+========================================================= */
+
 *{
     box-sizing:border-box;
 }
 
-html,body{
+html,
+body{
     margin:0;
     padding:0;
+    width:100%;
+    min-height:100%;
     font-family:Arial,Helvetica,sans-serif;
-    background:#f1f1f1;
-    color:#252525;
+    background:#eee;
+    color:#222;
+    overflow-x:hidden;
 }
 
-/* =========================
-   TOP BAR
-========================= */
+button,
+input{
+    font-family:inherit;
+}
 
-.topbar{
+
+/* =========================================================
+   TOP HEADER
+========================================================= */
+
+.header{
     height:195px;
-    background:#f45d61;
+    width:100%;
+    background:#f15b61;
     color:white;
-    position:sticky;
-    top:0;
+    position:relative;
     z-index:5000;
-    box-shadow:0 2px 7px rgba(0,0,0,.3);
-}
-
-.toprow{
-    height:105px;
-    display:flex;
-    align-items:center;
-    gap:22px;
-    padding:0 20px;
-    overflow:hidden;
-    white-space:nowrap;
-}
-
-.hamburger{
-    width:43px;
-    flex:none;
-    cursor:pointer;
-}
-
-.hamburger span{
-    display:block;
-    height:4px;
-    width:37px;
-    background:white;
-    margin:7px 0;
-    border-radius:3px;
+    box-shadow:0 2px 5px rgba(0,0,0,.25);
+    overflow:visible;
 }
 
 .brand{
+    position:absolute;
+    left:145px;
+    top:52px;
     font-size:38px;
-    font-weight:900;
-    display:flex;
-    align-items:center;
-    gap:12px;
+    font-weight:bold;
+    white-space:nowrap;
 }
 
 .brandIcon{
-    width:38px;
-    height:38px;
-    border:5px solid white;
-    border-radius:10px;
+    position:absolute;
+    left:92px;
+    top:47px;
+    width:70px;
+    height:65px;
+    border:8px solid white;
+    border-radius:15px;
     transform:skew(-10deg);
 }
 
-.navlink{
-    font-size:35px;
-    font-weight:800;
-    color:white;
-    text-decoration:none;
-}
-
-.navlink:hover{
-    opacity:.8;
-}
-
-.accountButtons{
-    margin-left:auto;
-    display:flex;
-    gap:8px;
-    align-items:center;
-}
-
-.login{
-    font-size:25px;
-    font-weight:bold;
-    color:white;
-    text-decoration:none;
-}
-
-.signup{
-    background:#18b957;
-    color:white;
+.menuButton{
+    position:absolute;
+    left:17px;
+    top:47px;
+    width:65px;
+    height:65px;
+    background:transparent;
     border:0;
+    cursor:pointer;
+    padding:5px;
+}
+
+.menuButton span{
+    display:block;
+    width:38px;
+    height:4px;
+    margin:8px auto;
+    background:white;
     border-radius:5px;
-    padding:10px 15px;
-    font-size:23px;
+}
+
+
+/* =========================================================
+   HEADER NAV LINKS
+========================================================= */
+
+.topLinks{
+    position:absolute;
+    left:270px;
+    top:57px;
+    display:flex;
+    gap:25px;
+    white-space:nowrap;
+}
+
+.topLinks a{
+    color:white;
+    text-decoration:none;
+    font-size:31px;
     font-weight:bold;
 }
 
-/* =========================
-   SECOND BAR
-========================= */
 
-.secondrow{
-    height:90px;
-    display:flex;
-    align-items:center;
-    padding:0 24px;
-    gap:20px;
-}
+/* =========================================================
+   SEARCH
+========================================================= */
 
-.search{
+.headerSearch{
+    position:absolute;
+    left:24px;
+    top:123px;
+    height:55px;
     width:185px;
-    height:57px;
-    background:white;
-    border:2px solid #ccc;
-    border-radius:6px;
     display:flex;
-    overflow:hidden;
 }
 
-.search input{
+.headerSearch input{
     width:140px;
-    border:0;
-    outline:0;
-    padding:8px;
-    font-size:25px;
+    height:55px;
+    border:3px solid #ccc;
+    border-radius:7px 0 0 7px;
+    background:white;
+    padding:0 12px;
+    font-size:21px;
+    outline:none;
 }
 
-.search button{
+.headerSearch button{
     width:50px;
+    height:55px;
+    border:3px solid #ccc;
+    border-left:0;
     background:white;
-    border:0;
+    border-radius:0 7px 7px 0;
     cursor:pointer;
 }
 
-.searchGlass{
-    width:31px;
-    height:31px;
-    border:4px solid #111;
+.searchIcon{
+    width:27px;
+    height:27px;
+    border:4px solid #222;
     border-radius:50%;
     display:block;
     position:relative;
 }
 
-.searchGlass:after{
+.searchIcon:after{
     content:"";
     position:absolute;
-    width:17px;
+    width:13px;
     height:4px;
-    background:#111;
-    right:-13px;
-    bottom:-7px;
-    transform:rotate(48deg);
+    background:#222;
+    right:-10px;
+    bottom:-5px;
+    transform:rotate(45deg);
 }
+
+
+/* =========================================================
+   CURRENCY
+========================================================= */
 
 .currency{
-    margin-left:auto;
+    position:absolute;
+    right:20px;
+    top:127px;
     display:flex;
     align-items:center;
-    gap:9px;
-    font-size:32px;
+    gap:10px;
+    font-size:29px;
     font-weight:bold;
+    white-space:nowrap;
 }
 
-.robuxIcon{
-    width:46px;
-    height:46px;
+.currencyIcon{
+    width:48px;
+    height:48px;
     border:4px solid white;
     border-radius:50%;
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:24px;
+    font-size:22px;
 }
 
 .tixIcon{
-    font-size:44px;
+    width:48px;
+    height:48px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:37px;
     transform:rotate(-12deg);
 }
 
-.settings{
-    font-size:43px;
-    cursor:pointer;
-}
 
-/* =========================
-   SIDEBAR
-========================= */
+/* =========================================================
+   SIDE MENU
+========================================================= */
 
-.sidebar{
+.sideMenu{
     position:fixed;
-    left:-390px;
+    left:0;
     top:0;
-    width:370px;
-    height:100%;
+    width:315px;
+    max-width:85vw;
+    height:100vh;
     background:white;
-    z-index:10000;
+    z-index:99999;
+    box-shadow:5px 0 20px rgba(0,0,0,.3);
+    transform:translateX(-105%);
     transition:.25s;
-    box-shadow:4px 0 12px rgba(0,0,0,.25);
-    padding-top:20px;
     overflow-y:auto;
 }
 
-.sidebar.open{
-    left:0;
+.sideMenu.open{
+    transform:translateX(0);
 }
 
-.sideClose{
-    position:absolute;
-    right:18px;
-    top:10px;
-    font-size:35px;
+.sideTop{
+    height:130px;
+    background:#f15b61;
+    color:white;
+    padding:35px 25px;
+    font-size:25px;
+    font-weight:bold;
+}
+
+.sideUser{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.sideAvatar{
+    width:45px;
+    height:45px;
+    background:#aaa;
+    border-radius:50%;
+    border:2px solid white;
+}
+
+.sideLinks{
+    padding:10px 0;
+}
+
+.sideLinks a,
+.sideLinks button{
+    width:100%;
+    display:block;
+    text-align:left;
+    padding:16px 25px;
+    background:white;
+    border:0;
+    color:#111;
+    text-decoration:none;
+    font-size:22px;
+    font-weight:bold;
     cursor:pointer;
 }
 
-.sideProfile{
-    padding:25px 22px 18px;
-    border-bottom:3px solid #ccc;
-    font-size:28px;
-    font-weight:bold;
-}
-
-.miniAvatar{
-    width:44px;
-    height:44px;
-    border-radius:50%;
-    background:linear-gradient(#aaa 45%,#222 45%);
-    display:inline-block;
-    vertical-align:middle;
-    margin-right:12px;
-}
-
-.sideItem{
-    display:flex;
-    align-items:center;
-    gap:18px;
-    padding:17px 24px;
-    text-decoration:none;
-    color:#171717;
-    font-size:28px;
-    font-weight:bold;
-}
-
-.sideItem:hover{
+.sideLinks a:hover,
+.sideLinks button:hover{
     background:#eee;
 }
 
-.sideIcon{
-    width:40px;
-    text-align:center;
-    font-size:34px;
+
+/* =========================================================
+   OVERLAY
+========================================================= */
+
+.overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.45);
+    z-index:99998;
+    display:none;
 }
 
-/* =========================
-   PAGE
-========================= */
+.overlay.show{
+    display:block;
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
 
 .page{
     width:100%;
-    max-width:1180px;
+    max-width:1200px;
     margin:auto;
     background:white;
     min-height:calc(100vh - 195px);
-    padding:45px 30px 150px;
+    padding:28px 22px 120px;
 }
 
 .pageTitle{
-    font-size:64px;
-    margin:0 0 35px;
-    font-weight:900;
+    font-size:44px;
+    margin:5px 0 25px;
+    font-weight:bold;
 }
 
-/* =========================
-   CATALOG SEARCH
-========================= */
+
+/* =========================================================
+   ANNOUNCEMENT
+========================================================= */
+
+.announcement{
+    background:#ddd;
+    color:#333;
+    text-align:center;
+    font-size:20px;
+    padding:12px;
+    border-bottom:1px solid #bbb;
+}
+
+
+/* =========================================================
+   CATALOG FILTER
+========================================================= */
+
+.catalogControls{
+    border:1px solid #aaa;
+    margin-bottom:25px;
+}
 
 .catalogSearch{
     display:flex;
     height:52px;
-    margin-bottom:0;
 }
 
 .catalogSearch input{
     flex:1;
-    border:2px solid #aaa;
-    font-size:22px;
-    padding:10px;
-}
-
-.categorySelect{
-    width:305px;
-    border:2px solid #aaa;
-    font-size:22px;
-    font-weight:bold;
-    padding:10px;
-    background:#eee;
+    border:0;
+    border-right:1px solid #aaa;
+    padding:0 15px;
+    font-size:19px;
+    outline:none;
 }
 
 .catalogSearch button{
-    width:310px;
-    border:2px solid #888;
+    width:180px;
+    border:0;
     background:#eee;
-    font-size:27px;
+    font-size:20px;
     font-weight:bold;
-}
-
-/* =========================
-   CATEGORY BOX
-========================= */
-
-.categoryBox{
-    width:565px;
-    border:2px solid #666;
-    margin:0 0 45px 15px;
+    cursor:pointer;
 }
 
 .categoryHeader{
-    height:80px;
-    background:linear-gradient(#777,#444);
+    background:linear-gradient(#777,#555);
     color:white;
-    padding:7px 15px;
-    font-size:29px;
-    font-weight:bold;
-    line-height:29px;
-}
-
-.categoryHeader strong{
-    display:block;
-    font-size:39px;
-}
-
-.categoryRow{
-    height:55px;
-    padding:14px 17px;
     font-size:27px;
-    border-bottom:1px solid #bbb;
+    font-weight:bold;
+    padding:12px 18px;
+}
+
+.categoryList{
+    display:flex;
+    flex-wrap:wrap;
+}
+
+.category{
+    padding:13px 18px;
+    font-size:18px;
+    border-right:1px solid #ccc;
+    cursor:pointer;
+}
+
+.category:hover{
     background:#eee;
 }
 
-.categoryRow:nth-child(2){
-    background:#d6d6d6;
-}
 
-.arrow{
-    float:right;
-    color:#777;
-}
-
-/* =========================
-   FILTERS
-========================= */
-
-.filters{
-    margin:0 0 30px;
-}
-
-.filters h2{
-    font-size:40px;
-    margin:0 0 18px;
-}
-
-.filters h3{
-    font-size:30px;
-    margin:0 0 10px;
-}
-
-/* =========================
+/* =========================================================
    ITEM GRID
-========================= */
+========================================================= */
 
 .itemGrid{
+    display:grid;
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    gap:18px;
+}
+
+.item{
+    border:1px solid #d2d2d2;
+    background:white;
+    box-shadow:0 2px 7px rgba(0,0,0,.12);
+    min-width:0;
+}
+
+.itemImage{
+    height:210px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#fafafa;
+    overflow:hidden;
+}
+
+.itemInfo{
+    border-top:1px solid #ddd;
+    padding:12px;
+}
+
+.itemName{
+    font-size:20px;
+    font-weight:bold;
+    min-height:48px;
+}
+
+.itemPrice{
+    color:#078c45;
+    font-size:23px;
+    font-weight:bold;
+    margin-top:10px;
+}
+
+.itemPrice.free{
+    color:#078c45;
+}
+
+.claimButton{
+    width:100%;
+    margin-top:10px;
+    padding:10px;
+    border:0;
+    background:#4382dc;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.claimButton:hover{
+    background:#2868c0;
+}
+
+
+/* =========================================================
+   FAKE CLASSIC ITEMS
+========================================================= */
+
+.fakeValk{
+    width:130px;
+    height:130px;
+    background:linear-gradient(135deg,#283eae,#91a8ff);
+    clip-path:polygon(
+        50% 0,65% 28%,95% 8%,78% 45%,
+        100% 70%,65% 64%,50% 100%,
+        35% 64%,0 70%,22% 45%,5% 8%,35% 28%
+    );
+}
+
+.fakeRedValk{
+    width:130px;
+    height:130px;
+    background:linear-gradient(135deg,#9c1717,#ff5555);
+    clip-path:polygon(
+        50% 0,65% 28%,95% 8%,78% 45%,
+        100% 70%,65% 64%,50% 100%,
+        35% 64%,0 70%,22% 45%,5% 8%,35% 28%
+    );
+}
+
+.fakeHorns{
+    width:145px;
+    height:125px;
+    background:linear-gradient(135deg,#b8f5ff,#489eff);
+    clip-path:polygon(
+        50% 0,65% 30%,100% 5%,78% 48%,
+        100% 76%,65% 66%,50% 100%,
+        35% 66%,0 76%,22% 48%,0 5%,35% 30%
+    );
+}
+
+.fakeFedora{
+    width:145px;
+    height:85px;
+    background:linear-gradient(
+        90deg,
+        #d93434,
+        #f0ce39,
+        #39bf65,
+        #438bdd,
+        #a345d4
+    );
+    border-radius:55% 55% 18% 18%;
+}
+
+.fakePencil{
+    width:35px;
+    height:165px;
+    background:linear-gradient(
+        90deg,
+        #c88311,
+        #ffe04b,
+        #c88311
+    );
+    transform:rotate(-25deg);
+    border:3px solid #75500a;
+}
+
+.fakeShirt{
+    width:125px;
+    height:150px;
+    background:#111;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    font-size:30px;
+    font-weight:bold;
+}
+
+.fakeHair{
+    width:130px;
+    height:105px;
+    background:#5a3518;
+    border-radius:60% 60% 25% 25%;
+}
+
+.fakeBurger{
+    width:150px;
+    height:105px;
+    border-radius:50%;
+    background:
+        linear-gradient(
+            #c79c3b 0 35%,
+            #bd2e24 35% 45%,
+            #e5d25d 45% 55%,
+            #60351f 55% 75%,
+            #8e6a28 75%
+        );
+}
+
+
+/* =========================================================
+   AVATAR SECTION
+========================================================= */
+
+.avatarPanel{
+    margin-top:35px;
+    border:1px solid #bbb;
+    background:#f5f5f5;
+    padding:20px;
+}
+
+.avatarPanel h2{
+    margin-top:0;
+    font-size:32px;
+}
+
+.avatarStage{
+    width:100%;
+    height:520px;
+    background:#e9e9e9;
+    border:1px solid #bbb;
+    position:relative;
+    overflow:hidden;
+}
+
+
+/* =========================================================
+   R6 AVATAR
+========================================================= */
+
+.avatar{
+    position:absolute;
+    width:260px;
+    height:445px;
+    left:50%;
+    bottom:10px;
+    transform:translateX(-50%);
+}
+
+
+/* HEAD */
+
+.avatarHead{
+    position:absolute;
+    width:100px;
+    height:100px;
+    left:80px;
+    top:0;
+    background:#efbd76;
+    border:4px solid #555;
+    border-radius:9px;
+}
+
+.avatarHead:before,
+.avatarHead:after{
+    content:"";
+    position:absolute;
+    top:42px;
+    width:10px;
+    height:16px;
+    background:#111;
+    border-radius:50%;
+}
+
+.avatarHead:before{
+    left:27px;
+}
+
+.avatarHead:after{
+    right:27px;
+}
+
+
+/* BODY */
+
+.avatarBody{
+    position:absolute;
+    left:60px;
+    top:108px;
+    width:140px;
+    height:145px;
+    background:#111;
+    border:4px solid #444;
+}
+
+.avatarBody:after{
+    content:"MTB";
+    position:absolute;
+    left:0;
+    right:0;
+    top:48px;
+    text-align:center;
+    color:white;
+    font-size:35px;
+    font-weight:bold;
+}
+
+
+/* ARMS */
+
+.avatarArm{
+    position:absolute;
+    width:48px;
+    height:135px;
+    top:112px;
+    background:#efbd76;
+    border:4px solid #555;
+    border-radius:3px;
+    transition:.25s;
+}
+
+.leftArm{
+    left:10px;
+}
+
+.rightArm{
+    right:10px;
+}
+
+.holding .rightArm{
+    transform:rotate(-55deg);
+    transform-origin:top center;
+}
+
+
+/* LEGS */
+
+.avatarLeg{
+    position:absolute;
+    width:60px;
+    height:140px;
+    top:253px;
+    background:#222;
+    border:4px solid #444;
+}
+
+.leftLeg{
+    left:60px;
+}
+
+.rightLeg{
+    right:60px;
+}
+
+
+/* =========================================================
+   AVATAR ACCESSORIES
+========================================================= */
+
+.avatarAccessory{
+    display:none;
+    position:absolute;
+    z-index:10;
+}
+
+.wearing-horns .avatarAccessory.horns{
+    display:block;
+}
+
+.horns{
+    width:170px;
+    height:130px;
+    left:45px;
+    top:-35px;
+    background:linear-gradient(
+        135deg,
+        #c5f9ff,
+        #4ba8ff,
+        #1438a7
+    );
+    clip-path:polygon(
+        50% 0,
+        65% 35%,
+        100% 5%,
+        78% 50%,
+        100% 80%,
+        65% 65%,
+        50% 100%,
+        35% 65%,
+        0 80%,
+        22% 50%,
+        0 5%,
+        35% 35%
+    );
+}
+
+.wearing-fedora .avatarAccessory.fedora{
+    display:block;
+}
+
+.fedora{
+    width:140px;
+    height:65px;
+    left:60px;
+    top:-35px;
+    background:linear-gradient(
+        90deg,
+        #e83232,
+        #e8c634,
+        #35bd66,
+        #418cdf,
+        #a345d4
+    );
+    border-radius:50% 50% 15% 15%;
+}
+
+.wearing-valk .avatarAccessory.valk{
+    display:block;
+}
+
+.valk{
+    width:145px;
+    height:130px;
+    left:57px;
+    top:-45px;
+    background:linear-gradient(
+        135deg,
+        #3145bb,
+        #91a8ff
+    );
+    clip-path:polygon(
+        50% 0,
+        65% 30%,
+        100% 8%,
+        78% 48%,
+        100% 70%,
+        65% 65%,
+        50% 100%,
+        35% 65%,
+        0 70%,
+        22% 48%,
+        0 8%,
+        35% 30%
+    );
+}
+
+
+/* =========================================================
+   GEAR
+========================================================= */
+
+.gear{
+    display:none;
+    position:absolute;
+    z-index:20;
+}
+
+.holding .gear{
+    display:block;
+}
+
+.pencilGear{
+    right:-20px;
+    top:185px;
+    width:28px;
+    height:150px;
+    background:linear-gradient(
+        90deg,
+        #c98211,
+        #ffe34d,
+        #c98211
+    );
+    transform:rotate(-25deg);
+    border:3px solid #70500b;
+}
+
+.swordGear{
+    right:-20px;
+    top:180px;
+    width:30px;
+    height:145px;
+    background:linear-gradient(
+        90deg,
+        #555,
+        white,
+        #888
+    );
+    transform:rotate(-25deg);
+    clip-path:polygon(
+        50% 0,
+        100% 15%,
+        65% 100%,
+        35% 100%,
+        0 15%
+    );
+}
+
+
+/* =========================================================
+   AVATAR CONTROLS
+========================================================= */
+
+.avatarControls{
+    margin-top:18px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
+}
+
+.avatarControls button{
+    padding:13px;
+    background:white;
+    border:1px solid #aaa;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.avatarControls button:hover{
+    background:#eee;
+}
+
+
+/* =========================================================
+   EQUIPPED
+========================================================= */
+
+.equipped{
+    background:white;
+    border:1px solid #bbb;
+    padding:18px;
+    margin-top:18px;
+}
+
+.equippedTitle{
+    font-size:24px;
+    font-weight:bold;
+}
+
+.slots{
+    display:flex;
+    gap:10px;
+    margin-top:15px;
+}
+
+.slot{
+    flex:1;
+    min-width:0;
+    height:65px;
+    border:2px dashed #aaa;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    font-size:13px;
+    padding:5px;
+}
+
+
+/* =========================================================
+   PROFILE
+========================================================= */
+
+.profile{
+    max-width:900px;
+    margin:auto;
+}
+
+.profileTop{
+    background:white;
+    border:1px solid #ccc;
+    padding:25px;
+}
+
+.profileAvatar{
+    width:150px;
+    height:150px;
+    margin:auto;
+    border-radius:50%;
+    border:2px solid #bbb;
+    background:#ddd;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:65px;
+}
+
+.profileName{
+    text-align:center;
+    font-size:42px;
+    font-weight:bold;
+    margin-top:15px;
+}
+
+.username{
+    text-align:center;
+    color:#777;
+    font-size:22px;
+}
+
+.badges{
+    text-align:center;
+    margin-top:15px;
+}
+
+.badge{
+    display:inline-block;
+    padding:7px 12px;
+    margin:4px;
+    background:#4382dc;
+    color:white;
+    border-radius:4px;
+    font-size:14px;
+    font-weight:bold;
+}
+
+.badge.owner{
+    background:#e22d2d;
+}
+
+.badge.first{
+    background:#e3a625;
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    margin-top:25px;
+    border-top:1px solid #ddd;
+    padding-top:20px;
+    text-align:center;
+}
+
+.statTitle{
+    color:#aaa;
+    font-size:18px;
+}
+
+.statNumber{
+    color:#4382dc;
+    font-size:28px;
+    font-weight:bold;
+}
+
+
+/* =========================================================
+   AUTH
+========================================================= */
+
+.authBox{
+    max-width:430px;
+    margin:30px auto;
+    background:white;
+    border:1px solid #ccc;
+    padding:25px;
+}
+
+.authBox h1{
+    margin-top:0;
+}
+
+.authBox input{
+    width:100%;
+    height:50px;
+    margin-bottom:12px;
+    border:1px solid #aaa;
+    padding:10px;
+    font-size:17px;
+}
+
+.authButton{
+    width:100%;
+    height:48px;
+    background:#4382dc;
+    color:white;
+    border:0;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.authSwitch{
+    margin-top:15px;
+    color:#4382dc;
+    cursor:pointer;
+    text-align:center;
+}
+
+
+/* =========================================================
+   INVENTORY
+========================================================= */
+
+.inventoryGrid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.inventoryItem{
+    border:1px solid #ccc;
+    padding:15px;
+    background:white;
+    text-align:center;
+}
+
+.inventoryImage{
+    height:150px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.inventoryItem button{
+    width:100%;
+    margin-top:10px;
+    padding:9px;
+    border:0;
+    background:#4382dc;
+    color:white;
+    cursor:pointer;
+}
+
+
+/* =========================================================
+   GAMES
+========================================================= */
+
+.gameGrid{
     display:grid;
     grid-template-columns:repeat(3,1fr);
     gap:18px;
 }
 
-.item{
+.game{
     background:white;
-    border:1px solid #ddd;
-    box-shadow:0 3px 8px rgba(0,0,0,.16);
-    overflow:hidden;
+    border:1px solid #ccc;
+    box-shadow:0 2px 5px rgba(0,0,0,.1);
 }
 
-.itemImage{
-    height:250px;
-    background:#fff;
+.gameImage{
+    height:180px;
+    background:linear-gradient(
+        135deg,
+        #4e6fd0,
+        #222
+    );
     display:flex;
-    align-items:center;
     justify-content:center;
-    overflow:hidden;
-}
-
-.fake{
-    position:relative;
-}
-
-.burger{
-    width:180px;
-    height:135px;
-    border-radius:45% 45% 40% 40%;
-    background:
-        linear-gradient(#c8aa5a 0 30%,#b42d24 30% 40%,#e8d75c 40% 48%,#5b321d 48% 65%,#9b6739 65%);
-}
-
-.hair{
-    width:155px;
-    height:155px;
-    border-radius:50% 50% 25% 25%;
-    background:#654522;
-}
-
-.body{
-    width:125px;
-    height:190px;
-    border-radius:35px;
-    background:linear-gradient(#ddd,#aaa);
-}
-
-.face{
-    width:155px;
-    height:155px;
-    border-radius:40px;
-    background:#aaa;
-    position:relative;
-}
-
-.face:before,
-.face:after{
-    content:"";
-    position:absolute;
-    width:14px;
-    height:32px;
-    background:#111;
-    border-radius:50%;
-    top:50px;
-}
-
-.face:before{
-    left:42px;
-}
-
-.face:after{
-    right:42px;
-}
-
-.valk{
-    width:175px;
-    height:175px;
-    background:linear-gradient(135deg,#2855d9,#7fa4ff);
-    clip-path:polygon(
-        50% 0,
-        65% 25%,
-        92% 10%,
-        78% 45%,
-        100% 65%,
-        67% 63%,
-        50% 100%,
-        33% 63%,
-        0 65%,
-        22% 45%,
-        8% 10%,
-        35% 25%
-    );
-}
-
-.horns{
-    width:190px;
-    height:170px;
-    background:linear-gradient(135deg,#222,#aaa,#222);
-    clip-path:polygon(
-        50% 100%,
-        25% 70%,
-        4% 20%,
-        18% 0,
-        31% 45%,
-        50% 55%,
-        69% 45%,
-        82% 0,
-        96% 20%,
-        75% 70%
-    );
-}
-
-.pencil{
-    width:38px;
-    height:200px;
-    transform:rotate(-28deg);
-    background:linear-gradient(90deg,#c48617,#ffe24d,#c48617);
-    border:3px solid #74530b;
-}
-
-.itemInfo{
-    padding:17px;
-    border-top:1px solid #ddd;
-}
-
-.itemName{
-    font-size:27px;
-    font-weight:bold;
-    min-height:38px;
-}
-
-.price{
-    margin-top:22px;
-    color:#079447;
+    align-items:center;
+    color:white;
     font-size:30px;
     font-weight:bold;
 }
 
-.free{
-    color:#079447;
+.gameInfo{
+    padding:15px;
 }
 
-.claim{
-    margin-top:12px;
+.playButton{
     width:100%;
-    padding:12px;
+    padding:11px;
+    background:#4382dc;
     border:0;
-    background:#438be8;
     color:white;
-    font-size:19px;
     font-weight:bold;
     cursor:pointer;
 }
 
-/* =========================
-   PROFILE
-========================= */
 
-.profile{
-    display:none;
-}
+/* =========================================================
+   USER SEARCH
+========================================================= */
 
-.profile.show{
-    display:block;
-}
-
-.profileTop{
-    text-align:center;
-}
-
-.profileAvatar{
-    width:250px;
-    height:250px;
-    border-radius:50%;
-    border:2px solid #bbb;
-    margin:auto;
-    background:
-        radial-gradient(circle at 50% 35%,#111 0 4%,transparent 5%),
-        linear-gradient(#bbb 0 47%,#222 47% 100%);
-}
-
-.profileName{
-    font-size:58px;
-    font-weight:900;
-    margin-top:15px;
-}
-
-.username{
-    color:#777;
-    font-size:30px;
-    margin-top:4px;
-}
-
-.verified{
-    display:inline-flex;
-    width:43px;
-    height:43px;
-    border-radius:5px;
-    background:#397be8;
-    color:white;
-    align-items:center;
-    justify-content:center;
-    font-size:29px;
-    vertical-align:middle;
-    margin-left:8px;
-}
-
-.ownerBadge{
-    display:inline-block;
-    margin-top:12px;
-    padding:7px 14px;
-    background:#f0a52a;
-    color:white;
-    border-radius:5px;
-    font-weight:bold;
-}
-
-.profileStats{
-    margin:45px auto;
-    max-width:650px;
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:35px;
-}
-
-.statTitle{
-    color:#bbb;
-    font-size:31px;
-    font-weight:bold;
-}
-
-.statNumber{
-    color:#438be8;
-    font-size:39px;
-    margin-top:8px;
-}
-
-.profileButtons{
-    display:flex;
-    gap:25px;
-    justify-content:center;
-}
-
-.profileButtons button{
-    padding:15px 55px;
-    background:white;
-    border:2px solid #bbb;
-    font-size:27px;
-    font-weight:bold;
-}
-
-/* =========================
-   AVATAR
-========================= */
-
-.avatarPage{
-    display:none;
-}
-
-.avatarPage.show{
-    display:block;
-}
-
-.avatarEditor{
-    display:grid;
-    grid-template-columns:1fr 330px;
-    gap:25px;
-}
-
-.avatarPreview{
-    height:620px;
+.userSearch{
+    margin-top:35px;
+    background:#f5f5f5;
     border:1px solid #ccc;
-    background:#eee;
-    position:relative;
-    overflow:hidden;
-}
-
-.avatarGround{
-    position:absolute;
-    bottom:0;
-    left:0;
-    right:0;
-    height:110px;
-    background:#ddd;
-    border-top:3px solid #bbb;
-}
-
-.rbxAvatar{
-    position:absolute;
-    width:240px;
-    height:510px;
-    left:50%;
-    bottom:55px;
-    transform:translateX(-50%);
-}
-
-.rbxHead{
-    position:absolute;
-    width:110px;
-    height:110px;
-    left:65px;
-    top:0;
-    background:#eab676;
-    border:2px solid #555;
-    border-radius:8px;
-}
-
-.rbxHead:before,
-.rbxHead:after{
-    content:"";
-    position:absolute;
-    width:11px;
-    height:17px;
-    background:#111;
-    border-radius:50%;
-    top:45px;
-}
-
-.rbxHead:before{
-    left:28px;
-}
-
-.rbxHead:after{
-    right:28px;
-}
-
-.rbxBody{
-    position:absolute;
-    width:150px;
-    height:145px;
-    left:45px;
-    top:120px;
-    background:#111;
-    border:2px solid #444;
-}
-
-.rbxBody:after{
-    content:"MTB";
-    position:absolute;
-    color:white;
-    font-weight:bold;
-    font-size:35px;
-    left:0;
-    right:0;
-    text-align:center;
-    top:48px;
-}
-
-.rbxArm{
-    position:absolute;
-    width:50px;
-    height:140px;
-    background:#eab676;
-    border:2px solid #555;
-    top:125px;
-}
-
-.rbxArm.left{
-    left:0;
-}
-
-.rbxArm.right{
-    right:0;
-}
-
-.rbxLeg{
-    position:absolute;
-    width:65px;
-    height:160px;
-    top:265px;
-    background:#222;
-    border:2px solid #444;
-}
-
-.rbxLeg.left{
-    left:45px;
-}
-
-.rbxLeg.right{
-    right:45px;
-}
-
-.avatarItems{
-    border:1px solid #ccc;
-    background:white;
     padding:20px;
 }
 
-.avatarItems h2{
-    margin-top:0;
-    font-size:30px;
+.userSearch input{
+    width:100%;
+    height:50px;
+    padding:10px;
+    border:1px solid #aaa;
+    font-size:18px;
 }
 
-.avatarItem{
-    padding:13px;
-    border:1px solid #ddd;
-    margin-bottom:10px;
-    cursor:pointer;
+.userSearch button{
+    margin-top:10px;
+    padding:12px 25px;
+    background:#4382dc;
+    color:white;
+    border:0;
     font-weight:bold;
+    cursor:pointer;
 }
 
-.avatarItem:hover{
-    background:#eee;
-}
 
-/* =========================
+/* =========================================================
    MODAL
-========================= */
+========================================================= */
 
 .modal{
     position:fixed;
     inset:0;
     background:rgba(0,0,0,.55);
+    z-index:100000;
     display:none;
-    justify-content:center;
     align-items:center;
-    z-index:20000;
+    justify-content:center;
+    padding:20px;
 }
 
 .modal.show{
@@ -806,11 +1158,11 @@ html,body{
 }
 
 .modalBox{
-    width:90%;
-    max-width:450px;
     background:white;
-    padding:30px;
-    border-radius:7px;
+    width:100%;
+    max-width:430px;
+    padding:25px;
+    border-radius:5px;
 }
 
 .modalBox h2{
@@ -820,18 +1172,19 @@ html,body{
 .modalButtons{
     display:flex;
     gap:10px;
+    margin-top:20px;
 }
 
 .modalButtons button{
     flex:1;
-    padding:14px;
+    padding:13px;
     border:0;
-    font-weight:bold;
     cursor:pointer;
+    font-weight:bold;
 }
 
 .confirm{
-    background:#438be8;
+    background:#4382dc;
     color:white;
 }
 
@@ -839,926 +1192,430 @@ html,body{
     background:#ddd;
 }
 
-/* =========================
-   MOBILE
-========================= */
 
-@media(max-width:800px){
+/* =========================================================
+   BOTTOM CHAT
+========================================================= */
 
-    .topbar{
-        height:195px;
+.chat{
+    position:fixed;
+    bottom:0;
+    left:20px;
+    right:20px;
+    height:62px;
+    background:#f15b61;
+    color:white;
+    z-index:8000;
+    border-radius:12px 12px 0 0;
+    display:flex;
+    align-items:center;
+    padding-left:22px;
+    font-size:22px;
+    font-weight:bold;
+}
+
+
+/* =========================================================
+   DESKTOP
+========================================================= */
+
+@media(min-width:1000px){
+
+    .header{
+        height:160px;
     }
 
-    .toprow{
-        gap:14px;
+    .page{
+        min-height:calc(100vh - 160px);
     }
 
-    .brand{
-        font-size:30px;
-    }
-
-    .navlink{
-        font-size:28px;
-    }
-
-    .accountButtons{
-        display:none;
-    }
-
-    .secondrow{
-        gap:8px;
+    .headerSearch{
+        top:90px;
     }
 
     .currency{
-        font-size:25px;
-    }
-
-    .robuxIcon{
-        width:40px;
-        height:40px;
-    }
-
-    .itemGrid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .itemImage{
-        height:210px;
-    }
-
-    .categoryBox{
-        width:100%;
-        margin-left:0;
-    }
-
-    .catalogSearch{
-        flex-wrap:wrap;
-        height:auto;
-    }
-
-    .catalogSearch input{
-        width:100%;
-        height:52px;
-    }
-
-    .categorySelect,
-    .catalogSearch button{
-        width:50%;
-    }
-
-    .avatarEditor{
-        grid-template-columns:1fr;
-    }
-}
-
-@media(max-width:500px){
-
-    .page{
-        padding:30px 14px 100px;
-    }
-
-    .pageTitle{
-        font-size:49px;
+        top:92px;
     }
 
     .brand{
-        font-size:27px;
+        top:45px;
     }
 
-    .navlink{
+    .brandIcon{
+        top:40px;
+    }
+
+    .menuButton{
+        top:40px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:700px){
+
+    .header{
+        height:195px;
+    }
+
+    .brand{
+        left:150px;
+        top:55px;
+        font-size:35px;
+    }
+
+    .brandIcon{
+        left:91px;
+        top:48px;
+        width:62px;
+        height:57px;
+        border-width:7px;
+    }
+
+    .topLinks{
+        display:none;
+    }
+
+    .currency{
+        right:12px;
+        top:128px;
+        gap:7px;
         font-size:24px;
     }
 
+    .currencyIcon{
+        width:45px;
+        height:45px;
+    }
+
+    .tixIcon{
+        width:40px;
+        font-size:30px;
+    }
+
+    .headerSearch{
+        left:20px;
+        top:123px;
+        width:160px;
+    }
+
+    .headerSearch input{
+        width:115px;
+        font-size:19px;
+    }
+
+    .page{
+        padding:20px 12px 100px;
+    }
+
+    .pageTitle{
+        font-size:35px;
+    }
+
     .itemGrid{
-        grid-template-columns:1fr 1fr;
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:10px;
     }
 
     .itemImage{
-        height:170px;
+        height:145px;
     }
 
     .itemName{
-        font-size:20px;
+        font-size:16px;
     }
 
-    .price{
-        font-size:23px;
+    .itemPrice{
+        font-size:18px;
     }
 
-    .itemInfo{
-        padding:12px;
+    .claimButton{
+        font-size:13px;
     }
 
-    .search{
-        width:180px;
+    .avatarStage{
+        height:400px;
     }
 
-    .profileName{
-        font-size:45px;
+    .avatar{
+        transform:translateX(-50%) scale(.78);
+        transform-origin:bottom center;
+    }
+
+    .inventoryGrid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .gameGrid{
+        grid-template-columns:1fr;
+    }
+
+    .stats{
+        grid-template-columns:repeat(2,1fr);
+        gap:20px;
+    }
+
+    .avatarControls{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .chat{
+        left:0;
+        right:0;
+        border-radius:0;
     }
 }
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media(max-width:400px){
+
+    .brand{
+        left:137px;
+        font-size:30px;
+    }
+
+    .brandIcon{
+        left:82px;
+        width:53px;
+        height:50px;
+    }
+
+    .menuButton{
+        left:9px;
+    }
+
+    .headerSearch{
+        left:12px;
+        width:145px;
+    }
+
+    .headerSearch input{
+        width:100px;
+    }
+
+    .currency{
+        font-size:19px;
+        right:5px;
+    }
+
+    .currencyIcon{
+        width:38px;
+        height:38px;
+        font-size:17px;
+    }
+
+    .tixIcon{
+        font-size:25px;
+    }
+
+    .itemImage{
+        height:125px;
+    }
+
+    .itemName{
+        font-size:14px;
+    }
+
+    .itemPrice{
+        font-size:16px;
+    }
+}
+
 </style>
 </head>
 
+
 <body>
 
-<!-- =========================
+
+<!-- ======================================================
      HEADER
-========================= -->
+====================================================== -->
 
-<header class="topbar">
+<header class="header">
 
-    <div class="toprow">
+    <button class="menuButton" onclick="openMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
 
-        <div class="hamburger" onclick="toggleSidebar()">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+    <div class="brandIcon"></div>
 
-        <div class="brand">
-            <div class="brandIcon"></div>
-            <span>MTB</span>
-        </div>
+    <div class="brand">
+        MTB
+    </div>
 
-        <a class="navlink" href="#" onclick="showPage('games')">
-            Games
-        </a>
+    <nav class="topLinks">
+        <a href="#" onclick="showPage('home')">Games</a>
+        <a href="#" onclick="showPage('catalog')">Catalog</a>
+        <a href="#" onclick="showPage('create')">Create</a>
+        <a href="#" onclick="showPage('download')">Download</a>
+    </nav>
 
-        <a class="navlink" href="#" onclick="showPage('catalog')">
-            Catalog
-        </a>
+    <div class="headerSearch">
 
-        <a class="navlink" href="#">
-            Create
-        </a>
+        <input
+            id="globalSearch"
+            type="text"
+            placeholder="Search"
+            oninput="globalSearch()"
+        >
 
-        <a class="navlink" href="#">
-            Download
-        </a>
-
-        <div class="accountButtons">
-            <a class="login" href="#" onclick="showProfile()">
-                Login
-            </a>
-
-            <button class="signup" onclick="openSignup()">
-                Sign Up
-            </button>
-        </div>
+        <button onclick="globalSearch()">
+            <span class="searchIcon"></span>
+        </button>
 
     </div>
 
-    <div class="secondrow">
+    <div class="currency">
 
-        <div class="search">
-
-            <input
-                id="topSearch"
-                placeholder="Search"
-                oninput="searchItems()"
-            >
-
-            <button onclick="searchItems()">
-                <span class="searchGlass"></span>
-            </button>
-
+        <div class="currencyIcon">
+            R$
         </div>
 
-        <div class="currency">
+        <span id="robuxAmount">
+            100
+        </span>
 
-            <div class="robuxIcon">
-                R$
-            </div>
-
-            <span id="robux">
-                100
-            </span>
-
-            <span class="tixIcon">
-                🎟
-            </span>
-
-            <span id="tix">
-                0
-            </span>
-
-            <span class="settings">
-                ⚙
-            </span>
-
+        <div class="tixIcon">
+            🎟️
         </div>
+
+        <span id="tixAmount">
+            0
+        </span>
 
     </div>
 
 </header>
 
 
-<!-- =========================
-     SIDEBAR
-========================= -->
+<!-- ======================================================
+     SIDE MENU
+====================================================== -->
 
-<div id="sidebar" class="sidebar">
-
-    <div class="sideClose" onclick="toggleSidebar()">
-        ×
-    </div>
-
-    <div class="sideProfile">
-
-        <span class="miniAvatar"></span>
-
-        <span id="sideUsername">
-            Guest
-        </span>
-
-    </div>
-
-    <a class="sideItem" href="#" onclick="showPage('home')">
-        <span class="sideIcon">⌂</span>
-        Home
-    </a>
-
-    <a class="sideItem" href="#" onclick="showProfile()">
-        <span class="sideIcon">♙</span>
-        Profile
-    </a>
-
-    <a class="sideItem" href="#">
-        <span class="sideIcon">▤</span>
-        Messages
-    </a>
-
-    <a class="sideItem" href="#">
-        <span class="sideIcon">♧</span>
-        Friends
-    </a>
-
-    <a class="sideItem" href="#" onclick="showPage('avatar')">
-        <span class="sideIcon">♙</span>
-        Avatar
-    </a>
-
-    <a class="sideItem" href="#" onclick="showPage('inventory')">
-        <span class="sideIcon">▣</span>
-        Inventory
-    </a>
-
-    <a class="sideItem" href="#">
-        <span class="sideIcon">⇄</span>
-        Trade
-    </a>
-
-    <a class="sideItem" href="#">
-        <span class="sideIcon">♧</span>
-        Groups
-    </a>
-
-    <a class="sideItem" href="#">
-        <span class="sideIcon">□</span>
-        Forums
-    </a>
-
-    <a class="sideItem" href="#">
-        <span class="sideIcon">♧</span>
-        Redeem
-    </a>
-
+<div id="overlay"
+     class="overlay"
+     onclick="closeMenu()">
 </div>
 
+<div id="sideMenu" class="sideMenu">
 
-<!-- =========================
-     MAIN
-========================= -->
+    <div class="sideTop">
 
-<main class="page">
+        <div class="sideUser">
 
+            <div class="sideAvatar"></div>
 
-<!-- =========================
-     CATALOG
-========================= -->
-
-<section id="catalogPage">
-
-    <h1 class="pageTitle">
-        Catalog
-    </h1>
-
-    <div class="catalogSearch">
-
-        <input
-            id="catalogSearch"
-            placeholder="Search"
-            oninput="searchItems()"
-        >
-
-        <select class="categorySelect">
-            <option>All Categories</option>
-            <option>Featured</option>
-            <option>Collectibles</option>
-            <option>Clothing</option>
-            <option>Body Parts</option>
-            <option>Gear</option>
-        </select>
-
-        <button onclick="searchItems()">
-            Search
-        </button>
-
-    </div>
-
-
-    <div class="categoryBox">
-
-        <div class="categoryHeader">
-            Browse by
-            <strong>Category</strong>
-        </div>
-
-        <div class="categoryRow">
-            Featured
-            <span class="arrow">▶</span>
-        </div>
-
-        <div class="categoryRow">
-            Collectibles
-            <span class="arrow">▶</span>
-        </div>
-
-        <div class="categoryRow">
-            All Categories
-        </div>
-
-        <div class="categoryRow">
-            Clothing
-            <span class="arrow">▶</span>
-        </div>
-
-        <div class="categoryRow">
-            Body Parts
-            <span class="arrow">▶</span>
-        </div>
-
-        <div class="categoryRow">
-            Gear
-            <span class="arrow">▶</span>
-        </div>
-
-    </div>
-
-
-    <div class="filters">
-
-        <h2>Filters</h2>
-
-        <h3>Genre</h3>
-
-        <label style="font-size:22px;">
-            <input type="checkbox">
-            Building
-        </label>
-
-    </div>
-
-
-    <div id="itemGrid" class="itemGrid">
-
-
-        <!-- ITEM -->
-
-        <div class="item" data-name="Cheezburger">
-
-            <div class="itemImage">
-                <div class="fake burger"></div>
-            </div>
-
-            <div class="itemInfo">
-
-                <div class="itemName">
-                    Cheezburger
-                </div>
-
-                <div class="price">
-                    R$ 22
-                </div>
-
-                <button class="claim"
-                    onclick="buyItem('Cheezburger',22)">
-                    BUY
-                </button>
-
-            </div>
-
-        </div>
-
-
-        <div class="item" data-name="Normal Boy Hair">
-
-            <div class="itemImage">
-                <div class="fake hair"></div>
-            </div>
-
-            <div class="itemInfo">
-
-                <div class="itemName">
-                    Normal Boy Hair
-                </div>
-
-                <div class="price">
-                    R$ 22
-                </div>
-
-                <button class="claim"
-                    onclick="buyItem('Normal Boy Hair',22)">
-                    BUY
-                </button>
-
-            </div>
-
-        </div>
-
-
-        <div class="item" data-name="ROBLOX Boy">
-
-            <div class="itemImage">
-                <div class="fake body"></div>
-            </div>
-
-            <div class="itemInfo">
-
-                <div class="itemName">
-                    MTB Boy
-                </div>
-
-                <div class="price">
-                    FREE
-                </div>
-
-                <button class="claim"
-                    onclick="buyItem('MTB Boy',0)">
-                    CLAIM
-                </button>
-
-            </div>
-
-        </div>
-
-
-        <div class="item" data-name="Yuck">
-
-            <div class="itemImage">
-                <div class="fake face"></div>
-            </div>
-
-            <div class="itemInfo">
-
-                <div class="itemName">
-                    Yuck!
-                </div>
-
-                <div class="price">
-                    FREE
-                </div>
-
-                <button class="claim"
-                    onclick="buyItem('Yuck!',0)">
-                    CLAIM
-                </button>
-
-            </div>
-
-        </div>
-
-
-        <div class="item" data-name="Sparkle Time Valkyrie">
-
-            <div class="itemImage">
-                <div class="fake valk"></div>
-            </div>
-
-            <div class="itemInfo">
-
-                <div class="itemName">
-                    Sparkle Time Valkyrie
-                </div>
-
-                <div class="price">
-                    FREE
-                </div>
-
-                <button class="claim"
-                    onclick="buyItem('Sparkle Time Valkyrie',0)">
-                    CLAIM
-                </button>
-
-            </div>
-
-        </div>
-
-
-        <div class="item" data-name="Frozen Horns">
-
-            <div class="itemImage">
-                <div class="fake horns"></div>
-            </div>
-
-            <div class="itemInfo">
-
-                <div class="itemName">
-                    Frozen Horns
-                </div>
-
-                <div class="price">
-                    FREE
-                </div>
-
-                <button class="claim"
-                    onclick="buyItem('Frozen Horns',0)">
-                    CLAIM
-                </button>
-
-            </div>
-
-        </div>
-
-
-        <div class="item" data-name="Big Pencil">
-
-            <div class="itemImage">
-                <div class="fake pencil"></div>
-            </div>
-
-            <div class="itemInfo">
-
-                <div class="itemName">
-                    BIG Pencil
-                </div>
-
-                <div class="price">
-                    FREE
-                </div>
-
-                <button class="claim"
-                    onclick="buyItem('BIG Pencil',0)">
-                    CLAIM
-                </button>
-
-            </div>
-
-        </div>
-
-
-        <div class="item" data-name="MTB Shirt">
-
-            <div class="itemImage">
-                <div
-                    style="
-                    width:150px;
-                    height:180px;
-                    background:#111;
-                    display:flex;
-                    align-items:center;
-                    justify-content:center;
-                    color:white;
-                    font-size:35px;
-                    font-weight:bold;
-                    "
-                >
-                    MTB
-                </div>
-            </div>
-
-            <div class="itemInfo">
-
-                <div class="itemName">
-                    MTB Shirt
-                </div>
-
-                <div class="price">
-                    FREE
-                </div>
-
-                <button class="claim"
-                    onclick="buyItem('MTB Shirt',0)">
-                    CLAIM
-                </button>
-
-            </div>
-
-        </div>
-
-
-        <div class="item" data-name="MTB Pants">
-
-            <div class="itemImage">
-                <div
-                    style="
-                    width:120px;
-                    height:190px;
-                    background:#222;
-                    "
-                ></div>
-            </div>
-
-            <div class="itemInfo">
-
-                <div class="itemName">
-                    MTB Pants
-                </div>
-
-                <div class="price">
-                    FREE
-                </div>
-
-                <button class="claim"
-                    onclick="buyItem('MTB Pants',0)">
-                    CLAIM
-                </button>
-
-            </div>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     PROFILE
-========================= -->
-
-<section id="profilePage" class="profile">
-
-    <div class="profileTop">
-
-        <div class="profileAvatar"></div>
-
-        <div class="profileName">
-
-            mtb
-
-            <span class="verified"
-                title="Verified">
-                ✓
+            <span id="sideUsername">
+                Guest
             </span>
 
         </div>
 
-        <div class="username">
-            @mtb
-        </div>
-
-        <div class="ownerBadge">
-            MTB OWNER
-        </div>
-
     </div>
 
+    <div class="sideLinks">
 
-    <div class="profileStats">
+        <a href="#" onclick="showPage('home');closeMenu()">
+            🏠 Home
+        </a>
 
-        <div>
-            <div class="statTitle">
-                Friends
-            </div>
+        <a href="#" onclick="showPage('profile');closeMenu()">
+            👤 Profile
+        </a>
 
-            <div class="statNumber">
-                0
-            </div>
-        </div>
+        <a href="#" onclick="showPage('messages');closeMenu()">
+            💬 Messages
+        </a>
 
-        <div>
-            <div class="statTitle">
-                Followers
-            </div>
+        <a href="#" onclick="showPage('friends');closeMenu()">
+            👥 Friends
+        </a>
 
-            <div class="statNumber">
-                0
-            </div>
-        </div>
+        <a href="#" onclick="showPage('avatar');closeMenu()">
+            🧍 Avatar
+        </a>
 
-        <div>
-            <div class="statTitle">
-                Following
-            </div>
+        <a href="#" onclick="showPage('inventory');closeMenu()">
+            🎒 Inventory
+        </a>
 
-            <div class="statNumber">
-                0
-            </div>
-        </div>
+        <a href="#" onclick="showPage('trade');closeMenu()">
+            🔄 Trade
+        </a>
 
-        <div>
-            <div class="statTitle">
-                RAP
-            </div>
+        <a href="#" onclick="showPage('groups');closeMenu()">
+            👨‍👩‍👦 Groups
+        </a>
 
-            <div class="statNumber">
-                0
-            </div>
-        </div>
+        <a href="#" onclick="showPage('forums');closeMenu()">
+            💭 Forums
+        </a>
 
-    </div>
+        <a href="#" onclick="showPage('redeem');closeMenu()">
+            🎟️ Redeem
+        </a>
 
-
-    <div class="profileButtons">
-
-        <button>
-            Message
-        </button>
-
-        <button>
-            Add Friend
+        <button onclick="showPage('auth');closeMenu()">
+            🔐 Sign Up / Login
         </button>
 
     </div>
 
-</section>
+</div>
 
 
-<!-- =========================
-     AVATAR
-========================= -->
+<!-- ======================================================
+     ANNOUNCEMENT
+====================================================== -->
 
-<section id="avatarPage" class="avatarPage">
-
-    <h1 class="pageTitle">
-        Avatar
-    </h1>
-
-    <div class="avatarEditor">
-
-        <div class="avatarPreview">
-
-            <div class="rbxAvatar">
-
-                <div class="rbxHead"></div>
-
-                <div class="rbxBody"></div>
-
-                <div class="rbxArm left"></div>
-
-                <div class="rbxArm right"></div>
-
-                <div class="rbxLeg left"></div>
-
-                <div class="rbxLeg right"></div>
-
-            </div>
-
-            <div class="avatarGround"></div>
-
-        </div>
+<div class="announcement">
+    Welcome to MTB REVIVALS!
+    Everything is FREE right now!
+</div>
 
 
-        <div class="avatarItems">
+<!-- ======================================================
+     MAIN
+====================================================== -->
 
-            <h2>
-                Avatar Editor
-            </h2>
-
-            <div class="avatarItem">
-                Classic Shirt
-            </div>
-
-            <div class="avatarItem">
-                Classic Pants
-            </div>
-
-            <div class="avatarItem">
-                Classic Face
-            </div>
-
-            <div class="avatarItem">
-                Frozen Horns
-            </div>
-
-            <div class="avatarItem">
-                Sparkle Time Valkyrie
-            </div>
-
-            <div class="avatarItem">
-                Big Pencil
-            </div>
-
-            <div class="avatarItem">
-                Sparkle Time Fedora
-            </div>
-
-            <div class="avatarItem">
-                Korblox-style Leg
-            </div>
-
-            <div class="avatarItem">
-                Headless-style Head
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     INVENTORY
-========================= -->
-
-<section id="inventoryPage" style="display:none;">
-
-    <h1 class="pageTitle">
-        Inventory
-    </h1>
-
-    <p style="font-size:25px;color:#777;">
-        Your owned MTB REVIVALS items will appear here.
-    </p>
-
-    <div id="inventoryList"></div>
-
-</section>
-
-
-<!-- =========================
-     GAMES
-========================= -->
-
-<section id="gamesPage" style="display:none;">
-
-    <h1 class="pageTitle">
-        Games
-    </h1>
-
-    <div class="itemGrid">
-
-        <div class="item">
-
-            <div class="itemImage"
-                style="background:#ddd;">
-                <div style="font-size:80px;">
-                    🎮
-                </div>
-            </div>
-
-            <div class="itemInfo">
-
-                <div class="itemName">
-                    MTB Baseplate
-                </div>
-
-                <div style="font-size:21px;color:#777;">
-                    0 Playing
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="item">
-
-            <div class="itemImage"
-                style="background:#ddd;">
-                <div style="font-size:80px;">
-                    🏠
-                </div>
-            </div>
-
-            <div class="itemInfo">
-
-                <div class="itemName">
-                    MTB Hangout
-                </div>
-
-                <div style="font-size:21px;color:#777;">
-                    0 Playing
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
+<main id="main" class="page">
 </main>
 
 
-<!-- =========================
+<!-- ======================================================
+     CHAT
+====================================================== -->
+
+<div class="chat">
+    💬 Chat <span style="margin-left:7px;">(0)</span>
+</div>
+
+
+<!-- ======================================================
      MODAL
-========================= -->
+====================================================== -->
 
 <div id="modal" class="modal">
 
     <div class="modalBox">
 
-        <h2>
-            Confirm Purchase
+        <h2 id="modalTitle">
+            Confirm
         </h2>
 
-        <p id="modalText"></p>
+        <p id="modalText">
+            Are you sure?
+        </p>
 
         <div class="modalButtons">
 
@@ -1770,7 +1627,7 @@ html,body{
 
             <button
                 class="confirm"
-                onclick="confirmPurchase()">
+                onclick="confirmAction()">
                 CONFIRM
             </button>
 
@@ -1783,237 +1640,942 @@ html,body{
 
 <script>
 
-/* =========================
-   PLAYER DATA
-========================= */
+/* =========================================================
+   MTB REVIVALS DATA
+========================================================= */
 
-const SAVE_KEY="MTB_REVIVALS_PLAYER";
+const SAVE_KEY = "MTB_REVIVALS_V3";
 
-let player=JSON.parse(
-    localStorage.getItem(SAVE_KEY)
-) || {
+const FIRST10_KEY = "MTB_FIRST10_COUNT";
 
-    username:"Guest",
-
-    robux:100,
-
-    tix:0,
-
-    owned:[],
-
-    joined:false
-};
-
-let pending=null;
+let users =
+    JSON.parse(
+        localStorage.getItem(
+            "MTB_REVIVALS_USERS"
+        )
+    ) || [];
 
 
-/* =========================
-   SAVE
-========================= */
+let currentUser =
+    localStorage.getItem(
+        "MTB_CURRENT_USER"
+    ) || null;
 
-function save(){
+
+let player = null;
+
+let pendingAction = null;
+
+
+/* =========================================================
+   DEFAULT USER
+========================================================= */
+
+function defaultPlayer(username){
+
+    return {
+
+        username:username,
+
+        displayName:username,
+
+        robux:100,
+
+        tix:0,
+
+        owned:[],
+
+        equipped:{
+            shirt:null,
+            pants:null,
+            accessories:[],
+            gear:null
+        },
+
+        badges:[],
+
+        friends:0,
+
+        followers:0,
+
+        following:0,
+
+        rap:0
+
+    };
+}
+
+
+/* =========================================================
+   LOAD USER
+========================================================= */
+
+function loadUser(){
+
+    if(!currentUser){
+
+        player = null;
+
+        return;
+    }
+
+    let found =
+        users.find(
+            u => u.username.toLowerCase()
+                === currentUser.toLowerCase()
+        );
+
+    if(found){
+
+        player = found;
+
+    }else{
+
+        currentUser = null;
+
+        localStorage.removeItem(
+            "MTB_CURRENT_USER"
+        );
+
+        player = null;
+    }
+}
+
+
+/* =========================================================
+   SAVE USERS
+========================================================= */
+
+function saveUsers(){
 
     localStorage.setItem(
-        SAVE_KEY,
-        JSON.stringify(player)
+        "MTB_REVIVALS_USERS",
+        JSON.stringify(users)
     );
-
 }
 
 
-/* =========================
-   UPDATE HEADER
-========================= */
+/* =========================================================
+   SAVE PLAYER
+========================================================= */
 
-function updateUI(){
+function savePlayer(){
 
-    document.getElementById("robux").textContent=
-        player.robux;
+    if(!player){
+        return;
+    }
 
-    document.getElementById("tix").textContent=
-        player.tix;
+    const index =
+        users.findIndex(
+            u => u.username.toLowerCase()
+            === player.username.toLowerCase()
+        );
 
-    document.getElementById("sideUsername").textContent=
-        player.username;
+    if(index !== -1){
 
+        users[index] = player;
+
+    }else{
+
+        users.push(player);
+    }
+
+    saveUsers();
+
+    updateHeader();
 }
 
-updateUI();
+
+/* =========================================================
+   FIRST 10 SYSTEM
+========================================================= */
+
+function giveFirst10Badge(){
+
+    if(!player){
+        return;
+    }
+
+    if(
+        player.badges.includes(
+            "first10"
+        )
+    ){
+        return;
+    }
+
+    let count =
+        parseInt(
+            localStorage.getItem(
+                FIRST10_KEY
+            ) || "0"
+        );
+
+    if(count < 10){
+
+        count++;
+
+        localStorage.setItem(
+            FIRST10_KEY,
+            String(count)
+        );
+
+        player.badges.push(
+            "first10"
+        );
+
+        savePlayer();
+
+        alert(
+            "🎉 You are one of the first 10 MTB REVIVALS users!"
+        );
+    }
+}
 
 
-/* =========================
-   SIDEBAR
-========================= */
+/* =========================================================
+   MTB OWNER
+========================================================= */
 
-function toggleSidebar(){
+function applyOwnerBadge(){
+
+    if(!player){
+        return;
+    }
+
+    if(
+        player.username.toLowerCase()
+        === "mtb"
+    ){
+
+        if(
+            !player.badges.includes(
+                "owner"
+            )
+        ){
+
+            player.badges.push(
+                "owner"
+            );
+        }
+
+        savePlayer();
+    }
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+function updateHeader(){
+
+    const robux =
+        document.getElementById(
+            "robuxAmount"
+        );
+
+    const tix =
+        document.getElementById(
+            "tixAmount"
+        );
+
+    const side =
+        document.getElementById(
+            "sideUsername"
+        );
+
+    if(player){
+
+        robux.textContent =
+            player.robux;
+
+        tix.textContent =
+            player.tix;
+
+        side.textContent =
+            player.username;
+
+    }else{
+
+        robux.textContent =
+            "100";
+
+        tix.textContent =
+            "0";
+
+        side.textContent =
+            "Guest";
+    }
+}
+
+
+/* =========================================================
+   MENU
+========================================================= */
+
+function openMenu(){
 
     document
-        .getElementById("sidebar")
-        .classList.toggle("open");
+        .getElementById("sideMenu")
+        .classList.add("open");
 
+    document
+        .getElementById("overlay")
+        .classList.add("show");
 }
 
 
-/* =========================
-   PAGES
-========================= */
+function closeMenu(){
 
-function hidePages(){
+    document
+        .getElementById("sideMenu")
+        .classList.remove("open");
 
-    document.getElementById("catalogPage")
-        .style.display="none";
-
-    document.getElementById("profilePage")
+    document
+        .getElementById("overlay")
         .classList.remove("show");
-
-    document.getElementById("avatarPage")
-        .classList.remove("show");
-
-    document.getElementById("inventoryPage")
-        .style.display="none";
-
-    document.getElementById("gamesPage")
-        .style.display="none";
 }
 
+
+/* =========================================================
+   PAGE ROUTER
+========================================================= */
 
 function showPage(page){
 
-    hidePages();
+    const main =
+        document.getElementById(
+            "main"
+        );
 
-    if(page==="catalog" || page==="home"){
-
-        document.getElementById("catalogPage")
-            .style.display="block";
-
+    if(page==="home"){
+        renderHome();
     }
 
-    if(page==="avatar"){
-
-        document.getElementById("avatarPage")
-            .classList.add("show");
-
+    else if(page==="catalog"){
+        renderCatalog();
     }
 
-    if(page==="inventory"){
+    else if(page==="avatar"){
+        renderAvatar();
+    }
 
-        document.getElementById("inventoryPage")
-            .style.display="block";
-
+    else if(page==="inventory"){
         renderInventory();
-
     }
 
-    if(page==="games"){
-
-        document.getElementById("gamesPage")
-            .style.display="block";
-
+    else if(page==="profile"){
+        renderProfile();
     }
 
-    toggleSidebar();
+    else if(page==="auth"){
+        renderAuth();
+    }
 
+    else if(page==="create"){
+        renderCreate();
+    }
+
+    else if(page==="download"){
+        renderDownload();
+    }
+
+    else if(page==="messages"){
+        renderSimple(
+            "Messages",
+            "Your MTB REVIVALS messages will appear here."
+        );
+    }
+
+    else if(page==="friends"){
+        renderSimple(
+            "Friends",
+            "Your friends will appear here."
+        );
+    }
+
+    else if(page==="trade"){
+        renderSimple(
+            "Trade",
+            "Trading is coming soon."
+        );
+    }
+
+    else if(page==="groups"){
+        renderSimple(
+            "Groups",
+            "Groups are coming soon."
+        );
+    }
+
+    else if(page==="forums"){
+        renderSimple(
+            "Forums",
+            "Forums are coming soon."
+        );
+    }
+
+    else if(page==="redeem"){
+        renderSimple(
+            "Redeem",
+            "Redeem codes are coming soon."
+        );
+    }
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
 }
 
 
-function showProfile(){
+/* =========================================================
+   HOME
+========================================================= */
 
-    hidePages();
+function renderHome(){
 
-    document.getElementById("profilePage")
-        .classList.add("show");
+    const main =
+        document.getElementById(
+            "main"
+        );
 
+    main.innerHTML = `
+
+        <h1 class="pageTitle">
+            Home
+        </h1>
+
+        <section class="gameGrid">
+
+            <div class="game">
+
+                <div class="gameImage">
+                    MTB OBBY
+                </div>
+
+                <div class="gameInfo">
+
+                    <h2>
+                        MTB Obby
+                    </h2>
+
+                    <p>
+                        Classic MTB REVIVALS game.
+                    </p>
+
+                    <button
+                        class="playButton"
+                        onclick="playGame()">
+                        PLAY
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="game">
+
+                <div class="gameImage">
+                    MTB HANGOUT
+                </div>
+
+                <div class="gameInfo">
+
+                    <h2>
+                        MTB Hangout
+                    </h2>
+
+                    <p>
+                        Hang out with other players.
+                    </p>
+
+                    <button
+                        class="playButton"
+                        onclick="playGame()">
+                        PLAY
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="game">
+
+                <div class="gameImage">
+                    CLASSIC
+                </div>
+
+                <div class="gameInfo">
+
+                    <h2>
+                        Classic Roblox
+                    </h2>
+
+                    <p>
+                        Experience the old style.
+                    </p>
+
+                    <button
+                        class="playButton"
+                        onclick="playGame()">
+                        PLAY
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <div class="userSearch">
+
+            <h2>
+                Search Users
+            </h2>
+
+            <input
+                id="userSearchInput"
+                placeholder="Search username..."
+            >
+
+            <button
+                onclick="searchUsers()">
+                SEARCH
+            </button>
+
+            <div id="userResults"></div>
+
+        </div>
+
+    `;
 }
 
 
-/* =========================
-   SEARCH
-========================= */
+/* =========================================================
+   CATALOG ITEMS
+========================================================= */
 
-function searchItems(){
+const catalogItems = [
 
-    let a=document
-        .getElementById("topSearch")
-        .value
-        .toLowerCase();
+    {
+        id:"valk",
+        name:"Sparkle Time Valkyrie",
+        type:"accessory",
+        price:0,
+        visual:"fakeValk"
+    },
 
-    let b=document
-        .getElementById("catalogSearch")
-        .value
-        .toLowerCase();
+    {
+        id:"red-valk",
+        name:"Red Valkyrie",
+        type:"accessory",
+        price:0,
+        visual:"fakeRedValk"
+    },
 
-    let query=a || b;
+    {
+        id:"frozen-horns",
+        name:"Frozen Horns",
+        type:"accessory",
+        price:0,
+        visual:"fakeHorns"
+    },
 
-    document
-        .querySelectorAll(".item")
-        .forEach(item=>{
+    {
+        id:"fedora",
+        name:"Sparkle Time Fedora",
+        type:"accessory",
+        price:0,
+        visual:"fakeFedora"
+    },
 
-            let name=
-                item.dataset.name ||
-                item.innerText;
+    {
+        id:"ninja",
+        name:"Ninja Master",
+        type:"accessory",
+        price:0,
+        visual:"fakeHorns"
+    },
 
-            item.style.display=
-                name.toLowerCase()
+    {
+        id:"big-pencil",
+        name:"BIG Pencil",
+        type:"gear",
+        price:0,
+        visual:"fakePencil"
+    },
+
+    {
+        id:"mtb-shirt",
+        name:"MTB Shirt",
+        type:"shirt",
+        price:0,
+        visual:"fakeShirt"
+    },
+
+    {
+        id:"mtb-long",
+        name:"MTB VERY Long Shirt",
+        type:"shirt",
+        price:0,
+        visual:"fakeShirt"
+    },
+
+    {
+        id:"brown-hair",
+        name:"Classic Brown Hair",
+        type:"accessory",
+        price:22,
+        visual:"fakeHair"
+    },
+
+    {
+        id:"cheezburger",
+        name:"Cheezburger",
+        type:"gear",
+        price:22,
+        visual:"fakeBurger"
+    },
+
+    {
+        id:"classic-horns",
+        name:"Classic Dark Horns",
+        type:"accessory",
+        price:0,
+        visual:"fakeHorns"
+    },
+
+    {
+        id:"blue-fedora",
+        name:"Blue Fedora",
+        type:"accessory",
+        price:0,
+        visual:"fakeFedora"
+    }
+
+];
+
+
+/* =========================================================
+   CATALOG
+========================================================= */
+
+function renderCatalog(){
+
+    const main =
+        document.getElementById(
+            "main"
+        );
+
+    main.innerHTML = `
+
+        <h1 class="pageTitle">
+            Catalog
+        </h1>
+
+        <div class="catalogControls">
+
+            <div class="catalogSearch">
+
+                <input
+                    id="catalogSearchInput"
+                    placeholder="Search catalog..."
+                    oninput="filterCatalog()"
+                >
+
+                <button onclick="filterCatalog()">
+                    Search
+                </button>
+
+            </div>
+
+            <div class="categoryHeader">
+                Browse by Category
+            </div>
+
+            <div class="categoryList">
+
+                <div class="category"
+                     onclick="filterCategory('all')">
+                    Featured
+                </div>
+
+                <div class="category"
+                     onclick="filterCategory('accessory')">
+                    Accessories
+                </div>
+
+                <div class="category"
+                     onclick="filterCategory('shirt')">
+                    Clothing
+                </div>
+
+                <div class="category"
+                     onclick="filterCategory('gear')">
+                    Gear
+                </div>
+
+            </div>
+
+        </div>
+
+        <div
+            id="catalogGrid"
+            class="itemGrid">
+        </div>
+
+    `;
+
+    drawCatalog(
+        catalogItems
+    );
+}
+
+
+/* =========================================================
+   DRAW CATALOG
+========================================================= */
+
+function drawCatalog(items){
+
+    const grid =
+        document.getElementById(
+            "catalogGrid"
+        );
+
+    if(!grid){
+        return;
+    }
+
+    grid.innerHTML = "";
+
+    items.forEach(item=>{
+
+        const div =
+            document.createElement(
+                "div"
+            );
+
+        div.className =
+            "item";
+
+        div.dataset.name =
+            item.name.toLowerCase();
+
+        div.dataset.type =
+            item.type;
+
+        div.innerHTML = `
+
+            <div class="itemImage">
+
+                <div class="${item.visual}">
+                    ${
+                        item.visual === "fakeShirt"
+                        ? "MTB"
+                        : ""
+                    }
+                </div>
+
+            </div>
+
+            <div class="itemInfo">
+
+                <div class="itemName">
+                    ${escapeHTML(item.name)}
+                </div>
+
+                <div class="itemPrice">
+                    ${
+                        item.price === 0
+                        ? "FREE"
+                        : "R$ " + item.price
+                    }
+                </div>
+
+                <button
+                    class="claimButton"
+                    onclick="buyItem('${item.id}')">
+                    ${
+                        owned(item.id)
+                        ? "WEAR"
+                        : "CLAIM"
+                    }
+                </button>
+
+            </div>
+
+        `;
+
+        grid.appendChild(div);
+    });
+}
+
+
+/* =========================================================
+   FILTER
+========================================================= */
+
+function filterCatalog(){
+
+    const input =
+        document.getElementById(
+            "catalogSearchInput"
+        );
+
+    if(!input){
+        return;
+    }
+
+    const query =
+        input.value
+            .toLowerCase()
+            .trim();
+
+    drawCatalog(
+        catalogItems.filter(
+            item =>
+            item.name
+                .toLowerCase()
                 .includes(query)
-                ? ""
-                :"none";
-
-        });
-
+        )
+    );
 }
 
 
-/* =========================
-   BUY
-========================= */
+function filterCategory(type){
 
-function buyItem(name,price){
+    if(type==="all"){
 
-    if(player.owned.includes(name)){
-
-        alert(
-            "You already own this item."
+        drawCatalog(
+            catalogItems
         );
 
         return;
-
     }
 
-    pending={
-        name:name,
-        price:price
-    };
-
-    document.getElementById("modalText")
-        .innerHTML=
-
-        "<b>"+escapeHTML(name)+"</b><br><br>"+
-        (
-            price===0
-            ?"Price: FREE"
-            :"Price: R$ "+price
-        )+
-        "<br><br>Do you want to continue?";
-
-    document
-        .getElementById("modal")
-        .classList.add("show");
-
+    drawCatalog(
+        catalogItems.filter(
+            item =>
+            item.type === type
+        )
+    );
 }
 
 
-/* =========================
-   CONFIRM PURCHASE
-========================= */
+/* =========================================================
+   OWNED
+========================================================= */
 
-function confirmPurchase(){
+function owned(id){
 
-    if(!pending)
+    if(!player){
+        return false;
+    }
+
+    return player.owned.some(
+        item => item.id === id
+    );
+}
+
+
+/* =========================================================
+   BUY
+========================================================= */
+
+function buyItem(id){
+
+    if(!player){
+
+        showPage("auth");
+
+        alert(
+            "Please sign up or log in first."
+        );
+
         return;
+    }
+
+    const item =
+        catalogItems.find(
+            x => x.id === id
+        );
+
+    if(!item){
+        return;
+    }
+
+    if(owned(id)){
+
+        equipItem(item);
+
+        return;
+    }
+
+    pendingAction = {
+
+        action:"buy",
+
+        item:item
+
+    };
+
+    document.getElementById(
+        "modalTitle"
+    ).textContent =
+        "Confirm Order";
+
+    document.getElementById(
+        "modalText"
+    ).innerHTML = `
+
+        <strong>
+            ${escapeHTML(item.name)}
+        </strong>
+
+        <br><br>
+
+        Price:
+        <strong>
+            ${
+                item.price === 0
+                ? "FREE"
+                : "R$ " + item.price
+            }
+        </strong>
+
+        <br><br>
+
+        Do you want to claim this item?
+
+    `;
+
+    document.getElementById(
+        "modal"
+    ).classList.add("show");
+}
+
+
+/* =========================================================
+   CONFIRM
+========================================================= */
+
+function confirmAction(){
+
+    if(!pendingAction){
+        return;
+    }
+
+    const item =
+        pendingAction.item;
 
     if(
-        pending.price>0 &&
-        player.robux<pending.price
+        item.price > 0 &&
+        player.robux < item.price
     ){
 
         alert(
@@ -2023,258 +2585,1282 @@ function confirmPurchase(){
         closeModal();
 
         return;
-
     }
 
-    if(pending.price>0){
+    if(item.price > 0){
 
-        player.robux-=pending.price;
-
+        player.robux -=
+            item.price;
     }
 
-    player.owned.push(
-        pending.name
-    );
+    player.owned.push({
 
-    save();
+        id:item.id,
 
-    updateUI();
+        name:item.name,
+
+        type:item.type,
+
+        price:item.price
+
+    });
+
+    savePlayer();
+
+    equipItem(item);
 
     closeModal();
 
-    alert(
-        pending.name+
-        " was added to your inventory!"
-    );
-
+    if(
+        document.getElementById(
+            "catalogGrid"
+        )
+    ){
+        drawCatalog(
+            catalogItems
+        );
+    }
 }
 
 
-/* =========================
+/* =========================================================
    CLOSE MODAL
-========================= */
+========================================================= */
 
 function closeModal(){
 
-    pending=null;
+    pendingAction =
+        null;
 
     document
         .getElementById("modal")
         .classList.remove("show");
-
 }
 
 
-/* =========================
+/* =========================================================
+   EQUIP
+========================================================= */
+
+function equipItem(item){
+
+    if(!player){
+        return;
+    }
+
+    if(item.type==="accessory"){
+
+        const index =
+            player.equipped
+                .accessories
+                .indexOf(item.id);
+
+        if(index !== -1){
+
+            player.equipped
+                .accessories
+                .splice(
+                    index,
+                    1
+                );
+
+        }else{
+
+            if(
+                player.equipped
+                    .accessories
+                    .length >= 3
+            ){
+
+                alert(
+                    "You can only wear 3 accessories."
+                );
+
+                return;
+            }
+
+            player.equipped
+                .accessories
+                .push(item.id);
+        }
+
+    }
+
+    if(item.type==="shirt"){
+
+        player.equipped.shirt =
+            item.id;
+    }
+
+    if(item.type==="gear"){
+
+        player.equipped.gear =
+            item.id;
+    }
+
+    savePlayer();
+
+    renderAvatar();
+}
+
+
+/* =========================================================
+   AVATAR
+========================================================= */
+
+function renderAvatar(){
+
+    const main =
+        document.getElementById(
+            "main"
+        );
+
+    if(!player){
+
+        main.innerHTML = `
+
+            <div class="authBox">
+
+                <h1>
+                    Avatar
+                </h1>
+
+                <p>
+                    Sign up or log in to customize your avatar.
+                </p>
+
+                <button
+                    class="authButton"
+                    onclick="showPage('auth')">
+                    SIGN UP / LOGIN
+                </button>
+
+            </div>
+
+        `;
+
+        return;
+    }
+
+    main.innerHTML = `
+
+        <h1 class="pageTitle">
+            Avatar
+        </h1>
+
+        <div class="avatarPanel">
+
+            <h2>
+                Customize Your Avatar
+            </h2>
+
+            <div class="avatarStage">
+
+                <div
+                    id="avatar"
+                    class="
+                        avatar
+                        ${avatarClasses()}
+                    ">
+
+                    <div class="avatarAccessory horns"></div>
+
+                    <div class="avatarAccessory fedora"></div>
+
+                    <div class="avatarAccessory valk"></div>
+
+                    <div class="avatarHead"></div>
+
+                    <div
+                        class="avatarBody"
+                        style="${shirtStyle()}">
+                    </div>
+
+                    <div class="avatarArm leftArm"></div>
+
+                    <div class="avatarArm rightArm"></div>
+
+                    <div class="avatarLeg leftLeg"></div>
+
+                    <div class="avatarLeg rightLeg"></div>
+
+                    <div
+                        class="
+                            gear
+                            ${
+                                player.equipped.gear
+                                === "big-pencil"
+                                ? "pencilGear"
+                                : "swordGear"
+                            }
+                        ">
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="avatarControls">
+
+                <button
+                    onclick="showPage('catalog')">
+                    CATALOG
+                </button>
+
+                <button
+                    onclick="clearAccessories()">
+                    REMOVE ACCESSORIES
+                </button>
+
+                <button
+                    onclick="removeGear()">
+                    REMOVE GEAR
+                </button>
+
+            </div>
+
+            <div class="equipped">
+
+                <div class="equippedTitle">
+                    Equipped Items
+                </div>
+
+                <p>
+                    Shirt:
+                    ${
+                        player.equipped.shirt
+                        || "None"
+                    }
+                </p>
+
+                <p>
+                    Accessories:
+                    ${
+                        player.equipped
+                            .accessories
+                            .length
+                    }/3
+                </p>
+
+                <p>
+                    Gear:
+                    ${
+                        player.equipped.gear
+                        || "None"
+                    }
+                </p>
+
+                <div class="slots">
+
+                    <div class="slot">
+                        ${
+                            player.equipped
+                                .accessories[0]
+                            || "Accessory 1"
+                        }
+                    </div>
+
+                    <div class="slot">
+                        ${
+                            player.equipped
+                                .accessories[1]
+                            || "Accessory 2"
+                        }
+                    </div>
+
+                    <div class="slot">
+                        ${
+                            player.equipped
+                                .accessories[2]
+                            || "Accessory 3"
+                        }
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    `;
+}
+
+
+/* =========================================================
+   AVATAR CLASSES
+========================================================= */
+
+function avatarClasses(){
+
+    if(!player){
+        return "";
+    }
+
+    let classes = "";
+
+    if(
+        player.equipped
+            .accessories
+            .includes("frozen-horns") ||
+        player.equipped
+            .accessories
+            .includes("classic-horns")
+    ){
+        classes +=
+            " wearing-horns";
+    }
+
+    if(
+        player.equipped
+            .accessories
+            .includes("fedora") ||
+        player.equipped
+            .accessories
+            .includes("blue-fedora")
+    ){
+        classes +=
+            " wearing-fedora";
+    }
+
+    if(
+        player.equipped
+            .accessories
+            .includes("valk") ||
+        player.equipped
+            .accessories
+            .includes("red-valk")
+    ){
+        classes +=
+            " wearing-valk";
+    }
+
+    if(player.equipped.gear){
+        classes += " holding";
+    }
+
+    return classes;
+}
+
+
+/* =========================================================
+   SHIRT
+========================================================= */
+
+function shirtStyle(){
+
+    if(!player){
+        return "";
+    }
+
+    if(
+        player.equipped.shirt
+        === "mtb-long"
+    ){
+
+        return "background:#333;";
+    }
+
+    return "background:#111;";
+}
+
+
+/* =========================================================
+   REMOVE ACCESSORIES
+========================================================= */
+
+function clearAccessories(){
+
+    if(!player){
+        return;
+    }
+
+    player.equipped
+        .accessories = [];
+
+    savePlayer();
+
+    renderAvatar();
+}
+
+
+/* =========================================================
+   REMOVE GEAR
+========================================================= */
+
+function removeGear(){
+
+    if(!player){
+        return;
+    }
+
+    player.equipped.gear =
+        null;
+
+    savePlayer();
+
+    renderAvatar();
+}
+
+
+/* =========================================================
    INVENTORY
-========================= */
+========================================================= */
 
 function renderInventory(){
 
-    const box=
+    if(!player){
+
+        showPage("auth");
+
+        return;
+    }
+
+    const main =
         document.getElementById(
-            "inventoryList"
+            "main"
+        );
+
+    main.innerHTML = `
+
+        <h1 class="pageTitle">
+            Inventory
+        </h1>
+
+        <div
+            id="inventoryGrid"
+            class="inventoryGrid">
+        </div>
+
+    `;
+
+    const grid =
+        document.getElementById(
+            "inventoryGrid"
         );
 
     if(player.owned.length===0){
 
-        box.innerHTML=
-            "<p style='font-size:23px;'>"+
-            "Your inventory is empty."+
-            "</p>";
+        grid.innerHTML =
+            "<p>You don't own any items yet.</p>";
 
         return;
-
     }
 
-    box.innerHTML=
-        player.owned.map(
-            item=>`
+    player.owned.forEach(
+        ownedItem=>{
 
-            <div
-                style="
-                background:white;
-                border:1px solid #ccc;
-                padding:20px;
-                margin-bottom:10px;
-                font-size:24px;
-                font-weight:bold;
-                "
-            >
-                ${escapeHTML(item)}
-            </div>
+            const item =
+                catalogItems.find(
+                    x =>
+                    x.id === ownedItem.id
+                );
 
-            `
-        ).join("");
+            if(!item){
+                return;
+            }
 
+            const div =
+                document.createElement(
+                    "div"
+                );
+
+            div.className =
+                "inventoryItem";
+
+            div.innerHTML = `
+
+                <div class="inventoryImage">
+
+                    <div class="${item.visual}">
+                        ${
+                            item.visual === "fakeShirt"
+                            ? "MTB"
+                            : ""
+                        }
+                    </div>
+
+                </div>
+
+                <strong>
+                    ${escapeHTML(item.name)}
+                </strong>
+
+                <button
+                    onclick="equipItemById('${item.id}')">
+                    ${
+                        isEquipped(item.id)
+                        ? "UNEQUIP"
+                        : "WEAR"
+                    }
+                </button>
+
+            `;
+
+            grid.appendChild(div);
+
+        }
+    );
 }
 
 
-/* =========================
-   SIGN UP
-========================= */
+/* =========================================================
+   EQUIPPED CHECK
+========================================================= */
 
-function openSignup(){
+function isEquipped(id){
 
-    let username=
-        prompt(
-            "Choose your MTB REVIVALS username:"
+    if(!player){
+        return false;
+    }
+
+    return (
+        player.equipped.shirt === id ||
+        player.equipped.gear === id ||
+        player.equipped
+            .accessories
+            .includes(id)
+    );
+}
+
+
+/* =========================================================
+   EQUIP BY ID
+========================================================= */
+
+function equipItemById(id){
+
+    const item =
+        catalogItems.find(
+            x => x.id === id
         );
 
-    if(!username)
+    if(item){
+
+        equipItem(item);
+    }
+
+    renderInventory();
+}
+
+
+/* =========================================================
+   PROFILE
+========================================================= */
+
+function renderProfile(){
+
+    if(!player){
+
+        showPage("auth");
+
         return;
+    }
 
-    username=username.trim();
+    const main =
+        document.getElementById(
+            "main"
+        );
 
-    if(username.length<3){
+    let badges = "";
+
+    if(
+        player.badges
+            .includes("owner")
+    ){
+
+        badges += `
+            <span class="badge owner">
+                ✓ MTB OWNER
+            </span>
+        `;
+    }
+
+    if(
+        player.badges
+            .includes("first10")
+    ){
+
+        badges += `
+            <span class="badge first">
+                ★ FIRST 10
+            </span>
+        `;
+    }
+
+    main.innerHTML = `
+
+        <div class="profile">
+
+            <div class="profileTop">
+
+                <div class="profileAvatar">
+                    🧍
+                </div>
+
+                <div class="profileName">
+                    ${escapeHTML(
+                        player.displayName
+                    )}
+                </div>
+
+                <div class="username">
+                    @${escapeHTML(
+                        player.username
+                    )}
+                </div>
+
+                <div class="badges">
+                    ${badges}
+                </div>
+
+                <div class="stats">
+
+                    <div>
+                        <div class="statTitle">
+                            Friends
+                        </div>
+                        <div class="statNumber">
+                            ${player.friends}
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="statTitle">
+                            Followers
+                        </div>
+                        <div class="statNumber">
+                            ${player.followers}
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="statTitle">
+                            Following
+                        </div>
+                        <div class="statNumber">
+                            ${player.following}
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="statTitle">
+                            RAP
+                        </div>
+                        <div class="statNumber">
+                            ${player.rap}
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    `;
+}
+
+
+/* =========================================================
+   AUTH PAGE
+========================================================= */
+
+function renderAuth(){
+
+    const main =
+        document.getElementById(
+            "main"
+        );
+
+    main.innerHTML = `
+
+        <div class="authBox">
+
+            <h1>
+                Sign Up
+            </h1>
+
+            <input
+                id="signupUsername"
+                placeholder="Username"
+                maxlength="20"
+            >
+
+            <input
+                id="signupPassword"
+                type="password"
+                placeholder="Password"
+            >
+
+            <button
+                class="authButton"
+                onclick="signup()">
+                SIGN UP
+            </button>
+
+            <div
+                class="authSwitch"
+                onclick="renderLogin()">
+                Already have an account?
+                Log In
+            </div>
+
+        </div>
+
+    `;
+}
+
+
+/* =========================================================
+   LOGIN
+========================================================= */
+
+function renderLogin(){
+
+    const main =
+        document.getElementById(
+            "main"
+        );
+
+    main.innerHTML = `
+
+        <div class="authBox">
+
+            <h1>
+                Login
+            </h1>
+
+            <input
+                id="loginUsername"
+                placeholder="Username"
+            >
+
+            <input
+                id="loginPassword"
+                type="password"
+                placeholder="Password"
+            >
+
+            <button
+                class="authButton"
+                onclick="login()">
+                LOGIN
+            </button>
+
+            <div
+                class="authSwitch"
+                onclick="renderAuth()">
+                Need an account?
+                Sign Up
+            </div>
+
+        </div>
+
+    `;
+}
+
+
+/* =========================================================
+   SIGNUP
+========================================================= */
+
+function signup(){
+
+    const username =
+        document
+        .getElementById(
+            "signupUsername"
+        )
+        .value
+        .trim();
+
+    const password =
+        document
+        .getElementById(
+            "signupPassword"
+        )
+        .value;
+
+    if(
+        username.length < 3
+    ){
 
         alert(
             "Username must be at least 3 characters."
         );
 
         return;
-
     }
-
-    /*
-       MTB is the reserved owner account.
-       The verified badge belongs ONLY to mtb.
-    */
 
     if(
-        username.toLowerCase()==="mtb"
+        password.length < 6
     ){
 
-        player.username="mtb";
-
-        player.joined=true;
-
-        save();
-
-        updateUI();
-
         alert(
-            "Welcome, MTB Owner!"
+            "Password must be at least 6 characters."
         );
-
-        showProfile();
 
         return;
-
     }
 
-    player.username=username;
-
-    player.joined=true;
-
-    /*
-       First 10 users can be tracked locally
-       on this browser.
-    */
-
-    let joins=
-        Number(
-            localStorage.getItem(
-                "MTB_JOIN_COUNT"
-            ) || 0
-        );
-
-    if(joins<10){
-
-        joins++;
-
-        localStorage.setItem(
-            "MTB_JOIN_COUNT",
-            joins
-        );
+    if(
+        users.some(
+            u =>
+            u.username.toLowerCase()
+            === username.toLowerCase()
+        )
+    ){
 
         alert(
-            "You are one of the first 10 MTB REVIVALS users! 🏅"
+            "That username already exists."
         );
 
+        return;
     }
 
-    save();
 
-    updateUI();
+    const newUser =
+        defaultPlayer(
+            username
+        );
 
-    alert(
-        "Account created!"
+    /*
+       DEMO ONLY:
+       Passwords are stored locally.
+       Use a real backend for production.
+    */
+
+    newUser.password =
+        password;
+
+    users.push(
+        newUser
     );
 
-    showProfile();
+    player =
+        newUser;
 
+    currentUser =
+        username;
+
+    localStorage.setItem(
+        "MTB_CURRENT_USER",
+        username
+    );
+
+    saveUsers();
+
+    applyOwnerBadge();
+
+    giveFirst10Badge();
+
+    updateHeader();
+
+    alert(
+        "Welcome to MTB REVIVALS!"
+    );
+
+    showPage("profile");
 }
 
 
-/* =========================
-   HTML ESCAPE
-========================= */
+/* =========================================================
+   LOGIN
+========================================================= */
+
+function login(){
+
+    const username =
+        document
+        .getElementById(
+            "loginUsername"
+        )
+        .value
+        .trim();
+
+    const password =
+        document
+        .getElementById(
+            "loginPassword"
+        )
+        .value;
+
+    const found =
+        users.find(
+            u =>
+            u.username.toLowerCase()
+            === username.toLowerCase()
+            &&
+            u.password === password
+        );
+
+    if(!found){
+
+        alert(
+            "Incorrect username or password."
+        );
+
+        return;
+    }
+
+    player =
+        found;
+
+    currentUser =
+        found.username;
+
+    localStorage.setItem(
+        "MTB_CURRENT_USER",
+        found.username
+    );
+
+    applyOwnerBadge();
+
+    updateHeader();
+
+    showPage("profile");
+}
+
+
+/* =========================================================
+   LOGOUT
+========================================================= */
+
+function logout(){
+
+    localStorage.removeItem(
+        "MTB_CURRENT_USER"
+    );
+
+    currentUser =
+        null;
+
+    player =
+        null;
+
+    updateHeader();
+
+    showPage("home");
+}
+
+
+/* =========================================================
+   USER SEARCH
+========================================================= */
+
+function searchUsers(){
+
+    const input =
+        document.getElementById(
+            "userSearchInput"
+        );
+
+    const results =
+        document.getElementById(
+            "userResults"
+        );
+
+    if(!input || !results){
+        return;
+    }
+
+    const query =
+        input.value
+            .trim()
+            .toLowerCase();
+
+    if(!query){
+
+        results.innerHTML =
+            "<p>Enter a username.</p>";
+
+        return;
+    }
+
+    const matches =
+        users.filter(
+            u =>
+            u.username
+                .toLowerCase()
+                .includes(query)
+        );
+
+    if(matches.length===0){
+
+        results.innerHTML =
+            "<p>User not found.</p>";
+
+        return;
+    }
+
+    results.innerHTML =
+        matches.map(
+            u => `
+
+                <div
+                    style="
+                    margin-top:15px;
+                    padding:15px;
+                    background:white;
+                    border:1px solid #ccc;
+                    "
+                >
+
+                    <strong>
+                        ${escapeHTML(
+                            u.username
+                        )}
+                    </strong>
+
+                    <br>
+
+                    <span
+                        style="
+                        color:#777;
+                        "
+                    >
+                        ${u.followers}
+                        Followers
+                    </span>
+
+                    <br><br>
+
+                    ${
+                        u.badges.includes("owner")
+                        ?
+                        '<span class="badge owner">✓ MTB OWNER</span>'
+                        :
+                        ''
+                    }
+
+                    ${
+                        u.badges.includes("first10")
+                        ?
+                        '<span class="badge first">★ FIRST 10</span>'
+                        :
+                        ''
+                    }
+
+                </div>
+
+            `
+        ).join("");
+}
+
+
+/* =========================================================
+   GLOBAL SEARCH
+========================================================= */
+
+function globalSearch(){
+
+    const input =
+        document.getElementById(
+            "globalSearch"
+        );
+
+    if(!input){
+        return;
+    }
+
+    const query =
+        input.value
+            .toLowerCase()
+            .trim();
+
+    if(
+        query.includes("avatar")
+    ){
+
+        showPage("avatar");
+
+    }else if(
+        query.includes("catalog")
+    ){
+
+        showPage("catalog");
+
+    }else if(
+        query.includes("profile")
+    ){
+
+        showPage("profile");
+    }
+}
+
+
+/* =========================================================
+   PLAY GAME
+========================================================= */
+
+function playGame(){
+
+    if(!player){
+
+        alert(
+            "Sign up or log in to play."
+        );
+
+        showPage("auth");
+
+        return;
+    }
+
+    /*
+       Demo reward system.
+       Playing awards Tix.
+    */
+
+    const reward =
+        Math.floor(
+            Math.random()*11
+        ) + 5;
+
+    player.tix += reward;
+
+    savePlayer();
+
+    alert(
+        "You played the game!\n\n"
+        +
+        "+" + reward +
+        " Tix"
+    );
+}
+
+
+/* =========================================================
+   CREATE
+========================================================= */
+
+function renderCreate(){
+
+    const main =
+        document.getElementById(
+            "main"
+        );
+
+    main.innerHTML = `
+
+        <h1 class="pageTitle">
+            Create
+        </h1>
+
+        <div class="authBox">
+
+            <h2>
+                Create a Game
+            </h2>
+
+            <p>
+                Uploading real RBXL/RBXM games requires
+                a server/backend. This page is ready
+                for that system to be added.
+            </p>
+
+            <button
+                class="authButton"
+                onclick="alert('Game creator coming soon!')">
+                CREATE GAME
+            </button>
+
+        </div>
+
+    `;
+}
+
+
+/* =========================================================
+   DOWNLOAD
+========================================================= */
+
+function renderDownload(){
+
+    renderSimple(
+        "Download",
+        "The MTB REVIVALS client download will be available here."
+    );
+}
+
+
+/* =========================================================
+   SIMPLE PAGE
+========================================================= */
+
+function renderSimple(
+    title,
+    text
+){
+
+    const main =
+        document.getElementById(
+            "main"
+        );
+
+    main.innerHTML = `
+
+        <h1 class="pageTitle">
+            ${escapeHTML(title)}
+        </h1>
+
+        <div class="authBox">
+
+            <p>
+                ${escapeHTML(text)}
+            </p>
+
+        </div>
+
+    `;
+}
+
+
+/* =========================================================
+   ESCAPE HTML
+========================================================= */
 
 function escapeHTML(text){
 
     return String(text)
-        .replace(/&/g,"&amp;")
-        .replace(/</g,"&lt;")
-        .replace(/>/g,"&gt;")
-        .replace(/"/g,"&quot;")
-        .replace(/'/g,"&#039;");
 
+        .replace(
+            /&/g,
+            "&amp;"
+        )
+
+        .replace(
+            /</g,
+            "&lt;"
+        )
+
+        .replace(
+            />/g,
+            "&gt;"
+        )
+
+        .replace(
+            /"/g,
+            "&quot;"
+        )
+
+        .replace(
+            /'/g,
+            "&#039;"
+        );
 }
 
 
-/* =========================
-   EARN TIX
-========================= */
+/* =========================================================
+   START
+========================================================= */
 
-/*
-   Demo earning system.
+loadUser();
 
-   Your actual game server should award
-   Tix after a verified game session.
-*/
+applyOwnerBadge();
 
-setInterval(()=>{
+updateHeader();
 
-    if(player.joined){
-
-        player.tix++;
-
-        save();
-
-        updateUI();
-
-    }
-
-},60000);
-
-
-/* =========================
-   CLOSE SIDEBAR ON PAGE
-========================= */
-
-document.addEventListener(
-    "click",
-    function(e){
-
-        const sidebar=
-            document.getElementById("sidebar");
-
-        const hamburger=
-            document.querySelector(".hamburger");
-
-        if(
-            sidebar.classList.contains("open") &&
-            !sidebar.contains(e.target) &&
-            !hamburger.contains(e.target)
-        ){
-
-            sidebar.classList.remove("open");
-
-        }
-
-    }
-);
+renderHome();
 
 </script>
 
