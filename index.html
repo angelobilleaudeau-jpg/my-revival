@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +18,10 @@ body {
     color: #222;
 }
 
-/* TOP BAR */
+/* =========================
+   TOP BAR
+========================= */
+
 .topbar {
     height: 52px;
     background: #191919;
@@ -76,7 +80,6 @@ body {
     color: #ffd83d;
 }
 
-/* MOBILE */
 .menu-btn {
     display: none;
     background: #333;
@@ -86,7 +89,10 @@ body {
     border-radius: 3px;
 }
 
-/* PAGE */
+/* =========================
+   PAGE
+========================= */
+
 .page {
     max-width: 1180px;
     margin: auto;
@@ -114,7 +120,10 @@ body {
     padding: 22px;
 }
 
-/* HOME */
+/* =========================
+   HOME
+========================= */
+
 .hero {
     background: linear-gradient(135deg, #222, #414141);
     color: white;
@@ -161,7 +170,10 @@ body {
     margin: 28px 0 13px;
 }
 
-/* CARDS */
+/* =========================
+   CARDS
+========================= */
+
 .grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -198,7 +210,10 @@ body {
     font-size: 12px;
 }
 
-/* BUTTONS */
+/* =========================
+   BUTTONS
+========================= */
+
 .btn {
     border: 1px solid #aaa;
     background: #eee;
@@ -211,6 +226,11 @@ body {
 
 .btn:hover {
     background: #ddd;
+}
+
+.btn:disabled {
+    cursor: not-allowed;
+    opacity: .8;
 }
 
 .btn-blue {
@@ -231,7 +251,10 @@ body {
     color: white;
 }
 
-/* AVATAR */
+/* =========================
+   AVATAR
+========================= */
+
 .avatar-layout {
     display: grid;
     grid-template-columns: 340px 1fr;
@@ -331,7 +354,6 @@ body {
     right: 27px;
 }
 
-/* ACCESSORIES */
 .accessory {
     position: absolute;
     z-index: 5;
@@ -385,7 +407,132 @@ body {
     border-radius: 50%;
 }
 
-/* INVENTORY */
+/* =========================
+   ACCESSORY CATALOG
+========================= */
+
+.catalog-toolbar {
+    background: white;
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 18px;
+}
+
+.catalog-toolbar .search {
+    margin-bottom: 12px;
+}
+
+.search {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #bbb;
+    border-radius: 3px;
+}
+
+.categories {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.category {
+    border: 1px solid #bbb;
+    background: #eee;
+    padding: 9px 15px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.category:hover {
+    background: #ddd;
+}
+
+.category.active {
+    background: #00a2ff;
+    border-color: #008bd8;
+    color: white;
+}
+
+.accessory-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+}
+
+.accessory-card {
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    overflow: hidden;
+    transition: transform .12s, box-shadow .12s;
+}
+
+.accessory-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,.15);
+}
+
+.accessory-thumbnail {
+    height: 180px;
+    background: linear-gradient(135deg,#f7f7f7,#ddd);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #ccc;
+}
+
+.accessory-thumbnail div {
+    font-size: 72px;
+}
+
+.accessory-info {
+    padding: 13px;
+}
+
+.accessory-info h3 {
+    margin: 0 0 5px;
+    font-size: 15px;
+}
+
+.item-type {
+    color: #888;
+    font-size: 12px;
+    margin: 0 0 9px;
+}
+
+.item-price {
+    color: #a27b00;
+    font-weight: bold;
+    font-size: 13px;
+    margin: 0 0 12px;
+}
+
+.item-actions {
+    display: flex;
+    gap: 6px;
+}
+
+.item-actions .btn {
+    flex: 1;
+}
+
+.equipped-item {
+    background: #39a852 !important;
+    color: white !important;
+    border-color: #2f8e45 !important;
+}
+
+.owned-item {
+    background: #777 !important;
+    color: white !important;
+}
+
+/* =========================
+   INVENTORY
+========================= */
+
 .inventory-list {
     display: grid;
     grid-template-columns: repeat(4,1fr);
@@ -408,12 +555,10 @@ body {
     font-size: 45px;
 }
 
-.price {
-    color: #b28a00;
-    font-weight: bold;
-}
+/* =========================
+   PROFILE
+========================= */
 
-/* PROFILE */
 .profile {
     background: white;
     border: 1px solid #ccc;
@@ -444,16 +589,10 @@ body {
     margin-left: 5px;
 }
 
-/* SEARCH */
-.search {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #bbb;
-    border-radius: 3px;
-    margin-bottom: 15px;
-}
+/* =========================
+   MODAL
+========================= */
 
-/* MODAL */
 .modal-bg {
     position: fixed;
     inset: 0;
@@ -490,7 +629,10 @@ body {
     gap: 8px;
 }
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
+
 footer {
     background: #191919;
     color: #999;
@@ -499,8 +641,12 @@ footer {
     font-size: 12px;
 }
 
-/* RESPONSIVE */
-@media(max-width: 900px) {
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:900px) {
+
     .grid {
         grid-template-columns: repeat(2,1fr);
     }
@@ -509,12 +655,17 @@ footer {
         grid-template-columns: repeat(2,1fr);
     }
 
+    .accessory-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
     .avatar-layout {
         grid-template-columns: 1fr;
     }
 }
 
-@media(max-width: 700px) {
+@media(max-width:700px) {
+
     .topbar {
         height: 55px;
     }
@@ -549,7 +700,8 @@ footer {
     }
 
     .grid,
-    .inventory-list {
+    .inventory-list,
+    .accessory-grid {
         grid-template-columns: 1fr;
     }
 
@@ -560,11 +712,25 @@ footer {
     .hero h1 {
         font-size: 27px;
     }
+
+    .categories {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: 5px;
+    }
+
+    .category {
+        white-space: nowrap;
+    }
 }
 </style>
 </head>
 
 <body>
+
+<!-- =========================
+     NAVIGATION
+========================= -->
 
 <header class="topbar">
 
@@ -575,6 +741,7 @@ footer {
     </div>
 
     <nav class="nav" id="nav">
+
         <button onclick="showPage('home')">Home</button>
         <button onclick="showPage('account')">Account</button>
         <button onclick="showPage('avatar')">Avatar</button>
@@ -583,538 +750,1415 @@ footer {
         <button onclick="showPage('inventory')">Inventory</button>
         <button onclick="showPage('games')">Games</button>
         <button onclick="showPage('news')">News</button>
+
     </nav>
 
     <div class="account-top">
-        <span id="topUsername">mtb</span>
-        <span class="coins">🪙 <span id="coinCount">1000</span></span>
+        <span>mtb</span>
+        <span class="coins">
+            🪙 <span id="coinCount">1000</span>
+        </span>
     </div>
+
 </header>
 
 
 <main class="page">
 
-<!-- HOME -->
+
+<!-- =========================
+     HOME
+========================= -->
+
 <section id="home" class="page-section">
 
-    <div class="content">
+<div class="content">
 
-        <div class="hero">
-            <h1>Welcome to MTB REVIVALS</h1>
+    <div class="hero">
+
+        <h1>Welcome to MTB REVIVALS</h1>
+
+        <p>
+            Welcome to MTB REVIVALS — a classic
+            Roblox-inspired revival project.
+            Customize your avatar, collect items,
+            explore games and build your profile.
+        </p>
+
+        <button onclick="showPage('avatar')">
+            Customize Avatar
+        </button>
+
+    </div>
+
+    <h2 class="section-title">
+        Featured Items
+    </h2>
+
+    <div class="grid">
+
+        <div class="card">
+
+            <div class="card-image">🎩</div>
+
+            <div class="card-body">
+
+                <h3>Classic Fedora</h3>
+
+                <p>
+                    A classic-style hat.
+                </p>
+
+                <button
+                    class="btn btn-blue"
+                    onclick="buyAccessory(
+                        'Classic Fedora',
+                        250,
+                        '🎩',
+                        'hats'
+                    )">
+                    250 🪙
+                </button>
+
+            </div>
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-image">❄️</div>
+
+            <div class="card-body">
+
+                <h3>Frozen Horns</h3>
+
+                <p>
+                    Icy crystalline horns.
+                </p>
+
+                <button
+                    class="btn btn-blue"
+                    onclick="buyAccessory(
+                        'Frozen Horns',
+                        500,
+                        '❄️',
+                        'hats'
+                    )">
+                    500 🪙
+                </button>
+
+            </div>
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-image">👕</div>
+
+            <div class="card-body">
+
+                <h3>MTB Shirt</h3>
+
+                <p>
+                    Classic MTB shirt.
+                </p>
+
+                <button
+                    class="btn btn-blue"
+                    onclick="buyItem(
+                        'MTB Shirt',
+                        100,
+                        '👕',
+                        'shirt'
+                    )">
+                    100 🪙
+                </button>
+
+            </div>
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-image">👖</div>
+
+            <div class="card-body">
+
+                <h3>Classic Pants</h3>
+
+                <p>
+                    Classic avatar pants.
+                </p>
+
+                <button
+                    class="btn btn-blue"
+                    onclick="buyItem(
+                        'Classic Pants',
+                        100,
+                        '👖',
+                        'pants'
+                    )">
+                    100 🪙
+                </button>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     ACCOUNT
+========================= -->
+
+<section id="account"
+         class="page-section"
+         style="display:none">
+
+<div class="page-header">
+
+    <h1>Account</h1>
+
+    <p>
+        Your MTB REVIVALS profile.
+    </p>
+
+</div>
+
+<div class="content">
+
+    <div class="profile">
+
+        <div class="profile-avatar">
+            🧍
+        </div>
+
+        <div>
+
+            <h2>
+                mtb
+                <span class="badge">
+                    ✓ VERIFIED
+                </span>
+            </h2>
+
             <p>
-                A classic Roblox-inspired revival experience.
-                Customize your avatar, collect items, play games,
-                and build your own profile.
+                MTB REVIVALS developer
             </p>
 
-            <button onclick="showPage('avatar')">
-                Customize Avatar
+            <p>
+                Coins:
+                <strong id="accountCoins">
+                    1000
+                </strong>
+                🪙
+            </p>
+
+            <button
+                class="btn btn-blue"
+                onclick="showPage('avatar')">
+                Edit Avatar
             </button>
-        </div>
-
-        <h2 class="section-title">Featured Items</h2>
-
-        <div class="grid">
-
-            <div class="card">
-                <div class="card-image">🎩</div>
-                <div class="card-body">
-                    <h3>Classic Fedora</h3>
-                    <p>Classic head accessory.</p>
-                    <button class="btn btn-blue"
-                        onclick="buyItem('Classic Fedora',250,'🎩','accessory')">
-                        250 🪙
-                    </button>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-image">❄️</div>
-                <div class="card-body">
-                    <h3>Frozen Horns</h3>
-                    <p>Icy crystalline horns.</p>
-                    <button class="btn btn-blue"
-                        onclick="buyItem('Frozen Horns',500,'❄️','accessory')">
-                        500 🪙
-                    </button>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-image">👕</div>
-                <div class="card-body">
-                    <h3>MTB Shirt</h3>
-                    <p>Official MTB-style shirt.</p>
-                    <button class="btn btn-blue"
-                        onclick="buyItem('MTB Shirt',100,'👕','shirt')">
-                        100 🪙
-                    </button>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-image">👖</div>
-                <div class="card-body">
-                    <h3>Classic Pants</h3>
-                    <p>Classic avatar pants.</p>
-                    <button class="btn btn-blue"
-                        onclick="buyItem('Classic Pants',100,'👖','pants')">
-                        100 🪙
-                    </button>
-                </div>
-            </div>
 
         </div>
 
     </div>
+
+</div>
 
 </section>
 
 
-<!-- ACCOUNT -->
-<section id="account" class="page-section" style="display:none">
+<!-- =========================
+     AVATAR
+========================= -->
 
-    <div class="page-header">
-        <h1>Account</h1>
-        <p>Your MTB REVIVALS profile.</p>
-    </div>
+<section id="avatar"
+         class="page-section"
+         style="display:none">
 
-    <div class="content">
+<div class="page-header">
 
-        <div class="profile">
+    <h1>Avatar</h1>
 
-            <div class="profile-avatar">
-                🧍
-            </div>
+    <p>
+        Customize your character.
+    </p>
 
-            <div>
-                <h2>
-                    mtb
-                    <span class="badge">✓ VERIFIED</span>
-                </h2>
+</div>
 
-                <p>MTB REVIVALS developer</p>
+<div class="content">
 
-                <p>
-                    Coins:
-                    <strong id="accountCoins">1000</strong> 🪙
-                </p>
-
-                <button class="btn btn-blue"
-                    onclick="showPage('avatar')">
-                    Edit Avatar
-                </button>
-            </div>
-
-        </div>
-
-    </div>
-</section>
+<div class="avatar-layout">
 
 
-<!-- AVATAR -->
-<section id="avatar" class="page-section" style="display:none">
+    <!-- PREVIEW -->
 
-    <div class="page-header">
-        <h1>Avatar</h1>
-        <p>Customize your character.</p>
-    </div>
+    <div class="avatar-preview">
 
-    <div class="content">
+        <div class="avatar">
 
-        <div class="avatar-layout">
+            <div id="avatarHorns"></div>
 
-            <div class="avatar-preview">
+            <div class="head">
 
-                <div class="avatar">
-
-                    <div id="avatarHorns"></div>
-
-                    <div class="head">
-                        <div class="face" id="avatarFace">🙂</div>
-                    </div>
-
-                    <div class="torso" id="avatarTorso"></div>
-
-                    <div class="arm left"></div>
-                    <div class="arm right"></div>
-
-                    <div class="leg left"></div>
-                    <div class="leg right"></div>
-
+                <div
+                    class="face"
+                    id="avatarFace">
+                    🙂
                 </div>
 
             </div>
 
-            <div>
-
-                <h2>Avatar Editor</h2>
-
-                <p>
-                    Accessories equipped:
-                    <strong id="equippedCount">0</strong>/3
-                </p>
-
-                <hr>
-
-                <h3>Accessories</h3>
-
-                <button class="btn" onclick="equipAccessory('fedora')">
-                    🎩 Fedora
-                </button>
-
-                <button class="btn" onclick="equipAccessory('horns')">
-                    ❄️ Frozen Horns
-                </button>
-
-                <button class="btn" onclick="removeAccessories()">
-                    Remove Accessories
-                </button>
-
-                <h3>Face</h3>
-
-                <button class="btn" onclick="setFace('🙂')">🙂</button>
-                <button class="btn" onclick="setFace('😎')">😎</button>
-                <button class="btn" onclick="setFace('😀')">😀</button>
-
-                <h3>Body Color</h3>
-
-                <button class="btn" onclick="setBody('#f2bd91')">
-                    Classic
-                </button>
-
-                <button class="btn" onclick="setBody('#d99a6c')">
-                    Tan
-                </button>
-
-                <br><br>
-
-                <button class="btn btn-green"
-                    onclick="saveAvatar()">
-                    Save Avatar
-                </button>
-
+            <div
+                class="torso"
+                id="avatarTorso">
             </div>
+
+            <div class="arm left"></div>
+            <div class="arm right"></div>
+
+            <div class="leg left"></div>
+            <div class="leg right"></div>
 
         </div>
 
     </div>
+
+
+    <!-- EDITOR -->
+
+    <div>
+
+        <h2>
+            Avatar Editor
+        </h2>
+
+        <p>
+            Accessories equipped:
+            <strong id="equippedCount">
+                0
+            </strong>/3
+        </p>
+
+        <hr>
+
+        <h3>
+            Accessories
+        </h3>
+
+        <button
+            class="btn"
+            onclick="equipAccessory('fedora')">
+            🎩 Fedora
+        </button>
+
+        <button
+            class="btn"
+            onclick="equipAccessory('horns')">
+            ❄️ Frozen Horns
+        </button>
+
+        <button
+            class="btn"
+            onclick="removeAccessories()">
+            Remove All
+        </button>
+
+
+        <h3>
+            Face
+        </h3>
+
+        <button
+            class="btn"
+            onclick="setFace('🙂')">
+            🙂
+        </button>
+
+        <button
+            class="btn"
+            onclick="setFace('😎')">
+            😎
+        </button>
+
+        <button
+            class="btn"
+            onclick="setFace('😀')">
+            😀
+        </button>
+
+
+        <h3>
+            Body Color
+        </h3>
+
+        <button
+            class="btn"
+            onclick="setBody('#f2bd91')">
+            Classic
+        </button>
+
+        <button
+            class="btn"
+            onclick="setBody('#d99a6c')">
+            Tan
+        </button>
+
+        <br><br>
+
+        <button
+            class="btn btn-green"
+            onclick="saveAvatar()">
+            Save Avatar
+        </button>
+
+    </div>
+
+</div>
+
+</div>
+
 </section>
+
+
+<!-- =========================
+     ACCESSORIES
+========================= -->
+
+<section id="accessories"
+         class="page-section"
+         style="display:none">
+
+<div class="page-header">
+
+    <h1>Accessories</h1>
+
+    <p>
+        Browse and customize your avatar
+        with accessories.
+    </p>
+
+</div>
+
+<div class="content">
+
+
+<!-- SEARCH -->
+
+<div class="catalog-toolbar">
+
+    <input
+        id="accessorySearch"
+        class="search"
+        type="text"
+        placeholder="Search accessories..."
+        oninput="filterAccessories()"
+    >
+
+
+    <!-- CATEGORIES -->
+
+    <div class="categories">
+
+        <button
+            class="category active"
+            onclick="setAccessoryCategory(
+                'all',
+                this
+            )">
+            All
+        </button>
+
+        <button
+            class="category"
+            onclick="setAccessoryCategory(
+                'hats',
+                this
+            )">
+            Hats
+        </button>
+
+        <button
+            class="category"
+            onclick="setAccessoryCategory(
+                'face',
+                this
+            )">
+            Face
+        </button>
+
+        <button
+            class="category"
+            onclick="setAccessoryCategory(
+                'shoulder',
+                this
+            )">
+            Shoulder
+        </button>
+
+        <button
+            class="category"
+            onclick="setAccessoryCategory(
+                'back',
+                this
+            )">
+            Back
+        </button>
+
+        <button
+            class="category"
+            onclick="setAccessoryCategory(
+                'neck',
+                this
+            )">
+            Neck
+        </button>
+
+    </div>
+
+</div>
 
 
 <!-- ACCESSORIES -->
-<section id="accessories" class="page-section" style="display:none">
 
-    <div class="page-header">
-        <h1>Accessories</h1>
-        <p>Browse accessories.</p>
-    </div>
-
-    <div class="content">
-
-        <input
-            class="search"
-            placeholder="Search accessories..."
-            oninput="searchItems(this.value,'accessoryGrid')"
-        >
-
-        <div class="grid" id="accessoryGrid">
-
-            <div class="card searchable">
-                <div class="card-image">🎩</div>
-                <div class="card-body">
-                    <h3>Classic Fedora</h3>
-                    <p>Classic hat.</p>
-                    <button class="btn btn-blue"
-                    onclick="buyItem('Classic Fedora',250,'🎩','accessory')">
-                    Buy - 250 🪙
-                    </button>
-                </div>
-            </div>
-
-            <div class="card searchable">
-                <div class="card-image">❄️</div>
-                <div class="card-body">
-                    <h3>Frozen Horns</h3>
-                    <p>Frozen crystalline horns.</p>
-                    <button class="btn btn-blue"
-                    onclick="buyItem('Frozen Horns',500,'❄️','accessory')">
-                    Buy - 500 🪙
-                    </button>
-                </div>
-            </div>
-
-            <div class="card searchable">
-                <div class="card-image">🕶️</div>
-                <div class="card-body">
-                    <h3>Classic Shades</h3>
-                    <p>Old-school sunglasses.</p>
-                    <button class="btn btn-blue"
-                    onclick="buyItem('Classic Shades',150,'🕶️','accessory')">
-                    Buy - 150 🪙
-                    </button>
-                </div>
-            </div>
-
-            <div class="card searchable">
-                <div class="card-image">⭐</div>
-                <div class="card-body">
-                    <h3>Star Accessory</h3>
-                    <p>Shiny classic accessory.</p>
-                    <button class="btn btn-blue"
-                    onclick="buyItem('Star Accessory',300,'⭐','accessory')">
-                    Buy - 300 🪙
-                    </button>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
+<div
+    class="accessory-grid"
+    id="accessoryGrid">
 
 
-<!-- CLOTHES -->
-<section id="clothes" class="page-section" style="display:none">
+    <!-- FEDORA -->
 
-    <div class="page-header">
-        <h1>Clothes</h1>
-        <p>Classic MTB clothing.</p>
-    </div>
+    <div
+        class="accessory-card"
+        data-name="Classic Fedora"
+        data-category="hats">
 
-    <div class="content">
-
-        <div class="grid">
-
-            <div class="card">
-                <div class="card-image">👕</div>
-                <div class="card-body">
-                    <h3>MTB Shirt</h3>
-                    <p>MTB classic shirt.</p>
-                    <button class="btn btn-blue"
-                    onclick="buyItem('MTB Shirt',100,'👕','shirt')">
-                    Buy - 100 🪙
-                    </button>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-image">👕</div>
-                <div class="card-body">
-                    <h3>Black Classic Shirt</h3>
-                    <p>Simple black shirt.</p>
-                    <button class="btn btn-blue"
-                    onclick="buyItem('Black Classic Shirt',100,'👕','shirt')">
-                    Buy - 100 🪙
-                    </button>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-image">👖</div>
-                <div class="card-body">
-                    <h3>Classic Pants</h3>
-                    <p>Classic avatar pants.</p>
-                    <button class="btn btn-blue"
-                    onclick="buyItem('Classic Pants',100,'👖','pants')">
-                    Buy - 100 🪙
-                    </button>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-image">👖</div>
-                <div class="card-body">
-                    <h3>MTB Pants</h3>
-                    <p>MTB classic pants.</p>
-                    <button class="btn btn-blue"
-                    onclick="buyItem('MTB Pants',100,'👖','pants')">
-                    Buy - 100 🪙
-                    </button>
-                </div>
-            </div>
-
+        <div class="accessory-thumbnail">
+            <div>🎩</div>
         </div>
 
-    </div>
-</section>
+        <div class="accessory-info">
 
+            <h3>
+                Classic Fedora
+            </h3>
 
-<!-- INVENTORY -->
-<section id="inventory" class="page-section" style="display:none">
-
-    <div class="page-header">
-        <h1>Inventory</h1>
-        <p>Items you own.</p>
-    </div>
-
-    <div class="content">
-
-        <div class="inventory-list" id="inventoryList"></div>
-
-    </div>
-</section>
-
-
-<!-- GAMES -->
-<section id="games" class="page-section" style="display:none">
-
-    <div class="page-header">
-        <h1>Games</h1>
-        <p>Play games on MTB REVIVALS.</p>
-    </div>
-
-    <div class="content">
-
-        <div class="grid">
-
-            <div class="card">
-                <div class="card-image">🏙️</div>
-                <div class="card-body">
-                    <h3>MTB City</h3>
-                    <p>Explore the classic city.</p>
-                    <button class="btn btn-green"
-                    onclick="playGame('MTB City')">
-                    Play
-                    </button>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-image">🏠</div>
-                <div class="card-body">
-                    <h3>Classic House</h3>
-                    <p>Hang out with friends.</p>
-                    <button class="btn btn-green"
-                    onclick="playGame('Classic House')">
-                    Play
-                    </button>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-image">⚔️</div>
-                <div class="card-body">
-                    <h3>MTB Battle</h3>
-                    <p>Classic battle arena.</p>
-                    <button class="btn btn-green"
-                    onclick="playGame('MTB Battle')">
-                    Play
-                    </button>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-image">🌲</div>
-                <div class="card-body">
-                    <h3>MTB Woods</h3>
-                    <p>Explore the wilderness.</p>
-                    <button class="btn btn-green"
-                    onclick="playGame('MTB Woods')">
-                    Play
-                    </button>
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-</section>
-
-
-<!-- NEWS -->
-<section id="news" class="page-section" style="display:none">
-
-    <div class="page-header">
-        <h1>News</h1>
-        <p>MTB REVIVALS updates.</p>
-    </div>
-
-    <div class="content">
-
-        <div class="card" style="padding:20px;margin-bottom:12px">
-            <h3>Welcome to MTB REVIVALS!</h3>
-            <p>
-                The new revival website is officially being built.
-                More games, items, avatars, and features are coming.
+            <p class="item-type">
+                Hats
             </p>
-        </div>
 
-        <div class="card" style="padding:20px">
-            <h3>Avatar Editor</h3>
-            <p>
-                The first version of the avatar editor is now available.
+            <p class="item-price">
+                🪙 250
             </p>
+
+            <div class="item-actions">
+
+                <button
+                    class="btn btn-blue buy-accessory"
+                    onclick="buyAccessory(
+                        'Classic Fedora',
+                        250,
+                        '🎩',
+                        'hats'
+                    )">
+                    Buy
+                </button>
+
+                <button
+                    class="btn equip-accessory-btn"
+                    onclick="catalogEquip(
+                        'Classic Fedora',
+                        'fedora'
+                    )">
+                    Equip
+                </button>
+
+            </div>
+
         </div>
 
     </div>
+
+
+    <!-- FROZEN HORNS -->
+
+    <div
+        class="accessory-card"
+        data-name="Frozen Horns"
+        data-category="hats">
+
+        <div class="accessory-thumbnail">
+            <div>❄️</div>
+        </div>
+
+        <div class="accessory-info">
+
+            <h3>
+                Frozen Horns
+            </h3>
+
+            <p class="item-type">
+                Hats
+            </p>
+
+            <p class="item-price">
+                🪙 500
+            </p>
+
+            <div class="item-actions">
+
+                <button
+                    class="btn btn-blue buy-accessory"
+                    onclick="buyAccessory(
+                        'Frozen Horns',
+                        500,
+                        '❄️',
+                        'hats'
+                    )">
+                    Buy
+                </button>
+
+                <button
+                    class="btn equip-accessory-btn"
+                    onclick="catalogEquip(
+                        'Frozen Horns',
+                        'horns'
+                    )">
+                    Equip
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- SHADES -->
+
+    <div
+        class="accessory-card"
+        data-name="Classic Shades"
+        data-category="face">
+
+        <div class="accessory-thumbnail">
+            <div>🕶️</div>
+        </div>
+
+        <div class="accessory-info">
+
+            <h3>
+                Classic Shades
+            </h3>
+
+            <p class="item-type">
+                Face
+            </p>
+
+            <p class="item-price">
+                🪙 150
+            </p>
+
+            <div class="item-actions">
+
+                <button
+                    class="btn btn-blue buy-accessory"
+                    onclick="buyAccessory(
+                        'Classic Shades',
+                        150,
+                        '🕶️',
+                        'face'
+                    )">
+                    Buy
+                </button>
+
+                <button
+                    class="btn equip-accessory-btn"
+                    onclick="catalogEquip(
+                        'Classic Shades',
+                        'shades'
+                    )">
+                    Equip
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- STAR -->
+
+    <div
+        class="accessory-card"
+        data-name="Star Accessory"
+        data-category="shoulder">
+
+        <div class="accessory-thumbnail">
+            <div>⭐</div>
+        </div>
+
+        <div class="accessory-info">
+
+            <h3>
+                Star Accessory
+            </h3>
+
+            <p class="item-type">
+                Shoulder
+            </p>
+
+            <p class="item-price">
+                🪙 300
+            </p>
+
+            <div class="item-actions">
+
+                <button
+                    class="btn btn-blue buy-accessory"
+                    onclick="buyAccessory(
+                        'Star Accessory',
+                        300,
+                        '⭐',
+                        'shoulder'
+                    )">
+                    Buy
+                </button>
+
+                <button
+                    class="btn equip-accessory-btn"
+                    onclick="catalogEquip(
+                        'Star Accessory',
+                        'star'
+                    )">
+                    Equip
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- BLUE CAP -->
+
+    <div
+        class="accessory-card"
+        data-name="Blue Cap"
+        data-category="hats">
+
+        <div class="accessory-thumbnail">
+            <div>🧢</div>
+        </div>
+
+        <div class="accessory-info">
+
+            <h3>
+                Blue Cap
+            </h3>
+
+            <p class="item-type">
+                Hats
+            </p>
+
+            <p class="item-price">
+                🪙 200
+            </p>
+
+            <div class="item-actions">
+
+                <button
+                    class="btn btn-blue buy-accessory"
+                    onclick="buyAccessory(
+                        'Blue Cap',
+                        200,
+                        '🧢',
+                        'hats'
+                    )">
+                    Buy
+                </button>
+
+                <button
+                    class="btn equip-accessory-btn"
+                    onclick="catalogEquip(
+                        'Blue Cap',
+                        'cap'
+                    )">
+                    Equip
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- GOLD CHAIN -->
+
+    <div
+        class="accessory-card"
+        data-name="Gold Chain"
+        data-category="neck">
+
+        <div class="accessory-thumbnail">
+            <div>📿</div>
+        </div>
+
+        <div class="accessory-info">
+
+            <h3>
+                Gold Chain
+            </h3>
+
+            <p class="item-type">
+                Neck
+            </p>
+
+            <p class="item-price">
+                🪙 350
+            </p>
+
+            <div class="item-actions">
+
+                <button
+                    class="btn btn-blue buy-accessory"
+                    onclick="buyAccessory(
+                        'Gold Chain',
+                        350,
+                        '📿',
+                        'neck'
+                    )">
+                    Buy
+                </button>
+
+                <button
+                    class="btn equip-accessory-btn"
+                    onclick="catalogEquip(
+                        'Gold Chain',
+                        'chain'
+                    )">
+                    Equip
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- WINGS -->
+
+    <div
+        class="accessory-card"
+        data-name="Classic Wings"
+        data-category="back">
+
+        <div class="accessory-thumbnail">
+            <div>🪽</div>
+        </div>
+
+        <div class="accessory-info">
+
+            <h3>
+                Classic Wings
+            </h3>
+
+            <p class="item-type">
+                Back
+            </p>
+
+            <p class="item-price">
+                🪙 450
+            </p>
+
+            <div class="item-actions">
+
+                <button
+                    class="btn btn-blue buy-accessory"
+                    onclick="buyAccessory(
+                        'Classic Wings',
+                        450,
+                        '🪽',
+                        'back'
+                    )">
+                    Buy
+                </button>
+
+                <button
+                    class="btn equip-accessory-btn"
+                    onclick="catalogEquip(
+                        'Classic Wings',
+                        'wings'
+                    )">
+                    Equip
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- HEADPHONES -->
+
+    <div
+        class="accessory-card"
+        data-name="Classic Headphones"
+        data-category="hats">
+
+        <div class="accessory-thumbnail">
+            <div>🎧</div>
+        </div>
+
+        <div class="accessory-info">
+
+            <h3>
+                Classic Headphones
+            </h3>
+
+            <p class="item-type">
+                Hats
+            </p>
+
+            <p class="item-price">
+                🪙 275
+            </p>
+
+            <div class="item-actions">
+
+                <button
+                    class="btn btn-blue buy-accessory"
+                    onclick="buyAccessory(
+                        'Classic Headphones',
+                        275,
+                        '🎧',
+                        'hats'
+                    )">
+                    Buy
+                </button>
+
+                <button
+                    class="btn equip-accessory-btn"
+                    onclick="catalogEquip(
+                        'Classic Headphones',
+                        'headphones'
+                    )">
+                    Equip
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div
+    id="noAccessoryResults"
+    style="
+        display:none;
+        text-align:center;
+        padding:40px;
+        color:#777;
+    ">
+
+    <h3>
+        No accessories found
+    </h3>
+
+    <p>
+        Try another search or category.
+    </p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     CLOTHES
+========================= -->
+
+<section id="clothes"
+         class="page-section"
+         style="display:none">
+
+<div class="page-header">
+
+    <h1>Clothes</h1>
+
+    <p>
+        Classic MTB clothing.
+    </p>
+
+</div>
+
+<div class="content">
+
+<div class="grid">
+
+    <div class="card">
+
+        <div class="card-image">
+            👕
+        </div>
+
+        <div class="card-body">
+
+            <h3>
+                MTB Shirt
+            </h3>
+
+            <p>
+                MTB classic shirt.
+            </p>
+
+            <button
+                class="btn btn-blue"
+                onclick="buyItem(
+                    'MTB Shirt',
+                    100,
+                    '👕',
+                    'shirt'
+                )">
+                Buy - 100 🪙
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="card">
+
+        <div class="card-image">
+            👕
+        </div>
+
+        <div class="card-body">
+
+            <h3>
+                Black Classic Shirt
+            </h3>
+
+            <p>
+                Simple black shirt.
+            </p>
+
+            <button
+                class="btn btn-blue"
+                onclick="buyItem(
+                    'Black Classic Shirt',
+                    100,
+                    '👕',
+                    'shirt'
+                )">
+                Buy - 100 🪙
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="card">
+
+        <div class="card-image">
+            👖
+        </div>
+
+        <div class="card-body">
+
+            <h3>
+                Classic Pants
+            </h3>
+
+            <p>
+                Classic avatar pants.
+            </p>
+
+            <button
+                class="btn btn-blue"
+                onclick="buyItem(
+                    'Classic Pants',
+                    100,
+                    '👖',
+                    'pants'
+                )">
+                Buy - 100 🪙
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="card">
+
+        <div class="card-image">
+            👖
+        </div>
+
+        <div class="card-body">
+
+            <h3>
+                MTB Pants
+            </h3>
+
+            <p>
+                MTB classic pants.
+            </p>
+
+            <button
+                class="btn btn-blue"
+                onclick="buyItem(
+                    'MTB Pants',
+                    100,
+                    '👖',
+                    'pants'
+                )">
+                Buy - 100 🪙
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     INVENTORY
+========================= -->
+
+<section id="inventory"
+         class="page-section"
+         style="display:none">
+
+<div class="page-header">
+
+    <h1>
+        Inventory
+    </h1>
+
+    <p>
+        Items you own.
+    </p>
+
+</div>
+
+<div class="content">
+
+    <div
+        class="inventory-list"
+        id="inventoryList">
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     GAMES
+========================= -->
+
+<section id="games"
+         class="page-section"
+         style="display:none">
+
+<div class="page-header">
+
+    <h1>
+        Games
+    </h1>
+
+    <p>
+        Play games on MTB REVIVALS.
+    </p>
+
+</div>
+
+<div class="content">
+
+<div class="grid">
+
+
+    <div class="card">
+
+        <div class="card-image">
+            🏙️
+        </div>
+
+        <div class="card-body">
+
+            <h3>
+                MTB City
+            </h3>
+
+            <p>
+                Explore the classic city.
+            </p>
+
+            <button
+                class="btn btn-green"
+                onclick="playGame('MTB City')">
+                Play
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="card">
+
+        <div class="card-image">
+            🏠
+        </div>
+
+        <div class="card-body">
+
+            <h3>
+                Classic House
+            </h3>
+
+            <p>
+                Hang out with friends.
+            </p>
+
+            <button
+                class="btn btn-green"
+                onclick="playGame('Classic House')">
+                Play
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="card">
+
+        <div class="card-image">
+            ⚔️
+        </div>
+
+        <div class="card-body">
+
+            <h3>
+                MTB Battle
+            </h3>
+
+            <p>
+                Classic battle arena.
+            </p>
+
+            <button
+                class="btn btn-green"
+                onclick="playGame('MTB Battle')">
+                Play
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="card">
+
+        <div class="card-image">
+            🌲
+        </div>
+
+        <div class="card-body">
+
+            <h3>
+                MTB Woods
+            </h3>
+
+            <p>
+                Explore the wilderness.
+            </p>
+
+            <button
+                class="btn btn-green"
+                onclick="playGame('MTB Woods')">
+                Play
+            </button>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     NEWS
+========================= -->
+
+<section id="news"
+         class="page-section"
+         style="display:none">
+
+<div class="page-header">
+
+    <h1>
+        News
+    </h1>
+
+    <p>
+        MTB REVIVALS updates.
+    </p>
+
+</div>
+
+<div class="content">
+
+    <div
+        class="card"
+        style="padding:20px;margin-bottom:12px">
+
+        <h3>
+            Welcome to MTB REVIVALS!
+        </h3>
+
+        <p>
+            The new revival website is officially
+            being built. More games, items, avatars,
+            and features are coming.
+        </p>
+
+    </div>
+
+
+    <div
+        class="card"
+        style="padding:20px">
+
+        <h3>
+            Avatar Editor
+        </h3>
+
+        <p>
+            The avatar editor is now available.
+        </p>
+
+    </div>
+
+</div>
+
 </section>
 
 </main>
 
 
 <footer>
-    MTB REVIVALS © 2026 — Independent fan-made revival project
+    MTB REVIVALS © 2026 — Independent revival project
 </footer>
 
 
-<!-- BUY MODAL -->
-<div class="modal-bg" id="buyModal">
+<!-- =========================
+     PURCHASE MODAL
+========================= -->
 
-    <div class="modal">
+<div
+    class="modal-bg"
+    id="buyModal">
 
-        <div class="modal-header">
-            Confirm Purchase
-        </div>
+<div class="modal">
 
-        <div class="modal-content">
+    <div class="modal-header">
+        Confirm Purchase
+    </div>
 
-            <h2 id="buyName">Item</h2>
+    <div class="modal-content">
 
-            <p id="buyDescription">
-                Are you sure you want to buy this item?
-            </p>
+        <h2 id="buyName">
+            Item
+        </h2>
 
-            <p>
-                Price:
-                <strong id="buyPrice"></strong> 🪙
-            </p>
+        <p id="buyDescription">
+            Are you sure you want to buy this item?
+        </p>
 
-        </div>
-
-        <div class="modal-footer">
-
-            <button class="btn"
-                onclick="closeBuy()">
-                Cancel
-            </button>
-
-            <button class="btn btn-blue"
-                onclick="confirmBuy()">
-                Buy
-            </button>
-
-        </div>
+        <p>
+            Price:
+            <strong id="buyPrice">
+                0
+            </strong>
+            🪙
+        </p>
 
     </div>
+
+    <div class="modal-footer">
+
+        <button
+            class="btn"
+            onclick="closeBuy()">
+            Cancel
+        </button>
+
+        <button
+            class="btn btn-blue"
+            onclick="confirmBuy()">
+            Buy
+        </button>
+
+    </div>
+
+</div>
+
 </div>
 
 
 <script>
 
 /* =========================
-   MTB REVIVALS DATA
+   DATA
 ========================= */
 
 let coins =
     Number(localStorage.getItem("mtbCoins")) || 1000;
 
 let inventory =
-    JSON.parse(localStorage.getItem("mtbInventory") || "[]");
+    JSON.parse(
+        localStorage.getItem("mtbInventory") || "[]"
+    );
 
 let avatar =
-    JSON.parse(localStorage.getItem("mtbAvatar") || "{}");
+    JSON.parse(
+        localStorage.getItem("mtbAvatar") || "{}"
+    );
 
 let pendingItem = null;
+
+let currentAccessoryCategory = "all";
 
 
 /* =========================
@@ -1123,7 +2167,8 @@ let pendingItem = null;
 
 function showPage(page) {
 
-    document.querySelectorAll(".page-section")
+    document
+        .querySelectorAll(".page-section")
         .forEach(section => {
             section.style.display = "none";
         });
@@ -1135,8 +2180,10 @@ function showPage(page) {
         selected.style.display = "block";
     }
 
-    document.querySelectorAll(".nav button")
+    document
+        .querySelectorAll(".nav button")
         .forEach(button => {
+
             button.classList.remove("active");
 
             if (
@@ -1146,9 +2193,11 @@ function showPage(page) {
             ) {
                 button.classList.add("active");
             }
+
         });
 
-    document.getElementById("nav")
+    document
+        .getElementById("nav")
         .classList.remove("open");
 
     updateUI();
@@ -1157,14 +2206,15 @@ function showPage(page) {
 
 function toggleMenu() {
 
-    document.getElementById("nav")
+    document
+        .getElementById("nav")
         .classList.toggle("open");
 
 }
 
 
 /* =========================
-   COINS
+   UI
 ========================= */
 
 function updateUI() {
@@ -1181,18 +2231,35 @@ function updateUI() {
     );
 
     renderInventory();
+
+    renderAvatar();
+
+    updateAccessoryButtons();
 }
 
 
 /* =========================
-   SHOP
+   BUY NORMAL ITEM
 ========================= */
 
-function buyItem(name, price, icon, type) {
+function buyItem(
+    name,
+    price,
+    icon,
+    type
+) {
 
-    if (inventory.some(item => item.name === name)) {
+    if (
+        inventory.some(
+            item => item.name === name
+        )
+    ) {
 
-        alert("You already own this item!");
+        alert(
+            "You already own " +
+            name +
+            "!"
+        );
 
         return;
     }
@@ -1210,10 +2277,67 @@ function buyItem(name, price, icon, type) {
     document.getElementById("buyPrice")
         .textContent = price;
 
+    document.getElementById("buyDescription")
+        .textContent =
+        "Would you like to buy this item?";
+
     document.getElementById("buyModal")
         .style.display = "flex";
 }
 
+
+/* =========================
+   BUY ACCESSORY
+========================= */
+
+function buyAccessory(
+    name,
+    price,
+    icon,
+    category
+) {
+
+    if (
+        inventory.some(
+            item => item.name === name
+        )
+    ) {
+
+        alert(
+            "You already own " +
+            name +
+            "!"
+        );
+
+        return;
+    }
+
+    pendingItem = {
+        name: name,
+        price: price,
+        icon: icon,
+        type: "accessory",
+        category: category
+    };
+
+    document.getElementById("buyName")
+        .textContent = name;
+
+    document.getElementById("buyPrice")
+        .textContent = price;
+
+    document.getElementById("buyDescription")
+        .textContent =
+        "Would you like to buy this accessory?";
+
+    document.getElementById("buyModal")
+        .style.display = "flex";
+}
+
+
+/* =========================
+   CONFIRM PURCHASE
+========================= */
 
 function closeBuy() {
 
@@ -1226,11 +2350,15 @@ function closeBuy() {
 
 function confirmBuy() {
 
-    if (!pendingItem) return;
+    if (!pendingItem) {
+        return;
+    }
 
     if (coins < pendingItem.price) {
 
-        alert("You don't have enough MTB Coins!");
+        alert(
+            "You don't have enough MTB Coins!"
+        );
 
         closeBuy();
 
@@ -1239,20 +2367,29 @@ function confirmBuy() {
 
     coins -= pendingItem.price;
 
-    inventory.push(pendingItem);
+    inventory.push({
+        name: pendingItem.name,
+        price: pendingItem.price,
+        icon: pendingItem.icon,
+        type: pendingItem.type,
+        category: pendingItem.category || ""
+    });
 
     localStorage.setItem(
         "mtbInventory",
         JSON.stringify(inventory)
     );
 
+    const purchasedName =
+        pendingItem.name;
+
     closeBuy();
 
     updateUI();
 
     alert(
-        "Purchase successful! " +
-        pendingItem?.name
+        "Purchase successful!\n\n" +
+        purchasedName
     );
 }
 
@@ -1264,19 +2401,35 @@ function confirmBuy() {
 function renderInventory() {
 
     const list =
-        document.getElementById("inventoryList");
+        document.getElementById(
+            "inventoryList"
+        );
 
-    if (!list) return;
+    if (!list) {
+        return;
+    }
 
     list.innerHTML = "";
 
     if (inventory.length === 0) {
 
         list.innerHTML = `
-            <div class="card"
-                 style="padding:25px;grid-column:1/-1">
-                <h3>Your inventory is empty.</h3>
-                <p>Visit the catalog to get some items.</p>
+            <div
+                class="card"
+                style="
+                    padding:25px;
+                    grid-column:1/-1
+                ">
+
+                <h3>
+                    Your inventory is empty.
+                </h3>
+
+                <p>
+                    Visit Accessories or Clothes
+                    to get some items.
+                </p>
+
             </div>
         `;
 
@@ -1291,47 +2444,78 @@ function renderInventory() {
         div.className = "item";
 
         div.innerHTML = `
+
             <div class="item-preview">
                 ${item.icon}
             </div>
 
-            <strong>${item.name}</strong>
+            <strong>
+                ${item.name}
+            </strong>
 
             <br><br>
 
-            <button class="btn btn-blue"
-                onclick="equipInventoryItem('${item.name}')">
+            <button
+                class="btn btn-blue"
+                onclick="equipInventoryItem(
+                    '${escapeQuotes(item.name)}'
+                )">
                 Equip
             </button>
+
         `;
 
         list.appendChild(div);
+
     });
 }
 
 
+function escapeQuotes(text) {
+
+    return text
+        .replace(/\\/g, "\\\\")
+        .replace(/'/g, "\\'");
+}
+
+
+/* =========================
+   EQUIP INVENTORY ITEM
+========================= */
+
 function equipInventoryItem(name) {
 
     const item =
-        inventory.find(i => i.name === name);
+        inventory.find(
+            i => i.name === name
+        );
 
-    if (!item) return;
+    if (!item) {
+        return;
+    }
 
     if (item.type === "accessory") {
 
-        if (
-            !avatar.accessories
-        ) {
+        if (!avatar.accessories) {
             avatar.accessories = [];
         }
 
-        if (
-            !avatar.accessories.includes(name)
-        ) {
+        const index =
+            avatar.accessories.indexOf(name);
+
+        if (index !== -1) {
+
+            avatar.accessories.splice(
+                index,
+                1
+            );
+
+        } else {
 
             if (
                 avatar.accessories.length >= 3
             ) {
+
                 alert(
                     "You can only wear 3 accessories."
                 );
@@ -1353,7 +2537,240 @@ function equipInventoryItem(name) {
 
     saveAvatar(false);
 
-    alert(name + " equipped!");
+    updateUI();
+}
+
+
+/* =========================
+   ACCESSORY CATEGORIES
+========================= */
+
+function setAccessoryCategory(
+    category,
+    button
+) {
+
+    currentAccessoryCategory =
+        category;
+
+    document
+        .querySelectorAll(".category")
+        .forEach(btn => {
+            btn.classList.remove("active");
+        });
+
+    button.classList.add("active");
+
+    filterAccessories();
+}
+
+
+function filterAccessories() {
+
+    const search =
+        document
+            .getElementById(
+                "accessorySearch"
+            )
+            .value
+            .toLowerCase()
+            .trim();
+
+    const cards =
+        document.querySelectorAll(
+            ".accessory-card"
+        );
+
+    let visible = 0;
+
+    cards.forEach(card => {
+
+        const name =
+            card.dataset.name.toLowerCase();
+
+        const category =
+            card.dataset.category;
+
+        const matchesSearch =
+            name.includes(search);
+
+        const matchesCategory =
+            currentAccessoryCategory === "all" ||
+            category === currentAccessoryCategory;
+
+        if (
+            matchesSearch &&
+            matchesCategory
+        ) {
+
+            card.style.display = "";
+
+            visible++;
+
+        } else {
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+    document.getElementById(
+        "noAccessoryResults"
+    ).style.display =
+        visible === 0
+            ? "block"
+            : "none";
+
+    updateAccessoryButtons();
+}
+
+
+/* =========================
+   CATALOG EQUIP
+========================= */
+
+function catalogEquip(
+    name,
+    accessoryCode
+) {
+
+    const owned =
+        inventory.some(
+            item => item.name === name
+        );
+
+    if (!owned) {
+
+        alert(
+            "You need to buy this accessory first."
+        );
+
+        return;
+    }
+
+    if (!avatar.accessories) {
+        avatar.accessories = [];
+    }
+
+    const existing =
+        avatar.accessories.indexOf(name);
+
+    if (existing !== -1) {
+
+        avatar.accessories.splice(
+            existing,
+            1
+        );
+
+        saveAvatar(false);
+        updateUI();
+
+        return;
+    }
+
+    if (
+        avatar.accessories.length >= 3
+    ) {
+
+        alert(
+            "You can only wear 3 accessories at once."
+        );
+
+        return;
+    }
+
+    avatar.accessories.push(name);
+
+    saveAvatar(false);
+
+    updateUI();
+}
+
+
+/* =========================
+   ACCESSORY BUTTON STATUS
+========================= */
+
+function updateAccessoryButtons() {
+
+    document
+        .querySelectorAll(
+            ".accessory-card"
+        )
+        .forEach(card => {
+
+            const name =
+                card.dataset.name;
+
+            const buyButton =
+                card.querySelector(
+                    ".buy-accessory"
+                );
+
+            const equipButton =
+                card.querySelector(
+                    ".equip-accessory-btn"
+                );
+
+            if (!buyButton || !equipButton) {
+                return;
+            }
+
+            const owned =
+                inventory.some(
+                    item => item.name === name
+                );
+
+            const equipped =
+                avatar.accessories &&
+                avatar.accessories.includes(name);
+
+
+            if (owned) {
+
+                buyButton.textContent =
+                    "Owned";
+
+                buyButton.disabled = true;
+
+                buyButton.classList.add(
+                    "owned-item"
+                );
+
+            } else {
+
+                buyButton.textContent =
+                    "Buy";
+
+                buyButton.disabled = false;
+
+                buyButton.classList.remove(
+                    "owned-item"
+                );
+            }
+
+
+            if (equipped) {
+
+                equipButton.textContent =
+                    "Unequip";
+
+                equipButton.classList.add(
+                    "equipped-item"
+                );
+
+            } else {
+
+                equipButton.textContent =
+                    "Equip";
+
+                equipButton.classList.remove(
+                    "equipped-item"
+                );
+            }
+
+        });
 }
 
 
@@ -1365,8 +2782,9 @@ function setFace(face) {
 
     avatar.face = face;
 
-    document.getElementById("avatarFace")
-        .textContent = face;
+    document.getElementById(
+        "avatarFace"
+    ).textContent = face;
 
     saveAvatar(false);
 }
@@ -1376,10 +2794,12 @@ function setBody(color) {
 
     avatar.bodyColor = color;
 
-    document.querySelector(".head")
+    document
+        .querySelector(".head")
         .style.background = color;
 
-    document.querySelectorAll(".arm")
+    document
+        .querySelectorAll(".arm")
         .forEach(arm => {
             arm.style.background = color;
         });
@@ -1394,7 +2814,9 @@ function equipAccessory(type) {
         avatar.accessories = [];
     }
 
-    if (avatar.accessories.length >= 3) {
+    if (
+        avatar.accessories.length >= 3
+    ) {
 
         alert(
             "You can only wear 3 accessories at once."
@@ -1430,14 +2852,19 @@ function removeAccessories() {
 function renderAvatar() {
 
     const container =
-        document.getElementById("avatarHorns");
+        document.getElementById(
+            "avatarHorns"
+        );
 
-    if (!container) return;
+    if (!container) {
+        return;
+    }
 
     container.innerHTML = "";
 
     const accessories =
         avatar.accessories || [];
+
 
     accessories.forEach(item => {
 
@@ -1455,6 +2882,7 @@ function renderAvatar() {
             container.appendChild(horns);
         }
 
+
         if (
             item === "fedora" ||
             item === "Classic Fedora"
@@ -1471,24 +2899,31 @@ function renderAvatar() {
 
     });
 
-    document.getElementById("equippedCount")
-        .textContent =
+
+    document.getElementById(
+        "equippedCount"
+    ).textContent =
         accessories.length;
+
 
     if (avatar.face) {
 
-        document.getElementById("avatarFace")
-            .textContent =
+        document.getElementById(
+            "avatarFace"
+        ).textContent =
             avatar.face;
     }
 
+
     if (avatar.bodyColor) {
 
-        document.querySelector(".head")
+        document
+            .querySelector(".head")
             .style.background =
             avatar.bodyColor;
 
-        document.querySelectorAll(".arm")
+        document
+            .querySelectorAll(".arm")
             .forEach(arm => {
                 arm.style.background =
                     avatar.bodyColor;
@@ -1506,37 +2941,14 @@ function saveAvatar(showMessage = true) {
 
     renderAvatar();
 
+    updateAccessoryButtons();
+
     if (showMessage) {
-        alert("Avatar saved!");
+
+        alert(
+            "Avatar saved!"
+        );
     }
-}
-
-
-/* =========================
-   SEARCH
-========================= */
-
-function searchItems(value, gridId) {
-
-    value =
-        value.toLowerCase();
-
-    const grid =
-        document.getElementById(gridId);
-
-    if (!grid) return;
-
-    grid.querySelectorAll(".searchable")
-        .forEach(card => {
-
-            card.style.display =
-                card.textContent
-                    .toLowerCase()
-                    .includes(value)
-                    ? ""
-                    : "none";
-
-        });
 }
 
 
@@ -1550,7 +2962,6 @@ function playGame(game) {
         game +
         " is currently being prepared for the MTB REVIVALS game server."
     );
-
 }
 
 
@@ -1575,3 +2986,4 @@ document.addEventListener(
 
 </body>
 </html>
+```
